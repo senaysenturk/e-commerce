@@ -47,6 +47,8 @@ export const Header = ({ title }) => {
           </div>
         </div>
 
+        <hr />
+
         <div className="category-header">
           <nav>
             <ul>
