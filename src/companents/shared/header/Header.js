@@ -5,6 +5,7 @@ import { AiOutlineSearch, AiOutlineUser } from "react-icons/ai";
 import { GrCart } from "react-icons/gr";
 
 import "./style.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const Header = ({ title }) => {
   return (
@@ -12,6 +13,7 @@ export const Header = ({ title }) => {
       <header className="app-header">
         <div className="main-header">
           <div className="logo">
+            <i className="fa-solid fa-signature"></i>
             <h1>{title}</h1>
           </div>
           <div className="search">
@@ -47,7 +49,7 @@ export const Header = ({ title }) => {
           </div>
         </div>
 
-        <hr />
+        {/* <hr /> */}
 
         <div className="category-header">
           <nav>
