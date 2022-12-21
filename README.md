@@ -1,15 +1,12 @@
 # Project : E-Commerce
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-
 ## Visulation of the Website
 
 ![localhost_3000_ (1)](https://user-images.githubusercontent.com/10048993/209000035-c98467c1-2a28-4b18-885c-6a117fdcbe5a.png)
 
 ## Project Skeleton
 
-
+--------------------
         
 ## Description
 Project aims to shopping via a Javascript React.
