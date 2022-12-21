@@ -6,13 +6,70 @@ $danger-color: brown;
 
 
 .app-header {
-    h1 {
-        cursor: pointer;
+
+    .main-header {
+        position: relative;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 30px;
+        margin: 25px 50px;
+
+        .logo {
+            display: flex;
+            align-items: center;
+
+
+            h1 {
+                cursor: pointer;
+            }
+        }
+
+
+        .search {
+            .search-icon {
+                position: relative;
+                top: 4px;
+                right: -25px;
+                z-index: 3;
+                color: $dark-color;
+                font-size: 20px;
+                cursor: pointer;
+            }
+
+            input {
+                height: 25px;
+                background: lightgrey;
+                border: none;
+                border-radius: 7px;
+                padding: 2px 5px;
+                width: 500px;
+                text-indent: 20px;
+                font-size: 18px;
+            }
+        }
+
+        .options ul {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            list-style: none;
+            gap: 0 25px;
+
+            li {
+                margin-left: 5%;
+                padding-right: 1%;
+
+                .icon {
+                    font-size: 20px;
+                    color: $dark-color;
+                }
+            }
+        }
     }
 
     .category-header {
-
-
         nav ul {
             display: flex;
             justify-content: space-around;
@@ -20,6 +77,7 @@ $danger-color: brown;
             list-style: none;
 
             li {
+                height: 35px;
 
                 a {
                     text-decoration: none;
@@ -32,8 +90,8 @@ $danger-color: brown;
                 &:hover {
                     transform: scale(1.2);
                     // underline eklenecek ...!
-                   /*  border-bottom: 2px solid $light-color ;
-                    border-radius: 5px; */
+                    border-bottom: 2px solid $dark-color;
+                    border-radius: 5px;
                 }
             }
         }

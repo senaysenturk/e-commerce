@@ -1,5 +1,8 @@
 import React from "react";
 import { Link, Router } from "react-router-dom";
+import { RiHeart3Line } from "react-icons/ri";
+import { AiOutlineSearch, AiOutlineUser } from "react-icons/ai";
+import { GrCart } from "react-icons/gr";
 
 import "./style.scss";
 
@@ -7,37 +10,41 @@ export const Header = ({ title }) => {
   return (
     <>
       <header className="app-header">
-        <div>
+        <div className="main-header">
           <div className="logo">
             <h1>{title}</h1>
           </div>
-          {/* 
-          <div className="search_bar ">
-            <div>
-              <span>All</span>
-              <i className="fas fa-caret-down"></i>
-            </div>
+          <div className="search">
+            <span className="search-icon">
+              <AiOutlineSearch />
+            </span>
             <input type="text" />
-            <i className="fas fa-search"></i>
           </div>
-          <div className="flex App-options">
-            <div className="sign">
-              <span>Hello, Sign in</span>
-              <div className="flex account">
-                <span>Account & Lists</span>
-                <i className="fas fa-caret-down"></i>
-              </div>
-            </div>
-            <div className="sign">
-              <span>Returns</span>
-              <span>& Orders</span>
-            </div>
-            <div className="flex cart">
-              <i className="fas fa-shopping-cart"></i>
-              <span className="shopping-cart">Cart</span>
-              <p>0</p>
-            </div>
-          </div> */}
+          <div className="options">
+            <ul>
+              <li>
+                <Link to="">
+                  <span className="icon">
+                    <RiHeart3Line />
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <Link to="">
+                  <span className="icon">
+                    <AiOutlineUser />
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <Link to="">
+                  <span className="icon">
+                    <GrCart />
+                  </span>
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
 
         <div className="category-header">
