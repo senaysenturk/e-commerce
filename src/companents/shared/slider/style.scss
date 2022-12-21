@@ -1,0 +1,79 @@
+.hero {
+  position: relative;
+  width: 100%;
+  // height: 1190px;
+  box-sizing: border-box;
+
+  .container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    .slider {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      height: 560px;
+
+      .btn {
+        width: 70px;
+        height: 70px;
+        text-decoration: none;
+        font: 32px/70px Arial;
+        color: rgb(148, 145, 145);
+        border-radius: 100%;
+        position: absolute;
+        top: 50%;
+        margin-top: -35px;
+        background-color: rgba($color: #282626, $alpha: 0.4);
+      }
+
+      a.before-btn {
+        left: 20px;
+      }
+      a.after-btn {
+        right: 20px;
+      }
+      a.after-btn:hover,
+      a.before-btn:hover {
+        background: rgba($color: #282626, $alpha: 0.7);
+      }
+      .image-box {
+        display: flex;
+        position: absolute;
+        animation: carousel 10s alternate infinite;
+      }
+
+      @keyframes carousel {
+        0% {
+          left: 0;
+        }
+        20% {
+          left: 0%;
+        }
+        24% {
+          left: -3000px;
+        }
+        50% {
+          left: -3000px;
+        }
+        54% {
+          left: calc(-3000 * 2px);
+        }
+        80% {
+          left: calc(-3000 * 2px);
+        }
+        84% {
+          left: calc(-3000 * 3px);
+        }
+        100% {
+          left: calc(-3000 * 3px);
+        }
+      }
+
+      // .slide img {
+      //   width: 100%;
+      //   height: 100%;
+      // }
+    }
+  }
+}
