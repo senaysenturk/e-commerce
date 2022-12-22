@@ -1,0 +1,42 @@
+footer {
+    border-top: solid 1px gray;
+    background: #f0eeed;
+  .news-btn {
+    font-weight: 500;
+    display: flex;
+    font-size: 20px;
+    justify-items: end;
+    gap: 10px;
+
+    .news-email {
+      width: 330px;
+      height: 36px;
+      border: none;
+      border-radius: 7px;
+      padding: 2px 30px;
+      font-size: 18px;
+    }
+    .news-email :hover {
+      border: solid 0.5px #868484;
+    }
+  }
+  .info-menu {
+    margin-top: 30px;
+    display: flex;
+    gap: 30px;
+    justify-items: flex-start;
+    span {
+      font-weight: bold;
+      display: flex;
+      justify-items: end;
+    }
+
+    .corporate a,
+    .custumer-services a {
+      text-decoration: none;
+      color: black;
+      display: flex;
+      justify-items: end;
+    }
+  }
+}
