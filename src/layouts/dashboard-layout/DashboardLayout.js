@@ -1,5 +1,5 @@
 import React from "react";
-import List from "../../components/app/product/list/List";
+import List from "../../components/product/list/List";
 
 import Header from "../../components/shared/header/Header";
 import Slider from "../../components/shared/slider/Slider";
