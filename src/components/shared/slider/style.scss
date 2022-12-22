@@ -25,6 +25,7 @@
         top: 50%;
         margin-top: -35px;
         background-color: rgba($color: #282626, $alpha: 0.4);
+        z-index: 100;
       }
 
       a.before-btn {
@@ -40,7 +41,7 @@
       .image-box {
         display: flex;
         position: absolute;
-        animation: carousel 10s alternate infinite;
+        animation: carousel 20s alternate infinite;
       }
 
       @keyframes carousel {
@@ -51,29 +52,29 @@
           left: 0%;
         }
         24% {
-          left: -3000px;
+          left: -1900px;
         }
         50% {
-          left: -3000px;
+          left: -1900px;
         }
         54% {
-          left: calc(-3000 * 2px);
+          left: calc(-1900 * 2px);
         }
         80% {
-          left: calc(-3000 * 2px);
+          left: calc(-1900 * 2px);
         }
         84% {
-          left: calc(-3000 * 3px);
+          left: calc(-1900 * 3px);
         }
         100% {
-          left: calc(-3000 * 3px);
+          left: calc(-1900 * 3px);
         }
       }
 
-      // .slide img {
-      //   width: 100%;
-      //   height: 100%;
-      // }
+      .slide img {
+        width: 1900px;
+        height: 100%;
+      }
     }
   }
 }

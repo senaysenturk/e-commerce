@@ -10,32 +10,32 @@ const Slider = () => {
     {
       id: "1s",
       category: "hero-content",
-      img: "./hero-photos/1.png",
+      img: "./hero-photos/1.jpeg",
       name: "slider photo",
       // size: 
     },
     {
       id: " 2s",
       category: "hero-content",
-      img: "./hero-photos/2.png",
+      img: "./hero-photos/2.jpeg",
       name: "slider photo",
     },
     {
       id: "3s",
       category: "hero-content",
-      img: "./hero-photos/3.png",
+      img: "./hero-photos/3.jpeg",
       name: "slider photo",
     },
     {
       id: "4s",
       category: "hero-content",
-      img: "./hero-photos/4.png",
+      img: "./hero-photos/4.jpeg",
       name: "slider photo",
     },
     {
       id: "5s",
       category: "hero-content",
-      img: "./hero-photos/5.png",
+      img: "./hero-photos/5.jpeg",
       name: "slider photo",
     },
   ];
@@ -49,10 +49,10 @@ const Slider = () => {
            <div className="image-box">
 {/* 
            <div className="slide" >
-            <img src="./hero-photos/1.png" alt="slider-photo"/>
+            <img src="./hero-photos/1.jpeg" alt="slider-photo"/>
            </div>
            <div className="slide" >
-            <img src="./hero-photos/2.png" alt="slider-photo"/>
+            <img src="./hero-photos/2.jpeg" alt="slider-photo"/>
            </div> */}
           {heroPhotos.map((photo) => {
             return (
