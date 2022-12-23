@@ -2,14 +2,11 @@ import React from "react";
 import CardDetails from "../../../shared/card/card-details/CardDetails";
 import "./style.scss";
 
-const Card = () => {
+const SmallCard = ({ path }) => {
   return (
     <div className="small-card">
       <div className="product-img">
-        <img
-          src="https://st.mngbcn.com/rcs/pics/static/T3/fotos/S20/37049069_99.jpg?ts=1665653587346&imwidth=502&imdensity=2"
-          alt="Çiçek işlemeli bluz"
-        />
+        <img src={path} alt="Çiçek işlemeli bluz" />
       </div>
       <div className="quickview">
         <span class="quickview_icon" id="Swing Dress" onClick={<CardDetails />}>
@@ -33,4 +30,4 @@ const Card = () => {
   );
 };
 
-export default Card;
+export default SmallCard;

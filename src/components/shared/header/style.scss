@@ -129,10 +129,10 @@ $danger-color: brown;
           }
         }
       }
-      &> li:hover .dropdown-menu {
+      & > li:hover .dropdown-menu {
         display: block;
       }
-      &> li:hover > a {
+      & > li:hover > a {
         transform: scale(1.2);
       }
     }

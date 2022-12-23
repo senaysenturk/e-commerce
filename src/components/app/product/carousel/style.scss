@@ -1,0 +1,12 @@
+.carousel {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  .carousel-img {
+    width: 450px;
+    height: 350px;
+    object-fit: cover;
+    object-position: left top;
+  }
+}

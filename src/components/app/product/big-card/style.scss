@@ -7,10 +7,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    video,
     img {
-      width: 560px;
+      width: 500px;
+      height: 720px;
       object-fit: cover;
       object-position: left top;
+    }
+    @media (max-width: 900px) {
+      img {
+        width: 300px;
+        height: 350px;
+        object-fit: cover;
+        object-position: left top;
+      }
     }
   }
 }
