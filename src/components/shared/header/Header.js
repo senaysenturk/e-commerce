@@ -6,7 +6,7 @@ import { GrCart } from "react-icons/gr";
 
 import "./style.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import DropdownMenu from "../dropdown-menu/DropdownMenu";
+import DropdownMenu from '../../Dropdown';
 
 export const Header = ({ title }) => {
   return (
@@ -52,12 +52,13 @@ export const Header = ({ title }) => {
 
         <div className="category-header">
           <nav>
-            <ul>
+            <ul className="category-links">
               <li>
                 <a href="#">WOMEN</a>
               </li>
               <li>
                 <a href="#">MAN</a>
+                
                 <DropdownMenu />
               </li>
               <li>
