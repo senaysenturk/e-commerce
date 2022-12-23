@@ -2,7 +2,7 @@
 
 ## Visulation of the Website
 
-![localhost_3000_ (1)](https://user-images.githubusercontent.com/10048993/209000035-c98467c1-2a28-4b18-885c-6a117fdcbe5a.png)
+![localhost_3000_ (6)](https://user-images.githubusercontent.com/10048993/209410524-287bbb3c-eea7-4ad2-b4df-4a60d4e4d83e.png)
 
 ## Project Skeleton
 
