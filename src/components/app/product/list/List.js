@@ -34,8 +34,7 @@ const List = () => {
               {products_1.map((product, index) => (
                 <SmallCard path={product} index />
               ))}
-            </div>
-            <div className="row">
+
               {products_2.map((product, index) => (
                 <SmallCard path={product} index />
               ))}

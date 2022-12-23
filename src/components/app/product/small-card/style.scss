@@ -2,14 +2,15 @@
   width: auto;
   position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+
   .product-img {
     display: flex;
     justify-content: center;
     align-items: center;
     img {
-      width: 300px;
-      height: 350px;
+      width: 260px;
+      height: 250px;
       object-fit: cover;
       object-position: left top;
     }

@@ -43,8 +43,9 @@
     }
     .column-1 {
       position: relative;
+
       .img-square {
-        width: 500px;
+        width: 100%;
         height: 100%;
         // background-color: var(--primary-color);
         box-shadow: rgba(188, 201, 197, 0.682) -10px 10px 5px;
@@ -57,6 +58,17 @@
         .img-square {
           box-shadow: none;
         }
+      }
+    }
+    .column-2 {
+      width: calc(100% - 370px);
+    }
+    a {
+      color: var(--primary-color);
+      &:hover {
+        color: var(--dark-color);
+        transform: scale(1.1);
+        border-bottom: 1px solid var(--primary-color);
       }
     }
   }
