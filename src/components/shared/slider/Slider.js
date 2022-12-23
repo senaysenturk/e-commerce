@@ -1,9 +1,6 @@
 import React from "react";
 import "./style.scss";
-import {
-    AiFillCaretLeft,
-    AiFillCaretRight
-  } from "react-icons/ai";
+import { AiFillCaretLeft, AiFillCaretRight } from "react-icons/ai";
 
 const Slider = () => {
   const heroPhotos = [
@@ -12,7 +9,7 @@ const Slider = () => {
       category: "hero-content",
       img: "./hero-photos/1.jpeg",
       name: "slider photo",
-      // size: 
+      // size:
     },
     {
       id: " 2s",
@@ -44,26 +41,31 @@ const Slider = () => {
     <div className="hero">
       <div className="container">
         <div className="slider">
-        <a href="/#" className="before-btn btn"><AiFillCaretLeft/> </a>
-        <a href="/#" className="after-btn btn"> <AiFillCaretRight/> </a>
-           <div className="image-box">
-{/* 
+          <a href="/#" className="before-btn btn">
+            <AiFillCaretLeft />{" "}
+          </a>
+          <a href="/#" className="after-btn btn">
+            {" "}
+            <AiFillCaretRight />{" "}
+          </a>
+          <div className="image-box">
+            {/* 
            <div className="slide" >
             <img src="./hero-photos/1.jpeg" alt="slider-photo"/>
            </div>
            <div className="slide" >
             <img src="./hero-photos/2.jpeg" alt="slider-photo"/>
            </div> */}
-          {heroPhotos.map((photo) => {
-            return (
-              <div className="slide" >
-                <img src={photo.img} alt={photo.name} />
-              </div>
-            );
-          })}
+            {heroPhotos.map((photo) => {
+              return (
+                <div className="slide">
+                  <img src={photo.img} alt={photo.name} />
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
-    </div>
     </div>
   );
 };
