@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.scss";
-import { AiFillCaretLeft, AiFillCaretRight } from "react-icons/ai";
+import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 
 const Slider = () => {
   const heroPhotos = [
@@ -42,11 +42,11 @@ const Slider = () => {
       <div className="container">
         <div className="slider">
           <a href="/#" className="before-btn btn">
-            <AiFillCaretLeft />{" "}
+            <BiChevronLeft/>{" "}
           </a>
           <a href="/#" className="after-btn btn">
             {" "}
-            <AiFillCaretRight />{" "}
+            <BiChevronRight />{" "}
           </a>
           <div className="image-box">
             {/* 

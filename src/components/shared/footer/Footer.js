@@ -96,7 +96,7 @@ const Footer = () => {
             className="news-email"
             name="news-email"
           />
-          <a href="/#" class="btn btn-outline">
+          <a href="/#" class="buton buton-outline">
             Send
           </a>
            </div> 

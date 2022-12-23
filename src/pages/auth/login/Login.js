@@ -17,7 +17,7 @@ export const Login = () => {
         <div className="container">
           <div className="login-with">
             <p>
-              <strong>To continue, log in to Spotify.</strong>
+              <strong>To continue, log in to e-commerce.</strong>
             </p>
             <button className="button button-secondary">
               <RiFacebookBoxFill />
