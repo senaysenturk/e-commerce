@@ -1,42 +1,148 @@
-footer {
-    border-top: solid 1px gray;
-    background: #f0eeed;
-  .news-btn {
-    font-weight: 500;
-    display: flex;
-    font-size: 20px;
-    justify-items: end;
-    gap: 10px;
+$primary-color: rgb(122, 185, 49);
+$secondary-color: rgb(211, 185, 69);
+$light-color: #f4f4f4;
+$dark-color: #333;
+$danger-color: brown;
+$logo-color: #bcc9c5;
 
-    .news-email {
-      width: 330px;
-      height: 36px;
-      border: none;
-      border-radius: 7px;
-      padding: 2px 30px;
-      font-size: 18px;
-    }
-    .news-email :hover {
-      border: solid 0.5px #868484;
-    }
-  }
+footer {
+  border-top: solid 1px #d1d1d1;
+  background: $logo-color;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  letter-spacing: 0.07rem;
+  gap: 20px;
+
   .info-menu {
-    margin-top: 30px;
+    margin: 30px;
     display: flex;
-    gap: 30px;
     justify-items: flex-start;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 70%;
+    height: 40%;
+
     span {
       font-weight: bold;
       display: flex;
       justify-items: end;
+      justify-content: flex-start;
     }
 
-    .corporate a,
+    .store a,
+    .about a,
     .custumer-services a {
       text-decoration: none;
-      color: black;
+      color: $dark-color;
       display: flex;
       justify-items: end;
     }
   }
+
+  .contact-menu {
+    display: flex;
+    flex-direction: column;
+    margin: 30px;
+    padding-right: 50px;
+
+    .news-btn {
+      font-weight: bold;
+      justify-items: end;
+      gap: 10px;
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+
+      .btn-outline {
+        cursor: pointer;
+        // display: inline-block;
+        padding: 3px 10px;
+        height: 35px;
+        color: $light-color;
+        background-color: $dark-color;
+        border: none;
+        border-top-right-radius: 7px;
+        border-bottom-right-radius: 7px;
+        text-decoration: none;
+        float: left;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      .contact-email {
+        display: flex;
+        flex-direction: row;
+
+        span {
+          display: flex;
+          justify-items: end;
+          justify-content: flex-start;
+          align-items: flex-start;
+        }
+
+        .news-email {
+          width: 300px;
+          height: 36px;
+          border: none;
+          border-top-left-radius: 7px;
+          border-bottom-left-radius: 7px;
+          padding: 2px 30px;
+          font-size: 13px;
+          letter-spacing: 0.15rem;
+        }
+
+        .news-email :hover {
+          border: none;
+        }
+      }
+    }
+
+    .social-menu {
+      display: flex;
+      flex-direction: column;
+
+      ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding-left: 30px;
+        padding-right: 30px;
+        margin-top: 12px;
+      }
+      a {
+        color: $dark-color;
+        font-size: 22px;
+        margin-top: 30px;
+      }
+      span {
+        margin-top: 25px;
+        font-weight: bold;
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        letter-spacing: 0.3rem;
+      }
+    }
+  }
+
+ 
 }
+@media (max-width: 768px){
+  .footer{
+    display: flex;
+    flex-direction: column;
+    font-size: .7rem;
+    
+
+    .info-menu {
+      margin: 20px 0px 20px 0;
+      width: 100%;
+      padding: 0;
+
+  }
+  }
+
+  }

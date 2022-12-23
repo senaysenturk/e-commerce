@@ -10,12 +10,35 @@ import {
 
 const Footer = () => {
   return (
-    <footer>
-   
-      <div className="footer"></div>
+    <footer className="footer">
+      {/* <div className="footer"> */}
       <div className="info-menu">
-        <div className="corporate">
-          <span>Corporate</span>
+        <div className="store">
+          <span>Store</span>
+          <ul>
+            <li>
+              <a href="/#">Men</a>
+            </li>
+            <li>
+              <a href="/#">Women</a>
+            </li>
+            <li>
+              <a href="/#">Children</a>
+            </li>
+            <li>
+              <a href="/#">New Arrivals</a>
+            </li>
+            <li>
+              <a href="/#">Top Brands</a>
+            </li>
+            <li>
+              <a href="/#">Special Offers</a>
+            </li>
+          </ul>
+        </div>
+
+        <div className="about">
+          <span>About</span>
           <ul>
             <li>
               <a href="/#">About Us</a>
@@ -61,18 +84,24 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-
-
-        <div className="news-btn">
-        <span> Stay up to date</span>
-        <br />
-        <input
-          type="email"
-          placeholder="Type your email address"
-          className="news-email"
-          name="news-email"
-        />
       </div>
+
+      <div className="contact-menu">
+        <div className="news-btn">
+          <span> Stay Up To Date</span>
+          <div className="contact-email">
+          <input
+            type="email"
+            placeholder="Type your email address..."
+            className="news-email"
+            name="news-email"
+          />
+          <a href="/#" class="btn btn-outline">
+            Send
+          </a>
+           </div> 
+        </div>
+
         <div className="social-menu">
           <span>Follow us</span>
           <ul>
@@ -103,9 +132,8 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-
-       
       </div>
+      {/* </div> */}
     </footer>
   );
 };
