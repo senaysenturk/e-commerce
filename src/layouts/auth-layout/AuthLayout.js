@@ -1,8 +1,12 @@
 import React from 'react'
 
+import Login from '../../pages/auth/login/Login';
+
 export const AuthLayout = () => {
   return (
-    <div>AuthLayout</div>
+    <div>
+      <Login />
+    </div>
   )
 }
 
