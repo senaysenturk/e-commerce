@@ -1,7 +1,16 @@
 .big-card {
-  img {
-    height: 500px;
-    object-fit: cover;
-    object-position: left top;
+  width: auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  .product-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 560px;
+      object-fit: cover;
+      object-position: left top;
+    }
   }
 }

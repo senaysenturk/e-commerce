@@ -1,4 +1,5 @@
 import React from "react";
+import CardDetails from "../../../shared/card/card-details/CardDetails";
 import "./style.scss";
 
 const Card = () => {
@@ -11,7 +12,7 @@ const Card = () => {
         />
       </div>
       <div className="quickview">
-        <span class="quickview_icon" id="Swing Dress">
+        <span class="quickview_icon" id="Swing Dress" onClick={<CardDetails />}>
           Quick View
         </span>
         <div className="quickview_info" lang="tr">
