@@ -39,7 +39,7 @@ const Slider = () => {
 
   return (
     <div className="hero">
-      <div className="container">
+      <div className="hero-container">
         <div className="slider">
           <a href="/#" className="before-btn btn">
             <BiChevronLeft/>{" "}
