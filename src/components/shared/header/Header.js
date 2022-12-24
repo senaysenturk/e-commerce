@@ -5,7 +5,10 @@ import { AiOutlineSearch, AiOutlineUser } from "react-icons/ai";
 import { GrCart } from "react-icons/gr";
 
 import "./style.scss";
-import DropdownMenu from "../../Dropdown";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import DropdownMenu from "../dropdown-menu/DropdownMenu";
+import UserCard from "../user-card/UserCard";
+import CartCard from "../cart-card/CartCard"
 
 export const Header = ({ title }) => {
   return (
@@ -32,18 +35,30 @@ export const Header = ({ title }) => {
                 </Link>
               </li>
               <li>
-                <Link to="auth">
+                <a>
                   <span className="icon">
                     <AiOutlineUser />
                   </span>
-                </Link>
+                </a>
+                <UserCard />
+                {/*  <Link to="">
+                  <span className="icon">
+                    <AiOutlineUser />
+                  </span>
+                </Link> */}
               </li>
               <li>
-                <Link to="">
+                <a>
                   <span className="icon">
                     <GrCart />
                   </span>
-                </Link>
+                </a>
+                <CartCard />
+                {/* <Link to="">
+                  <span className="icon">
+                    <GrCart />
+                  </span>
+                </Link> */}
               </li>
             </ul>
           </div>
@@ -57,7 +72,6 @@ export const Header = ({ title }) => {
               </li>
               <li>
                 <a href="#">MAN</a>
-
                 <DropdownMenu />
               </li>
               <li>

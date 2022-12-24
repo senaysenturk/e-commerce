@@ -1,19 +1,19 @@
-$primary-color: rgb(122, 185, 49);
-$secondary-color: rgb(211, 185, 69);
 $light-color: #f4f4f4;
 $dark-color: #333;
 $danger-color: brown;
 
+* {
+  box-sizing: border-box;
+}
+
 .app-header {
   .main-header {
     position: relative;
-    // height: 40px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     padding: 30px 25px;
-    // margin: 25px 50px;
     border-bottom: 1px solid #d1d1d1;
 
     .logo {
@@ -67,13 +67,24 @@ $danger-color: brown;
       gap: 0 25px;
 
       li {
+        position: relative; 
+
         margin-left: 5%;
         padding-right: 1%;
 
         .icon {
           font-size: 20px;
           color: $dark-color;
+          cursor: pointer;
         }
+      }
+
+      &>li:hover .container {
+        display: block;
+      }
+
+      &>li:hover .cart-container {
+        display: block;
       }
     }
   }
@@ -100,12 +111,6 @@ $danger-color: brown;
           display: block;
         }
 
-        &:hover {
-          // underline eklenecek ...!
-          // border-bottom: 1px solid #d1d1d1;
-          // border-radius: 5px;
-        }
-
         .dropdown-menu {
           display: none;
           position: fixed;
@@ -116,23 +121,55 @@ $danger-color: brown;
           box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
           z-index: 101232112313;
 
-          a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            text-align: left;
+          .dropdown-content {
+            padding: 25px 20px;
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
 
-            &:hover {
-              background-color: #ddd;
+            .row {
+              width: calc(25% - 30px);
+              line-height: 45px;
+
+              header {
+                font-size: 20px;
+                font-weight: 600;
+                padding: 0 36px;
+                text-align: left;
+              }
+
+              .dropdown-links li {
+                padding: 0 20px;
+
+                a {
+                  color: $dark-color;
+                  font-size: 15px;
+                  font-weight: 600;
+                  padding: 12px 16px;
+                  display: block;
+                  text-align: left;
+
+                  &:hover {
+                    background-color: #ddd;
+                  }
+                }
+              }
+
+              img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+              }
             }
           }
         }
       }
-      & > li:hover .dropdown-menu {
+
+      &>li:hover .dropdown-menu {
         display: block;
       }
-      & > li:hover > a {
+
+      &>li:hover>a {
         transform: scale(1.2);
       }
     }

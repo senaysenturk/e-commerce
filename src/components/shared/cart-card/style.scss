@@ -6,8 +6,40 @@
     list-style: none;
 }
 
-.container {
-    display: flex;
+.cart-container {
+    display: none;
+    position: fixed;
+    width: 500px;
+    right: 0;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 101232112313;
+
+    .cart-summary {
+        margin: 10px 25px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .or-divide {
+        margin: 10px 0;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .view-bag {
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 13px;
+    }
+
+    /* display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -18,5 +50,5 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-    }
+    } */
 }

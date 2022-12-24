@@ -19,15 +19,15 @@ export const Login = () => {
             <p>
               <strong>To continue, log in to e-commerce.</strong>
             </p>
-            <button className="button button-secondary">
+            <button className="btn btn-secondary">
               <RiFacebookBoxFill />
               Continue with Facebook
             </button>
-            <button className="button button-dark">
+            <button className="btn btn-dark">
               <RiAppleFill />
               Continue with Apple
             </button>
-            <button className="button button-outline">
+            <button className="btn btn-outline">
               <FcGoogle />
               Continue with Google
             </button>
@@ -63,7 +63,7 @@ export const Login = () => {
                 <label htmlFor="remember-me">Remember me</label>
               </form>
               <div className="login-btn"></div>
-              <button className="login-btn button-primary">Login</button>
+              <button className="login-btn btn-primary">Login</button>
             </div>
             <div className="or-divide">
               <span className="hr"></span>

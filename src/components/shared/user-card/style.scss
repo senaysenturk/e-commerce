@@ -7,12 +7,16 @@
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    display: none;
+    position: fixed;
+    width: 500px;
+    right: 0;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 101232112313;
 
     .auth-options {
+        margin-top: 10px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -28,4 +32,106 @@
         align-items: center;
         justify-content: center;
     }
+
+    .content-options ul {
+        display: flex;
+        flex-direction: column;
+        padding: 10px 20px;        
+
+        li {
+            width: 100%;
+            a {
+                color: #333;;
+                font-size: 15px;
+                font-weight: 600;
+                padding: 12px;
+                display: block;
+                text-align: left;
+
+                &:hover {
+                    background-color: #ddd;
+                }
+            }
+        }
+    }
+
+    /*  .content-options ul {
+        display: flex;
+        flex-direction: column;
+        //left: 0;
+
+        li {
+            display: flex;
+            a {
+                color: red;
+                font-size: 15px;
+                font-weight: 600;
+                padding: 12px 16px;
+                display: block;
+                text-align: left;
+
+                &:hover {
+                  background-color: #ddd;
+                }
+            }
+            
+        }
+    } */
 }
+
+/* .container {
+    position: fixed;
+    width: 500px;
+    right: 0;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 301232112313;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+
+/*  .auth-options {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        font-size: 13px;
+    }
+
+    .or-divide {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .content-options ul {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        //justify-content: center;
+        list-style: none;
+
+        li {
+            // margin-left: 5%;
+            // padding-right: 1%;
+
+            Links {
+                color: black;
+                font-size: 15px;
+                font-weight: 600;
+                padding: 12px 16px;
+                display: block;
+                text-align: left;
+
+                &:hover {
+                  background-color: #ddd;
+                }
+              }
+        }
+    }
+} */
