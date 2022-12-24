@@ -14,13 +14,12 @@
 
 .btn {
   font-family: Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
+  text-transform: capitalize;
   font-size: 14px;
   letter-spacing: 2px;
   line-height: 20px;
-  width: 450px;
+  width: 350px;
   height: 50px;
-  //border-radius: 500px;
   font-weight: 700;
   display: flex;
   justify-content: center;
