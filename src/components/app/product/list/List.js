@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import SmallCard from "../small-card/SmallCard";
 import BigCard from "../big-card/BigCard";
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 import "./style.scss";
 import Carousel from "../carousel/Carousel";
+import Modal from "../../../shared/modal/Modal";
 
 const List = () => {
   const products_1 = [
@@ -17,8 +18,11 @@ const List = () => {
     "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/6070/760/429/6070760429_1_1_1.jpg?t=1669727841002&impolicy=stradivarius-itxmediumhigh&imwidth=390&imformat=chrome&imdensity=1.25",
     "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/6202/267/001/6202267001_1_1_2.jpg?t=1669732582176",
   ];
+  const [isOpen, setIsOpen] = useState(false);
+  console.log(isOpen);
   return (
     <div className="list">
+      {isOpen && <Modal setIsOpen={setIsOpen} />}
       <div className="row">
         <div className="row-header">
           <h2>Recommended for you</h2>
@@ -32,11 +36,11 @@ const List = () => {
           <div className="column-2">
             <div className="row">
               {products_1.map((product, index) => (
-                <SmallCard path={product} index />
+                <SmallCard path={product} setIsOpen={setIsOpen} index />
               ))}
 
               {products_2.map((product, index) => (
-                <SmallCard path={product} index />
+                <SmallCard path={product} setIsOpen={setIsOpen} index />
               ))}
             </div>
           </div>

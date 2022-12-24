@@ -90,16 +90,16 @@ const Footer = () => {
         <div className="news-btn">
           <span> Stay Up To Date</span>
           <div className="contact-email">
-          <input
-            type="email"
-            placeholder="Type your email address..."
-            className="news-email"
-            name="news-email"
-          />
-          <a href="/#" class="buton buton-outline">
-            Send
-          </a>
-           </div> 
+            <input
+              type="email"
+              placeholder="Type your email address..."
+              className="news-email"
+              name="news-email"
+            />
+            <a href="/#" className="buton buton-outline">
+              Send
+            </a>
+          </div>
         </div>
 
         <div className="social-menu">

@@ -1,20 +1,23 @@
-import React from "react";
-import CardDetails from "../../../shared/card/card-details/CardDetails";
+import React, { useState } from "react";
 import "./style.scss";
 
-const SmallCard = ({ path }) => {
+const SmallCard = ({ path, setIsOpen }) => {
   return (
     <div className="small-card">
       <div className="product-img">
         <img src={path} alt="Çiçek işlemeli bluz" />
       </div>
       <div className="quickview">
-        <span class="quickview_icon" id="Swing Dress" onClick={<CardDetails />}>
+        <span
+          className="quickview_icon"
+          id="Swing Dress"
+          onClick={() => setIsOpen(true)}
+        >
           Quick View
         </span>
         <div className="quickview_info" lang="tr">
-          <p class="quickview_info">Çiçek işlemeli bluz</p>
-          <p class="quickview_info_price" id="bluz">
+          <p className="quickview_info">Çiçek işlemeli bluz</p>
+          <p className="quickview_info_price" id="bluz">
             $298.00
           </p>
         </div>
