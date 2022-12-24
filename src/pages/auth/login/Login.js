@@ -14,7 +14,7 @@ export const Login = () => {
         </div>
       </header>
       <main>
-        <div className="container">
+        <div className="auth-container">
           <div className="login-with">
             <p>
               <strong>To continue, log in to e-commerce.</strong>
