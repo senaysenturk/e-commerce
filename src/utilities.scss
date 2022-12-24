@@ -67,6 +67,11 @@
 .btn-gray {
   color: rgb(248, 248, 248);
   background-color: var(--gray-color);
+  border: none;
+
+  &:hover {
+    border: 1px solid #000;
+  }
 }
 
 .hr {
@@ -88,16 +93,19 @@
   text-transform: uppercase;
   opacity: 0;
   transition: all ease-in-out 250ms;
+
   &:hover {
     opacity: 1;
     background-color: rgba(248, 247, 247, 0.4);
   }
+
   .quickview_icon {
     font-size: 0.6rem;
     background-color: rgba(204, 204, 204, 0.9);
     padding: 0.7rem 1rem;
     align-self: center;
   }
+
   .quickview_info {
     .quickview_info {
       font-size: 1rem;
