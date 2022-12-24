@@ -8,7 +8,7 @@ import { Link, useNavigate } from "react-router-dom";
 export const UserCard = () => {
   const navigate = useNavigate();
   return (
-    <div className="container">
+    <div className="user-container">
       <div className="auth-options">
         <button className="btn btn-gray" onClick={() => navigate("auth")}>
           Login
