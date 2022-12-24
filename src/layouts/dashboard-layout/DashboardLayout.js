@@ -7,7 +7,7 @@ import Footer from "../../components/shared/footer/Footer";
 function DashboardLayout() {
   return (
     <div className="App">
-      <Header title={"e-commerce"} />
+      <Header title={"shiwear"} />
       <Slider />
       <List />
       <Footer />

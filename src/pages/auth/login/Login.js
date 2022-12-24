@@ -17,7 +17,7 @@ export const Login = () => {
         <div className="auth-container">
           <div className="login-with">
             <p>
-              <strong>To continue, log in to e-commerce.</strong>
+              <strong>To continue, log in to Shiwear.</strong>
             </p>
             <button className="btn btn-secondary">
               <RiFacebookBoxFill />
@@ -72,7 +72,7 @@ export const Login = () => {
               <p>
                 <strong>Don't have an account?</strong>
               </p>
-              <button className="button button-outline">Sign Up</button>
+              <button className="btn btn-outline">Sign Up</button>
             </div>
           </div>
         </div>

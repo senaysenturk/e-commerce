@@ -13,13 +13,13 @@ function SignUp() {
         </div>
       </header>
       <main>
-        <div className="container">
+        <div className="auth-container">
           <div className="login-with">
-            <button className="button button-secondary">
+            <button className="btn btn-secondary">
               <RiFacebookBoxFill />
               Continue with Facebook
             </button>
-            <button className="button button-outline">
+            <button className="btn btn-outline">
               <FcGoogle />
               Continue with Google
             </button>
@@ -75,7 +75,7 @@ function SignUp() {
             </div>
             <div className="remember-me">
               <div className="login-btn"></div>
-              <button className="login-btn button-primary">Sign up</button>
+              <button className="login-btn btn-primary">Sign up</button>
             </div>
             <div className="or-divide">
               <span className="hr"></span>
@@ -84,7 +84,7 @@ function SignUp() {
               <p>
                 <strong>Don't have an account?</strong>
               </p>
-              <button className="button button-outline">Sign Up</button>
+              <button className="btn btn-outline">Sign Up</button>
             </div>
           </div>
         </div>
