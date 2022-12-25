@@ -65,9 +65,10 @@
     }
     a {
       color: var(--primary-color);
+      height: 20px;
       &:hover {
         color: var(--dark-color);
-        transform: scale(1.1);
+        transform: scale(1.05);
         border-bottom: 1px solid var(--primary-color);
       }
     }

@@ -8,14 +8,16 @@
   overflow-y: scroll;
   overscroll-behavior: contain;
   .modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100vw;
     height: 100vh;
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(240, 240, 240, 0.6);
     color: black;
     z-index: 10;
     border-radius: 5px;
     box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
-
     .closeBtn {
       cursor: pointer;
       font-weight: 500;
@@ -27,8 +29,8 @@
       background: white;
       transition: all 0.25s ease;
       position: absolute;
-      right: 0;
-      top: 0;
+      right: 10px;
+      top: 10px;
       align-self: flex-end;
 
       &:hover {
