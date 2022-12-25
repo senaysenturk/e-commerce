@@ -20,7 +20,7 @@ footer {
     justify-items: flex-start;
     justify-content: space-around;
     align-items: flex-start;
-    width: 70%;
+    width: 80%;
     height: 40%;
 
     span {
@@ -28,6 +28,10 @@ footer {
       display: flex;
       justify-items: end;
       justify-content: flex-start;
+      white-space: nowrap
+    } 
+    li{
+display: flex;
     }
 
     .store a,
@@ -37,6 +41,7 @@ footer {
       color: $dark-color;
       display: flex;
       justify-items: end;
+      white-space: nowrap;
     }
   }
 
@@ -127,22 +132,23 @@ footer {
       }
     }
   }
-
- 
 }
-@media (max-width: 768px){
-  .footer{
+@media (max-width: 768px) {
+  .footer {
     display: flex;
     flex-direction: column;
-    font-size: .7rem;
-    
+    font-size: 0.5rem;
+
 
     .info-menu {
       margin: 20px 0px 20px 0;
       width: 100%;
       padding: 0;
+    }
+  }
+.contact-menu{
+  .contact-email{
+    width: 100%;
+  }}
+}
 
-  }
-  }
-
-  }
