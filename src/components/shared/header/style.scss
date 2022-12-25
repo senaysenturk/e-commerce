@@ -19,10 +19,11 @@ $danger-color: brown;
     .logo {
       display: flex;
       align-items: center;
-
+      font-family: "Sacramento", cursive;
       h1 {
         cursor: pointer;
         color: #37595a;
+        font-size: 35px;
       }
 
       i {
@@ -67,7 +68,7 @@ $danger-color: brown;
       gap: 0 25px;
 
       li {
-        position: relative; 
+        position: relative;
 
         margin-left: 5%;
         padding-right: 1%;
@@ -79,11 +80,11 @@ $danger-color: brown;
         }
       }
 
-      &>li:hover .container {
+      & > li:hover .container {
         display: block;
       }
 
-      &>li:hover .cart-container {
+      & > li:hover .cart-container {
         display: block;
       }
     }
@@ -165,11 +166,11 @@ $danger-color: brown;
         }
       }
 
-      &>li:hover .dropdown-menu {
+      & > li:hover .dropdown-menu {
         display: block;
       }
 
-      &>li:hover>a {
+      & > li:hover > a {
         transform: scale(1.2);
       }
     }

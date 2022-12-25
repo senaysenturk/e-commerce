@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Router } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { RiHeart3Line } from "react-icons/ri";
 import { AiOutlineSearch, AiOutlineUser } from "react-icons/ai";
 import { GrCart } from "react-icons/gr";
@@ -8,14 +8,15 @@ import "./style.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import DropdownMenu from "../dropdown-menu/DropdownMenu";
 import UserCard from "../user-card/UserCard";
-import CartCard from "../cart-card/CartCard"
+import CartCard from "../cart-card/CartCard";
 
 export const Header = ({ title }) => {
+  const navigate = useNavigate();
   return (
     <>
       <header className="app-header">
         <div className="main-header">
-          <div className="logo">
+          <div className="logo" onClick={() => navigate("/")}>
             <i className="fa-solid fa-signature"></i>
             <h1>{title}</h1>
           </div>

@@ -1,10 +1,10 @@
 import React from "react";
 import "./style.scss";
 import { RiCloseLine } from "react-icons/ri";
-import SmallCard from "../../app/product/small-card/SmallCard";
-import List from "../../app/product/list/List";
 
-const Modal = ({ setIsOpen }) => {
+import CardDetails from "../card/card-details/CardDetails";
+
+const Modal = ({ setIsOpen, path }) => {
   return (
     <>
       {/* <div className="darkBG" onClick={() => setIsOpen(false)}> */}
@@ -13,7 +13,7 @@ const Modal = ({ setIsOpen }) => {
           <button className="closeBtn" onClick={() => setIsOpen(false)}>
             <RiCloseLine />
           </button>
-          <List />
+          <CardDetails path={path} />
         </div>
       </div>
       {/* </div> */}
@@ -22,4 +22,3 @@ const Modal = ({ setIsOpen }) => {
 };
 
 export default Modal;
-
