@@ -16,8 +16,10 @@ import Login from "./pages/auth/login/Login";
 import SignUp from "./pages/auth/sign-up/SignUp";
 
 import NotFound from "./pages/not-found/NotFound";
+import Product from "./pages/dashboard/product/Product";
 
 function App() {
+  let id = 1;
   return (
     <>
       <BrowserRouter>
@@ -32,6 +34,7 @@ function App() {
             <Route path="trending" element={<Trending />} />
             <Route path="sale" element={<Sale />} />
             <Route path="shopping-cart" element={<ShoppingCart />} />
+            <Route path={`/product/${id}`} element={<Product />} />
           </Route>
 
           <Route path="auth" element={<AuthLayout />}>

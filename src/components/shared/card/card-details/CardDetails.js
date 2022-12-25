@@ -1,7 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./style.scss";
 
 const CardDetails = ({ path }) => {
+  const navigate = useNavigate();
   return (
     <>
       <div className="product-flex">
@@ -41,7 +43,9 @@ const CardDetails = ({ path }) => {
           <button type="button" className="btn btn-primary">
             Add to cart
           </button>
-          <a href="">View Full Item</a>
+          <a href="" onClick={() => navigate("/card-detail")}>
+            View Full Item
+          </a>
         </div>
       </div>
     </>

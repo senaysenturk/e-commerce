@@ -9,7 +9,7 @@ function SignUp() {
     <div className="main">
       <header>
         <div className="logo">
-          <i className="fa-solid fa-signature">shiwear</i>
+          <i className="fa-solid fa-signature"></i>
         </div>
       </header>
       <main>
