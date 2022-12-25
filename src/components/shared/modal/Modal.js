@@ -22,4 +22,4 @@ const Modal = ({ setIsOpen }) => {
 };
 
 export default Modal;
-gi;
+
