@@ -1,10 +1,8 @@
 import "./App.css";
 import "./utilities.scss";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
 import DashboardLayout from "./layouts/dashboard-layout/DashboardLayout";
 import AuthLayout from "./layouts/auth-layout/AuthLayout";
-
 import Home from "./pages/dashboard/home/Home";
 import Women from "./pages/dashboard/women/Women";
 import Man from "./pages/dashboard/man/Man";
@@ -14,7 +12,6 @@ import BestSellers from "./pages/dashboard/best-sellers/BestSellers";
 import Trending from "./pages/dashboard/trending/Trending";
 import Sale from "./pages/dashboard/sale/Sale";
 import ShoppingCart from "./pages/dashboard/shopping-cart/ShoppingCart";
-
 import Login from "./pages/auth/login/Login";
 import SignUp from "./pages/auth/sign-up/SignUp";
 
