@@ -14,6 +14,7 @@ import Sale from "./pages/dashboard/sale/Sale";
 import ShoppingCart from "./pages/dashboard/shopping-cart/ShoppingCart";
 import Login from "./pages/auth/login/Login";
 import SignUp from "./pages/auth/sign-up/SignUp";
+import OrdersPage from "./components/shared/orders-page/OrdersPage";
 
 import NotFound from "./pages/not-found/NotFound";
 
@@ -32,6 +33,7 @@ function App() {
             <Route path="trending" element={<Trending />} />
             <Route path="sale" element={<Sale />} />
             <Route path="shopping-cart" element={<ShoppingCart />} />
+            <Route path="orders-page" element={<OrdersPage/>} />
           </Route>
 
           <Route path="auth" element={<AuthLayout />}>
