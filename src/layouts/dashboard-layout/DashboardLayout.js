@@ -1,16 +1,11 @@
 import React from "react";
-import List from "../../components/app/product/list/List";
-import Header from "../../components/shared/header/Header";
-import Slider from "../../components/shared/slider/Slider";
-import Footer from "../../components/shared/footer/Footer";
+
+import { Outlet } from "react-router-dom";
 
 function DashboardLayout() {
   return (
     <div className="App">
-      <Header title={"shiwear"} />
-      <Slider />
-      <List />
-      <Footer />
+      <Outlet></Outlet>
     </div>
   );
 }
