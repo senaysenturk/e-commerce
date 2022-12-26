@@ -2,6 +2,7 @@ import React from "react";
 
 import "./style.scss";
 import "../../../utilities.scss";
+
 import { Link, useNavigate} from "react-router-dom";
 
 export const CartCard = () => {
@@ -18,7 +19,7 @@ export const CartCard = () => {
         <span className="hr"></span>
       </div>
       <div className="view-bag">
-      <button className="btn btn-gray" onClick={() => navigate("orders-page")}>View Bag</button>
+      <button className="btn btn-gray" onClick={() => navigate("shopping-cart")}>View Bag</button>
       </div>
     </div>
   );
