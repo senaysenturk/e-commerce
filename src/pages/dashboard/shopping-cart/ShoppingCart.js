@@ -4,13 +4,18 @@ import "./style.scss";
 
 import OrderSummary from "../../../components/app/shopping-cart/order-summary/OrderSummary";
 import OrderItem from "../../../components/app/shopping-cart/order-item/OrderItem";
+import Header from "../../../components/shared/header/Header";
 
 export const ShoppingCart = () => {
   return (
     <>
+      <Header />
       <div className="shopping-cart">
         <div className="shopping-cart-message">
-          <p>Sepetinize 1 adet daha kampanyali urun ekleyin, 1 urun hediyemiz olsun.</p>
+          <p>
+            Sepetinize 1 adet daha kampanyali urun ekleyin, 1 urun hediyemiz
+            olsun.
+          </p>
         </div>
         <div className="shopping-cart-content">
           <OrderItem />
