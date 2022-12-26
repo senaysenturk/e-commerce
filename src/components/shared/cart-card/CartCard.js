@@ -26,12 +26,12 @@ export const CartCard = () => {
               </span>
               Free Shipping For Shopping <span>Over 200 TL</span>
             </p>
-            <p>
+            {/* <p>
               <span className="icon-ticket">
                 <GiTicket />
               </span>
               2 for 1
-            </p>
+            </p> */}
           </div>
         </div>
       </div>

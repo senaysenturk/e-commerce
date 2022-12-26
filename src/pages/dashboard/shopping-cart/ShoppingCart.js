@@ -11,12 +11,12 @@ export const ShoppingCart = () => {
     <>
       <Header title={"shiwear"} />
       <div className="shopping-cart">
-        <div className="shopping-cart-message">
+        {/* <div className="shopping-cart-message">
           <p>
             Sepetinize 1 adet daha kampanyali urun ekleyin, 1 urun hediyemiz
             olsun.
           </p>
-        </div>
+        </div> */}
         <div className="shopping-cart-content">
           <OrderItem />
           <OrderSummary />
