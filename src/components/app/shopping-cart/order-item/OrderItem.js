@@ -1,24 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { MdOutlineLocalShipping } from "react-icons/md";
 import { RiDeleteBinLine } from "react-icons/ri";
 
 import "./style.scss";
 
 export const OrderDetail = () => {
-  let counter = 1;
-
-  const increaseValue = () => {
-    counter++;
-    console.log(counter);
-    document.getElementById("number").innerText = counter;
-  };
-
-  const decreaseValue = () => {
-    if (counter > 1) {
-      counter--;
-      document.getElementById("number").innerText = counter;
-    }
-  };
+  const [count, setCount] = useState(0);
+  const [amount, setAmount] = useState(1);
+  console.log(count);
   return (
     <>
       <div className="order-card">
@@ -55,16 +44,16 @@ export const OrderDetail = () => {
                   <div className="item-quantity-wrapper">
                     <a
                       className="item-quantity-button item-decrease-button"
-                      onclick="decreaseValue()"
+                      onClick={() => setCount((prev) => prev - amount)}
                     >
                       <span>-</span>
                     </a>
                     <span className="item-quantity-input" id="number">
-                      1
+                      {count}
                     </span>
                     <a
                       className="item-quantity-button item-increase-button"
-                      onclick="increaseValue()"
+                      onClick={() => setCount((prev) => prev + amount)}
                     >
                       <span>+</span>
                     </a>
