@@ -61,7 +61,7 @@ export const OrderSummary = () => {
             <div className="order-confirm">
               <button
                 className="btn btn-gray"
-                onClick={() => navigate("shopping-cart")}
+                onClick={() => navigate("checkout")}
               >
                 Confirm Bag
               </button>
