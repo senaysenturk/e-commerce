@@ -50,7 +50,7 @@ export const CartCard = () => {
       <div className="view-bag">
         <button
           className="btn btn-gray"
-          onClick={() => navigate("shopping-cart")}
+          onClick={() => navigate("/shopping-cart")}
         >
           View Bag
         </button>
