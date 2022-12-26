@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { IoIosHeartEmpty, IoIosHeart } from "react-icons/io";
 import "./style.scss";
 
 const CardDetails = ({ path }) => {
   const navigate = useNavigate();
+  const [favorite, setFavorite] = useState(false);
   return (
     <>
       <div className="product-flex">
         <div className="product-img">
+          <div className="add-favorite" onClick={() => setFavorite(!favorite)}>
+            {!favorite ? <IoIosHeartEmpty /> : <IoIosHeart />}
+          </div>
           <img src={path} alt="Çiçek işlemeli bluz" />
         </div>
 
@@ -32,13 +37,7 @@ const CardDetails = ({ path }) => {
           </div>
           <div className="quantity-group">
             <p>Quantity:</p>
-            <input
-              className="quantity"
-              max="9999"
-              min="1"
-              value="1"
-              type="number"
-            />
+            <input className="quantity" max="9999" min="1" type="number" />
           </div>
           <button type="button" className="btn btn-primary">
             Add to cart
