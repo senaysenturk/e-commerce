@@ -23,6 +23,7 @@ $danger-color: brown;
         cursor: pointer;
         color: #37595a;
         font-size: 50px;
+        font-family: "Sacramento", cursive;
       }
 
       i {
@@ -79,7 +80,7 @@ $danger-color: brown;
         }
       }
 
-      &>li:hover .user-container {
+      & > li:hover .user-container {
         display: block;
       }
 

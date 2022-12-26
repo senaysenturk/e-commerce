@@ -26,12 +26,12 @@ export const CartCard = () => {
               </span>
               Free Shipping For Shopping <span>Over 200 TL</span>
             </p>
-            <p>
+            {/* <p>
               <span className="icon-ticket">
                 <GiTicket />
               </span>
               2 for 1
-            </p>
+            </p> */}
           </div>
         </div>
       </div>
@@ -50,7 +50,7 @@ export const CartCard = () => {
       <div className="view-bag">
         <button
           className="btn btn-gray"
-          onClick={() => navigate("shopping-cart")}
+          onClick={() => navigate("/shopping-cart")}
         >
           View Bag
         </button>

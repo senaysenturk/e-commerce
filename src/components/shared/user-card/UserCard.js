@@ -10,12 +10,12 @@ export const UserCard = () => {
   return (
     <div className="user-container">
       <div className="auth-options">
-        <button className="btn btn-gray" onClick={() => navigate("auth")}>
+        <button className="btn btn-gray" onClick={() => navigate("/auth")}>
           Login
         </button>
         <button
           className="btn btn-outline"
-          onClick={() => navigate("auth/signUp")}
+          onClick={() => navigate("/auth/signUp")}
         >
           Sign Up Now
         </button>
