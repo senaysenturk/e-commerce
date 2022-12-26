@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./style.scss";
-
+import { RiHeart3Line } from "react-icons/ri";
 import Modal from "../../../shared/modal/Modal";
 
 const SmallCard = ({ path }) => {
