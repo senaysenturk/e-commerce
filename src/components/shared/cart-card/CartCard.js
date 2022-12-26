@@ -3,12 +3,41 @@ import React from "react";
 import "./style.scss";
 import "../../../utilities.scss";
 
-import { Link, useNavigate} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
+import { GiTicket } from "react-icons/gi";
 
 export const CartCard = () => {
   const navigate = useNavigate();
   return (
     <div className="cart-container">
+      <div className="product-card">
+        <div className="product-card-img">
+          <img src="https://02b3ab.cdn.akinoncloud.com/products/2022/11/02/42945/f713dc12-8868-47b0-b64a-aa081b93ce92_size220x220_cropCenter.jpg" />
+        </div>
+        <div className="product-card-content">
+          <p>Kael Kadın Bornoz Ekru</p>
+          <p>Adet: 1</p>
+          <strong>1.699,99 TL</strong>
+          <div className="product-card-campaign">
+            <p>
+              <span className="icon-ticket">
+                <GiTicket />
+              </span>
+              Free Shipping For Shopping <span>Over 200 TL</span>
+            </p>
+            <p>
+              <span className="icon-ticket">
+                <GiTicket />
+              </span>
+              2 for 1
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className="or-divide">
+        <span className="hr"></span>
+      </div>
       <div className="cart-summary">
         <p>Total</p>
         <p className="cart-price">
@@ -19,7 +48,12 @@ export const CartCard = () => {
         <span className="hr"></span>
       </div>
       <div className="view-bag">
-      <button className="btn btn-gray" onClick={() => navigate("shopping-cart")}>View Bag</button>
+        <button
+          className="btn btn-gray"
+          onClick={() => navigate("shopping-cart")}
+        >
+          View Bag
+        </button>
       </div>
     </div>
   );
