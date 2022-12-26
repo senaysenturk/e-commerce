@@ -7,7 +7,7 @@ import "./style.scss";
 export const OrderDetail = () => {
   const [count, setCount] = useState(0);
   const [amount, setAmount] = useState(1);
-  console.log(count);
+  
   return (
     <>
       <div className="order-card">
