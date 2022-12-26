@@ -1,19 +1,24 @@
-import React from 'react'
+import React from "react";
 
 import "./style.scss";
-import "../../../utilities.scss";
 
 import OrderSummary from "../../../components/app/shopping-cart/order-summary/OrderSummary";
-import CardDetails from "../../../components/shared/card/card-details/CardDetails";
+import OrderItem from "../../../components/app/shopping-cart/order-item/OrderItem";
+
 export const ShoppingCart = () => {
   return (
     <>
-    <div>
-      <OrderSummary />
-      <CardDetails />
-    </div>
+      <div className="shopping-cart">
+        <div className="shopping-cart-message">
+          <p>Sepetinize 1 adet daha kampanyali urun ekleyin, 1 urun hediyemiz olsun.</p>
+        </div>
+        <div className="shopping-cart-content">
+          <OrderItem />
+          <OrderSummary />
+        </div>
+      </div>
     </>
-  )
-}
+  );
+};
 
 export default ShoppingCart;
