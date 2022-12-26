@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import "./style.scss";
-import { RiHeart3Line } from "react-icons/ri";
 import Modal from "../../../shared/modal/Modal";
 
 const SmallCard = ({ path }) => {
   const [isOpen, setIsOpen] = useState(false);
-  console.log(isOpen);
+  //console.log(isOpen);
   return (
     <>
       {isOpen && <Modal setIsOpen={setIsOpen} path={path} />}
@@ -14,11 +13,7 @@ const SmallCard = ({ path }) => {
           <img src={path} alt="Çiçek işlemeli bluz" />
         </div>
         <div className="quickview">
-          <span
-            className="quickview_icon"
-            id="Swing Dress"
-            onClick={() => setIsOpen(true)}
-          >
+          <span className="quickview_icon" onClick={() => setIsOpen(true)}>
             Quick View
           </span>
           <div className="quickview_info" lang="tr">
