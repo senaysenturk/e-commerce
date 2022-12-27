@@ -19,6 +19,7 @@ import SignUp from "./pages/auth/sign-up/SignUp";
 import NotFound from "./pages/not-found/NotFound";
 import Checkout from "./pages/dashboard/checkout/Checkout";
 import Favorites from "./pages/dashboard/favorites/Favorites";
+import UserProfile from "./pages/user-profile/UserProfile";
 
 function App() {
   let id = 1;
@@ -35,6 +36,7 @@ function App() {
             <Route path="best-sellers" element={<BestSellers />} />
             <Route path="trending" element={<Trending />} />
             <Route path="sale" element={<Sale />} />
+            <Route path="use-profile" element={<UserProfile/>} />
             <Route path="shopping-cart" element={<ShoppingCart />}>
               <Route path="checkout" element={<Checkout />} />
             </Route>
