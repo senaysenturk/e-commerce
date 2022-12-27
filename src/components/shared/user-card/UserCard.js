@@ -25,11 +25,11 @@ export const UserCard = () => {
       </div>
       <div className="content-options">
         <ul>
-        <li>
+          <li>
             <Link to="/user-profile">My Account</Link>
           </li>
           <li>
-            <Link>Order Tracking</Link>
+            <Link to="/add-product">Order Tracking</Link>
           </li>
           <li>
             <Link>Easy Returns</Link>

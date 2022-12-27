@@ -12,16 +12,16 @@ import BestSellers from "./pages/dashboard/best-sellers/BestSellers";
 import Trending from "./pages/dashboard/trending/Trending";
 import Sale from "./pages/dashboard/sale/Sale";
 import ShoppingCart from "./pages/dashboard/shopping-cart/ShoppingCart";
-import Product from "./pages/dashboard/product/Product";
 import Login from "./pages/auth/login/Login";
 import SignUp from "./pages/auth/sign-up/SignUp";
-
 import NotFound from "./pages/not-found/NotFound";
 import Checkout from "./pages/dashboard/checkout/Checkout";
 import Favorites from "./pages/dashboard/favorites/Favorites";
 import UserProfile from "./pages/user-profile/UserProfile";
 import Products from "./pages/dashboard/product/Products";
 import CardDetail from "./components/shared/card/CardDetail";
+import AddProduct from "./pages/admin/add-product/AddProduct";
+import AdminLayout from "./layouts/admin-layout/AdminLayout";
 
 function App() {
   let id = 1;
@@ -52,6 +52,9 @@ function App() {
           <Route path="auth" element={<AuthLayout />}>
             <Route index element={<Login />} />
             <Route path="signUp" element={<SignUp />} />
+          </Route>
+          <Route path="admin" element={<AdminLayout />}>
+            <Route path="add-product" element={<AddProduct />} />
           </Route>
 
           <Route path="*" element={<NotFound />} />

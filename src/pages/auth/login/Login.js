@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./index.scss";
+import "./style.scss";
 import "../../../utilities.scss";
 import { RiFacebookBoxFill, RiAppleFill } from "react-icons/ri";
 import { FcGoogle } from "react-icons/fc";
@@ -62,8 +62,9 @@ export const Login = () => {
                 <input type="checkbox" id="remember-me" />
                 <label htmlFor="remember-me">Remember me</label>
               </form>
-              <div className="login-btn"></div>
-              <button className="login-btn btn-primary">Login</button>
+              <div className="login-btn">
+                <button className="login-btn btn-primary">Login</button>
+              </div>
             </div>
             <div className="or-divide">
               <span className="hr"></span>

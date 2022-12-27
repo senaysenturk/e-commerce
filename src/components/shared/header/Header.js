@@ -2,6 +2,7 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { RiHeart3Line } from "react-icons/ri";
 import { AiOutlineSearch, AiOutlineUser } from "react-icons/ai";
+import { MdOutlineAdminPanelSettings } from "react-icons/md";
 import { GrCart } from "react-icons/gr";
 
 import "./style.scss";
@@ -28,6 +29,13 @@ export const Header = ({ title }) => {
           </div>
           <div className="options">
             <ul>
+              <li>
+                <Link to="/admin/add-product">
+                  <span className="icon">
+                    <MdOutlineAdminPanelSettings />
+                  </span>
+                </Link>
+              </li>
               <li>
                 <Link to="/favorites">
                   <span className="icon">
