@@ -19,7 +19,7 @@ const CardSummary = ({ path }) => {
 
         <div className="product-info">
           <h3 className="product-name">Lorem Ipsum</h3>
-          <span className="product-price">$218.00</span>
+          <span className="product-price">$298.00</span>
           <p className="product-detail">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit.
             Perferendis, illum odit. Expedita eveniet quam eos, deserunt
@@ -51,7 +51,7 @@ const CardSummary = ({ path }) => {
             <div className="blue"> </div>
             <div className="green"> </div>
           </div>
-          <Link to="products/product/1">VIEW FULL</Link>
+          <Link to="products/product/1">View Full</Link>
         </div>
       </div>
     </>

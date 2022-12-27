@@ -6,7 +6,7 @@ const AddProduct = () => {
     <div className="add-product">
       <h3>ADD PRODUCT</h3>
       <div className="product">
-        <label htmlFor="">Prouct Name</label>
+        <label htmlFor="">Product Name</label>
         <input type="text" />
 
         <label htmlFor="">Price</label>
