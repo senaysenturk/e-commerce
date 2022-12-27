@@ -7,10 +7,10 @@ import Footer from "../../../components/shared/footer/Footer";
 export const Home = () => {
   return (
     <>
-      <Header title={"shiwear"} />
+      {/*  <Header title={"shiwear"} /> */}
       <Slider />
       <List />
-      <Footer />{" "}
+      {/* <Footer /> */}
     </>
   );
 };

@@ -9,7 +9,7 @@ import Header from "../../../components/shared/header/Header";
 export const ShoppingCart = () => {
   return (
     <>
-      <Header title={"shiwear"} />
+      {/*  <Header title={"shiwear"} /> */}
       <div className="shopping-cart">
         {/* <div className="shopping-cart-message">
           <p>
