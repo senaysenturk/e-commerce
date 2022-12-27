@@ -35,12 +35,14 @@
         }
       }
       a {
-        color: var(--primary-color);
+        color: black;
         height: 20px;
+        border-bottom: 1px solid var(--primary-color);
+
         &:hover {
-          color: var(--dark-color);
+          color: var(--primary-color);
           transform: scale(1.05);
-          border-bottom: 1px solid var(--primary-color);
+          border-bottom: 1px solid black;
         }
       }
     }
