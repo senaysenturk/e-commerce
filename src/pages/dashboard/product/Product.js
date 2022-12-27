@@ -1,10 +1,10 @@
 import React from "react";
-import CardDetails from "../../../components/shared/card/card-details/CardDetails";
+import CardDetail from "../../../components/shared/card/CardDetail";
 
 const Product = () => {
   return (
     <>
-      <CardDetails></CardDetails>
+      <CardDetail />
     </>
   );
 };

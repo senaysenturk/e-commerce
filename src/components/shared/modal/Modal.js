@@ -1,8 +1,7 @@
 import React from "react";
 import "./style.scss";
 import { RiCloseLine } from "react-icons/ri";
-
-import CardDetails from "../card/card-details/CardDetails";
+import CardSummary from "../card/CardSummary";
 
 const Modal = ({ setIsOpen, path }) => {
   return (
@@ -13,7 +12,7 @@ const Modal = ({ setIsOpen, path }) => {
           <button className="closeBtn" onClick={() => setIsOpen(false)}>
             <RiCloseLine />
           </button>
-          <CardDetails path={path} />
+          <CardSummary path={path} />
         </div>
       </div>
       {/* </div> */}

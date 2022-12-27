@@ -20,6 +20,8 @@ import NotFound from "./pages/not-found/NotFound";
 import Checkout from "./pages/dashboard/checkout/Checkout";
 import Favorites from "./pages/dashboard/favorites/Favorites";
 import UserProfile from "./pages/user-profile/UserProfile";
+import Products from "./pages/dashboard/product/Products";
+import CardDetail from "./components/shared/card/CardDetail";
 
 function App() {
   let id = 1;
@@ -36,11 +38,14 @@ function App() {
             <Route path="best-sellers" element={<BestSellers />} />
             <Route path="trending" element={<Trending />} />
             <Route path="sale" element={<Sale />} />
-            <Route path="user-profile" element={<UserProfile/>} />
+            <Route path="user-profile" element={<UserProfile />} />
             <Route path="shopping-cart" element={<ShoppingCart />}>
               <Route path="checkout" element={<Checkout />} />
             </Route>
-            <Route path={`/product/${id}`} element={<Product />} />
+            <Route path="products" element={<Products />}>
+              <Route path={`product/${id}`} element={<CardDetail />} />
+            </Route>
+
             <Route path="favorites" element={<Favorites />} />
           </Route>
 
