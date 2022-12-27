@@ -21,7 +21,7 @@ const List = () => {
 
   return (
     <div className="list">
-      <div className="row">
+      <div className="product-row">
         <div className="row-header">
           <h2>Recommended for you</h2>
           <a href="#1">View more</a>
@@ -44,7 +44,7 @@ const List = () => {
           </div>
         </div>
       </div>
-      <div className="row">
+      <div className="product-row">
         <div className="row-header">
           <h2>Discover</h2>
           <div className="arrow-icon">
@@ -62,7 +62,7 @@ const List = () => {
           ))}
         </div>
       </div>
-      <div className="row">
+      <div className="product-row">
         <div className="row-header">
           <h2>Last viewed</h2>
           <a href="#2">View more</a>

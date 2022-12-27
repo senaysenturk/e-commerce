@@ -29,7 +29,7 @@ export const Header = ({ title }) => {
           <div className="options">
             <ul>
               <li>
-                <Link to="">
+                <Link to="/favorites">
                   <span className="icon">
                     <RiHeart3Line />
                   </span>

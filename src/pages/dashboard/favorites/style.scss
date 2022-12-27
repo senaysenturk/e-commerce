@@ -1,0 +1,16 @@
+.favorites {
+  padding: 30px 50px;
+  .row {
+    justify-content: center;
+    img {
+      width: 220px !important;
+      height: 250px !important;
+      object-fit: cover;
+      object-position: left top;
+    }
+    .row-header {
+      width: 100%;
+      text-align: left;
+    }
+  }
+}

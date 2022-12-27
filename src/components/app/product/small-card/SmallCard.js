@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import "./style.scss";
 import Modal from "../../../shared/modal/Modal";
 
-const SmallCard = ({ path }) => {
+const SmallCard = ({ path, index }) => {
   const [isOpen, setIsOpen] = useState(false);
   //console.log(isOpen);
   return (
     <>
       {isOpen && <Modal setIsOpen={setIsOpen} path={path} />}
-      <div className="small-card">
+      <div className="small-card" index>
         <div className="product-img">
           <img src={path} alt="Çiçek işlemeli bluz" />
         </div>

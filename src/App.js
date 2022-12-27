@@ -18,6 +18,7 @@ import SignUp from "./pages/auth/sign-up/SignUp";
 
 import NotFound from "./pages/not-found/NotFound";
 import Checkout from "./pages/dashboard/checkout/Checkout";
+import Favorites from "./pages/dashboard/favorites/Favorites";
 
 function App() {
   let id = 1;
@@ -38,6 +39,7 @@ function App() {
               <Route path="checkout" element={<Checkout />} />
             </Route>
             <Route path={`/product/${id}`} element={<Product />} />
+            <Route path="favorites" element={<Favorites />} />
           </Route>
 
           <Route path="auth" element={<AuthLayout />}>
