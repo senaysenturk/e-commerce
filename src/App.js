@@ -36,7 +36,7 @@ function App() {
             <Route path="best-sellers" element={<BestSellers />} />
             <Route path="trending" element={<Trending />} />
             <Route path="sale" element={<Sale />} />
-            <Route path="use-profile" element={<UserProfile/>} />
+            <Route path="user-profile" element={<UserProfile/>} />
             <Route path="shopping-cart" element={<ShoppingCart />}>
               <Route path="checkout" element={<Checkout />} />
             </Route>

@@ -5,6 +5,7 @@ import "./style.scss";
 import OrderSummary from "../../../components/app/shopping-cart/order-summary/OrderSummary";
 import OrderItem from "../../../components/app/shopping-cart/order-item/OrderItem";
 import Header from "../../../components/shared/header/Header";
+import { Outlet } from "react-router-dom";
 
 export const ShoppingCart = () => {
   return (
@@ -20,6 +21,7 @@ export const ShoppingCart = () => {
         <div className="shopping-cart-content">
           <OrderItem />
           <OrderSummary />
+          <Outlet/>
         </div>
       </div>
     </>

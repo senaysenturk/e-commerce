@@ -26,7 +26,7 @@ export const UserCard = () => {
       <div className="content-options">
         <ul>
         <li>
-            <Link onClick={() => navigate("use-profile")}>My Account</Link>
+            <Link to="/user-profile">My Account</Link>
           </li>
           <li>
             <Link>Order Tracking</Link>
