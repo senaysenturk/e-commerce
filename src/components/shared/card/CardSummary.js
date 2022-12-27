@@ -51,7 +51,7 @@ const CardSummary = ({ path }) => {
             <div className="blue"> </div>
             <div className="green"> </div>
           </div>
-          <Link to="products/product/1">View Full Item</Link>
+          <Link to="products/product/1">VIEW FULL</Link>
         </div>
       </div>
     </>
