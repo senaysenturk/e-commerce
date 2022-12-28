@@ -23,6 +23,7 @@ import Products from "./pages/dashboard/product/Products";
 import CardDetail from "./components/shared/card/CardDetail";
 import AddProduct from "./pages/admin/add-product/AddProduct";
 import AdminLayout from "./layouts/admin-layout/AdminLayout";
+import { ProductProvider } from "./contexts/product/ProductContext";
 
 function App() {
   let id = 1;
@@ -56,7 +57,14 @@ function App() {
             <Route path="signUp" element={<SignUp />} />
           </Route>
           <Route path="admin" element={<AdminLayout />}>
-            <Route path="add-product" element={<AddProduct />} />
+            <Route
+              path="add-product"
+              element={
+                <ProductProvider>
+                  <AddProduct></AddProduct>
+                </ProductProvider>
+              }
+            />
           </Route>
 
           <Route path="*" element={<NotFound />} />
