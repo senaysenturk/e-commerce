@@ -1,13 +1,10 @@
 import React, { useState } from "react";
-import list from "../../../data";
+import list from "../../../../data";
 import "./style.scss";
 
-import OrderSummary from "../../../components/app/shopping-cart/order-summary/OrderSummary";
-import OrderItem from "../../../components/app/shopping-cart/order-item/OrderItem";
-import Header from "../../../components/shared/header/Header";
-import { Outlet } from "react-router-dom";
+import OrderItem from "../../../../components/app/shopping-cart/order-item/OrderItem";
 
-export const ShoppingCart = () => {
+export const Cart = () => {
   const [cart, setCart] = useState([...list]);
   const [message, setMessage] = useState("");
 
@@ -53,11 +50,10 @@ export const ShoppingCart = () => {
             setMessage={setMessage}
           />
           {/* <OrderSummary price={price} /> */}
-          <Outlet />
         </div>
       </div>
     </>
   );
 };
 
-export default ShoppingCart;
+export default Cart;

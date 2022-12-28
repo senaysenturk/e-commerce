@@ -11,11 +11,12 @@ import NewArrivals from "./pages/dashboard/new-arrivals/NewArrivals";
 import BestSellers from "./pages/dashboard/best-sellers/BestSellers";
 import Trending from "./pages/dashboard/trending/Trending";
 import Sale from "./pages/dashboard/sale/Sale";
-import ShoppingCart from "./pages/dashboard/shopping-cart/ShoppingCart";
+import Shopping from "./pages/dashboard/shopping/Shopping";
+import Cart from "./pages/dashboard/shopping/cart/Cart";
 import Login from "./pages/auth/login/Login";
 import SignUp from "./pages/auth/sign-up/SignUp";
 import NotFound from "./pages/not-found/NotFound";
-import Checkout from "./pages/dashboard/checkout/Checkout";
+import Checkout from "./pages/dashboard/shopping/checkout/Checkout";
 import Favorites from "./pages/dashboard/favorites/Favorites";
 import UserProfile from "./pages/user-profile/UserProfile";
 import Products from "./pages/dashboard/product/Products";
@@ -39,7 +40,8 @@ function App() {
             <Route path="trending" element={<Trending />} />
             <Route path="sale" element={<Sale />} />
             <Route path="user-profile" element={<UserProfile />} />
-            <Route path="shopping-cart" element={<ShoppingCart />}>
+            <Route path="shopping" element={<Shopping />}>
+              <Route path="cart" element={<Cart />} />
               <Route path="checkout" element={<Checkout />} />
             </Route>
             <Route path="products" element={<Products />}>
