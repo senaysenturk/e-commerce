@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import list from "../../../../data";
 import "./style.scss";
 
+import CartContext from "../../../../contexts/CartContext";
 import OrderItem from "../../../../components/app/shopping-cart/order-item/OrderItem";
 
 export const Cart = () => {
