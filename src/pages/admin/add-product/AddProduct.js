@@ -13,7 +13,7 @@ const AddProduct = () => {
   //   price: "",
   //   img: "",
   //   amount: "",
-  //   cartPrice: "",
+  //   amount "",
   // });
 
   const handleSetProduct = (e) =>
