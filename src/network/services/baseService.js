@@ -13,7 +13,7 @@ baseService.post = async (url, endpoint, data) => {
 
 baseService.get = async (url, endpoint) => {
   try {
-    const response = await axios.get(`${url}\${endpoint}`);
+    const response = await axios.get(`${url}${endpoint}`);
     return response;
   } catch (error) {
     console.log(error);
