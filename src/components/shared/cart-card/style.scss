@@ -43,6 +43,17 @@
         text-align: left;
       }
     }
+
+    .product-card-button {
+      margin-left: 35px;
+      color: red;
+      .icon-x {
+        font-size: 24px;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
   }
 
   .cart-summary {

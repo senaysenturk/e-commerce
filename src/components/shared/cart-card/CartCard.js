@@ -34,6 +34,9 @@ export const CartCard = () => {
             </p> */}
           </div>
         </div>
+        <div className="product-card-button">
+          <span className="icon-x">x</span>
+        </div>
       </div>
       <div className="or-divide">
         <span className="hr"></span>
