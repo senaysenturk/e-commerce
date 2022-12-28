@@ -5,7 +5,7 @@ import OrderSummary from "../order-summary/OrderSummary";
 
 import "./style.scss";
 
-export const OrderDetail = ({ cart, setCart, handleChange }) => {
+export const OrderDetail = ({ cart, setCart, handleChange, setMessage }) => {
   const [count, setCount] = useState(0);
   const [amount, setAmount] = useState(1);
   const [price, setPrice] = useState(0);
@@ -26,11 +26,27 @@ export const OrderDetail = ({ cart, setCart, handleChange }) => {
     let cartCount = 0;
     cart.map((item) => (cartCount += item.amount));
     setCount(cartCount);
-  }
+  };
+
+  const handleMessage = () => {
+    console.log(price);
+    let value = 0;
+    if (price < 200) {
+      value = 200 - price;
+      setMessage(
+        "Sepetinize " +
+          value +
+          " TL degerinde daha urun ekleyin, kargo bedava olsun."
+      );
+    } else {
+      setMessage("");
+    }
+  };
 
   useEffect(() => {
     handlePrice();
     handleCount();
+    handleMessage();
   });
 
   return (
@@ -89,7 +105,7 @@ export const OrderDetail = ({ cart, setCart, handleChange }) => {
                     </div>
                   </div>
                   <div className="item-price">
-                    <span className="actual-price">{product.price}</span>
+                    {/* <span className="actual-price">{product.price}</span> */}
                     <span className="actual-price">{product.cartPrice}</span>
                   </div>
                 </div>

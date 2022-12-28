@@ -1,25 +1,25 @@
 const list = [
-    {
-      id: 1,
-      name: "My First Book of Pencil Control",
-      color: "Ekru",
-      size: "S",
-      price: 89,
-      img: "https://m.media-amazon.com/images/I/810OOg88LoL._AC_UY327_FMwebp_QL65_.jpg",
-      amount: 1,
-      cartPrice: 89,
-    },
-    {
-      id: 2,
-      name: "108 Panchatantra Stories",
-      color: "Pink",
-      size: "S",
-      price: 98,
-      img: "https://m.media-amazon.com/images/I/71rmxx8P2qL._AC_UY327_FMwebp_QL65_.jpg",
-      amount: 1,
-      cartPrice: 98,
-    },
-    {
+  {
+    id: 1,
+    name: "My First Book of Pencil Control",
+    color: "Ekru",
+    size: "S",
+    price: 89,
+    img: "https://m.media-amazon.com/images/I/810OOg88LoL._AC_UY327_FMwebp_QL65_.jpg",
+    amount: 1,
+    cartPrice: 89,
+  },
+  {
+    id: 2,
+    name: "108 Panchatantra Stories",
+    color: "Pink",
+    size: "S",
+    price: 98,
+    img: "https://m.media-amazon.com/images/I/71rmxx8P2qL._AC_UY327_FMwebp_QL65_.jpg",
+    amount: 1,
+    cartPrice: 98,
+  },
+  /*{
       id: 3,
       name: "Amazing Questions & Answers Science",
       color: "Red",
@@ -38,7 +38,7 @@ const list = [
       img: "https://m.media-amazon.com/images/I/81Gbz0XnW7L._AC_UY327_FMwebp_QL65_.jpg",
       amount: 1,
       cartPrice: 57,
-    },
-  ];
-  
-  export default list;
+    }, */
+];
+
+export default list;

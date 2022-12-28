@@ -9,6 +9,7 @@ import { Outlet } from "react-router-dom";
 
 export const ShoppingCart = () => {
   const [cart, setCart] = useState([...list]);
+  const [message, setMessage] = useState("");
 
   const handleChange = (product, value) => {
     const productIndex = cart.indexOf(product);
@@ -30,6 +31,11 @@ export const ShoppingCart = () => {
     <>
       {/*  <Header title={"shiwear"} /> */}
       <div className="shopping-cart">
+        {message.length > 1 && (
+          <div className="shopping-cart-message">
+            <p>{message}</p>
+          </div>
+        )}
         {/* <div className="shopping-cart-message">
           <p>
             Sepetinize 1 adet daha kampanyali urun ekleyin, 1 urun hediyemiz
@@ -44,6 +50,7 @@ export const ShoppingCart = () => {
             cart={cart}
             setCart={setCart}
             handleChange={handleChange}
+            setMessage={setMessage}
           />
           {/* <OrderSummary price={price} /> */}
           <Outlet />
