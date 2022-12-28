@@ -11,7 +11,8 @@
     display: flex;
     flex-direction: column;
     row-gap: 15px;
-    input {
+    input,
+    select {
       width: 450px;
       height: 50px;
       padding: 10px;
