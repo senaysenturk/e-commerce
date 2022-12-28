@@ -1,52 +1,96 @@
 .user-info {
+  height: 74vh;
+}
+.user-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  color: #37595a;
+  font-size: 45px;
+  padding: 25px;
 
+  //   &__item   .user-profile__item anlamına geliyor
+  &__item {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    width: 600px;
   }
-  .user-profile,
-  .user-name{
+  &__btn {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 15px;
     color: #37595a;
     font-size: 45px;
-    padding: 25px;
-    div {
-      display: grid;
-      grid-template-columns:1fr 150px 150px 1fr;
-      flex-direction: column;
-      gap: 15px;
-    }
-    label {
-      text-align: end;
-      height: 55px;
-      padding: 10px;
-      font-size: large;
-      white-space: nowrap;
-      font-weight: bold;
-    }
-    input, select {
+    width: 600px;
+    justify-content: end;
+    align-items: end;
+
+    .login-btn {
+      font-family: Helvetica, Arial, sans-serif;
+      text-transform: capitalize;
+      font-size: 17px;
+      letter-spacing: 3px;
+      line-height: 20px;
+      width: 450px;
+      height: 50px;
+      font-weight: 700;
+      gap: 5px;
+      cursor: pointer;
       width: 450px;
       height: 50px;
       padding: 10px;
       border: #37595a, 1px, solid;
-    // }
+      color: var(--dark-color);
+      background-color: var(--primary-color);
+      border: none;
+    }
+  }
 
-}
-.btn{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-.send-btn{
-    font-family: Helvetica, Arial, sans-serif;
-    text-transform: capitalize;
-    font-size: 17px;
-    letter-spacing: 3px;
-    line-height: 20px;
+  div {
+    // display: grid;
+    // grid-template-columns: 1fr 150px 150px 1fr;
+    // flex-direction: column;
+    // gap: 15px;
+  }
+  label {
+    text-align: end;
+    padding: 10px;
+    font-size: large;
+    white-space: nowrap;
+    font-weight: bold;
+  }
+  input,
+  select {
     width: 450px;
     height: 50px;
-    font-weight: 700;
-  
-    gap: 5px;
-    cursor: pointer;}
+    padding: 10px;
+    border: #37595a, 1px, solid;
+  }
+}
+
+.user-name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  color: #37595a;
+  font-size: 45px;
+  padding: 25px;
+
+  label {
+    text-align: end;
+    // height: 55px;
+    padding: 10px;
+    font-size: large;
+    white-space: nowrap;
+    font-weight: bold;
+  }
+  input,
+  select {
+    width: 450px;
+    height: 50px;
+    padding: 10px;
+    border: #37595a, 1px, solid;
   }
 }

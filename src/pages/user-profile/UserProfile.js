@@ -2,7 +2,6 @@ import React from "react";
 import "./style.scss";
 import { Link, useNavigate } from "react-router-dom";
 
-
 const UserProfile = () => {
   return (
     <div className="user-info">
@@ -11,7 +10,7 @@ const UserProfile = () => {
       </div>
 
       <div className="user-profile">
-        <div className="first-name">
+        <div className="first-name user-profile__item" >
           <label for="first-name">First Name</label>
           <input
             type="text"
@@ -21,7 +20,7 @@ const UserProfile = () => {
           />
         </div>
 
-        <div className="last-name">
+        <div className="last-name user-profile__item">
           <label for="last-name">Last Name</label>
           <input
             type="text"
@@ -31,7 +30,7 @@ const UserProfile = () => {
           />
         </div>
 
-        <div id="username">
+        <div id="username" className="user-profile__item">
           <label for="user-name">UserName</label>
           <input
             type="text"
@@ -41,7 +40,7 @@ const UserProfile = () => {
           />
         </div>
 
-        <div id="email">
+        <div id="email" className="user-profile__item">
           <label for="email">E-Mail</label>
           <input
             type="user-email"
@@ -51,7 +50,7 @@ const UserProfile = () => {
           />
         </div>
 
-        <div className="phone">
+        <div className="phone user-profile__item">
           <label for="phone">Phone Number</label>
           <input
             type="url"
@@ -61,7 +60,7 @@ const UserProfile = () => {
           />
         </div>
 
-        <div className="gender">
+        <div className="gender user-profile__item">
           <label for="gender">Gender</label>
           <select id="gender" name="gender">
             <option>Man</option>
@@ -70,11 +69,22 @@ const UserProfile = () => {
           </select>
         </div>
 
-        <div className="btn">
-          <button className=" send-btn btn-primary">Send</button>
+        
+        <div className="password user-profile__item">
+          <label for="password">Password</label>
+          <input
+            type="url"
+            id="password"
+            placeholder="Password"
+          />
         </div>
 
+        <div className="user-profile__btn">
+        <button className="login-btn">Login</button>
       </div>
+      </div>
+
+      
     </div>
   );
 };
