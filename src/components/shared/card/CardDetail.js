@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import { IoIosHeartEmpty, IoIosHeart } from "react-icons/io";
+import { useCart } from "../../../contexts/cart/CartContext";
 import "./style.scss";
 
 const CardDetail = ({ path }) => {
+  const { cart, setCart } = useCart();
+
+  const [product, setProduct] = useState({});
   const [favorite, setFavorite] = useState(false);
   const [productCount, setProductCount] = useState(1);
 
@@ -12,6 +16,13 @@ const CardDetail = ({ path }) => {
   const decreaseCount = (id) => {
     setProductCount((prev) => prev - 1);
   };
+
+  const handleProduct = (e) =>
+    setProduct({ ...product, [e.target.name]: e.target.value });
+
+  const addCart = (e) =>
+    setCart({ ...cart, product });
+
   return (
     <div className="card-detail">
       <div className="product-flex">
@@ -43,7 +54,7 @@ const CardDetail = ({ path }) => {
           </div>
           <div className="size-group">
             <p>Size:</p>
-            <select className="size">
+            <select className="size" id="size" name="size" onChange={handleProduct}>
               <option value="">Select Size</option>
               <option value="XS">XS</option>
               <option value="S">S</option>
@@ -74,7 +85,11 @@ const CardDetail = ({ path }) => {
               ></i>
             </div>
           </div>
-          <button type="button" className="btn btn-primary">
+          <button
+            type="button"
+            className="btn btn-primary"
+            onClick={() => addCart()}
+          >
             Add to cart
           </button>
         </div>

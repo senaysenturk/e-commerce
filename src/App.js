@@ -24,11 +24,17 @@ import CardDetail from "./components/shared/card/CardDetail";
 import AddProduct from "./pages/admin/add-product/AddProduct";
 import AdminLayout from "./layouts/admin-layout/AdminLayout";
 import { ProductProvider } from "./contexts/product/ProductContext";
+import { CartProvider } from "./contexts/cart/CartContext";
 
 function App() {
   let id = 1;
   return (
     <>
+      <CartProvider>
+        <CardDetail />
+        <Cart />
+      </CartProvider>
+      
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<DashboardLayout />}>
