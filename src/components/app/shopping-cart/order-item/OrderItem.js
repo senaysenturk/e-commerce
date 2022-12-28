@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { MdOutlineLocalShipping } from "react-icons/md";
 import { RiDeleteBinLine } from "react-icons/ri";
+import OrderSummary from "../order-summary/OrderSummary";
 
 import "./style.scss";
 
@@ -8,7 +9,7 @@ export const OrderDetail = ({ cart, setCart, handleChange }) => {
   const [count, setCount] = useState(0);
   const [amount, setAmount] = useState(1);
   const [price, setPrice] = useState(0);
-  
+
   const handleRemove = (id) => {
     const cartList = cart.filter((product) => product.id !== id);
     setCart(cartList);
@@ -21,15 +22,22 @@ export const OrderDetail = ({ cart, setCart, handleChange }) => {
     setPrice(total);
   };
 
+  const handleCount = () => {
+    let cartCount = 0;
+    cart.map((item) => (cartCount += item.amount));
+    setCount(cartCount);
+  }
+
   useEffect(() => {
     handlePrice();
+    handleCount();
   });
 
   return (
     <>
       <div className="order-card">
         <div className="order-header">
-          <header>Sepet (1)</header>
+          <header>Sepet ({count})</header>
         </div>
         {cart.map((product) => (
           <div className="order-item-card" key={product.id}>
@@ -40,7 +48,10 @@ export const OrderDetail = ({ cart, setCart, handleChange }) => {
               <div className="item-main">
                 <div className="item-product">
                   <a>{product.name}</a>
-                  <span className="delete-icon" onClick={() => handleRemove(product.id)}>
+                  <span
+                    className="delete-icon"
+                    onClick={() => handleRemove(product.id)}
+                  >
                     <RiDeleteBinLine />
                   </span>
                 </div>
@@ -60,27 +71,33 @@ export const OrderDetail = ({ cart, setCart, handleChange }) => {
                 <div className="item-bottom">
                   <div className="item-quantity">
                     <div className="item-quantity-wrapper">
-                      <a className="item-quantity-button item-decrease-button"
-                        onClick={() => handleChange(product, -1)}>
+                      <a
+                        className="item-quantity-button item-decrease-button"
+                        onClick={() => handleChange(product, -1)}
+                      >
                         <span>-</span>
                       </a>
                       <span className="item-quantity-input" id="number">
                         {product.amount}
                       </span>
-                      <a className="item-quantity-button item-increase-button"
-                        onClick={() => handleChange(product, 1)}>
+                      <a
+                        className="item-quantity-button item-increase-button"
+                        onClick={() => handleChange(product, 1)}
+                      >
                         <span>+</span>
                       </a>
                     </div>
                   </div>
                   <div className="item-price">
                     <span className="actual-price">{product.price}</span>
+                    <span className="actual-price">{product.cartPrice}</span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        ))};
+        ))}
+        ;
         <div className="order-item-card">
           <div className="item-image">
             <img src="https://02b3ab.cdn.akinoncloud.com/products/2022/11/02/42945/f713dc12-8868-47b0-b64a-aa081b93ce92_size220x220_cropCenter.jpg" />
@@ -134,6 +151,7 @@ export const OrderDetail = ({ cart, setCart, handleChange }) => {
           </div>
         </div>
       </div>
+      <OrderSummary price={price} />
     </>
   );
 };

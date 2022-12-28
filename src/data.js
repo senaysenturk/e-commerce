@@ -7,6 +7,7 @@ const list = [
       price: 89,
       img: "https://m.media-amazon.com/images/I/810OOg88LoL._AC_UY327_FMwebp_QL65_.jpg",
       amount: 1,
+      cartPrice: 89,
     },
     {
       id: 2,
@@ -16,6 +17,7 @@ const list = [
       price: 98,
       img: "https://m.media-amazon.com/images/I/71rmxx8P2qL._AC_UY327_FMwebp_QL65_.jpg",
       amount: 1,
+      cartPrice: 98,
     },
     {
       id: 3,
@@ -25,6 +27,7 @@ const list = [
       price: 143,
       img: "https://m.media-amazon.com/images/I/81Gbz0XnW7L._AC_UY327_FMwebp_QL65_.jpg",
       amount: 1,
+      cartPrice: 143,
     },
     {
       id: 4,
@@ -34,6 +37,7 @@ const list = [
       price: 57,
       img: "https://m.media-amazon.com/images/I/81Gbz0XnW7L._AC_UY327_FMwebp_QL65_.jpg",
       amount: 1,
+      cartPrice: 57,
     },
   ];
   

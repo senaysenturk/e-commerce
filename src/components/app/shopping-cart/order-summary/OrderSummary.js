@@ -7,7 +7,7 @@ import { SlPresent } from "react-icons/sl";
 
 import { useNavigate } from "react-router-dom";
 
-export const OrderSummary = () => {
+export const OrderSummary = ({ price }) => {
   const navigate = useNavigate();
   return (
     <>
@@ -20,7 +20,7 @@ export const OrderSummary = () => {
             <div className="order-product">
               <p>Products</p>
               <p className="price">
-                <strong>0,00 TL</strong>
+                <strong>{price} TL</strong>
               </p>
             </div>
             <div className="order-campaign">
@@ -55,7 +55,7 @@ export const OrderSummary = () => {
             <div className="order-total">
               <p>Total</p>
               <p className="total-price">
-                <strong>0,00 TL</strong>
+                <strong>{price} TL</strong>
               </p>
             </div>
             <div className="order-confirm">

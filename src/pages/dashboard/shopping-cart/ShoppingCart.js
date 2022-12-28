@@ -15,7 +15,14 @@ export const ShoppingCart = () => {
     const cartItem = cart;
     cartItem[productIndex].amount += value;
 
-    if (cartItem[productIndex].amount === 0) cartItem[productIndex].amount = 1;
+    let total = 0;
+    total += cartItem[productIndex].amount * cartItem[productIndex].price;
+    cartItem[productIndex].cartPrice = total;
+
+    if (cartItem[productIndex].amount === 0) {
+      cartItem[productIndex].amount = 1;
+      cartItem[productIndex].cartPrice = cartItem[productIndex].price;
+    }
     setCart([...cartItem]);
   };
 
@@ -33,9 +40,13 @@ export const ShoppingCart = () => {
           {/* {list.map((product) => (
             <OrderItem key={product.id} product={product} handleClick={handleClick} />
           ))} */}
-          <OrderItem cart={cart} setCart={setCart} handleChange={handleChange} />
-          <OrderSummary />
-          <Outlet/>
+          <OrderItem
+            cart={cart}
+            setCart={setCart}
+            handleChange={handleChange}
+          />
+          {/* <OrderSummary price={price} /> */}
+          <Outlet />
         </div>
       </div>
     </>
