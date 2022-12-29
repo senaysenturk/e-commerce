@@ -7,7 +7,7 @@ const SmallCard = ({ path, index }) => {
   //console.log(isOpen);
   return (
     <>
-      {isOpen && <Modal setIsOpen={setIsOpen} path={path} index />}
+      {isOpen && <Modal setIsOpen={setIsOpen} path={path} index={index} />}
       <div className="small-card" index>
         <div className="product-img">
           <img src={path} alt="Çiçek işlemeli bluz" />

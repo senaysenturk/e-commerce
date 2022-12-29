@@ -17,6 +17,18 @@
       "color": "Red",
       "category": "Woman",
       "id": 2
+    },
+    {
+      "name": "test",
+      "id": 3
+    },
+    {
+      "name": "hello",
+      "id": 4
+    },
+    {
+      "name": "sdsd",
+      "id": 5
     }
   ],
   "colors": [
@@ -167,5 +179,15 @@
     "WhiteSmoke",
     "Yellow",
     "YellowGreen"
+  ],
+  "signup": [
+    {
+      "mail": "senaysenturk@outlook.com",
+      "user": "senaysenturk",
+      "password": "Bilge123!",
+      "birth": "9899-12-11",
+      "gender": "female",
+      "id": 1
+    }
   ]
 }

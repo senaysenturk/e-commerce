@@ -3,22 +3,17 @@ import { useProduct } from "../../../contexts/product/ProductContext";
 import "./style.scss";
 
 const AddProduct = () => {
-  const { product, setProduct, addProduct } = useProduct();
-  //const { user, setUser } = useUser();
-  //console.log("data", product);
-  // const [product, setProduct] = useState({
-  //   name: "",
-  //   color: "",
-  //   size: "",
-  //   price: "",
-  //   img: "",
-  //   amount: "",
-  //   amount "",
-  // });
+  const { product, setProduct, addProduct, image, setImage, uploadImage } =
+    useProduct();
 
   const handleSetProduct = (e) =>
     setProduct({ ...product, [e.target.name]: e.target.value });
-  console.log(product);
+
+  const handleSetImage = (e) => {
+    setImage(e.target.files[0]);
+    //console.log(image);
+  };
+
   return (
     <>
       <div className="add-product">
@@ -73,7 +68,12 @@ const AddProduct = () => {
           </select>
 
           <label htmlFor="image">Image</label>
-          <input type="file" id="image" name="image" />
+          <input
+            type="file"
+            id="image"
+            name="image"
+            onChange={handleSetImage}
+          />
         </div>
         <div className="add-button">
           <button className="btn btn-primary" onClick={() => addProduct()}>
