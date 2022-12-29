@@ -17,7 +17,7 @@ export const CartCard = () => {
         return (
           <div className="product-card">
             <div className="product-card-img">
-              <img src="https://02b3ab.cdn.akinoncloud.com/products/2022/11/02/42945/f713dc12-8868-47b0-b64a-aa081b93ce92_size220x220_cropCenter.jpg" />
+              <img src={product.img} />
             </div>
             <div className="product-card-content">
               <p>{product.name}</p>
@@ -30,12 +30,6 @@ export const CartCard = () => {
                   </span>
                   Free Shipping For Shopping <span>Over 200 TL</span>
                 </p>
-                {/* <p>
-                <span className="icon-ticket">
-                  <GiTicket />
-                </span>
-                2 for 1
-              </p> */}
               </div>
             </div>
             <div className="product-card-button" >
@@ -81,7 +75,7 @@ export const CartCard = () => {
       <div className="cart-summary">
         <p>Total</p>
         <p className="cart-price">
-          <strong>0,00 TL</strong>
+          <strong >0,00 TL</strong>
         </p>
       </div>
       <div className="or-divide">
