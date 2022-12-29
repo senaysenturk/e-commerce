@@ -3,7 +3,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   header {
     display: flex;
     justify-content: center;
@@ -11,14 +10,12 @@
     margin-bottom: 30px;
     width: 100%;
     border-bottom: 1px solid #d1d1d1;
-
     .logo {
       padding: 0px 0px 12px;
       font-size: 40px;
       color: var(--primary-color);
     }
   }
-
   .auth-container {
     width: 450px;
 
@@ -36,7 +33,6 @@
       gap: 10px;
       font-size: 13px;
     }
-
     .or-divide {
       margin-top: 10px;
       display: flex;
@@ -45,7 +41,6 @@
       align-items: center;
       justify-content: center;
     }
-
     .signup {
       display: flex;
       flex-direction: column;
@@ -57,7 +52,6 @@
         text-decoration: underline;
         font-weight: 500;
       }
-
       #birth-day {
         width: 170px;
         font-size: 14px;
@@ -65,61 +59,10 @@
         text-align: center;
       }
 
-      .instructions {
-        font-size: 0.75rem;
-        border-radius: 0.5rem;
-        background: #000;
-        color: #fff;
-        padding: 0.25rem;
-        position: relative;
-        bottom: -10px;
-
-        &>svg {
-          margin-right: 0.25rem;
-        }
-      }
-
-      
-
-      .offscreen {
-        position: absolute;
-        left: -9999px;
-      }
-
-      .hide {
-        display: none;
-      }
-
-      .valid {
-        color: limegreen;
-        margin-left: 0.25rem;
-      }
-
-      .invalid {
-        color: red;
-        margin-left: 0.25rem;
-      }
-
-      .errmsg {
-        background-color: lightpink;
-        color: firebrick;
-        font-weight: bold;
-        padding: 0.5rem;
-        margin-bottom: 0.5rem;
-      }
-
-      .flexGrow {
-        flex-grow: 1;
-        display: flex;
-        justify-content: flex-start;
-        align-items: flex-end;
-      }
-
       .signup-info {
         display: flex;
         flex-direction: column;
         row-gap: 15px;
-
         input {
           width: 450px;
           height: 50px;
@@ -133,7 +76,6 @@
         display: flex;
         gap: 20px;
       }
-
       .appears {
         display: flex;
 
@@ -143,19 +85,16 @@
           margin-left: 1px;
         }
       }
-
       .sign-up {
         display: flex;
         align-items: center;
         justify-content: space-between;
-
         .sign-up-checkbox {
           font-size: 13px;
           display: flex;
           align-items: center;
           column-gap: 10px;
         }
-
         .signup-btn {
           font-family: Helvetica, Arial, sans-serif;
           text-transform: uppercase;
@@ -171,7 +110,6 @@
           align-items: center;
           gap: 5px;
           cursor: pointer;
-
           &:hover {
             transform: scale(1.04);
           }
@@ -183,7 +121,6 @@
         flex-direction: column;
         align-items: center;
         row-gap: 30px;
-
         // padding-bottom: 10px;
         p {
           font-size: 18px;
