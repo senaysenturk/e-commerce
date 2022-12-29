@@ -1,5 +1,10 @@
 import { createContext, useContext, useState } from "react";
 import {
+  getColors,
+  getSizes,
+  getCategories,
+} from "../../network/requests/options";
+import {
   postProduct,
   getProduct,
   postImage,
@@ -11,12 +16,17 @@ const ProductContext = createContext();
 export const ProductProvider = ({ children }) => {
   const [product, setProduct] = useState({});
   const [image, setImage] = useState("");
+  const [colors, setColors] = useState([]);
+  const [sizes, setSizes] = useState([]);
+  const [categories, setCategories] = useState([]);
 
   //console.log("Product", product);
   const addProduct = async () => {
     const response = await postProduct(product);
     console.log("Reponse: " + response.status);
   };
+
+  //Upload Image
   const uploadImage = async () => {
     console.log(image);
     var formdata = new FormData();
@@ -24,8 +34,23 @@ export const ProductProvider = ({ children }) => {
     formdata.append("upload_preset", "vi6rdwfh");
     formdata.append("cloud_name", "dr4cvohdq");
     const response = await postImage(formdata);
+  };
+  const getAllColors = async () => {
+    const response = await getColors();
+    setColors(response.data);
+    // console.log(colors);
+  };
 
-    console.log("Img Response" + response);
+  const getAllSizes = async () => {
+    const response = await getSizes();
+    setSizes(response.data);
+    // console.log(sizes);
+  };
+
+  const getAllCategories = async () => {
+    const response = await getCategories();
+    setCategories(response.data);
+    // console.log(sizes);
   };
 
   const values = {
@@ -35,6 +60,12 @@ export const ProductProvider = ({ children }) => {
     image,
     setImage,
     uploadImage,
+    colors,
+    getAllColors,
+    sizes,
+    getAllSizes,
+    categories,
+    getAllCategories,
   };
 
   return (

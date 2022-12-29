@@ -4,14 +4,9 @@ export const baseService = {};
 
 baseService.post = async (url, endpoint, data) => {
   try {
-    const response = await axios({
-      method: "post",
-      url: `${url}${endpoint}`,
-      data: data,
-      withCredentials: false,
+    const response = await axios.post(`${url}${endpoint}`, data, {
       headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*",
+        "Content-Type": "application/form-data",
       },
     });
     return response;
@@ -31,13 +26,9 @@ baseService.get = async (url, endpoint) => {
 
 baseService.postImage = async (url, data) => {
   try {
-    const response = await axios({
-      method: "post",
-      url: url,
-      body: data,
-      withCredentials: false,
+    const response = await axios.post(url, data, {
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "application/form-data",
         "Access-Control-Allow-Origin": "*",
       },
     });
