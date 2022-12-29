@@ -3,33 +3,36 @@ import { IoIosHeartEmpty, IoIosHeart } from "react-icons/io";
 import ShopContext from "../../../contexts/basket/ShopContext";
 import "./style.scss";
 
-// burası proptan gelecek / path yazan her componente product bilgisi girtmesi gerekiyor. 
-const dummyData =  {
-  "name": "Pilili Etek",
-  "price": "389",
-  "size": "XL",
-  "color": "Green",
-  "category": "Woman",
-  "id": 3
-}
+// burası proptan gelecek / path yazan her componente product bilgisi girtmesi gerekiyor.
+const dummyData = {
+  name: "Pilili Etek",
+  price: "389",
+  size: "XL",
+  color: "Green",
+  category: "Woman",
+  id: 3,
+};
 
 const CardDetail = ({ path }) => {
-
   const [favorite, setFavorite] = useState(false);
   const [productCount, setProductCount] = useState(1);
 
   const context = useContext(ShopContext);
-  
+
   useEffect(() => {
-   console.log(context)
-  
-  }, [])
+    console.log(context);
+  }, []);
 
   const increaseCount = () => {
     setProductCount((prev) => prev + 1);
   };
-  const decreaseCount = (id) => {
-    setProductCount((prev) => prev - 1);
+  const decreaseCount = () => {
+    setProductCount((prev) => {
+      if (prev === 1) {
+        return prev;
+      }
+      return prev - 1;
+    });
   };
 
   return (
@@ -77,31 +80,30 @@ const CardDetail = ({ path }) => {
             <div className="quantity">
               <i
                 className="fa-solid fa-minus count-icon"
-                onClick={(e) => decreaseCount()}
+                onClick={decreaseCount}
               ></i>
               <input
                 className="quantity-icon"
                 type="text"
                 min="0"
-                defaultValue={productCount}
-                // value={productCount}
+                value={productCount}
+                readOnly={true}
               />
               <i
                 className="fa-solid fa-plus count-icon"
-                onClick={(e) => {
-                  increaseCount();
-                }}
+                onClick={increaseCount}
               ></i>
             </div>
           </div>
-          <button 
+          <button
             type="button"
             className="btn btn-primary"
-            onClick={() =>{
-              context.addProductToCart(dummyData)
-              console.log(context)
+            onClick={() => {
+              dummyData.amount=productCount;
+              context.addProductToCart(dummyData);
+              console.log(context);
             }}
-            >
+          >
             Add to cart
           </button>
         </div>

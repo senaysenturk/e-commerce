@@ -1,5 +1,6 @@
 export const ADD_PRODUCT = "ADD_PRODUCT";
 export const REMOVE_PRODUCT = "REMOVE_PRODUCT";
+export const DECREACE_PRODUCT = "DECREACE_PRODUCT";
 
 const addProductToCart = (product, state) => {
   const updatedCart = [...state.cart];
@@ -8,18 +9,19 @@ const addProductToCart = (product, state) => {
   );
 
   if (updatedItemIndex < 0) {
-    updatedCart.push({ ...product, amount: 1 });
+    updatedCart.push(product);
   } else {
     const updatedItem = {
       ...updatedCart[updatedItemIndex]
     };
-    updatedItem.amount++;
+    updatedItem.amount += product.amount;
     updatedCart[updatedItemIndex] = updatedItem;
   }
   return { ...state, cart: updatedCart };
 };
 
-const removeProductFromCart = (productId, state) => {
+
+const decreaseProduct = (productId, state) => {
   console.log("Removing product with id: " + productId);
   const updatedCart = [...state.cart];
   const updatedItemIndex = updatedCart.findIndex(item => item.id === productId);
@@ -29,10 +31,20 @@ const removeProductFromCart = (productId, state) => {
   };
   updatedItem.amount--;
   if (updatedItem.amount <= 0) {
-    updatedCart.splice(updatedItemIndex, 1);
+    updatedCart.splice(updatedItemIndex, 1); //amount 0 dan küçükse  
   } else {
     updatedCart[updatedItemIndex] = updatedItem;
   }
+  return { ...state, cart: updatedCart };
+}
+
+const removeProductFromCart = (productId, state) => {
+  console.log("Removing product with id: " + productId);
+  const updatedCart = [...state.cart];
+  const updatedItemIndex = updatedCart.findIndex(item => item.id === productId);
+
+  updatedCart.splice(updatedItemIndex, 1); 
+ 
   return { ...state, cart: updatedCart };
 };
 
@@ -42,6 +54,8 @@ export const shopReducer = (state, action) => {
       return addProductToCart(action.product, state);
     case REMOVE_PRODUCT:
       return removeProductFromCart(action.productId, state);
+    case DECREACE_PRODUCT:
+      return decreaseProduct(action.productId, state);
     default:
       return state;
   }

@@ -1,28 +1,30 @@
 import React, { useState, useReducer } from "react";
 
 import ShopContext from "./ShopContext";
-import { shopReducer, ADD_PRODUCT, REMOVE_PRODUCT } from "./reducers";
+import {
+  shopReducer,
+  ADD_PRODUCT,
+  REMOVE_PRODUCT,
+  DECREACE_PRODUCT,
+} from "./reducers";
 import list from "../../data";
 
-const GlobalState = props => {
-  const products = list
-  
+const GlobalState = (props) => {
+  const products = list;
+
   // const [cart, setCart] = useState([]);
   const [cartState, dispatch] = useReducer(shopReducer, { cart: [] });
 
-  const addProductToCart = product => {
-    setTimeout(() => {
-      // setCart(updatedCart);
-    
-    }, 700);
-    dispatch({ type: ADD_PRODUCT, product: product });
+  const addProductToCart = (product) => {
+    dispatch({ type: ADD_PRODUCT, product });
   };
 
-  const removeProductFromCart = productId => {
-    setTimeout(() => {
-      // setCart(updatedCart);
-    }, 700);
-    dispatch({ type: REMOVE_PRODUCT, productId: productId });
+  const removeProductFromCart = (productId) => {
+    dispatch({ type: REMOVE_PRODUCT, productId });
+  };
+  // ürün azaltma
+  const decreaseProduct = (productId) => {
+    dispatch({ type: DECREACE_PRODUCT, productId });
   };
 
   return (
@@ -31,7 +33,8 @@ const GlobalState = props => {
         products: products,
         cart: cartState.cart,
         addProductToCart: addProductToCart,
-        removeProductFromCart: removeProductFromCart
+        removeProductFromCart: removeProductFromCart,
+        decreaseProduct:decreaseProduct,
       }}
     >
       {props.children}

@@ -38,8 +38,11 @@ export const CartCard = () => {
               </p> */}
               </div>
             </div>
-            <div className="product-card-button">
-              <span className="icon-x">x</span>
+            <div className="product-card-button" >
+              <span 
+                className="icon-x" 
+                onClick={()=>{context.removeProductFromCart(product.id)}}
+              >x</span>
             </div>
           </div>
         );
