@@ -1,4 +1,5 @@
 import { createContext, useContext, useState } from "react";
+import { postUser } from "../../network/requests/auth/register";
 
 const AuthContext = createContext();
 
@@ -24,4 +25,4 @@ export default AuthContext;
 /* 
 export const useAuth = () => {
     const { auth } = useContext(AuthContext);
-    useDebugValue(auth, auth => auth?.user ? "Logged In" : "Logged Out")
+    useDebugValue(auth, auth => auth?.user ? "Logged In" : "Logged Out")*/
