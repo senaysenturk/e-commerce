@@ -1,22 +1,4 @@
 import { createContext, useContext, useState } from "react";
-import { postUser } from "../../network/requests/auth/register";
-
-import DataContext from './DataContext';
-import authReducer from '../../reducers/auth/AuthReducer';
-import { signUp, signIn, setCurrentUser } from '../../actions/auth';
-
-export const initialState = {
-  user: null,
-  isAuthenticated: false,
-  signUpErr: "",
-  signInErr: "",
-};
-
-export const { Context, Provider } = DataContext(
-  authReducer,
-  { signUp, signIn, setCurrentUser },
-  initialState
-);
 
 const AuthContext = createContext();
 
@@ -30,9 +12,16 @@ export const AuthProvider = ({ children }) => {
 
   const values = { user, setUser, addUser };
 
-  return (
-    <AuthContext.Provider value={values}>{children}</AuthContext.Provider>
-  );
-};
+    return (
+        <AuthContext.Provider value={{ auth, setAuth }}>
+            {children}
+        </AuthContext.Provider>
+    )
+}
 
-export const useAuth = () => useContext(AuthContext);
+export default AuthContext;
+
+/* 
+export const useAuth = () => {
+    const { auth } = useContext(AuthContext);
+    useDebugValue(auth, auth => auth?.user ? "Logged In" : "Logged Out")
