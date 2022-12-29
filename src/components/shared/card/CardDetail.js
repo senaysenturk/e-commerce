@@ -1,10 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { IoIosHeartEmpty, IoIosHeart } from "react-icons/io";
-<<<<<<< HEAD
 import ShopContext from "../../../contexts/basket/ShopContext";
-=======
-import { useCart } from "../../../contexts/cart/CartContext";
->>>>>>> 8da69871dd7b859fd16ef5fe5e39fe5ffcc1b9e9
 import "./style.scss";
 
 // burası proptan gelecek / path yazan her componente product bilgisi girtmesi gerekiyor. 
@@ -18,19 +14,16 @@ const dummyData =  {
 }
 
 const CardDetail = ({ path }) => {
-  const { cart, setCart } = useCart();
 
-  const [product, setProduct] = useState({});
   const [favorite, setFavorite] = useState(false);
   const [productCount, setProductCount] = useState(1);
 
-  const context = useContext(ShopContext)
+  const context = useContext(ShopContext);
+  
   useEffect(() => {
    console.log(context)
   
   }, [])
-  
-
 
   const increaseCount = () => {
     setProductCount((prev) => prev + 1);
@@ -38,12 +31,6 @@ const CardDetail = ({ path }) => {
   const decreaseCount = (id) => {
     setProductCount((prev) => prev - 1);
   };
-
-  const handleProduct = (e) =>
-    setProduct({ ...product, [e.target.name]: e.target.value });
-
-  const addCart = (e) =>
-    setCart({ ...cart, product });
 
   return (
     <div className="card-detail">
@@ -76,11 +63,7 @@ const CardDetail = ({ path }) => {
           </div>
           <div className="size-group">
             <p>Size:</p>
-<<<<<<< HEAD
             <select className="size" defaultValue={dummyData.size}>
-=======
-            <select className="size" id="size" name="size" onChange={handleProduct}>
->>>>>>> 8da69871dd7b859fd16ef5fe5e39fe5ffcc1b9e9
               <option value="">Select Size</option>
               <option value="XS">XS</option>
               <option value="S">S</option>
@@ -111,7 +94,6 @@ const CardDetail = ({ path }) => {
               ></i>
             </div>
           </div>
-<<<<<<< HEAD
           <button 
             type="button"
             className="btn btn-primary"
@@ -120,13 +102,6 @@ const CardDetail = ({ path }) => {
               console.log(context)
             }}
             >
-=======
-          <button
-            type="button"
-            className="btn btn-primary"
-            onClick={() => addCart()}
-          >
->>>>>>> 8da69871dd7b859fd16ef5fe5e39fe5ffcc1b9e9
             Add to cart
           </button>
         </div>

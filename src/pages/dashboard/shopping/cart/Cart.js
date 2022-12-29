@@ -2,7 +2,6 @@ import React, { useState, useContext } from "react";
 import list from "../../../../data";
 import "./style.scss";
 
-import { useCart } from "../../../../contexts/cart/CartContext";
 import OrderItem from "../../../../components/app/shopping-cart/order-item/OrderItem";
 
 export const Cart = () => {
