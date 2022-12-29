@@ -22,6 +22,8 @@ const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 const SIGNUP_URL = "/signup";
 
 function SignUp({ signUp }) {
+  // const { state } = useContext(Context);
+
   const userRef = useRef();
   const errRef = useRef();
 
@@ -43,6 +45,9 @@ function SignUp({ signUp }) {
 
   const [errMsg, setErrMsg] = useState("");
   const [success, setSuccess] = useState(false);
+
+  const [birth, setBirth] = useState("");
+  const [gender, setGender] = useState("");
 
   useEffect(() => {
     userRef.current.focus();
@@ -76,10 +81,16 @@ function SignUp({ signUp }) {
       return;
     }
 
+    console.log(mail);
+    console.log(user);
+    console.log(password);
+    console.log(birth);
+    console.log(gender);
+
     try {
       const response = await axios.post(
         SIGNUP_URL,
-        JSON.stringify({ mail, user, password }),
+        JSON.stringify({ mail, user, password, birth, gender }),
         {
           headers: { "Content-Type": "application/json" },
           withCredentials: true,
@@ -96,6 +107,8 @@ function SignUp({ signUp }) {
       setUser("");
       setPassword("");
       setMatchPassword("");
+      setBirth("");
+      setGender("");
     } catch (err) {
       if (!err?.response) {
         setErrMsg("No Server Response");
@@ -175,7 +188,7 @@ function SignUp({ signUp }) {
                     onFocus={() => setMailFocus(true)}
                     onBlur={() => setMailFocus(false)}
                   />
-                   <p
+                  <p
                     id="uidnote"
                     className={
                       mailFocus && mail && !validMail
@@ -326,12 +339,18 @@ function SignUp({ signUp }) {
                     Must match the first password input field.
                   </p>
 
-                  <label htmlFor="birth-day">
+                  <label htmlFor="birth">
                     <strong>What's your date of birth?</strong>
                   </label>
-                  <input type="date" id="birth-day" placeholder="DD.MM.YYYY" />
+                  <input
+                    type="date"
+                    id="birth-day"
+                    placeholder="DD.MM.YYYY"
+                    onChange={(e) => setBirth(e.target.value)}
+                    value={birth}
+                  />
 
-                  <label htmlFor="birth-day">
+                  <label htmlFor="gender">
                     <strong>What's your gender?</strong>
                   </label>
                 </form>
@@ -342,8 +361,9 @@ function SignUp({ signUp }) {
                         className="btn-gender"
                         type="radio"
                         id="male"
-                        name="Male"
+                        name="gender"
                         value="Male"
+                        onChange={(e) => setGender(e.target.value)}
                       />{" "}
                       Male
                     </label>
@@ -352,8 +372,9 @@ function SignUp({ signUp }) {
                         className="btn-gender"
                         type="radio"
                         id="female"
-                        name="female"
+                        name="gender"
                         value="female"
+                        onChange={(e) => setGender(e.target.value)}
                       />{" "}
                       Female
                     </label>
@@ -362,8 +383,9 @@ function SignUp({ signUp }) {
                         className="btn-gender"
                         type="radio"
                         id="other"
-                        name="other"
+                        name="gender"
                         value="other"
+                        onChange={(e) => setGender(e.target.value)}
                       />{" "}
                       Other
                     </label>
@@ -374,8 +396,9 @@ function SignUp({ signUp }) {
                         className="btn-gender"
                         type="radio"
                         id="prefer"
-                        name="prefer"
+                        name="gender"
                         value="prefer"
+                        onChange={(e) => setGender(e.target.value)}
                       />{" "}
                       Prefer not to say
                     </label>
