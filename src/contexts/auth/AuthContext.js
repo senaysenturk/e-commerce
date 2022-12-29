@@ -13,7 +13,16 @@ export const AuthProvider = ({ children }) => {
 
   const values = { user, setUser, addUser };
 
-  return (
-    <AuthContext.Provider value={values}>{children}</AuthContext.Provider>
-  );
-};
+    return (
+        <AuthContext.Provider value={{ auth, setAuth }}>
+            {children}
+        </AuthContext.Provider>
+    )
+}
+
+export default AuthContext;
+
+/* 
+export const useAuth = () => {
+    const { auth } = useContext(AuthContext);
+    useDebugValue(auth, auth => auth?.user ? "Logged In" : "Logged Out")*/
