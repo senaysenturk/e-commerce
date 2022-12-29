@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import "./style.scss";
 import "../../../utilities.scss";
@@ -6,12 +6,45 @@ import "../../../utilities.scss";
 import { Link, useNavigate } from "react-router-dom";
 
 import { GiTicket } from "react-icons/gi";
+import ShopContext from "../../../contexts/basket/ShopContext";
 
 export const CartCard = () => {
   const navigate = useNavigate();
+  const context = useContext(ShopContext);
   return (
     <div className="cart-container">
-      <div className="product-card">
+      {context.cart.map((product) => {
+        return (
+          <div className="product-card">
+            <div className="product-card-img">
+              <img src="https://02b3ab.cdn.akinoncloud.com/products/2022/11/02/42945/f713dc12-8868-47b0-b64a-aa081b93ce92_size220x220_cropCenter.jpg" />
+            </div>
+            <div className="product-card-content">
+              <p>{product.name}</p>
+              <p>Adet: {product.amount}</p>
+              <strong>{product.price} TL</strong>
+              <div className="product-card-campaign">
+                <p>
+                  <span className="icon-ticket">
+                    <GiTicket />
+                  </span>
+                  Free Shipping For Shopping <span>Over 200 TL</span>
+                </p>
+                {/* <p>
+                <span className="icon-ticket">
+                  <GiTicket />
+                </span>
+                2 for 1
+              </p> */}
+              </div>
+            </div>
+            <div className="product-card-button">
+              <span className="icon-x">x</span>
+            </div>
+          </div>
+        );
+      })}
+      {/* <div className="product-card">
         <div className="product-card-img">
           <img src="https://02b3ab.cdn.akinoncloud.com/products/2022/11/02/42945/f713dc12-8868-47b0-b64a-aa081b93ce92_size220x220_cropCenter.jpg" />
         </div>
@@ -32,12 +65,13 @@ export const CartCard = () => {
               </span>
               2 for 1
             </p> */}
-          </div>
+      {/* </div>
         </div>
         <div className="product-card-button">
           <span className="icon-x">x</span>
         </div>
-      </div>
+      </div>  */}
+
       <div className="or-divide">
         <span className="hr"></span>
       </div>

@@ -10,7 +10,7 @@ const UserProfile = () => {
       </div>
 
       <div className="user-profile">
-        <div className="first-name user-profile__item" >
+        <div className="first-name user-profile__item">
           <label for="first-name">First Name</label>
           <input
             type="text"
@@ -69,22 +69,15 @@ const UserProfile = () => {
           </select>
         </div>
 
-        
         <div className="password user-profile__item">
           <label for="password">Password</label>
-          <input
-            type="url"
-            id="password"
-            placeholder="Password"
-          />
+          <input type="url" id="password" placeholder="Password" />
         </div>
 
         <div className="user-profile__btn">
-        <button className="login-btn">Login</button>
+          <button className="login-btn">Login</button>
+        </div>
       </div>
-      </div>
-
-      
     </div>
   );
 };

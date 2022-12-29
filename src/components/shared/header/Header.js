@@ -59,6 +59,8 @@ export const Header = ({ title }) => {
               <li>
                 <a>
                   <span className="icon">
+                    {/* sepetteki ürün adetini saydırma */}
+                    {/* {items.length > 0 && (items.length)} */}
                     <GrCart />
                   </span>
                 </a>
