@@ -5,12 +5,14 @@ import "./style.scss";
 
 // burası proptan gelecek / path yazan her componente product bilgisi girtmesi gerekiyor.
 const dummyData = {
-  name: "Pilili Etek",
+  name: "Straptez Bluz",
   price: "389",
   size: "XL",
-  color: "Green",
+  color: "Siyah",
   category: "Woman",
   id: 3,
+  cartPrice: " 389",
+  img : "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/6202/267/001/6202267001_1_1_2.jpg?t=1669732582176",
 };
 
 const CardDetail = ({ path }) => {

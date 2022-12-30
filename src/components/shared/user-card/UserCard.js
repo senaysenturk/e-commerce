@@ -29,7 +29,7 @@ export const UserCard = () => {
             <Link to="/user-profile">My Account</Link>
           </li>
           <li>
-            <Link to="/add-product">Order Tracking</Link>
+            <Link to="/order-tracking">Order Tracking</Link>
           </li>
           <li>
             <Link>Easy Returns</Link>

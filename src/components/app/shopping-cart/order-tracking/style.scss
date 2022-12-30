@@ -1,0 +1,16 @@
+.order-tracking{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 90vh;
+    gap:10px;
+    padding: 50px 70px ;
+    
+    .order-img img{
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        
+        
+    }
+}

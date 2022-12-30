@@ -24,6 +24,7 @@ import CardDetail from "./components/shared/card/CardDetail";
 import AddProduct from "./pages/admin/add-product/AddProduct";
 import AdminLayout from "./layouts/admin-layout/AdminLayout";
 import { ProductProvider } from "./contexts/product/ProductContext";
+import OrderTracking from "./components/app/shopping-cart/order-tracking/OrderTracking";
 
 function App() {
   let id = 1;
@@ -39,6 +40,7 @@ function App() {
             <Route path="new-arrivals" element={<NewArrivals />} />
             <Route path="best-sellers" element={<BestSellers />} />
             <Route path="trending" element={<Trending />} />
+            <Route path="order-tracking" element={<OrderTracking />} />
             <Route path="sale" element={<Sale />} />
             <Route path="user-profile" element={<UserProfile />} />
             <Route path="shopping" element={<Shopping />}>
