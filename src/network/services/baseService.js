@@ -33,10 +33,18 @@ baseService.postImage = async (url, data) => {
   }
 };
 
-baseService.postAuth = async (url, data) => {
+baseService.postAuth = async (url, endpoint, data) => {
   try {
-    
+    const response = await axios.post(
+      `${url}${endpoint}`,
+      JSON.stringify({ data }),
+      {
+        headers: { "Content-Type": "application/json" },
+        withCredentials: true,
+      }
+    );
+    return response;
   } catch (error) {
-    
+    console.log(error.status);
   }
 };
