@@ -10,19 +10,19 @@ const OrderTracking = () => {
       </div>
 
       <div className="order-info">
-        <p>Sipariş No: <strong className="order-no">976 463 155</strong></p>
+        <p>Order No: <strong className="order-no">976 463 155</strong></p>
         <span>4 Haziran Cts, 18:06</span>
       </div>
 
       <div>
         <strong>
-          <FcCheckmark /> Sipariş Tamamlandı
+          <FcCheckmark /> Order completed.
         </strong>
       </div>
 
       <div className="order-total">
         <span>83.47 TL</span>
-        <span>Kredi Kartı</span>
+        <span>Credit Card</span>
       </div>
     </div>
   );
