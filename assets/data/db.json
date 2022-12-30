@@ -2,10 +2,11 @@
   "products": [
     {
       "name": "test",
-      "price": "1",
-      "size": "S",
-      "color": "Black",
-      "category": "Child",
+      "price": "123",
+      "size": "XXS",
+      "color": "Yellow",
+      "category": "Woman",
+      "imgPath": "http://res.cloudinary.com/dr4cvohdq/image/upload/v1672429502/lmt3mqacrizh3hlkn9ri.jpg",
       "id": 1
     },
     {
@@ -55,5 +56,30 @@
     "Man",
     "Child"
   ],
-  "signup": []
+  "signup": [
+    {
+      "mail": "senaysenturk@outlook.com",
+      "user": "senaysenturk",
+      "password": "Bilge123!",
+      "birth": "9899-12-11",
+      "gender": "female",
+      "id": 1
+    },
+    {
+      "mail": "hicranertugral@gmail.com",
+      "user": "hico",
+      "password": "Hicran!6518406",
+      "birth": "1985-11-11",
+      "gender": "female",
+      "id": 2
+    },
+    {
+      "mail": "celik.ipekgulsen@gmail.com",
+      "user": "ipek",
+      "password": "Bilge123!",
+      "birth": "2022-12-08",
+      "gender": "female",
+      "id": 3
+    }
+  ]
 }
