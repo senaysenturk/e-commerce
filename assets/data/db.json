@@ -16,8 +16,20 @@
     "White",
     "Yellow"
   ],
-  "sizes": ["XXS", "XS", "S", "M", "L", "XL", "XXL"],
-  "categories": ["Woman", "Man", "Child"],
+  "sizes": [
+    "XXS",
+    "XS",
+    "S",
+    "M",
+    "L",
+    "XL",
+    "XXL"
+  ],
+  "categories": [
+    "Woman",
+    "Man",
+    "Child"
+  ],
   "signup": [
     {
       "mail": "senaysenturk@outlook.com",
@@ -26,6 +38,14 @@
       "birth": "9899-12-11",
       "gender": "female",
       "id": 1
+    },
+    {
+      "mail": "hicranertugral@gmail.com",
+      "user": "hico",
+      "password": "Hicran!6518406",
+      "birth": "1985-11-11",
+      "gender": "female",
+      "id": 2
     }
   ]
 }
