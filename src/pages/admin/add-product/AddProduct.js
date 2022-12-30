@@ -7,6 +7,8 @@ const AddProduct = () => {
     product,
     setProduct,
     addProduct,
+    image,
+    setImage,
     uploadImage,
     imageURL,
     colors,
