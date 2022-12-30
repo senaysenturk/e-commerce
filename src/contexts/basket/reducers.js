@@ -21,11 +21,6 @@ const addProductToCart = (product, state) => {
   return { ...state, cart: updatedCart };
 };
 
-
-
-
-
-
 // const totalPrice = (productPrice, state) => {
 //   const updatedCart = [...state.cart];
 //   const updatedItemIndex = updateCart.findIndex(item => item.price === productPrice);
@@ -66,14 +61,27 @@ const removeProductFromCart = (productId, state) => {
 
 export const shopReducer = (state, action) => {
   switch (action.type) {
+    case "SET_AUTH": {
+      const copyState = {
+        ...state,
+        auth: {
+          user: action.payload.user,
+          password: action.payload.password,
+          accessToken: action.payload.accessToken,
+          roles: action.payload.roles,
+        },
+      };
+
+      return copyState;
+    }
     case ADD_PRODUCT:
       return addProductToCart(action.product, state);
     case REMOVE_PRODUCT:
       return removeProductFromCart(action.productId, state);
     case DECREACE_PRODUCT:
       return decreaseProduct(action.productId, state);
-      case TOTAL_PRICE:
-      return totalPrice(action.productPrice, state);
+   /*  case TOTAL_PRICE:
+      return totalPrice(action.productPrice, state); */
     default:
       return state;
   }
