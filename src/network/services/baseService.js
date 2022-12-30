@@ -37,3 +37,11 @@ baseService.postImage = async (url, data) => {
     console.log(error.status);
   }
 };
+
+baseService.postAuth = async (url, data) => {
+  try {
+    
+  } catch (error) {
+    
+  }
+};
