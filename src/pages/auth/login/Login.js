@@ -1,6 +1,5 @@
 import React from "react";
 import { useRef, useState, useEffect, useContext } from "react";
-import AuthContext from "../../../contexts/auth/AuthContext";
 import axios from "../../../api/axios";
 
 import "./style.scss";
@@ -12,8 +11,7 @@ import ShopContext from "../../../contexts/basket/ShopContext";
 const LOGIN_URL = "/auth";
 
 export const Login = () => {
-  const { setAuth } = useContext(AuthContext);
-  const context = useContext(ShopContext);
+  const shopContext = useContext(ShopContext);
 
   const userRef = useRef();
   const errRef = useRef();
@@ -35,7 +33,8 @@ export const Login = () => {
   const handleLogin = async (e) => {
     // e.preventDefault();
 
-    //context.setAuth({ user: 'fatih', password: 'asdasd', roles: 'admin', accessToke: 'sdfşlksdfşlsdk' });
+    console.log(user);
+    console.log(password);
 
     try {
       const response = await axios.post(
@@ -50,7 +49,7 @@ export const Login = () => {
       //console.log(JSON.stringify(response));
       const accessToken = response?.data?.accessToken;
       const roles = response?.data?.roles;
-      setAuth({ user, password, roles, accessToken });
+      shopContext.setAuth({ user, password, roles, accessToken });
       setUser("");
       setPassword("");
       setSuccess(true);

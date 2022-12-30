@@ -40,6 +40,7 @@ const GlobalState = (props) => {
         addProductToCart: addProductToCart,
         removeProductFromCart: removeProductFromCart,
         decreaseProduct:decreaseProduct,
+        setAuth: setAuth,
       }}
     >
       {props.children}
