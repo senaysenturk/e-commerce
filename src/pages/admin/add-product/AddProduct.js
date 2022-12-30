@@ -1,24 +1,37 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useProduct } from "../../../contexts/product/ProductContext";
 import "./style.scss";
 
 const AddProduct = () => {
-  const { product, setProduct, addProduct } = useProduct();
-  //const { user, setUser } = useUser();
-  //console.log("data", product);
-  // const [product, setProduct] = useState({
-  //   name: "",
-  //   color: "",
-  //   size: "",
-  //   price: "",
-  //   img: "",
-  //   amount: "",
-  //   amount "",
-  // });
+  const {
+    product,
+    setProduct,
+    addProduct,
+    image,
+    setImage,
+    uploadImage,
+    colors,
+    getAllColors,
+    sizes,
+    getAllSizes,
+    categories,
+    getAllCategories,
+  } = useProduct();
 
   const handleSetProduct = (e) =>
     setProduct({ ...product, [e.target.name]: e.target.value });
-  console.log(product);
+
+  const handleSetImage = (e) => {
+    setImage(e.target.files[0]);
+    //console.log(image);
+  };
+
+  useEffect(() => {
+    getAllColors();
+    getAllSizes();
+    getAllCategories();
+  }, []);
+
   return (
     <>
       <div className="add-product">
@@ -47,36 +60,37 @@ const AddProduct = () => {
           <label htmlFor="dize">Size</label>
           <select id="size" name="size" onChange={handleSetProduct}>
             <option>-- None --</option>
-            <option>XS</option>
-            <option>S</option>
-            <option>M</option>
-            <option>L</option>
-            <option>XL</option>
+            {sizes.map((color, index) => (
+              <option key={index}>{color}</option>
+            ))}
           </select>
-
           <label htmlFor="color">Color</label>
           <select id="color" name="color" onChange={handleSetProduct}>
             <option>-- None --</option>
-            <option>Green</option>
-            <option>Red</option>
-            <option>Blue</option>
-            <option>Black</option>
-            <option>Pink</option>
+            {colors.map((color, index) => (
+              <option key={index}>{color}</option>
+            ))}
           </select>
 
           <label htmlFor="category">Category</label>
           <select id="category" name="category" onChange={handleSetProduct}>
             <option>-- None --</option>
-            <option>Woman</option>
-            <option>Man</option>
-            <option>Child</option>
+
+            {categories.map((color, index) => (
+              <option key={index}>{color}</option>
+            ))}
           </select>
 
           <label htmlFor="image">Image</label>
-          <input type="file" id="image" name="image" />
+          <input
+            type="file"
+            id="image"
+            name="image"
+            onChange={handleSetImage}
+          />
         </div>
         <div className="add-button">
-          <button className="btn btn-primary" onClick={() => addProduct()}>
+          <button className="btn btn-primary" onClick={() => uploadImage()}>
             Add
           </button>
         </div>
