@@ -7,11 +7,13 @@ import "./style.scss";
 import "../../../utilities.scss";
 import { RiFacebookBoxFill, RiAppleFill } from "react-icons/ri";
 import { FcGoogle } from "react-icons/fc";
+import ShopContext from "../../../contexts/basket/ShopContext";
 
 const LOGIN_URL = "/auth";
 
 export const Login = () => {
   const { setAuth } = useContext(AuthContext);
+  const context = useContext(ShopContext);
 
   const userRef = useRef();
   const errRef = useRef();
@@ -31,7 +33,9 @@ export const Login = () => {
   }, [user, password]);
 
   const handleLogin = async (e) => {
-    e.preventDefault();
+    // e.preventDefault();
+
+    //context.setAuth({ user: 'fatih', password: 'asdasd', roles: 'admin', accessToke: 'sdfşlksdfşlsdk' });
 
     try {
       const response = await axios.post(
