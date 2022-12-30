@@ -2,10 +2,11 @@
   "products": [
     {
       "name": "test",
-      "price": "1",
-      "size": "S",
-      "color": "Black",
-      "category": "Child",
+      "price": "123",
+      "size": "XXS",
+      "color": "Yellow",
+      "category": "Woman",
+      "imgPath": "http://res.cloudinary.com/dr4cvohdq/image/upload/v1672429502/lmt3mqacrizh3hlkn9ri.jpg",
       "id": 1
     }
   ],
