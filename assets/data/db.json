@@ -1,5 +1,14 @@
 {
-  "products": [],
+  "products": [
+    {
+      "name": "test",
+      "price": "1",
+      "size": "S",
+      "color": "Black",
+      "category": "Child",
+      "id": 1
+    }
+  ],
   "colors": [
     "Beige",
     "Black",
@@ -30,22 +39,5 @@
     "Man",
     "Child"
   ],
-  "signup": [
-    {
-      "mail": "senaysenturk@outlook.com",
-      "user": "senaysenturk",
-      "password": "Bilge123!",
-      "birth": "9899-12-11",
-      "gender": "female",
-      "id": 1
-    },
-    {
-      "mail": "hicranertugral@gmail.com",
-      "user": "hico",
-      "password": "Hicran!6518406",
-      "birth": "1985-11-11",
-      "gender": "female",
-      "id": 2
-    }
-  ]
+  "signup": []
 }

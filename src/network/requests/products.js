@@ -2,6 +2,7 @@ import { baseService } from "../services/baseService";
 
 export const postProduct = (newProduct) => {
   //console.log("Env: " + process.env.REACT_APP_API_URL);
+  console.log("newProduct", newProduct);
   return baseService.post("http://localhost:5500/", "products", newProduct);
 };
 export const getProduct = () => {

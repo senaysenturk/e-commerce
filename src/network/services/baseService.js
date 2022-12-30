@@ -4,11 +4,7 @@ export const baseService = {};
 
 baseService.post = async (url, endpoint, data) => {
   try {
-    const response = await axios.post(`${url}${endpoint}`, data, {
-      headers: {
-        "Content-Type": "application/form-data",
-      },
-    });
+    const response = await axios.post(`${url}${endpoint}`, data, {});
     return response;
   } catch (error) {
     console.log(error.status);
@@ -28,8 +24,7 @@ baseService.postImage = async (url, data) => {
   try {
     const response = await axios.post(url, data, {
       headers: {
-        "Content-Type": "application/form-data",
-        "Access-Control-Allow-Origin": "*",
+        Accept: "*",
       },
     });
     return response;
