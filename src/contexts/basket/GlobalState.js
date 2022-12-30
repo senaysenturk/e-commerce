@@ -6,6 +6,7 @@ import {
   ADD_PRODUCT,
   REMOVE_PRODUCT,
   DECREACE_PRODUCT,
+  TOTAL_PRICE,
 } from "./reducers";
 import list from "../../data";
 
@@ -27,6 +28,12 @@ const GlobalState = (props) => {
     dispatch({ type: DECREACE_PRODUCT, productId });
   };
 
+  const totalPrice =(productPrice) => {
+    dispatch({type: TOTAL_PRICE, productPrice})
+  }
+
+
+
   return (
     <ShopContext.Provider
       value={{
@@ -35,6 +42,7 @@ const GlobalState = (props) => {
         addProductToCart: addProductToCart,
         removeProductFromCart: removeProductFromCart,
         decreaseProduct:decreaseProduct,
+        totalPrice:totalPrice
       }}
     >
       {props.children}

@@ -31,7 +31,7 @@ export const Login = () => {
   }, [user, password]);
 
   const handleLogin = async (e) => {
-    e.preventDefault();
+    // e.preventDefault();
 
     try {
       const response = await axios.post(

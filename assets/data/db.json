@@ -7,6 +7,22 @@
       "color": "Black",
       "category": "Child",
       "id": 1
+    },
+    {
+      "name": "tshirt",
+      "price": "10",
+      "size": "XL",
+      "color": "White",
+      "category": "Woman",
+      "id": 2
+    },
+    {
+      "name": "tshirt",
+      "price": "10",
+      "size": "XL",
+      "color": "White",
+      "category": "Woman",
+      "id": 3
     }
   ],
   "colors": [
