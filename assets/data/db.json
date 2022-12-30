@@ -1,5 +1,14 @@
 {
-  "products": [],
+  "products": [
+    {
+      "name": "test",
+      "price": "1",
+      "size": "S",
+      "color": "Black",
+      "category": "Child",
+      "id": 1
+    }
+  ],
   "colors": [
     "Beige",
     "Black",

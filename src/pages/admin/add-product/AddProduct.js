@@ -10,6 +10,7 @@ const AddProduct = () => {
     image,
     setImage,
     uploadImage,
+    imageURL,
     colors,
     getAllColors,
     sizes,
@@ -18,19 +19,23 @@ const AddProduct = () => {
     getAllCategories,
   } = useProduct();
 
-  const handleSetProduct = (e) =>
+  const handleSetProduct = (e) => {
     setProduct({ ...product, [e.target.name]: e.target.value });
+    console.log(product);
+  };
 
-  const handleSetImage = (e) => {
-    setImage(e.target.files[0]);
-    //console.log(image);
+  const handleSetImage = async (e) => {
+    var response = await uploadImage(e.target.files[0]);
+    if (imageURL) {
+      setProduct({ ...product, [e.target.name]: imageURL });
+    }
   };
 
   useEffect(() => {
     getAllColors();
     getAllSizes();
     getAllCategories();
-  }, []);
+  }, [imageURL]);
 
   return (
     <>
@@ -89,8 +94,9 @@ const AddProduct = () => {
             onChange={handleSetImage}
           />
         </div>
+        {imageURL}
         <div className="add-button">
-          <button className="btn btn-primary" onClick={() => uploadImage()}>
+          <button className="btn btn-primary" onClick={() => addProduct()}>
             Add
           </button>
         </div>

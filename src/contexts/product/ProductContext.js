@@ -16,6 +16,7 @@ const ProductContext = createContext();
 export const ProductProvider = ({ children }) => {
   const [product, setProduct] = useState({});
   const [image, setImage] = useState("");
+  const [imageURL, setImageURL] = useState("");
   const [colors, setColors] = useState([]);
   const [sizes, setSizes] = useState([]);
   const [categories, setCategories] = useState([]);
@@ -27,13 +28,13 @@ export const ProductProvider = ({ children }) => {
   };
 
   //Upload Image
-  const uploadImage = async () => {
-    console.log(image);
+  const uploadImage = async (img) => {
     var formdata = new FormData();
-    formdata.append("file", image);
+    formdata.append("file", img);
     formdata.append("upload_preset", "vi6rdwfh");
     formdata.append("cloud_name", "dr4cvohdq");
     const response = await postImage(formdata);
+    setImageURL(response.data.url);
   };
   const getAllColors = async () => {
     const response = await getColors();
@@ -60,6 +61,7 @@ export const ProductProvider = ({ children }) => {
     image,
     setImage,
     uploadImage,
+    imageURL,
     colors,
     getAllColors,
     sizes,
