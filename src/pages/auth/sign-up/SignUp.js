@@ -8,6 +8,8 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import axios from "../../../api/axios";
+import { getSignUp, postSignUp } from "../../../network/requests/auth/auth";
+import { useAuth } from "../../../contexts/auth/AuthContext";
 
 import "./style.scss";
 import "../../../utilities.scss";
@@ -21,7 +23,8 @@ const MAIL_REGEX =
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 const SIGNUP_URL = "/signup";
 
-function SignUp({ signUp }) {
+function SignUp({ history }) {
+  const { login } = useAuth();
   // const { state } = useContext(Context);
 
   const userRef = useRef();
@@ -73,14 +76,20 @@ function SignUp({ signUp }) {
 
   const addUser = async (e) => {
     try {
-      const response = await axios.post(
+      const response = await postSignUp({
+        mail, user, password, birth, gender, role
+      });
+      /* const response = await axios.post(
         SIGNUP_URL,
         JSON.stringify({ mail, user, password, birth, gender, role }),
         {
           headers: { "Content-Type": "application/json" },
           withCredentials: true,
         }
-      );
+      ); */
+
+      login(response);
+      //history.push("/");
       // TODO: remove console.logs before deployment
       console.log(response.data);
       console.log(response.accessToken);
@@ -124,7 +133,8 @@ function SignUp({ signUp }) {
     console.log(gender);
 
     try {
-      const response = await axios.get("http://localhost:5500/signup");
+      const response = await getSignUp();
+      // const response = await axios.get("http://localhost:5500/signup");
       console.log(response.data);
       var isValidMail = response.data.some(function (userItem) {
         return userItem.mail === mail;

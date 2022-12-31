@@ -63,14 +63,10 @@ axios.interceptors.request.use(
 */
 baseService.postAuth = async (url, endpoint, data) => {
   try {
-    const response = await axios.post(
-      `${url}${endpoint}`,
-      JSON.stringify({ data }),
-      {
-        headers: { "Content-Type": "application/json" },
-        withCredentials: true,
-      }
-    );
+    const response = await axios.post(`${url}${endpoint}`, data, {
+      headers: { "Content-Type": "application/json" },
+      withCredentials: true,
+    });
     return response;
   } catch (error) {
     console.log(error.status);
