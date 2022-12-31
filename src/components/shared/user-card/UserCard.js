@@ -5,10 +5,47 @@ import "../../../utilities.scss";
 
 import { Link, useNavigate } from "react-router-dom";
 
-export const UserCard = () => {
+import { useAuth } from "../../../contexts/auth/AuthContext";
+
+export const UserCard = ({ history }) => {
   const navigate = useNavigate();
+  const { loggedIn, logout } = useAuth();
+  console.log(loggedIn);
+
+  const handleLogout = async () => {
+    logout(() => {
+      history.push("/");
+    });
+  };
+
   return (
     <div className="user-container">
+      {!loggedIn && (
+        <>
+          <div className="auth-options">
+            <button className="btn btn-gray" onClick={() => navigate("/auth")}>
+              Login
+            </button>
+            <button
+              className="btn btn-outline"
+              onClick={() => navigate("/auth/signUp")}
+            >
+              Sign Up Now
+            </button>
+          </div>
+        </>
+      )}
+
+      {loggedIn && (
+        <>
+          <div className="auth-options">
+            <button className="btn btn-gray" onClick={() => handleLogout()}>
+              Log out
+            </button>
+          </div>
+        </>
+      )}
+      {/* 
       <div className="auth-options">
         <button className="btn btn-gray" onClick={() => navigate("/auth")}>
           Login
@@ -20,14 +57,22 @@ export const UserCard = () => {
           Sign Up Now
         </button>
       </div>
+       */}
       <div className="or-divide">
         <span className="hr"></span>
       </div>
       <div className="content-options">
         <ul>
-          <li>
+          {loggedIn && (
+            <>
+              <li>
+                <Link to="/user-profile">My Account</Link>
+              </li>
+            </>
+          )}
+          {/*  <li>
             <Link to="/user-profile">My Account</Link>
-          </li>
+          </li> */}
           <li>
             <Link to="/order-tracking">Order Tracking</Link>
           </li>
