@@ -12,7 +12,7 @@ const dummyData = {
   category: "Woman",
   id: 3,
   cartPrice: " 389",
-  img : "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/6202/267/001/6202267001_1_1_2.jpg?t=1669732582176",
+  img: "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/6202/267/001/6202267001_1_1_2.jpg?t=1669732582176",
 };
 
 const CardDetail = ({ path }) => {
@@ -61,10 +61,14 @@ const CardDetail = ({ path }) => {
           </p>
           <div className="colors">
             Colors:
-            <div className="red"> </div>
-            <div className="yellow"> </div>
-            <div className="blue"> </div>
-            <div className="green"> </div>
+            <input type="radio" name="color" id="red" />
+            <label for="red">
+              <span class="red" name="color" id="red"></span>
+            </label>
+            <input type="radio" name="color" id="black" />
+            <label for="black">
+              <span class="black"></span>
+            </label>
           </div>
           <div className="size-group">
             <p>Size:</p>
@@ -101,7 +105,7 @@ const CardDetail = ({ path }) => {
             type="button"
             className="btn btn-primary"
             onClick={() => {
-              dummyData.amount=productCount;
+              dummyData.amount = productCount;
               context.addProductToCart(dummyData);
               console.log(context);
             }}

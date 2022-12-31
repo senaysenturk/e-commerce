@@ -26,32 +26,19 @@ const CardSummary = ({ path }) => {
             praesentium tempore perspiciatis accusamus amet sed repellendus non,
             distinctio molestiae. Quos quo ducimus ratione.
           </p>
-          {/* <div className="size-group">
-            <p>Size:</p>
-            <select className="size">
-              <option value="">Select Size</option>
-              <option value="XS">XS</option>
-              <option value="S">S</option>
-              <option value="M">M</option>
-              <option value="L">L</option>
-              <option value="XL">XL</option>
-            </select>
-          </div>
-          <div className="quantity-group">
-            <p>Quantity:</p>
-            <input className="quantity" max="9999" min="1" type="number" />
-          </div>
-          <button type="button" className="btn btn-primary">
-            Add to cart
-          </button> */}
+
           <div className="colors">
             Colors:
-            <div className="red"> </div>
-            <div className="yellow"> </div>
-            <div className="blue"> </div>
-            <div className="green"> </div>
+            <input type="radio" name="color" id="red" value="red" />
+            <label for="red">
+              <span class="red"></span>
+            </label>
+            <input type="radio" name="color" id="black" />
+            <label for="black">
+              <span class="black"></span>
+            </label>
           </div>
-          <Link to="products/product/1">View Full</Link>
+          <Link to="products/product/1">More Detail</Link>
         </div>
       </div>
     </>
