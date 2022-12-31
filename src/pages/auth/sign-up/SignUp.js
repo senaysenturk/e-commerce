@@ -33,10 +33,12 @@ function SignUp({ history }) {
   const [mail, setMail] = useState("");
   const [validMail, setValidMail] = useState(false);
   const [mailFocus, setMailFocus] = useState(false);
+  const [errMail, setErrMail] = useState("");
 
   const [user, setUser] = useState("");
   const [validName, setValidName] = useState(false);
   const [userFocus, setUserFocus] = useState(false);
+  const [errUser, setErrUser] = useState("");
 
   const [password, setPassword] = useState("");
   const [validPassword, setValidPassword] = useState(false);
@@ -73,6 +75,14 @@ function SignUp({ history }) {
   useEffect(() => {
     setErrMsg("");
   }, [user, password, matchPassword]);
+
+  useEffect(() => {
+    setErrMail("");
+  }, [mail]);
+
+  useEffect(() => {
+    setErrUser("");
+  }, [user]);
 
   const addUser = async (e) => {
     try {
@@ -140,17 +150,19 @@ function SignUp({ history }) {
         return userItem.mail === mail;
       });
       if (isValidMail) {
-        //("mail already used");
-        alert("mail already used");
-        setMail("");
+        setErrMail("mail already used");
+        // setErrMsg("mail already used");
+        // alert("mail already used");
+        // setMail("");
       } else {
         var isValidUser = response.data.some(function (userItem) {
           return userItem.user === user;
         });
         if (isValidUser) {
-          setErrMsg("user name already used");
-          //alert("user name already used");
-          //setUser("");
+          setErrUser("user name already used");
+          // setErrMsg("user name already used");
+          // alert("user name already used");
+          // setUser("");
         } else {
           addUser();
         }
@@ -243,6 +255,12 @@ function SignUp({ history }) {
                       onFocus={() => setMailFocus(true)}
                       onBlur={() => setMailFocus(false)}
                     />
+                     <p
+                      id="uidnote"
+                      className={errMail ? "instructions" : "offscreen"}
+                    >
+                      {errMail}
+                    </p>
                     <p
                       id="uidnote"
                       className={
@@ -296,6 +314,12 @@ function SignUp({ history }) {
                     <div className="appears">
                       <p>This appears on your profile.</p>
                     </div>
+                    <p
+                      id="uidnote"
+                      className={errUser ? "instructions" : "offscreen"}
+                    >
+                      {errUser}
+                    </p>
                     <p
                       id="uidnote"
                       className={
