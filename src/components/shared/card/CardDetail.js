@@ -12,7 +12,7 @@ const dummyData = {
   category: "Woman",
   id: 3,
   cartPrice: " 389",
-  img : "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/6202/267/001/6202267001_1_1_2.jpg?t=1669732582176",
+  img: "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/6202/267/001/6202267001_1_1_2.jpg?t=1669732582176",
 };
 
 const CardDetail = ({ path }) => {
@@ -61,10 +61,46 @@ const CardDetail = ({ path }) => {
           </p>
           <div className="colors">
             Colors:
-            <div className="red"> </div>
-            <div className="yellow"> </div>
-            <div className="blue"> </div>
-            <div className="green"> </div>
+            <input type="radio" name="color" id="red" value="red" />
+            <label for="red">
+              <span class="red"></span>
+            </label>
+            <input type="radio" name="color" id="green" />
+            <label for="green">
+              <span class="green"></span>
+            </label>
+            <input type="radio" name="color" id="yellow" />
+            <label for="yellow">
+              <span class="yellow"></span>
+            </label>
+            <input type="radio" name="color" id="olive" />
+            <label for="olive">
+              <span class="olive"></span>
+            </label>
+            <input type="radio" name="color" id="orange" />
+            <label for="orange">
+              <span class="orange"></span>
+            </label>
+            <input type="radio" name="color" id="teal" />
+            <label for="teal">
+              <span class="teal"></span>
+            </label>
+            <input type="radio" name="color" id="blue" />
+            <label for="blue">
+              <span class="blue"></span>
+            </label>
+            <input type="radio" name="color" id="violet" />
+            <label for="violet">
+              <span class="violet"></span>
+            </label>
+            <input type="radio" name="color" id="purple" />
+            <label for="purple">
+              <span class="purple"></span>
+            </label>
+            <input type="radio" name="color" id="pink" />
+            <label for="pink">
+              <span class="pink"></span>
+            </label>
           </div>
           <div className="size-group">
             <p>Size:</p>
@@ -101,7 +137,7 @@ const CardDetail = ({ path }) => {
             type="button"
             className="btn btn-primary"
             onClick={() => {
-              dummyData.amount=productCount;
+              dummyData.amount = productCount;
               context.addProductToCart(dummyData);
               console.log(context);
             }}

@@ -162,34 +162,3 @@ body {
     width: calc(100% - 370px);
   }
 }
-.colors {
-  display: flex;
-  gap: 10px;
-  .red {
-    width: 20px;
-    height: 20px;
-    background-color: red;
-    border-radius: 50px;
-  }
-
-  .green {
-    width: 20px;
-    height: 20px;
-    background-color: green;
-    border-radius: 50px;
-  }
-
-  .blue {
-    width: 20px;
-    height: 20px;
-    background-color: blue;
-    border-radius: 50px;
-  }
-
-  .yellow {
-    width: 20px;
-    height: 20px;
-    background-color: yellow;
-    border-radius: 50px;
-  }
-}

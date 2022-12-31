@@ -38,70 +38,63 @@ const AddProduct = () => {
   }, [imageURL]);
 
   return (
-    <>
-      <div className="add-product">
-        <h3>ADD PRODUCT</h3>
-        <div className="product">
-          <label htmlFor="product-name">Product Name</label>
-          <input
-            type="text"
-            placeholder="T-Shirt"
-            id="name"
-            name="name"
-            onChange={handleSetProduct}
-          />
+    <div className="add-product">
+      <h3>ADD PRODUCT</h3>
+      <div className="product">
+        <label htmlFor="product-name">Product Name</label>
+        <input
+          type="text"
+          placeholder="T-Shirt"
+          id="name"
+          name="name"
+          onChange={handleSetProduct}
+        />
 
-          <label htmlFor="price">Price</label>
-          <input
-            type="number"
-            placeholder="10.99$"
-            step="0.01"
-            min="0"
-            id="price"
-            name="price"
-            onChange={handleSetProduct}
-          />
+        <label htmlFor="price">Price</label>
+        <input
+          type="number"
+          placeholder="10.99$"
+          step="0.01"
+          min="0"
+          id="price"
+          name="price"
+          onChange={handleSetProduct}
+        />
 
-          <label htmlFor="dize">Size</label>
-          <select id="size" name="size" onChange={handleSetProduct}>
-            <option>-- None --</option>
-            {sizes.map((color, index) => (
-              <option key={index}>{color}</option>
-            ))}
-          </select>
-          <label htmlFor="color">Color</label>
-          <select id="color" name="color" onChange={handleSetProduct}>
-            <option>-- None --</option>
-            {colors.map((color, index) => (
-              <option key={index}>{color}</option>
-            ))}
-          </select>
+        <label htmlFor="dize">Size</label>
+        <select id="size" name="size" onChange={handleSetProduct}>
+          <option>-- None --</option>
+          {sizes.map((color, index) => (
+            <option key={index}>{color}</option>
+          ))}
+        </select>
+        <label htmlFor="color">Color</label>
+        <select id="color" name="color" onChange={handleSetProduct}>
+          <option>-- None --</option>
+          {colors.map((color, index) => (
+            <option key={index}>{color}</option>
+          ))}
+        </select>
 
-          <label htmlFor="category">Category</label>
-          <select id="category" name="category" onChange={handleSetProduct}>
-            <option>-- None --</option>
+        <label htmlFor="category">Category</label>
+        <select id="category" name="category" onChange={handleSetProduct}>
+          <option>-- None --</option>
 
-            {categories.map((color, index) => (
-              <option key={index}>{color}</option>
-            ))}
-          </select>
+          {categories.map((color, index) => (
+            <option key={index}>{color}</option>
+          ))}
+        </select>
 
-          <label htmlFor="image">Image</label>
-          <input
-            type="file"
-            id="image"
-            name="image"
-            onChange={handleSetImage}
-          />
-        </div>
-        {imageURL}
-        <div className="add-button">
-          <button className="btn btn-primary" onClick={() => addProduct()}>
-            Add
-          </button>
-        </div>
+        <label htmlFor="image">Image</label>
+        <input type="file" id="image" name="image" onChange={handleSetImage} />
       </div>
-    </>
+      {imageURL}
+      <div className="add-button">
+        <button className="btn btn-primary" onClick={() => addProduct()}>
+          Add
+        </button>
+      </div>
+    </div>
   );
 };
 
