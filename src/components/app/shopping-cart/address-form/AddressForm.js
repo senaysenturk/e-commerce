@@ -1,8 +1,18 @@
 import React from "react";
+import { useState } from "react";
+import { getCities } from "../../../../network/requests/order/order";
 
 import "./style.scss";
 
 export const AddressForm = () => {
+  const [cities, setCities] = useState([]);
+
+  const getAllCities = async () => {
+    const response = await getCities();
+    setCities(response.data);
+    console.log(cities);
+  };
+
   return (
     <>
       <div className="checkout-addresses">
@@ -35,11 +45,19 @@ export const AddressForm = () => {
 
           <p>Address Informations</p>
 
-          <select id="country" name="country">
-            <option value="australia">Australia</option>
-            <option value="canada">Canada</option>
-            <option value="usa">USA</option>
+          <select id="city" name="city">
+            <option>-- None --</option>
           </select>
+          {/*  {getAllCities()}*/}
+          {/*  <select id="city">
+            <option>-- None --</option>
+            {cities.map((cityObject, index) => (
+              <option key={index}>a</option>
+            ))}
+            {/* {colors.map((color, index) => (
+              <option key={index}>{color}</option>
+            ))} 
+          </select> */}
 
           <textarea
             id="address"
