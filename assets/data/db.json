@@ -70,20 +70,12 @@
     },
     {
       "mail": "celik.ipekgulsen@gmail.com",
-      "user": "celikipek",
-      "password": "Bilge123!",
-      "birth": "2022-12-08",
-      "gender": "female",
-      "id": 4
-    },
-    {
-      "mail": "ipekgulsen.celik@icloud.com",
       "user": "ipekcelik",
       "password": "Bilge123!",
       "birth": "2022-12-08",
       "gender": "female",
       "role": "user",
-      "id": 5
+      "id": 4
     }
   ],
   "auth": [],

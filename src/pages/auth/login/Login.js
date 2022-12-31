@@ -7,11 +7,14 @@ import "../../../utilities.scss";
 import { RiFacebookBoxFill, RiAppleFill } from "react-icons/ri";
 import { FcGoogle } from "react-icons/fc";
 import ShopContext from "../../../contexts/basket/ShopContext";
+import { useAuth } from "../../../contexts/auth/AuthContext";
+import { getSignUp, postAuth } from "../../../network/requests/auth/auth";
 
 const LOGIN_URL = "/auth";
 
 export const Login = () => {
   const shopContext = useContext(ShopContext);
+  const { login } = useAuth();
 
   const userRef = useRef();
   const errRef = useRef();
@@ -43,21 +46,29 @@ export const Login = () => {
 
   const addAuth = async (e) => {
     try {
-      const response = await axios.post(
+      const response = await postAuth({ user, password, role: authUser[0].role });
+      /*  const response = await axios.post(
         LOGIN_URL,
         JSON.stringify({ user, password }),
         {
           headers: { "Content-Type": "application/json" },
           withCredentials: true,
         }
-      );
+      ); */
+      login(response);
       console.log(JSON.stringify(response?.data));
       //console.log(JSON.stringify(response));
       const accessToken = response?.data?.accessToken;
       const roles = response?.data?.roles;
-      shopContext.setAuth({ user, password, roles, accessToken, role: authUser[0].role });
-      //console.log(JSON.stringify(roles))
-      //console.log(JSON.stringify(shopContext.auth));
+      shopContext.setAuth({
+        user,
+        password,
+        roles,
+        accessToken,
+        role: authUser[0].role,
+      });
+      // console.log(roles)
+      // console.log(shopContext.auth);
       setUser("");
       setPassword("");
       setSuccess(true);
@@ -82,7 +93,8 @@ export const Login = () => {
     // e.preventDefault();
 
     try {
-      const response = await axios.get("http://localhost:5500/signup");
+      const response = await getSignUp();
+      // const response = await axios.get("http://localhost:5500/signup");
       console.log(response.data);
 
       authUser = response.data.filter(
