@@ -48,6 +48,7 @@ function SignUp({ signUp }) {
 
   const [birth, setBirth] = useState("");
   const [gender, setGender] = useState("");
+  const [role, setRole] = useState("user");
 
   useEffect(() => {
     userRef.current.focus();
@@ -70,27 +71,11 @@ function SignUp({ signUp }) {
     setErrMsg("");
   }, [user, password, matchPassword]);
 
-  const handleSignUp = async (e) => {
-    // e.preventDefault();
-    // if button enabled with JS hack
-    const v1 = USER_REGEX.test(user);
-    const v2 = PWD_REGEX.test(password);
-    const v3 = MAIL_REGEX.test(mail);
-    if (!v1 || !v2 || !v3) {
-      setErrMsg("Invalid Entry");
-      return;
-    }
-
-    console.log(mail);
-    console.log(user);
-    console.log(password);
-    console.log(birth);
-    console.log(gender);
-
+  const addUser = async (e) => {
     try {
       const response = await axios.post(
         SIGNUP_URL,
-        JSON.stringify({ mail, user, password, birth, gender }),
+        JSON.stringify({ mail, user, password, birth, gender, role }),
         {
           headers: { "Content-Type": "application/json" },
           withCredentials: true,
@@ -109,6 +94,55 @@ function SignUp({ signUp }) {
       setMatchPassword("");
       setBirth("");
       setGender("");
+    } catch (err) {
+      if (!err?.response) {
+        setErrMsg("No Server Response");
+      } else if (err.response?.status === 409) {
+        setErrMsg("Username Taken");
+      } else {
+        setErrMsg("Registration Failed");
+      }
+      errRef.current.focus();
+    }
+  };
+
+  const handleSignUp = async (e) => {
+    // e.preventDefault();
+    // if button enabled with JS hack
+    const v1 = USER_REGEX.test(user);
+    const v2 = PWD_REGEX.test(password);
+    const v3 = MAIL_REGEX.test(mail);
+    if (!v1 || !v2 || !v3) {
+      setErrMsg("Invalid Entry");
+      return;
+    }
+
+    console.log(mail);
+    console.log(user);
+    console.log(password);
+    console.log(birth);
+    console.log(gender);
+
+    try {
+      const response = await axios.get("http://localhost:5500/signup");
+      console.log(response.data);
+      var isValidMail = response.data.some(function (userItem) {
+        return userItem.mail === mail;
+      });
+      if (isValidMail) {
+        setErrMsg("mail already used");
+        setMail("");
+      } else {
+        var isValidUser = response.data.some(function (userItem) {
+          return userItem.user === user;
+        });
+        if (isValidUser) {
+          setErrMsg("user name already used");
+          setUser("");
+        } else {
+          addUser();
+        }
+      }
     } catch (err) {
       if (!err?.response) {
         setErrMsg("No Server Response");

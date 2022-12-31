@@ -47,25 +47,44 @@
       "password": "Bilge123!",
       "birth": "9899-12-11",
       "gender": "female",
+      "role": "admin",
       "id": 1
     },
     {
       "mail": "hicranertugral@gmail.com",
-      "user": "hico",
+      "user": "hicran",
       "password": "Hicran!6518406",
       "birth": "1985-11-11",
       "gender": "female",
+      "role": "admin",
       "id": 2
     },
     {
-      "mail": "celik.ipekgulsen@gmail.com",
+      "mail": "ipekgulsen.celik@gmail.com",
       "user": "ipek",
       "password": "Bilge123!",
       "birth": "2022-12-08",
       "gender": "female",
+      "role": "admin",
       "id": 3
+    },
+    {
+      "mail": "celik.ipekgulsen@gmail.com",
+      "user": "celikipek",
+      "password": "Bilge123!",
+      "birth": "2022-12-08",
+      "gender": "female",
+      "id": 4
+    },
+    {
+      "mail": "ipekgulsen.celik@icloud.com",
+      "user": "ipekcelik",
+      "password": "Bilge123!",
+      "birth": "2022-12-08",
+      "gender": "female",
+      "role": "user",
+      "id": 5
     }
   ],
-  "auth": [
-  ]
+  "auth": []
 }
