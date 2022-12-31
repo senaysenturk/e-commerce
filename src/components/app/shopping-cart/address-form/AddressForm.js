@@ -10,18 +10,27 @@ export const AddressForm = () => {
           <header>Teslimat Adresi</header>
         </div>
         <div className="address-form">
-          <input
-            type="text"
-            id="fname"
-            name="firstname"
-            placeholder="Your name.."
-          />
+          <div className="person">
+            <input
+              type="text"
+              id="fname"
+              name="firstname"
+              placeholder="Your name.."
+            />
+
+            <input
+              type="text"
+              id="lname"
+              name="lastname"
+              placeholder="Your last name.."
+            />
+          </div>
 
           <input
             type="text"
-            id="lname"
-            name="lastname"
-            placeholder="Your last name.."
+            id="phone"
+            name="phone"
+            placeholder="Your phone number.."
           />
 
           <p>Address Informations</p>
@@ -33,23 +42,23 @@ export const AddressForm = () => {
           </select>
 
           <textarea
-            id="subject"
-            name="subject"
+            id="address"
+            name="address"
             placeholder="Write something.."
             //style="height:200px"
           ></textarea>
 
           <input
             type="text"
-            id="lname"
-            name="lastname"
-            placeholder="Your last name.."
+            id="postcode"
+            name="postcode"
+            placeholder="Your postal code.."
           />
 
           <input
             type="text"
-            id="lname"
-            name="lastname"
+            id="addressName"
+            name="addressName"
             placeholder="Your address name.."
           />
 
