@@ -29,6 +29,7 @@ const CardSummary = ({ path }) => {
 
           <div className="colors">
             Colors:
+            <input type="radio" name="color" id="red" value="red" />
             <label for="red">
               <span class="red"></span>
             </label>
