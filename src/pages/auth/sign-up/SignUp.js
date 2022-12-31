@@ -130,7 +130,8 @@ function SignUp({ signUp }) {
         return userItem.mail === mail;
       });
       if (isValidMail) {
-        setErrMsg("mail already used");
+        //("mail already used");
+        alert("mail already used");
         setMail("");
       } else {
         var isValidUser = response.data.some(function (userItem) {
@@ -138,7 +139,8 @@ function SignUp({ signUp }) {
         });
         if (isValidUser) {
           setErrMsg("user name already used");
-          setUser("");
+          //alert("user name already used");
+          //setUser("");
         } else {
           addUser();
         }
