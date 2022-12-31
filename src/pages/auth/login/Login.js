@@ -6,7 +6,7 @@ import "./style.scss";
 import "../../../utilities.scss";
 import { RiFacebookBoxFill, RiAppleFill } from "react-icons/ri";
 import { FcGoogle } from "react-icons/fc";
-import ShopContext from '../../../contexts/basket/ShopContext';
+import ShopContext from "../../../contexts/basket/ShopContext";
 
 const LOGIN_URL = "/auth";
 
@@ -17,7 +17,10 @@ export const Login = () => {
   const errRef = useRef();
 
   const [user, setUser] = useState("");
+  const [errUser, setErrUser] = useState("");
+
   const [password, setPassword] = useState("");
+  const [errPassword, setErrPassword] = useState("");
 
   const [errMsg, setErrMsg] = useState("");
   const [success, setSuccess] = useState(false);
@@ -30,9 +33,15 @@ export const Login = () => {
     setErrMsg("");
   }, [user, password]);
 
-  const handleLogin = async (e) => {
-    // e.preventDefault();
+  useEffect(() => {
+    setErrUser("");
+  }, [user]);
 
+  useEffect(() => {
+    setErrPassword("");
+  }, [password]);
+
+  const addAuth = async (e) => {
     try {
       const response = await axios.post(
         LOGIN_URL,
@@ -65,6 +74,37 @@ export const Login = () => {
     }
   };
 
+  const handleLogin = async (e) => {
+    // e.preventDefault();
+
+    try {
+      const response = await axios.get("http://localhost:5500/signup");
+      console.log(response.data);
+
+      var authUser = response.data.filter(
+        (userObject) => userObject.mail === user || userObject.user === user
+      );
+      console.log(authUser);
+
+      authUser.length === 0
+        ? setErrUser("user not found")
+        : authUser[0].password === password
+        ? addAuth()
+        : setErrPassword("password is not correct");
+    } catch (err) {
+      if (!err?.response) {
+        setErrMsg("No Server Response");
+      } else if (err.response?.status === 400) {
+        setErrMsg("Missing Username or Password");
+      } else if (err.response?.status === 401) {
+        setErrMsg("Unauthorized");
+      } else {
+        setErrMsg("Login Failed");
+      }
+      errRef.current.focus();
+    }
+  };
+
   return (
     <>
       {success ? (
@@ -72,7 +112,7 @@ export const Login = () => {
           <h1>You are logged in!</h1>
           <br />
           <p>
-            <a href="#">Go to Home</a>
+            <a href="http://localhost:3000">Go to Home</a>
           </p>
         </section>
       ) : (
@@ -131,6 +171,12 @@ export const Login = () => {
                       value={user}
                       required
                     />
+                    <p
+                      id="uidnote"
+                      className={errUser ? "instructions" : "offscreen"}
+                    >
+                      {errUser}
+                    </p>
                     <label htmlFor="password">
                       <strong>Password</strong>
                     </label>
@@ -142,6 +188,12 @@ export const Login = () => {
                       value={password}
                       required
                     />
+                    <p
+                      id="uidnote"
+                      className={errPassword ? "instructions" : "offscreen"}
+                    >
+                      {errPassword}
+                    </p>
                   </form>
                   <div className="forgot-password">
                     <a href="">Forgot your password?</a>
