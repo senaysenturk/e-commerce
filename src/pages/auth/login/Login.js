@@ -55,7 +55,9 @@ export const Login = () => {
       //console.log(JSON.stringify(response));
       const accessToken = response?.data?.accessToken;
       const roles = response?.data?.roles;
-      shopContext.setAuth({ user, password, roles, accessToken });
+      shopContext.setAuth({ user, password, roles, accessToken, role: authUser[0].role });
+      //console.log(JSON.stringify(roles))
+      //console.log(JSON.stringify(shopContext.auth));
       setUser("");
       setPassword("");
       setSuccess(true);
@@ -74,6 +76,8 @@ export const Login = () => {
     }
   };
 
+  var authUser;
+
   const handleLogin = async (e) => {
     // e.preventDefault();
 
@@ -81,7 +85,7 @@ export const Login = () => {
       const response = await axios.get("http://localhost:5500/signup");
       console.log(response.data);
 
-      var authUser = response.data.filter(
+      authUser = response.data.filter(
         (userObject) => userObject.mail === user || userObject.user === user
       );
       console.log(authUser);
