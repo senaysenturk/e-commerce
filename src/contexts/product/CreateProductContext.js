@@ -11,9 +11,9 @@ import {
 } from "../../network/requests/product/products";
 import AddProduct from "../../pages/admin/add-product/AddProduct";
 
-const ProductContext = createContext();
+const CreateProductContext = createContext();
 
-export const ProductProvider = ({ children }) => {
+export const CreateProductProvider = ({ children }) => {
   const [product, setProduct] = useState({});
   const [image, setImage] = useState(null);
   const [colors, setColors] = useState([]);
@@ -81,8 +81,10 @@ export const ProductProvider = ({ children }) => {
   };
 
   return (
-    <ProductContext.Provider value={values}>{children}</ProductContext.Provider>
+    <CreateProductContext.Provider value={values}>
+      {children}
+    </CreateProductContext.Provider>
   );
 };
 
-export const useProduct = () => useContext(ProductContext);
+export const useProduct = () => useContext(CreateProductContext);

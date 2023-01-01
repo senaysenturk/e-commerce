@@ -23,12 +23,12 @@ import Products from "./pages/dashboard/product/Products";
 import CardDetail from "./components/shared/card/CardDetail";
 import AddProduct from "./pages/admin/add-product/AddProduct";
 import AdminLayout from "./layouts/admin-layout/AdminLayout";
-import { ProductProvider } from "./contexts/product/ProductContext";
+import { CreateProductProvider } from "./contexts/product/CreateProductContext";
 import OrderTracking from "./components/app/shopping-cart/order-tracking/OrderTracking";
 
 function App() {
   return (
-    <>      
+    <>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<DashboardLayout />}>
@@ -61,9 +61,9 @@ function App() {
             <Route
               path="add-product"
               element={
-                <ProductProvider>
+                <CreateProductProvider>
                   <AddProduct></AddProduct>
-                </ProductProvider>
+                </CreateProductProvider>
               }
             />
           </Route>

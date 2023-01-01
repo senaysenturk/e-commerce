@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { useProduct } from "../../../contexts/product/ProductContext";
+import { useProduct } from "../../../contexts/product/CreateProductContext";
 import "./style.scss";
 
 const AddProduct = () => {
@@ -39,8 +39,7 @@ const AddProduct = () => {
   };
 
   const handleSetColor = (e) => {
-    setColor((prevSize) => [...prevSize, e.target.value]);
-    console.log(color);
+    setColor((prevColor) => [...prevColor, e.target.value]);
     setProduct({ ...product, color: color });
   };
 
@@ -83,7 +82,7 @@ const AddProduct = () => {
                 value={size}
                 onChange={handleSetSize}
               />
-              <label htmlFor={size}>{size}</label>
+              <label for={size}>{size}</label>
             </div>
           ))}
         </div>
@@ -99,7 +98,7 @@ const AddProduct = () => {
                   value={color}
                   onChange={handleSetColor}
                 />
-                <label htmlFor={color}>
+                <label for={color}>
                   <span className={color} name={color} id={color}></span>
                 </label>
               </>
