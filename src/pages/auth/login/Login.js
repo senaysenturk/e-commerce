@@ -1,6 +1,7 @@
 import React from "react";
 import { useRef, useState, useEffect, useContext } from "react";
 import axios from "../../../api/axios";
+import { Navigate } from "react-router-dom";
 
 import "./style.scss";
 import "../../../utilities.scss";
@@ -14,7 +15,9 @@ const LOGIN_URL = "/auth";
 
 export const Login = () => {
   const shopContext = useContext(ShopContext);
-  const { login } = useAuth();
+  const { login, setCurrentUser } = useAuth();
+
+  const [navigate, setNavigate] = useState(false);
 
   const userRef = useRef();
   const errRef = useRef();
@@ -46,7 +49,11 @@ export const Login = () => {
 
   const addAuth = async (e) => {
     try {
-      const response = await postAuth({ user, password, role: authUser[0].role });
+      const response = await postAuth({
+        user,
+        password,
+        role: authUser[0].role,
+      });
       /*  const response = await axios.post(
         LOGIN_URL,
         JSON.stringify({ user, password }),
@@ -56,6 +63,7 @@ export const Login = () => {
         }
       ); */
       login(response);
+      setCurrentUser(response.data);
       console.log(JSON.stringify(response?.data));
       //console.log(JSON.stringify(response));
       const accessToken = response?.data?.accessToken;
@@ -69,6 +77,7 @@ export const Login = () => {
       });
       // console.log(roles)
       // console.log(shopContext.auth);
+      setNavigate(true);
       setUser("");
       setPassword("");
       setSuccess(true);
@@ -86,6 +95,10 @@ export const Login = () => {
       errRef.current.focus();
     }
   };
+
+  if (navigate) {
+    return <Navigate to="/" />;
+  }
 
   var authUser;
 
