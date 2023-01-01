@@ -12,12 +12,15 @@ export const postAuth = (newUser) => {
   return baseService.postAuth("http://localhost:5500/", "auth", newUser);
 };
 
+export const postMe = (newUser) => {
+  return baseService.postAuth("http://localhost:5500/", "me", newUser);
+};
+
 export const fetchMe = () => {
   return baseService.get("http://localhost:5500/", "me");
 };
 
-export const fetchLogout = async () => {
-  return baseService.postLogout("http://localhost:5500/", "logout");
+export const fetchLogout = async (id) => {
+  return baseService.delete("http://localhost:5500/", "me/", id);
 };
-
 
