@@ -1,25 +1,29 @@
 import React, { useState } from "react";
 import "./style.scss";
 import Modal from "../../../shared/modal/Modal";
-
-const SmallCard = ({ path, index }) => {
+/**
+ * 
+ * @param {{product:Product}} param0 
+ * @returns 
+ */
+const SmallCard = ({ product}) => {
   const [isOpen, setIsOpen] = useState(false);
   //console.log(isOpen);
   return (
     <>
-      {isOpen && <Modal setIsOpen={setIsOpen} path={path} index={index} />}
-      <div className="small-card" index>
+      {isOpen && <Modal setIsOpen={setIsOpen} product={product} />}
+      <div className="small-card">
         <div className="product-img">
-          <img src={path} alt="Çiçek işlemeli bluz" />
+          <img src={product.imgPath} alt="Çiçek işlemeli bluz" />
         </div>
         <div className="quickview">
           <span className="quickview_icon" onClick={() => setIsOpen(true)}>
             Quick View
           </span>
           <div className="quickview_info" lang="tr">
-            <p className="quickview_info">Çiçek işlemeli bluz</p>
+            <p className="quickview_info">{product.name}</p>
             <p className="quickview_info_price" id="bluz">
-              $298.00
+              {product.price.toFixed(2)}
             </p>
           </div>
 

@@ -12,7 +12,6 @@ export const OrderDetail = (
   ) => {
 const context = useContext(ShopContext)
   const [count, setCount] = useState(0);
-  const [amount, setAmount] = useState(1);
   const [price, setPrice] = useState(0);
 
   const handleRemove = (id) => {
@@ -64,7 +63,7 @@ const context = useContext(ShopContext)
         {context.cart.map((product) => (
           <div className="order-item-card" key={product.id}>
             <div className="item-image">
-              <img src={product.img} alt="" />
+              <img src={product.imgPath} alt="" />
             </div>
             <div className="item-content-main">
               <div className="item-main">
@@ -93,11 +92,11 @@ const context = useContext(ShopContext)
                 <div className="item-bottom">
                   <div className="item-quantity">
                     <div className="item-quantity-wrapper">
-                      <a
+                      <a 
                         className="item-quantity-button item-decrease-button"
-                        onClick={() => {
-                          context.removeProductFromCart(product.id)
-                          // handleChange(product, -1)
+                        onClick={(e) => { 
+                          e.preventDefault()
+                          context.decreaseProduct(product.id)
                         }
                         }
                       >
@@ -108,16 +107,17 @@ const context = useContext(ShopContext)
                       </span>
                       <a
                         className="item-quantity-button item-increase-button"
-                        onClick={() => context.addProductToCart(product)
-                          // handleChange(product, 1)
-                        }
+                        onClick={() => {
+                          const copyProduct = {...product, amount:1}
+                          context.addProductToCart(copyProduct)
+                        }}
                       >
                         <span>+</span>
                       </a>
                     </div>
                   </div>
                   <div className="item-price">
-                    <span className="actual-price">{product.price}</span>
+                    <span className="actual-price">{product.price.toFixed(2)}</span>
                     {/* <span className="actual-price">{product.cartPrice}</span> */}
                   </div>
                 </div>
@@ -128,7 +128,7 @@ const context = useContext(ShopContext)
        
         
       </div>
-      <OrderSummary price={price} />
+      <OrderSummary price={price.toFixed(2)} />
     </>
   );
 };

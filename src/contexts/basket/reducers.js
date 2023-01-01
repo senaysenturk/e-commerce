@@ -1,6 +1,7 @@
 export const ADD_PRODUCT = "ADD_PRODUCT";
 export const REMOVE_PRODUCT = "REMOVE_PRODUCT";
 export const DECREACE_PRODUCT = "DECREACE_PRODUCT";
+export const SET_INITIAL_STATE = "SET_INITIAL_STATE";
 
 const addProductToCart = (product, state) => {
   const updatedCart = [...state.cart];
@@ -50,6 +51,10 @@ const removeProductFromCart = (productId, state) => {
   return { ...state, cart: updatedCart };
 };
 
+const setInitialState = (products, state) => {
+  return { ...state, products};
+};
+
 export const shopReducer = (state, action) => {
   switch (action.type) {
     case "SET_AUTH": {
@@ -72,6 +77,8 @@ export const shopReducer = (state, action) => {
       return removeProductFromCart(action.productId, state);
     case DECREACE_PRODUCT:
       return decreaseProduct(action.productId, state);
+      case SET_INITIAL_STATE:
+      return setInitialState(action.products, state)
     default:
       return state;
   }

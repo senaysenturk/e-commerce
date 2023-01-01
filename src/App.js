@@ -27,7 +27,6 @@ import { ProductProvider } from "./contexts/product/ProductContext";
 import OrderTracking from "./components/app/shopping-cart/order-tracking/OrderTracking";
 
 function App() {
-  let id = 1;
   return (
     <>      
       <BrowserRouter>
@@ -48,7 +47,7 @@ function App() {
               <Route path="checkout" element={<Checkout />} />
             </Route>
             <Route path="products" element={<Products />}>
-              <Route path={`product/${id}`} element={<CardDetail />} />
+              <Route path={`product/:productId`} element={<CardDetail />} />
             </Route>
 
             <Route path="favorites" element={<Favorites />} />

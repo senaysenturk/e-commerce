@@ -1,4 +1,4 @@
-import React, { useState, useReducer } from "react";
+import React, { useReducer, useEffect } from "react";
 
 import ShopContext from "./ShopContext";
 import {
@@ -6,18 +6,30 @@ import {
   ADD_PRODUCT,
   REMOVE_PRODUCT,
   DECREACE_PRODUCT,
+  SET_INITIAL_STATE,
 } from "./reducers";
-import list from "../../data";
+import { getProduct } from "src/network/requests/product/products";
+
+/** @type {State} */
 const initialState = { cart: [], auth: {}, products: [] };
 
 const GlobalState = (props) => {
-  const products = list;
+  useEffect(() => {
+    (async () => {
+      const products = await getProduct();
+      setInitialState(products)
+    })();
+  }, []);
 
   // const [cart, setCart] = useState([]);
   /**
    * @type {[State, dispatch]}
    */
   const [cartState, dispatch] = useReducer(shopReducer, initialState);
+
+  const setInitialState = (products) => {
+    dispatch({ type: SET_INITIAL_STATE, products });
+  };
 
   const addProductToCart = (product) => {
     dispatch({ type: ADD_PRODUCT, product });
@@ -38,7 +50,7 @@ const GlobalState = (props) => {
     <ShopContext.Provider
       value={{
         auth: cartState.auth,
-        products: products,
+        products: cartState.products,
         cart: cartState.cart,
         addProductToCart: addProductToCart,
         removeProductFromCart: removeProductFromCart,

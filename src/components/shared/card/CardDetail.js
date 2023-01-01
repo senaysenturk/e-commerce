@@ -1,29 +1,24 @@
 import React, { useContext, useEffect, useState } from "react";
 import { IoIosHeartEmpty, IoIosHeart } from "react-icons/io";
+import { useParams } from "react-router-dom";
 import ShopContext from "../../../contexts/basket/ShopContext";
 import "./style.scss";
 
-// burası proptan gelecek / path yazan her componente product bilgisi girtmesi gerekiyor.
-const dummyData = {
-  name: "Straptez Bluz",
-  price: "389",
-  size: "XL",
-  color: "Siyah",
-  category: "Woman",
-  id: 3,
-  cartPrice: " 389",
-  img: "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/6202/267/001/6202267001_1_1_2.jpg?t=1669732582176",
-};
 
-const CardDetail = ({ path }) => {
+const CardDetail = () => {
   const [favorite, setFavorite] = useState(false);
   const [productCount, setProductCount] = useState(1);
+  const [size, setSize] = useState('');
+  const [color, setColor] = useState('');
+
+
+  let {productId} = useParams();
+  productId = Number(productId)
 
   const context = useContext(ShopContext);
-
-  useEffect(() => {
-    console.log(context);
-  }, []);
+  const product = context.products.filter(
+    (product) => product.id === productId
+  )[0];
 
   const increaseCount = () => {
     setProductCount((prev) => prev + 1);
@@ -37,6 +32,12 @@ const CardDetail = ({ path }) => {
     });
   };
 
+  if (typeof product === "undefined"){
+    return <div>
+      ...loading
+    </div>
+  }
+
   return (
     <div className="card-detail">
       <div className="product-flex">
@@ -45,14 +46,14 @@ const CardDetail = ({ path }) => {
             {!favorite ? <IoIosHeartEmpty /> : <IoIosHeart />}
           </div>
           <img
-            src="https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/6202/267/001/6202267001_1_1_2.jpg?t=1669732582176"
-            alt="Lorem ipsum"
+            src={product.imgPath}
+            alt={product.name}
           />
         </div>
 
         <div className="product-info">
-          <h3 className="product-name">{dummyData.name}</h3>
-          <span className="product-price">{dummyData.price}</span>
+          <h3 className="product-name">{product.name}</h3>
+          <span className="product-price">{product.price.toFixed(2)}</span>
           <p className="product-detail">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit.
             Perferendis, illum odit. Expedita eveniet quam eos, deserunt
@@ -61,24 +62,36 @@ const CardDetail = ({ path }) => {
           </p>
           <div className="colors">
             Colors:
-            <input type="checkbox" name="color" id="red" />
-            <label for="red">
-              <span class="red" name="color" id="red"></span>
-            </label>
-            <input type="checkbox" name="color" id="black" />
-            <label for="black">
-              <span class="black"></span>
-            </label>
+            {product.color.map((_color, index) => (
+              <div key={`${_color} ${index}`}>
+              <input
+                type="checkbox"
+                name="color"
+                id={_color}
+                onInput={() => {
+                  setColor(_color);
+                }}
+              />
+                <label htmlFor={_color}>
+                  <span className={_color} name="color" id={_color}></span>
+                </label>
+              </div>
+            ))}
+
           </div>
           <div className="size-group">
             <p>Size:</p>
-            <select className="size" defaultValue={dummyData.size}>
+            <select
+              className="size"
+              defaultValue={product.size[0]}
+              onChange={(e) => {
+                setSize(e.target.value);
+              }}
+            >
               <option value="">Select Size</option>
-              <option value="XS">XS</option>
-              <option value="S">S</option>
-              <option value="M">M</option>
-              <option value="L">L</option>
-              <option value="XL">XL</option>
+              {product.size.map((_size, index) => (
+                <option value={_size} key={`${_size} ${index}`}>{_size}</option>
+              ))}
             </select>
           </div>
           <div className="quantity-group">
@@ -105,9 +118,14 @@ const CardDetail = ({ path }) => {
             type="button"
             className="btn btn-primary"
             onClick={() => {
-              dummyData.amount = productCount;
-              context.addProductToCart(dummyData);
-              console.log(context);
+              /** @type {CartProduct}  */
+              const copyProduct = {...product}
+
+              copyProduct.amount = productCount;
+              copyProduct.color = color;
+              copyProduct.size = size;
+
+              context.addProductToCart(copyProduct);
             }}
           >
             Add to cart

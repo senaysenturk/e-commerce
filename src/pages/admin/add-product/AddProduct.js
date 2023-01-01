@@ -83,7 +83,7 @@ const AddProduct = () => {
                 value={size}
                 onChange={handleSetSize}
               />
-              <label for={size}>{size}</label>
+              <label htmlFor={size}>{size}</label>
             </div>
           ))}
         </div>
@@ -99,7 +99,7 @@ const AddProduct = () => {
                   value={color}
                   onChange={handleSetColor}
                 />
-                <label for={color}>
+                <label htmlFor={color}>
                   <span className={color} name={color} id={color}></span>
                 </label>
               </>

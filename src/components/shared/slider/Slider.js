@@ -56,10 +56,10 @@ const Slider = () => {
            <div className="slide" >
             <img src="./hero-photos/2.jpeg" alt="slider-photo"/>
            </div> */}
-            {heroPhotos.map((photo) => {
+            {heroPhotos.map((photo, index) => {
               return (
-                <div className="slide">
-                  <img src={photo.img} alt={photo.name} />
+                <div className="slide" key={index}>
+                  <img src={photo.img} alt={photo.name}  />
                 </div>
               );
             })}

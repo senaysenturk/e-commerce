@@ -437,7 +437,7 @@ function SignUp({ history }) {
                   </form>
                   <div className="btn-radio">
                     <div className="gender">
-                      <label className="label-gender" for="male">
+                      <label className="label-gender" htmlFor="male">
                         <input
                           className="btn-gender"
                           type="radio"
@@ -448,7 +448,7 @@ function SignUp({ history }) {
                         />{" "}
                         Male
                       </label>
-                      <label className="label-gender" for="female">
+                      <label className="label-gender" htmlFor="female">
                         <input
                           className="btn-gender"
                           type="radio"
@@ -459,7 +459,7 @@ function SignUp({ history }) {
                         />{" "}
                         Female
                       </label>
-                      <label className="label-gender" for="other">
+                      <label className="label-gender" htmlFor="other">
                         <input
                           className="btn-gender"
                           type="radio"
@@ -472,7 +472,7 @@ function SignUp({ history }) {
                       </label>
                     </div>{" "}
                     <div>
-                      <label className="label-prefer" for="prefer">
+                      <label className="label-prefer" htmlFor="prefer">
                         <input
                           className="btn-gender"
                           type="radio"

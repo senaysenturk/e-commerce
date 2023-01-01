@@ -5,8 +5,13 @@ export const postProduct = (newProduct) => {
   console.log("newProduct", newProduct);
   return baseService.post("http://localhost:5500/", "products", newProduct);
 };
-export const getProduct = () => {
-  return baseService.get("http://localhost:5500/", "products");
+/**
+ * @returns {Product[]}
+ */
+export const getProduct = async () => {
+  const result = await baseService.get("http://localhost:5500/", "products");
+
+  return result.data;
 };
 
 export const postImage = (data) => {

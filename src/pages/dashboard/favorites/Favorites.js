@@ -18,9 +18,9 @@ const Favorites = () => {
           <h2>Favorites</h2>
         </div>
         <div className="row">
-          {favorites.map((product, index) => (
-            <SmallCard path={product} index />
-          ))}
+          {/* {favorites.map((product, index) => (
+            // <SmallCard path={product} index />
+          ))} */}
         </div>
       </div>
     </div>

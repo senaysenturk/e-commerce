@@ -3,7 +3,12 @@ import "./style.scss";
 import { RiCloseLine } from "react-icons/ri";
 import CardSummary from "../card/CardSummary";
 
-const Modal = ({ setIsOpen, path }) => {
+/**
+ * 
+ * @param {{product:Product, setIsOpen:boolean }} param0 
+ * @returns {JSX.Element}
+ */
+const Modal = ({ setIsOpen, product }) => {
   return (
     <>
       {/* <div className="darkBG" onClick={() => setIsOpen(false)}> */}
@@ -12,7 +17,7 @@ const Modal = ({ setIsOpen, path }) => {
           <button className="closeBtn" onClick={() => setIsOpen(false)}>
             <RiCloseLine />
           </button>
-          <CardSummary path={path} />
+          <CardSummary product={product} />
         </div>
       </div>
       {/* </div> */}
