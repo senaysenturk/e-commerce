@@ -20,7 +20,7 @@ baseService.get = async (url, endpoint) => {
   }
 };
 
-baseService.delede = async (url, endpoint, id) => {
+baseService.delete = async (url, endpoint, id) => {
   try {
     const response = await axios.delete(`${url}${endpoint}${id}`);
     return response;
@@ -72,7 +72,7 @@ baseService.postAuth = async (url, endpoint, data) => {
     console.log(error.status);
   }
 };
-
+/* 
 baseService.postLogout = async (url, endpoint) => {
   try {
     const response = await axios.post(`${url}${endpoint}`, {
@@ -83,3 +83,4 @@ baseService.postLogout = async (url, endpoint) => {
     console.log(error.status);
   }
 };
+ */
