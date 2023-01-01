@@ -1,10 +1,14 @@
 import React from "react";
 import "./style.scss";
 import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../../contexts/auth/AuthContext";
 
 const UserProfile = () => {
+  const { user } = useAuth();
+
   return (
     <div className="user-info">
+      {JSON.stringify(user)}
       <div id="username" className="user-name">
         <strong>senaysenturk</strong>
       </div>
