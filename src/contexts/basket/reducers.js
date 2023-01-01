@@ -69,6 +69,7 @@ export const shopReducer = (state, action) => {
           password: action.payload.password,
           accessToken: action.payload.accessToken,
           roles: action.payload.roles,
+          role: action.payload.role,
         },
       };
 

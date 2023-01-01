@@ -1,8 +1,18 @@
 import React from "react";
+import { useState } from "react";
+import { getCities } from "../../../../network/requests/order/order";
 
 import "./style.scss";
 
 export const AddressForm = () => {
+  const [cities, setCities] = useState([]);
+
+  const getAllCities = async () => {
+    const response = await getCities();
+    setCities(response.data);
+    console.log(cities);
+  };
+
   return (
     <>
       <div className="checkout-addresses">
@@ -10,46 +20,63 @@ export const AddressForm = () => {
           <header>Teslimat Adresi</header>
         </div>
         <div className="address-form">
-          <input
-            type="text"
-            id="fname"
-            name="firstname"
-            placeholder="Your name.."
-          />
+          <div className="person">
+            <input
+              type="text"
+              id="fname"
+              name="firstname"
+              placeholder="Your name.."
+            />
+
+            <input
+              type="text"
+              id="lname"
+              name="lastname"
+              placeholder="Your last name.."
+            />
+          </div>
 
           <input
             type="text"
-            id="lname"
-            name="lastname"
-            placeholder="Your last name.."
+            id="phone"
+            name="phone"
+            placeholder="Your phone number.."
           />
 
           <p>Address Informations</p>
 
-          <select id="country" name="country">
-            <option value="australia">Australia</option>
-            <option value="canada">Canada</option>
-            <option value="usa">USA</option>
+          <select id="city" name="city">
+            <option>-- None --</option>
           </select>
+          {/*  {getAllCities()}*/}
+          {/*  <select id="city">
+            <option>-- None --</option>
+            {cities.map((cityObject, index) => (
+              <option key={index}>a</option>
+            ))}
+            {/* {colors.map((color, index) => (
+              <option key={index}>{color}</option>
+            ))} 
+          </select> */}
 
           <textarea
-            id="subject"
-            name="subject"
+            id="address"
+            name="address"
             placeholder="Write something.."
             //style="height:200px"
           ></textarea>
 
           <input
             type="text"
-            id="lname"
-            name="lastname"
-            placeholder="Your last name.."
+            id="postcode"
+            name="postcode"
+            placeholder="Your postal code.."
           />
 
           <input
             type="text"
-            id="lname"
-            name="lastname"
+            id="addressName"
+            name="addressName"
             placeholder="Your address name.."
           />
 

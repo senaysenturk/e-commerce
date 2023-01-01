@@ -8,6 +8,8 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import axios from "../../../api/axios";
+import { getSignUp, postSignUp } from "../../../network/requests/auth/auth";
+import { useAuth } from "../../../contexts/auth/AuthContext";
 
 import "./style.scss";
 import "../../../utilities.scss";
@@ -21,7 +23,8 @@ const MAIL_REGEX =
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 const SIGNUP_URL = "/signup";
 
-function SignUp({ signUp }) {
+function SignUp({ history }) {
+  const { login } = useAuth();
   // const { state } = useContext(Context);
 
   const userRef = useRef();
@@ -30,10 +33,12 @@ function SignUp({ signUp }) {
   const [mail, setMail] = useState("");
   const [validMail, setValidMail] = useState(false);
   const [mailFocus, setMailFocus] = useState(false);
+  const [errMail, setErrMail] = useState("");
 
   const [user, setUser] = useState("");
   const [validName, setValidName] = useState(false);
   const [userFocus, setUserFocus] = useState(false);
+  const [errUser, setErrUser] = useState("");
 
   const [password, setPassword] = useState("");
   const [validPassword, setValidPassword] = useState(false);
@@ -48,6 +53,7 @@ function SignUp({ signUp }) {
 
   const [birth, setBirth] = useState("");
   const [gender, setGender] = useState("");
+  const [role, setRole] = useState("user");
 
   useEffect(() => {
     userRef.current.focus();
@@ -70,6 +76,55 @@ function SignUp({ signUp }) {
     setErrMsg("");
   }, [user, password, matchPassword]);
 
+  useEffect(() => {
+    setErrMail("");
+  }, [mail]);
+
+  useEffect(() => {
+    setErrUser("");
+  }, [user]);
+
+  const addUser = async (e) => {
+    try {
+      const response = await postSignUp({
+        mail, user, password, birth, gender, role
+      });
+      /* const response = await axios.post(
+        SIGNUP_URL,
+        JSON.stringify({ mail, user, password, birth, gender, role }),
+        {
+          headers: { "Content-Type": "application/json" },
+          withCredentials: true,
+        }
+      ); */
+
+      login(response);
+      //history.push("/");
+      // TODO: remove console.logs before deployment
+      console.log(response.data);
+      console.log(response.accessToken);
+      console.log(JSON.stringify(response));
+      console.log(JSON.stringify(response?.data));
+      setSuccess(true);
+      //clear state and controlled inputs
+      setMail("");
+      setUser("");
+      setPassword("");
+      setMatchPassword("");
+      setBirth("");
+      setGender("");
+    } catch (err) {
+      if (!err?.response) {
+        setErrMsg("No Server Response");
+      } else if (err.response?.status === 409) {
+        setErrMsg("Username Taken");
+      } else {
+        setErrMsg("Registration Failed");
+      }
+      errRef.current.focus();
+    }
+  };
+
   const handleSignUp = async (e) => {
     // e.preventDefault();
     // if button enabled with JS hack
@@ -88,27 +143,30 @@ function SignUp({ signUp }) {
     console.log(gender);
 
     try {
-      const response = await axios.post(
-        SIGNUP_URL,
-        JSON.stringify({ mail, user, password, birth, gender }),
-        {
-          headers: { "Content-Type": "application/json" },
-          withCredentials: true,
-        }
-      );
-      // TODO: remove console.logs before deployment
+      const response = await getSignUp();
+      // const response = await axios.get("http://localhost:5500/signup");
       console.log(response.data);
-      console.log(response.accessToken);
-      console.log(JSON.stringify(response));
-      console.log(JSON.stringify(response?.data));
-      setSuccess(true);
-      //clear state and controlled inputs
-      setMail("");
-      setUser("");
-      setPassword("");
-      setMatchPassword("");
-      setBirth("");
-      setGender("");
+      var isValidMail = response.data.some(function (userItem) {
+        return userItem.mail === mail;
+      });
+      if (isValidMail) {
+        setErrMail("mail already used");
+        // setErrMsg("mail already used");
+        // alert("mail already used");
+        // setMail("");
+      } else {
+        var isValidUser = response.data.some(function (userItem) {
+          return userItem.user === user;
+        });
+        if (isValidUser) {
+          setErrUser("user name already used");
+          // setErrMsg("user name already used");
+          // alert("user name already used");
+          // setUser("");
+        } else {
+          addUser();
+        }
+      }
     } catch (err) {
       if (!err?.response) {
         setErrMsg("No Server Response");
@@ -197,6 +255,12 @@ function SignUp({ signUp }) {
                       onFocus={() => setMailFocus(true)}
                       onBlur={() => setMailFocus(false)}
                     />
+                     <p
+                      id="uidnote"
+                      className={errMail ? "instructions" : "offscreen"}
+                    >
+                      {errMail}
+                    </p>
                     <p
                       id="uidnote"
                       className={
@@ -250,6 +314,12 @@ function SignUp({ signUp }) {
                     <div className="appears">
                       <p>This appears on your profile.</p>
                     </div>
+                    <p
+                      id="uidnote"
+                      className={errUser ? "instructions" : "offscreen"}
+                    >
+                      {errUser}
+                    </p>
                     <p
                       id="uidnote"
                       className={

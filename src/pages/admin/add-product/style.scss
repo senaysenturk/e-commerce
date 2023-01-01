@@ -5,17 +5,61 @@
   align-items: center;
   row-gap: 15px;
   font-size: 14px;
-  padding: 25px 10px;
   margin: 20px 0;
+  width: 100%;
   .product {
     display: flex;
     flex-direction: column;
     row-gap: 15px;
-    input,
+    width: 40%;
+    input[type="text"],
+    input[type="number"],
     select {
-      width: 450px;
       height: 50px;
       padding: 10px;
+    }
+    @media (max-width: 900px) {
+      width: 80%;
+    }
+
+    .sizes {
+      display: flex;
+      gap: 5px;
+      .size {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 5px;
+        margin: 0 15px;
+        input[type="checkbox"]:after {
+          width: 15px;
+          height: 15px;
+          border-radius: 15px;
+          top: -2px;
+          left: -5px;
+          position: relative;
+          background-color: #eef1ee;
+          content: "";
+          display: inline-block;
+          visibility: visible;
+          border: 2px solid white;
+        }
+
+        input[type="checkbox"]:checked:after {
+          width: 15px;
+          height: 15px;
+          border-radius: 15px;
+          top: -2px;
+          left: -5px;
+          position: relative;
+          background-color: #bcc9c5;
+          content: "";
+          color: white;
+          display: inline-block;
+          visibility: visible;
+          border: 2px solid white;
+        }
+      }
     }
   }
 }

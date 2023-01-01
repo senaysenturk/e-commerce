@@ -17,18 +17,31 @@ const AddProduct = () => {
     getAllSizes,
     categories,
     getAllCategories,
+    // setColor,
+    // setSize,
   } = useProduct();
 
+  const [color, setColor] = useState([]);
+  const [size, setSize] = useState([]);
+
   const handleSetProduct = (e) => {
-    setProduct({ ...product, [e.target.name]: e.target.value });
     console.log(product);
+    setProduct({ ...product, [e.target.name]: e.target.value });
   };
 
   const handleSetImage = async (e) => {
     var response = await uploadImage(e.target.files[0]);
-    if (imageURL) {
-      setProduct({ ...product, [e.target.name]: imageURL });
-    }
+  };
+
+  const handleSetSize = (e) => {
+    setSize((prevSize) => [...prevSize, e.target.value]);
+    setProduct({ ...product, size: size });
+  };
+
+  const handleSetColor = (e) => {
+    setColor((prevSize) => [...prevSize, e.target.value]);
+    console.log(color);
+    setProduct({ ...product, color: color });
   };
 
   useEffect(() => {
@@ -38,70 +51,79 @@ const AddProduct = () => {
   }, [imageURL]);
 
   return (
-    <>
-      <div className="add-product">
-        <h3>ADD PRODUCT</h3>
-        <div className="product">
-          <label htmlFor="product-name">Product Name</label>
-          <input
-            type="text"
-            placeholder="T-Shirt"
-            id="name"
-            name="name"
-            onChange={handleSetProduct}
-          />
-
-          <label htmlFor="price">Price</label>
-          <input
-            type="number"
-            placeholder="10.99$"
-            step="0.01"
-            min="0"
-            id="price"
-            name="price"
-            onChange={handleSetProduct}
-          />
-
-          <label htmlFor="dize">Size</label>
-          <select id="size" name="size" onChange={handleSetProduct}>
-            <option>-- None --</option>
-            {sizes.map((color, index) => (
-              <option key={index}>{color}</option>
-            ))}
-          </select>
-          <label htmlFor="color">Color</label>
-          <select id="color" name="color" onChange={handleSetProduct}>
-            <option>-- None --</option>
+    <div className="add-product">
+      <h3>ADD PRODUCT</h3>
+      <div className="product">
+        <label htmlFor="product-name">Product Name</label>
+        <input
+          type="text"
+          placeholder="T-Shirt"
+          id="name"
+          name="name"
+          onChange={handleSetProduct}
+        />
+        <label htmlFor="price">Price</label>
+        <input
+          type="number"
+          placeholder="10.99$"
+          step="0.01"
+          min="0"
+          id="price"
+          name="price"
+          onChange={handleSetProduct}
+        />
+        <div className="sizes">
+          <p>Sizes:</p>
+          {sizes.map((size, index) => (
+            <div className="size">
+              <input
+                type="checkbox"
+                name={size}
+                id={size}
+                value={size}
+                onChange={handleSetSize}
+              />
+              <label for={size}>{size}</label>
+            </div>
+          ))}
+        </div>
+        <div className="colors">
+          <p>Colors:</p>
+          <div className="color">
             {colors.map((color, index) => (
-              <option key={index}>{color}</option>
+              <>
+                <input
+                  type="checkbox"
+                  name={color}
+                  id={color}
+                  value={color}
+                  onChange={handleSetColor}
+                />
+                <label for={color}>
+                  <span className={color} name={color} id={color}></span>
+                </label>
+              </>
             ))}
-          </select>
-
-          <label htmlFor="category">Category</label>
-          <select id="category" name="category" onChange={handleSetProduct}>
-            <option>-- None --</option>
-
-            {categories.map((color, index) => (
-              <option key={index}>{color}</option>
-            ))}
-          </select>
-
-          <label htmlFor="image">Image</label>
-          <input
-            type="file"
-            id="image"
-            name="image"
-            onChange={handleSetImage}
-          />
+          </div>
         </div>
-        {imageURL}
-        <div className="add-button">
-          <button className="btn btn-primary" onClick={() => addProduct()}>
-            Add
-          </button>
-        </div>
+        <label htmlFor="category">Category</label>
+        <select id="category" name="category" onChange={handleSetProduct}>
+          <option>-- None --</option>
+
+          {categories.map((color, index) => (
+            <option key={index}>{color}</option>
+          ))}
+        </select>
+        <label htmlFor="image">Image</label>
+        <input type="file" id="image" name="image" onChange={handleSetImage} />
       </div>
-    </>
+      {imageURL}
+      <div className="add-button">
+        <button className="btn btn-primary" onClick={() => addProduct()}>
+          Add
+        </button>
+      </div>
+    </div>
   );
 };
 
