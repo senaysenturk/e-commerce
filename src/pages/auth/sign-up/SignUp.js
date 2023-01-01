@@ -6,7 +6,7 @@ import {
   faInfoCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import axios from "../../../api/axios";
 import { getSignUp, postSignUp } from "../../../network/requests/auth/auth";
 import { useAuth } from "../../../contexts/auth/AuthContext";
@@ -26,6 +26,8 @@ const SIGNUP_URL = "/signup";
 function SignUp({ history }) {
   const { login } = useAuth();
   // const { state } = useContext(Context);
+
+  const [navigate, setNavigate] = useState(false);
 
   const userRef = useRef();
   const errRef = useRef();
@@ -87,7 +89,12 @@ function SignUp({ history }) {
   const addUser = async (e) => {
     try {
       const response = await postSignUp({
-        mail, user, password, birth, gender, role
+        mail,
+        user,
+        password,
+        birth,
+        gender,
+        role,
       });
       /* const response = await axios.post(
         SIGNUP_URL,
@@ -98,14 +105,15 @@ function SignUp({ history }) {
         }
       ); */
 
-      login(response);
+      // login(response);
       //history.push("/");
       // TODO: remove console.logs before deployment
       console.log(response.data);
       console.log(response.accessToken);
       console.log(JSON.stringify(response));
       console.log(JSON.stringify(response?.data));
-      setSuccess(true);
+      setNavigate(true);
+      // setSuccess(true);
       //clear state and controlled inputs
       setMail("");
       setUser("");
@@ -124,6 +132,10 @@ function SignUp({ history }) {
       errRef.current.focus();
     }
   };
+
+  if (navigate) {
+    return <Navigate to="/auth" />;
+  }
 
   const handleSignUp = async (e) => {
     // e.preventDefault();
@@ -255,7 +267,7 @@ function SignUp({ history }) {
                       onFocus={() => setMailFocus(true)}
                       onBlur={() => setMailFocus(false)}
                     />
-                     <p
+                    <p
                       id="uidnote"
                       className={errMail ? "instructions" : "offscreen"}
                     >
