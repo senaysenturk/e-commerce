@@ -1,7 +1,6 @@
 export const ADD_PRODUCT = "ADD_PRODUCT";
 export const REMOVE_PRODUCT = "REMOVE_PRODUCT";
 export const DECREACE_PRODUCT = "DECREACE_PRODUCT";
-export const TOTAL_PRICE = "TOTAL_PRICE";
 
 const addProductToCart = (product, state) => {
   const updatedCart = [...state.cart];
@@ -21,16 +20,8 @@ const addProductToCart = (product, state) => {
   return { ...state, cart: updatedCart };
 };
 
-// const totalPrice = (productPrice, state) => {
-//   const updatedCart = [...state.cart];
-//   const updatedItemIndex = updateCart.findIndex(item => item.price === productPrice);
-  
-//  updatedItem.amount += product.amount;
-//   updatedCart[updatedItemIndex] = updatedItem;
 
-// return { ...state, cart: updatedCart };
 
-// };
 
 const decreaseProduct = (productId, state) => {
   console.log("Removing product with id: " + productId);
@@ -81,8 +72,6 @@ export const shopReducer = (state, action) => {
       return removeProductFromCart(action.productId, state);
     case DECREACE_PRODUCT:
       return decreaseProduct(action.productId, state);
-   /*  case TOTAL_PRICE:
-      return totalPrice(action.productPrice, state); */
     default:
       return state;
   }

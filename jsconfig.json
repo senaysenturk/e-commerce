@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+      "baseUrl": ".",
+      "module": "commonjs",
+      "typeRoots": ["./src/*.d.ts"],
+      "types": ["./src/*.d.ts"]
+    },
+    "include": ["src"],
+    "exclude": ["node_modules"]
+}

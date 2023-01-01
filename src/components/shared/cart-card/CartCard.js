@@ -75,7 +75,8 @@ export const CartCard = () => {
       <div className="cart-summary">
         <p>Total</p>
         <p className="cart-price">
-           <strong > 0,00 TL</strong> {/* {context.totalPrice()} */}
+           <strong > {context.totalQuantity()} Adet</strong>   
+           <strong > {context.totalPrice()} TL</strong>   
         </p>
       </div>
       <div className="or-divide">

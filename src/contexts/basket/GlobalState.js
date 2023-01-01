@@ -6,15 +6,18 @@ import {
   ADD_PRODUCT,
   REMOVE_PRODUCT,
   DECREACE_PRODUCT,
-  TOTAL_PRICE,
 } from "./reducers";
 import list from "../../data";
+const initialState = { cart: [], auth: {}, products: [] };
 
 const GlobalState = (props) => {
   const products = list;
 
   // const [cart, setCart] = useState([]);
-  const [cartState, dispatch] = useReducer(shopReducer, { cart: [], auth: {} });
+  /**
+   * @type {[State, dispatch]}
+   */
+  const [cartState, dispatch] = useReducer(shopReducer, initialState);
 
   const addProductToCart = (product) => {
     dispatch({ type: ADD_PRODUCT, product });
@@ -26,10 +29,6 @@ const GlobalState = (props) => {
   // ürün azaltma
   const decreaseProduct = (productId) => {
     dispatch({ type: DECREACE_PRODUCT, productId });
-  };
-
-  const totalPrice = (productPrice) => {
-    dispatch({ type: TOTAL_PRICE, productPrice });
   };
 
   const setAuth = (payload) => {
@@ -44,8 +43,21 @@ const GlobalState = (props) => {
         addProductToCart: addProductToCart,
         removeProductFromCart: removeProductFromCart,
         decreaseProduct: decreaseProduct,
-        totalPrice: totalPrice,
+        totalPrice: () => {
+          let total = 0;
+          cartState.cart.forEach((item) => {
+            total += item.amount * item.price;
+          });
+          return total.toFixed(2);
+        },
         setAuth: setAuth,
+        totalQuantity: () => {
+          let totalQ = 0;
+          cartState.cart.forEach((item) => {
+            totalQ += item.amount;
+          });
+          return totalQ;
+        },
       }}
     >
       {props.children}
