@@ -184,7 +184,7 @@ body {
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  input[type="radio"] {
+  input[type="checkbox"] {
     display: none;
     &:checked + label {
       span {

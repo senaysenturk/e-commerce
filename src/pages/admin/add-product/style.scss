@@ -31,7 +31,7 @@
         align-items: center;
         column-gap: 5px;
         margin: 0 15px;
-        input[type="radio"]:after {
+        input[type="checkbox"]:after {
           width: 15px;
           height: 15px;
           border-radius: 15px;
@@ -45,7 +45,7 @@
           border: 2px solid white;
         }
 
-        input[type="radio"]:checked:after {
+        input[type="checkbox"]:checked:after {
           width: 15px;
           height: 15px;
           border-radius: 15px;

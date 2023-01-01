@@ -77,7 +77,7 @@ const AddProduct = () => {
           {sizes.map((size, index) => (
             <div className="size">
               <input
-                type="radio"
+                type="checkbox"
                 name={size}
                 id={size}
                 value={size}
@@ -93,7 +93,7 @@ const AddProduct = () => {
             {colors.map((color, index) => (
               <>
                 <input
-                  type="radio"
+                  type="checkbox"
                   name={color}
                   id={color}
                   value={color}
