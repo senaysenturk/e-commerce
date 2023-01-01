@@ -1,5 +1,5 @@
 import { useState, createContext, useEffect, useContext } from "react";
-import { fetchMe, fetchLogout } from "../../network/requests/auth/auth";
+import { postMe, fetchMe, fetchLogout } from "../../network/requests/auth/auth";
 
 const AuthContext = createContext();
 
@@ -7,6 +7,7 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loggedIn, setLoggedIn] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [currentUser, setCurrentUser] = useState();
 
   useEffect(() => {
     (async () => {
@@ -14,8 +15,11 @@ const AuthProvider = ({ children }) => {
         const me = await fetchMe();
         console.log(me);
 
-        setLoggedIn(true);
-        setUser(me);
+        console.log(me.data);
+        (me.data.length === 0) ? setLoggedIn(false) : setLoggedIn(true);
+
+        setUser(me.data);
+        setCurrentUser(me.data);
         setLoading(false);
       } catch (e) {
         setLoading(false);
@@ -23,19 +27,26 @@ const AuthProvider = ({ children }) => {
     })();
   }, []);
 
-  const login = (data) => {
+  const login = async (userData) => {
     setLoggedIn(true);
-    setUser(data.user);
+    setUser(userData.data);
+    // setCurrentUser(userData.data);
+    console.log(userData.data);
 
-    localStorage.setItem("access-token", data.accessToken);
-    localStorage.setItem("refresh-token", data.refreshToken);
+    await postMe(userData.data);
+
+    localStorage.setItem("access-token", userData.accessToken);
+    localStorage.setItem("refresh-token", userData.refreshToken);
   };
 
   const logout = async (callback) => {
     setLoggedIn(false);
     setUser(null);
 
-    await fetchLogout();
+    const id = currentUser[0].id;
+    setCurrentUser(null);
+
+    await fetchLogout(id);
 
     localStorage.removeItem("access-token");
     localStorage.removeItem("refresh-token");
@@ -48,6 +59,8 @@ const AuthProvider = ({ children }) => {
     user,
     login,
     logout,
+    currentUser,
+    setCurrentUser,
   };
 
   /* if (loading) {
