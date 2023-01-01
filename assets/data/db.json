@@ -20,21 +20,27 @@
     {
       "name": "tshirt",
       "price": 10,
-      "size": ["XL"],
-      "color": ["red"],
+      "size": [
+        "XL"
+      ],
+      "color": [
+        "red"
+      ],
       "category": "Woman",
       "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/5900/472/430/5900472430_1_1_2.jpg?t=1669736376209",
-
       "id": 2
     },
     {
       "name": "tshirt",
       "price": 10,
-      "size": ["XL"],
-      "color": ["white"],
+      "size": [
+        "XL"
+      ],
+      "color": [
+        "white"
+      ],
       "category": "Woman",
-      "imgPath":"https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/6202/267/001/6202267001_1_1_2.jpg?t=1669732582176",
-
+      "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/6202/267/001/6202267001_1_1_2.jpg?t=1669732582176",
       "id": 3
     }
   ],
@@ -64,9 +70,15 @@
     "XXL"
   ],
   "categories": [
-    "Woman",
-    "Man",
-    "Child"
+    {
+      "category": "Woman"
+    },
+    {
+      "category": "Man"
+    },
+    {
+      "category": "Children"
+    }
   ],
   "signup": [
     {
@@ -104,16 +116,26 @@
       "gender": "female",
       "role": "user",
       "id": 4
+    },
+    {
+      "mail": "ipekgulsen.celik@icloud.com",
+      "user": "ipekgulsencelik",
+      "password": "Bilge123!",
+      "birth": "2023-01-06",
+      "gender": "female",
+      "role": "user",
+      "id": 5
     }
   ],
-  "auth": [],
-  "me": [],
-  "logout": [
+  "auth": [
     {
-      "refresh_token": null,
+      "user": "ipekgulsencelik",
+      "password": "Bilge123!",
+      "role": "user",
       "id": 1
     }
   ],
+  "me": [],
   "cities": [
     {
       "city": "Adana",
