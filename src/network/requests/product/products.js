@@ -1,4 +1,4 @@
-import { baseService } from "../services/baseService";
+import { baseService } from "../../services/baseService";
 
 export const postProduct = (newProduct) => {
   //console.log("Env: " + process.env.REACT_APP_API_URL);
