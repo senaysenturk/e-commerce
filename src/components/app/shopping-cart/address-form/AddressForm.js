@@ -1,6 +1,7 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { getCities } from "../../../../network/requests/order/order";
+import MaskInput from "react-maskinput";
 
 import "./style.scss";
 
@@ -12,6 +13,19 @@ export const AddressForm = () => {
     setCities(response.data);
     console.log(cities);
   };
+
+  const [address, setAddress] = useState({});
+
+  const handleAddress = (e) => {
+    console.log(address);
+    setAddress({ ...address, [e.target.name]: e.target.value });
+  };
+
+  const handleSave = async (e) => {};
+
+  useEffect(() => {
+    getAllCities();
+  }, []);
 
   return (
     <>
@@ -26,6 +40,7 @@ export const AddressForm = () => {
               id="fname"
               name="firstname"
               placeholder="Your name.."
+              onChange={handleAddress}
             />
 
             <input
@@ -33,44 +48,56 @@ export const AddressForm = () => {
               id="lname"
               name="lastname"
               placeholder="Your last name.."
+              onChange={handleAddress}
             />
           </div>
+          <MaskInput
+            alwaysShowMask
+            mask={"+90 (000) 000 - 0000"}
+            size={21}
+            showMask
+            maskChar="_"
+            name="phone"
+            onChange={handleAddress}
+          />
 
+          {/*  
           <input
             type="text"
             id="phone"
             name="phone"
             placeholder="Your phone number.."
-          />
-
+            onChange={handleAddress}
+          /> */}
           <p>Address Informations</p>
-
-          <select id="city" name="city">
-            <option>-- None --</option>
-          </select>
-          {/*  {getAllCities()}*/}
-          {/*  <select id="city">
+          <select id="city" name="city" onChange={handleAddress}>
             <option>-- None --</option>
             {cities.map((cityObject, index) => (
-              <option key={index}>a</option>
+              <option key={index}>{cityObject.city}</option>
             ))}
-            {/* {colors.map((color, index) => (
-              <option key={index}>{color}</option>
-            ))} 
-          </select> */}
-
+          </select>
           <textarea
             id="address"
             name="address"
             placeholder="Write something.."
-            //style="height:200px"
+            onChange={handleAddress}
           ></textarea>
-
+          {/*  
           <input
             type="text"
             id="postcode"
             name="postcode"
             placeholder="Your postal code.."
+            onChange={handleAddress}
+          /> */}
+          <MaskInput
+            alwaysShowMask
+            mask={"00000"}
+            size={6}
+            showMask
+            maskChar="_"
+            name="postcode"
+            onChange={handleAddress}
           />
 
           <input
@@ -78,10 +105,12 @@ export const AddressForm = () => {
             id="addressName"
             name="addressName"
             placeholder="Your address name.."
+            onChange={handleAddress}
           />
-
           <div className="add-button">
-            <button className="btn btn-primary">Save</button>
+            <button className="btn btn-primary" onClick={handleSave}>
+              Save
+            </button>
           </div>
         </div>
       </div>
