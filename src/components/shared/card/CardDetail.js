@@ -61,11 +61,11 @@ const CardDetail = ({ path }) => {
           </p>
           <div className="colors">
             Colors:
-            <input type="radio" name="color" id="red" />
+            <input type="checkbox" name="color" id="red" />
             <label for="red">
               <span class="red" name="color" id="red"></span>
             </label>
-            <input type="radio" name="color" id="black" />
+            <input type="checkbox" name="color" id="black" />
             <label for="black">
               <span class="black"></span>
             </label>

@@ -29,11 +29,11 @@ const CardSummary = ({ path }) => {
 
           <div className="colors">
             Colors:
-            <input type="radio" name="color" id="red" value="red" />
+            <input type="checkbox" name="color" id="red" value="red" />
             <label for="red">
               <span class="red"></span>
             </label>
-            <input type="radio" name="color" id="black" />
+            <input type="checkbox" name="color" id="black" />
             <label for="black">
               <span class="black"></span>
             </label>
