@@ -8,7 +8,7 @@ import {
   DECREACE_PRODUCT,
   SET_INITIAL_STATE,
 } from "./reducers";
-import { getProduct } from "src/network/requests/product/products";
+import { getProduct } from "../../network/requests/product/products";
 
 /** @type {State} */
 const initialState = { cart: [], auth: {}, products: [] };
