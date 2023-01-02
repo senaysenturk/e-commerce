@@ -24,7 +24,7 @@ const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 const SIGNUP_URL = "/signup";
 
 function SignUp({ history }) {
-  const { login } = useAuth();
+  const { register } = useAuth();
   // const { state } = useContext(Context);
 
   const [navigate, setNavigate] = useState(false);
@@ -105,7 +105,7 @@ function SignUp({ history }) {
         }
       ); */
 
-      // login(response);
+      register(response);
       //history.push("/");
       // TODO: remove console.logs before deployment
       console.log(response.data);
