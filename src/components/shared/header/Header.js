@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { RiHeart3Line } from "react-icons/ri";
 import { AiOutlineUser } from "react-icons/ai";
 import { MdOutlineAdminPanelSettings } from "react-icons/md";
+
 import { GrCart } from "react-icons/gr";
 
 import "./style.scss";
@@ -13,6 +14,7 @@ import CartCard from "../cart-card/CartCard";
 import Admin from "../admin/Admin";
 import Search from "./search/Search";
 import { useMatchMedia } from "./useMatchMedia";
+import Hamburger from "./hamburger/Hamburger";
 
 export const Header = ({ title }) => {
   const navigate = useNavigate();
@@ -32,91 +34,98 @@ export const Header = ({ title }) => {
             </span>
             <input type="text" />
           </div> */}
-          {isDesktopResolution && <Search />}
+          {isDesktopResolution ? (
+            <>
+              <Search />
+              <div className="options">
+                <ul>
+                  <li>
+                    {/* <Link to="/admin/add-product"> */}
 
-          <div className="options">
-            <ul>
-              <li>
-                {/* <Link to="/admin/add-product"> */}
-
-                <a>
-                  <span className="icon">
-                    <MdOutlineAdminPanelSettings />
-                  </span>
-                  <Admin />
-                </a>
-                {/* </Link> */}
-              </li>
-              <li>
-                <Link to="/favorites">
-                  <span className="icon">
-                    <RiHeart3Line />
-                  </span>
-                </Link>
-              </li>
-              <li>
-                <a>
-                  <span className="icon">
-                    <AiOutlineUser />
-                  </span>
-                </a>
-                <UserCard />
-                {/*  <Link to="">
+                    <a>
+                      <span className="icon">
+                        <MdOutlineAdminPanelSettings />
+                      </span>
+                      <Admin />
+                    </a>
+                    {/* </Link> */}
+                  </li>
+                  <li>
+                    <Link to="/favorites">
+                      <span className="icon">
+                        <RiHeart3Line />
+                      </span>
+                    </Link>
+                  </li>
+                  <li>
+                    <a>
+                      <span className="icon">
+                        <AiOutlineUser />
+                      </span>
+                    </a>
+                    <UserCard />
+                    {/*  <Link to="">
                   <span className="icon">
                     <AiOutlineUser />
                   </span>
                 </Link> */}
-              </li>
-              <li>
-                <a>
-                  <span className="icon">
-                    {/* sepetteki ürün adetini saydırma */}
-                    {/* {items.length > 0 && (items.length)} */}
-                    <GrCart />
-                  </span>
-                </a>
-                <CartCard />
-                {/* <Link to="">
+                  </li>
+                  <li>
+                    <a>
+                      <span className="icon">
+                        {/* sepetteki ürün adetini saydırma */}
+                        {/* {items.length > 0 && (items.length)} */}
+                        <GrCart />
+                      </span>
+                    </a>
+                    <CartCard />
+                    {/* <Link to="">
                   <span className="icon">
                     <GrCart />
                   </span>
                 </Link> */}
-              </li>
-            </ul>
-          </div>
+                  </li>
+                </ul>
+              </div>
+            </>
+          ) : (
+            <Hamburger />
+          )}
         </div>
         <div className="mobile-search">
           {!isDesktopResolution && <Search />}
         </div>
 
-        <div className="category-header">
-          <nav>
-            <ul className="category-links">
-              <li>
-                <a href="#">WOMEN</a>
-              </li>
-              <li>
-                <a href="#">MAN</a>
-                <DropdownMenu />
-              </li>
-              <li>
-                <a href="#">CHILDREN</a>
-              </li>
-              <li>
-                <a href="#">NEW ARRIVALS</a>
-              </li>
-              <li>
-                <a href="#">BEST SELLERS</a>
-              </li>
-              <li>
-                <a href="#">TRENDING</a>
-              </li>
-              <li>
-                <a href="#">SALE</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
+        {isDesktopResolution && (
+          <div className="category-header">
+            <nav>
+              <ul className="category-links">
+                <li>
+                  <a href="women">WOMEN</a>
+                </li>
+                <li>
+                  <a href="man">MAN</a>
+                  <DropdownMenu />
+                </li>
+                <li>
+                  <a href="children">CHILDREN</a>
+                </li>
+                <li>
+                  <a href="new-arrivals">NEW ARRIVALS</a>
+                </li>
+                <li>
+                  <a href="best-sellers">BEST SELLERS</a>
+                </li>
+                <li>
+                  <a href="trending">TRENDING</a>
+                </li>
+                <li>
+                  <a href="sale">SALE</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        )}
       </header>
     </>
   );
