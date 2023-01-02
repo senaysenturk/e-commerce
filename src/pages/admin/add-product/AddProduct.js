@@ -1,4 +1,5 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
+import ProgressBar from "src/components/shared/progressbar/ProgressBar";
 import { useProduct } from "../../../contexts/product/CreateProductContext";
 import "./style.scss";
 
@@ -17,6 +18,7 @@ const AddProduct = () => {
     getAllSizes,
     categories,
     getAllCategories,
+    uploadPercentage,
     // setColor,
     // setSize,
   } = useProduct();
@@ -47,7 +49,16 @@ const AddProduct = () => {
     getAllColors();
     getAllSizes();
     getAllCategories();
-  }, [imageURL]);
+  }, []);
+
+  const [completed, setCompleted] = useState(0);
+  const uploadRef = useRef();
+  const statusRef = useRef();
+  const loadTotalRef = useRef();
+  const progressRef = useRef();
+  useEffect(() => {
+    setInterval(() => setCompleted(Math.floor(Math.random() * 100) + 1), 2000);
+  }, []);
 
   return (
     <div className="add-product">
@@ -115,8 +126,8 @@ const AddProduct = () => {
         </select>
         <label htmlFor="image">Image</label>
         <input type="file" id="image" name="image" onChange={handleSetImage} />
+        <ProgressBar bgcolor={"#6a1b9a"} completed={uploadPercentage} />
       </div>
-      {imageURL}
       <div className="add-button">
         <button className="btn btn-primary" onClick={() => addProduct()}>
           Add

@@ -1,0 +1,32 @@
+.admin-container {
+  display: none;
+  position: fixed;
+  width: 300px;
+  right: 70px;
+  background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 101232112313;
+
+  .content-options ul {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px;
+
+    li {
+      width: 100%;
+      border-bottom: 0.2px solid rgb(240, 240, 240);
+      a {
+        color: #333;
+        font-size: 15px;
+        font-weight: 600;
+        padding: 12px;
+        display: block;
+        text-align: left;
+
+        &:hover {
+          background-color: #ddd;
+        }
+      }
+    }
+  }
+}

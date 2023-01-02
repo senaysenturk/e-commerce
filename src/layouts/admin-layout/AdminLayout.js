@@ -8,7 +8,7 @@ const AdminLayout = () => {
   return (
     <>
       <Header title={"shiwear"} />
-      <div className="admin-container">
+      <div className="admin">
         <Outlet />
       </div>
       <Footer />

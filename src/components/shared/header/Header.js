@@ -10,6 +10,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import DropdownMenu from "../dropdown-menu/DropdownMenu";
 import UserCard from "../user-card/UserCard";
 import CartCard from "../cart-card/CartCard";
+import Admin from "../admin/Admin";
 
 export const Header = ({ title }) => {
   const navigate = useNavigate();
@@ -30,11 +31,15 @@ export const Header = ({ title }) => {
           <div className="options">
             <ul>
               <li>
-                <Link to="/admin/add-product">
+                {/* <Link to="/admin/add-product"> */}
+
+                <a>
                   <span className="icon">
                     <MdOutlineAdminPanelSettings />
                   </span>
-                </Link>
+                  <Admin />
+                </a>
+                {/* </Link> */}
               </li>
               <li>
                 <Link to="/favorites">

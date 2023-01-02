@@ -29,12 +29,13 @@ baseService.delete = async (url, endpoint, id) => {
   }
 };
 
-baseService.postImage = async (url, data) => {
+baseService.postImage = async (url, data, handleUploadProgress = () => {}) => {
   try {
     const response = await axios.post(url, data, {
       headers: {
         Accept: "*",
       },
+      onUploadProgress: handleUploadProgress,
     });
     return response;
   } catch (error) {

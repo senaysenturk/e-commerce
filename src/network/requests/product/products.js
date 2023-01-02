@@ -14,7 +14,7 @@ export const getProduct = async () => {
   return result.data;
 };
 
-export const postImage = (data) => {
+export const postImage = (data, handleUploadProgress = () => {}) => {
   return baseService.postImage(
     "https://api.cloudinary.com/v1_1/dr4cvohdq/image/upload",
     data

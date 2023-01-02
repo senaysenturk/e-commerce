@@ -25,6 +25,9 @@ import AddProduct from "./pages/admin/add-product/AddProduct";
 import AdminLayout from "./layouts/admin-layout/AdminLayout";
 import { CreateProductProvider } from "./contexts/product/CreateProductContext";
 import OrderTracking from "./components/app/shopping-cart/order-tracking/OrderTracking";
+import AllProducts from "./pages/admin/all-product/AllProducts";
+import AllOrders from "./pages/admin/all-orders/AllOrders";
+import AllUsers from "./pages/admin/all-users/AllUsers";
 
 function App() {
   return (
@@ -66,6 +69,9 @@ function App() {
                 </CreateProductProvider>
               }
             />
+            <Route path="all-products" element={<AllProducts />}></Route>
+            <Route path="all-orders" element={<AllOrders />}></Route>
+            <Route path="all-users" element={<AllUsers />}></Route>
           </Route>
 
           <Route path="*" element={<NotFound />} />

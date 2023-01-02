@@ -83,6 +83,9 @@ $danger-color: brown;
       & > li:hover .cart-container {
         display: block;
       }
+      & > li:hover .admin-container {
+        display: block;
+      }
     }
   }
 

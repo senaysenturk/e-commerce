@@ -9,7 +9,6 @@ import {
   getProduct,
   postImage,
 } from "../../network/requests/product/products";
-import AddProduct from "../../pages/admin/add-product/AddProduct";
 
 const CreateProductContext = createContext();
 
@@ -19,6 +18,7 @@ export const CreateProductProvider = ({ children }) => {
   const [colors, setColors] = useState([]);
   const [sizes, setSizes] = useState([]);
   const [categories, setCategories] = useState([]);
+  const [uploadPercentage, setUploadPercentage] = useState(0);
 
   //console.log("Product", product);
   const addProduct = async () => {
@@ -32,7 +32,15 @@ export const CreateProductProvider = ({ children }) => {
     formdata.append("file", img);
     formdata.append("upload_preset", "vi6rdwfh");
     formdata.append("cloud_name", "dr4cvohdq");
-    const response = await postImage(formdata);
+    const response = await postImage(formdata, (progressEvent) => {
+      const percentage = parseInt(
+        Math.round((progressEvent.loaded * 100) / progressEvent.total)
+      );
+      setUploadPercentage(percentage);
+      console.log(percentage);
+      return percentage;
+    });
+
     setProduct({ ...product, imgPath: response.data.url });
   };
   const getAllColors = async () => {
@@ -40,16 +48,6 @@ export const CreateProductProvider = ({ children }) => {
     setColors(response.data);
     // console.log(colors);
   };
-
-  // const setProductColor = async () => {
-  //   setProduct({ ...product, color: color });
-  //   console.log(color);
-  // };
-
-  // const setProductSize = async () => {
-  //   setProduct({ ...product, size: size });
-  //   console.log(size);
-  // };
 
   const getAllSizes = async () => {
     const response = await getSizes();
@@ -78,6 +76,7 @@ export const CreateProductProvider = ({ children }) => {
     getAllCategories,
     // setColor,
     // setSize,
+    uploadPercentage,
   };
 
   return (

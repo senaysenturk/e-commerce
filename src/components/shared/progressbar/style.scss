@@ -1,0 +1,21 @@
+.containerStyles {
+  height: 20px;
+  width: "100%";
+  background-color: "#e0e0de";
+  border: 50px;
+  margin: 50px;
+}
+
+.fillerStyles {
+  height: "100%";
+  background-color: #00695c;
+  border-radius: "inherit";
+  text-align: "right";
+  transition: "width 1s ease-in-out";
+}
+
+.labelStyles {
+  padding: 5px;
+  color: "white";
+  font-weight: "bold";
+}
