@@ -3,7 +3,9 @@
     {
       "name": "Ribbed turtleneck dress",
       "price": 29.99,
-      "color": ["black"],
+      "color": [
+        "black"
+      ],
       "category": "Woman",
       "imgPath": "http://res.cloudinary.com/dr4cvohdq/image/upload/v1672579518/txkzmjkj0t9kh29rwelg.webp",
       "id": 1
@@ -11,29 +13,43 @@
     {
       "name": "Knitted cardigan with jewel button",
       "price": 49.99,
-      "size": ["XS", "S"],
-      "color": ["white"],
+      "size": [
+        "XS",
+        "S"
+      ],
+      "color": [
+        "white"
+      ],
       "category": "Woman",
       "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/5900/472/430/5900472430_1_1_2.jpg?t=1669736376209",
-
       "id": 2
     },
     {
       "name": "tshirt",
       "price": 10,
-      "size": ["XL"],
-      "color": ["white"],
+      "size": [
+        "XL"
+      ],
+      "color": [
+        "white"
+      ],
       "category": "Woman",
-      "imgPath":"https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/6202/267/001/6202267001_1_1_2.jpg?t=1669732582176",
-
+      "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/6202/267/001/6202267001_1_1_2.jpg?t=1669732582176",
       "id": 3
     },
     {
       "createdAt": "1/1/2023, 6:25:08 PM",
       "name": "Lace pleated dress",
       "price": 59.99,
-      "size": ["XS", "S", "XXS", "L"],
-      "color": ["black"],
+      "size": [
+        "XS",
+        "S",
+        "XXS",
+        "L"
+      ],
+      "color": [
+        "black"
+      ],
       "category": "Woman",
       "imgPath": "http://res.cloudinary.com/dr4cvohdq/image/upload/v1672586727/utkeesstkjwkdi4qt6zu.webp",
       "id": 4
@@ -42,8 +58,13 @@
       "createdAt": "1/1/2023, 6:27:54 PM",
       "name": "Regular fit Oxford cotton shirt",
       "price": 29.99,
-      "color": ["blue"],
-      "size": ["M", "L"],
+      "color": [
+        "blue"
+      ],
+      "size": [
+        "M",
+        "L"
+      ],
       "category": "Man",
       "imgPath": "https://res.cloudinary.com/dr4cvohdq/image/upload/v1672586896/hbxu98mpnk8y0silr4tu.jpg",
       "id": 5
@@ -52,8 +73,17 @@
       "createdAt": "1/1/2023, 6:29:03 PM",
       "name": "Wool zip neck jumper",
       "price": 39.99,
-      "color": ["gray"],
-      "size": ["XXS", "XS", "S", "M", "L", "XL"],
+      "color": [
+        "gray"
+      ],
+      "size": [
+        "XXS",
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
       "category": "Man",
       "imgPath": "https://res.cloudinary.com/dr4cvohdq/image/upload/v1672586969/kyfmont7buxnvijblhx0.webp",
       "id": 6
@@ -62,8 +92,15 @@
       "createdAt": "1/1/2023, 6:30:20 PM",
       "name": "Sherpa pocket sweatshirt",
       "price": 45.99,
-      "color": ["green"],
-      "size": ["XS", "S", "M", "L"],
+      "color": [
+        "green"
+      ],
+      "size": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ],
       "category": "Man",
       "imgPath": "https://res.cloudinary.com/dr4cvohdq/image/upload/v1672587037/zydsnco7z34qeg8uqqfh.webp",
       "id": 7
@@ -72,7 +109,9 @@
       "createdAt": "1/1/2023, 6:31:08 PM",
       "name": "Lightweight cotton sweatshirt",
       "price": 27.99,
-      "color": ["green"],
+      "color": [
+        "green"
+      ],
       "category": "Man",
       "imgPath": "http://res.cloudinary.com/dr4cvohdq/image/upload/v1672587096/wty5mvkd5dltmqetfo8a.webp",
       "id": 8
@@ -81,8 +120,15 @@
       "createdAt": "1/1/2023, 6:33:15 PM",
       "name": "Quilted down anorak",
       "price": 99.99,
-      "size": ["XS", "S", "M", "L"],
-      "color": ["black"],
+      "size": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ],
+      "color": [
+        "black"
+      ],
       "category": "Child",
       "imgPath": "https://res.cloudinary.com/dr4cvohdq/image/upload/v1672587220/sck10tvxwevfcefmpngw.webp",
       "id": 9
@@ -91,16 +137,38 @@
       "createdAt": "1/1/2023, 6:36:45 PM",
       "name": "Mini-dress with crystals",
       "price": 199.99,
-      "size": ["XXS", "XS", "S", "M", "L", "XL", "XL", "XXL"],
-      "color": ["black", "teal", "red", "purple", "pink"],
+      "size": [
+        "XXS",
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XL",
+        "XXL"
+      ],
+      "color": [
+        "black",
+        "teal",
+        "red",
+        "purple",
+        "pink"
+      ],
       "category": "Woman",
       "imgPath": "http://res.cloudinary.com/dr4cvohdq/image/upload/v1672587441/no79egwmowl9vn29glyh.webp",
       "id": 10
     },
     {
       "name": "Tropical print shirt",
-      "size": ["XXS", "XS", "S"],
-      "color": ["white", "black"],
+      "size": [
+        "XXS",
+        "XS",
+        "S"
+      ],
+      "color": [
+        "white",
+        "black"
+      ],
       "category": "Child",
       "imgPath": "http://res.cloudinary.com/dr4cvohdq/image/upload/v1672595350/pmqzrdpmnlfylvp2h7co.jpg",
       "price": 112.99,
@@ -182,6 +250,15 @@
       "gender": "female",
       "role": "user",
       "id": 5
+    },
+    {
+      "mail": "hicran@shiwear.com",
+      "user": "hicrane",
+      "password": "Hicran!6518406",
+      "birth": "1985-11-11",
+      "gender": "female",
+      "role": "user",
+      "id": 6
     }
   ],
   "auth": [
@@ -190,9 +267,34 @@
       "password": "Bilge123!",
       "role": "user",
       "id": 1
+    },
+    {
+      "user": "hicran@shiwear.com",
+      "password": "Hicran!6518406",
+      "role": "user",
+      "id": 2
+    },
+    {
+      "user": "hicran",
+      "password": "Hicran!6518406",
+      "role": "admin",
+      "id": 3
+    },
+    {
+      "user": "hicran",
+      "password": "Hicran!6518406",
+      "role": "admin",
+      "id": 4
     }
   ],
-  "me": [],
+  "me": [
+    {
+      "user": "hicran",
+      "password": "Hicran!6518406",
+      "role": "admin",
+      "id": 4
+    }
+  ],
   "cities": [
     {
       "city": "Adana",
@@ -736,12 +838,24 @@
     {
       "city": "Gümüşhane",
       "plaka": 29,
-      "ilceleri": ["Merkez", "Kelkit", "Şiran", "Torul", "Köse", "Kürtün"]
+      "ilceleri": [
+        "Merkez",
+        "Kelkit",
+        "Şiran",
+        "Torul",
+        "Köse",
+        "Kürtün"
+      ]
     },
     {
       "city": "Hakkari",
       "plaka": 30,
-      "ilceleri": ["Çukurca", "Merkez", "Şemdinli", "Yüksekova"]
+      "ilceleri": [
+        "Çukurca",
+        "Merkez",
+        "Şemdinli",
+        "Yüksekova"
+      ]
     },
     {
       "city": "Hatay",
@@ -1416,7 +1530,14 @@
     {
       "city": "Uşak",
       "plaka": 64,
-      "ilceleri": ["Banaz", "Eşme", "Karahallı", "Sivaslı", "Ulubey", "Merkez"]
+      "ilceleri": [
+        "Banaz",
+        "Eşme",
+        "Karahallı",
+        "Sivaslı",
+        "Ulubey",
+        "Merkez"
+      ]
     },
     {
       "city": "Van",
@@ -1485,7 +1606,11 @@
     {
       "city": "Bayburt",
       "plaka": 69,
-      "ilceleri": ["Merkez", "Aydıntepe", "Demirözü"]
+      "ilceleri": [
+        "Merkez",
+        "Aydıntepe",
+        "Demirözü"
+      ]
     },
     {
       "city": "Karaman",
@@ -1517,7 +1642,14 @@
     {
       "city": "Batman",
       "plaka": 72,
-      "ilceleri": ["Merkez", "Beşiri", "Gercüş", "Kozluk", "Sason", "Hasankeyf"]
+      "ilceleri": [
+        "Merkez",
+        "Beşiri",
+        "Gercüş",
+        "Kozluk",
+        "Sason",
+        "Hasankeyf"
+      ]
     },
     {
       "city": "Şırnak",
@@ -1535,17 +1667,34 @@
     {
       "city": "Bartın",
       "plaka": 74,
-      "ilceleri": ["Merkez", "Kurucaşile", "Ulus", "Amasra"]
+      "ilceleri": [
+        "Merkez",
+        "Kurucaşile",
+        "Ulus",
+        "Amasra"
+      ]
     },
     {
       "city": "Ardahan",
       "plaka": 75,
-      "ilceleri": ["Merkez", "Çıldır", "Göle", "Hanak", "Posof", "Damal"]
+      "ilceleri": [
+        "Merkez",
+        "Çıldır",
+        "Göle",
+        "Hanak",
+        "Posof",
+        "Damal"
+      ]
     },
     {
       "city": "Iğdır",
       "plaka": 76,
-      "ilceleri": ["Aralık", "Merkez", "Tuzluca", "Karakoyunlu"]
+      "ilceleri": [
+        "Aralık",
+        "Merkez",
+        "Tuzluca",
+        "Karakoyunlu"
+      ]
     },
     {
       "city": "Yalova",
@@ -1574,7 +1723,12 @@
     {
       "city": "Kilis",
       "plaka": 79,
-      "ilceleri": ["Merkez", "Elbeyli", "Musabeyli", "Polateli"]
+      "ilceleri": [
+        "Merkez",
+        "Elbeyli",
+        "Musabeyli",
+        "Polateli"
+      ]
     },
     {
       "city": "Osmaniye",
