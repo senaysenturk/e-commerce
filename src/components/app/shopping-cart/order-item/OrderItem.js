@@ -6,18 +6,15 @@ import OrderSummary from "../order-summary/OrderSummary";
 
 import "./style.scss";
 
-export const OrderDetail = (
-  // { cart, setCart, handleChange, setMessage }
-  
-  ) => {
-const context = useContext(ShopContext)
+export const OrderDetail = ({ cart, setCart, handleChange, setMessage }) => {
+  const context = useContext(ShopContext);
   const [count, setCount] = useState(0);
   const [price, setPrice] = useState(0);
 
   const handleRemove = (id) => {
     // const cartList = cart.filter((product) => product.id !== id);
     // setCart(cartList);
-    context.removeProductFromCart(id)
+    context.removeProductFromCart(id);
     handlePrice();
   };
 
@@ -38,13 +35,13 @@ const context = useContext(ShopContext)
     let value = 0;
     if (price < 200) {
       value = 200 - price;
-      // setMessage(
-      //   "Sepetinize " +
-      //     value +
-      //     " TL degerinde daha urun ekleyin, kargo bedava olsun."
-      // );
+      setMessage(
+        "Sepetinize " +
+          value +
+          " TL degerinde daha urun ekleyin, kargo bedava olsun."
+      );
     } else {
-      // setMessage("");
+      setMessage("");
     }
   };
 
@@ -92,13 +89,12 @@ const context = useContext(ShopContext)
                 <div className="item-bottom">
                   <div className="item-quantity">
                     <div className="item-quantity-wrapper">
-                      <a 
+                      <a
                         className="item-quantity-button item-decrease-button"
-                        onClick={(e) => { 
-                          e.preventDefault()
-                          context.decreaseProduct(product.id)
-                        }
-                        }
+                        onClick={(e) => {
+                          e.preventDefault();
+                          context.decreaseProduct(product.id);
+                        }}
                       >
                         <span>-</span>
                       </a>
@@ -108,8 +104,8 @@ const context = useContext(ShopContext)
                       <a
                         className="item-quantity-button item-increase-button"
                         onClick={() => {
-                          const copyProduct = {...product, amount:1}
-                          context.addProductToCart(copyProduct)
+                          const copyProduct = { ...product, amount: 1 };
+                          context.addProductToCart(copyProduct);
                         }}
                       >
                         <span>+</span>
@@ -117,7 +113,9 @@ const context = useContext(ShopContext)
                     </div>
                   </div>
                   <div className="item-price">
-                    <span className="actual-price">{product.price.toFixed(2)}</span>
+                    <span className="actual-price">
+                      {product.price.toFixed(2)}
+                    </span>
                     {/* <span className="actual-price">{product.cartPrice}</span> */}
                   </div>
                 </div>
@@ -125,8 +123,6 @@ const context = useContext(ShopContext)
             </div>
           </div>
         ))}
-       
-        
       </div>
       <OrderSummary price={price.toFixed(2)} />
     </>

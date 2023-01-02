@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { RiHeart3Line } from "react-icons/ri";
-import { AiOutlineSearch, AiOutlineUser } from "react-icons/ai";
+import { AiOutlineUser } from "react-icons/ai";
 import { MdOutlineAdminPanelSettings } from "react-icons/md";
 import { GrCart } from "react-icons/gr";
 
@@ -11,9 +11,13 @@ import DropdownMenu from "../dropdown-menu/DropdownMenu";
 import UserCard from "../user-card/UserCard";
 import CartCard from "../cart-card/CartCard";
 import Admin from "../admin/Admin";
+import Search from "./search/Search";
+import { useMatchMedia } from "./useMatchMedia";
 
 export const Header = ({ title }) => {
   const navigate = useNavigate();
+  const isMobileResolution = useMatchMedia("(max-width:992px)", false);
+  const isDesktopResolution = useMatchMedia("(min-width:992px)", true);
   return (
     <>
       <header className="app-header">
@@ -22,12 +26,14 @@ export const Header = ({ title }) => {
             <i className="fa-solid fa-signature"></i>
             <h1>{title}</h1>
           </div>
-          <div className="search">
+          {/* <div className="search">
             <span className="search-icon">
               <AiOutlineSearch />
             </span>
             <input type="text" />
-          </div>
+          </div> */}
+          {isDesktopResolution && <Search />}
+
           <div className="options">
             <ul>
               <li>
@@ -78,6 +84,9 @@ export const Header = ({ title }) => {
               </li>
             </ul>
           </div>
+        </div>
+        <div className="mobile-search">
+          {!isDesktopResolution && <Search />}
         </div>
 
         <div className="category-header">
