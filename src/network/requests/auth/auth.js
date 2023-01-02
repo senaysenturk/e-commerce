@@ -8,6 +8,14 @@ export const postSignUp = (newUser) => {
   return baseService.postAuth("http://localhost:5500/", "signup", newUser);
 };
 
+export const getUsers = () => {
+  return baseService.get("http://localhost:5500/", "users");
+};
+
+export const postUser = (newUser) => {
+  return baseService.post("http://localhost:5500/", "users", newUser);
+};
+
 export const postAuth = (newUser) => {
   return baseService.postAuth("http://localhost:5500/", "auth", newUser);
 };

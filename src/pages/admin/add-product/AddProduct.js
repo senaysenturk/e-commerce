@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
-import ProgressBar from "src/components/shared/progressbar/ProgressBar";
+import ProgressBar from "../../../components/shared/progressbar/ProgressBar";
 import { useProduct } from "../../../contexts/product/CreateProductContext";
 import "./style.scss";
 

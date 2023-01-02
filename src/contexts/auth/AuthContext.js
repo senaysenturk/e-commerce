@@ -1,5 +1,5 @@
 import { useState, createContext, useEffect, useContext } from "react";
-import { postMe, fetchMe, fetchLogout } from "../../network/requests/auth/auth";
+import { postUser, getUsers, postMe, fetchMe, fetchLogout } from "../../network/requests/auth/auth";
 
 const AuthContext = createContext();
 
@@ -26,6 +26,19 @@ const AuthProvider = ({ children }) => {
       }
     })();
   }, []);
+
+  const register = async (userData) => {
+    await postUser(userData.data);
+  }
+
+  const AddAddress = async () => {
+    const users = await getUsers();
+
+    const id = users.filter(
+      (userObject) => userObject.mail === user.user || userObject.user === user.user
+    );
+    console.log(id);
+  }
 
   const login = async (userData) => {
     setLoggedIn(true);
@@ -57,6 +70,7 @@ const AuthProvider = ({ children }) => {
   const values = {
     loggedIn,
     user,
+    register,
     login,
     logout,
     currentUser,

@@ -259,6 +259,15 @@
       "gender": "female",
       "role": "user",
       "id": 6
+    },
+    {
+      "mail": "ipek@gmail.com",
+      "user": "ipekgulsen",
+      "password": "Bilge123!",
+      "birth": "2023-01-06",
+      "gender": "female",
+      "role": "user",
+      "id": 7
     }
   ],
   "auth": [
@@ -285,16 +294,34 @@
       "password": "Hicran!6518406",
       "role": "admin",
       "id": 4
+    },
+    {
+      "user": "ipek@gmail.com",
+      "password": "Bilge123!",
+      "role": "user",
+      "id": 5
     }
   ],
   "me": [
     {
-      "user": "hicran",
-      "password": "Hicran!6518406",
-      "role": "admin",
-      "id": 4
+      "user": "ipek@gmail.com",
+      "password": "Bilge123!",
+      "role": "user",
+      "id": 5
     }
   ],
+  "users": [
+    {
+      "mail": "ipek@gmail.com",
+      "user": "ipekgulsen",
+      "password": "Bilge123!",
+      "birth": "2023-01-06",
+      "gender": "female",
+      "role": "user",
+      "id": 7
+    }
+  ],
+  "orders": [],
   "cities": [
     {
       "city": "Adana",
