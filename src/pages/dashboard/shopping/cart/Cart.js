@@ -44,10 +44,10 @@ export const Cart = () => {
             <OrderItem key={product.id} product={product} handleClick={handleClick} />
           ))} */}
           <OrderItem
-            // // cart={cart}
-            // setCart={setCart}
-            // handleChange={handleChange}
-            // setMessage={setMessage}
+            cart={cart}
+            setCart={setCart}
+            handleChange={handleChange}
+            setMessage={setMessage}
           />
           {/* <OrderSummary price={price} /> */}
         </div>

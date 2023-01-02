@@ -1,0 +1,33 @@
+$light-color: #f4f4f4;
+$dark-color: #333;
+$danger-color: brown;
+
+.mobile-search {
+  position: relative;
+  .search {
+    .search-icon {
+      position: relative;
+      top: 35px;
+      left: -360px;
+      z-index: 3;
+      color: $dark-color;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    input {
+      height: 2.5rem;
+      background: #f0eeed;
+      border: none;
+      border-radius: 7px;
+      padding: 2px 30px;
+      width: 98%;
+      text-indent: 20px;
+      font-size: 18px;
+
+      &:focus {
+        border-color: transparent;
+      }
+    }
+  }
+}
