@@ -1,5 +1,12 @@
 import { useState, createContext, useEffect, useContext } from "react";
-import { postUser, getUsers, postMe, fetchMe, fetchLogout } from "../../network/requests/auth/auth";
+import {
+  postUser,
+  getUsers,
+  patchUser,
+  postMe,
+  fetchMe,
+  fetchLogout,
+} from "../../network/requests/auth/auth";
 
 const AuthContext = createContext();
 
@@ -8,6 +15,7 @@ const AuthProvider = ({ children }) => {
   const [loggedIn, setLoggedIn] = useState(false);
   const [loading, setLoading] = useState(true);
   const [currentUser, setCurrentUser] = useState();
+  const [address, setAddress] = useState([]);
 
   useEffect(() => {
     (async () => {
@@ -16,7 +24,7 @@ const AuthProvider = ({ children }) => {
         console.log(me);
 
         console.log(me.data);
-        (me.data.length === 0) ? setLoggedIn(false) : setLoggedIn(true);
+        me.data.length === 0 ? setLoggedIn(false) : setLoggedIn(true);
 
         setUser(me.data);
         setCurrentUser(me.data);
@@ -28,17 +36,74 @@ const AuthProvider = ({ children }) => {
   }, []);
 
   const register = async (userData) => {
-    await postUser(userData.data);
-  }
+    const response = await postUser(userData.data);
+  };
 
-  const AddAddress = async () => {
-    const users = await getUsers();
+  const addressInfo = async (newAddress) => {
+    const response = await getUsers();
 
-    const id = users.filter(
-      (userObject) => userObject.mail === user.user || userObject.user === user.user
+    console.log(response.data);
+    console.log(user);
+
+    const updatedUser = response.data.filter(
+      (userObject) =>
+        userObject.mail === user[0].user || userObject.user === user[0].user
     );
-    console.log(id);
-  }
+
+    console.log(updatedUser);
+
+    let userId = updatedUser[0].id;
+    console.log(userId);
+
+    if (updatedUser[0].hasOwnProperty("addresses")) {
+      // const userAddresses = [ ...updatedUser[0].addresses, {address: newAddress}];
+      console.log(updatedUser[0].addresses);
+      updatedUser[0].addresses.forEach((addressObj) => {
+        console.log(addressObj.addressName);
+      });
+      var isValidMail = updatedUser[0].addresses.some(function (addressObj) {
+        return addressObj.addressName === newAddress.addressName;
+      });
+
+      if (isValidMail) {
+        console.log(newAddress.addressName);
+        console.log("nooo");
+        alert("address name already used");
+      } else {
+        console.log("yes");
+        updateUser(userId, {
+          ...updatedUser[0],
+          // addresses: [{ ...updatedUser[0].addresses, address: newAddress }],
+          // addresses: [ ...updatedUser[0].addresses, {address: newAddress}],
+          addresses: [...updatedUser[0].addresses, newAddress],
+        });
+      }
+
+      /*  updateUser(userId, {
+        ...updatedUser[0],
+        // addresses: [{ ...updatedUser[0].addresses, address: newAddress }],
+        // addresses: [ ...updatedUser[0].addresses, {address: newAddress}],
+        addresses: [...updatedUser[0].addresses, newAddress],
+      }); */
+    } else {
+      // const addressValue = [address: newAddress];
+      // updateUser(userId, { ...updatedUser[0], addresses: [newAddress] });
+      updateUser(userId, {
+        ...updatedUser[0],
+        // addresses: [{ address: newAddress }],
+        addresses: [newAddress],
+      });
+    }
+    // setSize((prevSize) => [...prevSize, e.target.value]);
+
+    // updateUser(userId, { ...updatedUser[0], addresses: [newAddress] });
+  };
+
+  const updateUser = async (updatedUserId, updatedUserObject) => {
+    console.log(updatedUserId);
+    console.log(updatedUserObject);
+    await patchUser(updatedUserId, updatedUserObject);
+  };
 
   const login = async (userData) => {
     setLoggedIn(true);
@@ -75,6 +140,7 @@ const AuthProvider = ({ children }) => {
     logout,
     currentUser,
     setCurrentUser,
+    addressInfo,
   };
 
   /* if (loading) {
