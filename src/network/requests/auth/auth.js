@@ -16,6 +16,10 @@ export const postUser = (newUser) => {
   return baseService.post("http://localhost:5500/", "users", newUser);
 };
 
+export const patchUser = (id, newUser) => {
+  return baseService.patch("http://localhost:5500/", "users/", id, newUser);
+};
+
 export const postAuth = (newUser) => {
   return baseService.postAuth("http://localhost:5500/", "auth", newUser);
 };
@@ -31,4 +35,3 @@ export const fetchMe = () => {
 export const fetchLogout = async (id) => {
   return baseService.delete("http://localhost:5500/", "me/", id);
 };
-
