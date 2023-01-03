@@ -1,26 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import "./style.scss";
 import { RxHamburgerMenu } from "react-icons/rx";
 import DropdownMenu from "../../dropdown-menu/DropdownMenu";
+import Submenu from "./submenu/Submenu";
 const Hamburger = () => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <nav role="navigation">
       <div id="menuToggle">
-        <input type="checkbox" />
+        <input type="checkbox" name="" id="" className="check" />
 
         <span></span>
         <span></span>
         <span></span>
 
-        <ul id="menu">
-          <li>
-            <a href="women">WOMEN</a>
+        <ul id="menu" className="menu-items">
+          <li tabindex="0" class="onclick-menu">
+            WOMAN
+            <Submenu />
           </li>
-          <li>
-            <a href="man">MAN</a>
+          <li tabindex="1" class="onclick-menu">
+            MAN
+            <Submenu />
           </li>
-          <li>
-            <a href="children">CHILDREN</a>
+          <li tabindex="2" class="onclick-menu">
+            CHILDREN
+            <Submenu />
           </li>
           <li>
             <a href="new-arrivals">NEW ARRIVALS</a>

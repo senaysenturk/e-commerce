@@ -10,7 +10,7 @@ $danger-color: brown;
     align-items: center;
     justify-content: space-between;
     padding: 30px 25px;
-    border-bottom: 1px solid #d1d1d1;
+    border-bottom: 1px solid #ededed;
 
     .logo {
       display: flex;
@@ -53,38 +53,6 @@ $danger-color: brown;
         &:focus {
           border-color: transparent;
         }
-      }
-    }
-
-    .options ul {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      list-style: none;
-      gap: 0 25px;
-
-      li {
-        position: relative;
-
-        margin-left: 5%;
-        padding-right: 1%;
-
-        .icon {
-          font-size: 20px;
-          color: $dark-color;
-          cursor: pointer;
-        }
-      }
-
-      & > li:hover .user-container {
-        display: block;
-      }
-
-      & > li:hover .cart-container {
-        display: block;
-      }
-      & > li:hover .admin-container {
-        display: block;
       }
     }
   }

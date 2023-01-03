@@ -23,7 +23,9 @@ $colors: (
   --dark-color: rgba(0, 0, 0, 0.9);
   --gray-color: rgb(55, 90, 90);
 }
-* {
+*,
+*::after,
+*::before {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -97,8 +99,8 @@ body {
 
 .hr {
   width: 100%;
-  margin: 8px;
-  border-top: 1px solid rgb(217, 218, 220);
+  // margin: 8px;
+  border-top: 1px solid #ededed;
 }
 
 .quickview {

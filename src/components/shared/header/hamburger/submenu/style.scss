@@ -1,0 +1,20 @@
+.onclick-menu:focus {
+  pointer-events: none;
+  margin-bottom: 5px;
+  .onclick-menu-content {
+    opacity: 1;
+    visibility: visible;
+    display: inherit;
+    pointer-events: auto;
+  }
+}
+.onclick-menu-content {
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: visibility 0.5s;
+  li {
+    list-style: none;
+    color: #717171;
+  }
+}

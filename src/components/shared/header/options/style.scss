@@ -1,0 +1,32 @@
+$light-color: #f4f4f4;
+$dark-color: #333;
+$danger-color: brown;
+
+.options ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  list-style: none;
+  column-gap: 30px;
+  padding: 10px 0;
+
+  li {
+    position: relative;
+    .icon {
+      font-size: 20px;
+      color: $dark-color;
+      cursor: pointer;
+    }
+  }
+
+  & > li:hover .user-container {
+    display: block;
+  }
+
+  & > li:hover .cart-container {
+    display: block;
+  }
+  & > li:hover .admin-container {
+    display: block;
+  }
+}
