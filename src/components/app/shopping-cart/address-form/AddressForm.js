@@ -43,8 +43,8 @@ export const AddressForm = () => {
 
   return (
     <>
-      {!display ? (
-        <Address user={user} />
+      {display ? (
+        <Address />
       ) : (
         <div className="register-addresses">
           {JSON.stringify(user)}

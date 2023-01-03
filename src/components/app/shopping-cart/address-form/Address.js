@@ -1,7 +1,7 @@
 import React from "react";
 import { HiOutlinePlus } from "react-icons/hi";
 
-const Address = ({ user }) => {
+const Address = ({ user, setDisplay, display }) => {
   console.log(user);
   return (
     <div className="checkout-address">
@@ -9,7 +9,7 @@ const Address = ({ user }) => {
         <header>Delivery Address</header>
         <div className="add-new-address">
           <HiOutlinePlus />
-          <span>New Address</span>
+          <a>New Address</a>
         </div>
       </div>
       <div className="checkout-address-box">
