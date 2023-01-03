@@ -10,9 +10,7 @@ const Address = ({ setDisplay, display }) => {
   const [navigate, setNavigate] = useState(false);
 
   getAddresses();
-
-const Address = ({ user, setDisplay, display }) => {
-  console.log(user);
+  
   return (
     <div className="checkout-address">
       <div className="checkout-address-box">
