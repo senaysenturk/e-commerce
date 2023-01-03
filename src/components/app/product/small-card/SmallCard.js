@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import "./style.scss";
 import Modal from "../../../shared/modal/Modal";
 /**
- * 
- * @param {{product:Product}} param0 
- * @returns 
+ *
+ * @param {{product:Product}} param0
+ * @returns
  */
-const SmallCard = ({ product}) => {
+const SmallCard = ({ product }) => {
   const [isOpen, setIsOpen] = useState(false);
   //console.log(isOpen);
   return (
@@ -21,7 +21,7 @@ const SmallCard = ({ product}) => {
             Quick View
           </span>
           <div className="quickview_info" lang="tr">
-            <p className="quickview_info">{product.name}</p>
+            <p>{product.name}</p>
             <p className="quickview_info_price" id="bluz">
               {product.price.toFixed(2)} $
             </p>
