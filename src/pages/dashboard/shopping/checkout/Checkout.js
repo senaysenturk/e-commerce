@@ -4,7 +4,7 @@ import AddressForm from "../../../../components/app/shopping-cart/address-form/A
 import BasketSummary from "../../../../components/app/shopping-cart/basket-summary/BasketSummary";
 import OrderSummary from "src/components/app/shopping-cart/order-summary/OrderSummary";
 
-export const Checkout = ({ user }) => {
+export const Checkout = () => {
   return (
     <>
       <div className="checkout-container">
