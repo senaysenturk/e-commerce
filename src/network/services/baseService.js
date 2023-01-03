@@ -29,6 +29,15 @@ baseService.delete = async (url, endpoint, id) => {
   }
 };
 
+baseService.patch = async (url, endpoint, id, data) => {
+  try {
+    const response = await axios.patch(`${url}${endpoint}${id}`, data, {});
+    return response;
+  } catch (error) {
+    console.log(error.status);
+  }
+};
+
 baseService.postImage = async (url, data, handleUploadProgress = () => {}) => {
   try {
     const response = await axios.post(url, data, {
