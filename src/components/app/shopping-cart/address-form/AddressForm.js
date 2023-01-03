@@ -4,7 +4,7 @@ import { getCities } from "../../../../network/requests/order/order";
 import MaskInput from "react-maskinput";
 import { useAuth } from "../../../../contexts/auth/AuthContext";
 import { Navigate } from "react-router-dom";
-
+import { HiOutlinePlus } from "react-icons/hi";
 import "./style.scss";
 import Address from "./Address";
 
@@ -20,6 +20,7 @@ export const AddressForm = () => {
   };
 
   const [address, setAddress] = useState({});
+  const [hide, setHide] = useState(false);
 
   const handleAddress = (e) => {
     console.log(address);
@@ -28,14 +29,17 @@ export const AddressForm = () => {
 
   const handleSave = async (e) => {
     var response = await addressInfo(address);
-    setNavigate(true);
+
+    handleSetDisplay();
+  };
+
+  const handleSetDisplay = async () => {
+    setHide(!hide);
   };
 
   useEffect(() => {
     getAllCities();
   }, []);
-
-  const [display, setDisplay] = useState(false);
 
   if (navigate) {
     return <Navigate to="/order-tracking" />;
@@ -43,14 +47,21 @@ export const AddressForm = () => {
 
   return (
     <>
-      {display ? (
-        <Address />
-      ) : (
-        <div className="register-addresses">
-          {JSON.stringify(user)}
-          <div className="addresses-head">
-            <header>Delivery Address</header>
-          </div>
+      <div className="register-addresses">
+        <div className="addresses-head">
+          <header>Delivery Address</header>
+          {!hide && (
+            <div className="add-new-address">
+              <HiOutlinePlus />
+              <a onClick={handleSetDisplay}> New Address</a>
+            </div>
+          )}
+        </div>
+        {!hide ? (
+          <>
+            <Address handleSetDisplay={handleSetDisplay} hide={hide} />
+          </>
+        ) : (
           <div className="address-form">
             <div className="person">
               <input
@@ -131,8 +142,8 @@ export const AddressForm = () => {
               </button>
             </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </>
   );
 };
