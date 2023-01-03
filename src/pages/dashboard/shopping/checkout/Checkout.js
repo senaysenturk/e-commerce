@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.scss";
 import AddressForm from "../../../../components/app/shopping-cart/address-form/AddressForm";
-import OrderSummary from "../../../../components/app/shopping-cart/order-summary/OrderSummary";
+import BasketSummary from "../../../../components/app/shopping-cart/basket-summary/BasketSummary";
 
 export const Checkout = () => {
   return (
@@ -10,7 +10,7 @@ export const Checkout = () => {
         <div></div>
         <div className="checkout-container-middle">
           <AddressForm />
-          <OrderSummary />
+          <BasketSummary />
         </div>
         <div></div>
       </div>
