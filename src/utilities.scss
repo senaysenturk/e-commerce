@@ -216,7 +216,6 @@ body {
       width: 20px;
       height: 20px;
       transition: transform 0.2s ease-in-out;
-
       border-radius: 50px;
       @each $name, $value in $colors {
         &.#{$name} {
