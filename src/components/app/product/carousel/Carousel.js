@@ -25,7 +25,7 @@ const Carousel = ({ product }) => {
           </span>
           <div className="quickview_info" lang="tr">
             <p className="quickview_info">{product.name}</p>
-            <p className="quickview_info_price">{product.price}</p>
+            <p className="quickview_info_price">{product.price} $</p>
           </div>
         </div>
       </div>

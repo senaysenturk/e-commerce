@@ -22,13 +22,13 @@ export const CartCard = () => {
             <div className="product-card-content">
               <p>{product.name}</p>
               <p>Adet: {product.amount}</p>
-              <strong>{product.price.toFixed(2)} TL</strong>
+              <strong>{product.price.toFixed(2)} $ </strong>
               <div className="product-card-campaign">
                 <p>
                   <span className="icon-ticket">
                     <GiTicket />
                   </span>
-                  Free Shipping For Shopping <span>Over 200 TL</span>
+                  Free Shipping For Shopping <span>Over 200 $</span>
                 </p>
               </div>
             </div>
@@ -49,7 +49,7 @@ export const CartCard = () => {
         <p>Total</p>
         <p className="cart-price">
            <span > {context.totalQuantity()} Adet</span >   
-           <strong > {context.totalPrice()} TL</strong>   
+           <strong > {context.totalPrice()} $</strong>   
         </p>
       </div>
       <div className="or-divide">

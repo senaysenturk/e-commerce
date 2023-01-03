@@ -23,7 +23,7 @@ const CardSummary = ({ product }) => {
 
         <div className="product-info">
           <h3 className="product-name">{product.name}</h3>
-          <span className="product-price">{product.price.toFixed(2)}</span>
+          <span className="product-price">{product.price.toFixed(2)} $</span>
           <p className="product-detail">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit.
             Perferendis, illum odit. Expedita eveniet quam eos, deserunt

@@ -23,7 +23,7 @@ const SmallCard = ({ product}) => {
           <div className="quickview_info" lang="tr">
             <p className="quickview_info">{product.name}</p>
             <p className="quickview_info_price" id="bluz">
-              {product.price.toFixed(2)}
+              {product.price.toFixed(2)} $
             </p>
           </div>
 

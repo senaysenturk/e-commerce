@@ -29,7 +29,7 @@ const OrderTracking = () => {
             </div>
 
             <div className="order-total">
-              <span>83.47 TL</span>
+              <span>83.47 $</span>
             </div>
           </section>
 

@@ -3,6 +3,10 @@
     {
       "name": "Ribbed turtleneck dress",
       "price": 29.99,
+      "size": [
+        "XS",
+        "S"
+      ],
       "color": [
         "black"
       ],

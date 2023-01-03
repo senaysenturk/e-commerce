@@ -20,33 +20,33 @@ export const OrderSummary = ({ price }) => {
             <div className="order-product">
               <p>Products</p>
               <p className="price">
-                <strong>{price} TL</strong>
+                <strong>{price} $</strong>
               </p>
             </div>
             <div className="order-campaign">
               <p>
-                Free Shipping For Shopping <span>Over 200 TL</span>
+                Free Shipping For Shopping <span>Over 200 $</span>
               </p>
               <p className="amount-discount">
-                <strong>- 0,00 TL</strong>
+                <strong>- 0,00 $</strong>
               </p>
             </div>
             <div className="order-campaign">
               <p>50% Discount in Bag</p>
               <p className="amount-discount">
-                <strong>- 0,00 TL</strong>
+                <strong>- 0,00 $</strong>
               </p>
             </div>
             <div className="order-campaign">
               <p>2 for 1</p>
               <p className="amount-discount">
-                <strong>- 0,00 TL</strong>
+                <strong>- 0,00 $</strong>
               </p>
             </div>
             <div className="order-discount">
               <p>Total Discount</p>
               <p className="discounts-amount">
-                <strong>- 0,00 TL</strong>
+                <strong>- 0,00 $</strong>
               </p>
             </div>
             <div className="or-divide">
@@ -55,7 +55,7 @@ export const OrderSummary = ({ price }) => {
             <div className="order-total">
               <p>Total</p>
               <p className="total-price">
-                <strong>{price} TL</strong>
+                <strong>{price} $</strong>
               </p>
             </div>
             <div className="order-confirm">
