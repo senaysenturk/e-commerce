@@ -11,7 +11,7 @@ export const Checkout = () => {
       <div className="checkout-container">
         <div className="checkout-container-middle">
           <Address />
-          {/*  <AddressForm />*/}
+           <AddressForm />
           {/* <BasketSummary /> */}
         </div>
         <OrderSummary />
