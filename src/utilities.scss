@@ -235,3 +235,10 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
+
+.or-divide {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
