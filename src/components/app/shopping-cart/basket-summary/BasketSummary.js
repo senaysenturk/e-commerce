@@ -15,8 +15,8 @@ export const BasketSummary = () => {
         </div>
         <div className="basket-card">
           <div className="card">
-            <div className="card-image">
-              <img src="#" />
+            <div className="card-img">
+              <img src="https://m.media-amazon.com/images/I/71rmxx8P2qL._AC_UY327_FMwebp_QL65_.jpg" />
             </div>
             <div className="card-content">
               <div className="card-info">

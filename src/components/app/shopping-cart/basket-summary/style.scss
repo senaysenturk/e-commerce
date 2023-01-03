@@ -13,13 +13,42 @@
     }
 
     .basket-card {
+        display: flex;
         .card {
             display: flex;
-            justify-content: space-around;
+            margin-left: 25px;
+            text-align: left;
+
+            .card-img {
+                width: 65px;
+                height: 65px;
+
+                img {
+                    width: 100%;
+                }
+            }
 
             .card-content {
                 display: flex;
-                justify-content: space-around;
+                justify-content: space-between;
+
+                .card-info {
+                    margin-left: 15px;
+                    font-size: 12px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-self: flex-start;
+                }
+
+                .card-price {
+                    display: flex;
+                    width: 50%;
+                    flex-direction: column;
+                    align-items: flex-end;
+                    justify-content: center;
+                    align-self: flex-end;
+                }
             }
         }
     }
