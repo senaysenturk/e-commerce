@@ -2,10 +2,16 @@ import React from "react";
 import { useState, useRef, useEffect } from "react";
 import { getCities } from "../../../../network/requests/order/order";
 import MaskInput from "react-maskinput";
+import { useAuth } from "../../../../contexts/auth/AuthContext";
+import { Navigate } from "react-router-dom";
 
 import "./style.scss";
 
 export const AddressForm = () => {
+  const { user, addressInfo } = useAuth();
+
+  const [navigate, setNavigate] = useState(false);
+  
   const [cities, setCities] = useState([]);
 
   const getAllCities = async () => {
@@ -21,15 +27,23 @@ export const AddressForm = () => {
     setAddress({ ...address, [e.target.name]: e.target.value });
   };
 
-  const handleSave = async (e) => {};
+  const handleSave = async (e) => {
+    var response = await addressInfo(address);
+    setNavigate(true);
+  };
 
   useEffect(() => {
     getAllCities();
   }, []);
 
+  if (navigate) {
+    return <Navigate to="/order-tracking" />;
+  }
+
   return (
     <>
       <div className="checkout-addresses">
+        {JSON.stringify(user)}
         <div className="checkout-addresses-head">
           <header>Teslimat Adresi</header>
         </div>
