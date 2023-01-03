@@ -1,52 +1,109 @@
-.checkout-addresses {
+.checkout-address {
+  width: 100%;
+  .checkout-address-box {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1.5rem;
+    border: 1px solid #d1d1d1;
 
-    .checkout-addresses-head {
-        margin-bottom: 1rem;
-        width: 100%;
-
-        header {
-            font-family: sans-serif;
-            font-size: 1.5rem;
-            line-height: 2rem;
-            --tw-text-opacity: 1;
-            color: rgba(0, 0, 0, var(--tw-text-opacity));
+    .address {
+      display: flex;
+      flex-direction: column;
+      width: 90%;
+      align-items: flex-start;
+      gap: 10px;
+      .address-name {
+        display: flex;
+        gap: 10px;
+        text-transform: uppercase;
+        input:checked ~ .address-name {
+          color: red;
         }
-    }
-
-    .address-form {
+      }
+      .address-content {
         display: flex;
         flex-direction: column;
-        flex-wrap: wrap;
+        align-items: flex-start;
+        row-gap: 10px;
+        padding-left: 25px;
+        text-align: left;
+      }
+    }
+    .edit {
+      a {
+        text-transform: uppercase;
+        font-size: 0.7rem;
+        font-weight: 600;
+        color: var(--gray-color);
+        text-decoration: underline;
+      }
+    }
+  }
+}
 
-       /*  input {
+.register-addresses {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  .address-form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    /*  input {
             width: 450px;
             height: 50px;
             padding: 10px;
         } */
 
-        .person {
-            display: flex;
-            justify-content: space-between;
-            input {
-                width: 320px;
-            }
-        }
-
-        input, select, textarea {
-            width: 660px;
-            padding: 18px 20px 14px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-            margin-top: 6px;
-            margin-bottom: 16px;
-            resize: vertical;
-        }
-
-        textarea {
-            height: 114px;
-        }
+    .person {
+      display: flex;
+      justify-content: space-between;
+      input {
+        width: 320px;
+      }
     }
+
+    input,
+    select,
+    textarea {
+      width: 660px;
+      padding: 18px 20px 14px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-top: 6px;
+      margin-bottom: 16px;
+      resize: vertical;
+    }
+
+    textarea {
+      height: 114px;
+    }
+  }
+}
+.addresses-head {
+  margin-bottom: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  header {
+    font-family: sans-serif;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    --tw-text-opacity: 1;
+    color: rgba(0, 0, 0, var(--tw-text-opacity));
+  }
+  .add-new-address {
+    font-weight: 100;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex;
+    column-gap: 5px;
+  }
 }

@@ -2,9 +2,7 @@ import React from "react";
 
 import "./style.scss";
 import "../../../../utilities.scss";
-
 import { SlPresent } from "react-icons/sl";
-
 import { useNavigate } from "react-router-dom";
 
 export const OrderSummary = ({ price }) => {
@@ -68,12 +66,12 @@ export const OrderSummary = ({ price }) => {
             </div>
           </div>
         </div>
-        <div className="cart-voucher">
+        {/* <div className="cart-voucher">
           <a>Enter Discount Code</a>
           <span>
             <SlPresent />
           </span>
-        </div>
+        </div> */}
       </div>
     </>
   );

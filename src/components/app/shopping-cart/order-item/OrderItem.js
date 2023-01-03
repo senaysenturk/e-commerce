@@ -36,9 +36,9 @@ export const OrderDetail = ({ cart, setCart, handleChange, setMessage }) => {
     if (price < 200) {
       value = 200 - price;
       setMessage(
-        "Sepetinize " +
+        "Add another  $" +
           value +
-          " $ degerinde daha urun ekleyin, kargo bedava olsun."
+          " worth of items to your cart and get free shipping."
       );
     } else {
       setMessage("");
@@ -51,12 +51,11 @@ export const OrderDetail = ({ cart, setCart, handleChange, setMessage }) => {
     handleMessage();
   });
 
-  
   return (
     <>
       <div className="order-card">
         <div className="order-header">
-          <header>Sepet ({count})</header>
+          <header>Cart ({count})</header>
         </div>
         {context.cart.map((product) => (
           <div className="order-item-card" key={product.id}>
@@ -81,8 +80,6 @@ export const OrderDetail = ({ cart, setCart, handleChange, setMessage }) => {
                   >
                     <RiDeleteBinLine />
                   </span>
-
-                  
                 </div>
                 <div className="item-attributes-holder">
                   <span className="item-attribute-value">{product.color}</span>
@@ -100,7 +97,6 @@ export const OrderDetail = ({ cart, setCart, handleChange, setMessage }) => {
                     <span>29 Aralık Perşembe</span>Tarihinde Kargoda
                   </p>
                 </div>
-
 
                 {/*  - 1 +     49.99 $ */}
                 <div className="item-bottom">
@@ -130,9 +126,7 @@ export const OrderDetail = ({ cart, setCart, handleChange, setMessage }) => {
                     </div>
                   </div>
                   <div className="item-price">
-                    <span className="actual-price">
-                      {price.toFixed(2)} $
-                    </span>
+                    <span className="actual-price">{price.toFixed(2)} $</span>
                     {/* <span className="actual-price">{product.cartPrice}</span> */}
                   </div>
                 </div>

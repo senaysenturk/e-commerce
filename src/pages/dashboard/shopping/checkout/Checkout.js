@@ -7,12 +7,10 @@ export const Checkout = () => {
   return (
     <>
       <div className="checkout-container">
-        <div></div>
         <div className="checkout-container-middle">
           <AddressForm />
-          <OrderSummary />
         </div>
-        <div></div>
+        <OrderSummary />
       </div>
     </>
   );
