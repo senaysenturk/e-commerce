@@ -1,8 +1,16 @@
 import React from "react";
-import { HiOutlinePlus } from "react-icons/hi";
+import { useState, useRef, useEffect } from "react";
 
-const Address = ({ user, setDisplay, display }) => {
-  console.log(user);
+import { HiOutlinePlus } from "react-icons/hi";
+import { useAuth } from "../../../../contexts/auth/AuthContext";
+import { Navigate } from "react-router-dom";
+
+const Address = ({ setDisplay, display }) => {
+  const { user, getAddresses, address } = useAuth();
+  const [navigate, setNavigate] = useState(false);
+
+  getAddresses();
+
   return (
     <div className="checkout-address">
       <div className="addresses-head">
@@ -12,6 +20,31 @@ const Address = ({ user, setDisplay, display }) => {
           <a>New Address</a>
         </div>
       </div>
+      {address.map((addressObject) => {
+        return (
+          <div className="checkout-address-box">
+            <div className="address">
+              <div className="address-name">
+                <input type="radio" name="address-name" id="address-name" />
+                <label htmlFor="address-name">
+                  <h4>{addressObject.addressName}</h4>
+                </label>
+              </div>
+              <div className="address-content">
+                <span>{addressObject.address}</span>
+                <span>
+                  {addressObject.country} / {addressObject.city}
+                </span>
+              </div>
+            </div>
+            <div className="edit">
+              <a href="#">Edit</a>
+            </div>
+          </div>
+        );
+      })}
+
+      {/* 
       <div className="checkout-address-box">
         <div className="address">
           <div className="address-name">
@@ -28,7 +61,8 @@ const Address = ({ user, setDisplay, display }) => {
         <div className="edit">
           <a href="#">Edit</a>
         </div>
-      </div>
+      </div> 
+      */}
     </div>
   );
 };

@@ -29,6 +29,7 @@ export const AddressForm = () => {
   const handleSave = async (e) => {
     var response = await addressInfo(address);
     setNavigate(true);
+    setDisplay(true);
   };
 
   useEffect(() => {

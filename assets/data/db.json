@@ -355,14 +355,26 @@
       "password": "Bilge123!",
       "role": "user",
       "id": 7
+    },
+    {
+      "user": "ipek@gmail.com",
+      "password": "Bilge123!",
+      "role": "user",
+      "id": 8
+    },
+    {
+      "user": "ipek@gmail.com",
+      "password": "Bilge123!",
+      "role": "user",
+      "id": 9
     }
   ],
   "me": [
     {
-      "user": "irmak@test.com",
+      "user": "ipek@gmail.com",
       "password": "Bilge123!",
       "role": "user",
-      "id": 7
+      "id": 9
     }
   ],
   "users": [
