@@ -51,6 +51,7 @@ export const OrderDetail = ({ cart, setCart, handleChange, setMessage }) => {
     handleMessage();
   });
 
+  
   return (
     <>
       <div className="order-card">
@@ -66,18 +67,31 @@ export const OrderDetail = ({ cart, setCart, handleChange, setMessage }) => {
               <div className="item-main">
                 <div className="item-product">
                   <a>{product.name}</a>
+
+                  <div className="item-price">
+                    <span className="actual-price">
+                      {product.price.toFixed(2)} $
+                    </span>
+                    {/* <span className="actual-price">{product.cartPrice}</span> */}
+                  </div>
+
                   <span
                     className="delete-icon"
                     onClick={() => handleRemove(product.id)}
                   >
                     <RiDeleteBinLine />
                   </span>
+
+                  
                 </div>
                 <div className="item-attributes-holder">
                   <span className="item-attribute-value">{product.color}</span>
                   <p className="item-attribute"></p>
                   <span className="item-attribute-value">{product.size}</span>
                 </div>
+
+                {/* 29 Aralık PerşembeTarihinde Kargoda */}
+
                 <div className="item-middle">
                   <span className="shipping-icon">
                     <MdOutlineLocalShipping />
@@ -86,6 +100,9 @@ export const OrderDetail = ({ cart, setCart, handleChange, setMessage }) => {
                     <span>29 Aralık Perşembe</span>Tarihinde Kargoda
                   </p>
                 </div>
+
+
+                {/*  - 1 +     49.99 $ */}
                 <div className="item-bottom">
                   <div className="item-quantity">
                     <div className="item-quantity-wrapper">
@@ -114,7 +131,7 @@ export const OrderDetail = ({ cart, setCart, handleChange, setMessage }) => {
                   </div>
                   <div className="item-price">
                     <span className="actual-price">
-                      {product.price.toFixed(2)} $
+                      {price.toFixed(2)} $
                     </span>
                     {/* <span className="actual-price">{product.cartPrice}</span> */}
                   </div>
