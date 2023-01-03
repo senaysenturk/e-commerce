@@ -491,7 +491,7 @@
     {
       "city": "Adana",
       "plaka": 1,
-      "ilceleri": [
+      "states": [
         "Aladağ",
         "Ceyhan",
         "Çukurova",
@@ -512,7 +512,7 @@
     {
       "city": "Adıyaman",
       "plaka": 2,
-      "ilceleri": [
+      "states": [
         "Besni",
         "Çelikhan",
         "Gerger",
@@ -527,7 +527,7 @@
     {
       "city": "Afyonkarahisar",
       "plaka": 3,
-      "ilceleri": [
+      "states": [
         "Başmakçı",
         "Bayat",
         "Bolvadin",
@@ -551,7 +551,7 @@
     {
       "city": "Ağrı",
       "plaka": 4,
-      "ilceleri": [
+      "states": [
         "Diyadin",
         "Doğubayazıt",
         "Eleşkirt",
@@ -565,7 +565,7 @@
     {
       "city": "Amasya",
       "plaka": 5,
-      "ilceleri": [
+      "states": [
         "Göynücek",
         "Gümüşhacıköy",
         "Hamamözü",
@@ -578,7 +578,7 @@
     {
       "city": "Ankara",
       "plaka": 6,
-      "ilceleri": [
+      "states": [
         "Altındağ",
         "Ayaş",
         "Bala",
@@ -609,7 +609,7 @@
     {
       "city": "Antalya",
       "plaka": 7,
-      "ilceleri": [
+      "states": [
         "Akseki",
         "Alanya",
         "Elmalı",
@@ -634,7 +634,7 @@
     {
       "city": "Artvin",
       "plaka": 8,
-      "ilceleri": [
+      "states": [
         "Ardanuç",
         "Arhavi",
         "Merkez",
@@ -648,7 +648,7 @@
     {
       "city": "Aydın",
       "plaka": 9,
-      "ilceleri": [
+      "states": [
         "Merkez",
         "Bozdoğan",
         "Efeler",
@@ -672,7 +672,7 @@
     {
       "city": "Balıkesir",
       "plaka": 10,
-      "ilceleri": [
+      "states": [
         "Altıeylül",
         "Ayvalık",
         "Merkez",
@@ -699,7 +699,7 @@
     {
       "city": "Bilecik",
       "plaka": 11,
-      "ilceleri": [
+      "states": [
         "Merkez",
         "Bozüyük",
         "Gölpazarı",
@@ -713,7 +713,7 @@
     {
       "city": "Bingöl",
       "plaka": 12,
-      "ilceleri": [
+      "states": [
         "Merkez",
         "Genç",
         "Karlıova",
@@ -727,7 +727,7 @@
     {
       "city": "Bitlis",
       "plaka": 13,
-      "ilceleri": [
+      "states": [
         "Adilcevaz",
         "Ahlat",
         "Merkez",
@@ -740,7 +740,7 @@
     {
       "city": "Bolu",
       "plaka": 14,
-      "ilceleri": [
+      "states": [
         "Merkez",
         "Gerede",
         "Göynük",
@@ -755,7 +755,7 @@
     {
       "city": "Burdur",
       "plaka": 15,
-      "ilceleri": [
+      "states": [
         "Ağlasun",
         "Bucak",
         "Merkez",
@@ -772,7 +772,7 @@
     {
       "city": "Bursa",
       "plaka": 16,
-      "ilceleri": [
+      "states": [
         "Gemlik",
         "İnegöl",
         "İznik",
@@ -795,7 +795,7 @@
     {
       "city": "Çanakkale",
       "plaka": 17,
-      "ilceleri": [
+      "states": [
         "Ayvacık",
         "Bayramiç",
         "Biga",
@@ -813,7 +813,7 @@
     {
       "city": "Çankırı",
       "plaka": 18,
-      "ilceleri": [
+      "states": [
         "Merkez",
         "Çerkeş",
         "Eldivan",
@@ -831,7 +831,7 @@
     {
       "city": "Çorum",
       "plaka": 19,
-      "ilceleri": [
+      "states": [
         "Alaca",
         "Bayat",
         "Merkez",
@@ -851,7 +851,7 @@
     {
       "city": "Denizli",
       "plaka": 20,
-      "ilceleri": [
+      "states": [
         "Acıpayam",
         "Buldan",
         "Çal",
@@ -877,7 +877,7 @@
     {
       "city": "Diyarbakır",
       "plaka": 21,
-      "ilceleri": [
+      "states": [
         "Kocaköy",
         "Çermik",
         "Çınar",
@@ -900,7 +900,7 @@
     {
       "city": "Edirne",
       "plaka": 22,
-      "ilceleri": [
+      "states": [
         "Merkez",
         "Enez",
         "Havsa",
@@ -915,7 +915,7 @@
     {
       "city": "Elazığ",
       "plaka": 23,
-      "ilceleri": [
+      "states": [
         "Ağın",
         "Baskil",
         "Merkez",
@@ -932,7 +932,7 @@
     {
       "city": "Erzincan",
       "plaka": 24,
-      "ilceleri": [
+      "states": [
         "Çayırlı",
         "Merkez",
         "İliç",
@@ -947,7 +947,7 @@
     {
       "city": "Erzurum",
       "plaka": 25,
-      "ilceleri": [
+      "states": [
         "Aşkale",
         "Çat",
         "Hınıs",
@@ -973,7 +973,7 @@
     {
       "city": "Eskişehir",
       "plaka": 26,
-      "ilceleri": [
+      "states": [
         "Çifteler",
         "Mahmudiye",
         "Mihalıççık",
@@ -993,7 +993,7 @@
     {
       "city": "Gaziantep",
       "plaka": 27,
-      "ilceleri": [
+      "states": [
         "Araban",
         "İslahiye",
         "Nizip",
@@ -1008,7 +1008,7 @@
     {
       "city": "Giresun",
       "plaka": 28,
-      "ilceleri": [
+      "states": [
         "Alucra",
         "Bulancak",
         "Dereli",
@@ -1030,7 +1030,7 @@
     {
       "city": "Gümüşhane",
       "plaka": 29,
-      "ilceleri": [
+      "states": [
         "Merkez",
         "Kelkit",
         "Şiran",
@@ -1042,7 +1042,7 @@
     {
       "city": "Hakkari",
       "plaka": 30,
-      "ilceleri": [
+      "states": [
         "Çukurca",
         "Merkez",
         "Şemdinli",
@@ -1052,7 +1052,7 @@
     {
       "city": "Hatay",
       "plaka": 31,
-      "ilceleri": [
+      "states": [
         "Altınözü",
         "Arsuz",
         "Defne",
@@ -1073,7 +1073,7 @@
     {
       "city": "Isparta",
       "plaka": 32,
-      "ilceleri": [
+      "states": [
         "Atabey",
         "Eğirdir",
         "Gelendost",
@@ -1092,7 +1092,7 @@
     {
       "city": "Mersin",
       "plaka": 33,
-      "ilceleri": [
+      "states": [
         "Anamur",
         "Erdemli",
         "Gülnar",
@@ -1111,7 +1111,7 @@
     {
       "city": "İstanbul",
       "plaka": 34,
-      "ilceleri": [
+      "states": [
         "Adalar",
         "Bakırköy",
         "Beşiktaş",
@@ -1156,7 +1156,7 @@
     {
       "city": "İzmir",
       "plaka": 35,
-      "ilceleri": [
+      "states": [
         "Aliağa",
         "Bayındır",
         "Bergama",
@@ -1192,7 +1192,7 @@
     {
       "city": "Kars",
       "plaka": 36,
-      "ilceleri": [
+      "states": [
         "Arpaçay",
         "Digor",
         "Kağızman",
@@ -1206,7 +1206,7 @@
     {
       "city": "Kastamonu",
       "plaka": 37,
-      "ilceleri": [
+      "states": [
         "Abana",
         "Araç",
         "Azdavay",
@@ -1232,7 +1232,7 @@
     {
       "city": "Kayseri",
       "plaka": 38,
-      "ilceleri": [
+      "states": [
         "Bünyan",
         "Develi",
         "Felahiye",
@@ -1254,7 +1254,7 @@
     {
       "city": "Kırklareli",
       "plaka": 39,
-      "ilceleri": [
+      "states": [
         "Babaeski",
         "Demirköy",
         "Merkez",
@@ -1268,7 +1268,7 @@
     {
       "city": "Kırşehir",
       "plaka": 40,
-      "ilceleri": [
+      "states": [
         "Çiçekdağı",
         "Kaman",
         "Merkez",
@@ -1281,7 +1281,7 @@
     {
       "city": "Kocaeli",
       "plaka": 41,
-      "ilceleri": [
+      "states": [
         "Gebze",
         "Gölcük",
         "Kandıra",
@@ -1299,7 +1299,7 @@
     {
       "city": "Konya",
       "plaka": 42,
-      "ilceleri": [
+      "states": [
         "Akşehir",
         "Beyşehir",
         "Bozkır",
@@ -1336,7 +1336,7 @@
     {
       "city": "Kütahya",
       "plaka": 43,
-      "ilceleri": [
+      "states": [
         "Altıntaş",
         "Domaniç",
         "Emet",
@@ -1355,7 +1355,7 @@
     {
       "city": "Malatya",
       "plaka": 44,
-      "ilceleri": [
+      "states": [
         "Akçadağ",
         "Arapgir",
         "Arguvan",
@@ -1375,7 +1375,7 @@
     {
       "city": "Manisa",
       "plaka": 45,
-      "ilceleri": [
+      "states": [
         "Akhisar",
         "Alaşehir",
         "Demirci",
@@ -1399,7 +1399,7 @@
     {
       "city": "Kahramanmaraş",
       "plaka": 46,
-      "ilceleri": [
+      "states": [
         "Afşin",
         "Andırın",
         "Dulkadiroğlu",
@@ -1417,7 +1417,7 @@
     {
       "city": "Mardin",
       "plaka": 47,
-      "ilceleri": [
+      "states": [
         "Derik",
         "Kızıltepe",
         "Artuklu",
@@ -1434,7 +1434,7 @@
     {
       "city": "Muğla",
       "plaka": 48,
-      "ilceleri": [
+      "states": [
         "Bodrum",
         "Datça",
         "Fethiye",
@@ -1453,7 +1453,7 @@
     {
       "city": "Muş",
       "plaka": 49,
-      "ilceleri": [
+      "states": [
         "Bulanık",
         "Malazgirt",
         "Merkez",
@@ -1465,7 +1465,7 @@
     {
       "city": "Nevşehir",
       "plaka": 50,
-      "ilceleri": [
+      "states": [
         "Avanos",
         "Derinkuyu",
         "Gülşehir",
@@ -1479,7 +1479,7 @@
     {
       "city": "Niğde",
       "plaka": 51,
-      "ilceleri": [
+      "states": [
         "Bor",
         "Çamardı",
         "Merkez",
@@ -1491,7 +1491,7 @@
     {
       "city": "Ordu",
       "plaka": 52,
-      "ilceleri": [
+      "states": [
         "Akkuş",
         "Altınordu",
         "Aybastı",
@@ -1516,7 +1516,7 @@
     {
       "city": "Rize",
       "plaka": 53,
-      "ilceleri": [
+      "states": [
         "Ardeşen",
         "Çamlıhemşin",
         "Çayeli",
@@ -1534,7 +1534,7 @@
     {
       "city": "Sakarya",
       "plaka": 54,
-      "ilceleri": [
+      "states": [
         "Akyazı",
         "Geyve",
         "Hendek",
@@ -1556,7 +1556,7 @@
     {
       "city": "Samsun",
       "plaka": 55,
-      "ilceleri": [
+      "states": [
         "Alaçam",
         "Bafra",
         "Çarşamba",
@@ -1579,7 +1579,7 @@
     {
       "city": "Siirt",
       "plaka": 56,
-      "ilceleri": [
+      "states": [
         "Baykan",
         "Eruh",
         "Kurtalan",
@@ -1592,7 +1592,7 @@
     {
       "city": "Sinop",
       "plaka": 57,
-      "ilceleri": [
+      "states": [
         "Ayancık",
         "Boyabat",
         "Durağan",
@@ -1607,7 +1607,7 @@
     {
       "city": "Sivas",
       "plaka": 58,
-      "ilceleri": [
+      "states": [
         "Divriği",
         "Gemerek",
         "Gürün",
@@ -1630,7 +1630,7 @@
     {
       "city": "Tekirdağ",
       "plaka": 59,
-      "ilceleri": [
+      "states": [
         "Çerkezköy",
         "Çorlu",
         "Ergene",
@@ -1647,7 +1647,7 @@
     {
       "city": "Tokat",
       "plaka": 60,
-      "ilceleri": [
+      "states": [
         "Almus",
         "Artova",
         "Erbaa",
@@ -1665,7 +1665,7 @@
     {
       "city": "Trabzon",
       "plaka": 61,
-      "ilceleri": [
+      "states": [
         "Akçaabat",
         "Araklı",
         "Arsin",
@@ -1689,7 +1689,7 @@
     {
       "city": "Tunceli",
       "plaka": 62,
-      "ilceleri": [
+      "states": [
         "Çemişgezek",
         "Hozat",
         "Mazgirt",
@@ -1703,7 +1703,7 @@
     {
       "city": "Şanlıurfa",
       "plaka": 63,
-      "ilceleri": [
+      "states": [
         "Akçakale",
         "Birecik",
         "Bozova",
@@ -1722,7 +1722,7 @@
     {
       "city": "Uşak",
       "plaka": 64,
-      "ilceleri": [
+      "states": [
         "Banaz",
         "Eşme",
         "Karahallı",
@@ -1734,7 +1734,7 @@
     {
       "city": "Van",
       "plaka": 65,
-      "ilceleri": [
+      "states": [
         "Başkale",
         "Çatak",
         "Erciş",
@@ -1753,7 +1753,7 @@
     {
       "city": "Yozgat",
       "plaka": 66,
-      "ilceleri": [
+      "states": [
         "Akdağmadeni",
         "Boğazlıyan",
         "Çayıralan",
@@ -1773,7 +1773,7 @@
     {
       "city": "Zonguldak",
       "plaka": 67,
-      "ilceleri": [
+      "states": [
         "Çaycuma",
         "Devrek",
         "Ereğli",
@@ -1785,7 +1785,7 @@
     {
       "city": "Aksaray",
       "plaka": 68,
-      "ilceleri": [
+      "states": [
         "Ağaçören",
         "Eskil",
         "Gülağaç",
@@ -1798,7 +1798,7 @@
     {
       "city": "Bayburt",
       "plaka": 69,
-      "ilceleri": [
+      "states": [
         "Merkez",
         "Aydıntepe",
         "Demirözü"
@@ -1807,7 +1807,7 @@
     {
       "city": "Karaman",
       "plaka": 70,
-      "ilceleri": [
+      "states": [
         "Ermenek",
         "Merkez",
         "Ayrancı",
@@ -1819,7 +1819,7 @@
     {
       "city": "Kırıkkale",
       "plaka": 71,
-      "ilceleri": [
+      "states": [
         "Delice",
         "Keskin",
         "Merkez",
@@ -1834,7 +1834,7 @@
     {
       "city": "Batman",
       "plaka": 72,
-      "ilceleri": [
+      "states": [
         "Merkez",
         "Beşiri",
         "Gercüş",
@@ -1846,7 +1846,7 @@
     {
       "city": "Şırnak",
       "plaka": 73,
-      "ilceleri": [
+      "states": [
         "Beytüşşebap",
         "Cizre",
         "İdil",
@@ -1859,7 +1859,7 @@
     {
       "city": "Bartın",
       "plaka": 74,
-      "ilceleri": [
+      "states": [
         "Merkez",
         "Kurucaşile",
         "Ulus",
@@ -1869,7 +1869,7 @@
     {
       "city": "Ardahan",
       "plaka": 75,
-      "ilceleri": [
+      "states": [
         "Merkez",
         "Çıldır",
         "Göle",
@@ -1881,7 +1881,7 @@
     {
       "city": "Iğdır",
       "plaka": 76,
-      "ilceleri": [
+      "states": [
         "Aralık",
         "Merkez",
         "Tuzluca",
@@ -1891,7 +1891,7 @@
     {
       "city": "Yalova",
       "plaka": 77,
-      "ilceleri": [
+      "states": [
         "Merkez",
         "Altınova",
         "Armutlu",
@@ -1903,7 +1903,7 @@
     {
       "city": "Karabük",
       "plaka": 78,
-      "ilceleri": [
+      "states": [
         "Eflani",
         "Eskipazar",
         "Merkez",
@@ -1915,7 +1915,7 @@
     {
       "city": "Kilis",
       "plaka": 79,
-      "ilceleri": [
+      "states": [
         "Merkez",
         "Elbeyli",
         "Musabeyli",
@@ -1925,7 +1925,7 @@
     {
       "city": "Osmaniye",
       "plaka": 80,
-      "ilceleri": [
+      "states": [
         "Bahçe",
         "Kadirli",
         "Merkez",
@@ -1938,7 +1938,7 @@
     {
       "city": "Düzce",
       "plaka": 81,
-      "ilceleri": [
+      "states": [
         "Akçakoca",
         "Merkez",
         "Yığılca",
