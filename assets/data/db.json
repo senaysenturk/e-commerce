@@ -298,6 +298,15 @@
       "gender": "female",
       "role": "user",
       "id": 9
+    },
+    {
+      "mail": "irmak@test.com",
+      "user": "irmak",
+      "password": "Bilge123!",
+      "birth": "2023-01-13",
+      "gender": "female",
+      "role": "user",
+      "id": 10
     }
   ],
   "auth": [
@@ -336,9 +345,22 @@
       "password": "Bilge123!",
       "role": "user",
       "id": 6
+    },
+    {
+      "user": "irmak@test.com",
+      "password": "Bilge123!",
+      "role": "user",
+      "id": 7
     }
   ],
-  "me": [],
+  "me": [
+    {
+      "user": "irmak@test.com",
+      "password": "Bilge123!",
+      "role": "user",
+      "id": 7
+    }
+  ],
   "users": [
     {
       "mail": "ipek@gmail.com",
@@ -404,6 +426,26 @@
       "gender": "female",
       "role": "user",
       "id": 9
+    },
+    {
+      "mail": "irmak@test.com",
+      "user": "irmak",
+      "password": "Bilge123!",
+      "birth": "2023-01-13",
+      "gender": "female",
+      "role": "user",
+      "id": 10,
+      "addresses": [
+        {
+          "firstname": "Ipek",
+          "lastname": "Celik",
+          "phone": "+90 (535) 817 - 4795",
+          "city": "İstanbul",
+          "address": "Osmangazi Mh. Atayolu Cd. Kadife Sk. No: 2/4B EnvarEv Cadde St. B Blok, D: 50 K: 13 Samandıra",
+          "postcode": "34887",
+          "addressName": "Ev"
+        }
+      ]
     }
   ],
   "orders": [],

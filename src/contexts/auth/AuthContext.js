@@ -39,16 +39,22 @@ const AuthProvider = ({ children }) => {
     const response = await postUser(userData.data);
   };
 
+  var updatedUser;
+
   const addressInfo = async (newAddress) => {
     const response = await getUsers();
 
     console.log(response.data);
     console.log(user);
 
-    const updatedUser = response.data.filter(
-      (userObject) =>
+    updatedUser = response.data.filter((userObject) => {
+      console.log(userObject.mail);
+      console.log(userObject.user);
+      console.log(user[0].user);
+      return (
         userObject.mail === user[0].user || userObject.user === user[0].user
-    );
+      );
+    });
 
     console.log(updatedUser);
 
