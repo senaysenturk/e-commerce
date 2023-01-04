@@ -11,12 +11,20 @@ import Address from "./Address";
 export const AddressForm = () => {
   const { user, addressInfo } = useAuth();
   const [navigate, setNavigate] = useState(false);
+  const [city, setCity] = useState();
   const [cities, setCities] = useState([]);
+  const [states, setStates] = useState([]);
+  const [enable, setEnable] = useState(true);
 
   const getAllCities = async () => {
     const response = await getCities();
     setCities(response.data);
     console.log(cities);
+  };
+
+  const getStates = async (city) => {
+    setStates(cities.filter((cityObject) => cityObject.city === city));
+    console.log("state", states);
   };
 
   const [address, setAddress] = useState({});
@@ -25,6 +33,12 @@ export const AddressForm = () => {
   const handleAddress = (e) => {
     console.log(address);
     setAddress({ ...address, [e.target.name]: e.target.value });
+
+    if (e.target.name === "city") {
+      setCity(e.target.value);
+      getStates(city);
+      setEnable(false);
+    }
   };
 
   const handleSave = async (e) => {
@@ -40,6 +54,10 @@ export const AddressForm = () => {
   useEffect(() => {
     getAllCities();
   }, []);
+
+  useEffect(() => {
+    getStates(city);
+  }, [city]);
 
   if (navigate) {
     return <Navigate to="/order-tracking" />;
@@ -103,6 +121,17 @@ export const AddressForm = () => {
               <option>-- None --</option>
               {cities.map((cityObject, index) => (
                 <option key={index}>{cityObject.city}</option>
+              ))}
+            </select>
+            <select
+              id="state"
+              name="state"
+              disabled={enable}
+              onChange={handleAddress}
+            >
+              <option>-- None --</option>
+              {states[0].map((cityObject, index) => (
+                <option key={index}>{cityObject.states}</option>
               ))}
             </select>
             <textarea

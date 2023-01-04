@@ -39,6 +39,30 @@ const AuthProvider = ({ children }) => {
     const response = await postUser(userData.data);
   };
 
+  const getAddresses = async () => {
+    const response = await getUsers();
+
+    // console.log(response.data);
+    // console.log(user);
+
+    updatedUser = response.data.filter((userObject) => {
+      // console.log(userObject.mail);
+      // console.log(userObject.user);
+      // console.log(user[0].user);
+      return (
+        userObject.mail === user[0].user || userObject.user === user[0].user
+      );
+    });
+
+    // console.log(updatedUser);
+
+    // let userId = updatedUser[0].id;
+    // console.log(userId);
+    // console.log(updatedUser[0].addresses);
+    setAddress(updatedUser[0].addresses);
+    return updatedUser[0].addresses;
+  };
+
   var updatedUser;
 
   const addressInfo = async (newAddress) => {
@@ -147,6 +171,8 @@ const AuthProvider = ({ children }) => {
     currentUser,
     setCurrentUser,
     addressInfo,
+    getAddresses,
+    address,
   };
 
   /* if (loading) {
