@@ -4,7 +4,7 @@ import "./style.scss";
 import "../../../../utilities.scss";
 import { SlPresent } from "react-icons/sl";
 import { useNavigate } from "react-router-dom";
-import ShopContext from "src/contexts/basket/ShopContext";
+import ShopContext from "../../../../contexts/basket/ShopContext";
 
 export const OrderSummary = () => {
   const navigate = useNavigate();

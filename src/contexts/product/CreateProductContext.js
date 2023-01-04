@@ -14,11 +14,18 @@ const CreateProductContext = createContext();
 
 export const CreateProductProvider = ({ children }) => {
   const [product, setProduct] = useState({});
+  const [products, setProducts] = useState(null);
   const [image, setImage] = useState(null);
   const [colors, setColors] = useState([]);
   const [sizes, setSizes] = useState([]);
   const [categories, setCategories] = useState([]);
   const [uploadPercentage, setUploadPercentage] = useState(0);
+
+  const getAllProducts = async () => {
+    const response = await getProduct();
+    setProducts(response.data);
+    console.log(response.data);
+  };
 
   //console.log("Product", product);
   const addProduct = async () => {
@@ -73,6 +80,9 @@ export const CreateProductProvider = ({ children }) => {
   const values = {
     product,
     setProduct,
+    products,
+    setProducts,
+    getAllProducts,
     addProduct,
     image,
     setImage,
