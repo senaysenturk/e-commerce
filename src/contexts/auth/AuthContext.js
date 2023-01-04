@@ -63,6 +63,18 @@ const AuthProvider = ({ children }) => {
     return updatedUser[0].addresses;
   };
 
+  const deleteAddress = async (addressObj, addressName) => {
+    const index = addressObj.findIndex(
+      (addressObjectItem) => addressObjectItem.addressName === addressName
+    );
+    console.log(index);
+    const newAddressData = [
+      ...addressObj.slice(0, index),
+      ...addressObj.slice(index + 1),
+    ];
+    console.log(newAddressData);
+  };
+
   var updatedUser;
 
   const addressInfo = async (newAddress) => {
@@ -172,6 +184,7 @@ const AuthProvider = ({ children }) => {
     setCurrentUser,
     addressInfo,
     getAddresses,
+    deleteAddress,
     address,
   };
 

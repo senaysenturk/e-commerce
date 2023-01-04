@@ -7,10 +7,18 @@ import { Navigate } from "react-router-dom";
 import AddressForm from "./AddressForm";
 
 const Address = ({ setDisplay, display }) => {
-  const { user, getAddresses, address } = useAuth();
+  const { user, getAddresses, address, deleteAddress } = useAuth();
   const [navigate, setNavigate] = useState(false);
 
   getAddresses();
+
+  const handleDeleteAddress = async (addressName) => {
+    console.log(addressName);
+    console.log(address);
+    deleteAddress(address, addressName);
+    // const result = await getAddresses();
+    // console.log(result);
+  };
 
   return (
     <div className="checkout-address">
@@ -61,7 +69,9 @@ const Address = ({ setDisplay, display }) => {
               <span>|</span>
             </div>
             <div className="delete">
-              <a href="#">Delete</a>
+              <span onClick={handleDeleteAddress(addressObject.addressName)}>
+                Delete
+              </span>
             </div>
           </div>
         );
