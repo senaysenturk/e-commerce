@@ -19,19 +19,23 @@ export const BasketSummary = () => {
               <img src="https://m.media-amazon.com/images/I/71rmxx8P2qL._AC_UY327_FMwebp_QL65_.jpg" />
             </div>
             <div className="card-content">
-              <div className="card-info">
-                <p>name</p>
-                <p>amount</p>
-                <p>color</p>
+              <div className="card-left">
+                <div className="card-info">
+                  <p>name</p>
+                  <p>amount</p>
+                  <p>color</p>
+                </div>
               </div>
-              <div className="card-price">
-                <p className="price">
-                  <strong>20 $</strong>
-                </p>
+              <div className="card-right">
+                <div className="card-price">
+                  <p className="product-price">
+                    <strong>20 $</strong>
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-          <div className="or-divide">
+          <div className="product-divide">
             <span className="hr"></span>
           </div>
         </div>
@@ -47,9 +51,9 @@ export const BasketSummary = () => {
             <p className="shipment-price">
               <strong>- 0,00 $</strong>
             </p>
-            <p>
-              Free Shipping For Shopping <span>Over 200 $</span>
-            </p>
+          </div>
+          <div className="free-shipping">
+            <p>Free Shipping For Shopping Over 200 $</p>
           </div>
         </div>
         <div className="or-divide">
@@ -62,13 +66,14 @@ export const BasketSummary = () => {
               <strong>100 $</strong>
             </p>
           </div>
-          <div className="continue">
+          <div className="continue-button">
             <button
               className="btn btn-gray"
               onClick={() => navigate("/shopping/cart")}
             >
               Continue
             </button>
+            <p className="warning-msg">Devam etmek icin Adres ekleyiniz</p>
           </div>
         </div>
       </div>

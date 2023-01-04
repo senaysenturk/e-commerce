@@ -10,9 +10,9 @@ export const Checkout = () => {
     <>
       <div className="checkout-container">
         <div className="checkout-container-middle">
-          <Address />
-           <AddressForm />
-          {/* <BasketSummary /> */}
+          {/* <Address />
+           <AddressForm /> */}
+          <BasketSummary />
         </div>
         <OrderSummary />
       </div>
