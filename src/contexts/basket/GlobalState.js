@@ -17,7 +17,7 @@ const GlobalState = (props) => {
   useEffect(() => {
     (async () => {
       const products = await getProduct();
-      setInitialState(products)
+      setInitialState(products);
     })();
   }, []);
 
