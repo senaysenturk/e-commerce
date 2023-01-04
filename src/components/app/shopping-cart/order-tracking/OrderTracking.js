@@ -1,8 +1,22 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { FcCheckmark } from "react-icons/fc";
+import ShopContext from "src/contexts/basket/ShopContext";
 import "./style.scss";
 
 const OrderTracking = () => {
+  const context = useContext(ShopContext);
+  // const [price, setPrice] = useState(0);
+
+  // const handlePrice = () => {
+  //   let total = 0;
+  //   context.cart.map((item) => (total += item.amount * item.price));
+  //   setPrice(total);
+  // };
+
+  // useEffect(() => {
+  //   handlePrice();
+  // });
+
   return (
     <div className="order-tracking">
       <div className="order-container">
@@ -29,7 +43,7 @@ const OrderTracking = () => {
             </div>
 
             <div className="order-total">
-              <span>83.47 $</span>
+              <span> {context.totalPrice()} $</span>
             </div>
           </section>
 

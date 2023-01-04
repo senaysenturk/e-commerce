@@ -127,6 +127,7 @@ export const OrderDetail = ({ cart, setCart, handleChange, setMessage }) => {
                   </div>
                   <div className="item-price">
                     <span className="actual-price">
+                      {" "}
                       {(product.price * product.amount).toFixed(2)} $
                     </span>
                     {/* <span className="actual-price">{product.cartPrice}</span> */}
