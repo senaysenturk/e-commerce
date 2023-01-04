@@ -10,44 +10,19 @@ const Address = ({ setDisplay, display }) => {
   const { user, getAddresses, address, deleteAddress } = useAuth();
   const [navigate, setNavigate] = useState(false);
 
-  getAddresses();
-
   const handleDeleteAddress = async (addressName) => {
-    console.log(addressName);
-    console.log(address);
     deleteAddress(address, addressName);
-    // const result = await getAddresses();
-    // console.log(result);
   };
+
+  useEffect(() => {
+    getAddresses();
+  }, [address]);
 
   return (
     <div className="checkout-address">
-      <div className="checkout-address-box">
-        <div className="address">
-          <div className="address-name">
-            <input type="radio" name="address-name" id="address-name" />
-            <label htmlFor="address-name">
-              <h4>Home</h4>
-            </label>
-          </div>
-          <div className="address-content">
-            <span>Ihlamurpark Sitesi 4.Etap 1.Kısım B:10 D:23</span>
-            <span>BAŞAKŞEHİR / İSTANBUL</span>
-          </div>
-        </div>
-        <div className="edit">
-          <a href="#">Edit</a>
-        </div>
-        <div className="divider">
-          <span>|</span>
-        </div>
-        <div className="delete">
-          <a href="#">Delete</a>
-        </div>
-      </div>
-      {address.map((addressObject) => {
+      {address.map((addressObject, index) => {
         return (
-          <div className="checkout-address-box">
+          <div className="checkout-address-box" key={index}>
             <div className="address">
               <div className="address-name">
                 <input type="radio" name="address-name" id="address-name" />
@@ -69,33 +44,15 @@ const Address = ({ setDisplay, display }) => {
               <span>|</span>
             </div>
             <div className="delete">
-              <span onClick={handleDeleteAddress(addressObject.addressName)}>
+              <span
+                onClick={() => handleDeleteAddress(addressObject.addressName)}
+              >
                 Delete
               </span>
             </div>
           </div>
         );
       })}
-
-      {/* 
-      <div className="checkout-address-box">
-        <div className="address">
-          <div className="address-name">
-            <input type="radio" name="address-name" id="address-name" />
-            <label htmlFor="address-name">
-              <h4>Home</h4>
-            </label>
-          </div>
-          <div className="address-content">
-            <span>Ihlamurpark Sitesi 4.Etap 1.Kısım B:10 D:23</span>
-            <span>BAŞAKŞEHİR / İSTANBUL</span>
-          </div>
-        </div>
-        <div className="edit">
-          <a href="#">Edit</a>
-        </div>
-      </div> 
-      */}
     </div>
   );
 };
