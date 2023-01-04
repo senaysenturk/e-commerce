@@ -34,7 +34,14 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<DashboardLayout />}>
+          <Route
+            path="/"
+            element={
+              <CreateProductProvider>
+                <DashboardLayout />
+              </CreateProductProvider>
+            }
+          >
             <Route index element={<Home />} />
             <Route path="women" element={<Women />} />
             <Route path="man" element={<Man />} />

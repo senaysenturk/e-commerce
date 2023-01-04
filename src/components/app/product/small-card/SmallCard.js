@@ -7,7 +7,7 @@ import Modal from "../../../shared/modal/Modal";
  * @returns
  */
 const SmallCard = ({ product }) => {
-  console.log("Product", product);
+  // console.log("Product", product);
   const [isOpen, setIsOpen] = useState(false);
   //console.log(isOpen);
   return (

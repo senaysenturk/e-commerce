@@ -457,13 +457,7 @@
       "gender": "female",
       "role": "user",
       "id": 7,
-      "addresses": [
-        {
-          "address": "test2",
-          "addressName": "e2dsad",
-          "city": "İstanbul"
-        }
-      ]
+      "addresses": []
     },
     {
       "mail": "ipek@test.com",
