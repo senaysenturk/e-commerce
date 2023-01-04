@@ -25,25 +25,36 @@ const AddProduct = () => {
 
   const [color, setColor] = useState([]);
   const [size, setSize] = useState([]);
+  const [category, setCategory] = useState("");
 
   const handleSetProduct = (e) => {
     console.log(product);
     setProduct({ ...product, [e.target.name]: e.target.value });
+    if (e.target.name === "category") setCategory(e.target.value);
+    if (e.target.name === "size")
+      setSize((prevSize) => [...prevSize, e.target.value]);
+    if (e.target.name === "color")
+      setColor((prevColor) => [...prevColor, e.target.value]);
   };
 
   const handleSetImage = async (e) => {
     var response = await uploadImage(e.target.files[0]);
   };
 
-  const handleSetSize = (e) => {
-    setSize((prevSize) => [...prevSize, e.target.value]);
-    setProduct({ ...product, size: size });
-  };
+  // const handleSetSize = (e) => {
+  //   setSize((prevSize) => [...prevSize, e.target.value]);
+  //   setProduct({ ...product, size: size });
+  // };
 
-  const handleSetColor = (e) => {
-    setColor((prevColor) => [...prevColor, e.target.value]);
-    setProduct({ ...product, color: color });
-  };
+  // const handleSetColor = (e) => {
+  //   setColor((prevColor) => [...prevColor, e.target.value]);
+  //   setProduct({ ...product, color: color });
+  // };
+
+  // const handleSetCategory = (e) => {
+  //   setCategory(e.target.value);
+  //   setProduct({ ...product, category: category });
+  // };
 
   useEffect(() => {
     getAllColors();
@@ -52,10 +63,7 @@ const AddProduct = () => {
   }, []);
 
   const [completed, setCompleted] = useState(0);
-  const uploadRef = useRef();
-  const statusRef = useRef();
-  const loadTotalRef = useRef();
-  const progressRef = useRef();
+
   useEffect(() => {
     setInterval(() => setCompleted(Math.floor(Math.random() * 100) + 1), 2000);
   }, []);
@@ -91,7 +99,7 @@ const AddProduct = () => {
                 name={size}
                 id={size}
                 value={size}
-                onChange={handleSetSize}
+                onChange={handleSetProduct}
               />
               <label for={size}>{size}</label>
             </div>
@@ -107,7 +115,7 @@ const AddProduct = () => {
                   name={color}
                   id={color}
                   value={color}
-                  onChange={handleSetColor}
+                  onChange={handleSetProduct}
                 />
                 <label for={color}>
                   <span className={color} name={color} id={color}></span>
@@ -120,13 +128,25 @@ const AddProduct = () => {
         <select id="category" name="category" onChange={handleSetProduct}>
           <option>-- None --</option>
 
-          {categories.map((color, index) => (
-            <option key={index}>{color}</option>
+          {categories.map((category, index) => (
+            <option key={index}>{category.category}</option>
           ))}
+        </select>
+        <label htmlFor="category">Subcategory</label>
+        <select id="subcategory" name="subcategory" onChange={handleSetProduct}>
+          <option>-- None --</option>
+          {category &&
+            categories
+              .filter(
+                (productCategory) => productCategory.category == category
+              )[0]
+              .subcategory.map((subcategory, index) => {
+                return <option key={index}>{subcategory}</option>;
+              })}
         </select>
         <label htmlFor="image">Image</label>
         <input type="file" id="image" name="image" onChange={handleSetImage} />
-        <ProgressBar bgcolor={"#6a1b9a"} completed={uploadPercentage} />
+        {/* <ProgressBar bgcolor={"#6a1b9a"} completed={uploadPercentage} /> */}
       </div>
       <div className="add-button">
         <button className="btn btn-primary" onClick={() => addProduct()}>
