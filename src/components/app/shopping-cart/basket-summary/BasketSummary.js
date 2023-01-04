@@ -5,12 +5,11 @@ import "../../../../utilities.scss";
 
 import { useNavigate } from "react-router-dom";
 import ShopContext from "src/contexts/basket/ShopContext";
-import Product from "src/pages/dashboard/product/Product";
+// import Product from "src/pages/dashboard/product/Product";
 
-export const BasketSummary = ({ cart, setCart, handleChange, setMessage }) => {
+export const BasketSummary = () => {
   const navigate = useNavigate();
   const context = useContext(ShopContext);
-
 
   return (
     <>
@@ -72,21 +71,24 @@ export const BasketSummary = ({ cart, setCart, handleChange, setMessage }) => {
               <div className="basket-total">
                 <p>Total</p>
                 <p className="total-price">
-                  <strong>{(product.price * product.amount).toFixed(2)} $</strong>
+                  <strong>
+                    {(product.price * product.amount).toFixed(2)} $
+                  </strong>
                 </p>
-              </div>
-              <div className="continue-button">
-                <button
-                  className="btn btn-gray"
-                  onClick={() => navigate("/shopping/cart")}
-                >
-                  Continue
-                </button>
-                <p className="warning-msg">Devam etmek icin Adres ekleyiniz</p>
               </div>
             </div>
           </>
         ))}
+
+        <div className="continue-button">
+          <button
+            className="btn btn-gray"
+            onClick={() => navigate("/shopping/cart")}
+          >
+            Continue
+          </button>
+          <p className="warning-msg">Devam etmek icin Adres ekleyiniz</p>
+        </div>
       </div>
     </>
   );
