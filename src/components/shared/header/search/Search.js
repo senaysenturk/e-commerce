@@ -15,20 +15,23 @@ const Search = () => {
   const handleSearch = (event) => {
     setSearchTerm(event.target.value);
     const normalizedSearchTerm = event.target.value.trim().toLowerCase();
-   /*  if (normalizedSearchTerm) {
-      setSearchResult(
-        products.filter((product) =>
-          Object.values(product).some((value) =>
-            value.trim().toLowerCase().includes(normalizedSearchTerm)
-          )
-        )
-      );
+    if (normalizedSearchTerm) {
+      // console.log(products);
+      products.filter((product) => {
+        if (
+          product.name.trim().toLowerCase().includes(normalizedSearchTerm) ||
+          product.color.includes(normalizedSearchTerm) ||
+          product.category.trim().toLowerCase().includes(normalizedSearchTerm) ||
+          product.subcategory.trim().toLowerCase().includes(normalizedSearchTerm)
+        ) {
+          console.log(product);
+          setSearchResult(product);
+        }
+      });
     } else {
       setSearchResult([]);
-    } */
+    }
   };
-
-
 
   return (
     <div className="search">

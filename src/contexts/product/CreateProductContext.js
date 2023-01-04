@@ -23,8 +23,8 @@ export const CreateProductProvider = ({ children }) => {
 
   const getAllProducts = async () => {
     const response = await getProduct();
-    setProducts(response.data);
-    console.log(response.data);
+    setProducts(response);
+    console.log(response);
   };
 
   //console.log("Product", product);
