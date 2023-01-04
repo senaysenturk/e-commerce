@@ -5,17 +5,17 @@ import "./style.scss";
 
 const OrderTracking = () => {
   const context = useContext(ShopContext);
-  const [price, setPrice] = useState(0);
+  // const [price, setPrice] = useState(0);
 
-  const handlePrice = () => {
-    let total = 0;
-    context.cart.map((item) => (total += item.amount * item.price));
-    setPrice(total);
-  };
+  // const handlePrice = () => {
+  //   let total = 0;
+  //   context.cart.map((item) => (total += item.amount * item.price));
+  //   setPrice(total);
+  // };
 
-  useEffect(() => {
-    handlePrice();
-  });
+  // useEffect(() => {
+  //   handlePrice();
+  // });
 
   return (
     <div className="order-tracking">
@@ -43,7 +43,7 @@ const OrderTracking = () => {
             </div>
 
             <div className="order-total">
-              <span> {price.toFixed(2)} $</span>
+              <span> {context.totalPrice()} $</span>
             </div>
           </section>
 

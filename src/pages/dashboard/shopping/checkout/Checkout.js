@@ -8,18 +8,18 @@ import OrderSummary from "src/components/app/shopping-cart/order-summary/OrderSu
 import ShopContext from "../../../../contexts/basket/ShopContext";
 
 export const Checkout = () => {
-  const context = useContext(ShopContext);
-  const [price, setPrice] = useState(0);
+  // const context = useContext(ShopContext);
+  // const [price, setPrice] = useState(0);
 
-  const handlePrice = () => {
-    let total = 0;
-    context.cart.map((item) => (total += item.amount * item.price));
-    setPrice(total);
-  };
+  // const handlePrice = () => {
+  //   let total = 0;
+  //   context.cart.map((item) => (total += item.amount * item.price));
+  //   setPrice(total);
+  // };
 
-  useEffect(() => {
-    handlePrice();
-  });
+  // useEffect(() => {
+  //   handlePrice();
+  // });
 
   return (
     <>
@@ -29,7 +29,7 @@ export const Checkout = () => {
            <AddressForm /> */}
           {/* <BasketSummary /> */}
         </div>
-        <OrderSummary price={price.toFixed(2)} />
+        <OrderSummary />
       </div>
     </>
   );

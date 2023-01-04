@@ -6,9 +6,9 @@ import { SlPresent } from "react-icons/sl";
 import { useNavigate } from "react-router-dom";
 import ShopContext from "src/contexts/basket/ShopContext";
 
-export const OrderSummary = ({ price }) => {
+export const OrderSummary = () => {
   const navigate = useNavigate();
-  const context = useContext(ShopContext)
+  const context = useContext(ShopContext);
   return (
     <>
       <div className="order-summary">
@@ -20,7 +20,7 @@ export const OrderSummary = ({ price }) => {
             <div className="order-product">
               <p>Products</p>
               <p className="price">
-                <strong>{price} $</strong>
+                <strong>{context.totalPrice()} $</strong>
               </p>
             </div>
             <div className="order-campaign">
@@ -55,7 +55,7 @@ export const OrderSummary = ({ price }) => {
             <div className="order-total">
               <p>Total</p>
               <p className="total-price">
-                <strong>{price} $</strong>
+                <strong>{context.totalPrice()} $</strong>
               </p>
             </div>
             <div className="order-confirm">
