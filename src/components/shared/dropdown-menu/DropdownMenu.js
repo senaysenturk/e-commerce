@@ -2,37 +2,36 @@ import React from "react";
 
 import "./style.scss";
 
-export const DropdownMenu = () => {
+export const DropdownMenu = ({ subcategories }) => {
   return (
     <>
+      {console.log(subcategories)}
       <div className="dropdown-menu">
         <div className="dropdown-content">
           <div className="row">
-            <header>Header</header>
+            {/* <header>Header</header> */}
             <ul className="dropdown-links">
-              <li>
-                <a href="#">Link 1</a>
-              </li>
-              <li>
-                <a href="#">Link 2</a>
-              </li>
-              <li>
-                <a href="#">Link 3</a>
-              </li>
+              {subcategories.map((subcategory, index) => {
+                if (index < subcategories.length / 2)
+                  return (
+                    <li>
+                      <a href={subcategory}>{subcategory}</a>
+                    </li>
+                  );
+              })}
             </ul>
           </div>
           <div className="row">
-            <header>Header</header>
+            {/* <header>Header</header> */}
             <ul className="dropdown-links">
-              <li>
-                <a href="#">Link 1</a>
-              </li>
-              <li>
-                <a href="#">Link 2</a>
-              </li>
-              <li>
-                <a href="#">Link 3</a>
-              </li>
+              {subcategories.map((subcategory, index) => {
+                if (index > subcategories.length / 2)
+                  return (
+                    <li>
+                      <a href={subcategory}>{subcategory}</a>
+                    </li>
+                  );
+              })}
             </ul>
           </div>
           <div className="row">
