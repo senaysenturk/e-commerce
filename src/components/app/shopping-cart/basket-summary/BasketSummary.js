@@ -10,74 +10,7 @@ import Product from "src/pages/dashboard/product/Product";
 export const BasketSummary = ({ cart, setCart, handleChange, setMessage }) => {
   const navigate = useNavigate();
   const context = useContext(ShopContext);
-  // const [count, setCount] = useState(0);
-  // const [price, setPrice] = useState(0);
 
-  // const handleRemove = (id) => {
-  //   // const cartList = cart.filter((product) => product.id !== id);
-  //   // setCart(cartList);
-  //   context.removeProductFromCart(id);
-  //   handlePrice();
-  // };
-
-  // const handlePrice = () => {
-  //   let total = 0;
-  //   context.cart.map((item) => (total += item.amount * item.price));
-  //   setPrice(total);
-  // };
-
-  // const handleCount = () => {
-  //   let cartCount = 0;
-  //   context.cart.map((item) => (cartCount += item.amount));
-  //   setCount(cartCount);
-  // };
-
-  // const handleMessage = () => {
-  //   console.log(price);
-  //   let value = 0;
-  //   if (price < 200) {
-  //     value = 200 - price;
-  //     setMessage(
-  //       "Add another  $" +
-  //         value +
-  //         " worth of items to your cart and get free shipping."
-  //     );
-  //   } else {
-  //     setMessage("");
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   handlePrice();
-  //   handleCount();
-    // handleMessage();
-  // });
-
-  // const [price, setPrice] = useState;
-  // const [count, setCount] = useState;
-
-  // const handleRemove = (id) => {
-  //   context.removeProductFromCart(id);
-  //   handlePrice();
-  // };
-
-  // const handlePrice = () => {
-  //   let total = 0;
-  //   context.cart.map((item) => (total += item.amount * item.price));
-  //   setPrice(total);
-  // };
-
-  // const handleCount = () => {
-  //   let basketCount = 0;
-  //   context.cart.map((item) => (basketCount += item.amount));
-  //   setCount(basketCount);
-  // };
-
-  // useEffect(() => {
-  //   handleRemove();
-  //   handlePrice();
-  //   handleCount();
-  // });
 
   return (
     <>
@@ -103,7 +36,7 @@ export const BasketSummary = ({ cart, setCart, handleChange, setMessage }) => {
                   <div className="card-right">
                     <div className="card-price">
                       <p className="product-price">
-                        <strong>{context.totalPrice()} $</strong>
+                        {/* <strong>{context.totalPrice()} $</strong> */}
                       </p>
                     </div>
                   </div>
