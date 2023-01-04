@@ -7,7 +7,7 @@ import { useAuth } from "../../../contexts/auth/AuthContext";
 const Admin = ({ history }) => {
   const navigate = useNavigate();
   const { loggedIn, logout } = useAuth();
-  console.log(loggedIn);
+  //console.log(loggedIn);
 
   const handleLogout = async () => {
     logout(() => {

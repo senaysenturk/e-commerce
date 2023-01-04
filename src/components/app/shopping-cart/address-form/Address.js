@@ -48,33 +48,29 @@ const Address = ({ setDisplay, display }) => {
           <a href="#">Edit</a>
         </div>
       </div>
-      {address.length === 0 ? (
-        <AddressForm />
-      ) : (
-        address.map((addressObject) => {
-          return (
-            <div className="checkout-address-box">
-              <div className="address">
-                <div className="address-name">
-                  <input type="radio" name="address-name" id="address-name" />
-                  <label htmlFor="address-name">
-                    <h4>{addressObject.addressName}</h4>
-                  </label>
-                </div>
-                <div className="address-content">
-                  <span>{addressObject.address}</span>
-                  <span>
-                    {addressObject.state} / {addressObject.city}
-                  </span>
-                </div>
+      {address.map((addressObject) => {
+        return (
+          <div className="checkout-address-box">
+            <div className="address">
+              <div className="address-name">
+                <input type="radio" name="address-name" id="address-name" />
+                <label htmlFor="address-name">
+                  <h4>{addressObject.addressName}</h4>
+                </label>
               </div>
-              <div className="edit">
-                <a href="#">Edit</a>
+              <div className="address-content">
+                <span>{addressObject.address}</span>
+                <span>
+                  {addressObject.state} / {addressObject.city}
+                </span>
               </div>
             </div>
-          );
-        })
-      )}
+            <div className="edit">
+              <a href="#">Edit</a>
+            </div>
+          </div>
+        );
+      })}
 
       {/* 
       <div className="checkout-address-box">

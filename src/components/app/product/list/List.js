@@ -22,9 +22,11 @@ const List = () => {
           </div>
           <div className="column-2">
             <div className="row">
-              {context.products.map((product, index) => (
-                <SmallCard product={product} key={index} />
-              ))}
+              {context.products.map((product, index) => {
+                if (index < 8) {
+                  return <SmallCard product={product} key={index} />;
+                }
+              })}
             </div>
           </div>
         </div>
@@ -42,9 +44,11 @@ const List = () => {
           </div>
         </div>
         <div className="row">
-          {context.products.map((product, index) => (
-            <Carousel product={product} key={index} />
-          ))}
+          {context.products.map((product, index) => {
+            if (index < 6) {
+              return <Carousel product={product} key={index} />;
+            }
+          })}
         </div>
       </div>
       <div className="product-row">
@@ -53,9 +57,11 @@ const List = () => {
           <a href="#2">View more</a>
         </div>
         <div className="row">
-          {/* {products_1.map((product, index) => (
-            <SmallCard path={product} index />
-          ))} */}
+          {context.products.map((product, index) => {
+            if (product.category == "Man" || product.category == "Child") {
+              return <Carousel product={product} key={index} />;
+            }
+          })}
         </div>
       </div>
     </div>

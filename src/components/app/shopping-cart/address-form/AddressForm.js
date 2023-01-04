@@ -9,12 +9,14 @@ import "./style.scss";
 import Address from "./Address";
 
 export const AddressForm = () => {
-  const { user, addressInfo } = useAuth();
+  const { user, addressInfo, address, getAddresses } = useAuth();
   const [navigate, setNavigate] = useState(false);
   const [city, setCity] = useState();
   const [cities, setCities] = useState([]);
   const [states, setStates] = useState([]);
   const [enable, setEnable] = useState(true);
+
+  //getAddresses();
 
   const getAllCities = async () => {
     const response = await getCities();
@@ -24,15 +26,15 @@ export const AddressForm = () => {
 
   const getStates = async (city) => {
     setStates(cities.filter((cityObject) => cityObject.city === city));
-    console.log("state", states);
+    //console.log("state", states);
   };
 
-  const [address, setAddress] = useState({});
-  const [hide, setHide] = useState(false);
+  const [addAddress, setAddAddress] = useState({});
+  const [hide, setHide] = useState(true);
 
   const handleAddress = (e) => {
-    console.log(address);
-    setAddress({ ...address, [e.target.name]: e.target.value });
+    console.log(addAddress);
+    setAddAddress({ ...addAddress, [e.target.name]: e.target.value });
 
     if (e.target.name === "city") {
       setCity(e.target.value);
@@ -42,7 +44,7 @@ export const AddressForm = () => {
   };
 
   const handleSave = async (e) => {
-    var response = await addressInfo(address);
+    var response = await addressInfo(addAddress);
 
     handleSetDisplay();
   };
@@ -55,27 +57,28 @@ export const AddressForm = () => {
     getAllCities();
   }, []);
 
-  useEffect(() => {
-    getStates(city);
-  }, [city]);
+  // useEffect(() => {
+  //   getStates(city);
+  // }, []);
 
   if (navigate) {
     return <Navigate to="/order-tracking" />;
   }
-
+  const count = 0;
   return (
     <>
+      {address.length}
       <div className="register-addresses">
         <div className="addresses-head">
           <header>Delivery Address</header>
-          {!hide && (
+          {hide && (
             <div className="add-new-address">
               <HiOutlinePlus />
               <a onClick={handleSetDisplay}> New Address</a>
             </div>
           )}
         </div>
-        {!hide ? (
+        {hide ? (
           <>
             <Address handleSetDisplay={handleSetDisplay} hide={hide} />
           </>
@@ -130,9 +133,13 @@ export const AddressForm = () => {
               onChange={handleAddress}
             >
               <option>-- None --</option>
-              {states[0].map((cityObject, index) => (
-                <option key={index}>{cityObject.states}</option>
-              ))}
+
+              {city &&
+                cities
+                  .filter((cityName) => cityName.city === city)[0]
+                  .states.map((state, index) => {
+                    return <option key={index}>{state}</option>;
+                  })}
             </select>
             <textarea
               id="address"

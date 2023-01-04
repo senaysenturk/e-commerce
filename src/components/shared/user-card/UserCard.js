@@ -10,7 +10,7 @@ import { useAuth } from "../../../contexts/auth/AuthContext";
 export const UserCard = ({ history }) => {
   const navigate = useNavigate();
   const { loggedIn, logout } = useAuth();
-  console.log(loggedIn);
+  //console.log(loggedIn);
 
   const handleLogout = async () => {
     logout(() => {
