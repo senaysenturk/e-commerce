@@ -116,6 +116,12 @@
       "color": [
         "green"
       ],
+      "size": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ],
       "category": "Man",
       "imgPath": "http://res.cloudinary.com/dr4cvohdq/image/upload/v1672587096/wty5mvkd5dltmqetfo8a.webp",
       "id": 8

@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import "./style.scss";
 import "../../../../utilities.scss";
 import { SlPresent } from "react-icons/sl";
 import { useNavigate } from "react-router-dom";
+import ShopContext from "src/contexts/basket/ShopContext";
 
 export const OrderSummary = ({ price }) => {
   const navigate = useNavigate();
+  const context = useContext(ShopContext)
   return (
     <>
       <div className="order-summary">
