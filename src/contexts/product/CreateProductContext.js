@@ -23,6 +23,15 @@ export const CreateProductProvider = ({ children }) => {
   //console.log("Product", product);
   const addProduct = async () => {
     const response = await postProduct(product);
+    setProduct({
+      name: "",
+      price: "",
+      color: "",
+      size: "",
+      category: "",
+      subcategory: "",
+      imgPath: "",
+    });
     console.log("Reponse: " + response.status);
   };
 
