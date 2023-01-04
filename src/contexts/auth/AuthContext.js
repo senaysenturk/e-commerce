@@ -41,6 +41,40 @@ const AuthProvider = ({ children }) => {
 
   const getAddresses = async () => {
     const response = await getUsers();
+    setAddress(
+      response.data.filter(
+        (userObject) =>
+          userObject.mail === user[0].user || userObject.user === user[0].user
+      )[0].addresses
+    );
+  };
+
+  let updatedUser;
+
+  const deleteAddress = async (addressObj, addressName) => {
+    const index = addressObj.findIndex(
+      (addressObjectItem) => addressObjectItem.addressName === addressName
+    );
+
+    const newAddressData = [
+      ...addressObj.slice(0, index),
+      ...addressObj.slice(index + 1),
+    ];
+    console.log(newAddressData);
+    const response = await getUsers();
+    updatedUser = response.data.filter(
+      (userObject) =>
+        userObject.mail === user[0].user || userObject.user === user[0].user
+    );
+    updateUser(updatedUser[0].id, {
+      ...updatedUser[0],
+      // addresses: [{ address: newAddress }],
+      addresses: newAddressData,
+    });
+  };
+
+  const addressInfo = async (newAddress) => {
+    const response = await getUsers();
 
     // console.log(response.data);
     // console.log(user);
@@ -56,50 +90,12 @@ const AuthProvider = ({ children }) => {
 
     // console.log(updatedUser);
 
-    // let userId = updatedUser[0].id;
-    // console.log(userId);
-    // console.log(updatedUser[0].addresses);
-    setAddress(updatedUser[0].addresses);
-    return updatedUser[0].addresses;
-  };
-
-  const deleteAddress = async (addressObj, addressName) => {
-    const index = addressObj.findIndex(
-      (addressObjectItem) => addressObjectItem.addressName === addressName
-    );
-    console.log(index);
-    const newAddressData = [
-      ...addressObj.slice(0, index),
-      ...addressObj.slice(index + 1),
-    ];
-    console.log(newAddressData);
-  };
-
-  var updatedUser;
-
-  const addressInfo = async (newAddress) => {
-    const response = await getUsers();
-
-    console.log(response.data);
-    console.log(user);
-
-    updatedUser = response.data.filter((userObject) => {
-      console.log(userObject.mail);
-      console.log(userObject.user);
-      console.log(user[0].user);
-      return (
-        userObject.mail === user[0].user || userObject.user === user[0].user
-      );
-    });
-
-    console.log(updatedUser);
-
     let userId = updatedUser[0].id;
-    console.log(userId);
+    // console.log(userId);
 
     if (updatedUser[0].hasOwnProperty("addresses")) {
       // const userAddresses = [ ...updatedUser[0].addresses, {address: newAddress}];
-      console.log(updatedUser[0].addresses);
+      // console.log(updatedUser[0].addresses);
       updatedUser[0].addresses.forEach((addressObj) => {
         console.log(addressObj.addressName);
       });
