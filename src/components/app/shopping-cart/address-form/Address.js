@@ -30,22 +30,11 @@ const Address = ({ setDisplay, display }) => {
         <div className="edit">
           <a href="#">Edit</a>
         </div>
-      </div>
-      <div className="checkout-address-box">
-        <div className="address">
-          <div className="address-name">
-            <input type="radio" name="address-name" id="address-name" />
-            <label htmlFor="address-name">
-              <h4>Home</h4>
-            </label>
-          </div>
-          <div className="address-content">
-            <span>Ihlamurpark Sitesi 4.Etap 1.Kısım B:10 D:23</span>
-            <span>BAŞAKŞEHİR / İSTANBUL</span>
-          </div>
+        <div className="divider">
+          <span>|</span>
         </div>
-        <div className="edit">
-          <a href="#">Edit</a>
+        <div className="delete">
+          <a href="#">Delete</a>
         </div>
       </div>
       {address.map((addressObject) => {
@@ -67,6 +56,12 @@ const Address = ({ setDisplay, display }) => {
             </div>
             <div className="edit">
               <a href="#">Edit</a>
+            </div>
+            <div className="divider">
+              <span>|</span>
+            </div>
+            <div className="delete">
+              <a href="#">Delete</a>
             </div>
           </div>
         );
