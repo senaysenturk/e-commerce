@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { RiHeart3Line } from "react-icons/ri";
 import { AiOutlineUser } from "react-icons/ai";
@@ -13,11 +13,17 @@ import Search from "./search/Search";
 import { useMatchMedia } from "./useMatchMedia";
 import Hamburger from "./hamburger/Hamburger";
 import Options from "./options/Options";
+import { useProduct } from "../../../contexts/product/CreateProductContext";
 
 export const Header = ({ title }) => {
   const navigate = useNavigate();
-  const isMobileResolution = useMatchMedia("(max-width:992px)", false);
+  // const isMobileResolution = useMatchMedia("(max-width:992px)", false);
   const isDesktopResolution = useMatchMedia("(min-width:992px)", true);
+  const { categories, getAllCategories } = useProduct();
+
+  useEffect(() => {
+    getAllCategories();
+  }, []);
   return (
     <>
       <header className="app-header">
@@ -35,7 +41,13 @@ export const Header = ({ title }) => {
             <div className="category-header">
               <nav>
                 <ul className="category-links">
-                  <li>
+                  {categories.map((category, index) => (
+                    <li>
+                      <a href="#">{category.category}</a>
+                      <DropdownMenu subcategories={category.subcategory} />
+                    </li>
+                  ))}
+                  {/* <li>
                     <a href="#">WOMEN</a>
                   </li>
                   <li>
@@ -44,7 +56,7 @@ export const Header = ({ title }) => {
                   </li>
                   <li>
                     <a href="#">CHILDREN</a>
-                  </li>
+                  </li>*/}
                   <li>
                     <a href="#">NEW ARRIVALS</a>
                   </li>

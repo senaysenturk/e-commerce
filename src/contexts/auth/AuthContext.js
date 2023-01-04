@@ -21,9 +21,9 @@ const AuthProvider = ({ children }) => {
     (async () => {
       try {
         const me = await fetchMe();
-        console.log(me);
+        // console.log(me);
 
-        console.log(me.data);
+        // console.log(me.data);
         me.data.length === 0 ? setLoggedIn(false) : setLoggedIn(true);
 
         setUser(me.data);
@@ -71,6 +71,7 @@ const AuthProvider = ({ children }) => {
       // addresses: [{ address: newAddress }],
       addresses: newAddressData,
     });
+    getAddresses();
   };
 
   const addressInfo = async (newAddress) => {

@@ -74,7 +74,7 @@ export const CreateProductProvider = ({ children }) => {
   const getAllCategories = async () => {
     const response = await getCategories();
     setCategories(response.data);
-    // console.log(sizes);
+    console.log(response.data);
   };
 
   const values = {

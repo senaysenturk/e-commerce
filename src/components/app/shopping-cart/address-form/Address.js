@@ -16,7 +16,7 @@ const Address = ({ setDisplay, display }) => {
 
   useEffect(() => {
     getAddresses();
-  }, [address]);
+  }, []);
 
   return (
     <div className="checkout-address">

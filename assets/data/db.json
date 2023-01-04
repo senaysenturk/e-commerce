@@ -457,7 +457,18 @@
       "gender": "female",
       "role": "user",
       "id": 7,
-      "addresses": []
+      "addresses": [
+        {
+          "firstname": "şenay",
+          "lastname": "şentürk",
+          "phone": "+90 (000) 000 - 0000",
+          "city": "İstanbul",
+          "state": "Başakşehir",
+          "address": "Ihlamurpark Sitesi",
+          "postcode": "00000",
+          "addressName": "Ev"
+        }
+      ]
     },
     {
       "mail": "ipek@test.com",

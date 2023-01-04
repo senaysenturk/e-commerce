@@ -33,7 +33,7 @@ export const AddressForm = () => {
   const [hide, setHide] = useState(true);
 
   const handleAddress = (e) => {
-    console.log(addAddress);
+    // console.log(addAddress);
     setAddAddress({ ...addAddress, [e.target.name]: e.target.value });
 
     if (e.target.name === "city") {
