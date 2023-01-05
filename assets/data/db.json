@@ -2029,13 +2029,13 @@
     {
       "name": "Ribbed turtleneck dress",
       "price": 29.99,
-      "size": "S",
-      "color": "black",
+      "size": "",
+      "color": "",
       "category": "Woman",
       "subcategory": "Dress",
       "imgPath": "http://res.cloudinary.com/dr4cvohdq/image/upload/v1672579518/txkzmjkj0t9kh29rwelg.webp",
       "id": 1,
-      "amount": 6
+      "amount": 3
     }
   ]
 }

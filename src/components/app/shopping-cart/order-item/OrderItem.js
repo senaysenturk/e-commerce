@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { MdOutlineLocalShipping } from "react-icons/md";
 import { RiDeleteBinLine } from "react-icons/ri";
+import axios from "src/api/axios";
 import ShopContext from "../../../../contexts/basket/ShopContext";
 import OrderSummary from "../order-summary/OrderSummary";
 
@@ -10,6 +11,15 @@ export const OrderDetail = ({ cart, setCart, handleChange, setMessage }) => {
   const context = useContext(ShopContext);
   const [count, setCount] = useState(0);
   const [price, setPrice] = useState(0);
+
+  const [name, setName] = useState(false);
+  const [size, setSize] = useState(false);
+  const [color, setColor] = useState(false);
+  const [category, setCategory] = useState(false);
+  const [imgPath, setImgPath] = useState(false);
+  const [id, setId] = useState(false);
+  const [amount, setAmount] = useState(false);
+  const [navigate, setNavigate] = useState(false);
 
   const handleRemove = (id) => {
     // const cartList = cart.filter((product) => product.id !== id);
@@ -45,10 +55,48 @@ export const OrderDetail = ({ cart, setCart, handleChange, setMessage }) => {
     }
   };
 
+  
+  const postOrder = async (data) => {
+    try {
+      const response = await axios.post("/shopping/cart", data);
+      return response.data;
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const handleClick = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await postOrder({
+        name,
+        price,
+        size,
+        color,
+        category,
+        imgPath,
+        id,
+        amount,
+      });
+
+      setName("");
+      setPrice("");
+      setSize("");
+      setColor("");
+      setCategory("");
+      setImgPath("");
+      setId("");
+      setAmount("");
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   useEffect(() => {
     handlePrice();
     handleCount();
     handleMessage();
+    handleClick();
   });
 
   return (
