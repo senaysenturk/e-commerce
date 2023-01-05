@@ -1,9 +1,18 @@
-import React from 'react'
+import React from "react";
+import { useProduct } from "../../../contexts/product/CreateProductContext";
 
 export const Man = () => {
-  return (
-    <div>Man</div>
-  )
-}
+  const { men, getManProducts } = useProduct();
 
-export default Man
+  useEffect(() => {
+    getManProducts();
+  }, []);
+
+  return (
+    <>
+      <div>Man</div>;
+    </>
+  );
+};
+
+export default Man;
