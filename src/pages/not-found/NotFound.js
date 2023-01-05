@@ -9,15 +9,15 @@ export const NotFound = () => {
     <>
       <Header></Header>
       <div className="not-found">
-        <div class="face">
-          <div class="band">
-            <div class="red"></div>
-            <div class="white"></div>
-            <div class="blue"></div>
+        <div className="face">
+          <div className="band">
+            <div className="red"></div>
+            <div className="white"></div>
+            <div className="blue"></div>
           </div>
-          <div class="eyes"></div>
-          <div class="dimples"></div>
-          <div class="mouth"></div>
+          <div className="eyes"></div>
+          <div className="dimples"></div>
+          <div className="mouth"></div>
         </div>
 
         <h1>Oops!...</h1>
@@ -25,7 +25,7 @@ export const NotFound = () => {
         <h1>Not Found</h1>
         <h1>Something went wrong!</h1>
         <Link to="/">
-          <div class="btn btn-primary">Home</div>
+          <div className="btn btn-primary">Home</div>
         </Link>
       </div>
     </>

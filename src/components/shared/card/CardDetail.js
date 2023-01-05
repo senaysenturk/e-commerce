@@ -4,16 +4,14 @@ import { useParams } from "react-router-dom";
 import ShopContext from "../../../contexts/basket/ShopContext";
 import "./style.scss";
 
-
 const CardDetail = () => {
   const [favorite, setFavorite] = useState(false);
   const [productCount, setProductCount] = useState(1);
-  const [size, setSize] = useState('');
-  const [color, setColor] = useState('');
+  const [size, setSize] = useState("");
+  const [color, setColor] = useState("");
 
-
-  let {productId} = useParams();
-  productId = Number(productId)
+  let { productId } = useParams();
+  productId = Number(productId);
 
   const context = useContext(ShopContext);
   const product = context.products.filter(
@@ -32,10 +30,8 @@ const CardDetail = () => {
     });
   };
 
-  if (typeof product === "undefined"){
-    return <div>
-      ...loading
-    </div>
+  if (typeof product === "undefined") {
+    return <div>...loading</div>;
   }
 
   return (
@@ -45,10 +41,7 @@ const CardDetail = () => {
           <div className="add-favorite" onClick={() => setFavorite(!favorite)}>
             {!favorite ? <IoIosHeartEmpty /> : <IoIosHeart />}
           </div>
-          <img
-            src={product.imgPath}
-            alt={product.name}
-          />
+          <img src={product.imgPath} alt={product.name} />
         </div>
 
         <div className="product-info">
@@ -64,20 +57,19 @@ const CardDetail = () => {
             Colors:
             {product.color.map((_color, index) => (
               <div key={`${_color} ${index}`}>
-              <input
-                type="checkbox"
-                name="color"
-                id={_color}
-                onInput={() => {
-                  setColor(_color);
-                }}
-              />
+                <input
+                  type="checkbox"
+                  name="color"
+                  id={_color}
+                  onInput={() => {
+                    setColor(_color);
+                  }}
+                />
                 <label htmlFor={_color}>
                   <span className={_color} name="color" id={_color}></span>
                 </label>
               </div>
             ))}
-
           </div>
           <div className="size-group">
             <p>Size:</p>
@@ -90,7 +82,9 @@ const CardDetail = () => {
             >
               <option value="">Select Size</option>
               {product.size.map((_size, index) => (
-                <option value={_size} key={`${_size} ${index}`}>{_size}</option>
+                <option value={_size} key={`${_size} ${index}`}>
+                  {_size}
+                </option>
               ))}
             </select>
           </div>
@@ -119,12 +113,11 @@ const CardDetail = () => {
             className="btn btn-primary"
             onClick={() => {
               /** @type {CartProduct}  */
-              const copyProduct = {...product}
+              const copyProduct = { ...product };
 
               copyProduct.amount = productCount;
               copyProduct.color = color;
               copyProduct.size = size;
-
               context.addProductToCart(copyProduct);
             }}
           >

@@ -1,12 +1,12 @@
 import React from "react";
 import "./style.scss";
 
-const Submenu = () => {
+const Submenu = ({ subcategories }) => {
   return (
-    <ul class="onclick-menu-content">
-      <li>Submenu #1</li>
-      <li>Submenu #2</li>
-      <li>Submenu #3</li>
+    <ul className="onclick-menu-content">
+      {subcategories.map((subcategory, index) => (
+        <li>{subcategory}</li>
+      ))}
     </ul>
   );
 };

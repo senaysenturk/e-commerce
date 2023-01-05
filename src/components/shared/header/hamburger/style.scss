@@ -19,12 +19,18 @@ nav {
       li {
         padding: 0.5rem;
         color: #646363;
+        text-transform: uppercase;
         a {
           color: #646363;
           text-decoration: none;
+          text-transform: uppercase;
           &:hover {
             color: tomato;
           }
+        }
+        &:hover,
+        :focus {
+          color: tomato;
         }
       }
     }

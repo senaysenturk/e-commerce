@@ -3,7 +3,7 @@ import {
   getColors,
   getSizes,
   getCategories,
-} from "../../network/requests/options";
+} from "../../network/requests/menu/options";
 import {
   postProduct,
   getProduct,
@@ -24,7 +24,7 @@ export const CreateProductProvider = ({ children }) => {
   const getAllProducts = async () => {
     const response = await getProduct();
     setProducts(response);
-    console.log(response);
+    // console.log(response);
   };
 
   //console.log("Product", product);
@@ -38,6 +38,7 @@ export const CreateProductProvider = ({ children }) => {
       category: "",
       subcategory: "",
       imgPath: "",
+      createdAt: new Date().toLocaleString(),
     });
     console.log("Reponse: " + response.status);
   };
@@ -74,7 +75,7 @@ export const CreateProductProvider = ({ children }) => {
   const getAllCategories = async () => {
     const response = await getCategories();
     setCategories(response.data);
-    console.log(response.data);
+    // console.log(response.data);
   };
 
   const values = {

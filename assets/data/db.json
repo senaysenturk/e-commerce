@@ -476,6 +476,16 @@
           "address": "test",
           "postcode": "00000",
           "addressName": "EV"
+        },
+        {
+          "firstname": "şenay",
+          "lastname": "şentürk",
+          "phone": "+95 (555) 555 - 5555",
+          "city": "İstanbul",
+          "state": "Başakşehir",
+          "address": "hello world",
+          "postcode": "00000",
+          "addressName": "şenay ev"
         }
       ]
     },
@@ -540,7 +550,6 @@
       ]
     }
   ],
-  "orders": [],
   "cities": [
     {
       "city": "Adana",
@@ -2002,6 +2011,31 @@
         "Gümüşova",
         "Kaynaşlı"
       ]
+    }
+  ],
+  "orders": [],
+  "cart": [
+    {
+      "name": "T-shirt",
+      "price": 10,
+      "size": "",
+      "color": "white",
+      "category": "Woman",
+      "subcategory": "T-shirt",
+      "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/6202/267/001/6202267001_1_1_2.jpg?t=1669732582176",
+      "id": 3,
+      "amount": 3
+    },
+    {
+      "name": "Ribbed turtleneck dress",
+      "price": 29.99,
+      "size": "S",
+      "color": "black",
+      "category": "Woman",
+      "subcategory": "Dress",
+      "imgPath": "http://res.cloudinary.com/dr4cvohdq/image/upload/v1672579518/txkzmjkj0t9kh29rwelg.webp",
+      "id": 1,
+      "amount": 6
     }
   ]
 }

@@ -15,12 +15,10 @@ const Options = () => {
     <div className="options">
       <ul>
         <li>
-          <a>
-            <span className="icon">
-              <MdOutlineAdminPanelSettings />
-            </span>
-            <Admin />
-          </a>
+          <span className="icon">
+            <MdOutlineAdminPanelSettings />
+          </span>
+          <Admin />
         </li>
         <li>
           <Link to="/favorites">

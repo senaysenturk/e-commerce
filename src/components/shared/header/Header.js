@@ -86,14 +86,14 @@ export const Header = ({ title }) => {
                 <i className="fa-solid fa-signature"></i>
                 <h1>{title}</h1>
               </div>
-              <Hamburger />
+              <Hamburger categories={categories} />
             </div>
 
             <>
               <Options />
             </>
-            <div class="or-divide">
-              <span class="hr"></span>
+            <div className="or-divide">
+              <span className="hr"></span>
             </div>
             <div className="mobile-search">
               <Search />

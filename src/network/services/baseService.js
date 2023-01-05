@@ -20,6 +20,16 @@ baseService.get = async (url, endpoint) => {
   }
 };
 
+baseService.getById = async (url, endpoint, id) => {
+  try {
+    const response = await axios.get(`${url}${endpoint}${id}`);
+    console.log(response.data);
+    return response;
+  } catch (error) {
+    console.log(error.status);
+  }
+};
+
 baseService.delete = async (url, endpoint, id) => {
   try {
     const response = await axios.delete(`${url}${endpoint}${id}`);

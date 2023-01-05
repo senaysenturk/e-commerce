@@ -5,7 +5,6 @@ import "./style.scss";
 export const DropdownMenu = ({ category, subcategories, image }) => {
   return (
     <>
-      {console.log(subcategories)}
       <div className="dropdown-menu">
         <div className="dropdown-content">
           <div className="row">

@@ -1,4 +1,4 @@
-import { baseService } from "../services/baseService";
+import { baseService } from "../../services/baseService";
 
 export const getColors = async () => {
   return baseService.get("http://localhost:5500/", "colors");

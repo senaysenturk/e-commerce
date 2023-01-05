@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { postCart } from "../../../network/requests/cart/addToCart";
 
 import "./style.scss";
 import "../../../utilities.scss";
@@ -14,10 +15,11 @@ export const CartCard = () => {
   return (
     <div className="cart-container">
       {context.cart.map((product) => {
+        postCart(product);
         return (
           <div className="product-card" key={product.id}>
             <div className="product-card-img">
-              <img src={product.imgPath} alt={product.name}/>
+              <img src={product.imgPath} alt={product.name} />
             </div>
             <div className="product-card-content">
               <p>{product.name}</p>
@@ -32,11 +34,15 @@ export const CartCard = () => {
                 </p>
               </div>
             </div>
-            <div className="product-card-button" >
-              <span 
-                className="icon-x" 
-                onClick={()=>{context.removeProductFromCart(product.id)}}
-              >x</span>
+            <div className="product-card-button">
+              <span
+                className="icon-x"
+                onClick={() => {
+                  context.removeProductFromCart(product.id);
+                }}
+              >
+                x
+              </span>
             </div>
           </div>
         );
@@ -48,8 +54,8 @@ export const CartCard = () => {
       <div className="cart-summary">
         <p>Total</p>
         <p className="cart-price">
-           <span > {context.totalQuantity()} Adet</span >   
-           <strong > {context.totalPrice()} $</strong>   
+          <span> {context.totalQuantity()} Adet</span>
+          <strong> {context.totalPrice()} $</strong>
         </p>
       </div>
       <div className="or-divide">
