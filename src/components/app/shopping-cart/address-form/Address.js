@@ -46,7 +46,7 @@ const Address = ({ setDisplay, display }) => {
                 </div>
               </div>
               <div className="edit">
-                <span onClick={() => togglePopup}>Edit</span>
+                <span onClick={togglePopup}>Edit</span>
               </div>
               <div className="divider">
                 <span>|</span>

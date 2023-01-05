@@ -4,8 +4,8 @@ import "./style.scss";
 import { AiOutlineSearch, AiOutlineUser } from "react-icons/ai";
 
 const Search = () => {
-  const { products, getAllProducts } = useProduct();
-  const [searchResult, setSearchResult] = useState([]);
+  const { products, getAllProducts, searchResult, setSearchResult } = useProduct();
+  // const [searchResult, setSearchResult] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
