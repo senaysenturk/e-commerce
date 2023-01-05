@@ -438,6 +438,12 @@
       "password": "Bilge123!",
       "role": "user",
       "id": 11
+    },
+    {
+      "user": "ipek@gmail.com",
+      "password": "Bilge123!",
+      "role": "user",
+      "id": 12
     }
   ],
   "me": [
@@ -445,7 +451,7 @@
       "user": "ipek@gmail.com",
       "password": "Bilge123!",
       "role": "user",
-      "id": 11
+      "id": 12
     }
   ],
   "users": [
@@ -457,18 +463,7 @@
       "gender": "female",
       "role": "user",
       "id": 7,
-      "addresses": [
-        {
-          "firstname": "şenay",
-          "lastname": "şentürk",
-          "phone": "+90 (000) 000 - 0000",
-          "city": "İstanbul",
-          "state": "Başakşehir",
-          "address": "Ihlamurpark Sitesi",
-          "postcode": "00000",
-          "addressName": "Ev"
-        }
-      ]
+      "addresses": []
     },
     {
       "mail": "ipek@test.com",
