@@ -34,14 +34,7 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route
-            path="/"
-            element={
-              <CreateProductProvider>
-                <DashboardLayout />
-              </CreateProductProvider>
-            }
-          >
+          <Route path="/" element={<DashboardLayout />}>
             <Route index element={<Home />} />
             <Route path="women" element={<Women />} />
             <Route path="man" element={<Man />} />
@@ -68,14 +61,7 @@ function App() {
             <Route path="signUp" element={<SignUp />} />
           </Route>
           <Route path="admin" element={<AdminLayout />}>
-            <Route
-              path="add-product"
-              element={
-                <CreateProductProvider>
-                  <AddProduct></AddProduct>
-                </CreateProductProvider>
-              }
-            />
+            <Route path="add-product" element={<AddProduct></AddProduct>} />
             <Route path="all-products" element={<AllProducts />}></Route>
             <Route path="all-orders" element={<AllOrders />}></Route>
             <Route path="all-users" element={<AllUsers />}></Route>
