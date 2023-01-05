@@ -165,7 +165,7 @@
         "Shirt",
         "Jacket"
       ],
-      "image": []
+      "image": "https://res.cloudinary.com/dr4cvohdq/image/upload/v1672914993/t2tmjkievweg3b4wmhnp.jpg"
     },
     {
       "category": "Child",
@@ -182,7 +182,7 @@
         "Jacket",
         "Waistcoat"
       ],
-      "image": []
+      "image": "https://res.cloudinary.com/dr4cvohdq/image/upload/v1672915037/xnimtsikmpejtlvt3rru.webp"
     }
   ],
   "signup": [

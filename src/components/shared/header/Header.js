@@ -49,6 +49,7 @@ export const Header = ({ title }) => {
                       <DropdownMenu
                         subcategories={category.subcategory}
                         category={category.category}
+                        image={category.image}
                       />
                     </li>
                   ))}
