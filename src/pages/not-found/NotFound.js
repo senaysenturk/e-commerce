@@ -22,7 +22,7 @@ export const NotFound = () => {
       <h1>Not Found</h1>
       <h1>Something went wrong!</h1>
       <Link to="/">
-        <div class="btn">Home</div>
+        <div class="home-btn">Home</div>
       </Link>
     </>
   );
