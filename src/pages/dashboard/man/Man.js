@@ -1,4 +1,6 @@
 import React from "react";
+import { useState, useEffect } from "react";
+
 import { useProduct } from "../../../contexts/product/CreateProductContext";
 
 export const Man = () => {
