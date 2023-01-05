@@ -43,8 +43,13 @@ export const Header = ({ title }) => {
                 <ul className="category-links">
                   {categories.map((category, index) => (
                     <li>
-                      <a href="#">{category.category}</a>
-                      <DropdownMenu subcategories={category.subcategory} />
+                      <Link to={`/products?category=${category.category}`}>
+                        {category.category}
+                      </Link>
+                      <DropdownMenu
+                        subcategories={category.subcategory}
+                        category={category.category}
+                      />
                     </li>
                   ))}
                   {/* <li>
@@ -58,16 +63,16 @@ export const Header = ({ title }) => {
                     <a href="#">CHILDREN</a>
                   </li>*/}
                   <li>
-                    <a href="#">NEW ARRIVALS</a>
+                    <Link to="#">NEW ARRIVALS</Link>
                   </li>
                   <li>
-                    <a href="#">BEST SELLERS</a>
+                    <Link to="#">BEST SELLERS</Link>
                   </li>
                   <li>
-                    <a href="#">TRENDING</a>
+                    <Link to="#">TRENDING</Link>
                   </li>
                   <li>
-                    <a href="#">SALE</a>
+                    <Link to="#">SALE</Link>
                   </li>
                 </ul>
               </nav>

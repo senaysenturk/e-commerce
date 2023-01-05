@@ -1,8 +1,8 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 import "./style.scss";
 
-export const DropdownMenu = ({ subcategories }) => {
+export const DropdownMenu = ({ category, subcategories }) => {
   return (
     <>
       {console.log(subcategories)}
@@ -15,7 +15,11 @@ export const DropdownMenu = ({ subcategories }) => {
                 if (index < subcategories.length / 2)
                   return (
                     <li>
-                      <a href={subcategory}>{subcategory}</a>
+                      <Link
+                        to={`/products?category=${category}&subcategory=${subcategory}`}
+                      >
+                        {subcategory}
+                      </Link>
                     </li>
                   );
               })}
@@ -28,7 +32,11 @@ export const DropdownMenu = ({ subcategories }) => {
                 if (index > subcategories.length / 2)
                   return (
                     <li>
-                      <a href={subcategory}>{subcategory}</a>
+                      <Link
+                        to={`/products?category=${category}&subcategory=${subcategory}`}
+                      >
+                        {subcategory}
+                      </Link>
                     </li>
                   );
               })}
