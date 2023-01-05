@@ -21,6 +21,12 @@ export const CreateProductProvider = ({ children }) => {
   const [categories, setCategories] = useState([]);
   const [uploadPercentage, setUploadPercentage] = useState(0);
 
+  const [searchResult, setSearchResult] = useState([]);
+
+  const [men, setMen] = useState(null);
+  const [women, setWomen] = useState(null);
+  const [kids, setKids] = useState(null);
+
   const getAllProducts = async () => {
     const response = await getProduct();
     setProducts(response);
@@ -59,6 +65,7 @@ export const CreateProductProvider = ({ children }) => {
 
     setProduct({ ...product, imgPath: response.data.url });
   };
+
   const getAllColors = async () => {
     const response = await getColors();
     setColors(response.data);
@@ -77,6 +84,24 @@ export const CreateProductProvider = ({ children }) => {
     console.log(response.data);
   };
 
+  const getManProducts = () => {
+    setMen(
+      products.filter((productObj) => productObj.category.includes("Man"))
+    );
+  };
+
+  const getWomanProducts = () => {
+    setWomen(
+      products.filter((productObj) => productObj.category.includes("Woman"))
+    );
+  };
+
+  const getChildProducts = () => {
+    setKids(
+      products.filter((productObj) => productObj.category.includes("Child"))
+    );
+  };
+
   const values = {
     product,
     setProduct,
@@ -87,6 +112,14 @@ export const CreateProductProvider = ({ children }) => {
     image,
     setImage,
     uploadImage,
+    searchResult,
+    setSearchResult,
+    men,
+    getManProducts,
+    women,
+    getWomanProducts,
+    kids,
+    getChildProducts,
     colors,
     getAllColors,
     sizes,
