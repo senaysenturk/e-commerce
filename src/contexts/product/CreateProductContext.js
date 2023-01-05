@@ -33,7 +33,7 @@ export const CreateProductProvider = ({ children }) => {
     console.log(response);
   };
 
-  //console.log("Product", product);
+  // console.log("Product", product);
   const addProduct = async () => {
     const response = await postProduct(product);
     setProduct({
@@ -85,12 +85,14 @@ export const CreateProductProvider = ({ children }) => {
   };
 
   const getManProducts = () => {
+    getAllProducts();
     setMen(
       products.filter((productObj) => productObj.category.includes("Man"))
     );
   };
 
   const getWomanProducts = () => {
+    getAllProducts();
     setWomen(
       products.filter((productObj) => productObj.category.includes("Woman"))
     );

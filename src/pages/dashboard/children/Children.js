@@ -3,16 +3,22 @@ import { useState, useEffect } from "react";
 
 import { useProduct } from "../../../contexts/product/CreateProductContext";
 
+import SmallCard from "../../../components/app/product/small-card/SmallCard";
+
 export const Children = () => {
-  const { kids, getChildProducts } = useProduct();
+  const { products, kids, getAllProducts, getChildProducts } = useProduct();
 
   useEffect(() => {
-    getChildProducts();
+    getAllProducts();
+    // getChildProducts();
   }, []);
 
   return (
     <>
       <div>Children</div>;
+      {products.map((product, index) => (
+        product.category === "Woman" && <SmallCard product={product} key={index} />
+      ))}
     </>
   );
 };
