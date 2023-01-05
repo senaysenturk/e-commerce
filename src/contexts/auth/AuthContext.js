@@ -40,11 +40,15 @@ const AuthProvider = ({ children }) => {
   };
 
   const getAddresses = async () => {
+    const me = await fetchMe();
+    setUser(me.data);
     const response = await getUsers();
+    console.log(response.data.filter((userObject) => console.log(me.data)));
     setAddress(
       response.data.filter(
         (userObject) =>
-          userObject.mail === user[0].user || userObject.user === user[0].user
+          userObject.mail === me.data[0].user ||
+          userObject.user === me.data[0].user
       )[0].addresses
     );
   };
