@@ -12,32 +12,10 @@ export const OrderSummary = () => {
   const navigate = useNavigate();
   const context = useContext(ShopContext);
 
-  useEffect(() => {
-    console.log(context);
-    (async () => {
-      await baseService.sendOrderItems(15, [
-        {
-          createdAt: "1/1/2023, 6:30:20 PM",
-          name: "Sherpa pocket sweatshirt",
-          price: 45.99,
-          color: ["green"],
-          size: ["XS", "S", "M", "L"],
-          category: "Man",
-          subcategory: "Sweatshirt",
-          imgPath:
-            "https://res.cloudinary.com/dr4cvohdq/image/upload/v1672587037/zydsnco7z34qeg8uqqfh.webp",
-          id: 7,
-        },
-      ]);
-      await baseService.getOrderItemsByUserId(15);
-    })();
-  }, []);
-
   const onClickConfirmBag = async () => {
     await baseService.sendOrderItems(context.auth.id, context.cart);
-    
-    // burada contexteki cartı boşaltacak action tetiklenicek
-  context.clearCart();
+
+    context.clearCart();
     navigate("/shopping/checkout");
   };
 
@@ -97,7 +75,6 @@ export const OrderSummary = () => {
             </div>
           </div>
         </div>
-  
       </div>
     </>
   );
