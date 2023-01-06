@@ -185,7 +185,7 @@ export const OrderDetail = ({ cart, setCart, handleChange, setMessage }) => {
           </div>
         ))}
       </div>
-      <OrderSummary price={price.toFixed(2)} />
+      <OrderSummary isCartPage={true} />
     </>
   );
 };

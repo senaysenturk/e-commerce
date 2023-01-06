@@ -29,7 +29,7 @@ export const Checkout = () => {
           {/* <BasketSummary /> */}
           <AddressForm />
         </div>
-        <OrderSummary />
+        <OrderSummary isCartPage={false} />
       </div>
     </>
   );

@@ -8,15 +8,19 @@ import ShopContext from "../../../../contexts/basket/ShopContext";
 import { baseService } from "src/network/services/baseService";
 import { CLEAR_CART } from "src/contexts/basket/reducers";
 
-export const OrderSummary = () => {
+export const OrderSummary = ({ isCartPage }) => {
   const navigate = useNavigate();
   const context = useContext(ShopContext);
 
-  const onClickConfirmBag = async () => {
+  const onClickConfirmBag = () => {
+    navigate("/shopping/checkout");
+  };
+
+  const onClickPay = async () => {
     await baseService.sendOrderItems(context.auth.id, context.cart);
 
     context.clearCart();
-    navigate("/shopping/checkout");
+    navigate("/order-tracking");
   };
 
   return (
@@ -69,9 +73,15 @@ export const OrderSummary = () => {
               </p>
             </div>
             <div className="order-confirm">
-              <button className="btn btn-gray" onClick={onClickConfirmBag}>
-                Confirm Bag
-              </button>
+              {isCartPage ? (
+                <button className="btn btn-gray" onClick={onClickConfirmBag}>
+                  Confirm Bag
+                </button>
+              ) : (
+                <button className="btn btn-gray" onClick={onClickPay}>
+                  Pay
+                </button>
+              )}
             </div>
           </div>
         </div>
