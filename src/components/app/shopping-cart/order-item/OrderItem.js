@@ -55,7 +55,6 @@ export const OrderDetail = ({ cart, setCart, handleChange, setMessage }) => {
     }
   };
 
-  
   const postOrder = async (data) => {
     try {
       const response = await axios.post("/shopping/cart", data);

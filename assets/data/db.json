@@ -373,6 +373,25 @@
       "gender": "female",
       "role": "user",
       "id": 10
+    },
+    {
+      "mail": "senaysenturk@blabla.com",
+      "user": "senay",
+      "password": "ASDqwe123!",
+      "birth": "2023-01-06",
+      "gender": "female",
+      "role": "user",
+      "id": 11
+    },
+    {
+      "mail": "zehrabal@bla.com",
+      "user": "zehra",
+      "password": "Zehra123!",
+      "birth": "2023-01-06",
+      "gender": "female",
+      "role": "user",
+      "address": [],
+      "id": 12
     }
   ],
   "auth": [
@@ -453,14 +472,32 @@
       "password": "Hicran!6518406",
       "role": "admin",
       "id": 13
+    },
+    {
+      "user": "senaysenturk",
+      "password": "Bilge123!",
+      "role": "admin",
+      "id": 14
+    },
+    {
+      "user": "senay",
+      "password": "ASDqwe123!",
+      "role": "user",
+      "id": 15
+    },
+    {
+      "user": "zehra",
+      "password": "Zehra123!",
+      "role": "user",
+      "id": 16
     }
   ],
   "me": [
     {
-      "user": "hicran",
-      "password": "Hicran!6518406",
-      "role": "admin",
-      "id": 13
+      "user": "zehra",
+      "password": "Zehra123!",
+      "role": "user",
+      "id": 16
     }
   ],
   "users": [
@@ -492,6 +529,16 @@
           "address": "hello world",
           "postcode": "00000",
           "addressName": "şenay ev"
+        },
+        {
+          "firstname": "şenasasd",
+          "lastname": "dsads",
+          "phone": "+90 (000) 000 - 0000",
+          "city": "Adana",
+          "state": "Tufanbeyli",
+          "address": "udedsjk",
+          "postcode": "12111",
+          "addressName": "dsd"
         }
       ]
     },
@@ -552,6 +599,33 @@
         },
         {
           "addressName": "we3rt"
+        }
+      ]
+    },
+    {
+      "mail": "senaysenturk@blabla.com",
+      "user": "senay",
+      "password": "ASDqwe123!",
+      "birth": "2023-01-06",
+      "gender": "female",
+      "role": "user",
+      "id": 11,
+      "addresses": []
+    },
+    {
+      "mail": "zehrabal@bla.com",
+      "user": "zehra",
+      "password": "Zehra123!",
+      "birth": "2023-01-06",
+      "gender": "female",
+      "role": "user",
+      "address": [],
+      "id": 12,
+      "addresses": [
+        {
+          "firstname": "qqwq",
+          "lastname": "wqwq",
+          "addressName": "wqrer"
         }
       ]
     }
@@ -2041,81 +2115,25 @@
       "subcategory": "Dress",
       "imgPath": "http://res.cloudinary.com/dr4cvohdq/image/upload/v1672579518/txkzmjkj0t9kh29rwelg.webp",
       "id": 1,
-      "amount": 3
+      "amount": 1
     }
   ],
   "order-list": [
     {
-      "userId": 15,
-      "orderList": [
-        {
-          "createdAt": "1/1/2023, 6:30:20 PM",
-          "name": "Sherpa pocket sweatshirt",
-          "price": 45.99,
-          "color": [
-            "green"
-          ],
-          "size": [
-            "XS",
-            "S",
-            "M",
-            "L"
-          ],
-          "category": "Man",
-          "subcategory": "Sweatshirt",
-          "imgPath": "https://res.cloudinary.com/dr4cvohdq/image/upload/v1672587037/zydsnco7z34qeg8uqqfh.webp",
-          "id": 7
-        }
-      ],
-      "id": 1
-    },
-    {
       "id": 2
     },
     {
-      "userId": 15,
       "orderList": [
         {
-          "createdAt": "1/1/2023, 6:30:20 PM",
-          "name": "Sherpa pocket sweatshirt",
-          "price": 45.99,
-          "color": [
-            "green"
-          ],
-          "size": [
-            "XS",
-            "S",
-            "M",
-            "L"
-          ],
-          "category": "Man",
-          "subcategory": "Sweatshirt",
-          "imgPath": "https://res.cloudinary.com/dr4cvohdq/image/upload/v1672587037/zydsnco7z34qeg8uqqfh.webp",
-          "id": 7
-        }
-      ],
-      "id": 3
-    },
-    {
-      "userId": 15,
-      "orderList": [
-        {
-          "createdAt": "1/1/2023, 6:30:20 PM",
-          "name": "Sherpa pocket sweatshirt",
-          "price": 45.99,
-          "color": [
-            "green"
-          ],
-          "size": [
-            "XS",
-            "S",
-            "M",
-            "L"
-          ],
-          "category": "Man",
-          "subcategory": "Sweatshirt",
-          "imgPath": "https://res.cloudinary.com/dr4cvohdq/image/upload/v1672587037/zydsnco7z34qeg8uqqfh.webp",
-          "id": 7
+          "name": "Ribbed turtleneck dress",
+          "price": 29.99,
+          "size": "",
+          "color": "",
+          "category": "Woman",
+          "subcategory": "Dress",
+          "imgPath": "http://res.cloudinary.com/dr4cvohdq/image/upload/v1672579518/txkzmjkj0t9kh29rwelg.webp",
+          "id": 1,
+          "amount": 1
         }
       ],
       "id": 4
@@ -2143,102 +2161,6 @@
         }
       ],
       "id": 5
-    },
-    {
-      "userId": 15,
-      "orderList": [
-        {
-          "createdAt": "1/1/2023, 6:30:20 PM",
-          "name": "Sherpa pocket sweatshirt",
-          "price": 45.99,
-          "color": [
-            "green"
-          ],
-          "size": [
-            "XS",
-            "S",
-            "M",
-            "L"
-          ],
-          "category": "Man",
-          "subcategory": "Sweatshirt",
-          "imgPath": "https://res.cloudinary.com/dr4cvohdq/image/upload/v1672587037/zydsnco7z34qeg8uqqfh.webp",
-          "id": 7
-        }
-      ],
-      "id": 6
-    },
-    {
-      "userId": 15,
-      "orderList": [
-        {
-          "createdAt": "1/1/2023, 6:30:20 PM",
-          "name": "Sherpa pocket sweatshirt",
-          "price": 45.99,
-          "color": [
-            "green"
-          ],
-          "size": [
-            "XS",
-            "S",
-            "M",
-            "L"
-          ],
-          "category": "Man",
-          "subcategory": "Sweatshirt",
-          "imgPath": "https://res.cloudinary.com/dr4cvohdq/image/upload/v1672587037/zydsnco7z34qeg8uqqfh.webp",
-          "id": 7
-        }
-      ],
-      "id": 7
-    },
-    {
-      "userId": 15,
-      "orderList": [
-        {
-          "createdAt": "1/1/2023, 6:30:20 PM",
-          "name": "Sherpa pocket sweatshirt",
-          "price": 45.99,
-          "color": [
-            "green"
-          ],
-          "size": [
-            "XS",
-            "S",
-            "M",
-            "L"
-          ],
-          "category": "Man",
-          "subcategory": "Sweatshirt",
-          "imgPath": "https://res.cloudinary.com/dr4cvohdq/image/upload/v1672587037/zydsnco7z34qeg8uqqfh.webp",
-          "id": 7
-        }
-      ],
-      "id": 8
-    },
-    {
-      "userId": 15,
-      "orderList": [
-        {
-          "createdAt": "1/1/2023, 6:30:20 PM",
-          "name": "Sherpa pocket sweatshirt",
-          "price": 45.99,
-          "color": [
-            "green"
-          ],
-          "size": [
-            "XS",
-            "S",
-            "M",
-            "L"
-          ],
-          "category": "Man",
-          "subcategory": "Sweatshirt",
-          "imgPath": "https://res.cloudinary.com/dr4cvohdq/image/upload/v1672587037/zydsnco7z34qeg8uqqfh.webp",
-          "id": 7
-        }
-      ],
-      "id": 9
     }
   ]
 }

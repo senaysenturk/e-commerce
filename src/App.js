@@ -28,6 +28,7 @@ import OrderTracking from "./components/app/shopping-cart/order-tracking/OrderTr
 import AllProducts from "./pages/admin/all-product/AllProducts";
 import AllOrders from "./pages/admin/all-orders/AllOrders";
 import AllUsers from "./pages/admin/all-users/AllUsers";
+import Search from "./pages/dashboard/search/Search";
 
 function App() {
   return (
@@ -36,7 +37,7 @@ function App() {
         <Routes>
           <Route path="/" element={<DashboardLayout />}>
             <Route index element={<Home />} />
-            <Route path="women" element={<Women />} />
+            <Route path="woman" element={<Search />} />
             <Route path="man" element={<Man />} />
             <Route path="children" element={<Children />} />
             <Route path="new-arrivals" element={<NewArrivals />} />

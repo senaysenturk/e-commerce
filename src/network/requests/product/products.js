@@ -14,6 +14,22 @@ export const getProduct = async () => {
   return result.data;
 };
 
+export const getProductByCategory = async (category) => {
+  const result = await baseService.getWithParams(
+    `http://localhost:5500/products?category=${category}`
+  );
+
+  return result.data;
+};
+
+export const getProductBySubcategory = async (category, subcategory) => {
+  const result = await baseService.getWithParams(
+    `http://localhost:5500/products?category=${category}&subcategor=${subcategory}`
+  );
+
+  return result.data;
+};
+
 export const postImage = (data, handleUploadProgress = () => {}) => {
   return baseService.postImage(
     "https://api.cloudinary.com/v1_1/dr4cvohdq/image/upload",

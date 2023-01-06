@@ -16,7 +16,6 @@ const AllProducts = () => {
           <h2>All Products</h2>
         </div>
         <div className="row">
-          {JSON.stringify(searchResult)}
           {searchResult.length ? (
             searchResult.map((product, index) => (
               <SmallCard product={product} key={index} />

@@ -63,7 +63,7 @@ export const AddressForm = () => {
   const count = 0;
   return (
     <>
-      {address.length}
+      {/* {address.length} */}
       <div className="register-addresses">
         <div className="addresses-head">
           <header>Delivery Address</header>

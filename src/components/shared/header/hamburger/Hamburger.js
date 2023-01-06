@@ -17,10 +17,10 @@ const Hamburger = ({ categories }) => {
 
         <ul id="menu" className="menu-items">
           {categories.map((category, index) => (
-            <li tabIndex={index} className="onclick-menu" index={index}>
+            <li tabIndex={index} className="onclick-menu" key={index}>
               {category.category}
 
-              <Submenu subcategories={category.subcategory} index={index} />
+              <Submenu subcategories={category.subcategory} key={index} />
             </li>
           ))}
 

@@ -20,6 +20,15 @@ baseService.get = async (url, endpoint) => {
   }
 };
 
+baseService.getWithParams = async (url) => {
+  try {
+    const response = await axios.get(`${url}`);
+    return response;
+  } catch (error) {
+    console.log(error.status);
+  }
+};
+
 baseService.getById = async (url, endpoint, id) => {
   try {
     const response = await axios.get(`${url}${endpoint}${id}`);
@@ -104,25 +113,3 @@ baseService.postLogout = async (url, endpoint) => {
   }
 };
  */
-
-/**
- * 
- * @param {number} userId 
- * @param {CartProduct[]} orderList 
- */
-baseService.sendOrderItems =  async (userId, orderList) => {
-  const orderUrl = `http://localhost:5500/order-list`
- 
-  await axios.post(orderUrl, {
-    userId,
-    orderList
-  });
-}
-
-baseService.getOrderItemsByUserId = async (userId) => {
-  const getOrdersUrl = `http://localhost:5500/order-list?userId=${userId}`
- 
- const result = await axios.get(getOrdersUrl)
- console.log("RESULT :",result)
- return result
-}
