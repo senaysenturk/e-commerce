@@ -1,11 +1,5 @@
-import React, { useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { RiHeart3Line } from "react-icons/ri";
-import { AiOutlineUser } from "react-icons/ai";
-import { MdOutlineAdminPanelSettings } from "react-icons/md";
-
-import { GrCart } from "react-icons/gr";
-
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate, NavLink, useSearchParams } from "react-router-dom";
 import "./style.scss";
 import DropdownMenu from "../dropdown-menu/DropdownMenu";
 
@@ -21,14 +15,28 @@ export const Header = ({ title }) => {
   const isDesktopResolution = useMatchMedia("(min-width:992px)", true);
   const { categories, getAllCategories } = useProduct();
 
+  const [searchParams, setSearchParams] = useSearchParams();
+  // console.log(searchParams);
+  const catParam = searchParams.get("category");
+  const subcatParam = searchParams.get("subcategory");
+  // const [category, setCategory] = useState(initialPage);
+
   useEffect(() => {
     getAllCategories();
   }, []);
+
+  // useEffect(() => {
+  //   setSearchParams({
+  //     category,
+  //   });
+  // }, []);
   return (
     <>
       <header className="app-header">
         {isDesktopResolution ? (
           <>
+            {catParam}
+            {subcatParam}
             <div className="main-header">
               <div className="logo" onClick={() => navigate("/")}>
                 <i className="fa-solid fa-signature"></i>
@@ -43,13 +51,22 @@ export const Header = ({ title }) => {
                 <ul className="category-links">
                   {categories.map((category, index) => (
                     <li>
-                      <Link to={`/products?category=${category.category}`}>
+                      <NavLink
+                        to={`/products?category=${category.category}`}
+                        key={"/products"}
+                        end
+                        catParam={catParam}
+                        subcatParam={subcatParam}
+                        // onClick={setCategory(`/products${category.category}`)}
+                      >
                         {category.category}
-                      </Link>
+                      </NavLink>
                       <DropdownMenu
                         subcategories={category.subcategory}
                         category={category.category}
                         image={category.image}
+                        catParam={catParam}
+                        subcatParam={subcatParam}
                       />
                     </li>
                   ))}
@@ -64,16 +81,16 @@ export const Header = ({ title }) => {
                     <a href="#">CHILDREN</a>
                   </li>*/}
                   <li>
-                    <Link to="#">NEW ARRIVALS</Link>
+                    <NavLink to="#">NEW ARRIVALS</NavLink>
                   </li>
                   <li>
-                    <Link to="#">BEST SELLERS</Link>
+                    <NavLink to="#">BEST SELLERS</NavLink>
                   </li>
                   <li>
-                    <Link to="#">TRENDING</Link>
+                    <NavLink to="#">TRENDING</NavLink>
                   </li>
                   <li>
-                    <Link to="#">SALE</Link>
+                    <NavLink to="#">SALE</NavLink>
                   </li>
                 </ul>
               </nav>

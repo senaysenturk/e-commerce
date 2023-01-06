@@ -8,6 +8,8 @@ import {
   postProduct,
   getProduct,
   postImage,
+  getProductByCategory,
+  getProductBySubcategory,
 } from "../../network/requests/product/products";
 
 const CreateProductContext = createContext();
@@ -85,6 +87,16 @@ export const CreateProductProvider = ({ children }) => {
     // console.log(response.data);
   };
 
+  const getProductsByCategory = async (category) => {
+    console.log(category);
+    const response = await getProductByCategory(category);
+    console.log(response.data);
+  };
+  const getProductsBySubcategory = async (category) => {
+    const response = await getProductBySubcategory(category);
+    console.log(response.data);
+  };
+
   const getManProducts = () => {
     getAllProducts();
     setMen(
@@ -132,6 +144,8 @@ export const CreateProductProvider = ({ children }) => {
     // setColor,
     // setSize,
     uploadPercentage,
+    getProductsByCategory,
+    getProductsBySubcategory,
   };
 
   return (
