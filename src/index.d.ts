@@ -1,6 +1,6 @@
 type State = {
     cart: CartProduct[]
-    auth: []
+    auth: AuthUser
     products: Product[]
     addProductToCart: (products: CartProduct[]) => void
     removeProductFromCart: (productId: CartProduct["id"]) => void
@@ -29,4 +29,14 @@ type CartProduct = {
     imgPath: string;
     id: number;
     amount: number;
+}
+
+type AuthUser ={
+    accessToken?: string;
+    password: string;
+    role: "admin" | "other";
+    roles?: "admin" | "other";
+    user: string;
+    id: number;
+
 }

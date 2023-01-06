@@ -1,14 +1,53 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 
 import "./style.scss";
 import "../../../../utilities.scss";
 import { SlPresent } from "react-icons/sl";
 import { useNavigate } from "react-router-dom";
 import ShopContext from "../../../../contexts/basket/ShopContext";
+import { baseService } from "src/network/services/baseService";
 
 export const OrderSummary = () => {
   const navigate = useNavigate();
   const context = useContext(ShopContext);
+
+useEffect(() => {
+  console.log(context);
+  (async () => {
+await baseService.sendOrderItems(15, [
+  {
+    "createdAt": "1/1/2023, 6:30:20 PM",
+    "name": "Sherpa pocket sweatshirt",
+    "price": 45.99,
+    "color": [
+      "green"
+    ],
+    "size": [
+      "XS",
+      "S",
+      "M",
+      "L"
+    ],
+    "category": "Man",
+    "subcategory": "Sweatshirt",
+    "imgPath": "https://res.cloudinary.com/dr4cvohdq/image/upload/v1672587037/zydsnco7z34qeg8uqqfh.webp",
+    "id": 7
+  },
+])
+await baseService.getOrderItemsByUserId(15)
+  })()
+
+ 
+}, [])
+
+const onClickConfirmBag = async () => {
+await baseService.sendOrderItems(context.auth.id, context.cart)
+// burada contexteki cartı boşaltacak action tetiklenicek
+
+  navigate("/shopping/checkout")
+
+}
+
   return (
     <>
       <div className="order-summary">
@@ -61,7 +100,7 @@ export const OrderSummary = () => {
             <div className="order-confirm">
               <button
                 className="btn btn-gray"
-                onClick={() => navigate("/shopping/checkout")}
+                onClick={onClickConfirmBag}
               >
                 Confirm Bag
               </button>

@@ -68,12 +68,14 @@ export const Login = () => {
       //console.log(JSON.stringify(response));
       const accessToken = response?.data?.accessToken;
       const roles = response?.data?.roles;
+      const id = response?.data?.id;
       shopContext.setAuth({
         user,
         password,
         roles,
         accessToken,
         role: authUser[0].role,
+        id,
       });
       // console.log(roles)
       // console.log(shopContext.auth);
