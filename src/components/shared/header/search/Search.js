@@ -25,7 +25,7 @@ const Search = () => {
           product.subcategory.trim().toLowerCase().includes(normalizedSearchTerm)
         ) {
           console.log(product);
-          setSearchResult([...]);
+          setSearchResult(product);
         }
       });
     } else {
