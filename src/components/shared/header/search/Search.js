@@ -14,28 +14,29 @@ const Search = () => {
   }, []);
 
   const handleSearch = (event) => {
+    console.log(event.target.value);
     setSearchTerm(event.target.value);
     const normalizedSearchTerm = event.target.value.trim().toLowerCase();
-    console.log(searchResults);
 
     setSearchResults("");
-    products
-      .filter(
-        (product) =>
-          product.name.trim().toLowerCase().includes(normalizedSearchTerm) ||
-          product.color.includes(normalizedSearchTerm) ||
-          product.category
-            .trim()
-            .toLowerCase()
-            .includes(normalizedSearchTerm) ||
-          product.subcategory
-            .trim()
-            .toLowerCase()
-            .includes(normalizedSearchTerm)
-      )
-      .map((result, index) => {
-        setSearchResults((prevResult) => [...prevResult, { result }]);
-      });
+    normalizedSearchTerm &&
+      products
+        .filter(
+          (product) =>
+            product.name.trim().toLowerCase().includes(normalizedSearchTerm) ||
+            product.color.includes(normalizedSearchTerm) ||
+            product.category
+              .trim()
+              .toLowerCase()
+              .includes(normalizedSearchTerm) ||
+            product.subcategory
+              .trim()
+              .toLowerCase()
+              .includes(normalizedSearchTerm)
+        )
+        .map((result, index) => {
+          setSearchResults((prevResult) => [...prevResult, { result }]);
+        });
   };
 
   return (
@@ -46,22 +47,21 @@ const Search = () => {
       <input
         type="text"
         placeholder="Search..."
-        onChange={handleSearch}
+        onInput={handleSearch}
         value={searchTerm}
       />
-      {/* {searchResult} */}
-
       <ul class="drop">
-        {searchResults.map(
-          (answer, index) =>
-            index <= 3 && (
-              <li id={answer.result.id}>
-                <Link to={`products/product/${answer.result.id}`}>
-                  {answer.result.name}
-                </Link>
-              </li>
-            )
-        )}
+        {searchResults &&
+          searchResults.map(
+            (answer, index) =>
+              index <= 3 && (
+                <li id={answer.result.id} key={index}>
+                  <Link to={`products/product/${answer.result.id}`}>
+                    {answer.result.name}
+                  </Link>
+                </li>
+              )
+          )}
 
         {searchResults.length > 3 && (
           <li>
