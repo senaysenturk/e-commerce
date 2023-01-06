@@ -7,6 +7,7 @@ import { Navigate } from "react-router-dom";
 import { HiOutlinePlus } from "react-icons/hi";
 import "./style.scss";
 import Address from "./Address";
+import Form from "./Form";
 
 export const AddressForm = () => {
   const { user, addressInfo, address, getAddresses } = useAuth();
@@ -67,6 +68,7 @@ export const AddressForm = () => {
       <div className="register-addresses">
         <div className="addresses-head">
           <header>Delivery Address</header>
+          {address.length === 0 ? <Form /> : <Address handleSetDisplay={handleSetDisplay} hide={hide} />}
           {hide && (
             <div className="add-new-address">
               <HiOutlinePlus />
