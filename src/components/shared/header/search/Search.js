@@ -8,6 +8,7 @@ const Search = () => {
   const { products, getAllProducts } = useProduct();
   const [searchResults, setSearchResults] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const [dropdown, setDropdown] = useState(false);
 
   useEffect(() => {
     getAllProducts();
@@ -50,25 +51,36 @@ const Search = () => {
         />
       </form>
 
-      <ul class="drop">
-        {searchResults &&
-          searchResults.map(
-            (answer, index) =>
-              index <= 3 && (
-                <li id={answer.result.id} key={index}>
-                  <Link to={`products/product/${answer.result.id}`}>
-                    {answer.result.name}
-                  </Link>
-                </li>
-              )
-          )}
+      <div className="search-drop">
+        <ul className={`${dropdown ? "dropdown" : ""}`}>
+          {searchResults &&
+            searchResults.map(
+              (answer, index) =>
+                index <= 3 && (
+                  <li
+                    id={answer.result.id}
+                    key={index}
+                    onClick={() => {
+                      setDropdown(true);
+                      setSearchTerm("");
+                      setSearchResults("");
+                      setDropdown(false);
+                    }}
+                  >
+                    <Link to={`products/product/${answer.result.id}`}>
+                      {answer.result.name}
+                    </Link>
+                  </li>
+                )
+            )}
 
-        {searchResults.length > 3 && (
-          <li>
-            <Link to="">View more results</Link>
-          </li>
-        )}
-      </ul>
+          {searchResults.length > 3 && (
+            <li>
+              <Link to="">View more results</Link>
+            </li>
+          )}
+        </ul>
+      </div>
     </div>
   );
 };
