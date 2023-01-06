@@ -41,16 +41,16 @@ const Search = () => {
 
   return (
     <div className="search">
-      <span className="search-icon">
-        <AiOutlineSearch />
-      </span>
-      <input
-        type="text"
-        placeholder="Search..."
-        onInput={handleSearch}
-        value={searchTerm}
-      />
-      <ul className="drop">
+      <form>
+        <input
+          type="text"
+          placeholder="Search..."
+          onInput={handleSearch}
+          value={searchTerm}
+        />
+      </form>
+
+      <ul class="drop">
         {searchResults &&
           searchResults.map(
             (answer, index) =>
@@ -65,7 +65,7 @@ const Search = () => {
 
         {searchResults.length > 3 && (
           <li>
-            <Link to="">View more</Link>
+            <Link to="">View more results</Link>
           </li>
         )}
       </ul>
