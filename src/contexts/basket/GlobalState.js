@@ -1,5 +1,4 @@
 import React, { useReducer, useEffect } from "react";
-
 import ShopContext from "./ShopContext";
 import {
   shopReducer,
@@ -49,8 +48,8 @@ const GlobalState = (props) => {
   };
 
   const clearCart = (cart) => {
-    dispatch({type: "CLEAR_CART", cart})
-  }
+    dispatch({ type: "CLEAR_CART", cart });
+  };
   return (
     <ShopContext.Provider
       value={{

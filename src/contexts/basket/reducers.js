@@ -60,7 +60,7 @@ const setInitialState = (products, state) => {
 };
 
 const clearCart = (cart, state) => {
-  return { ...state, cart };
+  return { ...state, cart:[] };
 };
 
 export const shopReducer = (state, action) => {

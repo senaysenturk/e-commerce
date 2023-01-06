@@ -50,7 +50,7 @@ const Search = () => {
         onInput={handleSearch}
         value={searchTerm}
       />
-      <ul class="drop">
+      <ul className="drop">
         {searchResults &&
           searchResults.map(
             (answer, index) =>

@@ -37,7 +37,7 @@ export const OrderSummary = () => {
     await baseService.sendOrderItems(context.auth.id, context.cart);
     
     // burada contexteki cartı boşaltacak action tetiklenicek
-  // clearCart(cart)
+  context.clearCart();
     navigate("/shopping/checkout");
   };
 
