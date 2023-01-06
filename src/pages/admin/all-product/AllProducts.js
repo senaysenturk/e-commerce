@@ -16,9 +16,19 @@ const AllProducts = () => {
           <h2>All Products</h2>
         </div>
         <div className="row">
-          {searchResult.map((product, index) => (
+          {JSON.stringify(searchResult)}
+          {searchResult.length ? (
+            searchResult.map((product, index) => (
+              <SmallCard product={product} key={index} />
+            ))
+          ) : (
+            <div className="message">
+              <h4>Product Not Found</h4>
+            </div>
+          )}
+          {/* {searchResult.map((product, index) => (
             <SmallCard product={product} key={index} />
-          ))}
+          ))} */}
           {context.products.map((product, index) => (
             <SmallCard product={product} key={index} />
           ))}
