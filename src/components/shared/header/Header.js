@@ -50,7 +50,7 @@ export const Header = ({ title }) => {
               <nav>
                 <ul className="category-links">
                   {categories.map((category, index) => (
-                    <li>
+                      <li key={index}>
                       <NavLink
                         to={`/products?category=${category.category}`}
                         key={"/products"}
