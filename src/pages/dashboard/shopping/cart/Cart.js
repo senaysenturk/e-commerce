@@ -4,6 +4,7 @@ import "./style.scss";
 import { useNavigate } from "react-router-dom";
 import OrderItem from "../../../../components/app/shopping-cart/order-item/OrderItem";
 import ShopContext from "../../../../contexts/basket/ShopContext";
+import OrderSummary from "src/components/app/shopping-cart/order-summary/OrderSummary";
 
 export const Cart = () => {
   const [cart, setCart] = useState([...list]);
@@ -38,17 +39,25 @@ export const Cart = () => {
               <p>{message}</p>
             </div>
           )}
-          <div className="shopping-cart-content">
-            {/* {list.map((product) => (
-            <OrderItem key={product.id} product={product} handleClick={handleClick} />
-          ))} */}
+          {/* <div className="shopping-cart-content">
             <OrderItem
               cart={cart}
               setCart={setCart}
               handleChange={handleChange}
               setMessage={setMessage}
             />
-            {/* <OrderSummary price={price} /> */}
+            
+          </div> */}
+          <div className="checkout-container">
+            <div className="checkout-container-middle">
+              <OrderItem
+                cart={cart}
+                setCart={setCart}
+                handleChange={handleChange}
+                setMessage={setMessage}
+              />
+            </div>
+            <OrderSummary isCartPage={true} />
           </div>
         </div>
       ) : (

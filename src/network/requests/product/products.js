@@ -18,16 +18,18 @@ export const getProductByCategory = async (category) => {
   const result = await baseService.getWithParams(
     `http://localhost:5500/products?category=${category}`
   );
-
-  return result.data;
+  return result;
 };
 
 export const getProductBySubcategory = async (category, subcategory) => {
+  console.log(
+    `http://localhost:5500/products?category=${category}&subcategory=${subcategory}`
+  );
   const result = await baseService.getWithParams(
-    `http://localhost:5500/products?category=${category}&subcategor=${subcategory}`
+    `http://localhost:5500/products?category=${category}&subcategory=${subcategory}`
   );
 
-  return result.data;
+  return result;
 };
 
 export const postImage = (data, handleUploadProgress = () => {}) => {

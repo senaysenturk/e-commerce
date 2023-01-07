@@ -13,9 +13,10 @@ export const DropdownMenu = ({ category, subcategories, image }) => {
               {subcategories.map((subcategory, index) => {
                 if (index < subcategories.length / 2)
                   return (
-                    <li>
+                    <li key={index}>
                       <Link
-                        to={`/products?category=${category}&subcategory=${subcategory}`}
+                        to={`/products/search?category=${category}&subcategory=${subcategory}`}
+                        key={index}
                       >
                         {subcategory}
                       </Link>
@@ -30,9 +31,10 @@ export const DropdownMenu = ({ category, subcategories, image }) => {
               {subcategories.map((subcategory, index) => {
                 if (index > subcategories.length / 2)
                   return (
-                    <li>
+                    <li key={index}>
                       <Link
-                        to={`/products?category=${category}&subcategory=${subcategory}`}
+                        key={index}
+                        to={`/products/search?category=${category}&subcategory=${subcategory}`}
                       >
                         {subcategory}
                       </Link>

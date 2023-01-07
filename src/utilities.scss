@@ -179,6 +179,11 @@ body {
   }
 }
 
+.grid-4-columns {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
 .colors {
   display: flex;
   align-items: flex-start;

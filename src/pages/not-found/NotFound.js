@@ -7,7 +7,7 @@ import "./style.scss";
 export const NotFound = () => {
   return (
     <>
-      <Header></Header>
+      <Header title={"shiwear"}></Header>
       <div className="not-found">
         <div className="face">
           <div className="band">

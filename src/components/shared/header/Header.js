@@ -15,28 +15,21 @@ export const Header = ({ title }) => {
   const isDesktopResolution = useMatchMedia("(min-width:992px)", true);
   const { categories, getAllCategories } = useProduct();
 
-  const [searchParams, setSearchParams] = useSearchParams();
-  // console.log(searchParams);
-  const catParam = searchParams.get("category");
-  const subcatParam = searchParams.get("subcategory");
+  // const [searchParams, setSearchParams] = useSearchParams();
+  // // console.log(searchParams);
+  // const catParam = searchParams.get("category");
+  // const subcatParam = searchParams.get("subcategory");
   // const [category, setCategory] = useState(initialPage);
 
   useEffect(() => {
     getAllCategories();
   }, []);
 
-  // useEffect(() => {
-  //   setSearchParams({
-  //     category,
-  //   });
-  // }, []);
   return (
     <>
       <header className="app-header">
         {isDesktopResolution ? (
           <>
-            {catParam}
-            {subcatParam}
             <div className="main-header">
               <div className="logo" onClick={() => navigate("/")}>
                 <i className="fa-solid fa-signature"></i>
@@ -50,23 +43,21 @@ export const Header = ({ title }) => {
               <nav>
                 <ul className="category-links">
                   {categories.map((category, index) => (
-                      <li key={index}>
+                    <li key={index}>
                       <NavLink
-                        to={`/products?category=${category.category}`}
+                        to={`/products/search?category=${category.category}`}
                         key={"/products"}
                         end
-                        catParam={catParam}
-                        subcatParam={subcatParam}
+
                         // onClick={setCategory(`/products${category.category}`)}
                       >
                         {category.category}
                       </NavLink>
                       <DropdownMenu
+                        key={index}
                         subcategories={category.subcategory}
                         category={category.category}
                         image={category.image}
-                        catParam={catParam}
-                        subcatParam={subcatParam}
                       />
                     </li>
                   ))}
