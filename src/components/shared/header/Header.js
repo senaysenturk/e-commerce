@@ -81,7 +81,7 @@ export const Header = ({ title }) => {
                     <a href="#">CHILDREN</a>
                   </li>*/}
                   <li>
-                    <NavLink to="#">NEW ARRIVALS</NavLink>
+                    <NavLink to="/new-arrivals">NEW ARRIVALS</NavLink>
                   </li>
                   <li>
                     <NavLink to="#">BEST SELLERS</NavLink>
