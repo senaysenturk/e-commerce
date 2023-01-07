@@ -56,7 +56,7 @@ function SignUp({ history }) {
   const [birth, setBirth] = useState("");
   const [gender, setGender] = useState("");
   const [role, setRole] = useState("user");
-  const [address, setAddress] = useState([]);
+  const [addresses, setAddresses] = useState([]);
 
   useEffect(() => {
     userRef.current.focus();
@@ -96,7 +96,7 @@ function SignUp({ history }) {
         birth,
         gender,
         role,
-        address,
+        addresses,
       });
       /* const response = await axios.post(
         SIGNUP_URL,

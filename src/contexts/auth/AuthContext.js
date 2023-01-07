@@ -55,6 +55,10 @@ const AuthProvider = ({ children }) => {
 
   let updatedUser;
 
+  const editAddress = async (addressObj, addressName) => {
+
+  };
+
   const deleteAddress = async (addressObj, addressName) => {
     const index = addressObj.findIndex(
       (addressObjectItem) => addressObjectItem.addressName === addressName
@@ -185,6 +189,7 @@ const AuthProvider = ({ children }) => {
     setCurrentUser,
     addressInfo,
     getAddresses,
+    editAddress,
     deleteAddress,
     address,
   };
