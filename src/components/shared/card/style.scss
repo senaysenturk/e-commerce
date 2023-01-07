@@ -95,3 +95,10 @@
   flex-direction: column;
   align-items: center;
 }
+
+@media only screen and (max-width: 900px) {
+  .product-flex {
+    flex-direction: column;
+    gap: 20px;
+  }
+}

@@ -114,26 +114,24 @@ baseService.postLogout = async (url, endpoint) => {
 };
  */
 
-
-
 /**
- * 
- * @param {number} userId 
- * @param {CartProduct[]} orderList 
+ *
+ * @param {number} userId
+ * @param {CartProduct[]} orderList
  */
-baseService.sendOrderItems =  async (userId, orderList) => {
-  const orderUrl = `http://localhost:5500/order-list`
- 
+baseService.sendOrderItems = async (userId, orderList) => {
+  const orderUrl = `http://localhost:5500/order-list`;
+
   await axios.post(orderUrl, {
     userId,
-    orderList
+    orderList,
   });
-}
+};
 
 baseService.getOrderItemsByUserId = async (userId) => {
-  const getOrdersUrl = `http://localhost:5500/order-list?userId=${userId}`
- 
- const result = await axios.get(getOrdersUrl)
- console.log("RESULT :",result)
- return result
-}
+  const getOrdersUrl = `http://localhost:5500/order-list?userId=${userId}`;
+
+  const result = await axios.get(getOrdersUrl);
+  console.log("RESULT :", result);
+  return result;
+};

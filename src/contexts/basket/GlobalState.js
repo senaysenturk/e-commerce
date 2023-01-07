@@ -1,5 +1,4 @@
 import React, { useReducer, useEffect } from "react";
-
 import ShopContext from "./ShopContext";
 import {
   shopReducer,
@@ -7,6 +6,7 @@ import {
   REMOVE_PRODUCT,
   DECREACE_PRODUCT,
   SET_INITIAL_STATE,
+  CLEAR_CART,
 } from "./reducers";
 import { getProduct } from "../../network/requests/product/products";
 
@@ -46,6 +46,10 @@ const GlobalState = (props) => {
   const setAuth = (payload) => {
     dispatch({ type: "SET_AUTH", payload });
   };
+
+  const clearCart = (cart) => {
+    dispatch({ type: "CLEAR_CART", cart });
+  };
   return (
     <ShopContext.Provider
       value={{
@@ -55,6 +59,7 @@ const GlobalState = (props) => {
         addProductToCart: addProductToCart,
         removeProductFromCart: removeProductFromCart,
         decreaseProduct: decreaseProduct,
+        clearCart: clearCart,
         totalPrice: () => {
           let total = 0;
           cartState.cart.forEach((item) => {
