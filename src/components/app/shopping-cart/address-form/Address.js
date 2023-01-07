@@ -7,20 +7,14 @@ import { Navigate } from "react-router-dom";
 import AddressForm from "./AddressForm";
 import Popup from "./Popup";
 
-const Address = ({ setDisplay, display }) => {
-  const { user, getAddresses, address, deleteAddress, editAddress } = useAuth();
+const Address = ({ handleSetDisplay, setDisplay, display }) => {
+  const { user, getAddresses, address, deleteAddress } = useAuth();
   const [navigate, setNavigate] = useState(false);
 
   const [isOpen, setIsOpen] = useState(false);
 
   const togglePopup = () => {
-    // console.log(addressObject);
-    // setEditAddress(addressObject);
     setIsOpen(!isOpen);
-  };
-
-  const handleEditAddress = async (addressName) => {
-    editAddress(address, addressName);
   };
 
   const handleDeleteAddress = async (addressName) => {
@@ -33,6 +27,10 @@ const Address = ({ setDisplay, display }) => {
 
   return (
     <>
+      <div className="add-new-address">
+        <HiOutlinePlus />
+        <a onClick={handleSetDisplay}> New Address</a>
+      </div>
       <div className="checkout-address">
         {address &&
           address.map((addressObject, index) => {
@@ -53,7 +51,7 @@ const Address = ({ setDisplay, display }) => {
                   </div>
                 </div>
                 <div className="edit">
-                  <span onClick={togglePopup()}>Edit</span>
+                  <span onClick={togglePopup}>Edit</span>
                 </div>
                 <div className="divider">
                   <span>|</span>
@@ -71,7 +69,7 @@ const Address = ({ setDisplay, display }) => {
             );
           })}
       </div>
-      {isOpen && <Popup handleClose={togglePopup} handleEditAddress={editAddress} />}
+      {isOpen && <Popup handleClose={togglePopup} />}
     </>
   );
 };

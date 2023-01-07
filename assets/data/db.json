@@ -271,10 +271,57 @@
       "image": "https://res.cloudinary.com/dr4cvohdq/image/upload/v1672915037/xnimtsikmpejtlvt3rru.webp"
     }
   ],
-  "signup": [],
-  "auth": [],
-  "me": [],
-  "users": [],
+  "signup": [
+    {
+      "mail": "senturksenay@test.com",
+      "user": "senaysenturk",
+      "password": "ASDqwe123!",
+      "birth": "2023-01-07",
+      "gender": "female",
+      "role": "user",
+      "addresses": [],
+      "id": 1
+    }
+  ],
+  "auth": [
+    {
+      "user": "senaysenturk",
+      "password": "ASDqwe123!",
+      "role": "user",
+      "id": 1
+    }
+  ],
+  "me": [
+    {
+      "user": "senaysenturk",
+      "password": "ASDqwe123!",
+      "role": "user",
+      "id": 1
+    }
+  ],
+  "users": [
+    {
+      "mail": "senturksenay@test.com",
+      "user": "senaysenturk",
+      "password": "ASDqwe123!",
+      "birth": "2023-01-07",
+      "gender": "female",
+      "role": "user",
+      "addresses": [
+        {
+          "firstname": "şenay",
+          "lastname": "şentürk",
+          "phone": "+90 (000) 000 - 0000",
+          "city": "İstanbul",
+          "state": "Başakşehir",
+          "address": "ev",
+          "postcode": "00000",
+          "addressName": "ev"
+        }
+      ],
+      "id": 1
+    }
+  ],
   "cities": [
     {
       "city": "Adana",
@@ -1760,7 +1807,7 @@
       "subcategory": "Dress",
       "imgPath": "http://res.cloudinary.com/dr4cvohdq/image/upload/v1672579518/txkzmjkj0t9kh29rwelg.webp",
       "id": 1,
-      "amount": 1
+      "amount": 2
     }
   ],
   "order-list": [

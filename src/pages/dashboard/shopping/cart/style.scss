@@ -1,5 +1,5 @@
 .shopping-cart {
-  margin-top: 50px;
+  padding: 50px 10px;
   .shopping-cart-message {
     display: flex;
     height: 100%;
@@ -11,17 +11,18 @@
     font-size: 0.875rem;
     line-height: 1.25rem;
     --tw-text-opacity: 1;
-    color: rgba(233, 81, 81, var(--tw-text-opacity));
+    color: #e95151;
   }
 
   .shopping-cart-content {
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 1rem;
+    // margin-left: auto;
+    // margin-right: auto;
+    // margin-bottom: 1rem;
     display: flex;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 1220px;
+    justify-content: space-evenly;
+    // width: 100%;
+    // max-width: 1220px;
+    min-height: 70vh;
   }
 }
 
@@ -44,11 +45,14 @@
   }
 }
 
-@media (min-width: 768px) {
-  .shopping-cart-content {
-    margin-top: 2.5rem;
-    margin-bottom: 2.5rem;
-    padding-left: 2.25rem;
-    padding-right: 2.25rem;
+@media only screen and (max-width: 900px) {
+  .shopping-cart {
+    .shopping-cart-content {
+      display: flex;
+      justify-content: space-evenly;
+      min-height: 70vh;
+      flex-direction: column;
+      gap: 40px;
+    }
   }
 }

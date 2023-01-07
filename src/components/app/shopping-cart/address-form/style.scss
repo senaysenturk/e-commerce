@@ -1,10 +1,8 @@
 .checkout-address {
-  width: 100%;
-
+  width: 700px;
   .checkout-address-box {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
     justify-content: space-between;
     align-items: flex-start;
     padding: 1.5rem;
@@ -82,7 +80,7 @@
     .divider {
       margin: 0 5px;
       font-weight: 600;
-      color: var(--gray-color)
+      color: var(--gray-color);
     }
 
     .delete {
@@ -102,20 +100,22 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-
+  // align-items: center;
+  .add-new-address {
+    font-weight: 100;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex;
+    column-gap: 5px;
+    margin-bottom: 10px;
+    justify-content: flex-end;
+  }
   .address-form {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-
-    /*  input {
-            width: 450px;
-            height: 50px;
-            padding: 10px;
-        } */
-
+    // flex-wrap: wrap;
     .person {
-      width: 660px;
+      //width: 660px;
       display: flex;
       justify-content: space-between;
 
@@ -146,9 +146,9 @@
 .addresses-head {
   margin-bottom: 1rem;
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  // display: flex;
+  // justify-content: space-between;
+  // align-items: center;
 
   header {
     font-family: sans-serif;
@@ -156,14 +156,6 @@
     line-height: 2rem;
     --tw-text-opacity: 1;
     color: rgba(0, 0, 0, var(--tw-text-opacity));
-  }
-
-  .add-new-address {
-    font-weight: 100;
-    font-size: 0.9rem;
-    cursor: pointer;
-    display: flex;
-    column-gap: 5px;
   }
 }
 
@@ -192,7 +184,7 @@
 }
 
 .close-icon {
-  content: 'x';
+  content: "x";
   cursor: pointer;
   position: fixed;
   right: calc(15% - 30px);
@@ -205,4 +197,24 @@
   text-align: center;
   border: 1px solid #999;
   font-size: 20px;
+}
+
+@media only screen and (max-width: 900px) {
+  .checkout-address {
+    width: 100%;
+  }
+
+  .register-addresses {
+    align-items: center;
+    .address-form {
+      .person {
+        flex-direction: column;
+      }
+      input,
+      select,
+      textarea {
+        width: 320px;
+      }
+    }
+  }
 }

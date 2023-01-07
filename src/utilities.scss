@@ -240,3 +240,9 @@ input[type="number"] {
   align-items: center;
   justify-content: center;
 }
+
+@media only screen and (max-width: 900px) {
+  .btn {
+    width: 100%;
+  }
+}

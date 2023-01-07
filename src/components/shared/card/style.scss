@@ -100,5 +100,20 @@
   .product-flex {
     flex-direction: column;
     gap: 20px;
+    width: 80%;
+    .product-img {
+      position: relative;
+      .add-favorite {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        font-size: 25px;
+      }
+      img {
+        width: 100%;
+        object-fit: cover;
+        object-position: left top;
+      }
+    }
   }
 }

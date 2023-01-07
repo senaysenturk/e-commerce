@@ -44,7 +44,7 @@ export const AddressForm = () => {
 
   const handleSave = async (e) => {
     var response = await addressInfo(addAddress);
-
+    getAddresses();
     handleSetDisplay();
   };
 
@@ -54,6 +54,7 @@ export const AddressForm = () => {
 
   useEffect(() => {
     getAllCities();
+    getAddresses();
   }, []);
 
   // useEffect(() => {
@@ -63,43 +64,23 @@ export const AddressForm = () => {
   if (navigate) {
     return <Navigate to="/order-tracking" />;
   }
-  const count = 0;
+
   return (
     <>
       {/* {address.length} */}
       <div className="register-addresses">
         <div className="addresses-head">
           <header>Delivery Address</header>
-          {address.length === 0 ? (
-            <Form
-              handleSetDisplay={handleSetDisplay}
-              hide={hide}
-              setHide={setHide}
-            />
-          ) : (
-            hide && (
-              <div className="add-new-address">
-                <HiOutlinePlus />
-                <a onClick={handleSetDisplay}> New Address</a>
-              </div>
-            )
-          )}
-          {/* {hide && (
-            <div className="add-new-address">
-              <HiOutlinePlus />
-              <a onClick={handleSetDisplay}> New Address</a>
-            </div>
-          )} */}
         </div>
-        {hide ? (
-          <>
-            <Address handleSetDisplay={handleSetDisplay} hide={hide} />
-          </>
+        {address.length ? (
+          <Address handleSetDisplay={handleSetDisplay} hide={hide} />
         ) : (
           <Form
-            handleSetDisplay={handleSetDisplay}
-            hide={hide}
-            setHide={setHide}
+            handleAddress={handleAddress}
+            MaskInput={MaskInput}
+            handleSave={handleSave}
+            city={city}
+            enable={enable}
           />
         )}
       </div>
