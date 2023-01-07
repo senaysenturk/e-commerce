@@ -57,10 +57,6 @@ export const AddressForm = () => {
     getAddresses();
   }, []);
 
-  // useEffect(() => {
-  //   getStates(city);
-  // }, []);
-
   if (navigate) {
     return <Navigate to="/order-tracking" />;
   }

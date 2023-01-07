@@ -4,28 +4,23 @@ import ShopContext from "src/contexts/basket/ShopContext";
 import { baseService } from "src/network/services/baseService";
 import "./style.scss";
 
-
-
-
 const OrderTracking = () => {
   const context = useContext(ShopContext);
 
   const getDate = (format) => {
-  const newDate = new Date();
-  const getTimeDate = newDate.toLocaleString(undefined, format);
+    const newDate = new Date();
+    const getTimeDate = newDate.toLocaleString(undefined, format);
 
- return getTimeDate  
- }
+    return getTimeDate;
+  };
 
-
-  const orderTimeAndDate = getDate(
-    {
-      year: "numeric",
-      month: "2-digit",
-      day: "2-digit",
-      hour: "2-digit",
-      minute: "2-digit",
-     });
+  const orderTimeAndDate = getDate({
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+  });
 
   /**
    * @type {[CartProduct[]]}
@@ -47,7 +42,6 @@ const OrderTracking = () => {
   return (
     <div className="order-tracking">
       {orderList.map((product, index) => {
-
         return (
           <div className="order-container" key={index}>
             <div className="order-img">

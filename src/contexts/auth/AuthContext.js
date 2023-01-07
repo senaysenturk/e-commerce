@@ -55,8 +55,28 @@ const AuthProvider = ({ children }) => {
 
   let updatedUser;
 
-  const editAddress = async (addressObj, addressName) => {
+  const editAddress = async (addressesObj, addressObj, addressName) => {
+    const index = addressesObj.findIndex(
+      (addressObjectItem) => addressObjectItem.addressName === addressName
+    );
 
+    const newAddressData = [
+      ...addressObj.slice(0, index),
+      addressObj,
+      ...addressObj.slice(index + 1),
+    ];
+    console.log(newAddressData);
+    const response = await getUsers();
+    updatedUser = response.data.filter(
+      (userObject) =>
+        userObject.mail === user[0].user || userObject.user === user[0].user
+    );
+    updateUser(updatedUser[0].id, {
+      ...updatedUser[0],
+      // addresses: [{ address: newAddress }],
+      addresses: newAddressData,
+    });
+    getAddresses();
   };
 
   const deleteAddress = async (addressObj, addressName) => {
