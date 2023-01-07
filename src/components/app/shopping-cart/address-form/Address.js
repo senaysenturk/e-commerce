@@ -21,6 +21,8 @@ const Address = ({ handleSetDisplay, setDisplay, display }) => {
 
   const handleEditAddress = async (addressName) => {
     editAddress(address, editedAddress, currentAddress.addressName);
+    setCurrentAddress("");
+    setEditedAddress("");
   };
 
   const handleDeleteAddress = async (addressName) => {
