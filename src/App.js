@@ -29,6 +29,7 @@ import AllProducts from "./pages/admin/all-product/AllProducts";
 import AllOrders from "./pages/admin/all-orders/AllOrders";
 import AllUsers from "./pages/admin/all-users/AllUsers";
 import Search from "./pages/dashboard/search/Search";
+import ViewMore from "./pages/dashboard/view-more/ViewMore";
 
 function App() {
   return (
@@ -55,6 +56,7 @@ function App() {
             </Route>
 
             <Route path="favorites" element={<Favorites />} />
+            <Route path="view-more" element={<ViewMore />} />
           </Route>
 
           <Route path="auth" element={<AuthLayout />}>

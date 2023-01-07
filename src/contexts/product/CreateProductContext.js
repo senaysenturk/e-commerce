@@ -23,7 +23,7 @@ export const CreateProductProvider = ({ children }) => {
   const [categories, setCategories] = useState([]);
   const [uploadPercentage, setUploadPercentage] = useState(0);
 
-  const [searchResult, setSearchResult] = useState([]);
+  const [moreResult, setMoreResult] = useState([]);
 
   const [men, setMen] = useState(null);
   const [women, setWomen] = useState(null);
@@ -127,8 +127,8 @@ export const CreateProductProvider = ({ children }) => {
     image,
     setImage,
     uploadImage,
-    searchResult,
-    setSearchResult,
+    moreResult,
+    setMoreResult,
     men,
     getManProducts,
     women,

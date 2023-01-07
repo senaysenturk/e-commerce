@@ -5,7 +5,8 @@ import { AiOutlineSearch, AiOutlineUser } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
 const Search = () => {
-  const { products, getAllProducts } = useProduct();
+  const { products, getAllProducts, setMoreResult } = useProduct();
+
   const [searchResults, setSearchResults] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [dropdown, setDropdown] = useState(false);
@@ -65,6 +66,7 @@ const Search = () => {
                       setSearchTerm("");
                       setSearchResults("");
                       setDropdown(false);
+                      setMoreResult("");
                     }}
                   >
                     <Link to={`products/product/${answer.result.id}`}>
@@ -75,8 +77,8 @@ const Search = () => {
             )}
 
           {searchResults.length > 3 && (
-            <li>
-              <Link to="">View more results</Link>
+            <li onClick={() => setMoreResult(searchResults)}>
+              <Link to="view-more">View more results</Link>
             </li>
           )}
         </ul>
