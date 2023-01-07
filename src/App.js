@@ -38,9 +38,9 @@ function App() {
         <Routes>
           <Route path="/" element={<DashboardLayout />}>
             <Route index element={<Home />} />
-            <Route path="woman" element={<Search />} />
-            <Route path="man" element={<Man />} />
-            <Route path="children" element={<Children />} />
+            <Route path="Woman" element={<Search />} />
+            <Route path="Man" element={<Search />} />
+            <Route path="Children" element={<Search />} />
             <Route path="new-arrivals" element={<NewArrivals />} />
             <Route path="best-sellers" element={<BestSellers />} />
             <Route path="trending" element={<Trending />} />
@@ -53,6 +53,7 @@ function App() {
             </Route>
             <Route path="products" element={<Products />}>
               <Route path={`product/:productId`} element={<CardDetail />} />
+              <Route path="search" element={<Search />} />
             </Route>
 
             <Route path="favorites" element={<Favorites />} />

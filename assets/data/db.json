@@ -1811,8 +1811,8 @@
     {
       "name": "Ribbed turtleneck dress",
       "price": 29.99,
-      "size": "",
-      "color": "",
+      "size": "S",
+      "color": "black",
       "category": "Woman",
       "subcategory": "Dress",
       "imgPath": "http://res.cloudinary.com/dr4cvohdq/image/upload/v1672579518/txkzmjkj0t9kh29rwelg.webp",
@@ -1854,6 +1854,23 @@
         }
       ],
       "id": 2
+    },
+    {
+      "orderList": [
+        {
+          "createdAt": "1/1/2023, 6:27:54 PM",
+          "name": "Regular fit Oxford cotton shirt",
+          "price": 29.99,
+          "color": "blue",
+          "size": "L",
+          "category": "Man",
+          "subcategory": "Shirt",
+          "imgPath": "https://res.cloudinary.com/dr4cvohdq/image/upload/v1672586896/hbxu98mpnk8y0silr4tu.jpg",
+          "id": 5,
+          "amount": 1
+        }
+      ],
+      "id": 3
     }
   ]
 }

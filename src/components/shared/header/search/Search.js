@@ -77,7 +77,15 @@ const Search = () => {
             )}
 
           {searchResults.length > 3 && (
-            <li onClick={() => setMoreResult(searchResults)}>
+            <li
+              onClick={() => {
+                setDropdown(true);
+                setSearchTerm("");
+                setSearchResults("");
+                setDropdown(false);
+                setMoreResult(searchResults);
+              }}
+            >
               <Link to="view-more">View more results</Link>
             </li>
           )}

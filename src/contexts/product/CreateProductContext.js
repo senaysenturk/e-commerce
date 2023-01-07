@@ -22,12 +22,8 @@ export const CreateProductProvider = ({ children }) => {
   const [sizes, setSizes] = useState([]);
   const [categories, setCategories] = useState([]);
   const [uploadPercentage, setUploadPercentage] = useState(0);
-
   const [moreResult, setMoreResult] = useState([]);
-
-  const [men, setMen] = useState(null);
-  const [women, setWomen] = useState(null);
-  const [kids, setKids] = useState(null);
+  const [searchProducts, setSearchProducts] = useState([]);
 
   const getAllProducts = async () => {
     const response = await getProduct();
@@ -88,34 +84,35 @@ export const CreateProductProvider = ({ children }) => {
   };
 
   const getProductsByCategory = async (category) => {
-    console.log(category);
     const response = await getProductByCategory(category);
+    setSearchProducts(response.data);
     console.log(response.data);
   };
-  const getProductsBySubcategory = async (category) => {
-    const response = await getProductBySubcategory(category);
+  const getProductsBySubcategory = async (category, subcategory) => {
+    const response = await getProductBySubcategory(category, subcategory);
+    setSearchProducts(response.data);
     console.log(response.data);
   };
 
-  const getManProducts = () => {
-    getAllProducts();
-    setMen(
-      products.filter((productObj) => productObj.category.includes("Man"))
-    );
-  };
+  // const getManProducts = () => {
+  //   getAllProducts();
+  //   setMen(
+  //     products.filter((productObj) => productObj.category.includes("Man"))
+  //   );
+  // };
 
-  const getWomanProducts = () => {
-    getAllProducts();
-    setWomen(
-      products.filter((productObj) => productObj.category.includes("Woman"))
-    );
-  };
+  // const getWomanProducts = () => {
+  //   getAllProducts();
+  //   setWomen(
+  //     products.filter((productObj) => productObj.category.includes("Woman"))
+  //   );
+  // };
 
-  const getChildProducts = () => {
-    setKids(
-      products.filter((productObj) => productObj.category.includes("Child"))
-    );
-  };
+  // const getChildProducts = () => {
+  //   setKids(
+  //     products.filter((productObj) => productObj.category.includes("Child"))
+  //   );
+  // };
 
   const values = {
     product,
@@ -129,12 +126,12 @@ export const CreateProductProvider = ({ children }) => {
     uploadImage,
     moreResult,
     setMoreResult,
-    men,
-    getManProducts,
-    women,
-    getWomanProducts,
-    kids,
-    getChildProducts,
+    // men,
+    // getManProducts,
+    // women,
+    // getWomanProducts,
+    // kids,
+    // getChildProducts,
     colors,
     getAllColors,
     sizes,
@@ -146,6 +143,7 @@ export const CreateProductProvider = ({ children }) => {
     uploadPercentage,
     getProductsByCategory,
     getProductsBySubcategory,
+    searchProducts,
   };
 
   return (

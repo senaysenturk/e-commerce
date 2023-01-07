@@ -1,7 +1,6 @@
 import React, { useContext, useEffect } from "react";
 
 import "./style.scss";
-import "../../../../utilities.scss";
 import { SlPresent } from "react-icons/sl";
 import { useNavigate } from "react-router-dom";
 import ShopContext from "../../../../contexts/basket/ShopContext";

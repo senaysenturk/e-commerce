@@ -1,13 +1,13 @@
 .all-product-list {
   display: flex;
   padding: 20px;
-
+  justify-content: center;
   gap: 4%;
   .row {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
-    justify-content: flex-start;
+
     gap: 15px;
     width: 100%;
   }

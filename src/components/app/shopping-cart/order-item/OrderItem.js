@@ -109,83 +109,85 @@ export const OrderDetail = ({ cart, setCart, handleChange, setMessage }) => {
             <div className="item-image">
               <img src={product.imgPath} alt="" />
             </div>
-            <div className="item-content-main">
-              <div className="item-main">
-                <div className="item-product">
-                  <a>{product.name}</a>
+            <div className="item-main">
+              <div className="item-product">
+                <span>{product.name}</span>
 
-                  <div className="item-price">
-                    <span className="actual-price">
-                      {product.price.toFixed(2)} $
-                    </span>
-                    {/* <span className="actual-price">{product.cartPrice}</span> */}
-                  </div>
-
-                  <span
-                    className="delete-icon"
-                    onClick={() => handleRemove(product.id)}
-                  >
-                    <RiDeleteBinLine />
+                <div className="item-price">
+                  <span className="actual-price">
+                    {product.price.toFixed(2)} $
                   </span>
-                </div>
-                <div className="item-attributes-holder">
-                  <span className="item-attribute-value">{product.color}</span>
-                  <p className="item-attribute"></p>
-                  <span className="item-attribute-value">{product.size}</span>
+                  {/* <span className="actual-price">{product.cartPrice}</span> */}
                 </div>
 
-                {/* 29 Aralık PerşembeTarihinde Kargoda */}
+                <span
+                  className="delete-icon"
+                  onClick={() => handleRemove(product.id)}
+                >
+                  <RiDeleteBinLine />
+                </span>
+              </div>
+              <div className="item-attributes-holder">
+                <span className="item-attribute-value">
+                  Color: {product.color}
+                </span>
+                {/* <p className="item-attribute"></p> */}
+                <span className="item-attribute-value">
+                  Size: {product.size}
+                </span>
+              </div>
 
-                <div className="item-middle">
-                  <span className="shipping-icon">
-                    <MdOutlineLocalShipping />
-                  </span>
-                  <p>
-                    <span>29 Aralık Perşembe</span>Tarihinde Kargoda
-                  </p>
-                </div>
+              {/* 29 Aralık PerşembeTarihinde Kargoda */}
 
-                {/*  - 1 +     49.99 $ */}
-                <div className="item-bottom">
-                  <div className="item-quantity">
-                    <div className="item-quantity-wrapper">
-                      <a
-                        className="item-quantity-button item-decrease-button"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          context.decreaseProduct(product.id);
-                        }}
-                      >
-                        <span>-</span>
-                      </a>
-                      <span className="item-quantity-input" id="number">
-                        {product.amount}
-                      </span>
-                      <a
-                        className="item-quantity-button item-increase-button"
-                        onClick={() => {
-                          const copyProduct = { ...product, amount: 1 };
-                          context.addProductToCart(copyProduct);
-                        }}
-                      >
-                        <span>+</span>
-                      </a>
-                    </div>
-                  </div>
-                  <div className="item-price">
-                    <span className="actual-price">
-                      {" "}
-                      {(product.price * product.amount).toFixed(2)} $
+              <div className="item-middle">
+                <span className="shipping-icon">
+                  <MdOutlineLocalShipping />
+                </span>
+                <p>
+                  <span>29 Aralık Perşembe</span>Tarihinde Kargoda
+                </p>
+              </div>
+
+              {/*  - 1 +     49.99 $ */}
+              <div className="item-bottom">
+                <div className="item-quantity">
+                  <div className="item-quantity-wrapper">
+                    <a
+                      className="item-quantity-button item-decrease-button"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        context.decreaseProduct(product.id);
+                      }}
+                    >
+                      <span>-</span>
+                    </a>
+                    <span className="item-quantity-input" id="number">
+                      {product.amount}
                     </span>
-                    {/* <span className="actual-price">{product.cartPrice}</span> */}
+                    <a
+                      className="item-quantity-button item-increase-button"
+                      onClick={() => {
+                        const copyProduct = { ...product, amount: 1 };
+                        context.addProductToCart(copyProduct);
+                      }}
+                    >
+                      <span>+</span>
+                    </a>
                   </div>
+                </div>
+                <div className="item-price">
+                  <span className="actual-price">
+                    {" "}
+                    {(product.price * product.amount).toFixed(2)} $
+                  </span>
+                  {/* <span className="actual-price">{product.cartPrice}</span> */}
                 </div>
               </div>
             </div>
           </div>
         ))}
       </div>
-      <OrderSummary isCartPage={true} />
+      {/* <OrderSummary isCartPage={true} /> */}
     </>
   );
 };
