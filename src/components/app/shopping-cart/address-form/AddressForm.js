@@ -83,6 +83,15 @@ export const AddressForm = () => {
             enable={enable}
           />
         )}
+        {!hide && (
+          <Form
+            handleAddress={handleAddress}
+            MaskInput={MaskInput}
+            handleSave={handleSave}
+            city={city}
+            enable={enable}
+          />
+        )}
       </div>
     </>
   );

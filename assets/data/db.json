@@ -273,10 +273,10 @@
   ],
   "signup": [
     {
-      "mail": "senturksenay@test.com",
-      "user": "senaysenturk",
-      "password": "ASDqwe123!",
-      "birth": "2023-01-07",
+      "mail": "ipekgulsen.celik@gmail.com",
+      "user": "ipek",
+      "password": "Bilge123!",
+      "birth": "2022-12-08",
       "gender": "female",
       "role": "user",
       "addresses": [],
@@ -285,38 +285,48 @@
   ],
   "auth": [
     {
-      "user": "senaysenturk",
-      "password": "ASDqwe123!",
+      "user": "ipekgulsen.celik@gmail.com",
+      "password": "Bilge123!",
       "role": "user",
       "id": 1
     }
   ],
   "me": [
     {
-      "user": "senaysenturk",
-      "password": "ASDqwe123!",
+      "user": "ipekgulsen.celik@gmail.com",
+      "password": "Bilge123!",
       "role": "user",
       "id": 1
     }
   ],
   "users": [
     {
-      "mail": "senturksenay@test.com",
-      "user": "senaysenturk",
-      "password": "ASDqwe123!",
-      "birth": "2023-01-07",
+      "mail": "ipekgulsen.celik@gmail.com",
+      "user": "ipek",
+      "password": "Bilge123!",
+      "birth": "2022-12-08",
       "gender": "female",
       "role": "user",
       "addresses": [
         {
-          "firstname": "şenay",
-          "lastname": "şentürk",
-          "phone": "+90 (000) 000 - 0000",
+          "firstname": "Ipek",
+          "lastname": "Celik",
+          "phone": "+90 (535) 817 - 4795",
           "city": "İstanbul",
-          "state": "Başakşehir",
-          "address": "ev",
-          "postcode": "00000",
-          "addressName": "ev"
+          "address": "Osmangazi Mh. Atayolu Cd. Kadife Sk. No: 2/4B EnvarEv Cadde St. B Blok, D: 50 K: 13 Samandıra",
+          "postcode": "34887",
+          "state": "Sancaktepe",
+          "addressName": "Ev"
+        },
+        {
+          "firstname": "Ipek",
+          "lastname": "Celik",
+          "phone": "+90 (535) 817 - 4795",
+          "city": "İstanbul",
+          "address": "Osmangazi Mh. Atayolu Cd. Kadife Sk. No: 2/4B EnvarEv Cadde St. B Blok, D: 50 K: 13 Samandıra",
+          "postcode": "34887",
+          "state": "Sancaktepe",
+          "addressName": "Is"
         }
       ],
       "id": 1
@@ -1807,7 +1817,7 @@
       "subcategory": "Dress",
       "imgPath": "http://res.cloudinary.com/dr4cvohdq/image/upload/v1672579518/txkzmjkj0t9kh29rwelg.webp",
       "id": 1,
-      "amount": 2
+      "amount": 1
     }
   ],
   "order-list": [
