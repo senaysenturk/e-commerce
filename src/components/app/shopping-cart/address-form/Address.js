@@ -8,14 +8,19 @@ import AddressForm from "./AddressForm";
 import Popup from "./Popup";
 
 const Address = ({ handleSetDisplay, setDisplay, display }) => {
-  const { user, getAddresses, address, deleteAddress } = useAuth();
+  const { user, getAddresses, address, editAddress, deleteAddress } = useAuth();
   const [navigate, setNavigate] = useState(false);
 
   const [isOpen, setIsOpen] = useState(false);
   const [currentAddress, setCurrentAddress] = useState([]);
+  const [editedAddress, setEditedAddress] = useState([]);
 
   const togglePopup = () => {
     setIsOpen(!isOpen);
+  };
+
+  const handleEditAddress = async (addressName) => {
+    editAddress(address, editedAddress, currentAddress.addressName);
   };
 
   const handleDeleteAddress = async (addressName) => {
