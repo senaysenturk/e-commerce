@@ -7,6 +7,7 @@ import { Navigate } from "react-router-dom";
 import { HiOutlinePlus } from "react-icons/hi";
 import "./style.scss";
 import Address from "./Address";
+import Form from "./Form";
 
 export const AddressForm = () => {
   const { user, addressInfo, address, getAddresses } = useAuth();
@@ -16,8 +17,6 @@ export const AddressForm = () => {
   const [states, setStates] = useState([]);
   const [enable, setEnable] = useState(true);
 
-  //getAddresses();
-
   const getAllCities = async () => {
     const response = await getCities();
     setCities(response.data);
@@ -26,7 +25,7 @@ export const AddressForm = () => {
 
   const getStates = async (city) => {
     setStates(cities.filter((cityObject) => cityObject.city === city));
-    //console.log("state", states);
+    // console.log("state", states);
   };
 
   const [addAddress, setAddAddress] = useState({});
@@ -71,113 +70,37 @@ export const AddressForm = () => {
       <div className="register-addresses">
         <div className="addresses-head">
           <header>Delivery Address</header>
-          {hide && (
+          {address.length === 0 ? (
+            <Form
+              handleSetDisplay={handleSetDisplay}
+              hide={hide}
+              setHide={setHide}
+            />
+          ) : (
+            hide && (
+              <div className="add-new-address">
+                <HiOutlinePlus />
+                <a onClick={handleSetDisplay}> New Address</a>
+              </div>
+            )
+          )}
+          {/* {hide && (
             <div className="add-new-address">
               <HiOutlinePlus />
               <a onClick={handleSetDisplay}> New Address</a>
             </div>
-          )}
+          )} */}
         </div>
         {hide ? (
           <>
             <Address handleSetDisplay={handleSetDisplay} hide={hide} />
           </>
         ) : (
-          <div className="address-form">
-            <div className="person">
-              <input
-                type="text"
-                id="fname"
-                name="firstname"
-                placeholder="Your name.."
-                onChange={handleAddress}
-              />
-
-              <input
-                type="text"
-                id="lname"
-                name="lastname"
-                placeholder="Your last name.."
-                onChange={handleAddress}
-              />
-            </div>
-            <MaskInput
-              alwaysShowMask
-              mask={"+90 (000) 000 - 0000"}
-              size={21}
-              showMask
-              maskChar="_"
-              name="phone"
-              onChange={handleAddress}
-            />
-
-            {/*  
-          <input
-            type="text"
-            id="phone"
-            name="phone"
-            placeholder="Your phone number.."
-            onChange={handleAddress}
-          /> */}
-            <p>Address Informations</p>
-            <select id="city" name="city" onChange={handleAddress}>
-              <option>-- None --</option>
-              {cities.map((cityObject, index) => (
-                <option key={index}>{cityObject.city}</option>
-              ))}
-            </select>
-            <select
-              id="state"
-              name="state"
-              disabled={enable}
-              onChange={handleAddress}
-            >
-              <option>-- None --</option>
-
-              {city &&
-                cities
-                  .filter((cityName) => cityName.city === city)[0]
-                  .states.map((state, index) => {
-                    return <option key={index}>{state}</option>;
-                  })}
-            </select>
-            <textarea
-              id="address"
-              name="address"
-              placeholder="Write something.."
-              onChange={handleAddress}
-            ></textarea>
-            {/*  
-          <input
-            type="text"
-            id="postcode"
-            name="postcode"
-            placeholder="Your postal code.."
-            onChange={handleAddress}
-          /> */}
-            <MaskInput
-              alwaysShowMask
-              mask={"00000"}
-              size={6}
-              showMask
-              maskChar="_"
-              name="postcode"
-              onChange={handleAddress}
-            />
-
-            <input
-              type="text"
-              id="addressName"
-              name="addressName"
-              placeholder="Your address name.."
-              onChange={handleAddress}
-            />
-            <div className="add-button">
-              <button className="btn btn-primary" onClick={handleSave}>
-                Save
-              </button>
-            </div>
-          </div>
+          <Form
+            handleSetDisplay={handleSetDisplay}
+            hide={hide}
+            setHide={setHide}
+          />
         )}
       </div>
     </>
