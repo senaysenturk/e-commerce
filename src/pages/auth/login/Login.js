@@ -1,7 +1,7 @@
 import React from "react";
 import { useRef, useState, useEffect, useContext } from "react";
 import axios from "../../../api/axios";
-import { Navigate } from "react-router-dom";
+import { Navigate, Link } from "react-router-dom";
 
 import "./style.scss";
 import "../../../utilities.scss";
@@ -250,7 +250,9 @@ export const Login = () => {
                     <p>
                       <strong>Don't have an account?</strong>
                     </p>
-                    <button className="btn btn-outline">Sign Up</button>
+                    <Link to="/auth/signUp">
+                      <button className="btn btn-outline">Sign Up</button>
+                    </Link>
                   </div>
                 </div>
               </div>
