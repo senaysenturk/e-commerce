@@ -6,6 +6,7 @@ export const Form = ({
   handleSave,
   city,
   enable,
+  isEdit,
 }) => {
   const [cities, setCities] = useState([]);
   const getAllCities = async () => {
