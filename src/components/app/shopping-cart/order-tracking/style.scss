@@ -55,13 +55,37 @@
   }
 }
 
-.orderItem{
-  &__imgGroup img{
+.orderItem {
+  &__group {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+    justify-content: space-between;
+    height: 100px;
+    flex-shrink: 0;
+    align-items: center;
+  }
+  &__imgGroup {
+    position: relative;
+    height: 70px;
+    & > *:nth-of-type(2) {
+      left: 25px;
+    }
+    & > div,
+    & > img:nth-of-type(3) {
+      left: 50px;
+    }
+  }
+  &__imgGroup>* {
     width: 70px;
     border-radius: 50%;
     height: 70px;
-    object-fit: contain;
-    background-color: #4a4a4a;
-
+    object-fit: fill;
+    background-color: #cac7c7;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
   }
 }
