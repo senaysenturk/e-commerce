@@ -4,7 +4,7 @@ import { getCities } from "../../../../network/requests/order/order";
 import { useAuth } from "../../../../contexts/auth/AuthContext";
 import MaskInput from "react-maskinput";
 
-const Popup = (props) => {
+const Popup = ({ currentAddress, handleClose }) => {
   const { address, getAddresses, editAddress } = useAuth();
 
   const [addAddress, setAddAddress] = useState({});
@@ -17,7 +17,6 @@ const Popup = (props) => {
   const getAllCities = async () => {
     const response = await getCities();
     setCities(response.data);
-    console.log(cities);
   };
 
   const getStates = async (city) => {
@@ -26,7 +25,7 @@ const Popup = (props) => {
   };
 
   const handleAddress = (e) => {
-    // console.log(addAddress);
+    console.log(addAddress);
     setAddAddress({ ...addAddress, [e.target.name]: e.target.value });
 
     if (e.target.name === "city") {
@@ -36,13 +35,14 @@ const Popup = (props) => {
     }
   };
 
-  const handleSave = async (e) => {
+  const handleSave = async () => {
     var response = await editAddress(
       address,
       addAddress,
-      props.currentAddress.addressName
+      currentAddress.addressName
     );
     getAddresses();
+    handleClose();
     // handleSetDisplay();
   };
 
@@ -54,17 +54,17 @@ const Popup = (props) => {
   return (
     <div className="popup-box">
       <div className="box">
-        <span className="close-icon" onClick={props.handleClose}>
+        <span className="close-icon" onClick={handleClose}>
           x
         </span>
-        {console.log(props.currentAddress)}
+
         <div className="address-form">
           <div className="person">
             <input
               type="text"
               id="fname"
               name="firstname"
-              defaultValue={props.currentAddress.firstname}
+              defaultValue={currentAddress.firstname}
               onChange={handleAddress}
             />
 
@@ -73,7 +73,7 @@ const Popup = (props) => {
               id="lname"
               name="lastname"
               placeholder="Your last name.."
-              defaultValue={props.currentAddress.lastname}
+              defaultValue={currentAddress.lastname}
               onChange={handleAddress}
             />
           </div>
@@ -85,55 +85,69 @@ const Popup = (props) => {
             showMask
             maskChar="_"
             name="phone"
-            defaultValue={props.currentAddress.phone}
+            defaultValue={currentAddress.phone}
             onChange={handleAddress}
           />
           <p>Address Informations</p>
           <select id="city" name="city" onChange={handleAddress}>
             {/* <option>-- None --</option> */}
-            {cities.map(
-              (cityObject, index) =>
-                cityObject.city === props.currentAddress.city && (
-                  <option key={index} selected>
-                    {cityObject.city}
-                  </option>
-                )
+            {cities.map((cityObject, index) =>
+              cityObject.city === currentAddress.city ? (
+                <option value={cityObject.city} key={index} selected>
+                  {cityObject.city}
+                </option>
+              ) : (
+                <option value={cityObject.city} key={index}>
+                  {cityObject.city}
+                </option>
+              )
             )}
-            {cities.map((cityObject, index) => (
+            {/* {cities.map((cityObject, index) => (
               <option key={index}>{cityObject.city}</option>
-            ))}
+            ))} */}
           </select>
           <select
             id="state"
             name="state"
-            disabled={enable}
+            // disabled={enable}
             onChange={handleAddress}
           >
-            {cities.map((cityObject, index) => {
-              cityObject.city === props.currentAddress.city &&
-                cityObject.states.map(
-                  (state, index) =>
-                    state === props.currentAddress.state && (
-                      <option key={index} selected>
+            <option value="">-- None--</option>
+            {!city
+              ? cities.filter(
+                  (cityName, index) => cityName.city == currentAddress.city
+                )[0] &&
+                cities
+                  .filter((city) => city.city === currentAddress.city)[0]
+                  .states.map((state, index) =>
+                    state === currentAddress.state ? (
+                      <option value={state} key={index} selected>
+                        {state}
+                      </option>
+                    ) : (
+                      <option value={state} key={index}>
                         {state}
                       </option>
                     )
-                );
-            })}
-
-            {/* <option>{props.currentAddress.state}</option> */}
-
-            {city &&
-              cities
-                .filter((cityName) => cityName.city === city)[0]
-                .states.map((state, index) => {
-                  return <option key={index}>{state}</option>;
-                })}
+                  )
+              : cities
+                  .filter((cityName) => cityName.city === city)[0]
+                  .states.map((state, index) =>
+                    state === currentAddress.state ? (
+                      <option value={state} key={index} selected>
+                        {state}
+                      </option>
+                    ) : (
+                      <option value={state} key={index}>
+                        {state}
+                      </option>
+                    )
+                  )}
           </select>
           <textarea
             id="address"
             name="address"
-            defaultValue={props.currentAddress.address}
+            defaultValue={currentAddress.address}
             onChange={handleAddress}
           ></textarea>
 
@@ -144,7 +158,7 @@ const Popup = (props) => {
             showMask
             maskChar="_"
             name="postcode"
-            defaultValue={props.currentAddress.postcode}
+            defaultValue={currentAddress.postcode}
             onChange={handleAddress}
           />
 
@@ -152,8 +166,9 @@ const Popup = (props) => {
             type="text"
             id="addressName"
             name="addressName"
-            defaultValue={props.currentAddress.addressName}
+            defaultValue={currentAddress.addressName}
             onChange={handleAddress}
+            disabled
           />
           <div className="add-button">
             <button className="btn btn-primary" onClick={handleSave}>

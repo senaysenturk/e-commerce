@@ -1,4 +1,37 @@
 .filter-navigation {
-  border: 1px solid var(--gray-color);
-  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.filter-options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.filter-options label {
+  margin-right: 1rem;
+}
+
+.view-options {
+  display: flex;
+  align-items: center;
+}
+
+.view-option {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  margin-left: 1rem;
+  font-size: 1.5rem;
+  color: #333;
+  transition: color 0.2s;
+}
+
+.view-option:hover,
+.view-option.active {
+  color: #000;
 }

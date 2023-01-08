@@ -69,17 +69,18 @@ export const AddressForm = () => {
           <header>Delivery Address</header>
         </div>
         {address.length ? (
-          <Address handleSetDisplay={handleSetDisplay} hide={hide} />
+          !hide ? (
+            <Form
+              handleAddress={handleAddress}
+              MaskInput={MaskInput}
+              handleSave={handleSave}
+              city={city}
+              enable={enable}
+            />
+          ) : (
+            <Address handleSetDisplay={handleSetDisplay} hide={hide} />
+          )
         ) : (
-          <Form
-            handleAddress={handleAddress}
-            MaskInput={MaskInput}
-            handleSave={handleSave}
-            city={city}
-            enable={enable}
-          />
-        )}
-        {!hide && (
           <Form
             handleAddress={handleAddress}
             MaskInput={MaskInput}

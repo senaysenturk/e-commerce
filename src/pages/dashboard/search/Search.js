@@ -17,19 +17,17 @@ const Search = () => {
   const subcatParam = searchParams.get("subcategory");
 
   const handleGetProducts = async () => {
-    searchParams.get("subcategory")
-      ? await getProductsBySubcategory(
-          searchParams.get("category"),
-          searchParams.get("subcategory")
-        )
-      : await getProductsByCategory(searchParams.get("category"));
+    subcategory
+      ? await getProductsBySubcategory(catParam, subcatParam)
+      : await getProductsByCategory(catParam);
   };
 
   console.log(category + " : " + subcatParam);
   useEffect(() => {
     setCategory(catParam);
+    setSubCategory(subcatParam);
     handleGetProducts();
-  }, [category]);
+  }, [catParam, subcatParam]);
 
   return (
     <>

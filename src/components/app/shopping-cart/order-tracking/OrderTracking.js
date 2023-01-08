@@ -7,20 +7,9 @@ import "./style.scss";
 const OrderTracking = () => {
   const context = useContext(ShopContext);
 
-  const getDate = (format) => {
-    const newDate = new Date();
-    const getTimeDate = newDate.toLocaleString(undefined, format);
-
-    return getTimeDate;
-  };
-
-  const orderTimeAndDate = getDate({
-    year: "numeric",
-    month: "2-digit",
-    day: "2-digit",
-    hour: "2-digit",
-    minute: "2-digit",
-  });
+  // const getDate = () => {
+  //   return new Date().toLocaleString();
+  // };
 
   /**
    * @type {[CartProduct[]]}
@@ -36,6 +25,7 @@ const OrderTracking = () => {
         mergedOrderList = [...mergedOrderList, ...items.orderList];
       });
       setOrderList(mergedOrderList);
+      // getDate();
     })();
   }, []);
 
@@ -52,12 +42,12 @@ const OrderTracking = () => {
                 <div className="order-info">
                   <div className="order-no">
                     <p>
-                      Order No:{" "}
+                      Order No:
                       <strong className="order-no">976 463 155</strong>
                     </p>
                   </div>
                   <div className="order-time">
-                    <span>4 June Saturday, 18:06</span>
+                    <span>{context.getDate()}</span>
                   </div>
                 </div>
 

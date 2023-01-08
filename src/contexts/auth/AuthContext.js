@@ -56,16 +56,35 @@ const AuthProvider = ({ children }) => {
   let updatedUser;
 
   const editAddress = async (addressesObj, addressObj, addressName) => {
+    console.log(addressesObj);
+    console.log(Object.keys(addressObj));
+    console.log(addressName);
     const index = addressesObj.findIndex(
       (addressObjectItem) => addressObjectItem.addressName === addressName
     );
+    console.log("index", index);
 
-    const newAddressData = [
-      ...addressObj.slice(0, index),
-      addressObj,
-      ...addressObj.slice(index + 1),
-    ];
-    console.log(newAddressData);
+    Object.keys(addressObj).every((key, i) =>
+      console.log(
+        key,
+        addressesObj[
+          addressesObj.findIndex(
+            (addressObjectItem) => addressObjectItem.addressName === addressName
+          )
+        ][key]
+      )
+    );
+
+    // Object.keys(addressObj).every((key) => console.log(key));
+    Object.keys(addressObj).every(
+      (key, i) =>
+        (addressesObj[
+          addressesObj.findIndex(
+            (addressObjectItem) => addressObjectItem.addressName === addressName
+          )
+        ][key] = addressObj[key])
+    );
+
     const response = await getUsers();
     updatedUser = response.data.filter(
       (userObject) =>
@@ -74,7 +93,7 @@ const AuthProvider = ({ children }) => {
     updateUser(updatedUser[0].id, {
       ...updatedUser[0],
       // addresses: [{ address: newAddress }],
-      addresses: newAddressData,
+      addresses: addressesObj,
     });
     getAddresses();
   };
