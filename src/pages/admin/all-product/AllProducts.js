@@ -1,13 +1,12 @@
 import React, { useState, useContext, useEffect } from "react";
+import { Link } from "react-router-dom";
 import SmallCard from "src/components/app/product/small-card/SmallCard";
 import FilterNavigation from "src/components/shared/filter-navigation/FilterNavigation";
 import Table from "../../../components/shared/table/Table";
-import ShopContext from "../../../contexts/basket/ShopContext";
 import { useProduct } from "../../../contexts/product/CreateProductContext";
 import "./style.scss";
 
 const AllProducts = () => {
-  const context = useContext(ShopContext);
   const { products, getAllProducts, removeProduct } = useProduct();
 
   const handleDeleteProduct = async (productId) => {
@@ -20,7 +19,12 @@ const AllProducts = () => {
 
   return (
     <>
-      <div className="p-4">
+      <div>
+        <Link to="/admin/add-product">
+          <button>Create</button>
+        </Link>
+      </div>
+      <div className="">
         <Table
           searchable={true}
           head={[
