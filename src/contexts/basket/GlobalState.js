@@ -80,9 +80,13 @@ const GlobalState = (props) => {
           const orderTimeAndDateFormat = newDate.toUTCString();
           return orderTimeAndDateFormat;
         },
-      
-
-
+        
+        cartId: () => {
+          let cartIdStartNumber = 1000000;
+          return () => {
+            return cartIdStartNumber++;
+          };
+        },
       }}
     >
       {props.children}
