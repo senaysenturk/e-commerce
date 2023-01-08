@@ -1823,24 +1823,44 @@
   ],
   "order-list": [
     {
+      "date": 1673206808274,
+      "orderId": 1673206808274,
       "orderList": [
         {
-          "createdAt": "1/1/2023, 6:27:54 PM",
-          "name": "Regular fit Oxford cotton shirt",
-          "price": 29.99,
+          "name": "Blazer Jacket",
+          "price": 49.99,
+          "size": "",
+          "color": "",
+          "category": "Woman",
+          "subcategory": "Jacket",
+          "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/5900/472/430/5900472430_1_1_2.jpg?t=1669736376209",
+          "id": 2,
+          "amount": 1
+        },
+        {
+          "createdAt": "1/1/2023, 6:30:20 PM",
+          "name": "Sherpa pocket sweatshirt",
+          "price": 45.99,
           "color": "",
           "size": "",
           "category": "Man",
-          "subcategory": "Shirt",
-          "imgPath": "https://res.cloudinary.com/dr4cvohdq/image/upload/v1672586896/hbxu98mpnk8y0silr4tu.jpg",
-          "id": 5,
+          "subcategory": "Sweatshirt",
+          "imgPath": "https://res.cloudinary.com/dr4cvohdq/image/upload/v1672587037/zydsnco7z34qeg8uqqfh.webp",
+          "id": 7,
           "amount": 1
-        }
-      ],
-      "id": 1
-    },
-    {
-      "orderList": [
+        },
+        {
+          "createdAt": "1/1/2023, 6:25:08 PM",
+          "name": "Lace pleated dress",
+          "price": 59.99,
+          "size": "",
+          "color": "",
+          "category": "Woman",
+          "subcategory": "Dress",
+          "imgPath": "http://res.cloudinary.com/dr4cvohdq/image/upload/v1672586727/utkeesstkjwkdi4qt6zu.webp",
+          "id": 4,
+          "amount": 1
+        },
         {
           "createdAt": "1/1/2023, 6:31:08 PM",
           "name": "Lightweight cotton sweatshirt",
@@ -1854,24 +1874,8 @@
           "amount": 1
         }
       ],
-      "id": 2
-    },
-    {
-      "orderList": [
-        {
-          "createdAt": "1/1/2023, 6:27:54 PM",
-          "name": "Regular fit Oxford cotton shirt",
-          "price": 29.99,
-          "color": "blue",
-          "size": "L",
-          "category": "Man",
-          "subcategory": "Shirt",
-          "imgPath": "https://res.cloudinary.com/dr4cvohdq/image/upload/v1672586896/hbxu98mpnk8y0silr4tu.jpg",
-          "id": 5,
-          "amount": 1
-        }
-      ],
-      "id": 3
+      "totalOrderAmount": "183.96",
+      "id": 1
     }
   ]
 }
