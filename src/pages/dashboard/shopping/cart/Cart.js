@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import list from "../../../../data";
 import "./style.scss";
 import { useNavigate } from "react-router-dom";
-import OrderItem from "../../../../components/app/shopping-cart/order-item/OrderItem";
+import OrderDetail from "../../../../components/app/shopping-cart/order-item/OrderDetail";
 import ShopContext from "../../../../contexts/basket/ShopContext";
 import OrderSummary from "src/components/app/shopping-cart/order-summary/OrderSummary";
 
@@ -50,7 +50,7 @@ export const Cart = () => {
           </div> */}
           <div className="checkout-container">
             <div className="checkout-container-middle">
-              <OrderItem
+              <OrderDetail
                 cart={cart}
                 setCart={setCart}
                 handleChange={handleChange}

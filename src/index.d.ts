@@ -8,8 +8,10 @@ type State = {
     totalPrice: ()=> string
     totalQuantity: () => number
     setAuth: (payload: any)=> void
-    getDate: Date
+    getDate:  () => Date
+    cartId :  () => number
 }
+//db den gelen hali
 
 type Product = {
     name: string;
@@ -32,6 +34,14 @@ type CartProduct = {
     amount: number;
 }
 
+type OrderProduct = {
+    userId: AuthUser["id"];
+    orderList: CartProduct[];
+    orderId: number;
+    date: number;
+    totalOrderAmount: number;
+}
+
 type AuthUser ={
     accessToken?: string;
     password: string;
@@ -41,3 +51,4 @@ type AuthUser ={
     id: number;
 
 }
+
