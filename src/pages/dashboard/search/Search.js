@@ -4,7 +4,7 @@ import SmallCard from "src/components/app/product/small-card/SmallCard";
 import FilterNavigation from "src/components/shared/filter-navigation/FilterNavigation";
 import ShopContext from "src/contexts/basket/ShopContext";
 import { useProduct } from "src/contexts/product/CreateProductContext";
-//import "./style.scss";
+import "./style.scss";
 
 const Search = () => {
   const { getProductsByCategory, getProductsBySubcategory, searchProducts } =
@@ -31,13 +31,13 @@ const Search = () => {
 
   return (
     <>
-      <div className="all-product-list">
+      <div className="search-and-filter-list">
         <FilterNavigation />
         <div className="products">
           <div className="row-header">
             <h2>{`${catParam} -> ${subcatParam && subcatParam} `}</h2>
           </div>
-          <div className="grid-4-columns">
+          <div className="row">
             {searchProducts &&
               searchProducts.map((product, index) => (
                 /* console.log(product.result); */

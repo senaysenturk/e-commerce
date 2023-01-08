@@ -1,74 +1,89 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./style.scss";
+import { useProduct } from "../../../contexts/product/CreateProductContext";
 
 const FilterNavigation = () => {
-  const location = useLocation();
-  const history = useNavigate();
-  const [filter, setFilter] = useState("all");
+  const {
+    colors,
+    getAllColors,
+    sizes,
+    getAllSizes,
+    categories,
+    getAllCategories,
+  } = useProduct();
 
-  const handleFilterChange = (e) => {
-    setFilter(e.target.value);
+  const [color, setColor] = useState([]);
+  const [size, setSize] = useState([]);
+  const [category, setCategory] = useState("");
+
+  const handleSearch = (e) => {
+    if (e.target.name === "category") setCategory(e.target.value);
   };
 
-  const handleViewChange = (view) => {
-    history.push({ ...location, view });
-  };
+  useEffect(() => {
+    getAllColors();
+    getAllSizes();
+    getAllCategories();
+  }, []);
 
   return (
-    <nav className="vertical-filter-navigation">
-      <div className="filter-options">
-        <label htmlFor="all">
-          <input
-            type="radio"
-            id="all"
-            name="filter"
-            value="all"
-            checked={filter === "all"}
-            onChange={handleFilterChange}
-          />
-          All
-        </label>
-        <label htmlFor="price-low-to-high">
-          <input
-            type="radio"
-            id="price-low-to-high"
-            name="filter"
-            value="price-low-to-high"
-            checked={filter === "price-low-to-high"}
-            onChange={handleFilterChange}
-          />
-          Price: Low to High
-        </label>
-        <label htmlFor="price-high-to-low">
-          <input
-            type="radio"
-            id="price-high-to-low"
-            name="filter"
-            value="price-high-to-low"
-            checked={filter === "price-high-to-low"}
-            onChange={handleFilterChange}
-          />
-          Price: High to Low
-        </label>
+    <div className="sidebar">
+      <label htmlFor="category">Category</label>
+      <select id="category" name="category" onChange={handleSearch}>
+        <option>-- None --</option>
+
+        {categories.map((category, index) => (
+          <option key={index}>{category.category}</option>
+        ))}
+      </select>
+      <label htmlFor="category">Subcategory</label>
+      <select id="subcategory" name="subcategory" onChange={handleSearch}>
+        <option>-- None --</option>
+        {category &&
+          categories
+            .filter(
+              (productCategory) => productCategory.category == category
+            )[0]
+            .subcategory.map((subcategory, index) => {
+              return <option key={index}>{subcategory}</option>;
+            })}
+      </select>
+      <div className="sizes">
+        <p>Sizes:</p>
+        {sizes.map((size, index) => (
+          <div className="size">
+            <input
+              type="checkbox"
+              name={size}
+              id={size}
+              value={size}
+              onChange={handleSearch}
+            />
+            <label for={size}>{size}</label>
+          </div>
+        ))}
       </div>
-      <div className="view-options">
-        <button
-          type="button"
-          className={`view-option ${location.view === "grid" ? "active" : ""}`}
-          onClick={() => handleViewChange("grid")}
-        >
-          <i className="fa-solid fa-th" />
-        </button>
-        <button
-          type="button"
-          className={`view-option ${location.view === "list" ? "active" : ""}`}
-          onClick={() => handleViewChange("list")}
-        >
-          <i className="fa-solid fa-th-list" />
-        </button>
+      <div className="colors">
+        <p>Colors:</p>
+        <div className="color">
+          {colors.map((color, index) => (
+            <>
+              <input
+                type="checkbox"
+                name={color}
+                id={color}
+                value={color}
+                onChange={handleSearch}
+              />
+              <label for={color}>
+                <span className={color} name={color} id={color}></span>
+              </label>
+            </>
+          ))}
+        </div>
       </div>
-    </nav>
+    </div>
   );
 };
 
