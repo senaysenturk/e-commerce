@@ -44,8 +44,7 @@
       "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/6202/267/001/6202267001_1_1_2.jpg?t=1669732582176",
       "id": 3
     },
-
- {
+    {
       "createdAt": "1/1/2023, 6:25:08 PM",
       "name": "Lace pleated dress",
       "price": 59.99,
@@ -1812,8 +1811,8 @@
     {
       "name": "Ribbed turtleneck dress",
       "price": 29.99,
-      "size": "S",
-      "color": "black",
+      "size": "",
+      "color": "",
       "category": "Woman",
       "subcategory": "Dress",
       "imgPath": "http://res.cloudinary.com/dr4cvohdq/image/upload/v1672579518/txkzmjkj0t9kh29rwelg.webp",
@@ -1876,6 +1875,67 @@
       ],
       "totalOrderAmount": "183.96",
       "id": 1
+    },
+    {
+      "date": 1673210607999,
+      "orderId": 1673210607999,
+      "orderList": [
+        {
+          "name": "Ribbed turtleneck dress",
+          "price": 29.99,
+          "size": "",
+          "color": "",
+          "category": "Woman",
+          "subcategory": "Dress",
+          "imgPath": "http://res.cloudinary.com/dr4cvohdq/image/upload/v1672579518/txkzmjkj0t9kh29rwelg.webp",
+          "id": 1,
+          "amount": 1
+        },
+        {
+          "name": "Blazer Jacket",
+          "price": 49.99,
+          "size": "",
+          "color": "",
+          "category": "Woman",
+          "subcategory": "Jacket",
+          "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/5900/472/430/5900472430_1_1_2.jpg?t=1669736376209",
+          "id": 2,
+          "amount": 1
+        }
+      ],
+      "totalOrderAmount": "79.98",
+      "id": 2
+    },
+    {
+      "date": 1673210656088,
+      "orderId": 1673210656088,
+      "orderList": [
+        {
+          "name": "Tropical print shirt",
+          "size": "XS",
+          "color": "black",
+          "category": "Child",
+          "subcategory": "Shirt",
+          "imgPath": "http://res.cloudinary.com/dr4cvohdq/image/upload/v1672595350/pmqzrdpmnlfylvp2h7co.jpg",
+          "price": 112.99,
+          "id": 11,
+          "amount": 2
+        },
+        {
+          "createdAt": "1/1/2023, 6:33:15 PM",
+          "name": "Quilted down anorak",
+          "price": 99.99,
+          "size": "",
+          "color": "black",
+          "category": "Child",
+          "subcategory": "Coats",
+          "imgPath": "https://res.cloudinary.com/dr4cvohdq/image/upload/v1672587220/sck10tvxwevfcefmpngw.webp",
+          "id": 9,
+          "amount": 2
+        }
+      ],
+      "totalOrderAmount": "425.96",
+      "id": 3
     }
   ]
 }
