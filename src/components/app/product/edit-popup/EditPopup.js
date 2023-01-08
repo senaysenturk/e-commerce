@@ -99,7 +99,7 @@ export const EditPopup = ({ currentProduct, handleClose }) => {
                         name={size}
                         id={size}
                         value={size}
-                        checked
+                        defaultChecked={size}
                         onChange={handleProduct}
                       />
                       <label for={size}>{size}</label>
@@ -130,7 +130,7 @@ export const EditPopup = ({ currentProduct, handleClose }) => {
                           name={color}
                           id={color}
                           value={color}
-                          checked
+                          defaultChecked={color}
                           onChange={handleProduct}
                         />
                         <label for={color}>
@@ -177,6 +177,7 @@ export const EditPopup = ({ currentProduct, handleClose }) => {
                   )
                 )}
               </select>
+
               <label htmlFor="category">Sub-Category</label>
               <select
                 id="subcategory"
