@@ -3,11 +3,19 @@ import { Link } from "react-router-dom";
 import SmallCard from "src/components/app/product/small-card/SmallCard";
 import FilterNavigation from "src/components/shared/filter-navigation/FilterNavigation";
 import Table from "../../../components/shared/table/Table";
+import EditPopup from "../../../components/app/product/edit-popup/EditPopup";
 import { useProduct } from "../../../contexts/product/CreateProductContext";
 import "./style.scss";
 
 const AllProducts = () => {
   const { products, getAllProducts, removeProduct } = useProduct();
+
+  const [isOpen, setIsOpen] = useState(false);
+  const [currentProduct, setCurrentProduct] = useState([]);
+
+  const togglePopup = () => {
+    setIsOpen(!isOpen);
+  };
 
   const handleDeleteProduct = async (productId) => {
     removeProduct(productId);
@@ -49,15 +57,18 @@ const AllProducts = () => {
               product.category,
               product.subcategory,
               [
-                <button>Edit</button>,
+                <button
+                  onClick={() => {
+                    setCurrentProduct(product);
+                    togglePopup();
+                  }}
+                >
+                  Edit
+                </button>,
                 <button
                   onClick={() => {
                     console.log(product.id);
                     handleDeleteProduct(product.id);
-                    // deleteProduct(product.id);
-                    /* const tmpProducts = [...context.products];
-                  tmpProducts.splice(key, 1);
-                  context.setProducts(tmpProducts); */
                   }}
                 >
                   Delete
@@ -80,6 +91,7 @@ const AllProducts = () => {
           </div>
         </div>
       </div> */}
+      {isOpen && <EditPopup handleClose={togglePopup} currentProduct={currentProduct} />}
     </>
   );
 };

@@ -1,9 +1,18 @@
 import { baseService } from "../../services/baseService";
 
 export const postProduct = (newProduct) => {
-  //console.log("Env: " + process.env.REACT_APP_API_URL);
+  // console.log("Env: " + process.env.REACT_APP_API_URL);
   console.log("newProduct", newProduct);
   return baseService.post("http://localhost:5500/", "products", newProduct);
+};
+
+export const patchProduct = (id, newProduct) => {
+  return baseService.patch(
+    "http://localhost:5500/",
+    "products/",
+    id,
+    newProduct
+  );
 };
 
 export const deleteProduct = async (productId) => {
@@ -13,6 +22,7 @@ export const deleteProduct = async (productId) => {
 /**
  * @returns {Product[]}
  */
+
 export const getProduct = async () => {
   const result = await baseService.get("http://localhost:5500/", "products");
 

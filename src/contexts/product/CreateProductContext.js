@@ -7,6 +7,7 @@ import {
 import {
   postProduct,
   getProduct,
+  patchProduct,
   deleteProduct,
   postImage,
   getProductByCategory,
@@ -48,7 +49,12 @@ export const CreateProductProvider = ({ children }) => {
     console.log("Reponse: " + response.status);
   };
 
-  const updateProduct = async () => {};
+  const updateProduct = async (productId, newProduct) => {
+    console.log(productId);
+    console.log(newProduct);
+    await patchProduct(productId, newProduct);
+    getAllProducts();
+  };
 
   const removeProduct = async (productId) => {
     await deleteProduct(productId);
