@@ -35,13 +35,14 @@ const Popup = ({ currentAddress, handleClose }) => {
     }
   };
 
-  const handleSave = async (e) => {
+  const handleSave = async () => {
     var response = await editAddress(
       address,
       addAddress,
       currentAddress.addressName
     );
     getAddresses();
+    handleClose();
     // handleSetDisplay();
   };
 
