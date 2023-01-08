@@ -8,6 +8,7 @@ type State = {
     totalPrice: ()=> string
     totalQuantity: () => number
     setAuth: (payload: any)=> void
+    getDate: Date
 }
 
 type Product = {
