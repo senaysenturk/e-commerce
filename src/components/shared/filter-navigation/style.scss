@@ -1,37 +1,71 @@
-.filter-navigation {
+.sidebar {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 1rem;
-}
+  width: max-content;
+  height: 70vh;
+  min-width: 250px;
+  overflow-y: scroll;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  select {
+    padding: 8px 20px;
+    border-radius: 2px;
+    width: 200px;
+    height: 35px;
+  }
+  .colors {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: 150px;
+    .color {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+  .sizes {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: 150px;
+    .size {
+      display: flex;
+      /* justify-content: center; */
+      /* align-items: center; */
+      column-gap: 5px;
+      padding: 0 6px;
 
-.filter-options {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+      input[type="checkbox"]:after {
+        width: 20px;
+        height: 20px;
+        border-radius: 15px;
+        top: -6px;
+        left: -8px;
+        position: relative;
+        background-color: #eef1ee;
+        content: "";
+        display: inline-block;
+        visibility: visible;
+        border: 2px solid white;
+      }
 
-.filter-options label {
-  margin-right: 1rem;
-}
-
-.view-options {
-  display: flex;
-  align-items: center;
-}
-
-.view-option {
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  margin-left: 1rem;
-  font-size: 1.5rem;
-  color: #333;
-  transition: color 0.2s;
-}
-
-.view-option:hover,
-.view-option.active {
-  color: #000;
+      input[type="checkbox"]:checked:after {
+        width: 20px;
+        height: 20px;
+        border-radius: 15px;
+        top: -6px;
+        left: -6px;
+        position: relative;
+        background-color: #bcc9c5;
+        content: "";
+        color: white;
+        display: inline-block;
+        visibility: visible;
+        border: 2px solid white;
+      }
+    }
+  }
 }

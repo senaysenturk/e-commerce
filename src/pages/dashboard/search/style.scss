@@ -1,0 +1,14 @@
+.search-and-filter-list {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+  .row {
+    align-items: flex-start;
+    justify-content: flex-start;
+    .small-card .product-img img {
+      width: 220px;
+      height: 250px;
+    }
+  }
+}
