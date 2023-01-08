@@ -7,6 +7,7 @@ import {
 import {
   postProduct,
   getProduct,
+  deleteProduct,
   postImage,
   getProductByCategory,
   getProductBySubcategory,
@@ -45,6 +46,13 @@ export const CreateProductProvider = ({ children }) => {
       createdAt: new Date().toLocaleString(),
     });
     console.log("Reponse: " + response.status);
+  };
+
+  const updateProduct = async () => {};
+
+  const removeProduct = async (productId) => {
+    await deleteProduct(productId);
+    getAllProducts();
   };
 
   //Upload Image
@@ -94,26 +102,6 @@ export const CreateProductProvider = ({ children }) => {
     console.log(response.data);
   };
 
-  // const getManProducts = () => {
-  //   getAllProducts();
-  //   setMen(
-  //     products.filter((productObj) => productObj.category.includes("Man"))
-  //   );
-  // };
-
-  // const getWomanProducts = () => {
-  //   getAllProducts();
-  //   setWomen(
-  //     products.filter((productObj) => productObj.category.includes("Woman"))
-  //   );
-  // };
-
-  // const getChildProducts = () => {
-  //   setKids(
-  //     products.filter((productObj) => productObj.category.includes("Child"))
-  //   );
-  // };
-
   const values = {
     product,
     setProduct,
@@ -121,17 +109,13 @@ export const CreateProductProvider = ({ children }) => {
     setProducts,
     getAllProducts,
     addProduct,
+    updateProduct,
+    removeProduct,
     image,
     setImage,
     uploadImage,
     moreResult,
     setMoreResult,
-    // men,
-    // getManProducts,
-    // women,
-    // getWomanProducts,
-    // kids,
-    // getChildProducts,
     colors,
     getAllColors,
     sizes,

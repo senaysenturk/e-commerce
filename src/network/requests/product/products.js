@@ -5,6 +5,11 @@ export const postProduct = (newProduct) => {
   console.log("newProduct", newProduct);
   return baseService.post("http://localhost:5500/", "products", newProduct);
 };
+
+export const deleteProduct = async (productId) => {
+  return baseService.delete("http://localhost:5500/", "products/", productId);
+};
+
 /**
  * @returns {Product[]}
  */

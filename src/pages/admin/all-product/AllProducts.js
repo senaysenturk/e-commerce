@@ -1,12 +1,23 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import SmallCard from "src/components/app/product/small-card/SmallCard";
 import FilterNavigation from "src/components/shared/filter-navigation/FilterNavigation";
 import Table from "../../../components/shared/table/Table";
 import ShopContext from "../../../contexts/basket/ShopContext";
+import { useProduct } from "../../../contexts/product/CreateProductContext";
 import "./style.scss";
 
 const AllProducts = () => {
   const context = useContext(ShopContext);
+  const { products, getAllProducts, removeProduct } = useProduct();
+
+  const handleDeleteProduct = async (productId) => {
+    removeProduct(productId);
+  };
+
+  useEffect(() => {
+    getAllProducts();
+  }, []);
+
   return (
     <>
       <div className="p-4">
@@ -23,27 +34,33 @@ const AllProducts = () => {
             { name: "Options", width: 200 },
           ]}
           // head={Object.keys(context.products[0])}
-          body={context.products && context.products.map((product, key) => [
-            <img src={product.imgPath} />,
-            product.name,
-            product.price + " $",
-            product.size,
-            product.color,
-            product.category,
-            product.subcategory,
-            [
-              <button>Edit</button>,
-              <button
-                onClick={() => {
-                  /* const tmpProducts = [...context.products];
+          body={
+            products &&
+            products.map((product, key) => [
+              <img src={product.imgPath} />,
+              product.name,
+              product.price + " $",
+              product.size,
+              product.color,
+              product.category,
+              product.subcategory,
+              [
+                <button>Edit</button>,
+                <button
+                  onClick={() => {
+                    console.log(product.id);
+                    handleDeleteProduct(product.id);
+                    // deleteProduct(product.id);
+                    /* const tmpProducts = [...context.products];
                   tmpProducts.splice(key, 1);
                   context.setProducts(tmpProducts); */
-                }}
-              >
-                Delete
-              </button>,
-            ],
-          ])}
+                  }}
+                >
+                  Delete
+                </button>,
+              ],
+            ])
+          }
         />
       </div>
       {/* <div className="all-product-list">
