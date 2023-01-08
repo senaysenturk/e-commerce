@@ -64,38 +64,38 @@ export const OrderDetail = ({ cart, setCart, handleChange, setMessage }) => {
     }
   };
 
-  const handleClick = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await postOrder({
-        name,
-        price,
-        size,
-        color,
-        category,
-        imgPath,
-        id,
-        amount,
-      });
+  // const handleClick = async (e) => {
+  //   e.preventDefault();
+  //   try {
+  //     const response = await postOrder({
+  //       name,
+  //       price,
+  //       size,
+  //       color,
+  //       category,
+  //       imgPath,
+  //       id,
+  //       amount,
+  //     });
 
-      setName("");
-      setPrice("");
-      setSize("");
-      setColor("");
-      setCategory("");
-      setImgPath("");
-      setId("");
-      setAmount("");
-    } catch (error) {
-      console.error(error);
-    }
-  };
+  //     setName("");
+  //     setPrice("");
+  //     setSize("");
+  //     setColor("");
+  //     setCategory("");
+  //     setImgPath("");
+  //     setId("");
+  //     setAmount("");
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
 
   useEffect(() => {
     handlePrice();
     handleCount();
     handleMessage();
-    handleClick();
+    // handleClick();
   });
 
   return (

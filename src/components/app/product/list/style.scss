@@ -14,6 +14,18 @@
     padding: 0 0 10px;
     gap: 15px;
     width: 100%;
+    @media only screen and (min-width: 768px) {
+      .products .product {
+        width: 25%; /* 4 ürün göstermek için genişlik %25 olarak ayarlanır */
+      }
+    }
+
+    @media only screen and (max-width: 767px) {
+      .products .product {
+        width: 33.3333%; /* 3 ürün göstermek için genişlik %33.3333 olarak ayarlanır */
+      }
+    }
+
     .row-header {
       width: 100%;
       display: flex;
@@ -46,5 +58,31 @@
         }
       }
     }
+  }
+}
+
+@media only screen and (max-width: 1474px) {
+  // .row .small-card {
+  //   width: 33.3333%; /* 3 ürün göstermek için genişlik %33.3333 olarak ayarlanır */
+  // }
+  .row .small-card:nth-last-child(-n + 2) {
+    display: none; /* Son 2 kutu gizlenir */
+  }
+}
+@media only screen and (max-width: 1209px) {
+  // .row .small-card {
+  //   width: 33.3333%; /* 3 ürün göstermek için genişlik %33.3333 olarak ayarlanır */
+  // }
+  .row .small-card:nth-last-child(-n + 4) {
+    display: none; /* Son 2 kutu gizlenir */
+  }
+}
+
+@media only screen and (max-width: 944px) {
+  // .row .small-card {
+  //   width: 33.3333%; /* 3 ürün göstermek için genişlik %33.3333 olarak ayarlanır */
+  // }
+  .row .small-card:nth-last-child(-n + 6) {
+    display: none; /* Son 2 kutu gizlenir */
   }
 }

@@ -18,8 +18,7 @@ export const OrderSummary = ({ isCartPage }) => {
   const onClickPay = async () => {
     await baseService.sendOrderItems(context.auth.id, context.cart);
 
-    const copyProduct = { ...context.cart, amount: 1 };
-    context.clearCart(copyProduct);
+    context.clearCart();
     navigate("/order-tracking");
   };
 
