@@ -30,10 +30,10 @@ const AddProduct = () => {
   const handleSetProduct = (e) => {
     console.log(product);
     setProduct({ ...product, [e.target.name]: e.target.value });
-    if (e.target.name === "category") setCategory(e.target.value);
-    if (e.target.name === "size")
+    e.target.name === "category" && setCategory(e.target.value);
+    e.target.name === "size" &&
       setSize((prevSize) => [...prevSize, e.target.value]);
-    if (e.target.name === "color")
+    e.target.name === "color" &&
       setColor((prevColor) => [...prevColor, e.target.value]);
   };
 
