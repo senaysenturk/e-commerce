@@ -19,7 +19,7 @@
     {
       "createdAt": "1/1/2023, 6:25:08 PM",
       "name": "T-shirt",
-      "price": "10",
+      "price": 10,
       "size": [
         "XL"
       ],
@@ -126,7 +126,7 @@
     },
     {
       "name": "test",
-      "price": "1",
+      "price": 1,
       "color": "black",
       "size": "XXS",
       "category": "",
@@ -1711,7 +1711,7 @@
           "amount": 1
         }
       ],
-      "totalOrderAmount": "29.99",
+      "totalOrderAmount": 29.99,
       "id": 1
     }
   ]

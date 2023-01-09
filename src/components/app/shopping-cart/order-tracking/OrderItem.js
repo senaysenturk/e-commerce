@@ -1,5 +1,6 @@
 import React from "react";
 import { dummyOrderData } from "./OrderTracking";
+import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 
 
 /**
@@ -32,15 +33,17 @@ const OrderItem = ({orderData}) => {
             </div>
             <div className="orderId">{data.orderId}</div>
 
-            <div className="successInfo">Sipariş tamamlandi</div>
+            <div className="successInfo">Order complated</div>
 
             <div className="totalPrice">{data.totalOrderAmount}</div>
 
-            <button className="detail"> > </button>
+            <button className="detail"> <BiChevronRight className="detail-btn"/> </button>
+            
 
             <div className="detailItems">
               {/* {JSON.stringify(data.orderList)} */}
             </div>
+            <span className="hr"></span>
           </div>
         );
       })}
