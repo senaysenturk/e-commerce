@@ -28,26 +28,45 @@ const AddProduct = () => {
   const [category, setCategory] = useState("");
 
   const handleSetProduct = (e) => {
-    console.log(product);
-    setProduct({ ...product, [e.target.name]: e.target.value });
-    e.target.name === "category" && setCategory(e.target.value);
-    e.target.name === "size" &&
-      setSize((prevSize) => [...prevSize, e.target.value]);
-    e.target.name === "color" &&
-      setColor((prevColor) => [...prevColor, e.target.value]);
+    if (e.target.name === "category") setCategory(e.target.value);
+    if (e.target.name === "size") {
+      const size = e.target.value;
+      setSize((prevSize) => {
+        if (prevSize.includes(size)) {
+          return prevSize.filter((s) => s !== size);
+        } else {
+          return [...prevSize, size];
+        }
+      });
+      setProduct({ ...product, size: size });
+    }
+    if (e.target.name === "color") {
+      const color = e.target.value;
+      setColor((prevColor) => {
+        if (prevColor.includes(color)) {
+          return prevColor.filter((c) => c !== color);
+        } else {
+          return [...prevColor, color];
+        }
+      });
+      setProduct({ ...product, color: color });
+    }
+    if (e.target.name !== "size" && e.target.name !== "color")
+      setProduct({ ...product, [e.target.name]: e.target.value });
   };
-
   const handleSetImage = async (e) => {
     var response = await uploadImage(e.target.files[0]);
   };
 
   // const handleSetSize = (e) => {
   //   setSize((prevSize) => [...prevSize, e.target.value]);
+  //   console.log(size);
   //   setProduct({ ...product, size: size });
   // };
 
   // const handleSetColor = (e) => {
   //   setColor((prevColor) => [...prevColor, e.target.value]);
+  //   console.log(color);
   //   setProduct({ ...product, color: color });
   // };
 
@@ -66,7 +85,7 @@ const AddProduct = () => {
 
   useEffect(() => {
     setInterval(() => setCompleted(Math.floor(Math.random() * 100) + 1), 2000);
-  }, []);
+  }, [color, size]);
 
   return (
     <div className="add-product">
@@ -112,7 +131,7 @@ const AddProduct = () => {
               <>
                 <input
                   type="checkbox"
-                  name="color"
+                  name={color}
                   id={color}
                   value={color}
                   onChange={handleSetProduct}
