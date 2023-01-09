@@ -2,15 +2,10 @@
   "products": [
     {
       "createdAt": "1/1/2023, 6:25:08 PM",
-      "name": "Blazer Jacket",
-      "price": 35,
-      "size": [
-        "XS",
-        "S"
-      ],
-      "color": [
-        "white"
-      ],
+      "name": "Black Blazer Jacket",
+      "price": 35.99,
+      "size": "XXS",
+      "color": "yellow",
       "category": "Woman",
       "subcategory": "Jacket",
       "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/5900/472/430/5900472430_1_1_2.jpg?t=1669736376209",
