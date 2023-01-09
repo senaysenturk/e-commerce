@@ -60,10 +60,11 @@
     display: flex;
     gap: 8px;
     width: 100%;
-    justify-content: space-between;
+    justify-content: space-evenly;
     height: 100px;
     flex-shrink: 0;
     align-items: center;
+    flex-wrap: wrap;
   }
   &__imgGroup {
     position: relative;
@@ -76,7 +77,7 @@
       left: 50px;
     }
   }
-  &__imgGroup>* {
+  &__imgGroup > * {
     width: 70px;
     border-radius: 50%;
     height: 70px;
@@ -87,5 +88,26 @@
     justify-content: center;
     align-items: center;
     color: black;
+  }
+  button.detail-btn {
+    width: 70px;
+    height: 70px;
+    text-decoration: none;
+    font: 50px/80px Arial;
+    color: rgb(148, 145, 145);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    margin-top: -35px;
+    background-color: rgba($color: #282626, $alpha: 0.4);
+    z-index: 100;
+  }
+}
+
+@media (max-width: 768px) {
+  .orderItem {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
   }
 }
