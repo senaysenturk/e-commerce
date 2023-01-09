@@ -96,7 +96,7 @@ const AddProduct = () => {
             <div className="size">
               <input
                 type="checkbox"
-                name={size}
+                name="size"
                 id={size}
                 value={size}
                 onChange={handleSetProduct}
@@ -112,7 +112,7 @@ const AddProduct = () => {
               <>
                 <input
                   type="checkbox"
-                  name={color}
+                  name="color"
                   id={color}
                   value={color}
                   onChange={handleSetProduct}

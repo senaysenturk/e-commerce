@@ -3,7 +3,7 @@
     {
       "createdAt": "1/1/2023, 6:25:08 PM",
       "name": "Blazer Jacket",
-      "price": 49.99,
+      "price": 35,
       "size": [
         "XS",
         "S"
@@ -18,18 +18,24 @@
     },
     {
       "createdAt": "1/1/2023, 6:25:08 PM",
-      "name": "T-shirt",
-      "price": "10",
+      "name": "Corset top with straps",
+      "price": 34.98,
       "size": [
         "XL"
       ],
       "color": [
         "white"
       ],
-      "category": "Man",
-      "subcategory": "Waistcoat",
+      "category": "Woman",
+      "subcategory": "Shirt",
       "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/6202/267/001/6202267001_1_1_2.jpg?t=1669732582176",
-      "id": 3
+      "id": 3,
+      "black": "black",
+      "XXS": "XXS",
+      "XS": "XS",
+      "S": "S",
+      "red": "red",
+      "blue": "blue"
     },
     {
       "createdAt": "1/1/2023, 6:25:08 PM",
@@ -181,6 +187,18 @@
       "imgPath": "http://res.cloudinary.com/dr4cvohdq/image/upload/v1672595350/pmqzrdpmnlfylvp2h7co.jpg",
       "price": 112.99,
       "id": 11
+    },
+    {
+      "name": "test",
+      "price": "1",
+      "color": "black",
+      "size": "XXS",
+      "category": "",
+      "subcategory": "",
+      "imgPath": "",
+      "createdAt": "1/9/2023, 8:55:27 PM",
+      "updatedAt": "1/9/2023, 8:55:27 PM",
+      "id": 12
     }
   ],
   "colors": [
@@ -1813,26 +1831,5 @@
       "createdAt": "1/1/2023, 6:25:08 PM"
     }
   ],
-  "order-list": [
-    {
-      "date": 1673284022688,
-      "orderId": 1673284022688,
-      "orderList": [
-        {
-          "createdAt": "1/1/2023, 6:25:08 PM",
-          "name": "Ribbed turtleneck dress",
-          "price": 29.99,
-          "size": "S",
-          "color": "black",
-          "category": "Woman",
-          "subcategory": "Dress",
-          "imgPath": "http://res.cloudinary.com/dr4cvohdq/image/upload/v1672579518/txkzmjkj0t9kh29rwelg.webp",
-          "id": 1,
-          "amount": 1
-        }
-      ],
-      "totalOrderAmount": "29.99",
-      "id": 1
-    }
-  ]
+  "order-list": []
 }
