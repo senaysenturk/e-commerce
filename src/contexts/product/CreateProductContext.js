@@ -61,7 +61,7 @@ export const CreateProductProvider = ({ children }) => {
     getAllProducts();
   };
 
-  //Upload Image
+  // Upload Image
   const uploadImage = async (img) => {
     var formdata = new FormData();
     formdata.append("file", img);

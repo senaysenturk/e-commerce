@@ -19,15 +19,15 @@
     {
       "createdAt": "1/1/2023, 6:25:08 PM",
       "name": "T-shirt",
-      "price": 10,
+      "price": "10",
       "size": [
         "XL"
       ],
       "color": [
         "white"
       ],
-      "category": "Woman",
-      "subcategory": "T-shirt",
+      "category": "Man",
+      "subcategory": "Waistcoat",
       "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/6202/267/001/6202267001_1_1_2.jpg?t=1669732582176",
       "id": 3
     },
