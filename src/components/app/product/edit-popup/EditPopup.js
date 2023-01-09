@@ -21,28 +21,66 @@ export const EditPopup = ({ currentProduct, handleClose }) => {
   } = useProduct();
 
   const [editProduct, setEditProduct] = useState({});
-
   const [color, setColor] = useState([]);
   const [size, setSize] = useState([]);
   const [category, setCategory] = useState("");
 
   const handleProduct = (e) => {
+    if (e.target.name === "category") setCategory(e.target.value);
+    if (e.target.name === "size") {
+      const size = e.target.value;
+      setSize((prevSize) => {
+        if (prevSize.includes(size)) {
+          return prevSize.filter((s) => s !== size);
+        } else {
+          return [...prevSize, size];
+        }
+      });
+    }
+    if (e.target.name === "color") {
+      const color = e.target.value;
+      console.log(color);
+      setColor((prevColor) => {
+        if (prevColor.includes(color)) {
+          return prevColor.filter((c) => c !== color);
+        } else {
+          return [...prevColor, color];
+        }
+      });
+    }
+    if (e.target.name === "price") {
+      const price = parseFloat(e.target.value);
+      setEditProduct({ ...editProduct, price });
+    } else if (e.target.name === "size") {
+      setEditProduct({
+        ...editProduct,
+        size: size,
+      });
+    } else if (e.target.name === "color") {
+      setEditProduct({
+        ...editProduct,
+        color: color,
+      });
+    } else {
+      setEditProduct({
+        ...editProduct,
+        [e.target.name]: e.target.value,
+      });
+    }
     console.log(editProduct);
-    e.target.name === "price"
-      ? setEditProduct({
-          ...editProduct,
-          [e.target.name]: Number(e.target.value),
-        })
-      : setEditProduct({ ...editProduct, [e.target.name]: e.target.value });
-    e.target.name === "category" && setCategory(e.target.value);
-    sizes.includes(e.target.name) && setSize([...size, e.target.value]) && console.log(size);
-    /*  setSize([...size, e.target.value]) &&
-      setEditProduct({ ...editProduct, size: size }); */
-    /*   sizes.includes(e.target.name) &&
-      setSize((prevSize) => [...prevSize, e.target.value]) &&
-      setEditProduct({ ...editProduct, size: size }); */
-    e.target.name === "color" &&
-      setColor((prevColor) => [...prevColor, e.target.value]);
+  };
+
+  const handleSetSize = (e) => {
+    setEditProduct((prevState) => ({
+      ...prevState,
+      size: e.target.value,
+    }));
+  };
+  const handleSetColor = (e) => {
+    setEditProduct((prevState) => ({
+      ...prevState,
+      color: e.target.value,
+    }));
   };
 
   const handleImage = async (e) => {
@@ -83,7 +121,6 @@ export const EditPopup = ({ currentProduct, handleClose }) => {
                 placeholder="T-Shirt"
                 id="name"
                 name="name"
-                defaultValue={currentProduct.name}
                 onChange={handleProduct}
               />
               <label htmlFor="price">Price</label>
@@ -94,10 +131,8 @@ export const EditPopup = ({ currentProduct, handleClose }) => {
                 min="0"
                 id="price"
                 name="price"
-                defaultValue={currentProduct.price}
                 onChange={handleProduct}
               />
-
               <div className="sizes">
                 <p>Sizes:</p>
                 {sizes.map((size, index) =>
@@ -108,8 +143,8 @@ export const EditPopup = ({ currentProduct, handleClose }) => {
                         name="size"
                         id={size}
                         value={size}
-                        defaultChecked={size}
-                        onChange={handleProduct}
+                        selected
+                        onChange={handleSetSize}
                       />
                       <label for={size}>{size}</label>
                     </div>
@@ -127,7 +162,6 @@ export const EditPopup = ({ currentProduct, handleClose }) => {
                   )
                 )}
               </div>
-
               <div className="colors">
                 <p>Colors:</p>
                 <div className="color">
@@ -171,66 +205,29 @@ export const EditPopup = ({ currentProduct, handleClose }) => {
                   )}
                 </div>
               </div>
-
               <label htmlFor="category">Category</label>
               <select id="category" name="category" onChange={handleProduct}>
-                {categories.map((categoryObj, index) =>
-                  categoryObj.category === currentProduct.category ? (
-                    <option value={categoryObj.category} key={index} selected>
-                      {categoryObj.category}
-                    </option>
-                  ) : (
-                    <option value={categoryObj.category} key={index}>
-                      {categoryObj.category}
-                    </option>
-                  )
-                )}
-              </select>
+                <option>-- None --</option>
 
-              <label htmlFor="category">Sub-Category</label>
+                {categories.map((category, index) => (
+                  <option key={index}>{category.category}</option>
+                ))}
+              </select>
+              <label htmlFor="category">Subcategory</label>
               <select
                 id="subcategory"
                 name="subcategory"
                 onChange={handleProduct}
               >
                 <option>-- None --</option>
-                {!category
-                  ? categories.filter(
-                      (categoryObj, index) =>
-                        categoryObj.category === currentProduct.category
-                    )[0] &&
-                    categories
-                      .filter(
-                        (productCategory) =>
-                          productCategory.category == currentProduct.category
-                      )[0]
-                      .subcategory.map((subCategory, index) =>
-                        subCategory === currentProduct.subcategory ? (
-                          <option value={subCategory} key={index} selected>
-                            {subCategory}
-                          </option>
-                        ) : (
-                          <option value={subCategory} key={index}>
-                            {subCategory}
-                          </option>
-                        )
-                      )
-                  : categories
-                      .filter(
-                        (productCategory) =>
-                          productCategory.category == category
-                      )[0]
-                      .subcategory.map((subCategory, index) =>
-                        subCategory === currentProduct.setcategory ? (
-                          <option value={subCategory} key={index} selected>
-                            {subCategory}
-                          </option>
-                        ) : (
-                          <option value={subCategory} key={index}>
-                            {subCategory}
-                          </option>
-                        )
-                      )}
+                {category &&
+                  categories
+                    .filter(
+                      (productCategory) => productCategory.category == category
+                    )[0]
+                    .subcategory.map((subcategory, index) => {
+                      return <option key={index}>{subcategory}</option>;
+                    })}
               </select>
 
               <label htmlFor="image">Image</label>
