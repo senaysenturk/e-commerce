@@ -1,6 +1,7 @@
 {
   "products": [
     {
+      "createdAt": "1/1/2023, 6:25:08 PM",
       "name": "Ribbed turtleneck dress",
       "price": 29.99,
       "size": [
@@ -16,6 +17,7 @@
       "id": 1
     },
     {
+      "createdAt": "1/1/2023, 6:25:08 PM",
       "name": "Blazer Jacket",
       "price": 49.99,
       "size": [
@@ -31,6 +33,7 @@
       "id": 2
     },
     {
+      "createdAt": "1/1/2023, 6:25:08 PM",
       "name": "T-shirt",
       "price": 10,
       "size": [

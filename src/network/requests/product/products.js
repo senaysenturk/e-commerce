@@ -30,6 +30,7 @@ export const getProduct = async () => {
 };
 
 export const getProductByCategory = async (category) => {
+  console.log(`http://localhost:5500/products?category=${category}`);
   const result = await baseService.getWithParams(
     `http://localhost:5500/products?category=${category}`
   );

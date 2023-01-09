@@ -98,14 +98,16 @@ export const CreateProductProvider = ({ children }) => {
   };
 
   const getProductsByCategory = async (category) => {
+    setSearchProducts("");
     const response = await getProductByCategory(category);
     setSearchProducts(response.data);
-    console.log(response.data);
+    console.log("getProductsByCategory", response.data);
   };
   const getProductsBySubcategory = async (category, subcategory) => {
+    setSearchProducts("");
     const response = await getProductBySubcategory(category, subcategory);
     setSearchProducts(response.data);
-    console.log(response.data);
+    console.log("getProductsBySubcategory", response.data);
   };
 
   const values = {
@@ -134,6 +136,7 @@ export const CreateProductProvider = ({ children }) => {
     getProductsByCategory,
     getProductsBySubcategory,
     searchProducts,
+    setSearchProducts,
   };
 
   return (
