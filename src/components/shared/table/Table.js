@@ -1,6 +1,8 @@
 import React from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { FaSortDown, FaSortUp, FaSort } from "react-icons/fa";
+import "./style.scss";
 
 export const Table = ({ head, body, searchable }) => {
   const [search, setSearch] = useState("");
@@ -31,7 +33,7 @@ export const Table = ({ head, body, searchable }) => {
   return (
     <>
       {searchable && (
-        <div className="">
+        <div className="control-buttons">
           <input
             value={search}
             onChange={(e) => setSearch(e.target.value)}
@@ -44,6 +46,11 @@ export const Table = ({ head, body, searchable }) => {
               Sıralamayı İptal Et
             </button>
           )}
+          <div className="add-product-button">
+            <Link to="/admin/add-product">
+              <button className="list-btn">Create</button>
+            </Link>
+          </div>
         </div>
       )}
       <table>

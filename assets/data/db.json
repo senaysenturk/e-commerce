@@ -2,22 +2,6 @@
   "products": [
     {
       "createdAt": "1/1/2023, 6:25:08 PM",
-      "name": "Ribbed turtleneck dress",
-      "price": 29.99,
-      "size": [
-        "XS",
-        "S"
-      ],
-      "color": [
-        "black"
-      ],
-      "category": "Woman",
-      "subcategory": "Dress",
-      "imgPath": "http://res.cloudinary.com/dr4cvohdq/image/upload/v1672579518/txkzmjkj0t9kh29rwelg.webp",
-      "id": 1
-    },
-    {
-      "createdAt": "1/1/2023, 6:25:08 PM",
       "name": "Blazer Jacket",
       "price": 49.99,
       "size": [
@@ -325,11 +309,16 @@
           "firstname": "Ipek",
           "lastname": "Celik",
           "phone": "+90 (535) 817 - 4795",
-          "city": "Adana",
+          "city": "Afyonkarahisar",
           "address": "Osmangazi Mh. Atayolu Cd. Kadife Sk. No: 2/4B EnvarEv Cadde St. B Blok, D: 50 K: 13 Samandıra",
           "postcode": "34887",
-          "state": "Ceyhan",
+          "state": "Sinanpaşa",
           "addressName": "Is"
+        },
+        {
+          "firstname": "test",
+          "lastname": "tes",
+          "addressName": "tesssrtt"
         }
       ],
       "id": 1
@@ -1814,131 +1803,36 @@
     {
       "name": "Ribbed turtleneck dress",
       "price": 29.99,
-      "size": "",
-      "color": "",
+      "size": "S",
+      "color": "black",
       "category": "Woman",
       "subcategory": "Dress",
       "imgPath": "http://res.cloudinary.com/dr4cvohdq/image/upload/v1672579518/txkzmjkj0t9kh29rwelg.webp",
       "id": 1,
-      "amount": 1
+      "amount": 1,
+      "createdAt": "1/1/2023, 6:25:08 PM"
     }
   ],
   "order-list": [
     {
-      "date": 1673206808274,
-      "orderId": 1673206808274,
+      "date": 1673284022688,
+      "orderId": 1673284022688,
       "orderList": [
-        {
-          "name": "Blazer Jacket",
-          "price": 49.99,
-          "size": "",
-          "color": "",
-          "category": "Woman",
-          "subcategory": "Jacket",
-          "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/5900/472/430/5900472430_1_1_2.jpg?t=1669736376209",
-          "id": 2,
-          "amount": 1
-        },
-        {
-          "createdAt": "1/1/2023, 6:30:20 PM",
-          "name": "Sherpa pocket sweatshirt",
-          "price": 45.99,
-          "color": "",
-          "size": "",
-          "category": "Man",
-          "subcategory": "Sweatshirt",
-          "imgPath": "https://res.cloudinary.com/dr4cvohdq/image/upload/v1672587037/zydsnco7z34qeg8uqqfh.webp",
-          "id": 7,
-          "amount": 1
-        },
         {
           "createdAt": "1/1/2023, 6:25:08 PM",
-          "name": "Lace pleated dress",
-          "price": 59.99,
-          "size": "",
-          "color": "",
-          "category": "Woman",
-          "subcategory": "Dress",
-          "imgPath": "http://res.cloudinary.com/dr4cvohdq/image/upload/v1672586727/utkeesstkjwkdi4qt6zu.webp",
-          "id": 4,
-          "amount": 1
-        },
-        {
-          "createdAt": "1/1/2023, 6:31:08 PM",
-          "name": "Lightweight cotton sweatshirt",
-          "price": 27.99,
-          "color": "",
-          "size": "",
-          "category": "Man",
-          "subcategory": "Sweatshirt",
-          "imgPath": "http://res.cloudinary.com/dr4cvohdq/image/upload/v1672587096/wty5mvkd5dltmqetfo8a.webp",
-          "id": 8,
-          "amount": 1
-        }
-      ],
-      "totalOrderAmount": "183.96",
-      "id": 1
-    },
-    {
-      "date": 1673210607999,
-      "orderId": 1673210607999,
-      "orderList": [
-        {
           "name": "Ribbed turtleneck dress",
           "price": 29.99,
-          "size": "",
-          "color": "",
+          "size": "S",
+          "color": "black",
           "category": "Woman",
           "subcategory": "Dress",
           "imgPath": "http://res.cloudinary.com/dr4cvohdq/image/upload/v1672579518/txkzmjkj0t9kh29rwelg.webp",
           "id": 1,
           "amount": 1
-        },
-        {
-          "name": "Blazer Jacket",
-          "price": 49.99,
-          "size": "",
-          "color": "",
-          "category": "Woman",
-          "subcategory": "Jacket",
-          "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/5900/472/430/5900472430_1_1_2.jpg?t=1669736376209",
-          "id": 2,
-          "amount": 1
         }
       ],
-      "totalOrderAmount": "79.98",
-      "id": 2
-    },
-    {
-      "date": 1673210656088,
-      "orderId": 1673210656088,
-      "orderList": [
-        {
-          "name": "Tropical print shirt",
-          "size": "XS",
-          "color": "black",
-          "category": "Child",
-          "subcategory": "Shirt",
-          "imgPath": "http://res.cloudinary.com/dr4cvohdq/image/upload/v1672595350/pmqzrdpmnlfylvp2h7co.jpg",
-          "price": 112.99,
-          "id": 11,
-          "amount": 2
-        },
-        {
-          "createdAt": "1/1/2023, 6:33:15 PM",
-          "name": "Quilted down anorak",
-          "price": 99.99,
-          "size": "",
-          "color": "black",
-          "category": "Child",
-          "subcategory": "Coats",
-          "imgPath": "https://res.cloudinary.com/dr4cvohdq/image/upload/v1672587220/sck10tvxwevfcefmpngw.webp",
-          "id": 9,
-          "amount": 2
-        }
-      ],
-      "totalOrderAmount": "425.96",
-      "id": 3
+      "totalOrderAmount": "29.99",
+      "id": 1
     }
   ]
 }

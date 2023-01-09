@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
-import { Link } from "react-router-dom";
+
 import SmallCard from "src/components/app/product/small-card/SmallCard";
 import FilterNavigation from "src/components/shared/filter-navigation/FilterNavigation";
 import Table from "../../../components/shared/table/Table";
@@ -26,12 +26,7 @@ const AllProducts = () => {
   }, []);
 
   return (
-    <>
-      <div>
-        <Link to="/admin/add-product">
-          <button>Create</button>
-        </Link>
-      </div>
+    <div className="all-products">
       <div className="">
         <Table
           searchable={true}
@@ -58,6 +53,7 @@ const AllProducts = () => {
               product.subcategory,
               [
                 <button
+                  className="list-btn "
                   onClick={() => {
                     setCurrentProduct(product);
                     togglePopup();
@@ -66,6 +62,7 @@ const AllProducts = () => {
                   Edit
                 </button>,
                 <button
+                  className="list-btn btn-danger"
                   onClick={() => {
                     console.log(product.id);
                     handleDeleteProduct(product.id);
@@ -91,8 +88,10 @@ const AllProducts = () => {
           </div>
         </div>
       </div> */}
-      {isOpen && <EditPopup handleClose={togglePopup} currentProduct={currentProduct} />}
-    </>
+      {isOpen && (
+        <EditPopup handleClose={togglePopup} currentProduct={currentProduct} />
+      )}
+    </div>
   );
 };
 
