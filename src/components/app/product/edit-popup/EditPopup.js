@@ -96,7 +96,7 @@ export const EditPopup = ({ currentProduct, handleClose }) => {
                     <div className="size">
                       <input
                         type="checkbox"
-                        name={size}
+                        name="size"
                         id={size}
                         value={size}
                         defaultChecked={size}
@@ -108,7 +108,7 @@ export const EditPopup = ({ currentProduct, handleClose }) => {
                     <div className="size">
                       <input
                         type="checkbox"
-                        name={size}
+                        name="size"
                         id={size}
                         value={size}
                         onChange={handleProduct}
@@ -127,7 +127,7 @@ export const EditPopup = ({ currentProduct, handleClose }) => {
                       <>
                         <input
                           type="checkbox"
-                          name={color}
+                          name="color"
                           id={color}
                           value={color}
                           defaultChecked={color}
@@ -145,7 +145,7 @@ export const EditPopup = ({ currentProduct, handleClose }) => {
                       <>
                         <input
                           type="checkbox"
-                          name={color}
+                          name="color"
                           id={color}
                           value={color}
                           onChange={handleProduct}
