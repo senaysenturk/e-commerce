@@ -45,7 +45,7 @@ export const EditPopup = ({ currentProduct, handleClose }) => {
       ...editProduct,
       updatedAt: new Date().toLocaleString(),
     });
-    var response = await updateProduct(editProduct, currentProduct.id);
+    var response = await updateProduct(currentProduct.id, editProduct);
     // getAddresses();
     handleClose();
     // handleSetDisplay();
