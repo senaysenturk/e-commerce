@@ -8,6 +8,7 @@ import {
   SlSocialFacebook,
 } from "react-icons/sl";
 
+import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <footer className="footer">
@@ -17,22 +18,24 @@ const Footer = () => {
           <span>Store</span>
           <ul>
             <li>
-              <a href="/#">Men</a>
+              <a href="/products/search?category=Man">Man</a>
             </li>
             <li>
-              <a href="/#">Women</a>
+              {/* <Link to="/products/search?category=Woman">Woman</Link> */}
+              <a href="/products/search?category=Woman">Woman</a>
             </li>
             <li>
-              <a href="/#">Children</a>
+            {/* <Link to="/products/search?category=Child">Children</Link> */}
+              <a href="/products/search?category=Child">Children</a>
             </li>
             <li>
-              <a href="/#">New Arrivals</a>
+              <a href="/new-arrivals">New Arrivals</a>
             </li>
             <li>
-              <a href="/#">Top Brands</a>
+              <a href="/best-sellers">Best Sellers</a>
             </li>
             <li>
-              <a href="/#">Special Offers</a>
+              <a href="/trending<">Trending</a>
             </li>
           </ul>
         </div>
