@@ -28,11 +28,16 @@ export const EditPopup = ({ currentProduct, handleClose }) => {
 
   const handleProduct = (e) => {
     console.log(editProduct);
-    setEditProduct({ ...editProduct, [e.target.name]: e.target.value });
-    if (e.target.name === "category") setCategory(e.target.value);
-    if (e.target.name === "size")
+    e.target.name === "price"
+      ? setEditProduct({
+          ...editProduct,
+          [e.target.name]: Number(e.target.value),
+        })
+      : setEditProduct({ ...editProduct, [e.target.name]: e.target.value });
+    e.target.name === "category" && setCategory(e.target.value);
+    e.target.name === "size" &&
       setSize((prevSize) => [...prevSize, e.target.value]);
-    if (e.target.name === "color")
+    e.target.name === "color" &&
       setColor((prevColor) => [...prevColor, e.target.value]);
   };
 
@@ -96,7 +101,7 @@ export const EditPopup = ({ currentProduct, handleClose }) => {
                     <div className="size">
                       <input
                         type="checkbox"
-                        name={size}
+                        name="size"
                         id={size}
                         value={size}
                         defaultChecked={size}
@@ -108,7 +113,7 @@ export const EditPopup = ({ currentProduct, handleClose }) => {
                     <div className="size">
                       <input
                         type="checkbox"
-                        name={size}
+                        name="size"
                         id={size}
                         value={size}
                         onChange={handleProduct}
@@ -127,7 +132,7 @@ export const EditPopup = ({ currentProduct, handleClose }) => {
                       <>
                         <input
                           type="checkbox"
-                          name={color}
+                          name="color"
                           id={color}
                           value={color}
                           defaultChecked={color}
@@ -145,7 +150,7 @@ export const EditPopup = ({ currentProduct, handleClose }) => {
                       <>
                         <input
                           type="checkbox"
-                          name={color}
+                          name="color"
                           id={color}
                           value={color}
                           onChange={handleProduct}

@@ -45,6 +45,7 @@ export const CreateProductProvider = ({ children }) => {
       subcategory: "",
       imgPath: "",
       createdAt: new Date().toLocaleString(),
+      updatedAt: new Date().toLocaleString(),
     });
     console.log("Reponse: " + response.status);
   };
