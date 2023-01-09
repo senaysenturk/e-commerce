@@ -44,7 +44,7 @@ const CardSummary = ({ product }) => {
               );
             })}
           </div>
-          <Link to={`products/product/${product.id}`}>More Detail</Link>
+          <Link to={`../../products/product/${product.id}`}>More Detail</Link>
         </div>
       </div>
     </>

@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import "./style.scss";
 import { useProduct } from "../../../contexts/product/CreateProductContext";
 
-const FilterNavigation = () => {
+const FilterNavigation = ({ setFilterKeys }) => {
   const {
     colors,
     getAllColors,
@@ -13,12 +13,14 @@ const FilterNavigation = () => {
     getAllCategories,
   } = useProduct();
 
-  const [color, setColor] = useState([]);
-  const [size, setSize] = useState([]);
-  const [category, setCategory] = useState("");
+  const [filterColor, setFilterColor] = useState([]);
+  const [silterSize, setFilterSize] = useState([]);
+  const [filterCategory, setFilterCategory] = useState("");
 
   const handleSearch = (e) => {
-    if (e.target.name === "category") setCategory(e.target.value);
+    if (e.target.name === "filter-category") setFilterCategory(e.target.value);
+
+    setFilterKeys(e.target.value);
   };
 
   useEffect(() => {
@@ -29,38 +31,46 @@ const FilterNavigation = () => {
 
   return (
     <div className="sidebar">
-      <label htmlFor="category">Category</label>
-      <select id="category" name="category" onChange={handleSearch}>
-        <option>-- None --</option>
+      <label htmlFor="filter-category">Category</label>
+      <select
+        id="filter-category"
+        name="filter-category"
+        onChange={handleSearch}
+      >
+        <option key={""}>-- None --</option>
 
         {categories.map((category, index) => (
           <option key={index}>{category.category}</option>
         ))}
       </select>
-      <label htmlFor="category">Subcategory</label>
-      <select id="subcategory" name="subcategory" onChange={handleSearch}>
+      <label htmlFor="filter-subcategory">Subcategory</label>
+      <select
+        id="filter-subcategory"
+        name="filter-subcategory"
+        onChange={handleSearch}
+      >
         <option>-- None --</option>
-        {category &&
+        {filterCategory &&
           categories
             .filter(
-              (productCategory) => productCategory.category == category
+              (productCategory) => productCategory.category == filterCategory
             )[0]
-            .subcategory.map((subcategory, index) => {
-              return <option key={index}>{subcategory}</option>;
+            .subcategory.map((subcategory, i) => {
+              return <option key={i}>{subcategory}</option>;
             })}
       </select>
       <div className="sizes">
         <p>Sizes:</p>
         {sizes.map((size, index) => (
-          <div className="size">
+          <div className="size" key={index}>
             <input
               type="checkbox"
-              name={size}
-              id={size}
+              name={`fiter-${size}`}
+              id={`fiter-${size}`}
               value={size}
               onChange={handleSearch}
             />
-            <label for={size}>{size}</label>
+            <label htmlFor={size}>{size}</label>
           </div>
         ))}
       </div>
@@ -71,12 +81,13 @@ const FilterNavigation = () => {
             <>
               <input
                 type="checkbox"
-                name={color}
-                id={color}
+                name={`fiter-${color}`}
+                id={`fiter-${color}`}
                 value={color}
                 onChange={handleSearch}
+                key={index}
               />
-              <label for={color}>
+              <label htmlFor={color}>
                 <span className={color} name={color} id={color}></span>
               </label>
             </>
