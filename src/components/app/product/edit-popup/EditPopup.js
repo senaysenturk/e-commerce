@@ -35,8 +35,12 @@ export const EditPopup = ({ currentProduct, handleClose }) => {
         })
       : setEditProduct({ ...editProduct, [e.target.name]: e.target.value });
     e.target.name === "category" && setCategory(e.target.value);
-    e.target.name === "size" &&
-      setSize((prevSize) => [...prevSize, e.target.value]);
+    sizes.includes(e.target.name) && setSize([...size, e.target.value]) && console.log(size);
+    /*  setSize([...size, e.target.value]) &&
+      setEditProduct({ ...editProduct, size: size }); */
+    /*   sizes.includes(e.target.name) &&
+      setSize((prevSize) => [...prevSize, e.target.value]) &&
+      setEditProduct({ ...editProduct, size: size }); */
     e.target.name === "color" &&
       setColor((prevColor) => [...prevColor, e.target.value]);
   };

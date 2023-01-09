@@ -3,6 +3,7 @@ import {
   postUser,
   getUsers,
   patchUser,
+  deleteUser,
   postMe,
   fetchMe,
   fetchLogout,
@@ -12,6 +13,7 @@ const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [users, setUsers] = useState(null);
   const [loggedIn, setLoggedIn] = useState(false);
   const [loading, setLoading] = useState(true);
   const [currentUser, setCurrentUser] = useState();
@@ -34,6 +36,17 @@ const AuthProvider = ({ children }) => {
       }
     })();
   }, []);
+
+  const getAllUsers = async () => {
+    const response = await getUsers();
+    setUsers(response.data);
+    console.log(response.data);
+  };
+
+  const removeUser = async (userId) => {
+    await deleteUser(userId);
+    getAllUsers();
+  };
 
   const register = async (userData) => {
     const response = await postUser(userData.data);
@@ -221,6 +234,10 @@ const AuthProvider = ({ children }) => {
   const values = {
     loggedIn,
     user,
+    users,
+    getAllUsers,
+    updateUser,
+    removeUser,
     register,
     login,
     logout,
@@ -232,20 +249,6 @@ const AuthProvider = ({ children }) => {
     deleteAddress,
     address,
   };
-
-  /* if (loading) {
-		return (
-			<Flex justifyContent="center" alignItems="center" height="100vh">
-				<Spinner
-					thickness="4px"
-					speed="0.65s"
-					emptyColor="gray.200"
-					size="xl"
-					color="red.500"
-				/>
-			</Flex>
-		);
-	} */
 
   return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>;
 };

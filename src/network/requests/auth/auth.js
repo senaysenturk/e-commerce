@@ -16,6 +16,10 @@ export const postUser = (newUser) => {
   return baseService.post("http://localhost:5500/", "users", newUser);
 };
 
+export const deleteUser = async (userId) => {
+  return baseService.delete("http://localhost:5500/", "users/", userId);
+};
+
 export const patchUser = (id, newUser) => {
   return baseService.patch("http://localhost:5500/", "users/", id, newUser);
 };
