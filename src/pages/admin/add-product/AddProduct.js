@@ -28,48 +28,24 @@ const AddProduct = () => {
   const [category, setCategory] = useState("");
 
   const handleSetProduct = (e) => {
-    if (e.target.name === "category") setCategory(e.target.value);
-    if (e.target.name === "size") {
-      const size = e.target.value;
-      setSize((prevSize) => {
-        if (prevSize.includes(size)) {
-          return prevSize.filter((s) => s !== size);
-        } else {
-          return [...prevSize, size];
-        }
-      });
-    }
-    if (e.target.name === "color") {
-      const color = e.target.value;
-      console.log(color);
-      setColor((prevColor) => {
-        if (prevColor.includes(color)) {
-          return prevColor.filter((c) => c !== color);
-        } else {
-          return [...prevColor, color];
-        }
-      });
-    }
-    if (e.target.name === "price") {
-      const price = parseFloat(e.target.value);
-      setProduct({ ...product, price });
-    } else if (e.target.name === "size") {
-      setProduct({
-        ...product,
-        size: size,
-      });
-    } else if (e.target.name === "color") {
-      setProduct({
-        ...product,
-        color: color,
-      });
+    const { name, value } = e.target;
+    if (name === "color" || name === "size") {
+      let options;
+      if (e.target.checked) {
+        options = [...(product[name] || []), value];
+      } else {
+        options = (product[name] || []).filter((option) => option !== value);
+      }
+      setProduct((prevState) => ({
+        ...prevState,
+        [name]: options,
+      }));
     } else {
-      setProduct({
-        ...product,
-        [e.target.name]: e.target.value,
-      });
+      setProduct((prevState) => ({
+        ...prevState,
+        [name]: value,
+      }));
     }
-    console.log(product);
   };
 
   const handleSetImage = async (e) => {
@@ -97,7 +73,7 @@ const AddProduct = () => {
     getAllColors();
     getAllSizes();
     getAllCategories();
-  }, []);
+  }, [size, color]);
 
   const [completed, setCompleted] = useState(0);
 

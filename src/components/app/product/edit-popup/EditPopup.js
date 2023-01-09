@@ -26,46 +26,25 @@ export const EditPopup = ({ currentProduct, handleClose }) => {
   const [category, setCategory] = useState("");
 
   const handleProduct = (e) => {
-    if (e.target.name === "category") setCategory(e.target.value);
-    if (e.target.name === "size") {
-      const size = e.target.value;
-      setSize((prevSize) => {
-        if (prevSize.includes(size)) {
-          return prevSize.filter((s) => s !== size);
-        } else {
-          return [...prevSize, size];
-        }
-      });
-    }
-    if (e.target.name === "color") {
-      const color = e.target.value;
-      console.log(color);
-      setColor((prevColor) => {
-        if (prevColor.includes(color)) {
-          return prevColor.filter((c) => c !== color);
-        } else {
-          return [...prevColor, color];
-        }
-      });
-    }
-    if (e.target.name === "price") {
-      const price = parseFloat(e.target.value);
-      setEditProduct({ ...editProduct, price });
-    } else if (e.target.name === "size") {
-      setEditProduct({
-        ...editProduct,
-        size: size,
-      });
-    } else if (e.target.name === "color") {
-      setEditProduct({
-        ...editProduct,
-        color: color,
-      });
+    const { name, value } = e.target;
+    if (name === "color" || name === "size") {
+      let options;
+      if (e.target.checked) {
+        options = [...(editProduct[name] || []), value];
+      } else {
+        options = (editProduct[name] || []).filter(
+          (option) => option !== value
+        );
+      }
+      setEditProduct((prevState) => ({
+        ...prevState,
+        [name]: options,
+      }));
     } else {
-      setEditProduct({
-        ...editProduct,
-        [e.target.name]: e.target.value,
-      });
+      setEditProduct((prevState) => ({
+        ...prevState,
+        [name]: value,
+      }));
     }
     console.log(editProduct);
   };
@@ -121,6 +100,7 @@ export const EditPopup = ({ currentProduct, handleClose }) => {
                 placeholder="T-Shirt"
                 id="name"
                 name="name"
+                value={currentProduct.name}
                 onChange={handleProduct}
               />
               <label htmlFor="price">Price</label>
@@ -131,6 +111,7 @@ export const EditPopup = ({ currentProduct, handleClose }) => {
                 min="0"
                 id="price"
                 name="price"
+                value={currentProduct.price}
                 onChange={handleProduct}
               />
               <div className="sizes">
@@ -143,7 +124,7 @@ export const EditPopup = ({ currentProduct, handleClose }) => {
                         name="size"
                         id={size}
                         value={size}
-                        selected
+                        defaultChecked={color}
                         onChange={handleSetSize}
                       />
                       <label for={size}>{size}</label>
@@ -207,11 +188,17 @@ export const EditPopup = ({ currentProduct, handleClose }) => {
               </div>
               <label htmlFor="category">Category</label>
               <select id="category" name="category" onChange={handleProduct}>
-                <option>-- None --</option>
-
-                {categories.map((category, index) => (
-                  <option key={index}>{category.category}</option>
-                ))}
+                {categories.map((categoryObj, index) =>
+                  categoryObj.category === currentProduct.category ? (
+                    <option value={categoryObj.category} key={index} selected>
+                      {categoryObj.category}
+                    </option>
+                  ) : (
+                    <option value={categoryObj.category} key={index}>
+                      {categoryObj.category}
+                    </option>
+                  )
+                )}
               </select>
               <label htmlFor="category">Subcategory</label>
               <select
@@ -220,14 +207,43 @@ export const EditPopup = ({ currentProduct, handleClose }) => {
                 onChange={handleProduct}
               >
                 <option>-- None --</option>
-                {category &&
-                  categories
-                    .filter(
-                      (productCategory) => productCategory.category == category
-                    )[0]
-                    .subcategory.map((subcategory, index) => {
-                      return <option key={index}>{subcategory}</option>;
-                    })}
+                {!category
+                  ? categories.filter(
+                      (categoryObj, index) =>
+                        categoryObj.category === currentProduct.category
+                    )[0] &&
+                    categories
+                      .filter(
+                        (productCategory) =>
+                          productCategory.category == currentProduct.category
+                      )[0]
+                      .subcategory.map((subCategory, index) =>
+                        subCategory === currentProduct.subcategory ? (
+                          <option value={subCategory} key={index} selected>
+                            {subCategory}
+                          </option>
+                        ) : (
+                          <option value={subCategory} key={index}>
+                            {subCategory}
+                          </option>
+                        )
+                      )
+                  : categories
+                      .filter(
+                        (productCategory) =>
+                          productCategory.category == category
+                      )[0]
+                      .subcategory.map((subCategory, index) =>
+                        subCategory === currentProduct.setcategory ? (
+                          <option value={subCategory} key={index} selected>
+                            {subCategory}
+                          </option>
+                        ) : (
+                          <option value={subCategory} key={index}>
+                            {subCategory}
+                          </option>
+                        )
+                      )}
               </select>
 
               <label htmlFor="image">Image</label>
