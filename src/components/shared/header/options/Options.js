@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { RiHeart3Line } from "react-icons/ri";
 import { AiOutlineUser } from "react-icons/ai";
@@ -9,17 +9,22 @@ import UserCard from "../../user-card/UserCard";
 import CartCard from "../../cart-card/CartCard";
 import Admin from "../../admin/Admin";
 import "./style.scss";
+import { useAuth } from "../../../../contexts/auth/AuthContext";
 
 const Options = () => {
+  const { loggedIn, currentUser } = useAuth();
+
   return (
     <div className="options">
       <ul>
-        <li>
-          <span className="icon">
-            <MdOutlineAdminPanelSettings />
-          </span>
-          <Admin />
-        </li>
+        {loggedIn && currentUser && currentUser[0].role === "admin" && (
+          <li>
+            <span className="icon">
+              <MdOutlineAdminPanelSettings />
+            </span>
+            <Admin />
+          </li>
+        )}
         <li>
           <Link to="/favorites">
             <span className="icon">

@@ -231,7 +231,7 @@ const AuthProvider = ({ children }) => {
   const login = async (userData) => {
     setLoggedIn(true);
     setUser(userData.data);
-    // setCurrentUser(userData.data);
+    setCurrentUser(userData.data);
     console.log(userData.data);
 
     await postMe(userData.data);
