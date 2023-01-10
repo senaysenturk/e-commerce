@@ -28,28 +28,32 @@ export const Table = ({ head, body, searchable }) => {
       });
 
   if (!body || body?.length === 0) {
-    return <div className="">Gösterilecek veri bulunmuyor.</div>;
+    return <div className="">No results</div>;
   }
   return (
     <>
       {searchable && (
         <div className="control-buttons">
-          <input
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            type="text"
-            placeholder="Tabloda ara"
-            className=""
-          />
-          {sorting && (
-            <button onClick={() => setSorting(false)} className="">
-              Sıralamayı İptal Et
-            </button>
-          )}
-          <div className="add-product-button">
-            <Link to="/admin/add-product">
-              <button className="list-btn">Create</button>
-            </Link>
+          <div className="left-button">
+            <input
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              type="text"
+              placeholder="Search"
+              className=""
+            />
+            {sorting && (
+              <button onClick={() => setSorting(false)} className="list-btn">
+                Cancel Order
+              </button>
+            )}
+          </div>
+          <div className="right-button">
+            <div className="add-product-button">
+              <Link to="/admin/add-product">
+                <button className="list-btn">Create</button>
+              </Link>
+            </div>
           </div>
         </div>
       )}

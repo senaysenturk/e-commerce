@@ -75,13 +75,25 @@ export const Header = ({ title }) => {
                     <NavLink to="/new-arrivals">NEW ARRIVALS</NavLink>
                   </li>
                   <li>
-                    <NavLink to="#">BEST SELLERS</NavLink>
+                    <NavLink
+                      to={`/products/search?additionalCategories_like=best-sellers`}
+                    >
+                      BEST SELLERS
+                    </NavLink>
                   </li>
                   <li>
-                    <NavLink to="#">TRENDING</NavLink>
+                    <NavLink
+                      to={`/products/search?additionalCategories_like=trending`}
+                    >
+                      TRENDING
+                    </NavLink>
                   </li>
                   <li>
-                    <NavLink to="#">SALE</NavLink>
+                    <NavLink
+                      to={`/products/search?additionalCategories_like=sale`}
+                    >
+                      SALE
+                    </NavLink>
                   </li>
                 </ul>
               </nav>

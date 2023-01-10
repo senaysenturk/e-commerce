@@ -5,15 +5,21 @@ import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 import "./style.scss";
 import Carousel from "../carousel/Carousel";
 import ShopContext from "../../../../contexts/basket/ShopContext";
+import { useMatchMedia } from "src/components/shared/header/useMatchMedia";
+import { Link } from "react-router-dom";
 
 const List = () => {
   const context = useContext(ShopContext);
+  // const isMobileResolution = useMatchMedia("(max-width:992px)", false);
+  const isDesktopResolution = useMatchMedia("(min-width:992px)", true);
   return (
     <div className="list">
       <div className="product-row">
         <div className="row-header">
           <h2>Recommended for you</h2>
-          <a href="#1">View more</a>
+          <Link to={`/products/search?additionalCategories_like=trending`}>
+            View more
+          </Link>
         </div>
         <div className="row">
           <div className="column-1">
@@ -34,14 +40,7 @@ const List = () => {
       <div className="product-row">
         <div className="row-header">
           <h2>Discover</h2>
-          <div className="arrow-icon">
-            <div className="icon">
-              <BiChevronLeft />
-            </div>
-            <div className="icon">
-              <BiChevronRight />
-            </div>
-          </div>
+          <a href="#2">View more</a>
         </div>
         <div className="row">
           {context.products.map((product, index) => {
@@ -54,11 +53,18 @@ const List = () => {
       <div className="product-row">
         <div className="row-header">
           <h2>Last viewed</h2>
-          <a href="#2">View more</a>
+          <div className="arrow-icon">
+            <div className="icon">
+              <BiChevronLeft />
+            </div>
+            <div className="icon">
+              <BiChevronRight />
+            </div>
+          </div>
         </div>
         <div className="row">
           {context.products.map((product, index) => {
-            if (product.category == "Man" || product.category == "Child") {
+            if (product.category == "Man") {
               return <Carousel product={product} key={index} />;
             }
           })}

@@ -18,24 +18,30 @@ const Footer = () => {
           <span>Store</span>
           <ul>
             <li>
-              <a href="/products/search?category=Man">Man</a>
+              <Link to="/products/search?category=Man">Man</Link>
             </li>
             <li>
               {/* <Link to="/products/search?category=Woman">Woman</Link> */}
-              <a href="/products/search?category=Woman">Woman</a>
+              <Link to="/products/search?category=Woman">Woman</Link>
             </li>
             <li>
-            {/* <Link to="/products/search?category=Child">Children</Link> */}
-              <a href="/products/search?category=Child">Children</a>
+              {/* <Link to="/products/search?category=Child">Children</Link> */}
+              <Link to="/products/search?category=Child">Children</Link>
             </li>
             <li>
-              <a href="/new-arrivals">New Arrivals</a>
+              <Link to="/new-arrivals">New Arrivals</Link>
             </li>
             <li>
-              <a href="/best-sellers">Best Sellers</a>
+              <Link
+                to={`/products/search?additionalCategories_like=best-sellers`}
+              >
+                Best Sellers
+              </Link>
             </li>
             <li>
-              <a href="/trending<">Trending</a>
+              <Link to={`/products/search?additionalCategories_like=trending`}>
+                Trending
+              </Link>
             </li>
           </ul>
         </div>
@@ -44,22 +50,22 @@ const Footer = () => {
           <span>About</span>
           <ul>
             <li>
-              <a href="/about-us">About Us</a>
+              <Link to="/Linkbout-us">About Us</Link>
             </li>
             <li>
-              <a href="/#">Human Resources</a>
+              <Link to="/#">Human Resources</Link>
             </li>
             <li>
-              <a href="/#">Corporate Sales</a>
+              <Link to="/#">Corporate Sales</Link>
             </li>
             <li>
-              <a href="/#">Our Stores</a>
+              <Link to="/#">Our Stores</Link>
             </li>
             <li>
-              <a href="/#">Franchise Application</a>
+              <Link to="/#">Franchise Application</Link>
             </li>
             <li>
-              <a href="/#">KVKK</a>
+              <Link to="/#">KVKK</Link>
             </li>
           </ul>
         </div>
@@ -68,22 +74,22 @@ const Footer = () => {
           <span>Customer Services</span>
           <ul>
             <li>
-              <a href="/contact">Contact Us</a>
+              <Link to="/contact">Contact Us</Link>
             </li>
             <li>
-              <a href="/#">Campaigns</a>
+              <Link to="/#">Campaigns</Link>
             </li>
             <li>
-              <a href="/#">Order & Delivery</a>
+              <Link to="/#">Order & Delivery</Link>
             </li>
             <li>
-              <a href="/#">Payment</a>
+              <Link to="/#">Payment</Link>
             </li>
             <li>
-              <a href="/#">Returns</a>
+              <Link to="/#">Returns</Link>
             </li>
             <li>
-              <a href="/#">FAQ</a>
+              <Link to="/#">FAQ</Link>
             </li>
           </ul>
         </div>
@@ -99,9 +105,9 @@ const Footer = () => {
               className="news-email"
               name="news-email"
             />
-            <a href="/#" className="buton buton-outline">
+            <Link to="/#" className="buton buton-outline">
               Send
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -109,29 +115,29 @@ const Footer = () => {
           <span>Follow us</span>
           <ul>
             <li>
-              <a href="/#">
+              <Link to="/#">
                 <SlSocialInstagram />
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/#">
+              <Link to="/#">
                 <SlSocialYoutube />
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/#">
+              <Link to="/#">
                 <SlSocialTwitter />
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/#">
+              <Link to="/#">
                 <SlSocialLinkedin />
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/#">
+              <Link to="/#">
                 <SlSocialFacebook />
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./style.scss";
 import { useProduct } from "../../../contexts/product/CreateProductContext";
+import { useSearchParams } from "react-router-dom";
 
-const FilterNavigation = ({ setFilterKeys }) => {
+const FilterNavigation = ({ setFilterKeys, category }) => {
   const {
     colors,
     getAllColors,
@@ -12,37 +13,45 @@ const FilterNavigation = ({ setFilterKeys }) => {
     categories,
     getAllCategories,
   } = useProduct();
-
   const [filterColor, setFilterColor] = useState([]);
   const [silterSize, setFilterSize] = useState([]);
-  const [filterCategory, setFilterCategory] = useState("");
+  const [filterCategory, setFilterCategory] = useState();
 
   const handleSearch = (e) => {
     if (e.target.name === "filter-category") setFilterCategory(e.target.value);
-
     setFilterKeys(e.target.value);
+    console.log(filterCategory);
   };
 
   useEffect(() => {
     getAllColors();
     getAllSizes();
     getAllCategories();
-  }, []);
+  }, [filterCategory, category]);
 
   return (
     <div className="sidebar">
-      <label htmlFor="filter-category">Category</label>
-      <select
-        id="filter-category"
-        name="filter-category"
-        onChange={handleSearch}
-      >
-        <option key={""}>-- None --</option>
+      {category && (
+        <>
+          <label htmlFor="filter-category">Category</label>
+          <select
+            id="filter-category"
+            name="filter-category"
+            onChange={(e) => {
+              handleSearch(e);
+              setFilterCategory(category);
+            }}
+            value={category}
+            disabled
+          >
+            <option key={""}>-- None --</option>
 
-        {categories.map((category, index) => (
-          <option key={index}>{category.category}</option>
-        ))}
-      </select>
+            {categories.map((category, index) => (
+              <option key={index}>{category.category}</option>
+            ))}
+          </select>
+        </>
+      )}
       <label htmlFor="filter-subcategory">Subcategory</label>
       <select
         id="filter-subcategory"
@@ -81,8 +90,8 @@ const FilterNavigation = ({ setFilterKeys }) => {
             <>
               <input
                 type="checkbox"
-                name={`fiter-${color}`}
-                id={`fiter-${color}`}
+                name="filter-color"
+                id={color}
                 value={color}
                 onChange={handleSearch}
                 key={index}

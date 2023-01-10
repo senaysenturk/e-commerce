@@ -7,22 +7,26 @@ import FilterNavigation from "src/components/shared/filter-navigation/FilterNavi
 export const NewArrivals = () => {
   const { products, getAllProducts } = useProduct();
 
+  const [filterKeys, setFilterKeys] = useState("");
   useEffect(() => {
     getAllProducts();
   }, []);
 
   return (
     <>
-      <div className="all-product-list">
-        <FilterNavigation />
+      <div className="search-and-filter-list">
+        <FilterNavigation setFilterKeys={setFilterKeys} />
         <div className="products">
           <div className="row-header">
-            <div>NewArrivals</div>
+            <h2>New Arrivals</h2>
           </div>
-          <div className="grid-4-columns">
-            {products.slice(-3).map((product, index) => (
-              <SmallCard product={product} key={index} />
-            ))}
+          <div className="search-row">
+            {products &&
+              products
+                .slice(0, 15)
+                .map((product, index) => (
+                  <SmallCard product={product} key={index} />
+                ))}
           </div>
         </div>
       </div>

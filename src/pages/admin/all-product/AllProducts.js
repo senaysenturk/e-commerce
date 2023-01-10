@@ -75,19 +75,7 @@ const AllProducts = () => {
           }
         />
       </div>
-      {/* <div className="all-product-list">
-        <FilterNavigation></FilterNavigation>
-        <div className="products">
-          <div className="row-header">
-            <h2>All Products</h2>
-          </div>
-          <div className="row">
-            {context.products.map((product, index) => (
-            <SmallCard product={product} key={index} />
-          ))}
-          </div>
-        </div>
-      </div> */}
+
       {isOpen && (
         <EditPopup handleClose={togglePopup} currentProduct={currentProduct} />
       )}

@@ -14,18 +14,28 @@ const Search = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const catParam = searchParams.get("category");
   const subcatParam = searchParams.get("subcategory");
+  const additionalCategoryParam = searchParams.get("additionalCategories_like");
+
   const [filterKeys, setFilterKeys] = useState("");
   const handleGetProducts = async () => {
     subcatParam
       ? await getProductsBySubcategory(
+          "category",
           searchParams.get("category"),
+          "subcategory",
           searchParams.get("subcategory")
         )
-      : await getProductsByCategory(searchParams.get("category"));
+      : catParam &&
+        (await getProductsByCategory("category", searchParams.get("category")));
+    additionalCategoryParam &&
+      (await getProductsByCategory(
+        "additionalCategories_like",
+        searchParams.get("additionalCategories_like")
+      ));
   };
 
-  console.log(typeof subcatParam);
-  console.log("filterKeys", filterKeys);
+  // console.log(typeof subcatParam);
+  // console.log("filterKeys", filterKeys);
   useEffect(() => {
     setCategory(catParam);
     setSubCategory(subcatParam);
@@ -35,10 +45,14 @@ const Search = () => {
   return (
     <>
       <div className="search-and-filter-list">
-        <FilterNavigation setFilterKeys={setFilterKeys} />
+        <FilterNavigation setFilterKeys={setFilterKeys} category={category} />
         <div className="products">
           <div className="row-header">
-            <h2>{`${catParam} -> ${subcatParam && subcatParam} `}</h2>
+            <h2>
+              {`${catParam} -> ${
+                subcatParam && subcatParam
+              } -> ${additionalCategoryParam} `}
+            </h2>
           </div>
           <div className="search-row">
             {searchProducts &&

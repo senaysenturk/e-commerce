@@ -29,20 +29,25 @@ export const getProduct = async () => {
   return result.data;
 };
 
-export const getProductByCategory = async (category) => {
-  console.log(`http://localhost:5500/products?category=${category}`);
+export const getProductByCategory = async (categoryName, category) => {
+  console.log(`http://localhost:5500/products?${categoryName}=${category}`);
   const result = await baseService.getWithParams(
-    `http://localhost:5500/products?category=${category}`
+    `http://localhost:5500/products?${categoryName}=${category}`
   );
   return result;
 };
 
-export const getProductBySubcategory = async (category, subcategory) => {
+export const getProductBySubcategory = async (
+  categoryName,
+  category,
+  subCategoryName,
+  subcategory
+) => {
   console.log(
-    `http://localhost:5500/products?category=${category}&subcategory=${subcategory}`
+    `http://localhost:5500/products?${categoryName}=${category}&${subCategoryName}=${subcategory}`
   );
   const result = await baseService.getWithParams(
-    `http://localhost:5500/products?category=${category}&subcategory=${subcategory}`
+    `http://localhost:5500/products?${categoryName}=${category}&${subCategoryName}=${subcategory}`
   );
 
   return result;

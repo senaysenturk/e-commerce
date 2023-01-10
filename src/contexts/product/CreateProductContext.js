@@ -26,6 +26,7 @@ export const CreateProductProvider = ({ children }) => {
   const [moreResult, setMoreResult] = useState([]);
   const [searchProducts, setSearchProducts] = useState([]);
   const [uploadPercentage, setUploadPercentage] = useState(0);
+  const [filterKeys, setFilterKeys] = useState();
   const getAllProducts = async () => {
     const response = await getProduct();
     setProducts(response);
@@ -45,6 +46,7 @@ export const CreateProductProvider = ({ children }) => {
       imgPath: "",
       createdAt: new Date().toLocaleString(),
       updatedAt: new Date().toLocaleString(),
+      additionalCategories: "",
     });
     console.log("Reponse: " + response.status);
   };
@@ -97,15 +99,25 @@ export const CreateProductProvider = ({ children }) => {
     // console.log(response.data);
   };
 
-  const getProductsByCategory = async (category) => {
+  const getProductsByCategory = async (categoryName, category) => {
     setSearchProducts("");
-    const response = await getProductByCategory(category);
+    const response = await getProductByCategory(categoryName, category);
     setSearchProducts(response.data);
     console.log("getProductsByCategory", response.data);
   };
-  const getProductsBySubcategory = async (category, subcategory) => {
+  const getProductsBySubcategory = async (
+    categoryName,
+    category,
+    subCategoryName,
+    subcategory
+  ) => {
     setSearchProducts("");
-    const response = await getProductBySubcategory(category, subcategory);
+    const response = await getProductBySubcategory(
+      categoryName,
+      category,
+      subCategoryName,
+      subcategory
+    );
     setSearchProducts(response.data);
     console.log("getProductsBySubcategory", response.data);
   };
@@ -137,6 +149,8 @@ export const CreateProductProvider = ({ children }) => {
     searchProducts,
     setSearchProducts,
     uploadPercentage,
+    filterKeys,
+    setFilterKeys,
   };
 
   return (

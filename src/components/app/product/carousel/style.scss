@@ -9,5 +9,14 @@
     height: 350px;
     object-fit: cover;
     object-position: left top;
+    counter-increment: carousel-img;
+    &::before {
+      display: block;
+      text-align: center;
+      content: counter(carousel-img);
+      line-height: 200px;
+      font-size: 80px;
+      color: white;
+    }
   }
 }
