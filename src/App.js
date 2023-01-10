@@ -30,6 +30,7 @@ import AllOrders from "./pages/admin/all-orders/AllOrders";
 import AllUsers from "./pages/admin/all-users/AllUsers";
 import Search from "./pages/dashboard/search/Search";
 import ViewMore from "./pages/dashboard/view-more/ViewMore";
+import AboutUs from "./components/shared/footer/about-us/AboutUs";
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
             <Route path="trending" element={<Trending />} />
             <Route path="order-tracking" element={<OrderTracking />} />
             <Route path="sale" element={<Sale />} />
+            <Route path="about-us" element={<AboutUs />} />
             <Route path="user-profile" element={<UserProfile />} />
             <Route path="shopping" element={<Shopping />}>
               <Route path="cart" element={<Cart />} />
