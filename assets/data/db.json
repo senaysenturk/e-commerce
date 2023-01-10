@@ -5,11 +5,11 @@
       "name": "Blazer Jacket",
       "price": 49.99,
       "size": [
-        "XS",
-        "S"
+        "S",
+        "XXL"
       ],
       "color": [
-        "white"
+        "red"
       ],
       "category": "Woman",
       "subcategory": "Jacket",

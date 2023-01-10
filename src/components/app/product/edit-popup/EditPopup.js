@@ -27,6 +27,8 @@ export const EditPopup = ({ currentProduct, handleClose }) => {
 
   const handleProduct = (e) => {
     const { name, value } = e.target;
+    if (name === "category") setCategory(value);
+
     if (name === "color" || name === "size") {
       let options;
       if (e.target.checked) {
@@ -81,6 +83,11 @@ export const EditPopup = ({ currentProduct, handleClose }) => {
     getAllColors();
     getAllSizes();
     getAllCategories();
+    setEditProduct((prevState) => ({
+      ...prevState,
+      color: currentProduct.color,
+      size: currentProduct.size,
+    }));
   }, []);
 
   return (
@@ -100,7 +107,7 @@ export const EditPopup = ({ currentProduct, handleClose }) => {
                 placeholder="T-Shirt"
                 id="name"
                 name="name"
-                value={currentProduct.name}
+                defaultValue={currentProduct.name}
                 onChange={handleProduct}
               />
               <label htmlFor="price">Price</label>
@@ -111,7 +118,7 @@ export const EditPopup = ({ currentProduct, handleClose }) => {
                 min="0"
                 id="price"
                 name="price"
-                value={currentProduct.price}
+                defaultValue={currentProduct.price}
                 onChange={handleProduct}
               />
               <div className="sizes">
