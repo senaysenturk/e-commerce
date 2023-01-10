@@ -50,6 +50,17 @@ body {
   cursor: pointer;
 }
 
+.after-btn {
+  text-decoration: none;
+  font: 40px/70px Arial;
+  color: rgb(148, 145, 145);
+  border-radius: 100%;
+  position: absolute;
+  top: 28%;
+  background-color: rgba($color: #282626, $alpha: 0.4);
+  z-index: 100;
+}
+
 .btn-primary {
   color: var(--dark-color);
   background-color: var(--primary-color);

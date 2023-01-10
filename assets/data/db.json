@@ -293,7 +293,7 @@
       "mail": "hicranertugral@gmail.com",
       "user": "hicran",
       "password": "Bilge123!",
-      "birth": "1985-10-11",
+      "birth": "1985-11-11",
       "gender": "female",
       "role": "user",
       "addresses": [],
@@ -310,9 +310,9 @@
   ],
   "me": [
     {
-      "user": "admin@shiwear.com",
+      "user": "ipekgulsen.celik@gmail.com",
       "password": "Bilge123!",
-      "role": "admin",
+      "role": "user",
       "id": 1
     }
   ],
@@ -377,7 +377,7 @@
       "mail": "hicranertugral@gmail.com",
       "user": "hicran",
       "password": "Bilge123!",
-      "birth": "1985-10-11",
+      "birth": "1985-11-11",
       "gender": "female",
       "role": "user",
       "addresses": [],
