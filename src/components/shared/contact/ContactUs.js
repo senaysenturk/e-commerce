@@ -1,4 +1,5 @@
 import React from "react";
+import "./style.scss";
 
 const ContactUs = () => {
   return (
@@ -7,7 +8,7 @@ const ContactUs = () => {
         <h1>Contact Us</h1>
         <img src="./about-us-photos/about-us.jpeg" alt="" />
       </div>
-      <div className="ablout-info">
+      <div className="about-info">
         <div className="full-name">
           <input type="text" className="name" placeholder="Full Name" />
         </div>
