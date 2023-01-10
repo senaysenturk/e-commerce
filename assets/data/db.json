@@ -263,11 +263,31 @@
       "mail": "ipekgulsen.celik@gmail.com",
       "user": "ipek",
       "password": "Bilge123!",
-      "birth": "2022-12-08",
+      "birth": "1993-12-08",
       "gender": "female",
       "role": "user",
       "addresses": [],
       "id": 1
+    },
+    {
+      "mail": "senaysenturk@outlook.com",
+      "user": "senay",
+      "password": "Bilge123!",
+      "birth": "1990-11-17",
+      "gender": "female",
+      "role": "user",
+      "addresses": [],
+      "id": 2
+    },
+    {
+      "mail": "hicranertugral@gmail.com",
+      "user": "hicran",
+      "password": "Bilge123!",
+      "birth": "1985-10-11",
+      "gender": "female",
+      "role": "user",
+      "addresses": [],
+      "id": 3
     }
   ],
   "auth": [
@@ -291,7 +311,7 @@
       "mail": "ipekgulsen.celik@gmail.com",
       "user": "ipek",
       "password": "Bilge123!",
-      "birth": "2022-12-08",
+      "birth": "1993-12-08",
       "gender": "female",
       "role": "user",
       "addresses": [
@@ -322,6 +342,26 @@
         }
       ],
       "id": 1
+    },
+    {
+      "mail": "senaysenturk@outlook.com",
+      "user": "senay",
+      "password": "Bilge123!",
+      "birth": "1990-11-17",
+      "gender": "female",
+      "role": "user",
+      "addresses": [],
+      "id": 2
+    },
+    {
+      "mail": "hicranertugral@gmail.com",
+      "user": "hicran",
+      "password": "Bilge123!",
+      "birth": "1985-10-11",
+      "gender": "female",
+      "role": "user",
+      "addresses": [],
+      "id": 3
     }
   ],
   "cities": [
@@ -1813,26 +1853,5 @@
       "createdAt": "1/1/2023, 6:25:08 PM"
     }
   ],
-  "order-list": [
-    {
-      "date": 1673284022688,
-      "orderId": 1673284022688,
-      "orderList": [
-        {
-          "createdAt": "1/1/2023, 6:25:08 PM",
-          "name": "Ribbed turtleneck dress",
-          "price": 29.99,
-          "size": "S",
-          "color": "black",
-          "category": "Woman",
-          "subcategory": "Dress",
-          "imgPath": "http://res.cloudinary.com/dr4cvohdq/image/upload/v1672579518/txkzmjkj0t9kh29rwelg.webp",
-          "id": 1,
-          "amount": 1
-        }
-      ],
-      "totalOrderAmount": 29.99,
-      "id": 1
-    }
-  ]
+  "order-list": []
 }

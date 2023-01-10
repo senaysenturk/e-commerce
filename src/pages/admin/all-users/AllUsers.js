@@ -14,8 +14,8 @@ const AllUsers = () => {
     setIsOpen(!isOpen);
   };
 
-  const handleDeleteUser = async (userId) => {
-    removeUser(userId);
+  const handleDeleteUser = async (user, userId) => {
+    removeUser(user, userId);
   };
 
   useEffect(() => {
@@ -59,7 +59,7 @@ const AllUsers = () => {
                     className="list-btn btn-danger"
                     onClick={() => {
                       console.log(user.id);
-                      handleDeleteUser(user.id);
+                      handleDeleteUser(user, user.id);
                     }}
                   >
                     Delete

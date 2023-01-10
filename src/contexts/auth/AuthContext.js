@@ -2,8 +2,10 @@ import { useState, createContext, useEffect, useContext } from "react";
 import {
   postUser,
   getUsers,
+  getSignUp,
   patchUser,
   deleteUser,
+  deleteSignUp,
   postMe,
   fetchMe,
   fetchLogout,
@@ -43,8 +45,17 @@ const AuthProvider = ({ children }) => {
     console.log(response.data);
   };
 
-  const removeUser = async (userId) => {
+  const removeUser = async (userObj, userId) => {
     await deleteUser(userId);
+
+    const response = await getSignUp();
+
+    const tempUser = response.data.filter(
+      (registerObj) => registerObj.user === userObj.user
+    );
+
+    await deleteSignUp(tempUser[0].id);
+
     getAllUsers();
   };
 
