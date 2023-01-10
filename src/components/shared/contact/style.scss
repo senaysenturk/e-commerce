@@ -44,7 +44,7 @@
 
   input,
   select,
-  .about-btn {
+  .about-btn{
     width: 30%;
     height: 3.2rem;
     padding: 5px;
@@ -58,6 +58,14 @@
     font-size: 15px;
     letter-spacing: 2px;
     font-weight: bold;
+  }
+
+  .msg-box{
+    padding: 30px;
+    #message:placeholder-shown{
+      padding: 5px;
+      padding-top: 10px;
+    }
   }
 }
 
