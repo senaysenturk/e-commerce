@@ -97,6 +97,7 @@ function SignUp({ history }) {
         gender,
         role,
         addresses,
+        orders,
       });
       /* const response = await axios.post(
         SIGNUP_URL,
