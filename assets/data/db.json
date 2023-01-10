@@ -283,7 +283,7 @@
       "mail": "hicranertugral@gmail.com",
       "user": "hicran",
       "password": "Bilge123!",
-      "birth": "1985-10-11",
+      "birth": "1985-11-11",
       "gender": "female",
       "role": "user",
       "addresses": [],
@@ -298,14 +298,7 @@
       "id": 1
     }
   ],
-  "me": [
-    {
-      "user": "ipekgulsen.celik@gmail.com",
-      "password": "Bilge123!",
-      "role": "user",
-      "id": 1
-    }
-  ],
+  "me": [],
   "users": [
     {
       "mail": "ipekgulsen.celik@gmail.com",
@@ -357,7 +350,7 @@
       "mail": "hicranertugral@gmail.com",
       "user": "hicran",
       "password": "Bilge123!",
-      "birth": "1985-10-11",
+      "birth": "1985-11-11",
       "gender": "female",
       "role": "user",
       "addresses": [],
