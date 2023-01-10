@@ -5,12 +5,13 @@
   z-index: 10;
   // width: 50%;
 
-  h3.msg{
+  h3.msg {
     font-family: "Sacramento", cursive;
     font-size: 30px;
     padding-top: 30px;
     letter-spacing: 4px;
-}
+  }
+
   .about-content {
     display: flex;
     flex-direction: column;
@@ -22,14 +23,12 @@
     display: flex;
     justify-content: center;
 
-   
-
     h1 {
       font-family: "Sacramento", cursive;
       font-size: 55px;
       font-weight: 500px;
       position: absolute;
-      color:rgba(#bcc9c5, 0.9);
+      color: rgba(#bcc9c5, 0.9);
       top: 40px;
       right: 110px;
     }
@@ -42,8 +41,57 @@
     }
   }
 
+  .instructions {
+    font-size: 0.75rem;
+    border-radius: 0.5rem;
+    background: #000;
+    color: #fff;
+    padding: 0.25rem;
+    position: relative;
+    bottom: -10px;
+
+    &>svg {
+      margin-right: 0.25rem;
+    }
+  }
+
+  .offscreen {
+    position: absolute;
+    left: -9999px;
+  }
+
+  .hide {
+    display: none;
+  }
+
+  .valid {
+    color: limegreen;
+    margin-left: 0.25rem;
+  }
+
+  .invalid {
+    color: red;
+    margin-left: 0.25rem;
+  }
+
+  .errmsg {
+    background-color: lightpink;
+    color: firebrick;
+    font-weight: bold;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .flexGrow {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+  }
+
   input,
   select,
+  textarea,
   .about-btn {
     width: 30%;
     height: 3.2rem;
@@ -53,7 +101,11 @@
     margin: 20px;
   }
 
-  .about-btn{
+  textarea {
+    height: 100px;
+  }
+
+  .about-btn {
     color: #37595a;
     font-size: 15px;
     letter-spacing: 2px;
