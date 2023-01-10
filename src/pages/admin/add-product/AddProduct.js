@@ -19,7 +19,8 @@ const AddProduct = () => {
     categories,
     getAllCategories,
     uploadPercentage,
-
+    additionalCategories,
+    getAllAdditionalCategories,
     // setColor,
     // setSize,
   } = useProduct();
@@ -74,7 +75,8 @@ const AddProduct = () => {
   useEffect(() => {
     getAllColors();
     getAllSizes();
-    getAllCategories();
+    getAllCategories("categories");
+    getAllAdditionalCategories("additionalCategories");
   }, [size, color]);
 
   const [completed, setCompleted] = useState(0);
@@ -105,10 +107,10 @@ const AddProduct = () => {
           name="price"
           onChange={handleSetProduct}
         />
-        <div className="sizes">
+        <div className="multi-choices">
           <p>Sizes:</p>
           {sizes.map((size, index) => (
-            <div className="size">
+            <div className="choice">
               <input
                 type="checkbox"
                 name="size"
@@ -159,6 +161,22 @@ const AddProduct = () => {
                 return <option key={index}>{subcategory}</option>;
               })}
         </select>
+
+        <div className="multi-choices">
+          <p>Additional categories:</p>
+          {additionalCategories.map((addCategory, index) => (
+            <div className="choice">
+              <input
+                type="checkbox"
+                name="additional-category"
+                id={addCategory}
+                value={addCategory}
+                onChange={handleSetProduct}
+              />
+              <label for={addCategory}>{addCategory}</label>
+            </div>
+          ))}
+        </div>
         <label htmlFor="image">Image</label>
         <input type="file" id="image" name="image" onChange={handleSetImage} />
         <ProgressBar bgcolor={"#6a1b9a"} percentage={uploadPercentage} />

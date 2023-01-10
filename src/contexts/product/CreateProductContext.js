@@ -23,6 +23,7 @@ export const CreateProductProvider = ({ children }) => {
   const [colors, setColors] = useState([]);
   const [sizes, setSizes] = useState([]);
   const [categories, setCategories] = useState([]);
+  const [additionalCategories, setAdditionalCategories] = useState([]);
   const [moreResult, setMoreResult] = useState([]);
   const [searchProducts, setSearchProducts] = useState([]);
   const [uploadPercentage, setUploadPercentage] = useState(0);
@@ -93,9 +94,15 @@ export const CreateProductProvider = ({ children }) => {
     // console.log(sizes);
   };
 
-  const getAllCategories = async () => {
-    const response = await getCategories();
+  const getAllCategories = async (categoryName) => {
+    const response = await getCategories(categoryName);
     setCategories(response.data);
+    // console.log(response.data);
+  };
+
+  const getAllAdditionalCategories = async (categoryName) => {
+    const response = await getCategories(categoryName);
+    setAdditionalCategories(response.data);
     // console.log(response.data);
   };
 
@@ -151,6 +158,8 @@ export const CreateProductProvider = ({ children }) => {
     uploadPercentage,
     filterKeys,
     setFilterKeys,
+    additionalCategories,
+    getAllAdditionalCategories,
   };
 
   return (

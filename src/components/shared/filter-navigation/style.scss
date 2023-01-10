@@ -25,13 +25,13 @@
       flex-wrap: wrap;
     }
   }
-  .sizes {
+  .multi-choices {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
     width: 150px;
-    .size {
+    .choice {
       display: flex;
       /* justify-content: center; */
       /* align-items: center; */

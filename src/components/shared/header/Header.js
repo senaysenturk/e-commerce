@@ -22,7 +22,7 @@ export const Header = ({ title }) => {
   // const [category, setCategory] = useState(initialPage);
 
   useEffect(() => {
-    getAllCategories();
+    getAllCategories("categories");
   }, []);
 
   return (
