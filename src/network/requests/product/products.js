@@ -48,9 +48,10 @@ export const getProductBySubcategory = async (category, subcategory) => {
   return result;
 };
 
-export const postImage = (data, handleUploadProgress = () => {}) => {
+export const postImage = (data, onUploadProgress) => {
   return baseService.postImage(
     "https://api.cloudinary.com/v1_1/dr4cvohdq/image/upload",
-    data
+    data,
+    onUploadProgress
   );
 };

@@ -19,6 +19,7 @@ const AddProduct = () => {
     categories,
     getAllCategories,
     uploadPercentage,
+
     // setColor,
     // setSize,
   } = useProduct();
@@ -41,6 +42,7 @@ const AddProduct = () => {
         [name]: options,
       }));
     } else {
+      if (name === "category") setCategory(value);
       setProduct((prevState) => ({
         ...prevState,
         [name]: value,
@@ -49,7 +51,7 @@ const AddProduct = () => {
   };
 
   const handleSetImage = async (e) => {
-    var response = await uploadImage(e.target.files[0]);
+    var percentage = await uploadImage(e.target.files[0]);
   };
 
   const handleSetSize = (e) => {
@@ -114,7 +116,7 @@ const AddProduct = () => {
                 value={size}
                 onChange={handleSetProduct}
               />
-              <label for={size}>{size}</label>
+              <label htmlFor={size}>{size}</label>
             </div>
           ))}
         </div>
@@ -130,7 +132,7 @@ const AddProduct = () => {
                   value={color}
                   onChange={handleSetProduct}
                 />
-                <label for={color}>
+                <label htmlFor={color}>
                   <span className={color} name={color} id={color}></span>
                 </label>
               </>
@@ -159,7 +161,7 @@ const AddProduct = () => {
         </select>
         <label htmlFor="image">Image</label>
         <input type="file" id="image" name="image" onChange={handleSetImage} />
-        {/* <ProgressBar bgcolor={"#6a1b9a"} completed={uploadPercentage} /> */}
+        <ProgressBar bgcolor={"#6a1b9a"} percentage={uploadPercentage} />
       </div>
       <div className="add-button">
         <button className="btn btn-primary" onClick={() => addProduct()}>

@@ -57,14 +57,15 @@ baseService.patch = async (url, endpoint, id, data) => {
   }
 };
 
-baseService.postImage = async (url, data, handleUploadProgress = () => {}) => {
+baseService.postImage = async (url, data, onUploadProgress) => {
   try {
     const response = await axios.post(url, data, {
       headers: {
         Accept: "*",
       },
-      onUploadProgress: handleUploadProgress,
+      onUploadProgress,
     });
+    console.log(response);
     return response;
   } catch (error) {
     console.log(error.status);
@@ -125,9 +126,9 @@ baseService.sendOrderItems = async (orderData) => {
   await axios.post(orderUrl, orderData);
 };
 /**
- * 
+ *
  * @param {AuthUser["id"]} userId
- * @returns {Promise<OrderProduct[]>} 
+ * @returns {Promise<OrderProduct[]>}
  */
 
 baseService.getOrderItemsByUserId = async (userId) => {

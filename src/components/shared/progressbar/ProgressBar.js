@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./style.scss";
 
-const ProgressBar = ({ completed }) => {
+const ProgressBar = ({ percentage, bgcolor }) => {
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    console.log(percentage);
+    setProgress(percentage);
+  }, [percentage]);
   return (
-    <div>
-      <div>
-        Image uploading... <span>{`${completed}%`}</span>
-      </div>
+    <div className="progress-bar">
+      <div className="progress-bar-inner">{progress}%</div>
     </div>
   );
 };

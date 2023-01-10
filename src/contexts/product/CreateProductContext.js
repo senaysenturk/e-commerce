@@ -23,10 +23,9 @@ export const CreateProductProvider = ({ children }) => {
   const [colors, setColors] = useState([]);
   const [sizes, setSizes] = useState([]);
   const [categories, setCategories] = useState([]);
-  const [uploadPercentage, setUploadPercentage] = useState(0);
   const [moreResult, setMoreResult] = useState([]);
   const [searchProducts, setSearchProducts] = useState([]);
-
+  const [uploadPercentage, setUploadPercentage] = useState(0);
   const getAllProducts = async () => {
     const response = await getProduct();
     setProducts(response);
@@ -68,16 +67,16 @@ export const CreateProductProvider = ({ children }) => {
     formdata.append("file", img);
     formdata.append("upload_preset", "vi6rdwfh");
     formdata.append("cloud_name", "dr4cvohdq");
-    const response = await postImage(formdata, (progressEvent) => {
-      const percentage = parseInt(
-        Math.round((progressEvent.loaded * 100) / progressEvent.total)
-      );
-      setUploadPercentage(percentage);
-      console.log(percentage);
-      return percentage;
-    });
 
+    let percentage = null;
+    const onUploadProgress = (event) => {
+      percentage = Math.round((event.loaded / event.total) * 100);
+    };
+    console.log("percentage", percentage);
+
+    const response = await postImage(formdata, onUploadProgress);
     setProduct({ ...product, imgPath: response.data.url });
+    return percentage;
   };
 
   const getAllColors = async () => {
@@ -133,11 +132,11 @@ export const CreateProductProvider = ({ children }) => {
     getAllCategories,
     // setColor,
     // setSize,
-    uploadPercentage,
     getProductsByCategory,
     getProductsBySubcategory,
     searchProducts,
     setSearchProducts,
+    uploadPercentage,
   };
 
   return (
