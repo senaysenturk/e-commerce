@@ -8,6 +8,10 @@ export const postSignUp = (newUser) => {
   return baseService.postAuth("http://localhost:5500/", "signup", newUser);
 };
 
+export const deleteSignUp = async (userId) => {
+  return baseService.delete("http://localhost:5500/", "signup/", userId);
+};
+
 export const getUsers = () => {
   return baseService.get("http://localhost:5500/", "users");
 };
