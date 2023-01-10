@@ -3,6 +3,7 @@ import {
   postUser,
   getUsers,
   getSignUp,
+  patchSignUp,
   patchUser,
   deleteUser,
   deleteSignUp,
@@ -44,6 +45,18 @@ const AuthProvider = ({ children }) => {
     setUsers(response.data);
     console.log(response.data);
   };
+
+  const updateSignUp = async (userObj, newUser) => {
+    const response = await getSignUp();
+
+    const tempUser = response.data.filter(
+      (registerObj) => registerObj.user === userObj.user
+    );
+
+    await patchSignUp(tempUser[0].id, newUser);
+
+    getAllUsers();
+  }
 
   const removeUser = async (userObj, userId) => {
     await deleteUser(userId);
@@ -248,6 +261,7 @@ const AuthProvider = ({ children }) => {
     users,
     getAllUsers,
     updateUser,
+    updateSignUp,
     removeUser,
     register,
     login,

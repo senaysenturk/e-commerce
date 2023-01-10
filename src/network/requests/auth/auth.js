@@ -12,6 +12,10 @@ export const deleteSignUp = async (userId) => {
   return baseService.delete("http://localhost:5500/", "signup/", userId);
 };
 
+export const patchSignUp = (id, newUser) => {
+  return baseService.patch("http://localhost:5500/", "signup/", id, newUser);
+};
+
 export const getUsers = () => {
   return baseService.get("http://localhost:5500/", "users");
 };
