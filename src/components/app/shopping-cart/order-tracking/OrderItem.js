@@ -1,6 +1,8 @@
 import React from "react";
 import { dummyOrderData } from "./OrderTracking";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
+import { FcCheckmark } from "react-icons/fc";
+
 
 
 /**
@@ -33,11 +35,11 @@ const OrderItem = ({orderData}) => {
             </div>
             <div className="orderId">{data.orderId}</div>
 
-            <div className="successInfo">Order complated</div>
+            <div className="successInfo"> <FcCheckmark /> Order completed.</div>
 
             <div className="totalPrice">{data.totalOrderAmount}</div>
 
-            <button className="detail"> <BiChevronRight className="detail-btn"/> </button>
+            <button className="detail"> <BiChevronRight className="after-btn"/> </button>
             
 
             <div className="detailItems">
