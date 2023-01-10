@@ -1,0 +1,57 @@
+.show-case {
+  height: 70%;
+  color: rgb(55, 90, 90);
+  background: url("../about-us-photos/about-us.jpeg") no-repeat center
+    center/cover;
+  position: relative;
+  z-index: 10;
+
+  .show-case-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    padding: 0 20px;
+
+    h1 {
+      font-family: "Sacramento", cursive;
+      font-size: 55px;
+      font-weight: 500px;
+    }
+
+    img {
+      padding-top: 3%;
+      height: 60%;
+      width: 90%;
+      font-family: "Sacramento", cursive;
+    }
+  }
+  .about-us {
+    height: 85%;
+    p {
+      color: rgb(55, 90, 90);
+      // font-family: "Sacramento", cursive;
+      font-family: sans-serif;
+      height: 85%;
+      font-size: 1, 5rem;
+      line-height: 1.5rem;
+      padding: 8%;
+      padding-top: 3%;
+      padding-bottom: 3%;
+      text-align: justify;
+    }
+  }
+}
+
+.show-case::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(55, 90, 90, 0.1);
+}
+

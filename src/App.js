@@ -30,7 +30,7 @@ import AllOrders from "./pages/admin/all-orders/AllOrders";
 import AllUsers from "./pages/admin/all-users/AllUsers";
 import Search from "./pages/dashboard/search/Search";
 import ViewMore from "./pages/dashboard/view-more/ViewMore";
-import AboutUs from "./components/shared/footer/about-us/AboutUs";
+import AboutUs from "./components/shared/about-us/AboutUs";
 
 function App() {
   return (
