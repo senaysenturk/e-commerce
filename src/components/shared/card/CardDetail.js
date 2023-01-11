@@ -57,7 +57,7 @@ const CardDetail = () => {
 
   const handleAddFavorite = () => {
     addFavorite(product);
-    setFavorite(!favorite);
+    setFavorite(favorite);
   };
   const handleDeleteFavorite = () => {
     deleteFavorite(product);

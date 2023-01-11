@@ -373,14 +373,20 @@
       "password": "Bilge123!",
       "role": "user",
       "id": 4
+    },
+    {
+      "user": "shiwear",
+      "password": "Bilge123!",
+      "role": "admin",
+      "id": 5
     }
   ],
   "me": [
     {
-      "user": "senay",
+      "user": "shiwear",
       "password": "Bilge123!",
-      "role": "user",
-      "id": 4
+      "role": "admin",
+      "id": 5
     }
   ],
   "users": [
@@ -395,28 +401,6 @@
       "orders": [],
       "id": 1,
       "favorites": [
-        {
-          "createdAt": "1/1/2023, 6:37:45 PM",
-          "updatedAt": "1/1/2023, 6:37:45 PM",
-          "name": "Tropical print shirt",
-          "size": [
-            "XXS",
-            "XS",
-            "S"
-          ],
-          "color": [
-            "white",
-            "black"
-          ],
-          "category": "Child",
-          "subcategory": "Shirt",
-          "additionalCategories": [
-            "trending"
-          ],
-          "imgPath": "http://res.cloudinary.com/dr4cvohdq/image/upload/v1672595350/pmqzrdpmnlfylvp2h7co.jpg",
-          "price": 112.99,
-          "id": 11
-        },
         {
           "createdAt": "1/1/2023, 6:30:20 PM",
           "updatedAt": "1/1/2023, 6:30:20 PM",
@@ -521,7 +505,29 @@
           "totalOrderAmount": "49.99"
         }
       ],
-      "id": 3
+      "id": 3,
+      "favorites": [
+        {
+          "createdAt": "1/1/2023, 6:25:08 PM",
+          "updatedAt": "1/1/2023, 6:25:08 PM",
+          "name": "T-shirt",
+          "price": 10,
+          "size": [
+            "XL"
+          ],
+          "color": [
+            "white"
+          ],
+          "category": "Woman",
+          "subcategory": "T-shirt",
+          "additionalCategories": [
+            "trending",
+            "sale"
+          ],
+          "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/6202/267/001/6202267001_1_1_2.jpg?t=1669732582176",
+          "id": 3
+        }
+      ]
     },
     {
       "mail": "hicranertugral@gmail.com",
@@ -2053,32 +2059,5 @@
       ]
     }
   ],
-  "order-list": [
-    {
-      "date": 1673457130013,
-      "orderId": 1673457130013,
-      "orderList": [
-        {
-          "createdAt": "1/1/2023, 6:25:08 PM",
-          "updatedAt": "1/1/2023, 6:25:08 PM",
-          "name": "Blazer Jacket",
-          "price": 49.99,
-          "size": "XXL",
-          "color": "red",
-          "category": "Woman",
-          "subcategory": "Jacket",
-          "additionalCategories": [
-            "best-sellers",
-            "trending",
-            "sale"
-          ],
-          "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/5900/472/430/5900472430_1_1_2.jpg?t=1669736376209",
-          "id": 1,
-          "amount": 1
-        }
-      ],
-      "totalOrderAmount": "49.99",
-      "id": 1
-    }
-  ]
+  "order-list": []
 }
