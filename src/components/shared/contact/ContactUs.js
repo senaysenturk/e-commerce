@@ -230,6 +230,7 @@ const ContactUs = () => {
           <textarea
             id="message"
             name="message"
+            rows={5}
             placeholder="Write message..."
             onChange={handleMessage}
           ></textarea>
