@@ -4,6 +4,7 @@ import {
   deleteMessage,
 } from "../../../network/requests/contact/contact";
 import Table from "../../../components/shared/table/Table";
+import DetailPopup from "../../../components/app/admin/message/detail-popup/DatailPopup";
 
 export const AllMessages = () => {
   const [messages, setMessages] = useState([]);
@@ -41,6 +42,7 @@ export const AllMessages = () => {
               { name: "Phone" },
               { name: "Subject", sortable: true },
               { name: "Message", sortable: true },
+              { name: "Send Date", sortable: true },
               { name: "Options", width: 200 },
             ]}
             body={
@@ -51,6 +53,7 @@ export const AllMessages = () => {
                 message.phone,
                 message.subject,
                 message.message.split(" ").slice(0, 3).join(" ") + "...",
+                message.createdAt,
                 [
                   <button
                     className="list-btn "
@@ -59,7 +62,7 @@ export const AllMessages = () => {
                       togglePopup();
                     }}
                   >
-                    Edit
+                    Details
                   </button>,
                   <button
                     className="list-btn btn-danger"
@@ -75,9 +78,12 @@ export const AllMessages = () => {
             }
           />
         </div>
-        {/*  {isOpen && (
-          <DetailPopup handleClose={togglePopup} messageObject={messageObject} />
-        )} */}
+        {isOpen && (
+          <DetailPopup
+            handleClose={togglePopup}
+            messageObject={messageObject}
+          />
+        )}
       </div>
     </>
   );
