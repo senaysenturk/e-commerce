@@ -113,6 +113,15 @@ export const EditPopup = ({ currentProduct, handleClose }) => {
                 defaultValue={currentProduct.name}
                 onChange={handleProduct}
               />
+              <label htmlFor="product-detail">Product Detail</label>
+              <input
+                type="text"
+                placeholder="Lorem, ipsum dolor sit amet consectetur adipisicing elit. "
+                id="detail"
+                name="detail"
+                defaultValue={currentProduct.detail}
+                onChange={handleProduct}
+              />
               <label htmlFor="price">Price</label>
               <input
                 type="number"

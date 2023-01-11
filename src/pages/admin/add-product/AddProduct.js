@@ -97,6 +97,14 @@ const AddProduct = () => {
           name="name"
           onChange={handleSetProduct}
         />
+        <label htmlFor="product-detail">Product Detail</label>
+        <input
+          type="text"
+          placeholder="Lorem, ipsum dolor sit amet consectetur adipisicing elit. "
+          id="detail"
+          name="detail"
+          onChange={handleSetProduct}
+        />
         <label htmlFor="price">Price</label>
         <input
           type="number"
