@@ -8,6 +8,6 @@ export const getSizes = async () => {
   return baseService.get("http://localhost:5500/", "sizes");
 };
 
-export const getCategories = async () => {
-  return baseService.get("http://localhost:5500/", "categories");
+export const getCategories = async (categoryName) => {
+  return baseService.get("http://localhost:5500/", categoryName);
 };

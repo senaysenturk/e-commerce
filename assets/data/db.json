@@ -2,15 +2,11 @@
   "products": [
     {
       "createdAt": "1/1/2023, 6:25:08 PM",
+      "updatedAt": "1/1/2023, 6:25:08 PM",
       "name": "Blazer Jacket",
       "price": 49.99,
-      "size": [
-        "S",
-        "XXL"
-      ],
-      "color": [
-        "red"
-      ],
+      "size": ["S", "XXL"],
+      "color": ["red"],
       "category": "Woman",
       "subcategory": "Jacket",
       "additionalCategories": [
@@ -19,10 +15,11 @@
         "sale"
       ],
       "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/5900/472/430/5900472430_1_1_2.jpg?t=1669736376209",
-      "id": 2
+      "id": 1
     },
     {
       "createdAt": "1/1/2023, 6:25:08 PM",
+      "updatedAt": "1/1/2023, 6:25:08 PM",
       "name": "T-shirt",
       "price": 10,
       "size": [
@@ -42,6 +39,7 @@
     },
     {
       "createdAt": "1/1/2023, 6:25:08 PM",
+      "updatedAt": "1/1/2023, 6:25:08 PM",
       "name": "Lace pleated dress",
       "price": 59.99,
       "size": [
@@ -64,6 +62,7 @@
     },
     {
       "createdAt": "1/1/2023, 6:27:54 PM",
+      "updatedAt": "1/1/2023, 6:27:54 PM",
       "name": "Regular fit Oxford cotton shirt",
       "price": 29.99,
       "color": [
@@ -84,6 +83,7 @@
     },
     {
       "createdAt": "1/1/2023, 6:29:03 PM",
+      "updatedAt": "1/1/2023, 6:29:03 PM",
       "name": "Wool zip neck jumper",
       "price": 39.99,
       "color": [
@@ -104,6 +104,7 @@
     },
     {
       "createdAt": "1/1/2023, 6:30:20 PM",
+      "updatedAt": "1/1/2023, 6:30:20 PM",
       "name": "Sherpa pocket sweatshirt",
       "price": 45.99,
       "color": [
@@ -122,6 +123,7 @@
     },
     {
       "createdAt": "1/1/2023, 6:31:08 PM",
+      "updatedAt": "1/1/2023, 6:31:08 PM",
       "name": "Lightweight cotton sweatshirt",
       "price": 27.99,
       "color": [
@@ -140,6 +142,7 @@
     },
     {
       "createdAt": "1/1/2023, 6:33:15 PM",
+      "updatedAt": "1/1/2023, 6:33:15 PM",
       "name": "Quilted down anorak",
       "price": 99.99,
       "size": [
@@ -163,6 +166,7 @@
     },
     {
       "createdAt": "1/1/2023, 6:36:45 PM",
+      "updatedAt": "1/1/2023, 6:36:45 PM",
       "name": "Mini-dress with crystals",
       "price": 199.99,
       "size": [
@@ -192,6 +196,8 @@
       "id": 10
     },
     {
+      "createdAt": "1/1/2023, 6:37:45 PM",
+      "updatedAt": "1/1/2023, 6:37:45 PM",
       "name": "Tropical print shirt",
       "size": [
         "XXS",
@@ -1910,16 +1916,22 @@
       "amount": 3
     },
     {
-      "name": "Ribbed turtleneck dress",
-      "price": 29.99,
-      "size": "S",
-      "color": "black",
+      "name": "Blazer Jacket",
+      "price": 10,
+      "size": "",
+      "color": "",
       "category": "Woman",
-      "subcategory": "Dress",
-      "imgPath": "http://res.cloudinary.com/dr4cvohdq/image/upload/v1672579518/txkzmjkj0t9kh29rwelg.webp",
+      "subcategory": "Jacket",
+      "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/5900/472/430/5900472430_1_1_2.jpg?t=1669736376209",
       "id": 1,
-      "amount": 1,
-      "createdAt": "1/1/2023, 6:25:08 PM"
+      "amount": 2,
+      "createdAt": "1/1/2023, 6:25:08 PM",
+      "updatedAt": "1/1/2023, 6:25:08 PM",
+      "additionalCategories": [
+        "best-sellers",
+        "trending",
+        "sale"
+      ]
     }
   ],
   "order-list": [

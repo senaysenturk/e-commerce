@@ -15,6 +15,8 @@ export const EditPopup = ({ currentProduct, handleClose }) => {
     getAllSizes,
     categories,
     getAllCategories,
+    additionalCategories,
+    getAllAdditionalCategories,
     uploadPercentage,
     // setColor,
     // setSize,
@@ -29,7 +31,7 @@ export const EditPopup = ({ currentProduct, handleClose }) => {
     const { name, value } = e.target;
     if (name === "category") setCategory(value);
 
-    if (name === "color" || name === "size") {
+    if (name === "color" || name === "size" || name == "additional-category") {
       let options;
       if (e.target.checked) {
         options = [...(editProduct[name] || []), value];
@@ -82,7 +84,8 @@ export const EditPopup = ({ currentProduct, handleClose }) => {
   useEffect(() => {
     getAllColors();
     getAllSizes();
-    getAllCategories();
+    getAllCategories("categories");
+    getAllAdditionalCategories("additionalCategories");
     setEditProduct((prevState) => ({
       ...prevState,
       color: currentProduct.color,
@@ -121,11 +124,11 @@ export const EditPopup = ({ currentProduct, handleClose }) => {
                 defaultValue={currentProduct.price}
                 onChange={handleProduct}
               />
-              <div className="sizes">
+              <div className="multi-choices">
                 <p>Sizes:</p>
                 {sizes.map((size, index) =>
                   currentProduct.size.includes(size) ? (
-                    <div className="size">
+                    <div className="choice">
                       <input
                         type="checkbox"
                         name="size"
@@ -137,7 +140,7 @@ export const EditPopup = ({ currentProduct, handleClose }) => {
                       <label for={size}>{size}</label>
                     </div>
                   ) : (
-                    <div className="size">
+                    <div className="choice">
                       <input
                         type="checkbox"
                         name="size"
@@ -253,6 +256,50 @@ export const EditPopup = ({ currentProduct, handleClose }) => {
                       )}
               </select>
 
+              <div className="multi-choices">
+                <p>Additional categories:</p>
+                {additionalCategories.map((addCategory, index) =>
+                  addCategory === currentProduct.additionalCategories ? (
+                    <div className="choice">
+                      <input
+                        type="checkbox"
+                        name="additional-category"
+                        id={addCategory}
+                        value={addCategory}
+                        defaultChecked={addCategory}
+                        onChange={handleSetSize}
+                      />
+                      <label for={addCategory}>{addCategory}</label>
+                    </div>
+                  ) : (
+                    <div className="choice">
+                      <input
+                        type="checkbox"
+                        name="additional-category"
+                        id={addCategory}
+                        value={addCategory}
+                        onChange={handleProduct}
+                      />
+                      <label for={addCategory}>{addCategory}</label>
+                    </div>
+                  )
+                )}
+              </div>
+
+              <label htmlFor="category">Additional Category</label>
+              <select id="category" name="category" onChange={handleProduct}>
+                {additionalCategories.map((addCategory, index) =>
+                  addCategory === currentProduct.additionalCategories ? (
+                    <option value={addCategory} key={index} selected>
+                      {addCategory}
+                    </option>
+                  ) : (
+                    <option value={addCategory} key={index}>
+                      {addCategory}
+                    </option>
+                  )
+                )}
+              </select>
               <label htmlFor="image">Image</label>
               <img src={currentProduct.imgPath} />
               <label>{currentProduct.imgPath}</label>

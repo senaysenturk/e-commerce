@@ -112,7 +112,13 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="hero">
+    <form
+      className="hero"
+      action="mailto:info@shiwear.com"
+      method="post"
+      enctype="text/plain"
+    >
+      <fieldset>
       <div className="about-content">
         <h1>Contact Us</h1>
         <img src="./about-us-photos/about-us.jpeg" alt="" />
@@ -130,6 +136,7 @@ const ContactUs = () => {
         <div className="message">
           <h3 className="msg">Your Message . . . </h3>
         </div>
+
         <div className="full-name">
           <input
             type="text"
@@ -219,7 +226,7 @@ const ContactUs = () => {
           ))}
         </select>
 
-        <div className="message">
+        <div className="msg-box">
           <textarea
             id="message"
             name="message"
@@ -234,7 +241,8 @@ const ContactUs = () => {
           </button>
         </div>
       </div>
-    </div>
+      </fieldset>
+    </form>
   );
 };
 

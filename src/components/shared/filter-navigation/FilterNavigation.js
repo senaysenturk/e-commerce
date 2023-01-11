@@ -26,7 +26,7 @@ const FilterNavigation = ({ setFilterKeys, category }) => {
   useEffect(() => {
     getAllColors();
     getAllSizes();
-    getAllCategories();
+    getAllCategories("categories");
   }, [filterCategory, category]);
 
   return (
