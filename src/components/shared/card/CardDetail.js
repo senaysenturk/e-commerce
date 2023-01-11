@@ -12,6 +12,13 @@ const CardDetail = () => {
   const [color, setColor] = useState("");
   const { favorites, setFavorites, getUserFavorites, addFavorite } = useAuth();
   const [error, setError] = useState("");
+  const context = useContext(ShopContext);
+  let { productId } = useParams();
+  productId = Number(productId);
+
+  useEffect(() => {
+    getUserFavorites();
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -26,10 +33,6 @@ const CardDetail = () => {
     setError("");
   };
 
-  let { productId } = useParams();
-  productId = Number(productId);
-
-  const context = useContext(ShopContext);
   const product = context.products.filter(
     (product) => product.id === productId
   )[0];
@@ -47,8 +50,8 @@ const CardDetail = () => {
   };
 
   const handleFavorite = () => {
-    setFavorite(!favorite);
     addFavorite(product);
+    setFavorite(!favorite);
   };
 
   if (typeof product === "undefined") {
@@ -60,7 +63,13 @@ const CardDetail = () => {
       <div className="product-flex">
         <div className="product-img">
           <div className="add-favorite" onClick={handleFavorite}>
-            {!favorite ? <IoIosHeartEmpty /> : <IoIosHeart />}
+            {favorites.filter((favor) => favor.id === product.id).length ? (
+              <IoIosHeart />
+            ) : !favorite ? (
+              <IoIosHeartEmpty />
+            ) : (
+              <IoIosHeart />
+            )}
           </div>
           <img src={product.imgPath} alt={product.name} />
         </div>

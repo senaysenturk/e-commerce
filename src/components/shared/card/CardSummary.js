@@ -13,27 +13,50 @@ const CardSummary = ({ product }) => {
   const [favorite, setFavorite] = useState(false);
   const { favorites, setFavorites, getUserFavorites, addFavorite } = useAuth();
   const handleFavorite = () => {
-    setFavorite(!favorite);
     addFavorite(product);
+    setFavorite(!favorite);
   };
 
   useEffect(() => {
     getUserFavorites();
   }, []);
+  // const [color, setColor] = useState("");
+  // const [size, setSize] = useState("");
+  // const [error, setError] = useState("");
+
+  // const handleSubmit = e => {
+  //   e.preventDefault();
+  //   if(!color){
+  //     setError("Please select a color");
+  //     return;
+  //   }
+  //   if(!size){
+  //     setError("Please sellect a size")
+  //     return
+  //   }
+  //   setError("")
+  // }
 
   return (
     <>
       <div className="product-flex">
         <div className="product-img">
-          <div className="add-favorite" onClick={handleFavorite}>
+          <div
+            className="add-favorite"
+            onClick={() => {
+              handleFavorite();
+              setFavorite(!favorite);
+            }}
+          >
+            {/* {!favorite ? <IoIosHeartEmpty /> : <IoIosHeart />} */}
             {favorites.filter((favor) => favor.id === product.id).length ? (
               <IoIosHeart />
-            ) : (
+            ) : !favorite ? (
               <IoIosHeartEmpty />
-            )}
-            {/* {favorites.filter((favor) => favor.id === product.id) && (
+            ) : (
               <IoIosHeart />
-            )} */}
+            )}
+
             {console.log(favorites.filter((favor) => favor.id === product.id))}
           </div>
           <img src={product.imgPath} alt="Lorem ipsum" />
