@@ -5,8 +5,13 @@
       "updatedAt": "1/1/2023, 6:25:08 PM",
       "name": "Blazer Jacket",
       "price": 49.99,
-      "size": ["S", "XXL"],
-      "color": ["red"],
+      "size": [
+        "S",
+        "XXL"
+      ],
+      "color": [
+        "red"
+      ],
       "category": "Woman",
       "subcategory": "Jacket",
       "additionalCategories": [
@@ -438,7 +443,16 @@
     "Technical Problems",
     "Other"
   ],
-  "messages": [],
+  "messages": [
+    {
+      "user": "Ipek",
+      "mail": "ipekgulsen.celik@gmail.com",
+      "phone": "+90 (535) 817 - 4795",
+      "subject": "Order Tracking / Delivery",
+      "message": "test message",
+      "id": 1
+    }
+  ],
   "cities": [
     {
       "city": "Adana",
