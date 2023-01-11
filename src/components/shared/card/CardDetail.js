@@ -26,13 +26,13 @@ const CardDetail = () => {
     getUserFavorites();
   }, []);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!color) {
+  const handleSubmit = (fieldName) => {
+    //e.preventDefault();
+    if (fieldName == "color") {
       setError("Please select a color");
       return;
     }
-    if (!size) {
+    if ("size") {
       setError("Please sellect a size");
       return;
     }
@@ -120,14 +120,12 @@ const CardDetail = () => {
             <p>Size:</p>
             <select
               className="size"
-              defaultValue={product.size[0]}
+              //defaultValue={product.size[0]}
               onChange={(e) => {
                 setSize(e.target.value);
               }}
             >
-              <option value="" selected>
-                Select Size
-              </option>
+              <option value="">Select Size</option>
               {product.size.map((_size, index) => (
                 <option value={_size} key={`${_size} ${index}`}>
                   {_size}
@@ -165,7 +163,11 @@ const CardDetail = () => {
               copyProduct.amount = productCount;
               copyProduct.color = color;
               copyProduct.size = size;
-              context.addProductToCart(copyProduct);
+              color
+                ? size
+                  ? context.addProductToCart(copyProduct)
+                  : alert("Please select color")
+                : alert("Please select size");
             }}
           >
             Add to cart

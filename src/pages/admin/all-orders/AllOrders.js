@@ -16,7 +16,7 @@ const AllOrders = () => {
     const response = await getOrderList();
     setOrders(response.data);
     console.log(response.data);
-    console.log(response.data[0].orderList[0].createdAt);
+    response.data[0] && console.log(response.data[0].orderList[0].createdAt);
   };
 
   useEffect(() => {
