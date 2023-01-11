@@ -361,10 +361,46 @@
   ],
   "auth": [
     {
-      "user": "shiwear",
+      "user": "admin@shiwear.com",
       "password": "Bilge123!",
       "role": "admin",
       "id": 1
+    },
+    {
+      "user": "senay",
+      "password": "Bilge123!",
+      "role": "user",
+      "id": 2
+    },
+    {
+      "user": "senay",
+      "password": "Bilge123!",
+      "role": "user",
+      "id": 3
+    },
+    {
+      "user": "senay",
+      "password": "Bilge123!",
+      "role": "user",
+      "id": 4
+    },
+    {
+      "user": "shiwear",
+      "password": "Bilge123!",
+      "role": "admin",
+      "id": 5
+    },
+    {
+      "user": "senay",
+      "password": "Bilge123!",
+      "role": "user",
+      "id": 6
+    },
+    {
+      "user": "shiwear",
+      "password": "Bilge123!",
+      "role": "admin",
+      "id": 7
     }
   ],
   "me": [
@@ -372,7 +408,7 @@
       "user": "shiwear",
       "password": "Bilge123!",
       "role": "admin",
-      "id": 5
+      "id": 7
     }
   ],
   "users": [
@@ -432,6 +468,118 @@
           ],
           "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/6202/267/001/6202267001_1_1_2.jpg?t=1669732582176",
           "id": 3
+        }
+      ],
+      "lastViewed": [
+        {
+          "createdAt": "1/1/2023, 6:31:08 PM",
+          "updatedAt": "1/1/2023, 6:31:08 PM",
+          "name": "Lightweight cotton sweatshirt",
+          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
+          "price": 27.99,
+          "color": [
+            "green"
+          ],
+          "size": [
+            "XS",
+            "S",
+            "M",
+            "L"
+          ],
+          "category": "Man",
+          "subcategory": "Sweatshirt",
+          "imgPath": "http://res.cloudinary.com/dr4cvohdq/image/upload/v1672587096/wty5mvkd5dltmqetfo8a.webp",
+          "id": 8
+        },
+        {
+          "createdAt": "1/1/2023, 6:27:54 PM",
+          "updatedAt": "1/1/2023, 6:27:54 PM",
+          "name": "Regular fit Oxford cotton shirt",
+          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
+          "price": 29.99,
+          "color": [
+            "blue"
+          ],
+          "size": [
+            "M",
+            "L"
+          ],
+          "category": "Man",
+          "subcategory": "Shirt",
+          "additionalCategories": [
+            "best-sellers",
+            "trending"
+          ],
+          "imgPath": "https://res.cloudinary.com/dr4cvohdq/image/upload/v1672586896/hbxu98mpnk8y0silr4tu.jpg",
+          "id": 5
+        },
+        {
+          "createdAt": "1/1/2023, 6:25:08 PM",
+          "updatedAt": "1/1/2023, 6:25:08 PM",
+          "name": "Lace pleated dress",
+          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
+          "price": 59.99,
+          "size": [
+            "XS",
+            "S",
+            "XXS",
+            "L"
+          ],
+          "color": [
+            "black"
+          ],
+          "category": "Woman",
+          "subcategory": "Dress",
+          "additionalCategories": [
+            "best-sellers",
+            "sale"
+          ],
+          "imgPath": "http://res.cloudinary.com/dr4cvohdq/image/upload/v1672586727/utkeesstkjwkdi4qt6zu.webp",
+          "id": 4
+        },
+        {
+          "createdAt": "1/1/2023, 6:25:08 PM",
+          "updatedAt": "1/1/2023, 6:25:08 PM",
+          "name": "T-shirt",
+          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
+          "price": 10,
+          "size": [
+            "XL"
+          ],
+          "color": [
+            "white"
+          ],
+          "category": "Woman",
+          "subcategory": "T-shirt",
+          "additionalCategories": [
+            "trending",
+            "sale"
+          ],
+          "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/6202/267/001/6202267001_1_1_2.jpg?t=1669732582176",
+          "id": 3
+        },
+        {
+          "createdAt": "1/1/2023, 6:25:08 PM",
+          "updatedAt": "1/1/2023, 6:25:08 PM",
+          "name": "Blazer Jacket",
+          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
+          "price": 49.99,
+          "size": [
+            "S",
+            "XXL"
+          ],
+          "color": [
+            "red"
+          ],
+          "category": "Woman",
+          "subcategory": "Jacket",
+          "additionalCategories": [
+            "best-sellers",
+            "trending",
+            "sale"
+          ],
+          "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/5900/472/430/5900472430_1_1_2.jpg?t=1669736376209",
+          "id": 1
         }
       ]
     },
@@ -569,6 +717,15 @@
       "message": "test message hello word",
       "createdAt": "2023-01-11",
       "id": 1
+    },
+    {
+      "user": "admin",
+      "mail": "admin@shiwear.com",
+      "phone": "+90 (500) 000 - 0000",
+      "subject": "Technical Problems",
+      "message": "testdsfgfdg",
+      "createdAt": "1/11/2023, 8:26:05 PM",
+      "id": 2
     }
   ],
   "cities": [
