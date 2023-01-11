@@ -4,6 +4,7 @@
       "createdAt": "1/1/2023, 6:25:08 PM",
       "updatedAt": "1/1/2023, 6:25:08 PM",
       "name": "Blazer Jacket",
+      "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
       "price": 49.99,
       "size": [
         "S",
@@ -26,6 +27,7 @@
       "createdAt": "1/1/2023, 6:25:08 PM",
       "updatedAt": "1/1/2023, 6:25:08 PM",
       "name": "T-shirt",
+      "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
       "price": 10,
       "size": [
         "XL"
@@ -46,6 +48,7 @@
       "createdAt": "1/1/2023, 6:25:08 PM",
       "updatedAt": "1/1/2023, 6:25:08 PM",
       "name": "Lace pleated dress",
+      "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
       "price": 59.99,
       "size": [
         "XS",
@@ -69,6 +72,7 @@
       "createdAt": "1/1/2023, 6:27:54 PM",
       "updatedAt": "1/1/2023, 6:27:54 PM",
       "name": "Regular fit Oxford cotton shirt",
+      "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
       "price": 29.99,
       "color": [
         "blue"
@@ -90,6 +94,7 @@
       "createdAt": "1/1/2023, 6:29:03 PM",
       "updatedAt": "1/1/2023, 6:29:03 PM",
       "name": "Wool zip neck jumper",
+      "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
       "price": 39.99,
       "color": [
         "gray"
@@ -111,6 +116,7 @@
       "createdAt": "1/1/2023, 6:30:20 PM",
       "updatedAt": "1/1/2023, 6:30:20 PM",
       "name": "Sherpa pocket sweatshirt",
+      "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
       "price": 45.99,
       "color": [
         "green"
@@ -130,6 +136,7 @@
       "createdAt": "1/1/2023, 6:31:08 PM",
       "updatedAt": "1/1/2023, 6:31:08 PM",
       "name": "Lightweight cotton sweatshirt",
+      "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
       "price": 27.99,
       "color": [
         "green"
@@ -149,6 +156,7 @@
       "createdAt": "1/1/2023, 6:33:15 PM",
       "updatedAt": "1/1/2023, 6:33:15 PM",
       "name": "Quilted down anorak",
+      "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
       "price": 99.99,
       "size": [
         "XS",
@@ -173,6 +181,7 @@
       "createdAt": "1/1/2023, 6:36:45 PM",
       "updatedAt": "1/1/2023, 6:36:45 PM",
       "name": "Mini-dress with crystals",
+      "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
       "price": 199.99,
       "size": [
         "XXS",
@@ -204,6 +213,7 @@
       "createdAt": "1/1/2023, 6:37:45 PM",
       "updatedAt": "1/1/2023, 6:37:45 PM",
       "name": "Tropical print shirt",
+      "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
       "size": [
         "XXS",
         "XS",
@@ -373,14 +383,32 @@
       "password": "Bilge123!",
       "role": "user",
       "id": 4
+    },
+    {
+      "user": "shiwear",
+      "password": "Bilge123!",
+      "role": "admin",
+      "id": 5
+    },
+    {
+      "user": "senay",
+      "password": "Bilge123!",
+      "role": "user",
+      "id": 6
     }
   ],
   "me": [
     {
-      "user": "admin@shiwear.com",
+      "user": "shiwear",
       "password": "Bilge123!",
       "role": "admin",
-      "id": 1
+      "id": 5
+    },
+    {
+      "user": "admin@shiwear.com",
+      "password": "Bilge123!",
+      "role": "user",
+      "id": 4
     }
   ],
   "users": [
@@ -391,32 +419,16 @@
       "birth": "2022-12-20",
       "gender": "female",
       "role": "admin",
-      "addresses": [],
+      "addresses": [
+        {
+          "firstname": "test",
+          "lastname": "test",
+          "addressName": "test"
+        }
+      ],
       "orders": [],
       "id": 1,
       "favorites": [
-        {
-          "createdAt": "1/1/2023, 6:37:45 PM",
-          "updatedAt": "1/1/2023, 6:37:45 PM",
-          "name": "Tropical print shirt",
-          "size": [
-            "XXS",
-            "XS",
-            "S"
-          ],
-          "color": [
-            "white",
-            "black"
-          ],
-          "category": "Child",
-          "subcategory": "Shirt",
-          "additionalCategories": [
-            "trending"
-          ],
-          "imgPath": "http://res.cloudinary.com/dr4cvohdq/image/upload/v1672595350/pmqzrdpmnlfylvp2h7co.jpg",
-          "price": 112.99,
-          "id": 11
-        },
         {
           "createdAt": "1/1/2023, 6:30:20 PM",
           "updatedAt": "1/1/2023, 6:30:20 PM",
@@ -435,6 +447,27 @@
           "subcategory": "Sweatshirt",
           "imgPath": "https://res.cloudinary.com/dr4cvohdq/image/upload/v1672587037/zydsnco7z34qeg8uqqfh.webp",
           "id": 7
+        },
+        {
+          "createdAt": "1/1/2023, 6:25:08 PM",
+          "updatedAt": "1/1/2023, 6:25:08 PM",
+          "name": "T-shirt",
+          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
+          "price": 10,
+          "size": [
+            "XL"
+          ],
+          "color": [
+            "white"
+          ],
+          "category": "Woman",
+          "subcategory": "T-shirt",
+          "additionalCategories": [
+            "trending",
+            "sale"
+          ],
+          "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/6202/267/001/6202267001_1_1_2.jpg?t=1669732582176",
+          "id": 3
         }
       ]
     },
@@ -521,7 +554,29 @@
           "totalOrderAmount": "49.99"
         }
       ],
-      "id": 3
+      "id": 3,
+      "favorites": [
+        {
+          "createdAt": "1/1/2023, 6:25:08 PM",
+          "updatedAt": "1/1/2023, 6:25:08 PM",
+          "name": "T-shirt",
+          "price": 10,
+          "size": [
+            "XL"
+          ],
+          "color": [
+            "white"
+          ],
+          "category": "Woman",
+          "subcategory": "T-shirt",
+          "additionalCategories": [
+            "trending",
+            "sale"
+          ],
+          "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/6202/267/001/6202267001_1_1_2.jpg?t=1669732582176",
+          "id": 3
+        }
+      ]
     },
     {
       "mail": "hicranertugral@gmail.com",
@@ -550,24 +605,6 @@
       "message": "test message hello word",
       "createdAt": "2023-01-11",
       "id": 1
-    },
-    {
-      "user": "hicran",
-      "mail": "hicranertugral@gmail.com",
-      "phone": "+90 (535) 817 - 4795",
-      "subject": "Return / Exchange Request",
-      "message": "test message hello powerpuff girls ",
-      "createdAt": "1/11/2023, 8:34:05 PM",
-      "id": 2
-    },
-    {
-      "user": "irmak",
-      "mail": "irmak@gmail.com",
-      "phone": "+90 (535) 817 - 4795",
-      "subject": "Return / Exchange Request",
-      "message": "test",
-      "createdAt": "1/11/2023, 8:56:57 PM",
-      "id": 3
     }
   ],
   "cities": [
@@ -2071,32 +2108,5 @@
       ]
     }
   ],
-  "order-list": [
-    {
-      "date": 1673457130013,
-      "orderId": 1673457130013,
-      "orderList": [
-        {
-          "createdAt": "1/1/2023, 6:25:08 PM",
-          "updatedAt": "1/1/2023, 6:25:08 PM",
-          "name": "Blazer Jacket",
-          "price": 49.99,
-          "size": "XXL",
-          "color": "red",
-          "category": "Woman",
-          "subcategory": "Jacket",
-          "additionalCategories": [
-            "best-sellers",
-            "trending",
-            "sale"
-          ],
-          "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/5900/472/430/5900472430_1_1_2.jpg?t=1669736376209",
-          "id": 1,
-          "amount": 1
-        }
-      ],
-      "totalOrderAmount": "49.99",
-      "id": 1
-    }
-  ]
+  "order-list": []
 }

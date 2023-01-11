@@ -57,7 +57,7 @@ const CardDetail = () => {
 
   const handleAddFavorite = () => {
     addFavorite(product);
-    setFavorite(!favorite);
+    setFavorite(favorite);
   };
   const handleDeleteFavorite = () => {
     deleteFavorite(product);
@@ -97,12 +97,7 @@ const CardDetail = () => {
         <div className="product-info">
           <h3 className="product-name">{product.name}</h3>
           <span className="product-price">{product.price.toFixed(2)} $</span>
-          <p className="product-detail">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Perferendis, illum odit. Expedita eveniet quam eos, deserunt
-            praesentium tempore perspiciatis accusamus amet sed repellendus non,
-            distinctio molestiae. Quos quo ducimus ratione.
-          </p>
+          <p className="product-detail">{product.detail}</p>
           <div className="colors" onSubmit={handleSubmit}>
             Colors:
             {product.color.map((_color, index) => (
@@ -130,7 +125,9 @@ const CardDetail = () => {
                 setSize(e.target.value);
               }}
             >
-              <option value="">Select Size</option>
+              <option value="" selected>
+                Select Size
+              </option>
               {product.size.map((_size, index) => (
                 <option value={_size} key={`${_size} ${index}`}>
                   {_size}
