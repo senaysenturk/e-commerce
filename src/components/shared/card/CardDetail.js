@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { IoIosHeartEmpty, IoIosHeart } from "react-icons/io";
 import { useParams } from "react-router-dom";
 import ShopContext from "../../../contexts/basket/ShopContext";
+import { useAuth } from "src/contexts/auth/AuthContext";
 import "./style.scss";
 
 const CardDetail = () => {
@@ -9,6 +10,7 @@ const CardDetail = () => {
   const [productCount, setProductCount] = useState(1);
   const [size, setSize] = useState("");
   const [color, setColor] = useState("");
+  const { favorites, setFavorites, getUserFavorites, addFavorite } = useAuth();
 
   let { productId } = useParams();
   productId = Number(productId);
@@ -30,6 +32,11 @@ const CardDetail = () => {
     });
   };
 
+  const handleFavorite = () => {
+    setFavorite(!favorite);
+    addFavorite(product);
+  };
+
   if (typeof product === "undefined") {
     return <div>...loading</div>;
   }
@@ -38,7 +45,7 @@ const CardDetail = () => {
     <div className="card-detail">
       <div className="product-flex">
         <div className="product-img">
-          <div className="add-favorite" onClick={() => setFavorite(!favorite)}>
+          <div className="add-favorite" onClick={handleFavorite}>
             {!favorite ? <IoIosHeartEmpty /> : <IoIosHeart />}
           </div>
           <img src={product.imgPath} alt={product.name} />

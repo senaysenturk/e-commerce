@@ -4,13 +4,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import DashboardLayout from "./layouts/dashboard-layout/DashboardLayout";
 import AuthLayout from "./layouts/auth-layout/AuthLayout";
 import Home from "./pages/dashboard/home/Home";
-import Women from "./pages/dashboard/women/Women";
-import Man from "./pages/dashboard/man/Man";
-import Children from "./pages/dashboard/children/Children";
 import NewArrivals from "./pages/dashboard/new-arrivals/NewArrivals";
 import BestSellers from "./pages/dashboard/best-sellers/BestSellers";
-import Trending from "./pages/dashboard/trending/Trending";
-import Sale from "./pages/dashboard/sale/Sale";
 import Shopping from "./pages/dashboard/shopping/Shopping";
 import Cart from "./pages/dashboard/shopping/cart/Cart";
 import Login from "./pages/auth/login/Login";
@@ -23,7 +18,6 @@ import Products from "./pages/dashboard/product/Products";
 import CardDetail from "./components/shared/card/CardDetail";
 import AddProduct from "./pages/admin/add-product/AddProduct";
 import AdminLayout from "./layouts/admin-layout/AdminLayout";
-import { CreateProductProvider } from "./contexts/product/CreateProductContext";
 import OrderTracking from "./components/app/shopping-cart/order-tracking/OrderTracking";
 import AllProducts from "./pages/admin/all-product/AllProducts";
 import AllOrders from "./pages/admin/all-orders/AllOrders";
@@ -41,14 +35,8 @@ function App() {
         <Routes>
           <Route path="/" element={<DashboardLayout />}>
             <Route index element={<Home />} />
-            <Route path="Woman" element={<Search />} />
-            <Route path="Man" element={<Search />} />
-            <Route path="Children" element={<Search />} />
             <Route path="new-arrivals" element={<NewArrivals />} />
-            <Route path="best-sellers" element={<BestSellers />} />
-            <Route path="trending" element={<Trending />} />
             <Route path="order-tracking" element={<OrderTracking />} />
-            <Route path="sale" element={<Sale />} />
             <Route path="about-us" element={<AboutUs />} />
             <Route path="contact" element={<ContactUs></ContactUs>} />
             <Route path="user-profile" element={<UserProfile />} />

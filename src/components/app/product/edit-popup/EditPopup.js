@@ -137,7 +137,7 @@ export const EditPopup = ({ currentProduct, handleClose }) => {
                         defaultChecked={color}
                         onChange={handleSetSize}
                       />
-                      <label for={size}>{size}</label>
+                      <label htmlFor={size}>{size}</label>
                     </div>
                   ) : (
                     <div className="choice">
@@ -148,7 +148,7 @@ export const EditPopup = ({ currentProduct, handleClose }) => {
                         value={size}
                         onChange={handleProduct}
                       />
-                      <label for={size}>{size}</label>
+                      <label htmlFor={size}>{size}</label>
                     </div>
                   )
                 )}
@@ -167,7 +167,7 @@ export const EditPopup = ({ currentProduct, handleClose }) => {
                           defaultChecked={color}
                           onChange={handleProduct}
                         />
-                        <label for={color}>
+                        <label htmlFor={color}>
                           <span
                             className={color}
                             name={color}
@@ -184,7 +184,7 @@ export const EditPopup = ({ currentProduct, handleClose }) => {
                           value={color}
                           onChange={handleProduct}
                         />
-                        <label for={color}>
+                        <label htmlFor={color}>
                           <span
                             className={color}
                             name={color}
@@ -269,7 +269,7 @@ export const EditPopup = ({ currentProduct, handleClose }) => {
                         defaultChecked={addCategory}
                         onChange={handleSetSize}
                       />
-                      <label for={addCategory}>{addCategory}</label>
+                      <label htmlFor={addCategory}>{addCategory}</label>
                     </div>
                   ) : (
                     <div className="choice">
@@ -280,7 +280,7 @@ export const EditPopup = ({ currentProduct, handleClose }) => {
                         value={addCategory}
                         onChange={handleProduct}
                       />
-                      <label for={addCategory}>{addCategory}</label>
+                      <label htmlFor={addCategory}>{addCategory}</label>
                     </div>
                   )
                 )}

@@ -4,11 +4,12 @@
   align-items: flex-start;
   justify-content: flex-end;
   position: relative;
+  width: 15%;
   .carousel-img {
-    width: 220px;
+    width: 100%;
     height: 350px;
     object-fit: cover;
-    object-position: left top;
+    object-position: center top;
     counter-increment: carousel-img;
     &::before {
       display: block;
@@ -17,6 +18,16 @@
       line-height: 200px;
       font-size: 80px;
       color: white;
+    }
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    .carousel {
+      width: 100%;
     }
   }
 }

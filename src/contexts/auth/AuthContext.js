@@ -21,6 +21,7 @@ const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [currentUser, setCurrentUser] = useState();
   const [address, setAddress] = useState([]);
+  const [favorites, setFavorites] = useState([]);
 
   useEffect(() => {
     (async () => {
@@ -56,7 +57,7 @@ const AuthProvider = ({ children }) => {
     await patchSignUp(tempUser[0].id, newUser);
 
     getAllUsers();
-  }
+  };
 
   const removeUser = async (userObj, userId) => {
     await deleteUser(userId);
@@ -74,6 +75,50 @@ const AuthProvider = ({ children }) => {
 
   const register = async (userData) => {
     const response = await postUser(userData.data);
+  };
+
+  const getUserFavorites = async () => {
+    const me = await fetchMe();
+    setUser(me.data);
+    const response = await getUsers();
+    console.log(
+      "ME:",
+      response.data.filter((userObject) => console.log(me.data))
+    );
+    setFavorites(
+      response.data.filter(
+        (userObject) =>
+          userObject.mail === me.data[0].user ||
+          userObject.user === me.data[0].user
+      )[0].favorites
+    );
+    console.log("favorites", favorites);
+  };
+
+  const addFavorite = async (product) => {
+    const response = await getUsers();
+    updatedUser = response.data.filter((userObject) => {
+      return (
+        userObject.mail === user[0].user || userObject.user === user[0].user
+      );
+    });
+
+    let userId = updatedUser[0].id;
+
+    if (updatedUser[0].hasOwnProperty("favorites")) {
+      updatedUser[0].favorites.forEach((favorite) => {
+        console.log(favorite);
+      });
+      updateUser(userId, {
+        ...updatedUser[0],
+        favorites: [...updatedUser[0].favorites, product],
+      });
+    } else {
+      updateUser(userId, {
+        ...updatedUser[0],
+        favorites: [product],
+      });
+    }
   };
 
   const getAddresses = async () => {
@@ -273,6 +318,10 @@ const AuthProvider = ({ children }) => {
     editAddress,
     deleteAddress,
     address,
+    favorites,
+    setFavorites,
+    getUserFavorites,
+    addFavorite,
   };
 
   return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>;

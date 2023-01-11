@@ -4,8 +4,8 @@ import { RiCloseLine } from "react-icons/ri";
 import CardSummary from "../card/CardSummary";
 
 /**
- * 
- * @param {{product:Product, setIsOpen:boolean }} param0 
+ *
+ * @param {{product:Product, setIsOpen:boolean }} param0
  * @returns {JSX.Element}
  */
 const Modal = ({ setIsOpen, product }) => {

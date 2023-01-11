@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { IoIosHeartEmpty, IoIosHeart } from "react-icons/io";
 import "./style.scss";
+import { useAuth } from "src/contexts/auth/AuthContext";
 
 /**
  *
@@ -10,13 +11,30 @@ import "./style.scss";
  */
 const CardSummary = ({ product }) => {
   const [favorite, setFavorite] = useState(false);
+  const { favorites, setFavorites, getUserFavorites, addFavorite } = useAuth();
+  const handleFavorite = () => {
+    setFavorite(!favorite);
+    addFavorite(product);
+  };
+
+  useEffect(() => {
+    getUserFavorites();
+  }, []);
 
   return (
     <>
       <div className="product-flex">
         <div className="product-img">
-          <div className="add-favorite" onClick={() => setFavorite(!favorite)}>
-            {!favorite ? <IoIosHeartEmpty /> : <IoIosHeart />}
+          <div className="add-favorite" onClick={handleFavorite}>
+            {favorites.filter((favor) => favor.id === product.id).length ? (
+              <IoIosHeart />
+            ) : (
+              <IoIosHeartEmpty />
+            )}
+            {/* {favorites.filter((favor) => favor.id === product.id) && (
+              <IoIosHeart />
+            )} */}
+            {console.log(favorites.filter((favor) => favor.id === product.id))}
           </div>
           <img src={product.imgPath} alt="Lorem ipsum" />
         </div>
