@@ -11,10 +11,18 @@ import { useAuth } from "src/contexts/auth/AuthContext";
  */
 const CardSummary = ({ product }) => {
   const [favorite, setFavorite] = useState(false);
-  const { favorites, setFavorites, getUserFavorites, addFavorite } = useAuth();
-  const handleFavorite = () => {
+  const {
+    favorites,
+    setFavorites,
+    getUserFavorites,
+    addFavorite,
+    deleteFavorite,
+  } = useAuth();
+  const handleAddFavorite = () => {
     addFavorite(product);
-    setFavorite(!favorite);
+  };
+  const handleDeleteFavorite = () => {
+    deleteFavorite(product);
   };
 
   useEffect(() => {
@@ -43,18 +51,33 @@ const CardSummary = ({ product }) => {
         <div className="product-img">
           <div
             className="add-favorite"
-            onClick={() => {
-              handleFavorite();
-              setFavorite(!favorite);
-            }}
+            // onClick={() => {
+            //   handleFavorite();
+            //   setFavorite(!favorite);
+            // }}
           >
             {/* {!favorite ? <IoIosHeartEmpty /> : <IoIosHeart />} */}
             {favorites.filter((favor) => favor.id === product.id).length ? (
-              <IoIosHeart />
+              <IoIosHeart
+                onClick={() => {
+                  handleDeleteFavorite();
+                  setFavorite(!favorite);
+                }}
+              />
             ) : !favorite ? (
-              <IoIosHeartEmpty />
+              <IoIosHeartEmpty
+                onClick={() => {
+                  handleAddFavorite();
+                  setFavorite(!favorite);
+                }}
+              />
             ) : (
-              <IoIosHeart />
+              <IoIosHeart
+                onClick={() => {
+                  handleDeleteFavorite();
+                  setFavorite(!favorite);
+                }}
+              />
             )}
 
             {console.log(favorites.filter((favor) => favor.id === product.id))}

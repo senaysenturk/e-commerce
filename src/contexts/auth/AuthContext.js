@@ -119,6 +119,37 @@ const AuthProvider = ({ children }) => {
         favorites: [product],
       });
     }
+    getUserFavorites();
+  };
+
+  const deleteFavorite = async (product) => {
+    const response = await getUsers();
+    updatedUser = response.data.filter((userObject) => {
+      return (
+        userObject.mail === user[0].user || userObject.user === user[0].user
+      );
+    });
+
+    let userId = updatedUser[0].id;
+
+    const index = updatedUser[0].favorites.findIndex(
+      (favorite) => favorite.id === product.id
+    );
+
+    console.log("deleteFavorite", index);
+
+    const newArr = [
+      ...updatedUser[0].favorites.slice(0, index),
+      ...updatedUser[0].favorites.slice(index + 1),
+    ];
+    console.log(newArr);
+
+    updateUser(updatedUser[0].id, {
+      ...updatedUser[0],
+      // addresses: [{ address: newAddress }],
+      favorites: newArr,
+    });
+    getUserFavorites();
   };
 
   const getAddresses = async () => {
@@ -322,6 +353,7 @@ const AuthProvider = ({ children }) => {
     setFavorites,
     getUserFavorites,
     addFavorite,
+    deleteFavorite,
   };
 
   return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>;
