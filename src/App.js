@@ -32,6 +32,7 @@ import Search from "./pages/dashboard/search/Search";
 import ViewMore from "./pages/dashboard/view-more/ViewMore";
 import AboutUs from "./components/shared/about-us/AboutUs";
 import ContactUs from "./components/shared/contact/ContactUs";
+import AllMessages from "./pages/admin/all-messages/AllMessages";
 
 function App() {
   return (
@@ -73,6 +74,7 @@ function App() {
             <Route path="all-products" element={<AllProducts />}></Route>
             <Route path="all-orders" element={<AllOrders />}></Route>
             <Route path="all-users" element={<AllUsers />}></Route>
+            <Route path="all-messages" element={<AllMessages />}></Route>
           </Route>
 
           <Route path="*" element={<NotFound />} />

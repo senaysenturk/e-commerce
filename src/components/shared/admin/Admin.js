@@ -30,6 +30,9 @@ const Admin = ({ history }) => {
           <li>
             <Link to="/admin/all-users">All Users</Link>
           </li>
+          <li>
+            <Link to="/admin/all-messages">All Messages</Link>
+          </li>
         </ul>
       </div>
     </div>
