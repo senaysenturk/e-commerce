@@ -68,10 +68,10 @@ const FilterNavigation = ({ setFilterKeys, category }) => {
               return <option key={i}>{subcategory}</option>;
             })}
       </select>
-      <div className="sizes">
+      <div className="multi-choices">
         <p>Sizes:</p>
         {sizes.map((size, index) => (
-          <div className="size" key={index}>
+          <div className="choice" key={index}>
             <input
               type="checkbox"
               name={`fiter-${size}`}

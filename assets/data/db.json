@@ -5,20 +5,11 @@
       "updatedAt": "1/1/2023, 6:25:08 PM",
       "name": "Blazer Jacket",
       "price": 49.99,
-      "size": [
-        "S",
-        "XXL"
-      ],
-      "color": [
-        "red"
-      ],
+      "size": ["S", "XXL"],
+      "color": ["red"],
       "category": "Woman",
       "subcategory": "Jacket",
-      "additionalCategories": [
-        "best-sellers",
-        "trending",
-        "sale"
-      ],
+      "additionalCategories": ["best-sellers", "trending", "sale"],
       "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/5900/472/430/5900472430_1_1_2.jpg?t=1669736376209",
       "id": 1
     },
@@ -27,18 +18,11 @@
       "updatedAt": "1/1/2023, 6:25:08 PM",
       "name": "T-shirt",
       "price": 10,
-      "size": [
-        "XL"
-      ],
-      "color": [
-        "white"
-      ],
+      "size": ["XL"],
+      "color": ["white"],
       "category": "Woman",
       "subcategory": "T-shirt",
-      "additionalCategories": [
-        "trending",
-        "sale"
-      ],
+      "additionalCategories": ["trending", "sale"],
       "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/6202/267/001/6202267001_1_1_2.jpg?t=1669732582176",
       "id": 3
     },
@@ -47,21 +31,11 @@
       "updatedAt": "1/1/2023, 6:25:08 PM",
       "name": "Lace pleated dress",
       "price": 59.99,
-      "size": [
-        "XS",
-        "S",
-        "XXS",
-        "L"
-      ],
-      "color": [
-        "black"
-      ],
+      "size": ["XS", "S", "XXS", "L"],
+      "color": ["black"],
       "category": "Woman",
       "subcategory": "Dress",
-      "additionalCategories": [
-        "best-sellers",
-        "sale"
-      ],
+      "additionalCategories": ["best-sellers", "sale"],
       "imgPath": "http://res.cloudinary.com/dr4cvohdq/image/upload/v1672586727/utkeesstkjwkdi4qt6zu.webp",
       "id": 4
     },
@@ -70,19 +44,11 @@
       "updatedAt": "1/1/2023, 6:27:54 PM",
       "name": "Regular fit Oxford cotton shirt",
       "price": 29.99,
-      "color": [
-        "blue"
-      ],
-      "size": [
-        "M",
-        "L"
-      ],
+      "color": ["blue"],
+      "size": ["M", "L"],
       "category": "Man",
       "subcategory": "Shirt",
-      "additionalCategories": [
-        "best-sellers",
-        "trending"
-      ],
+      "additionalCategories": ["best-sellers", "trending"],
       "imgPath": "https://res.cloudinary.com/dr4cvohdq/image/upload/v1672586896/hbxu98mpnk8y0silr4tu.jpg",
       "id": 5
     },
@@ -91,17 +57,8 @@
       "updatedAt": "1/1/2023, 6:29:03 PM",
       "name": "Wool zip neck jumper",
       "price": 39.99,
-      "color": [
-        "gray"
-      ],
-      "size": [
-        "XXS",
-        "XS",
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "color": ["gray"],
+      "size": ["XXS", "XS", "S", "M", "L", "XL"],
       "category": "Man",
       "subcategory": "Sweatshirt",
       "imgPath": "https://res.cloudinary.com/dr4cvohdq/image/upload/v1672586969/kyfmont7buxnvijblhx0.webp",
@@ -112,15 +69,8 @@
       "updatedAt": "1/1/2023, 6:30:20 PM",
       "name": "Sherpa pocket sweatshirt",
       "price": 45.99,
-      "color": [
-        "green"
-      ],
-      "size": [
-        "XS",
-        "S",
-        "M",
-        "L"
-      ],
+      "color": ["green"],
+      "size": ["XS", "S", "M", "L"],
       "category": "Man",
       "subcategory": "Sweatshirt",
       "imgPath": "https://res.cloudinary.com/dr4cvohdq/image/upload/v1672587037/zydsnco7z34qeg8uqqfh.webp",
@@ -131,15 +81,8 @@
       "updatedAt": "1/1/2023, 6:31:08 PM",
       "name": "Lightweight cotton sweatshirt",
       "price": 27.99,
-      "color": [
-        "green"
-      ],
-      "size": [
-        "XS",
-        "S",
-        "M",
-        "L"
-      ],
+      "color": ["green"],
+      "size": ["XS", "S", "M", "L"],
       "category": "Man",
       "subcategory": "Sweatshirt",
       "imgPath": "http://res.cloudinary.com/dr4cvohdq/image/upload/v1672587096/wty5mvkd5dltmqetfo8a.webp",
@@ -150,22 +93,11 @@
       "updatedAt": "1/1/2023, 6:33:15 PM",
       "name": "Quilted down anorak",
       "price": 99.99,
-      "size": [
-        "XS",
-        "S",
-        "M",
-        "L"
-      ],
-      "color": [
-        "black"
-      ],
+      "size": ["XS", "S", "M", "L"],
+      "color": ["black"],
       "category": "Child",
       "subcategory": "Coats",
-      "additionalCategories": [
-        "best-sellers",
-        "trending",
-        "sale"
-      ],
+      "additionalCategories": ["best-sellers", "trending", "sale"],
       "imgPath": "https://res.cloudinary.com/dr4cvohdq/image/upload/v1672587220/sck10tvxwevfcefmpngw.webp",
       "id": 9
     },
@@ -174,29 +106,11 @@
       "updatedAt": "1/1/2023, 6:36:45 PM",
       "name": "Mini-dress with crystals",
       "price": 199.99,
-      "size": [
-        "XXS",
-        "XS",
-        "S",
-        "M",
-        "L",
-        "XL",
-        "XL",
-        "XXL"
-      ],
-      "color": [
-        "black",
-        "teal",
-        "red",
-        "purple",
-        "pink"
-      ],
+      "size": ["XXS", "XS", "S", "M", "L", "XL", "XL", "XXL"],
+      "color": ["black", "teal", "red", "purple", "pink"],
       "category": "Woman",
       "subcategory": "Dress",
-      "additionalCategories": [
-        "best-sellers",
-        "sale"
-      ],
+      "additionalCategories": ["best-sellers", "sale"],
       "imgPath": "http://res.cloudinary.com/dr4cvohdq/image/upload/v1672587441/no79egwmowl9vn29glyh.webp",
       "id": 10
     },
@@ -204,20 +118,11 @@
       "createdAt": "1/1/2023, 6:37:45 PM",
       "updatedAt": "1/1/2023, 6:37:45 PM",
       "name": "Tropical print shirt",
-      "size": [
-        "XXS",
-        "XS",
-        "S"
-      ],
-      "color": [
-        "white",
-        "black"
-      ],
+      "size": ["XXS", "XS", "S"],
+      "color": ["white", "black"],
       "category": "Child",
       "subcategory": "Shirt",
-      "additionalCategories": [
-        "trending"
-      ],
+      "additionalCategories": ["trending"],
       "imgPath": "http://res.cloudinary.com/dr4cvohdq/image/upload/v1672595350/pmqzrdpmnlfylvp2h7co.jpg",
       "price": 112.99,
       "id": 11
@@ -239,15 +144,7 @@
     "white",
     "yellow"
   ],
-  "sizes": [
-    "XXS",
-    "XS",
-    "S",
-    "M",
-    "L",
-    "XL",
-    "XXL"
-  ],
+  "sizes": ["XXS", "XS", "S", "M", "L", "XL", "XXL"],
   "categories": [
     {
       "category": "Woman",
@@ -263,7 +160,7 @@
         "Skirt",
         "Jacket"
       ],
-      "image": "https://res.cloudinary.com/dr4cvohdq/image/upload/v1672912956/digdiuzw3xexmmz5nwu5.jpg"
+      "image": "https://res.cloudinary.com/dr4cvohdq/image/upload/v1673375261/ldmrx909ui2prdokd8ru.jpg"
     },
     {
       "category": "Man",
@@ -278,7 +175,7 @@
         "Shirt",
         "Jacket"
       ],
-      "image": "https://res.cloudinary.com/dr4cvohdq/image/upload/v1672914993/t2tmjkievweg3b4wmhnp.jpg"
+      "image": "https://res.cloudinary.com/dr4cvohdq/image/upload/v1673375185/riz2quypoi5pyhg9bqj8.jpg"
     },
     {
       "category": "Child",
@@ -295,14 +192,10 @@
         "Jacket",
         "Waistcoat"
       ],
-      "image": "https://res.cloudinary.com/dr4cvohdq/image/upload/v1672915037/xnimtsikmpejtlvt3rru.webp"
+      "image": "https://res.cloudinary.com/dr4cvohdq/image/upload/v1673375184/yvn0pus41mwqssbkdi5y.webp"
     }
   ],
-  "additionalCategories": [
-    "best-sellers",
-    "trending",
-    "sale"
-  ],
+  "additionalCategories": ["best-sellers", "trending", "sale"],
   "signup": [
     {
       "mail": "admin@shiwear.com",
@@ -382,19 +275,11 @@
           "updatedAt": "1/1/2023, 6:27:54 PM",
           "name": "Regular fit Oxford cotton shirt",
           "price": 29.99,
-          "color": [
-            "blue"
-          ],
-          "size": [
-            "M",
-            "L"
-          ],
+          "color": ["blue"],
+          "size": ["M", "L"],
           "category": "Man",
           "subcategory": "Shirt",
-          "additionalCategories": [
-            "best-sellers",
-            "trending"
-          ],
+          "additionalCategories": ["best-sellers", "trending"],
           "imgPath": "https://res.cloudinary.com/dr4cvohdq/image/upload/v1672586896/hbxu98mpnk8y0silr4tu.jpg",
           "id": 5
         },
@@ -403,20 +288,11 @@
           "updatedAt": "1/1/2023, 6:25:08 PM",
           "name": "Blazer Jacket",
           "price": 49.99,
-          "size": [
-            "S",
-            "XXL"
-          ],
-          "color": [
-            "red"
-          ],
+          "size": ["S", "XXL"],
+          "color": ["red"],
           "category": "Woman",
           "subcategory": "Jacket",
-          "additionalCategories": [
-            "best-sellers",
-            "trending",
-            "sale"
-          ],
+          "additionalCategories": ["best-sellers", "trending", "sale"],
           "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/5900/472/430/5900472430_1_1_2.jpg?t=1669736376209",
           "id": 1
         },
@@ -425,18 +301,11 @@
           "updatedAt": "1/1/2023, 6:25:08 PM",
           "name": "T-shirt",
           "price": 10,
-          "size": [
-            "XL"
-          ],
-          "color": [
-            "white"
-          ],
+          "size": ["XL"],
+          "color": ["white"],
           "category": "Woman",
           "subcategory": "T-shirt",
-          "additionalCategories": [
-            "trending",
-            "sale"
-          ],
+          "additionalCategories": ["trending", "sale"],
           "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/6202/267/001/6202267001_1_1_2.jpg?t=1669732582176",
           "id": 3
         },
@@ -445,18 +314,11 @@
           "updatedAt": "1/1/2023, 6:25:08 PM",
           "name": "T-shirt",
           "price": 10,
-          "size": [
-            "XL"
-          ],
-          "color": [
-            "white"
-          ],
+          "size": ["XL"],
+          "color": ["white"],
           "category": "Woman",
           "subcategory": "T-shirt",
-          "additionalCategories": [
-            "trending",
-            "sale"
-          ],
+          "additionalCategories": ["trending", "sale"],
           "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/6202/267/001/6202267001_1_1_2.jpg?t=1669732582176",
           "id": 3
         },
@@ -465,18 +327,11 @@
           "updatedAt": "1/1/2023, 6:25:08 PM",
           "name": "T-shirt",
           "price": 10,
-          "size": [
-            "XL"
-          ],
-          "color": [
-            "white"
-          ],
+          "size": ["XL"],
+          "color": ["white"],
           "category": "Woman",
           "subcategory": "T-shirt",
-          "additionalCategories": [
-            "trending",
-            "sale"
-          ],
+          "additionalCategories": ["trending", "sale"],
           "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/6202/267/001/6202267001_1_1_2.jpg?t=1669732582176",
           "id": 3
         },
@@ -485,21 +340,11 @@
           "updatedAt": "1/1/2023, 6:25:08 PM",
           "name": "Lace pleated dress",
           "price": 59.99,
-          "size": [
-            "XS",
-            "S",
-            "XXS",
-            "L"
-          ],
-          "color": [
-            "black"
-          ],
+          "size": ["XS", "S", "XXS", "L"],
+          "color": ["black"],
           "category": "Woman",
           "subcategory": "Dress",
-          "additionalCategories": [
-            "best-sellers",
-            "sale"
-          ],
+          "additionalCategories": ["best-sellers", "sale"],
           "imgPath": "http://res.cloudinary.com/dr4cvohdq/image/upload/v1672586727/utkeesstkjwkdi4qt6zu.webp",
           "id": 4
         },
@@ -508,15 +353,8 @@
           "updatedAt": "1/1/2023, 6:31:08 PM",
           "name": "Lightweight cotton sweatshirt",
           "price": 27.99,
-          "color": [
-            "green"
-          ],
-          "size": [
-            "XS",
-            "S",
-            "M",
-            "L"
-          ],
+          "color": ["green"],
+          "size": ["XS", "S", "M", "L"],
           "category": "Man",
           "subcategory": "Sweatshirt",
           "imgPath": "http://res.cloudinary.com/dr4cvohdq/image/upload/v1672587096/wty5mvkd5dltmqetfo8a.webp",
@@ -527,15 +365,8 @@
           "updatedAt": "1/1/2023, 6:31:08 PM",
           "name": "Lightweight cotton sweatshirt",
           "price": 27.99,
-          "color": [
-            "green"
-          ],
-          "size": [
-            "XS",
-            "S",
-            "M",
-            "L"
-          ],
+          "color": ["green"],
+          "size": ["XS", "S", "M", "L"],
           "category": "Man",
           "subcategory": "Sweatshirt",
           "imgPath": "http://res.cloudinary.com/dr4cvohdq/image/upload/v1672587096/wty5mvkd5dltmqetfo8a.webp",
@@ -1163,24 +994,12 @@
     {
       "city": "Gümüşhane",
       "plate": 29,
-      "states": [
-        "Merkez",
-        "Kelkit",
-        "Şiran",
-        "Torul",
-        "Köse",
-        "Kürtün"
-      ]
+      "states": ["Merkez", "Kelkit", "Şiran", "Torul", "Köse", "Kürtün"]
     },
     {
       "city": "Hakkari",
       "plate": 30,
-      "states": [
-        "Çukurca",
-        "Merkez",
-        "Şemdinli",
-        "Yüksekova"
-      ]
+      "states": ["Çukurca", "Merkez", "Şemdinli", "Yüksekova"]
     },
     {
       "city": "Hatay",
@@ -1586,14 +1405,7 @@
     {
       "city": "Muş",
       "plate": 49,
-      "states": [
-        "Bulanık",
-        "Malazgirt",
-        "Merkez",
-        "Varto",
-        "Hasköy",
-        "Korkut"
-      ]
+      "states": ["Bulanık", "Malazgirt", "Merkez", "Varto", "Hasköy", "Korkut"]
     },
     {
       "city": "Nevşehir",
@@ -1855,14 +1667,7 @@
     {
       "city": "Uşak",
       "plate": 64,
-      "states": [
-        "Banaz",
-        "Eşme",
-        "Karahallı",
-        "Sivaslı",
-        "Ulubey",
-        "Merkez"
-      ]
+      "states": ["Banaz", "Eşme", "Karahallı", "Sivaslı", "Ulubey", "Merkez"]
     },
     {
       "city": "Van",
@@ -1906,14 +1711,7 @@
     {
       "city": "Zonguldak",
       "plate": 67,
-      "states": [
-        "Çaycuma",
-        "Devrek",
-        "Ereğli",
-        "Merkez",
-        "Alaplı",
-        "Gökçebey"
-      ]
+      "states": ["Çaycuma", "Devrek", "Ereğli", "Merkez", "Alaplı", "Gökçebey"]
     },
     {
       "city": "Aksaray",
@@ -1931,11 +1729,7 @@
     {
       "city": "Bayburt",
       "plate": 69,
-      "states": [
-        "Merkez",
-        "Aydıntepe",
-        "Demirözü"
-      ]
+      "states": ["Merkez", "Aydıntepe", "Demirözü"]
     },
     {
       "city": "Karaman",
@@ -1967,14 +1761,7 @@
     {
       "city": "Batman",
       "plate": 72,
-      "states": [
-        "Merkez",
-        "Beşiri",
-        "Gercüş",
-        "Kozluk",
-        "Sason",
-        "Hasankeyf"
-      ]
+      "states": ["Merkez", "Beşiri", "Gercüş", "Kozluk", "Sason", "Hasankeyf"]
     },
     {
       "city": "Şırnak",
@@ -1992,34 +1779,17 @@
     {
       "city": "Bartın",
       "plate": 74,
-      "states": [
-        "Merkez",
-        "Kurucaşile",
-        "Ulus",
-        "Amasra"
-      ]
+      "states": ["Merkez", "Kurucaşile", "Ulus", "Amasra"]
     },
     {
       "city": "Ardahan",
       "plate": 75,
-      "states": [
-        "Merkez",
-        "Çıldır",
-        "Göle",
-        "Hanak",
-        "Posof",
-        "Damal"
-      ]
+      "states": ["Merkez", "Çıldır", "Göle", "Hanak", "Posof", "Damal"]
     },
     {
       "city": "Iğdır",
       "plate": 76,
-      "states": [
-        "Aralık",
-        "Merkez",
-        "Tuzluca",
-        "Karakoyunlu"
-      ]
+      "states": ["Aralık", "Merkez", "Tuzluca", "Karakoyunlu"]
     },
     {
       "city": "Yalova",
@@ -2048,12 +1818,7 @@
     {
       "city": "Kilis",
       "plate": 79,
-      "states": [
-        "Merkez",
-        "Elbeyli",
-        "Musabeyli",
-        "Polateli"
-      ]
+      "states": ["Merkez", "Elbeyli", "Musabeyli", "Polateli"]
     },
     {
       "city": "Osmaniye",
@@ -2108,11 +1873,7 @@
       "amount": 1,
       "createdAt": "1/1/2023, 6:25:08 PM",
       "updatedAt": "1/1/2023, 6:25:08 PM",
-      "additionalCategories": [
-        "best-sellers",
-        "trending",
-        "sale"
-      ]
+      "additionalCategories": ["best-sellers", "trending", "sale"]
     }
   ],
   "order-list": []
