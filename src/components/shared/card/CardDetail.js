@@ -10,7 +10,13 @@ const CardDetail = () => {
   const [productCount, setProductCount] = useState(1);
   const [size, setSize] = useState("");
   const [color, setColor] = useState("");
-  const { favorites, setFavorites, getUserFavorites, addFavorite } = useAuth();
+  const {
+    favorites,
+    setFavorites,
+    getUserFavorites,
+    addFavorite,
+    deleteFavorite,
+  } = useAuth();
   const [error, setError] = useState("");
   const context = useContext(ShopContext);
   let { productId } = useParams();
@@ -49,8 +55,12 @@ const CardDetail = () => {
     });
   };
 
-  const handleFavorite = () => {
+  const handleAddFavorite = () => {
     addFavorite(product);
+    setFavorite(!favorite);
+  };
+  const handleDeleteFavorite = () => {
+    deleteFavorite(product);
     setFavorite(!favorite);
   };
 
@@ -62,14 +72,23 @@ const CardDetail = () => {
     <div className="card-detail">
       <div className="product-flex">
         <div className="product-img">
-          <div className="add-favorite" onClick={handleFavorite}>
+          <div
+            className="add-favorite"
+            // onClick={() => {
+            //   handleFavorite();
+            //   setFavorite(!favorite);
+            // }}
+          >
+            {/* {!favorite ? <IoIosHeartEmpty /> : <IoIosHeart />} */}
             {favorites.filter((favor) => favor.id === product.id).length ? (
-              <IoIosHeart />
+              <IoIosHeart onClick={handleDeleteFavorite} />
             ) : !favorite ? (
-              <IoIosHeartEmpty />
+              <IoIosHeartEmpty onClick={handleAddFavorite} />
             ) : (
-              <IoIosHeart />
+              <IoIosHeart onClick={handleDeleteFavorite} />
             )}
+
+            {console.log(favorites.filter((favor) => favor.id === product.id))}
           </div>
           <img src={product.imgPath} alt={product.name} />
         </div>

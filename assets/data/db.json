@@ -373,95 +373,61 @@
       "birth": "2022-12-20",
       "gender": "female",
       "role": "admin",
-      "addresses": [],
+      "addresses": [
+        {
+          "firstname": "Shiear",
+          "lastname": "Admin",
+          "phone": "+90 (000) 000 - 0000",
+          "city": "İstanbul",
+          "state": "Beşiktaş",
+          "address": "admin",
+          "postcode": "00000",
+          "addressName": "Home"
+        }
+      ],
       "orders": [],
       "id": 1,
       "favorites": [
         {
-          "createdAt": "1/1/2023, 6:25:08 PM",
-          "updatedAt": "1/1/2023, 6:25:08 PM",
-          "name": "Blazer Jacket",
-          "price": 49.99,
+          "createdAt": "1/1/2023, 6:37:45 PM",
+          "updatedAt": "1/1/2023, 6:37:45 PM",
+          "name": "Tropical print shirt",
           "size": [
-            "S",
-            "XXL"
+            "XXS",
+            "XS",
+            "S"
           ],
           "color": [
-            "red"
+            "white",
+            "black"
           ],
-          "category": "Woman",
-          "subcategory": "Jacket",
+          "category": "Child",
+          "subcategory": "Shirt",
           "additionalCategories": [
-            "best-sellers",
-            "trending",
-            "sale"
+            "trending"
           ],
-          "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/5900/472/430/5900472430_1_1_2.jpg?t=1669736376209",
-          "id": 1
+          "imgPath": "http://res.cloudinary.com/dr4cvohdq/image/upload/v1672595350/pmqzrdpmnlfylvp2h7co.jpg",
+          "price": 112.99,
+          "id": 11
         },
         {
-          "createdAt": "1/1/2023, 6:25:08 PM",
-          "updatedAt": "1/1/2023, 6:25:08 PM",
-          "name": "Blazer Jacket",
-          "price": 49.99,
+          "createdAt": "1/1/2023, 6:30:20 PM",
+          "updatedAt": "1/1/2023, 6:30:20 PM",
+          "name": "Sherpa pocket sweatshirt",
+          "price": 45.99,
+          "color": [
+            "green"
+          ],
           "size": [
+            "XS",
             "S",
-            "XXL"
+            "M",
+            "L"
           ],
-          "color": [
-            "red"
-          ],
-          "category": "Woman",
-          "subcategory": "Jacket",
-          "additionalCategories": [
-            "best-sellers",
-            "trending",
-            "sale"
-          ],
-          "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/5900/472/430/5900472430_1_1_2.jpg?t=1669736376209",
-          "id": 1
-        },
-        {
-          "createdAt": "1/1/2023, 6:25:08 PM",
-          "updatedAt": "1/1/2023, 6:25:08 PM",
-          "name": "Blazer Jacket",
-          "price": 49.99,
-          "size": [
-            "S",
-            "XXL"
-          ],
-          "color": [
-            "red"
-          ],
-          "category": "Woman",
-          "subcategory": "Jacket",
-          "additionalCategories": [
-            "best-sellers",
-            "trending",
-            "sale"
-          ],
-          "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/5900/472/430/5900472430_1_1_2.jpg?t=1669736376209",
-          "id": 1
-        },
-        {
-          "createdAt": "1/1/2023, 6:25:08 PM",
-          "updatedAt": "1/1/2023, 6:25:08 PM",
-          "name": "T-shirt",
-          "price": 10,
-          "size": [
-            "XL"
-          ],
-          "color": [
-            "white"
-          ],
-          "category": "Woman",
-          "subcategory": "T-shirt",
-          "additionalCategories": [
-            "trending",
-            "sale"
-          ],
-          "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/6202/267/001/6202267001_1_1_2.jpg?t=1669732582176",
-          "id": 3
+          "category": "Man",
+          "subcategory": "Sweatshirt",
+          "imgPath": "https://res.cloudinary.com/dr4cvohdq/image/upload/v1672587037/zydsnco7z34qeg8uqqfh.webp",
+          "id": 7
         }
       ]
     },
@@ -2021,8 +1987,8 @@
     {
       "name": "Blazer Jacket",
       "price": 49.99,
-      "size": "",
-      "color": "",
+      "size": "XXL",
+      "color": "red",
       "category": "Woman",
       "subcategory": "Jacket",
       "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/5900/472/430/5900472430_1_1_2.jpg?t=1669736376209",
