@@ -382,6 +382,36 @@ const AuthProvider = ({ children }) => {
     getUserOrders();
   };
 
+  const getUserByOrderId = async (orderId) => {
+    const response = await getUsers();
+    console.log(response.data)
+    console.log(orderId);
+    let tempUser;
+    response.data.forEach((userObject) => {
+      userObject.orders.length >= 1 && userObject.orders.forEach((orderObject) => {
+        if (orderObject.orderId === orderId) {
+          tempUser = userObject;
+        }
+      })
+    })
+    /* const tempUser = response.data.filter((userObject) => {
+      console.log(userObject)
+      console.log(userObject.orders)
+      userObject.orders.length >= 1 && userObject.orders.filter((orderObj) => {
+        console.log(orderObj.orderId);
+        return (
+          orderObj.orderId === orderId
+        );
+      }) */
+     /*  return (
+        userObject.orders[0].orderId === orderId
+      ); 
+    });*/
+
+    console.log(tempUser);
+    return tempUser;
+  };
+
   const values = {
     loggedIn,
     user,
@@ -407,6 +437,7 @@ const AuthProvider = ({ children }) => {
     deleteFavorite,
     addOrder,
     getUserOrders,
+    getUserByOrderId,
   };
 
   return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>;

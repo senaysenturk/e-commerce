@@ -377,10 +377,10 @@
   ],
   "me": [
     {
-      "user": "senay",
+      "user": "admin@shiwear.com",
       "password": "Bilge123!",
-      "role": "user",
-      "id": 4
+      "role": "admin",
+      "id": 1
     }
   ],
   "users": [
@@ -550,6 +550,24 @@
       "message": "test message hello word",
       "createdAt": "2023-01-11",
       "id": 1
+    },
+    {
+      "user": "hicran",
+      "mail": "hicranertugral@gmail.com",
+      "phone": "+90 (535) 817 - 4795",
+      "subject": "Return / Exchange Request",
+      "message": "test message hello powerpuff girls ",
+      "createdAt": "1/11/2023, 8:34:05 PM",
+      "id": 2
+    },
+    {
+      "user": "irmak",
+      "mail": "irmak@gmail.com",
+      "phone": "+90 (535) 817 - 4795",
+      "subject": "Return / Exchange Request",
+      "message": "test",
+      "createdAt": "1/11/2023, 8:56:57 PM",
+      "id": 3
     }
   ],
   "cities": [

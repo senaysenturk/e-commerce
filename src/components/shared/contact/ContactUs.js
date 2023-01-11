@@ -119,9 +119,9 @@ const ContactUs = () => {
   return (
     <form
       className="hero"
-      action="mailto:info@shiwear.com"
-      method="post"
-      enctype="text/plain"
+      // action="mailto:info@shiwear.com"
+      // method="post"
+      // enctype="text/plain"
     >
       <fieldset>
         <div className="about-content">

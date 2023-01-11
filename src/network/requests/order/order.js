@@ -17,3 +17,7 @@ export const postOrder = async (newOrder) => {
 export const getOrders = async () => {
   return baseService.get("http://localhost:5500/", "orders");
 };
+
+export const getOrderList = async () => {
+  return baseService.get("http://localhost:5500/", "order-list");
+};
