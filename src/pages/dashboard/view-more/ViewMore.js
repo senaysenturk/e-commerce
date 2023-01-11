@@ -7,18 +7,18 @@ export const ViewMore = () => {
   const { moreResult } = useProduct();
   return (
     <>
-      <div className="all-product-list">
-        {console.log(moreResult)}
+      <div className="search-and-filter-list">
         <FilterNavigation />
         <div className="products">
           <div className="row-header">
-            <h2>Search Results</h2>
+            <h2></h2>
           </div>
-          <div className="grid-4-columns">
+          <div className="search-row">
             {moreResult.map((product, index) => (
               /* console.log(product.result); */
               <SmallCard product={product.result} key={index} />
             ))}
+            {/* {JSON.stringify(searchProducts)} */}
           </div>
         </div>
       </div>
