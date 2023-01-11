@@ -11,6 +11,15 @@ import { useAuth } from "src/contexts/auth/AuthContext";
  */
 const CardSummary = ({ product }) => {
   const [favorite, setFavorite] = useState(false);
+  const { favorites, setFavorites, getUserFavorites, addFavorite } = useAuth();
+  const handleFavorite = () => {
+    setFavorite(!favorite);
+    addFavorite(product);
+  };
+
+  useEffect(() => {
+    getUserFavorites();
+  }, []);
 
   return (
     <>

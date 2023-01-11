@@ -10,6 +10,21 @@ const CardDetail = () => {
   const [productCount, setProductCount] = useState(1);
   const [size, setSize] = useState("");
   const [color, setColor] = useState("");
+  const { favorites, setFavorites, getUserFavorites, addFavorite } = useAuth();
+  const [error, setError] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!color) {
+      setError("Please select a color");
+      return;
+    }
+    if (!size) {
+      setError("Please sellect a size");
+      return;
+    }
+    setError("");
+  };
 
   let { productId } = useParams();
   productId = Number(productId);
