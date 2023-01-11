@@ -373,7 +373,18 @@
       "birth": "2022-12-20",
       "gender": "female",
       "role": "admin",
-      "addresses": [],
+      "addresses": [
+        {
+          "firstname": "Ipek",
+          "lastname": "Celik",
+          "phone": "+90 (535) 817 - 4795",
+          "address": "Osmangazi Mh. Atayolu Cd. Kadife Sk. No: 2/4B EnvarEv Cadde St. B Blok, D: 50 K: 13 Samandıra",
+          "postcode": "34887",
+          "city": "İstanbul",
+          "state": "Sancaktepe",
+          "addressName": "Ev"
+        }
+      ],
       "orders": [],
       "id": 1,
       "favorites": [
@@ -2016,7 +2027,13 @@
       "subcategory": "T-shirt",
       "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/6202/267/001/6202267001_1_1_2.jpg?t=1669732582176",
       "id": 3,
-      "amount": 3
+      "amount": 3,
+      "createdAt": "1/1/2023, 6:25:08 PM",
+      "updatedAt": "1/1/2023, 6:25:08 PM",
+      "additionalCategories": [
+        "trending",
+        "sale"
+      ]
     },
     {
       "name": "Blazer Jacket",
@@ -2037,5 +2054,39 @@
       ]
     }
   ],
-  "order-list": []
+  "order-list": [
+    {
+      "user": [
+        {
+          "user": "admin@shiwear.com",
+          "password": "Bilge123!",
+          "role": "admin",
+          "id": 1
+        }
+      ],
+      "date": 1673451139737,
+      "orderId": 1673451139737,
+      "orderList": [
+        {
+          "createdAt": "1/1/2023, 6:25:08 PM",
+          "updatedAt": "1/1/2023, 6:25:08 PM",
+          "name": "T-shirt",
+          "price": 10,
+          "size": "",
+          "color": "white",
+          "category": "Woman",
+          "subcategory": "T-shirt",
+          "additionalCategories": [
+            "trending",
+            "sale"
+          ],
+          "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/6202/267/001/6202267001_1_1_2.jpg?t=1669732582176",
+          "id": 3,
+          "amount": 3
+        }
+      ],
+      "totalOrderAmount": "30.00",
+      "id": 1
+    }
+  ]
 }

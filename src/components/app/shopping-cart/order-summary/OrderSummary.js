@@ -6,10 +6,12 @@ import { useNavigate } from "react-router-dom";
 import ShopContext from "../../../../contexts/basket/ShopContext";
 import { baseService } from "src/network/services/baseService";
 import { CLEAR_CART } from "src/contexts/basket/reducers";
+import { useAuth } from "../../../../contexts/auth/AuthContext";
 
 export const OrderSummary = ({ isCartPage }) => {
   const navigate = useNavigate();
   const context = useContext(ShopContext);
+  const { currentUser } = useAuth();
 
   const onClickConfirmBag = () => {
     navigate("/shopping/checkout");
@@ -21,6 +23,7 @@ export const OrderSummary = ({ isCartPage }) => {
      */
     const orderData = {
       userId: context.auth.id,
+      user: currentUser,
       date: Date.now(),
       orderId: Date.now(),
       orderList: context.cart,
