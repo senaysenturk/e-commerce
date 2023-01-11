@@ -10,6 +10,22 @@ import "./style.scss";
  */
 const CardSummary = ({ product }) => {
   const [favorite, setFavorite] = useState(false);
+  // const [color, setColor] = useState("");
+  // const [size, setSize] = useState("");
+  // const [error, setError] = useState("");
+
+  // const handleSubmit = e => {
+  //   e.preventDefault();
+  //   if(!color){
+  //     setError("Please select a color");
+  //     return;
+  //   }
+  //   if(!size){
+  //     setError("Please sellect a size")
+  //     return
+  //   }
+  //   setError("")
+  // }
 
   return (
     <>
@@ -31,7 +47,7 @@ const CardSummary = ({ product }) => {
             distinctio molestiae. Quos quo ducimus ratione.
           </p>
 
-          <div className="colors">
+          <div className="colors" >
             Colors:
             {product.color.map((item, index) => {
               return (
