@@ -30,12 +30,12 @@ export const OrderSummary = ({ isCartPage }) => {
       totalOrderAmount: context.totalPrice(),
     };
     await baseService.sendOrderItems(orderData);
-    console.log(currentUser[0].user);
-    console.log(orderData);
+    // console.log(currentUser[0].user);
+    // console.log(orderData);
     await addOrder(currentUser[0].user, orderData);
 
-    // context.clearCart();
-    // navigate("/order-tracking");
+    context.clearCart();
+    navigate("/order-tracking");
   };
 
   return (
