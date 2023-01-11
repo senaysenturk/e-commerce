@@ -23,7 +23,7 @@ export const NewArrivals = () => {
           <div className="search-row">
             {products &&
               products
-                .slice(0, 15)
+                .slice(-100)
                 .map((product, index) => (
                   <SmallCard product={product} key={index} />
                 ))}

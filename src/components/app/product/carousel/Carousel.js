@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./style.scss";
 import Modal from "../../../shared/modal/Modal";
+import { useAuth } from "src/contexts/auth/AuthContext";
 
 /**
  *
@@ -10,6 +11,14 @@ import Modal from "../../../shared/modal/Modal";
 
 const Carousel = ({ product }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const { getUserLastViewes, addLastViewed } = useAuth();
+  const handleAddLastViewed = () => {
+    setIsOpen(true);
+    addLastViewed(product);
+  };
+  useEffect(() => {
+    getUserLastViewes();
+  }, [isOpen]);
   return (
     <>
       {isOpen && <Modal setIsOpen={setIsOpen} product={product} />}
@@ -20,7 +29,7 @@ const Carousel = ({ product }) => {
           alt={product.name}
         />
         <div className="quickview">
-          <span className="quickview_icon" onClick={() => setIsOpen(true)}>
+          <span className="quickview_icon" onClick={handleAddLastViewed}>
             Quick View
           </span>
           <div className="quickview_info" lang="tr">

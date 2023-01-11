@@ -22,6 +22,7 @@ const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState();
   const [address, setAddress] = useState([]);
   const [favorites, setFavorites] = useState([]);
+  const [lastViewed, setLastViewed] = useState([]);
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
@@ -82,10 +83,8 @@ const AuthProvider = ({ children }) => {
     const me = await fetchMe();
     setUser(me.data);
     const response = await getUsers();
-    console.log(
-      "ME:",
-      response.data.filter((userObject) => console.log(me.data))
-    );
+    response.data.filter((userObject) => console.log("Me: ", me.data));
+
     setFavorites(
       response.data.filter(
         (userObject) =>
@@ -93,7 +92,7 @@ const AuthProvider = ({ children }) => {
           userObject.user === me.data[0].user
       )[0].favorites
     );
-    console.log("favorites", favorites);
+    //console.log("favorites", favorites);
   };
 
   const addFavorite = async (product) => {
@@ -118,6 +117,59 @@ const AuthProvider = ({ children }) => {
       updateUser(userId, {
         ...updatedUser[0],
         favorites: [product],
+      });
+    }
+    getUserFavorites();
+  };
+
+  const getUserLastViewes = async () => {
+    console.log("last view çalıştı");
+    const me = await fetchMe();
+    setUser(me.data);
+    const response = await getUsers();
+
+    response.data.filter((userObject) => console.log("Me:", me.data));
+
+    setLastViewed(
+      response.data.filter(
+        (userObject) =>
+          userObject.mail === me.data[0].user ||
+          userObject.user === me.data[0].user
+      )[0].lastViewed
+    );
+    console.log(
+      "last viewes",
+      response.data.filter(
+        (userObject) =>
+          userObject.mail === me.data[0].user ||
+          userObject.user === me.data[0].user
+      )[0].lastViewed
+    );
+  };
+
+  const addLastViewed = async (product) => {
+    console.log("add last view çalıştı");
+    const response = await getUsers();
+    updatedUser = response.data.filter((userObject) => {
+      return (
+        userObject.mail === user[0].user || userObject.user === user[0].user
+      );
+    });
+    console.log(updatedUser[0].id);
+    // let userId = updatedUser[updatedUser.length].id;
+
+    if (updatedUser[0].hasOwnProperty("lastViewed")) {
+      // updatedUser[updatedUser.length - 1].lastViewed.forEach((lastView) => {
+      //   console.log(lastView);
+      // });
+      updateUser(updatedUser[0].id, {
+        ...updatedUser[0],
+        lastViewed: [...updatedUser[0].lastViewed, product],
+      });
+    } else {
+      updateUser(updatedUser[0].id, {
+        ...updatedUser[0],
+        lastViewed: [product],
       });
     }
     getUserFavorites();
@@ -354,9 +406,7 @@ const AuthProvider = ({ children }) => {
     const response = await getUsers();
     console.log(userName);
     updatedUser = response.data.filter((userObject) => {
-      return (
-        userObject.mail === userName || userObject.user === userName
-      );
+      return userObject.mail === userName || userObject.user === userName;
     });
 
     console.log(updatedUser);
@@ -384,16 +434,17 @@ const AuthProvider = ({ children }) => {
 
   const getUserByOrderId = async (orderId) => {
     const response = await getUsers();
-    console.log(response.data)
+    console.log(response.data);
     console.log(orderId);
     let tempUser;
     response.data.forEach((userObject) => {
-      userObject.orders.length >= 1 && userObject.orders.forEach((orderObject) => {
-        if (orderObject.orderId === orderId) {
-          tempUser = userObject;
-        }
-      })
-    })
+      userObject.orders.length >= 1 &&
+        userObject.orders.forEach((orderObject) => {
+          if (orderObject.orderId === orderId) {
+            tempUser = userObject;
+          }
+        });
+    });
     /* const tempUser = response.data.filter((userObject) => {
       console.log(userObject)
       console.log(userObject.orders)
@@ -403,7 +454,7 @@ const AuthProvider = ({ children }) => {
           orderObj.orderId === orderId
         );
       }) */
-     /*  return (
+    /*  return (
         userObject.orders[0].orderId === orderId
       ); 
     });*/
@@ -437,6 +488,9 @@ const AuthProvider = ({ children }) => {
     deleteFavorite,
     addOrder,
     getUserOrders,
+    addLastViewed,
+    lastViewed,
+    getUserLastViewes,
     getUserByOrderId,
   };
 

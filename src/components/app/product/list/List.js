@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import SmallCard from "../small-card/SmallCard";
 import BigCard from "../big-card/BigCard";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
@@ -7,11 +7,17 @@ import Carousel from "../carousel/Carousel";
 import ShopContext from "../../../../contexts/basket/ShopContext";
 import { useMatchMedia } from "src/components/shared/header/useMatchMedia";
 import { Link } from "react-router-dom";
+import { useAuth } from "src/contexts/auth/AuthContext";
 
 const List = () => {
   const context = useContext(ShopContext);
+  const { getUserLastViewes, lastViewed } = useAuth();
   // const isMobileResolution = useMatchMedia("(max-width:992px)", false);
   const isDesktopResolution = useMatchMedia("(min-width:992px)", true);
+
+  useEffect(() => {
+    getUserLastViewes();
+  }, []);
   return (
     <div className="list">
       <div className="product-row">
@@ -62,12 +68,17 @@ const List = () => {
             </div>
           </div>
         </div>
+
         <div className="row">
-          {context.products.map((product, index) => {
+          {/* {context.products.map((product, index) => {
             if (product.category == "Man") {
               return <Carousel product={product} key={index} />;
             }
-          })}
+          })} */}
+          {lastViewed.length &&
+            lastViewed.slice(-6).map((product, index) => {
+              return <Carousel product={product} key={index} />;
+            })}
         </div>
       </div>
     </div>
