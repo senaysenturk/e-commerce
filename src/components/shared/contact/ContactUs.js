@@ -80,7 +80,12 @@ const ContactUs = () => {
 
   const addMessage = async (e) => {
     try {
-      var response = await postMessage({ user, mail, ...sendMessage });
+      var response = await postMessage({
+        user,
+        mail,
+        ...sendMessage,
+        createdAt: new Date().toLocaleString(),
+      });
       alert("message is send successfully");
       setMail("");
       setUser("");
@@ -119,129 +124,129 @@ const ContactUs = () => {
       enctype="text/plain"
     >
       <fieldset>
-      <div className="about-content">
-        <h1>Contact Us</h1>
-        <img src="./about-us-photos/about-us.jpeg" alt="" />
-      </div>
-
-      <p
-        ref={errRef}
-        className={errMsg ? "errmsg" : "offscreen"}
-        aria-live="assertive"
-      >
-        {errMsg}
-      </p>
-
-      <div className="about-info">
-        <div className="message">
-          <h3 className="msg">Your Message . . . </h3>
+        <div className="about-content">
+          <h1>Contact Us</h1>
+          <img src="./about-us-photos/about-us.jpeg" alt="" />
         </div>
 
-        <div className="full-name">
-          <input
-            type="text"
-            className="name"
-            name="name"
-            ref={userRef}
-            autoComplete="off"
-            placeholder="Full Name"
-            onChange={(e) => {
-              setUser(e.target.value);
-            }}
-            value={user}
-            required
-            aria-invalid={validName ? "false" : "true"}
-            aria-describedby="uidnote"
-            onFocus={() => setUserFocus(true)}
-            onBlur={() => setUserFocus(false)}
-          />
-          <p id="uidnote" className={errUser ? "instructions" : "offscreen"}>
-            {errUser}
-          </p>
-          <p
-            id="uidnote"
-            className={
-              userFocus && user && !validName ? "instructions" : "offscreen"
-            }
-          >
-            4 to 24 characters.
-            <br />
-            Must begin with a letter.
-            <br />
-            Letters, numbers, underscores, hyphens allowed.
-          </p>
-        </div>
+        <p
+          ref={errRef}
+          className={errMsg ? "errmsg" : "offscreen"}
+          aria-live="assertive"
+        >
+          {errMsg}
+        </p>
 
-        <div className="email">
-          <input
-            type="email"
-            className="email"
-            name="mail"
-            ref={userRef}
-            autoComplete="off"
-            placeholder="E-mail"
-            onChange={(e) => {
-              setMail(e.target.value);
-            }}
-            value={mail}
-            required
-            aria-invalid={validMail ? "false" : "true"}
-            aria-describedby="uidnote"
-            onFocus={() => setMailFocus(true)}
-            onBlur={() => setMailFocus(false)}
-          />
-          <p id="uidnote" className={errMail ? "instructions" : "offscreen"}>
-            {errMail}
-          </p>
-          <p
-            id="uidnote"
-            className={
-              mailFocus && mail && !validMail ? "instructions" : "offscreen"
-            }
-          >
-            4 to 24 characters.
-            <br />
-            Must begin with a letter.
-            <br />
-            Letters, numbers, underscores, hyphens allowed.
-          </p>
-        </div>
+        <div className="about-info">
+          <div className="message">
+            <h3 className="msg">Your Message . . . </h3>
+          </div>
 
-        <div className="tel">
-          <MaskInput
-            alwaysShowMask
-            mask={"+90 (500) 000 - 0000"}
-            size={21}
-            showMask
-            maskChar="_"
-            name="phone"
-            onChange={handleMessage}
-          />
-        </div>
+          <div className="full-name">
+            <input
+              type="text"
+              className="name"
+              name="name"
+              ref={userRef}
+              autoComplete="off"
+              placeholder="Full Name"
+              onChange={(e) => {
+                setUser(e.target.value);
+              }}
+              value={user}
+              required
+              aria-invalid={validName ? "false" : "true"}
+              aria-describedby="uidnote"
+              onFocus={() => setUserFocus(true)}
+              onBlur={() => setUserFocus(false)}
+            />
+            <p id="uidnote" className={errUser ? "instructions" : "offscreen"}>
+              {errUser}
+            </p>
+            <p
+              id="uidnote"
+              className={
+                userFocus && user && !validName ? "instructions" : "offscreen"
+              }
+            >
+              4 to 24 characters.
+              <br />
+              Must begin with a letter.
+              <br />
+              Letters, numbers, underscores, hyphens allowed.
+            </p>
+          </div>
 
-        <select id="subject" name="subject" onChange={handleMessage}>
-          <option>Subject</option>
-          {subjects.map((subject, index) => (
-            <option key={index}>{subject}</option>
-          ))}
-        </select>
+          <div className="email">
+            <input
+              type="email"
+              className="email"
+              name="mail"
+              ref={userRef}
+              autoComplete="off"
+              placeholder="E-mail"
+              onChange={(e) => {
+                setMail(e.target.value);
+              }}
+              value={mail}
+              required
+              aria-invalid={validMail ? "false" : "true"}
+              aria-describedby="uidnote"
+              onFocus={() => setMailFocus(true)}
+              onBlur={() => setMailFocus(false)}
+            />
+            <p id="uidnote" className={errMail ? "instructions" : "offscreen"}>
+              {errMail}
+            </p>
+            <p
+              id="uidnote"
+              className={
+                mailFocus && mail && !validMail ? "instructions" : "offscreen"
+              }
+            >
+              4 to 24 characters.
+              <br />
+              Must begin with a letter.
+              <br />
+              Letters, numbers, underscores, hyphens allowed.
+            </p>
+          </div>
 
-        <div className="msg-box">
-          <textarea
-            id="message"
-            name="message"
-            rows={5}
-            placeholder="Write message..."
-            onChange={handleMessage}
-          ></textarea>
-        </div>
+          <div className="tel">
+            <MaskInput
+              alwaysShowMask
+              mask={"+90 (500) 000 - 0000"}
+              size={21}
+              showMask
+              maskChar="_"
+              name="phone"
+              onChange={handleMessage}
+            />
+          </div>
 
-        <div className="btn-about">
-          <button className="about-btn" onClick={handleSend}>
-            Send
-          </button>
+          <select id="subject" name="subject" onChange={handleMessage}>
+            <option>Subject</option>
+            {subjects.map((subject, index) => (
+              <option key={index}>{subject}</option>
+            ))}
+          </select>
+
+          <div className="msg-box">
+            <textarea
+              id="message"
+              name="message"
+              rows={5}
+              placeholder="Write message..."
+              onChange={handleMessage}
+            ></textarea>
+          </div>
+
+          <div className="btn-about">
+            <button className="about-btn" onClick={handleSend}>
+              Send
+            </button>
+          </div>
         </div>
-      </div>
       </fieldset>
     </form>
   );

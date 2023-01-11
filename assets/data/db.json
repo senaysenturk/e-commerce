@@ -571,11 +571,21 @@
     "Technical Problems",
     "Other"
   ],
-  "messages": [],
+  "messages": [
+    {
+      "user": "Ipek",
+      "mail": "ipekgulsen.celik@gmail.com",
+      "phone": "+90 (535) 817 - 4795",
+      "subject": "Order Tracking / Delivery",
+      "message": "test message hello word",
+      "createdAt": "2023-01-11",
+      "id": 1
+    }
+  ],
   "cities": [
     {
       "city": "Adana",
-      "plaka": 1,
+      "plate": 1,
       "states": [
         "Aladağ",
         "Ceyhan",
@@ -596,7 +606,7 @@
     },
     {
       "city": "Adıyaman",
-      "plaka": 2,
+      "plate": 2,
       "states": [
         "Besni",
         "Çelikhan",
@@ -611,7 +621,7 @@
     },
     {
       "city": "Afyonkarahisar",
-      "plaka": 3,
+      "plate": 3,
       "states": [
         "Başmakçı",
         "Bayat",
@@ -635,7 +645,7 @@
     },
     {
       "city": "Ağrı",
-      "plaka": 4,
+      "plate": 4,
       "states": [
         "Diyadin",
         "Doğubayazıt",
@@ -649,7 +659,7 @@
     },
     {
       "city": "Amasya",
-      "plaka": 5,
+      "plate": 5,
       "states": [
         "Göynücek",
         "Gümüşhacıköy",
@@ -662,7 +672,7 @@
     },
     {
       "city": "Ankara",
-      "plaka": 6,
+      "plate": 6,
       "states": [
         "Altındağ",
         "Ayaş",
@@ -693,7 +703,7 @@
     },
     {
       "city": "Antalya",
-      "plaka": 7,
+      "plate": 7,
       "states": [
         "Akseki",
         "Alanya",
@@ -718,7 +728,7 @@
     },
     {
       "city": "Artvin",
-      "plaka": 8,
+      "plate": 8,
       "states": [
         "Ardanuç",
         "Arhavi",
@@ -732,7 +742,7 @@
     },
     {
       "city": "Aydın",
-      "plaka": 9,
+      "plate": 9,
       "states": [
         "Merkez",
         "Bozdoğan",
@@ -756,7 +766,7 @@
     },
     {
       "city": "Balıkesir",
-      "plaka": 10,
+      "plate": 10,
       "states": [
         "Altıeylül",
         "Ayvalık",
@@ -783,7 +793,7 @@
     },
     {
       "city": "Bilecik",
-      "plaka": 11,
+      "plate": 11,
       "states": [
         "Merkez",
         "Bozüyük",
@@ -797,7 +807,7 @@
     },
     {
       "city": "Bingöl",
-      "plaka": 12,
+      "plate": 12,
       "states": [
         "Merkez",
         "Genç",
@@ -811,7 +821,7 @@
     },
     {
       "city": "Bitlis",
-      "plaka": 13,
+      "plate": 13,
       "states": [
         "Adilcevaz",
         "Ahlat",
@@ -824,7 +834,7 @@
     },
     {
       "city": "Bolu",
-      "plaka": 14,
+      "plate": 14,
       "states": [
         "Merkez",
         "Gerede",
@@ -839,7 +849,7 @@
     },
     {
       "city": "Burdur",
-      "plaka": 15,
+      "plate": 15,
       "states": [
         "Ağlasun",
         "Bucak",
@@ -856,7 +866,7 @@
     },
     {
       "city": "Bursa",
-      "plaka": 16,
+      "plate": 16,
       "states": [
         "Gemlik",
         "İnegöl",
@@ -879,7 +889,7 @@
     },
     {
       "city": "Çanakkale",
-      "plaka": 17,
+      "plate": 17,
       "states": [
         "Ayvacık",
         "Bayramiç",
@@ -897,7 +907,7 @@
     },
     {
       "city": "Çankırı",
-      "plaka": 18,
+      "plate": 18,
       "states": [
         "Merkez",
         "Çerkeş",
@@ -915,7 +925,7 @@
     },
     {
       "city": "Çorum",
-      "plaka": 19,
+      "plate": 19,
       "states": [
         "Alaca",
         "Bayat",
@@ -935,7 +945,7 @@
     },
     {
       "city": "Denizli",
-      "plaka": 20,
+      "plate": 20,
       "states": [
         "Acıpayam",
         "Buldan",
@@ -961,7 +971,7 @@
     },
     {
       "city": "Diyarbakır",
-      "plaka": 21,
+      "plate": 21,
       "states": [
         "Kocaköy",
         "Çermik",
@@ -984,7 +994,7 @@
     },
     {
       "city": "Edirne",
-      "plaka": 22,
+      "plate": 22,
       "states": [
         "Merkez",
         "Enez",
@@ -999,7 +1009,7 @@
     },
     {
       "city": "Elazığ",
-      "plaka": 23,
+      "plate": 23,
       "states": [
         "Ağın",
         "Baskil",
@@ -1016,7 +1026,7 @@
     },
     {
       "city": "Erzincan",
-      "plaka": 24,
+      "plate": 24,
       "states": [
         "Çayırlı",
         "Merkez",
@@ -1031,7 +1041,7 @@
     },
     {
       "city": "Erzurum",
-      "plaka": 25,
+      "plate": 25,
       "states": [
         "Aşkale",
         "Çat",
@@ -1057,7 +1067,7 @@
     },
     {
       "city": "Eskişehir",
-      "plaka": 26,
+      "plate": 26,
       "states": [
         "Çifteler",
         "Mahmudiye",
@@ -1077,7 +1087,7 @@
     },
     {
       "city": "Gaziantep",
-      "plaka": 27,
+      "plate": 27,
       "states": [
         "Araban",
         "İslahiye",
@@ -1092,7 +1102,7 @@
     },
     {
       "city": "Giresun",
-      "plaka": 28,
+      "plate": 28,
       "states": [
         "Alucra",
         "Bulancak",
@@ -1114,7 +1124,7 @@
     },
     {
       "city": "Gümüşhane",
-      "plaka": 29,
+      "plate": 29,
       "states": [
         "Merkez",
         "Kelkit",
@@ -1126,7 +1136,7 @@
     },
     {
       "city": "Hakkari",
-      "plaka": 30,
+      "plate": 30,
       "states": [
         "Çukurca",
         "Merkez",
@@ -1136,7 +1146,7 @@
     },
     {
       "city": "Hatay",
-      "plaka": 31,
+      "plate": 31,
       "states": [
         "Altınözü",
         "Arsuz",
@@ -1157,7 +1167,7 @@
     },
     {
       "city": "Isparta",
-      "plaka": 32,
+      "plate": 32,
       "states": [
         "Atabey",
         "Eğirdir",
@@ -1176,7 +1186,7 @@
     },
     {
       "city": "Mersin",
-      "plaka": 33,
+      "plate": 33,
       "states": [
         "Anamur",
         "Erdemli",
@@ -1195,7 +1205,7 @@
     },
     {
       "city": "İstanbul",
-      "plaka": 34,
+      "plate": 34,
       "states": [
         "Adalar",
         "Bakırköy",
@@ -1240,7 +1250,7 @@
     },
     {
       "city": "İzmir",
-      "plaka": 35,
+      "plate": 35,
       "states": [
         "Aliağa",
         "Bayındır",
@@ -1276,7 +1286,7 @@
     },
     {
       "city": "Kars",
-      "plaka": 36,
+      "plate": 36,
       "states": [
         "Arpaçay",
         "Digor",
@@ -1290,7 +1300,7 @@
     },
     {
       "city": "Kastamonu",
-      "plaka": 37,
+      "plate": 37,
       "states": [
         "Abana",
         "Araç",
@@ -1316,7 +1326,7 @@
     },
     {
       "city": "Kayseri",
-      "plaka": 38,
+      "plate": 38,
       "states": [
         "Bünyan",
         "Develi",
@@ -1338,7 +1348,7 @@
     },
     {
       "city": "Kırklareli",
-      "plaka": 39,
+      "plate": 39,
       "states": [
         "Babaeski",
         "Demirköy",
@@ -1352,7 +1362,7 @@
     },
     {
       "city": "Kırşehir",
-      "plaka": 40,
+      "plate": 40,
       "states": [
         "Çiçekdağı",
         "Kaman",
@@ -1365,7 +1375,7 @@
     },
     {
       "city": "Kocaeli",
-      "plaka": 41,
+      "plate": 41,
       "states": [
         "Gebze",
         "Gölcük",
@@ -1383,7 +1393,7 @@
     },
     {
       "city": "Konya",
-      "plaka": 42,
+      "plate": 42,
       "states": [
         "Akşehir",
         "Beyşehir",
@@ -1420,7 +1430,7 @@
     },
     {
       "city": "Kütahya",
-      "plaka": 43,
+      "plate": 43,
       "states": [
         "Altıntaş",
         "Domaniç",
@@ -1439,7 +1449,7 @@
     },
     {
       "city": "Malatya",
-      "plaka": 44,
+      "plate": 44,
       "states": [
         "Akçadağ",
         "Arapgir",
@@ -1459,7 +1469,7 @@
     },
     {
       "city": "Manisa",
-      "plaka": 45,
+      "plate": 45,
       "states": [
         "Akhisar",
         "Alaşehir",
@@ -1483,7 +1493,7 @@
     },
     {
       "city": "Kahramanmaraş",
-      "plaka": 46,
+      "plate": 46,
       "states": [
         "Afşin",
         "Andırın",
@@ -1501,7 +1511,7 @@
     },
     {
       "city": "Mardin",
-      "plaka": 47,
+      "plate": 47,
       "states": [
         "Derik",
         "Kızıltepe",
@@ -1518,7 +1528,7 @@
     },
     {
       "city": "Muğla",
-      "plaka": 48,
+      "plate": 48,
       "states": [
         "Bodrum",
         "Datça",
@@ -1537,7 +1547,7 @@
     },
     {
       "city": "Muş",
-      "plaka": 49,
+      "plate": 49,
       "states": [
         "Bulanık",
         "Malazgirt",
@@ -1549,7 +1559,7 @@
     },
     {
       "city": "Nevşehir",
-      "plaka": 50,
+      "plate": 50,
       "states": [
         "Avanos",
         "Derinkuyu",
@@ -1563,7 +1573,7 @@
     },
     {
       "city": "Niğde",
-      "plaka": 51,
+      "plate": 51,
       "states": [
         "Bor",
         "Çamardı",
@@ -1575,7 +1585,7 @@
     },
     {
       "city": "Ordu",
-      "plaka": 52,
+      "plate": 52,
       "states": [
         "Akkuş",
         "Altınordu",
@@ -1600,7 +1610,7 @@
     },
     {
       "city": "Rize",
-      "plaka": 53,
+      "plate": 53,
       "states": [
         "Ardeşen",
         "Çamlıhemşin",
@@ -1618,7 +1628,7 @@
     },
     {
       "city": "Sakarya",
-      "plaka": 54,
+      "plate": 54,
       "states": [
         "Akyazı",
         "Geyve",
@@ -1640,7 +1650,7 @@
     },
     {
       "city": "Samsun",
-      "plaka": 55,
+      "plate": 55,
       "states": [
         "Alaçam",
         "Bafra",
@@ -1663,7 +1673,7 @@
     },
     {
       "city": "Siirt",
-      "plaka": 56,
+      "plate": 56,
       "states": [
         "Baykan",
         "Eruh",
@@ -1676,7 +1686,7 @@
     },
     {
       "city": "Sinop",
-      "plaka": 57,
+      "plate": 57,
       "states": [
         "Ayancık",
         "Boyabat",
@@ -1691,7 +1701,7 @@
     },
     {
       "city": "Sivas",
-      "plaka": 58,
+      "plate": 58,
       "states": [
         "Divriği",
         "Gemerek",
@@ -1714,7 +1724,7 @@
     },
     {
       "city": "Tekirdağ",
-      "plaka": 59,
+      "plate": 59,
       "states": [
         "Çerkezköy",
         "Çorlu",
@@ -1731,7 +1741,7 @@
     },
     {
       "city": "Tokat",
-      "plaka": 60,
+      "plate": 60,
       "states": [
         "Almus",
         "Artova",
@@ -1749,7 +1759,7 @@
     },
     {
       "city": "Trabzon",
-      "plaka": 61,
+      "plate": 61,
       "states": [
         "Akçaabat",
         "Araklı",
@@ -1773,7 +1783,7 @@
     },
     {
       "city": "Tunceli",
-      "plaka": 62,
+      "plate": 62,
       "states": [
         "Çemişgezek",
         "Hozat",
@@ -1787,7 +1797,7 @@
     },
     {
       "city": "Şanlıurfa",
-      "plaka": 63,
+      "plate": 63,
       "states": [
         "Akçakale",
         "Birecik",
@@ -1806,7 +1816,7 @@
     },
     {
       "city": "Uşak",
-      "plaka": 64,
+      "plate": 64,
       "states": [
         "Banaz",
         "Eşme",
@@ -1818,7 +1828,7 @@
     },
     {
       "city": "Van",
-      "plaka": 65,
+      "plate": 65,
       "states": [
         "Başkale",
         "Çatak",
@@ -1837,7 +1847,7 @@
     },
     {
       "city": "Yozgat",
-      "plaka": 66,
+      "plate": 66,
       "states": [
         "Akdağmadeni",
         "Boğazlıyan",
@@ -1857,7 +1867,7 @@
     },
     {
       "city": "Zonguldak",
-      "plaka": 67,
+      "plate": 67,
       "states": [
         "Çaycuma",
         "Devrek",
@@ -1869,7 +1879,7 @@
     },
     {
       "city": "Aksaray",
-      "plaka": 68,
+      "plate": 68,
       "states": [
         "Ağaçören",
         "Eskil",
@@ -1882,7 +1892,7 @@
     },
     {
       "city": "Bayburt",
-      "plaka": 69,
+      "plate": 69,
       "states": [
         "Merkez",
         "Aydıntepe",
@@ -1891,7 +1901,7 @@
     },
     {
       "city": "Karaman",
-      "plaka": 70,
+      "plate": 70,
       "states": [
         "Ermenek",
         "Merkez",
@@ -1903,7 +1913,7 @@
     },
     {
       "city": "Kırıkkale",
-      "plaka": 71,
+      "plate": 71,
       "states": [
         "Delice",
         "Keskin",
@@ -1918,7 +1928,7 @@
     },
     {
       "city": "Batman",
-      "plaka": 72,
+      "plate": 72,
       "states": [
         "Merkez",
         "Beşiri",
@@ -1930,7 +1940,7 @@
     },
     {
       "city": "Şırnak",
-      "plaka": 73,
+      "plate": 73,
       "states": [
         "Beytüşşebap",
         "Cizre",
@@ -1943,7 +1953,7 @@
     },
     {
       "city": "Bartın",
-      "plaka": 74,
+      "plate": 74,
       "states": [
         "Merkez",
         "Kurucaşile",
@@ -1953,7 +1963,7 @@
     },
     {
       "city": "Ardahan",
-      "plaka": 75,
+      "plate": 75,
       "states": [
         "Merkez",
         "Çıldır",
@@ -1965,7 +1975,7 @@
     },
     {
       "city": "Iğdır",
-      "plaka": 76,
+      "plate": 76,
       "states": [
         "Aralık",
         "Merkez",
@@ -1975,7 +1985,7 @@
     },
     {
       "city": "Yalova",
-      "plaka": 77,
+      "plate": 77,
       "states": [
         "Merkez",
         "Altınova",
@@ -1987,7 +1997,7 @@
     },
     {
       "city": "Karabük",
-      "plaka": 78,
+      "plate": 78,
       "states": [
         "Eflani",
         "Eskipazar",
@@ -1999,7 +2009,7 @@
     },
     {
       "city": "Kilis",
-      "plaka": 79,
+      "plate": 79,
       "states": [
         "Merkez",
         "Elbeyli",
@@ -2009,7 +2019,7 @@
     },
     {
       "city": "Osmaniye",
-      "plaka": 80,
+      "plate": 80,
       "states": [
         "Bahçe",
         "Kadirli",
@@ -2022,7 +2032,7 @@
     },
     {
       "city": "Düzce",
-      "plaka": 81,
+      "plate": 81,
       "states": [
         "Akçakoca",
         "Merkez",
@@ -2067,26 +2077,5 @@
       ]
     }
   ],
-  "order-list": [
-    {
-      "date": 1673377335295,
-      "orderId": 1673377335295,
-      "orderList": [
-        {
-          "createdAt": "1/1/2023, 6:25:08 PM",
-          "name": "Lace pleated dress",
-          "price": 59.99,
-          "size": "XXS",
-          "color": "black",
-          "category": "Woman",
-          "subcategory": "Dress",
-          "imgPath": "http://res.cloudinary.com/dr4cvohdq/image/upload/v1672586727/utkeesstkjwkdi4qt6zu.webp",
-          "id": 4,
-          "amount": 1
-        }
-      ],
-      "totalOrderAmount": "59.99",
-      "id": 1
-    }
-  ]
+  "order-list": []
 }

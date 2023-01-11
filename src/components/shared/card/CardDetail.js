@@ -10,7 +10,6 @@ const CardDetail = () => {
   const [productCount, setProductCount] = useState(1);
   const [size, setSize] = useState("");
   const [color, setColor] = useState("");
-  const { favorites, setFavorites, getUserFavorites, addFavorite } = useAuth();
 
   let { productId } = useParams();
   productId = Number(productId);
@@ -60,7 +59,7 @@ const CardDetail = () => {
             praesentium tempore perspiciatis accusamus amet sed repellendus non,
             distinctio molestiae. Quos quo ducimus ratione.
           </p>
-          <div className="colors">
+          <div className="colors" onSubmit={handleSubmit}>
             Colors:
             {product.color.map((_color, index) => (
               <div key={`${_color} ${index}`}>
@@ -78,7 +77,7 @@ const CardDetail = () => {
               </div>
             ))}
           </div>
-          <div className="size-group">
+          <div className="size-group" onSubmit={handleSubmit}>
             <p>Size:</p>
             <select
               className="size"
