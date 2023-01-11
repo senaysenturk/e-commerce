@@ -22,6 +22,7 @@ const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState();
   const [address, setAddress] = useState([]);
   const [favorites, setFavorites] = useState([]);
+  const [orders, setOrders] = useState([]);
 
   useEffect(() => {
     (async () => {
@@ -331,6 +332,56 @@ const AuthProvider = ({ children }) => {
     callback();
   };
 
+  const getUserOrders = async () => {
+    const me = await fetchMe();
+    setUser(me.data);
+    const response = await getUsers();
+    console.log(
+      "ME:",
+      response.data.filter((userObject) => console.log(me.data))
+    );
+    setOrders(
+      response.data.filter(
+        (userObject) =>
+          userObject.mail === me.data[0].user ||
+          userObject.user === me.data[0].user
+      )[0].orders
+    );
+    console.log("orders", orders);
+  };
+
+  const addOrder = async (userName, orderObj) => {
+    const response = await getUsers();
+    console.log(userName);
+    updatedUser = response.data.filter((userObject) => {
+      return (
+        userObject.mail === userName || userObject.user === userName
+      );
+    });
+
+    console.log(updatedUser);
+
+    let userId = updatedUser[0].id;
+
+    console.log(userId);
+
+    if (updatedUser[0].hasOwnProperty("orders")) {
+      updatedUser[0].orders.forEach((order) => {
+        console.log(order);
+      });
+      updateUser(userId, {
+        ...updatedUser[0],
+        orders: [...updatedUser[0].orders, orderObj],
+      });
+    } else {
+      updateUser(userId, {
+        ...updatedUser[0],
+        orders: [orderObj],
+      });
+    }
+    getUserOrders();
+  };
+
   const values = {
     loggedIn,
     user,
@@ -354,6 +405,8 @@ const AuthProvider = ({ children }) => {
     getUserFavorites,
     addFavorite,
     deleteFavorite,
+    addOrder,
+    getUserOrders,
   };
 
   return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>;
