@@ -16,12 +16,16 @@ export const AddressForm = () => {
   const [cities, setCities] = useState([]);
   const [states, setStates] = useState([]);
   const [enable, setEnable] = useState(true);
-
   const getAllCities = async () => {
     const response = await getCities();
     setCities(response.data);
     console.log(cities);
   };
+
+  useEffect(() => {
+    getAllCities();
+    getAddresses();
+  }, []);
 
   const getStates = async (city) => {
     setStates(cities.filter((cityObject) => cityObject.city === city));
@@ -44,18 +48,13 @@ export const AddressForm = () => {
 
   const handleSave = async (e) => {
     var response = await addressInfo(addAddress);
-    getAddresses();
     handleSetDisplay();
+    getAddresses();
   };
 
   const handleSetDisplay = async () => {
     setHide(!hide);
   };
-
-  useEffect(() => {
-    getAllCities();
-    getAddresses();
-  }, []);
 
   if (navigate) {
     return <Navigate to="/order-tracking" />;

@@ -57,7 +57,8 @@ const CardSummary = ({ product }) => {
             // }}
           >
             {/* {!favorite ? <IoIosHeartEmpty /> : <IoIosHeart />} */}
-            {favorites.filter((favor) => favor.id === product.id).length ? (
+            {favorites &&
+            favorites.filter((favor) => favor.id === product.id).length ? (
               <IoIosHeart
                 onClick={() => {
                   handleDeleteFavorite();
@@ -80,7 +81,7 @@ const CardSummary = ({ product }) => {
               />
             )}
 
-            {console.log(favorites.filter((favor) => favor.id === product.id))}
+            {/* {console.log(favorites.filter((favor) => favor.id === product.id))} */}
           </div>
           <img src={product.imgPath} alt="Lorem ipsum" />
         </div>

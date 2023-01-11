@@ -80,7 +80,8 @@ const CardDetail = () => {
             // }}
           >
             {/* {!favorite ? <IoIosHeartEmpty /> : <IoIosHeart />} */}
-            {favorites.filter((favor) => favor.id === product.id).length ? (
+            {favorites &&
+            favorites.filter((favor) => favor.id === product.id).length ? (
               <IoIosHeart onClick={handleDeleteFavorite} />
             ) : !favorite ? (
               <IoIosHeartEmpty onClick={handleAddFavorite} />
@@ -88,7 +89,7 @@ const CardDetail = () => {
               <IoIosHeart onClick={handleDeleteFavorite} />
             )}
 
-            {console.log(favorites.filter((favor) => favor.id === product.id))}
+            {/* {console.log(favorites.filter((favor) => favor.id === product.id))} */}
           </div>
           <img src={product.imgPath} alt={product.name} />
         </div>

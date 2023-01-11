@@ -355,14 +355,32 @@
       "password": "Bilge123!",
       "role": "admin",
       "id": 1
+    },
+    {
+      "user": "senay",
+      "password": "Bilge123!",
+      "role": "user",
+      "id": 2
+    },
+    {
+      "user": "senay",
+      "password": "Bilge123!",
+      "role": "user",
+      "id": 3
+    },
+    {
+      "user": "senay",
+      "password": "Bilge123!",
+      "role": "user",
+      "id": 4
     }
   ],
   "me": [
     {
-      "user": "admin@shiwear.com",
+      "user": "senay",
       "password": "Bilge123!",
-      "role": "admin",
-      "id": 1
+      "role": "user",
+      "id": 4
     }
   ],
   "users": [
@@ -464,8 +482,45 @@
       "birth": "1990-11-17",
       "gender": "female",
       "role": "user",
-      "addresses": [],
-      "orders": [],
+      "addresses": [
+        {
+          "firstname": "şenay",
+          "lastname": "şentürk",
+          "phone": "+90 (000) 000 - 0000",
+          "city": "İstanbul",
+          "state": "Başakşehir",
+          "address": "başak mah.",
+          "postcode": "00000",
+          "addressName": "ev"
+        }
+      ],
+      "orders": [
+        {
+          "date": 1673457130013,
+          "orderId": 1673457130013,
+          "orderList": [
+            {
+              "createdAt": "1/1/2023, 6:25:08 PM",
+              "updatedAt": "1/1/2023, 6:25:08 PM",
+              "name": "Blazer Jacket",
+              "price": 49.99,
+              "size": "XXL",
+              "color": "red",
+              "category": "Woman",
+              "subcategory": "Jacket",
+              "additionalCategories": [
+                "best-sellers",
+                "trending",
+                "sale"
+              ],
+              "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/5900/472/430/5900472430_1_1_2.jpg?t=1669736376209",
+              "id": 1,
+              "amount": 1
+            }
+          ],
+          "totalOrderAmount": "49.99"
+        }
+      ],
       "id": 3
     },
     {
@@ -2000,36 +2055,29 @@
   ],
   "order-list": [
     {
-      "user": [
-        {
-          "user": "admin@shiwear.com",
-          "password": "Bilge123!",
-          "role": "admin",
-          "id": 1
-        }
-      ],
-      "date": 1673451139737,
-      "orderId": 1673451139737,
+      "date": 1673457130013,
+      "orderId": 1673457130013,
       "orderList": [
         {
           "createdAt": "1/1/2023, 6:25:08 PM",
           "updatedAt": "1/1/2023, 6:25:08 PM",
-          "name": "T-shirt",
-          "price": 10,
-          "size": "",
-          "color": "white",
+          "name": "Blazer Jacket",
+          "price": 49.99,
+          "size": "XXL",
+          "color": "red",
           "category": "Woman",
-          "subcategory": "T-shirt",
+          "subcategory": "Jacket",
           "additionalCategories": [
+            "best-sellers",
             "trending",
             "sale"
           ],
-          "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/6202/267/001/6202267001_1_1_2.jpg?t=1669732582176",
-          "id": 3,
-          "amount": 3
+          "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/5900/472/430/5900472430_1_1_2.jpg?t=1669736376209",
+          "id": 1,
+          "amount": 1
         }
       ],
-      "totalOrderAmount": "30.00",
+      "totalOrderAmount": "49.99",
       "id": 1
     }
   ]
