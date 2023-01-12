@@ -17,7 +17,7 @@ const CardDetail = () => {
     addFavorite,
     deleteFavorite,
   } = useAuth();
-  const [error, setError] = useState("");
+  const [error, setError] = useState({ color: true, size: true });
   const context = useContext(ShopContext);
   let { productId } = useParams();
   productId = Number(productId);
@@ -26,14 +26,14 @@ const CardDetail = () => {
     getUserFavorites();
   }, []);
 
-  const handleSubmit = (fieldName) => {
+  const handleError = (fieldName) => {
     //e.preventDefault();
     if (fieldName == "color") {
       setError("Please select a color");
       return;
     }
-    if ("size") {
-      setError("Please sellect a size");
+    if (fieldName == "size") {
+      setError("Please select a size");
       return;
     }
     setError("");
@@ -98,7 +98,7 @@ const CardDetail = () => {
           <h3 className="product-name">{product.name}</h3>
           <span className="product-price">{product.price.toFixed(2)} $</span>
           <p className="product-detail">{product.detail}</p>
-          <div className="colors" onSubmit={handleSubmit}>
+          <div className="colors">
             Colors:
             {product.color.map((_color, index) => (
               <div key={`${_color} ${index}`}>
@@ -116,7 +116,8 @@ const CardDetail = () => {
               </div>
             ))}
           </div>
-          <div className="size-group" onSubmit={handleSubmit}>
+          {!error.color && <div>Please fill the color</div>}
+          <div className="size-group">
             <p>Size:</p>
             <select
               className="size"
@@ -132,6 +133,7 @@ const CardDetail = () => {
                 </option>
               ))}
             </select>
+            {!error.size && <div>Please fill the size</div>}
           </div>
           <div className="quantity-group">
             <p>Quantity:</p>
@@ -158,16 +160,16 @@ const CardDetail = () => {
             className="btn btn-primary"
             onClick={() => {
               /** @type {CartProduct}  */
-              const copyProduct = { ...product };
 
+              const copyProduct = { ...product };
               copyProduct.amount = productCount;
               copyProduct.color = color;
               copyProduct.size = size;
-              color
-                ? size
-                  ? context.addProductToCart(copyProduct)
-                  : alert("Please select color")
-                : alert("Please select size");
+              setError((prev) => ({ ...prev, color: color, size: size }));
+
+              if (color && size) {
+                context.addProductToCart(copyProduct);
+              }
             }}
           >
             Add to cart
