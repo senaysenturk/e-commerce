@@ -116,7 +116,12 @@ const CardDetail = () => {
               </div>
             ))}
           </div>
-          {!error.color && <div>Please fill the color</div>}
+          {!error.color && (
+            <div class="error-msg">
+              <i class="fa fa-warning"></i>
+              Please select color
+            </div>
+          )}
           <div className="size-group">
             <p>Size:</p>
             <select
@@ -133,7 +138,12 @@ const CardDetail = () => {
                 </option>
               ))}
             </select>
-            {!error.size && <div>Please fill the size</div>}
+            {!error.size && (
+              <div class="error-msg">
+                <i class="fa fa-warning"></i>
+                Please select size
+              </div>
+            )}
           </div>
           <div className="quantity-group">
             <p>Quantity:</p>
