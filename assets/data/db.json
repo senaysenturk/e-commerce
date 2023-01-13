@@ -361,156 +361,18 @@
   ],
   "auth": [
     {
-      "user": "admin@shiwear.com",
+      "user": "hicran",
       "password": "Bilge123!",
-      "role": "admin",
+      "role": "user",
       "id": 1
-    },
-    {
-      "user": "senay",
-      "password": "Bilge123!",
-      "role": "user",
-      "id": 2
-    },
-    {
-      "user": "senay",
-      "password": "Bilge123!",
-      "role": "user",
-      "id": 3
-    },
-    {
-      "user": "senay",
-      "password": "Bilge123!",
-      "role": "user",
-      "id": 4
-    },
-    {
-      "user": "shiwear",
-      "password": "Bilge123!",
-      "role": "admin",
-      "id": 5
-    },
-    {
-      "user": "senay",
-      "password": "Bilge123!",
-      "role": "user",
-      "id": 6
-    },
-    {
-      "user": "shiwear",
-      "password": "Bilge123!",
-      "role": "admin",
-      "id": 7
-    },
-    {
-      "user": "ipek",
-      "password": "Bilge123!",
-      "role": "user",
-      "id": 8
-    },
-    {
-      "user": "senay",
-      "password": "Bilge123!",
-      "role": "user",
-      "id": 9
-    },
-    {
-      "user": "shiwear",
-      "password": "Bilge123!",
-      "role": "admin",
-      "id": 10
-    },
-    {
-      "user": "shiwear",
-      "password": "Bilge123!",
-      "role": "admin",
-      "id": 11
-    },
-    {
-      "user": "shiwear",
-      "password": "Bilge123!",
-      "role": "admin",
-      "id": 12
-    },
-    {
-      "user": "shiwear",
-      "password": "Bilge123!",
-      "role": "admin",
-      "id": 13
-    },
-    {
-      "user": "shiwear",
-      "password": "Bilge123!",
-      "role": "admin",
-      "id": 14
-    },
-    {
-      "user": "shiwear",
-      "password": "Bilge123!",
-      "role": "admin",
-      "id": 15
-    },
-    {
-      "user": "shiwear",
-      "password": "Bilge123!",
-      "role": "admin",
-      "id": 16
-    },
-    {
-      "user": "senay",
-      "password": "Bilge123!",
-      "role": "user",
-      "id": 17
-    },
-    {
-      "user": "shiwear",
-      "password": "Bilge123!",
-      "role": "admin",
-      "id": 18
-    },
-    {
-      "user": "shiwear",
-      "password": "Bilge123!",
-      "role": "admin",
-      "id": 19
-    },
-    {
-      "user": "senay",
-      "password": "Bilge123!",
-      "role": "user",
-      "id": 20
-    },
-    {
-      "user": "shiwear",
-      "password": "Bilge123!",
-      "role": "admin",
-      "id": 21
     }
   ],
   "me": [
     {
-      "user": "shiwear",
-      "password": "Bilge123!",
-      "role": "admin",
-      "id": 18
-    },
-    {
-      "user": "shiwear",
-      "password": "Bilge123!",
-      "role": "admin",
-      "id": 19
-    },
-    {
-      "user": "senay",
+      "user": "hicran",
       "password": "Bilge123!",
       "role": "user",
-      "id": 20
-    },
-    {
-      "user": "shiwear",
-      "password": "Bilge123!",
-      "role": "admin",
-      "id": 21
+      "id": 1
     }
   ],
   "users": [
@@ -525,13 +387,43 @@
         {
           "firstname": "test",
           "lastname": "test",
+          "phone": "+90 (000) 000 - 0000",
+          "city": "İstanbul",
+          "state": "Adalar",
+          "address": "test",
+          "postcode": "00000",
           "addressName": "test"
         }
       ],
       "orders": [
         {
-          "date": 1673517871066,
-          "orderId": 1673517871066,
+          "date": 1673647720155,
+          "orderId": 1673647720155,
+          "orderList": [
+            {
+              "createdAt": "1/1/2023, 6:25:08 PM",
+              "updatedAt": "1/1/2023, 6:25:08 PM",
+              "name": "Lace pleated dress",
+              "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
+              "price": 59.99,
+              "size": "S",
+              "color": "black",
+              "category": "Woman",
+              "subcategory": "Dress",
+              "additionalCategories": [
+                "best-sellers",
+                "sale"
+              ],
+              "imgPath": "http://res.cloudinary.com/dr4cvohdq/image/upload/v1672586727/utkeesstkjwkdi4qt6zu.webp",
+              "id": 4,
+              "amount": 1
+            }
+          ],
+          "totalOrderAmount": "59.99"
+        },
+        {
+          "date": 1673649850146,
+          "orderId": 1673649850146,
           "orderList": [
             {
               "createdAt": "1/1/2023, 6:25:08 PM",
@@ -556,8 +448,8 @@
           "totalOrderAmount": "49.99"
         },
         {
-          "date": 1673558996956,
-          "orderId": 1673558996956,
+          "date": 1673649948048,
+          "orderId": 1673649948048,
           "orderList": [
             {
               "createdAt": "1/1/2023, 6:25:08 PM",
@@ -580,28 +472,157 @@
             }
           ],
           "totalOrderAmount": "49.99"
+        },
+        {
+          "date": 1673650018313,
+          "orderId": 1673650018313,
+          "orderList": [
+            {
+              "createdAt": "1/1/2023, 6:27:54 PM",
+              "updatedAt": "1/1/2023, 6:27:54 PM",
+              "name": "Regular fit Oxford cotton shirt",
+              "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
+              "price": 29.99,
+              "color": "blue",
+              "size": "M",
+              "category": "Man",
+              "subcategory": "Shirt",
+              "additionalCategories": [
+                "best-sellers",
+                "trending"
+              ],
+              "imgPath": "https://res.cloudinary.com/dr4cvohdq/image/upload/v1672586896/hbxu98mpnk8y0silr4tu.jpg",
+              "id": 5,
+              "amount": 1
+            }
+          ],
+          "totalOrderAmount": "29.99"
+        },
+        {
+          "date": 1673650291183,
+          "orderId": 1673650291183,
+          "orderList": [
+            {
+              "createdAt": "1/1/2023, 6:33:15 PM",
+              "updatedAt": "1/1/2023, 6:33:15 PM",
+              "name": "Quilted down anorak",
+              "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
+              "price": 99.99,
+              "size": "XS",
+              "color": "black",
+              "category": "Child",
+              "subcategory": "Coats",
+              "additionalCategories": [
+                "best-sellers",
+                "trending",
+                "sale"
+              ],
+              "imgPath": "https://res.cloudinary.com/dr4cvohdq/image/upload/v1672587220/sck10tvxwevfcefmpngw.webp",
+              "id": 9,
+              "amount": 1
+            }
+          ],
+          "totalOrderAmount": "99.99"
         }
       ],
       "id": 1,
-      "favorites": [
+      "lastViewed": [
         {
-          "createdAt": "1/1/2023, 6:30:20 PM",
-          "updatedAt": "1/1/2023, 6:30:20 PM",
-          "name": "Sherpa pocket sweatshirt",
-          "price": 45.99,
-          "color": [
-            "green"
-          ],
+          "createdAt": "1/1/2023, 6:25:08 PM",
+          "name": "T-shirt",
+          "price": 10,
           "size": [
-            "XS",
-            "S",
-            "M",
-            "L"
+            "XL"
           ],
-          "category": "Man",
-          "subcategory": "Sweatshirt",
-          "imgPath": "https://res.cloudinary.com/dr4cvohdq/image/upload/v1672587037/zydsnco7z34qeg8uqqfh.webp",
-          "id": 7
+          "color": [
+            "white"
+          ],
+          "category": "Woman",
+          "subcategory": "T-shirt",
+          "additionalCategories": [
+            "trending",
+            "sale"
+          ],
+          "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/6202/267/001/6202267001_1_1_2.jpg?t=1669732582176",
+          "id": 3
+        },
+        {
+          "createdAt": "1/1/2023, 6:25:08 PM",
+          "name": "T-shirt",
+          "price": 10,
+          "size": [
+            "XL"
+          ],
+          "color": [
+            "white"
+          ],
+          "category": "Woman",
+          "subcategory": "T-shirt",
+          "additionalCategories": [
+            "trending",
+            "sale"
+          ],
+          "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/6202/267/001/6202267001_1_1_2.jpg?t=1669732582176",
+          "id": 3
+        },
+        {
+          "createdAt": "1/1/2023, 6:25:08 PM",
+          "name": "Blazer Jacket",
+          "price": 49.99,
+          "size": [
+            "S",
+            "XXL"
+          ],
+          "color": [
+            "red"
+          ],
+          "category": "Woman",
+          "subcategory": "Jacket",
+          "additionalCategories": [
+            "best-sellers",
+            "trending",
+            "sale"
+          ],
+          "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/5900/472/430/5900472430_1_1_2.jpg?t=1669736376209",
+          "id": 2
+        },
+        {
+          "createdAt": "1/1/2023, 6:25:08 PM",
+          "name": "T-shirt",
+          "price": 10,
+          "size": [
+            "XL"
+          ],
+          "color": [
+            "white"
+          ],
+          "category": "Woman",
+          "subcategory": "T-shirt",
+          "additionalCategories": [
+            "trending",
+            "sale"
+          ],
+          "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/6202/267/001/6202267001_1_1_2.jpg?t=1669732582176",
+          "id": 3
+        },
+        {
+          "createdAt": "1/1/2023, 6:25:08 PM",
+          "name": "T-shirt",
+          "price": 10,
+          "size": [
+            "XL"
+          ],
+          "color": [
+            "white"
+          ],
+          "category": "Woman",
+          "subcategory": "T-shirt",
+          "additionalCategories": [
+            "trending",
+            "sale"
+          ],
+          "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/6202/267/001/6202267001_1_1_2.jpg?t=1669732582176",
+          "id": 3
         },
         {
           "createdAt": "1/1/2023, 6:25:08 PM",
@@ -623,28 +644,6 @@
           ],
           "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/6202/267/001/6202267001_1_1_2.jpg?t=1669732582176",
           "id": 3
-        }
-      ],
-      "lastViewed": [
-        {
-          "createdAt": "1/1/2023, 6:31:08 PM",
-          "updatedAt": "1/1/2023, 6:31:08 PM",
-          "name": "Lightweight cotton sweatshirt",
-          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
-          "price": 27.99,
-          "color": [
-            "green"
-          ],
-          "size": [
-            "XS",
-            "S",
-            "M",
-            "L"
-          ],
-          "category": "Man",
-          "subcategory": "Sweatshirt",
-          "imgPath": "http://res.cloudinary.com/dr4cvohdq/image/upload/v1672587096/wty5mvkd5dltmqetfo8a.webp",
-          "id": 8
         },
         {
           "createdAt": "1/1/2023, 6:27:54 PM",
@@ -695,23 +694,25 @@
         {
           "createdAt": "1/1/2023, 6:25:08 PM",
           "updatedAt": "1/1/2023, 6:25:08 PM",
-          "name": "T-shirt",
+          "name": "Blazer Jacket",
           "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
-          "price": 10,
+          "price": 49.99,
           "size": [
-            "XL"
+            "S",
+            "XXL"
           ],
           "color": [
-            "white"
+            "red"
           ],
           "category": "Woman",
-          "subcategory": "T-shirt",
+          "subcategory": "Jacket",
           "additionalCategories": [
+            "best-sellers",
             "trending",
             "sale"
           ],
-          "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/6202/267/001/6202267001_1_1_2.jpg?t=1669732582176",
-          "id": 3
+          "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/5900/472/430/5900472430_1_1_2.jpg?t=1669736376209",
+          "id": 1
         },
         {
           "createdAt": "1/1/2023, 6:25:08 PM",
@@ -737,183 +738,74 @@
           "id": 1
         },
         {
-          "createdAt": "1/1/2023, 6:37:45 PM",
-          "updatedAt": "1/1/2023, 6:37:45 PM",
-          "name": "Tropical print shirt",
+          "createdAt": "1/1/2023, 6:25:08 PM",
+          "updatedAt": "1/1/2023, 6:25:08 PM",
+          "name": "Blazer Jacket",
           "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
+          "price": 49.99,
           "size": [
-            "XXS",
-            "XS",
-            "S"
+            "S",
+            "XXL"
           ],
           "color": [
-            "white",
+            "red"
+          ],
+          "category": "Woman",
+          "subcategory": "Jacket",
+          "additionalCategories": [
+            "best-sellers",
+            "trending",
+            "sale"
+          ],
+          "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/5900/472/430/5900472430_1_1_2.jpg?t=1669736376209",
+          "id": 1
+        },
+        {
+          "createdAt": "1/1/2023, 6:27:54 PM",
+          "updatedAt": "1/1/2023, 6:27:54 PM",
+          "name": "Regular fit Oxford cotton shirt",
+          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
+          "price": 29.99,
+          "color": [
+            "blue"
+          ],
+          "size": [
+            "M",
+            "L"
+          ],
+          "category": "Man",
+          "subcategory": "Shirt",
+          "additionalCategories": [
+            "best-sellers",
+            "trending"
+          ],
+          "imgPath": "https://res.cloudinary.com/dr4cvohdq/image/upload/v1672586896/hbxu98mpnk8y0silr4tu.jpg",
+          "id": 5
+        },
+        {
+          "createdAt": "1/1/2023, 6:33:15 PM",
+          "updatedAt": "1/1/2023, 6:33:15 PM",
+          "name": "Quilted down anorak",
+          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
+          "price": 99.99,
+          "size": [
+            "XS",
+            "S",
+            "M",
+            "L"
+          ],
+          "color": [
             "black"
           ],
           "category": "Child",
-          "subcategory": "Shirt",
-          "additionalCategories": [
-            "trending"
-          ],
-          "imgPath": "http://res.cloudinary.com/dr4cvohdq/image/upload/v1672595350/pmqzrdpmnlfylvp2h7co.jpg",
-          "price": 112.99,
-          "id": 11
-        },
-        {
-          "createdAt": "1/1/2023, 6:29:03 PM",
-          "updatedAt": "1/1/2023, 6:29:03 PM",
-          "name": "Wool zip neck jumper",
-          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
-          "price": 39.99,
-          "color": [
-            "gray"
-          ],
-          "size": [
-            "XXS",
-            "XS",
-            "S",
-            "M",
-            "L",
-            "XL"
-          ],
-          "category": "Man",
-          "subcategory": "Sweatshirt",
-          "imgPath": "https://res.cloudinary.com/dr4cvohdq/image/upload/v1672586969/kyfmont7buxnvijblhx0.webp",
-          "id": 6
-        },
-        {
-          "createdAt": "1/1/2023, 6:30:20 PM",
-          "updatedAt": "1/1/2023, 6:30:20 PM",
-          "name": "Sherpa pocket sweatshirt",
-          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
-          "price": 45.99,
-          "color": [
-            "green"
-          ],
-          "size": [
-            "XS",
-            "S",
-            "M",
-            "L"
-          ],
-          "category": "Man",
-          "subcategory": "Sweatshirt",
-          "imgPath": "https://res.cloudinary.com/dr4cvohdq/image/upload/v1672587037/zydsnco7z34qeg8uqqfh.webp",
-          "id": 7
-        },
-        {
-          "createdAt": "1/1/2023, 6:25:08 PM",
-          "updatedAt": "1/1/2023, 6:25:08 PM",
-          "name": "Blazer Jacket",
-          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
-          "price": 49.99,
-          "size": [
-            "S",
-            "XXL"
-          ],
-          "color": [
-            "red"
-          ],
-          "category": "Woman",
-          "subcategory": "Jacket",
+          "subcategory": "Coats",
           "additionalCategories": [
             "best-sellers",
             "trending",
             "sale"
           ],
-          "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/5900/472/430/5900472430_1_1_2.jpg?t=1669736376209",
-          "id": 1
-        },
-        {
-          "createdAt": "1/1/2023, 6:25:08 PM",
-          "updatedAt": "1/1/2023, 6:25:08 PM",
-          "name": "Lace pleated dress",
-          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
-          "price": 59.99,
-          "size": [
-            "XS",
-            "S",
-            "XXS",
-            "L"
-          ],
-          "color": [
-            "black"
-          ],
-          "category": "Woman",
-          "subcategory": "Dress",
-          "additionalCategories": [
-            "best-sellers",
-            "sale"
-          ],
-          "imgPath": "http://res.cloudinary.com/dr4cvohdq/image/upload/v1672586727/utkeesstkjwkdi4qt6zu.webp",
-          "id": 4
-        },
-        {
-          "createdAt": "1/1/2023, 6:25:08 PM",
-          "updatedAt": "1/1/2023, 6:25:08 PM",
-          "name": "Blazer Jacket",
-          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
-          "price": 49.99,
-          "size": [
-            "S",
-            "XXL"
-          ],
-          "color": [
-            "red"
-          ],
-          "category": "Woman",
-          "subcategory": "Jacket",
-          "additionalCategories": [
-            "best-sellers",
-            "trending",
-            "sale"
-          ],
-          "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/5900/472/430/5900472430_1_1_2.jpg?t=1669736376209",
-          "id": 1
-        },
-        {
-          "createdAt": "1/1/2023, 6:25:08 PM",
-          "updatedAt": "1/1/2023, 6:25:08 PM",
-          "name": "Blazer Jacket",
-          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
-          "price": 49.99,
-          "size": [
-            "S",
-            "XXL"
-          ],
-          "color": [
-            "red"
-          ],
-          "category": "Woman",
-          "subcategory": "Jacket",
-          "additionalCategories": [
-            "best-sellers",
-            "trending",
-            "sale"
-          ],
-          "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/5900/472/430/5900472430_1_1_2.jpg?t=1669736376209",
-          "id": 1
-        },
-        {
-          "createdAt": "1/1/2023, 6:25:08 PM",
-          "updatedAt": "1/1/2023, 6:25:08 PM",
-          "name": "T-shirt",
-          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
-          "price": 10,
-          "size": [
-            "XL"
-          ],
-          "color": [
-            "white"
-          ],
-          "category": "Woman",
-          "subcategory": "T-shirt",
-          "additionalCategories": [
-            "trending",
-            "sale"
-          ],
-          "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/6202/267/001/6202267001_1_1_2.jpg?t=1669732582176",
-          "id": 3
+          "imgPath": "https://res.cloudinary.com/dr4cvohdq/image/upload/v1672587220/sck10tvxwevfcefmpngw.webp",
+          "id": 9
         }
       ]
     },
@@ -951,35 +843,182 @@
           "addressName": "tesssrtt"
         }
       ],
+      "lastViewed": [],
+      "orders": [],
+      "id": 2
+    },
+    {
+      "mail": "senaysenturk@outlook.com",
+      "user": "senay",
+      "password": "Bilge123!",
+      "birth": "1990-11-17",
+      "gender": "female",
+      "role": "user",
+      "addresses": [
+        {
+          "firstname": "sdsa",
+          "addressName": "sdsad"
+        }
+      ],
       "orders": [
         {
-          "date": 1673518953752,
-          "orderId": 1673518953752,
+          "date": 1673650365914,
+          "orderId": 1673650365914,
+          "orderList": [],
+          "totalOrderAmount": "0.00"
+        },
+        {
+          "date": 1673651844392,
+          "orderId": 1673651844392,
+          "orderList": [],
+          "totalOrderAmount": "0.00"
+        },
+        {
+          "date": 1673651914182,
+          "orderId": 1673651914182,
           "orderList": [
             {
-              "createdAt": "1/1/2023, 6:27:54 PM",
-              "updatedAt": "1/1/2023, 6:27:54 PM",
-              "name": "Regular fit Oxford cotton shirt",
+              "createdAt": "1/1/2023, 6:36:45 PM",
+              "updatedAt": "1/1/2023, 6:36:45 PM",
+              "name": "Mini-dress with crystals",
               "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
-              "price": 29.99,
-              "color": "blue",
-              "size": "M",
-              "category": "Man",
-              "subcategory": "Shirt",
+              "price": 199.99,
+              "size": "S",
+              "color": "black",
+              "category": "Woman",
+              "subcategory": "Dress",
               "additionalCategories": [
                 "best-sellers",
-                "trending"
+                "sale"
               ],
-              "imgPath": "https://res.cloudinary.com/dr4cvohdq/image/upload/v1672586896/hbxu98mpnk8y0silr4tu.jpg",
-              "id": 5,
+              "imgPath": "http://res.cloudinary.com/dr4cvohdq/image/upload/v1672587441/no79egwmowl9vn29glyh.webp",
+              "id": 10,
               "amount": 1
             }
           ],
-          "totalOrderAmount": "29.99"
+          "totalOrderAmount": "199.99"
         }
       ],
-      "id": 2,
+      "id": 3,
       "lastViewed": [
+        {
+          "createdAt": "1/1/2023, 6:25:08 PM",
+          "name": "T-shirt",
+          "price": 10,
+          "size": [
+            "XL"
+          ],
+          "color": [
+            "white"
+          ],
+          "category": "Woman",
+          "subcategory": "T-shirt",
+          "additionalCategories": [
+            "trending",
+            "sale"
+          ],
+          "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/6202/267/001/6202267001_1_1_2.jpg?t=1669732582176",
+          "id": 3
+        },
+        {
+          "createdAt": "1/1/2023, 6:25:08 PM",
+          "name": "T-shirt",
+          "price": 10,
+          "size": [
+            "XL"
+          ],
+          "color": [
+            "white"
+          ],
+          "category": "Woman",
+          "subcategory": "T-shirt",
+          "additionalCategories": [
+            "trending",
+            "sale"
+          ],
+          "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/6202/267/001/6202267001_1_1_2.jpg?t=1669732582176",
+          "id": 3
+        },
+        {
+          "createdAt": "1/1/2023, 6:25:08 PM",
+          "name": "Blazer Jacket",
+          "price": 49.99,
+          "size": [
+            "S",
+            "XXL"
+          ],
+          "color": [
+            "red"
+          ],
+          "category": "Woman",
+          "subcategory": "Jacket",
+          "additionalCategories": [
+            "best-sellers",
+            "trending",
+            "sale"
+          ],
+          "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/5900/472/430/5900472430_1_1_2.jpg?t=1669736376209",
+          "id": 2
+        },
+        {
+          "createdAt": "1/1/2023, 6:25:08 PM",
+          "name": "T-shirt",
+          "price": 10,
+          "size": [
+            "XL"
+          ],
+          "color": [
+            "white"
+          ],
+          "category": "Woman",
+          "subcategory": "T-shirt",
+          "additionalCategories": [
+            "trending",
+            "sale"
+          ],
+          "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/6202/267/001/6202267001_1_1_2.jpg?t=1669732582176",
+          "id": 3
+        },
+        {
+          "createdAt": "1/1/2023, 6:25:08 PM",
+          "name": "T-shirt",
+          "price": 10,
+          "size": [
+            "XL"
+          ],
+          "color": [
+            "white"
+          ],
+          "category": "Woman",
+          "subcategory": "T-shirt",
+          "additionalCategories": [
+            "trending",
+            "sale"
+          ],
+          "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/6202/267/001/6202267001_1_1_2.jpg?t=1669732582176",
+          "id": 3
+        },
+        {
+          "createdAt": "1/1/2023, 6:25:08 PM",
+          "updatedAt": "1/1/2023, 6:25:08 PM",
+          "name": "T-shirt",
+          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
+          "price": 10,
+          "size": [
+            "XL"
+          ],
+          "color": [
+            "white"
+          ],
+          "category": "Woman",
+          "subcategory": "T-shirt",
+          "additionalCategories": [
+            "trending",
+            "sale"
+          ],
+          "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/6202/267/001/6202267001_1_1_2.jpg?t=1669732582176",
+          "id": 3
+        },
         {
           "createdAt": "1/1/2023, 6:27:54 PM",
           "updatedAt": "1/1/2023, 6:27:54 PM",
@@ -1001,79 +1040,7 @@
           ],
           "imgPath": "https://res.cloudinary.com/dr4cvohdq/image/upload/v1672586896/hbxu98mpnk8y0silr4tu.jpg",
           "id": 5
-        }
-      ]
-    },
-    {
-      "mail": "senaysenturk@outlook.com",
-      "user": "senay",
-      "password": "Bilge123!",
-      "birth": "1990-11-17",
-      "gender": "female",
-      "role": "user",
-      "addresses": [
-        {
-          "firstname": "şenay",
-          "lastname": "şentürk",
-          "phone": "+90 (000) 000 - 0000",
-          "city": "İstanbul",
-          "state": "Başakşehir",
-          "address": "başak mah.",
-          "postcode": "00000",
-          "addressName": "ev"
-        }
-      ],
-      "orders": [
-        {
-          "date": 1673457130013,
-          "orderId": 1673457130013,
-          "orderList": [
-            {
-              "createdAt": "1/1/2023, 6:25:08 PM",
-              "updatedAt": "1/1/2023, 6:25:08 PM",
-              "name": "Blazer Jacket",
-              "price": 49.99,
-              "size": "XXL",
-              "color": "red",
-              "category": "Woman",
-              "subcategory": "Jacket",
-              "additionalCategories": [
-                "best-sellers",
-                "trending",
-                "sale"
-              ],
-              "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/5900/472/430/5900472430_1_1_2.jpg?t=1669736376209",
-              "id": 1,
-              "amount": 1
-            }
-          ],
-          "totalOrderAmount": "49.99"
-        }
-      ],
-      "id": 3,
-      "favorites": [
-        {
-          "createdAt": "1/1/2023, 6:25:08 PM",
-          "updatedAt": "1/1/2023, 6:25:08 PM",
-          "name": "T-shirt",
-          "price": 10,
-          "size": [
-            "XL"
-          ],
-          "color": [
-            "white"
-          ],
-          "category": "Woman",
-          "subcategory": "T-shirt",
-          "additionalCategories": [
-            "trending",
-            "sale"
-          ],
-          "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/6202/267/001/6202267001_1_1_2.jpg?t=1669732582176",
-          "id": 3
-        }
-      ],
-      "lastViewed": [
+        },
         {
           "createdAt": "1/1/2023, 6:25:08 PM",
           "updatedAt": "1/1/2023, 6:25:08 PM",
@@ -1097,6 +1064,315 @@
           ],
           "imgPath": "http://res.cloudinary.com/dr4cvohdq/image/upload/v1672586727/utkeesstkjwkdi4qt6zu.webp",
           "id": 4
+        },
+        {
+          "createdAt": "1/1/2023, 6:25:08 PM",
+          "updatedAt": "1/1/2023, 6:25:08 PM",
+          "name": "Blazer Jacket",
+          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
+          "price": 49.99,
+          "size": [
+            "S",
+            "XXL"
+          ],
+          "color": [
+            "red"
+          ],
+          "category": "Woman",
+          "subcategory": "Jacket",
+          "additionalCategories": [
+            "best-sellers",
+            "trending",
+            "sale"
+          ],
+          "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/5900/472/430/5900472430_1_1_2.jpg?t=1669736376209",
+          "id": 1
+        },
+        {
+          "createdAt": "1/1/2023, 6:25:08 PM",
+          "updatedAt": "1/1/2023, 6:25:08 PM",
+          "name": "Blazer Jacket",
+          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
+          "price": 49.99,
+          "size": [
+            "S",
+            "XXL"
+          ],
+          "color": [
+            "red"
+          ],
+          "category": "Woman",
+          "subcategory": "Jacket",
+          "additionalCategories": [
+            "best-sellers",
+            "trending",
+            "sale"
+          ],
+          "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/5900/472/430/5900472430_1_1_2.jpg?t=1669736376209",
+          "id": 1
+        },
+        {
+          "createdAt": "1/1/2023, 6:25:08 PM",
+          "updatedAt": "1/1/2023, 6:25:08 PM",
+          "name": "Blazer Jacket",
+          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
+          "price": 49.99,
+          "size": [
+            "S",
+            "XXL"
+          ],
+          "color": [
+            "red"
+          ],
+          "category": "Woman",
+          "subcategory": "Jacket",
+          "additionalCategories": [
+            "best-sellers",
+            "trending",
+            "sale"
+          ],
+          "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/5900/472/430/5900472430_1_1_2.jpg?t=1669736376209",
+          "id": 1
+        },
+        {
+          "createdAt": "1/1/2023, 6:27:54 PM",
+          "updatedAt": "1/1/2023, 6:27:54 PM",
+          "name": "Regular fit Oxford cotton shirt",
+          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
+          "price": 29.99,
+          "color": [
+            "blue"
+          ],
+          "size": [
+            "M",
+            "L"
+          ],
+          "category": "Man",
+          "subcategory": "Shirt",
+          "additionalCategories": [
+            "best-sellers",
+            "trending"
+          ],
+          "imgPath": "https://res.cloudinary.com/dr4cvohdq/image/upload/v1672586896/hbxu98mpnk8y0silr4tu.jpg",
+          "id": 5
+        },
+        {
+          "createdAt": "1/1/2023, 6:33:15 PM",
+          "updatedAt": "1/1/2023, 6:33:15 PM",
+          "name": "Quilted down anorak",
+          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
+          "price": 99.99,
+          "size": [
+            "XS",
+            "S",
+            "M",
+            "L"
+          ],
+          "color": [
+            "black"
+          ],
+          "category": "Child",
+          "subcategory": "Coats",
+          "additionalCategories": [
+            "best-sellers",
+            "trending",
+            "sale"
+          ],
+          "imgPath": "https://res.cloudinary.com/dr4cvohdq/image/upload/v1672587220/sck10tvxwevfcefmpngw.webp",
+          "id": 9
+        },
+        {
+          "createdAt": "1/1/2023, 6:37:45 PM",
+          "updatedAt": "1/1/2023, 6:37:45 PM",
+          "name": "Tropical print shirt",
+          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
+          "size": [
+            "XXS",
+            "XS",
+            "S"
+          ],
+          "color": [
+            "white",
+            "black"
+          ],
+          "category": "Child",
+          "subcategory": "Shirt",
+          "additionalCategories": [
+            "trending"
+          ],
+          "imgPath": "http://res.cloudinary.com/dr4cvohdq/image/upload/v1672595350/pmqzrdpmnlfylvp2h7co.jpg",
+          "price": 112.99,
+          "id": 11
+        },
+        {
+          "createdAt": "1/1/2023, 6:25:08 PM",
+          "updatedAt": "1/1/2023, 6:25:08 PM",
+          "name": "Blazer Jacket",
+          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
+          "price": 49.99,
+          "size": [
+            "S",
+            "XXL"
+          ],
+          "color": [
+            "red"
+          ],
+          "category": "Woman",
+          "subcategory": "Jacket",
+          "additionalCategories": [
+            "best-sellers",
+            "trending",
+            "sale"
+          ],
+          "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/5900/472/430/5900472430_1_1_2.jpg?t=1669736376209",
+          "id": 1
+        },
+        {
+          "createdAt": "1/1/2023, 6:27:54 PM",
+          "updatedAt": "1/1/2023, 6:27:54 PM",
+          "name": "Regular fit Oxford cotton shirt",
+          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
+          "price": 29.99,
+          "color": [
+            "blue"
+          ],
+          "size": [
+            "M",
+            "L"
+          ],
+          "category": "Man",
+          "subcategory": "Shirt",
+          "additionalCategories": [
+            "best-sellers",
+            "trending"
+          ],
+          "imgPath": "https://res.cloudinary.com/dr4cvohdq/image/upload/v1672586896/hbxu98mpnk8y0silr4tu.jpg",
+          "id": 5
+        },
+        {
+          "createdAt": "1/1/2023, 6:27:54 PM",
+          "updatedAt": "1/1/2023, 6:27:54 PM",
+          "name": "Regular fit Oxford cotton shirt",
+          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
+          "price": 29.99,
+          "color": [
+            "blue"
+          ],
+          "size": [
+            "M",
+            "L"
+          ],
+          "category": "Man",
+          "subcategory": "Shirt",
+          "additionalCategories": [
+            "best-sellers",
+            "trending"
+          ],
+          "imgPath": "https://res.cloudinary.com/dr4cvohdq/image/upload/v1672586896/hbxu98mpnk8y0silr4tu.jpg",
+          "id": 5
+        },
+        {
+          "createdAt": "1/1/2023, 6:36:45 PM",
+          "updatedAt": "1/1/2023, 6:36:45 PM",
+          "name": "Mini-dress with crystals",
+          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
+          "price": 199.99,
+          "size": [
+            "XXS",
+            "XS",
+            "S",
+            "M",
+            "L",
+            "XL",
+            "XL",
+            "XXL"
+          ],
+          "color": [
+            "black",
+            "teal",
+            "red",
+            "purple",
+            "pink"
+          ],
+          "category": "Woman",
+          "subcategory": "Dress",
+          "additionalCategories": [
+            "best-sellers",
+            "sale"
+          ],
+          "imgPath": "http://res.cloudinary.com/dr4cvohdq/image/upload/v1672587441/no79egwmowl9vn29glyh.webp",
+          "id": 10
+        },
+        {
+          "createdAt": "1/1/2023, 6:25:08 PM",
+          "updatedAt": "1/1/2023, 6:25:08 PM",
+          "name": "Blazer Jacket",
+          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
+          "price": 49.99,
+          "size": [
+            "S",
+            "XXL"
+          ],
+          "color": [
+            "red"
+          ],
+          "category": "Woman",
+          "subcategory": "Jacket",
+          "additionalCategories": [
+            "best-sellers",
+            "trending",
+            "sale"
+          ],
+          "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/5900/472/430/5900472430_1_1_2.jpg?t=1669736376209",
+          "id": 1
+        },
+        {
+          "createdAt": "1/1/2023, 6:25:08 PM",
+          "updatedAt": "1/1/2023, 6:25:08 PM",
+          "name": "Blazer Jacket",
+          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
+          "price": 49.99,
+          "size": [
+            "S",
+            "XXL"
+          ],
+          "color": [
+            "red"
+          ],
+          "category": "Woman",
+          "subcategory": "Jacket",
+          "additionalCategories": [
+            "best-sellers",
+            "trending",
+            "sale"
+          ],
+          "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/5900/472/430/5900472430_1_1_2.jpg?t=1669736376209",
+          "id": 1
+        }
+      ],
+      "favorites": [
+        {
+          "createdAt": "1/1/2023, 6:25:08 PM",
+          "updatedAt": "1/1/2023, 6:25:08 PM",
+          "name": "Blazer Jacket",
+          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
+          "price": 49.99,
+          "size": [
+            "S",
+            "XXL"
+          ],
+          "color": [
+            "red"
+          ],
+          "category": "Woman",
+          "subcategory": "Jacket",
+          "additionalCategories": [
+            "best-sellers",
+            "trending",
+            "sale"
+          ],
+          "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/5900/472/430/5900472430_1_1_2.jpg?t=1669736376209",
+          "id": 1
         }
       ]
     },
@@ -1108,31 +1384,37 @@
       "gender": "female",
       "role": "user",
       "addresses": [],
+      "lastViewed": [
+        {
+          "createdAt": "1/1/2023, 6:25:08 PM",
+          "updatedAt": "1/1/2023, 6:25:08 PM",
+          "name": "T-shirt",
+          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
+          "price": 10,
+          "size": [
+            "XL"
+          ],
+          "color": [
+            "white"
+          ],
+          "category": "Woman",
+          "subcategory": "T-shirt",
+          "additionalCategories": [
+            "trending",
+            "sale"
+          ],
+          "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/6202/267/001/6202267001_1_1_2.jpg?t=1669732582176",
+          "id": 3
+        }
+      ],
       "orders": [],
       "id": 4
-    }
-  ],
-  "subjects": [
-    "Return / Exchange Request",
-    "Order Tracking / Delivery",
-    "Technical Problems",
-    "Other"
-  ],
-  "messages": [
-    {
-      "user": "Ipek",
-      "mail": "ipekgulsen.celik@gmail.com",
-      "phone": "+90 (535) 817 - 4795",
-      "subject": "Order Tracking / Delivery",
-      "message": "test message hello word",
-      "createdAt": "2023-01-11",
-      "id": 1
     }
   ],
   "cities": [
     {
       "city": "Adana",
-      "plate": 1,
+      "plaka": 1,
       "states": [
         "Aladağ",
         "Ceyhan",
@@ -1153,7 +1435,7 @@
     },
     {
       "city": "Adıyaman",
-      "plate": 2,
+      "plaka": 2,
       "states": [
         "Besni",
         "Çelikhan",
@@ -1168,7 +1450,7 @@
     },
     {
       "city": "Afyonkarahisar",
-      "plate": 3,
+      "plaka": 3,
       "states": [
         "Başmakçı",
         "Bayat",
@@ -1192,7 +1474,7 @@
     },
     {
       "city": "Ağrı",
-      "plate": 4,
+      "plaka": 4,
       "states": [
         "Diyadin",
         "Doğubayazıt",
@@ -1206,7 +1488,7 @@
     },
     {
       "city": "Amasya",
-      "plate": 5,
+      "plaka": 5,
       "states": [
         "Göynücek",
         "Gümüşhacıköy",
@@ -1219,7 +1501,7 @@
     },
     {
       "city": "Ankara",
-      "plate": 6,
+      "plaka": 6,
       "states": [
         "Altındağ",
         "Ayaş",
@@ -1250,7 +1532,7 @@
     },
     {
       "city": "Antalya",
-      "plate": 7,
+      "plaka": 7,
       "states": [
         "Akseki",
         "Alanya",
@@ -1275,7 +1557,7 @@
     },
     {
       "city": "Artvin",
-      "plate": 8,
+      "plaka": 8,
       "states": [
         "Ardanuç",
         "Arhavi",
@@ -1289,7 +1571,7 @@
     },
     {
       "city": "Aydın",
-      "plate": 9,
+      "plaka": 9,
       "states": [
         "Merkez",
         "Bozdoğan",
@@ -1313,7 +1595,7 @@
     },
     {
       "city": "Balıkesir",
-      "plate": 10,
+      "plaka": 10,
       "states": [
         "Altıeylül",
         "Ayvalık",
@@ -1340,7 +1622,7 @@
     },
     {
       "city": "Bilecik",
-      "plate": 11,
+      "plaka": 11,
       "states": [
         "Merkez",
         "Bozüyük",
@@ -1354,7 +1636,7 @@
     },
     {
       "city": "Bingöl",
-      "plate": 12,
+      "plaka": 12,
       "states": [
         "Merkez",
         "Genç",
@@ -1368,7 +1650,7 @@
     },
     {
       "city": "Bitlis",
-      "plate": 13,
+      "plaka": 13,
       "states": [
         "Adilcevaz",
         "Ahlat",
@@ -1381,7 +1663,7 @@
     },
     {
       "city": "Bolu",
-      "plate": 14,
+      "plaka": 14,
       "states": [
         "Merkez",
         "Gerede",
@@ -1396,7 +1678,7 @@
     },
     {
       "city": "Burdur",
-      "plate": 15,
+      "plaka": 15,
       "states": [
         "Ağlasun",
         "Bucak",
@@ -1413,7 +1695,7 @@
     },
     {
       "city": "Bursa",
-      "plate": 16,
+      "plaka": 16,
       "states": [
         "Gemlik",
         "İnegöl",
@@ -1436,7 +1718,7 @@
     },
     {
       "city": "Çanakkale",
-      "plate": 17,
+      "plaka": 17,
       "states": [
         "Ayvacık",
         "Bayramiç",
@@ -1454,7 +1736,7 @@
     },
     {
       "city": "Çankırı",
-      "plate": 18,
+      "plaka": 18,
       "states": [
         "Merkez",
         "Çerkeş",
@@ -1472,7 +1754,7 @@
     },
     {
       "city": "Çorum",
-      "plate": 19,
+      "plaka": 19,
       "states": [
         "Alaca",
         "Bayat",
@@ -1492,7 +1774,7 @@
     },
     {
       "city": "Denizli",
-      "plate": 20,
+      "plaka": 20,
       "states": [
         "Acıpayam",
         "Buldan",
@@ -1518,7 +1800,7 @@
     },
     {
       "city": "Diyarbakır",
-      "plate": 21,
+      "plaka": 21,
       "states": [
         "Kocaköy",
         "Çermik",
@@ -1541,7 +1823,7 @@
     },
     {
       "city": "Edirne",
-      "plate": 22,
+      "plaka": 22,
       "states": [
         "Merkez",
         "Enez",
@@ -1556,7 +1838,7 @@
     },
     {
       "city": "Elazığ",
-      "plate": 23,
+      "plaka": 23,
       "states": [
         "Ağın",
         "Baskil",
@@ -1573,7 +1855,7 @@
     },
     {
       "city": "Erzincan",
-      "plate": 24,
+      "plaka": 24,
       "states": [
         "Çayırlı",
         "Merkez",
@@ -1588,7 +1870,7 @@
     },
     {
       "city": "Erzurum",
-      "plate": 25,
+      "plaka": 25,
       "states": [
         "Aşkale",
         "Çat",
@@ -1614,7 +1896,7 @@
     },
     {
       "city": "Eskişehir",
-      "plate": 26,
+      "plaka": 26,
       "states": [
         "Çifteler",
         "Mahmudiye",
@@ -1634,7 +1916,7 @@
     },
     {
       "city": "Gaziantep",
-      "plate": 27,
+      "plaka": 27,
       "states": [
         "Araban",
         "İslahiye",
@@ -1649,7 +1931,7 @@
     },
     {
       "city": "Giresun",
-      "plate": 28,
+      "plaka": 28,
       "states": [
         "Alucra",
         "Bulancak",
@@ -1671,7 +1953,7 @@
     },
     {
       "city": "Gümüşhane",
-      "plate": 29,
+      "plaka": 29,
       "states": [
         "Merkez",
         "Kelkit",
@@ -1683,7 +1965,7 @@
     },
     {
       "city": "Hakkari",
-      "plate": 30,
+      "plaka": 30,
       "states": [
         "Çukurca",
         "Merkez",
@@ -1693,7 +1975,7 @@
     },
     {
       "city": "Hatay",
-      "plate": 31,
+      "plaka": 31,
       "states": [
         "Altınözü",
         "Arsuz",
@@ -1714,7 +1996,7 @@
     },
     {
       "city": "Isparta",
-      "plate": 32,
+      "plaka": 32,
       "states": [
         "Atabey",
         "Eğirdir",
@@ -1733,7 +2015,7 @@
     },
     {
       "city": "Mersin",
-      "plate": 33,
+      "plaka": 33,
       "states": [
         "Anamur",
         "Erdemli",
@@ -1752,7 +2034,7 @@
     },
     {
       "city": "İstanbul",
-      "plate": 34,
+      "plaka": 34,
       "states": [
         "Adalar",
         "Bakırköy",
@@ -1797,7 +2079,7 @@
     },
     {
       "city": "İzmir",
-      "plate": 35,
+      "plaka": 35,
       "states": [
         "Aliağa",
         "Bayındır",
@@ -1833,7 +2115,7 @@
     },
     {
       "city": "Kars",
-      "plate": 36,
+      "plaka": 36,
       "states": [
         "Arpaçay",
         "Digor",
@@ -1847,7 +2129,7 @@
     },
     {
       "city": "Kastamonu",
-      "plate": 37,
+      "plaka": 37,
       "states": [
         "Abana",
         "Araç",
@@ -1873,7 +2155,7 @@
     },
     {
       "city": "Kayseri",
-      "plate": 38,
+      "plaka": 38,
       "states": [
         "Bünyan",
         "Develi",
@@ -1895,7 +2177,7 @@
     },
     {
       "city": "Kırklareli",
-      "plate": 39,
+      "plaka": 39,
       "states": [
         "Babaeski",
         "Demirköy",
@@ -1909,7 +2191,7 @@
     },
     {
       "city": "Kırşehir",
-      "plate": 40,
+      "plaka": 40,
       "states": [
         "Çiçekdağı",
         "Kaman",
@@ -1922,7 +2204,7 @@
     },
     {
       "city": "Kocaeli",
-      "plate": 41,
+      "plaka": 41,
       "states": [
         "Gebze",
         "Gölcük",
@@ -1940,7 +2222,7 @@
     },
     {
       "city": "Konya",
-      "plate": 42,
+      "plaka": 42,
       "states": [
         "Akşehir",
         "Beyşehir",
@@ -1977,7 +2259,7 @@
     },
     {
       "city": "Kütahya",
-      "plate": 43,
+      "plaka": 43,
       "states": [
         "Altıntaş",
         "Domaniç",
@@ -1996,7 +2278,7 @@
     },
     {
       "city": "Malatya",
-      "plate": 44,
+      "plaka": 44,
       "states": [
         "Akçadağ",
         "Arapgir",
@@ -2016,7 +2298,7 @@
     },
     {
       "city": "Manisa",
-      "plate": 45,
+      "plaka": 45,
       "states": [
         "Akhisar",
         "Alaşehir",
@@ -2040,7 +2322,7 @@
     },
     {
       "city": "Kahramanmaraş",
-      "plate": 46,
+      "plaka": 46,
       "states": [
         "Afşin",
         "Andırın",
@@ -2058,7 +2340,7 @@
     },
     {
       "city": "Mardin",
-      "plate": 47,
+      "plaka": 47,
       "states": [
         "Derik",
         "Kızıltepe",
@@ -2075,7 +2357,7 @@
     },
     {
       "city": "Muğla",
-      "plate": 48,
+      "plaka": 48,
       "states": [
         "Bodrum",
         "Datça",
@@ -2094,7 +2376,7 @@
     },
     {
       "city": "Muş",
-      "plate": 49,
+      "plaka": 49,
       "states": [
         "Bulanık",
         "Malazgirt",
@@ -2106,7 +2388,7 @@
     },
     {
       "city": "Nevşehir",
-      "plate": 50,
+      "plaka": 50,
       "states": [
         "Avanos",
         "Derinkuyu",
@@ -2120,7 +2402,7 @@
     },
     {
       "city": "Niğde",
-      "plate": 51,
+      "plaka": 51,
       "states": [
         "Bor",
         "Çamardı",
@@ -2132,7 +2414,7 @@
     },
     {
       "city": "Ordu",
-      "plate": 52,
+      "plaka": 52,
       "states": [
         "Akkuş",
         "Altınordu",
@@ -2157,7 +2439,7 @@
     },
     {
       "city": "Rize",
-      "plate": 53,
+      "plaka": 53,
       "states": [
         "Ardeşen",
         "Çamlıhemşin",
@@ -2175,7 +2457,7 @@
     },
     {
       "city": "Sakarya",
-      "plate": 54,
+      "plaka": 54,
       "states": [
         "Akyazı",
         "Geyve",
@@ -2197,7 +2479,7 @@
     },
     {
       "city": "Samsun",
-      "plate": 55,
+      "plaka": 55,
       "states": [
         "Alaçam",
         "Bafra",
@@ -2220,7 +2502,7 @@
     },
     {
       "city": "Siirt",
-      "plate": 56,
+      "plaka": 56,
       "states": [
         "Baykan",
         "Eruh",
@@ -2233,7 +2515,7 @@
     },
     {
       "city": "Sinop",
-      "plate": 57,
+      "plaka": 57,
       "states": [
         "Ayancık",
         "Boyabat",
@@ -2248,7 +2530,7 @@
     },
     {
       "city": "Sivas",
-      "plate": 58,
+      "plaka": 58,
       "states": [
         "Divriği",
         "Gemerek",
@@ -2271,7 +2553,7 @@
     },
     {
       "city": "Tekirdağ",
-      "plate": 59,
+      "plaka": 59,
       "states": [
         "Çerkezköy",
         "Çorlu",
@@ -2288,7 +2570,7 @@
     },
     {
       "city": "Tokat",
-      "plate": 60,
+      "plaka": 60,
       "states": [
         "Almus",
         "Artova",
@@ -2306,7 +2588,7 @@
     },
     {
       "city": "Trabzon",
-      "plate": 61,
+      "plaka": 61,
       "states": [
         "Akçaabat",
         "Araklı",
@@ -2330,7 +2612,7 @@
     },
     {
       "city": "Tunceli",
-      "plate": 62,
+      "plaka": 62,
       "states": [
         "Çemişgezek",
         "Hozat",
@@ -2344,7 +2626,7 @@
     },
     {
       "city": "Şanlıurfa",
-      "plate": 63,
+      "plaka": 63,
       "states": [
         "Akçakale",
         "Birecik",
@@ -2363,7 +2645,7 @@
     },
     {
       "city": "Uşak",
-      "plate": 64,
+      "plaka": 64,
       "states": [
         "Banaz",
         "Eşme",
@@ -2375,7 +2657,7 @@
     },
     {
       "city": "Van",
-      "plate": 65,
+      "plaka": 65,
       "states": [
         "Başkale",
         "Çatak",
@@ -2394,7 +2676,7 @@
     },
     {
       "city": "Yozgat",
-      "plate": 66,
+      "plaka": 66,
       "states": [
         "Akdağmadeni",
         "Boğazlıyan",
@@ -2414,7 +2696,7 @@
     },
     {
       "city": "Zonguldak",
-      "plate": 67,
+      "plaka": 67,
       "states": [
         "Çaycuma",
         "Devrek",
@@ -2426,7 +2708,7 @@
     },
     {
       "city": "Aksaray",
-      "plate": 68,
+      "plaka": 68,
       "states": [
         "Ağaçören",
         "Eskil",
@@ -2439,7 +2721,7 @@
     },
     {
       "city": "Bayburt",
-      "plate": 69,
+      "plaka": 69,
       "states": [
         "Merkez",
         "Aydıntepe",
@@ -2448,7 +2730,7 @@
     },
     {
       "city": "Karaman",
-      "plate": 70,
+      "plaka": 70,
       "states": [
         "Ermenek",
         "Merkez",
@@ -2460,7 +2742,7 @@
     },
     {
       "city": "Kırıkkale",
-      "plate": 71,
+      "plaka": 71,
       "states": [
         "Delice",
         "Keskin",
@@ -2475,7 +2757,7 @@
     },
     {
       "city": "Batman",
-      "plate": 72,
+      "plaka": 72,
       "states": [
         "Merkez",
         "Beşiri",
@@ -2487,7 +2769,7 @@
     },
     {
       "city": "Şırnak",
-      "plate": 73,
+      "plaka": 73,
       "states": [
         "Beytüşşebap",
         "Cizre",
@@ -2500,7 +2782,7 @@
     },
     {
       "city": "Bartın",
-      "plate": 74,
+      "plaka": 74,
       "states": [
         "Merkez",
         "Kurucaşile",
@@ -2510,7 +2792,7 @@
     },
     {
       "city": "Ardahan",
-      "plate": 75,
+      "plaka": 75,
       "states": [
         "Merkez",
         "Çıldır",
@@ -2522,7 +2804,7 @@
     },
     {
       "city": "Iğdır",
-      "plate": 76,
+      "plaka": 76,
       "states": [
         "Aralık",
         "Merkez",
@@ -2532,7 +2814,7 @@
     },
     {
       "city": "Yalova",
-      "plate": 77,
+      "plaka": 77,
       "states": [
         "Merkez",
         "Altınova",
@@ -2544,7 +2826,7 @@
     },
     {
       "city": "Karabük",
-      "plate": 78,
+      "plaka": 78,
       "states": [
         "Eflani",
         "Eskipazar",
@@ -2556,7 +2838,7 @@
     },
     {
       "city": "Kilis",
-      "plate": 79,
+      "plaka": 79,
       "states": [
         "Merkez",
         "Elbeyli",
@@ -2566,7 +2848,7 @@
     },
     {
       "city": "Osmaniye",
-      "plate": 80,
+      "plaka": 80,
       "states": [
         "Bahçe",
         "Kadirli",
@@ -2579,7 +2861,7 @@
     },
     {
       "city": "Düzce",
-      "plate": 81,
+      "plaka": 81,
       "states": [
         "Akçakoca",
         "Merkez",
@@ -2603,13 +2885,7 @@
       "subcategory": "T-shirt",
       "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/6202/267/001/6202267001_1_1_2.jpg?t=1669732582176",
       "id": 3,
-      "amount": 3,
-      "createdAt": "1/1/2023, 6:25:08 PM",
-      "updatedAt": "1/1/2023, 6:25:08 PM",
-      "additionalCategories": [
-        "trending",
-        "sale"
-      ]
+      "amount": 3
     },
     {
       "name": "Blazer Jacket",
@@ -2623,12 +2899,12 @@
       "amount": 1,
       "createdAt": "1/1/2023, 6:25:08 PM",
       "updatedAt": "1/1/2023, 6:25:08 PM",
+      "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
       "additionalCategories": [
         "best-sellers",
         "trending",
         "sale"
-      ],
-      "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione."
+      ]
     }
   ],
   "order-list": []

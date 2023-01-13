@@ -56,31 +56,32 @@ const List = () => {
           })}
         </div>
       </div>
-      <div className="product-row">
-        <div className="row-header">
-          <h2>Last viewed</h2>
-          <div className="arrow-icon">
-            <div className="icon">
-              <BiChevronLeft />
-            </div>
-            <div className="icon">
-              <BiChevronRight />
+      {lastViewed.length > 0 && (
+        <div className="product-row">
+          <div className="row-header">
+            <h2>Last viewed</h2>
+            <div className="arrow-icon">
+              <div className="icon">
+                <BiChevronLeft />
+              </div>
+              <div className="icon">
+                <BiChevronRight />
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="row">
-          {/* {context.products.map((product, index) => {
+          <div className="row">
+            {/* {context.products.map((product, index) => {
             if (product.category == "Man") {
               return <Carousel product={product} key={index} />;
             }
           })} */}
-          {lastViewed.length &&
-            lastViewed.slice(-6).map((product, index) => {
+            {lastViewed.slice(-6).map((product, index) => {
               return <Carousel product={product} key={index} />;
             })}
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };
