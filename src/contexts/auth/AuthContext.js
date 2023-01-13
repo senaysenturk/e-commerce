@@ -83,7 +83,7 @@ const AuthProvider = ({ children }) => {
     const me = await fetchMe();
     setUser(me.data);
     const response = await getUsers();
-    response.data.filter((userObject) => console.log("Me: ", me.data));
+    // response.data.filter((userObject) => console.log("Me: ", me.data));
 
     setFavorites(
       response.data.filter(
@@ -128,7 +128,7 @@ const AuthProvider = ({ children }) => {
     setUser(me.data);
     const response = await getUsers();
 
-    response.data.filter((userObject) => console.log("Me:", me.data));
+    // response.data.filter((userObject) => console.log("Me:", me.data));
 
     setLastViewed(
       response.data.filter(
@@ -137,18 +137,18 @@ const AuthProvider = ({ children }) => {
           userObject.user === me.data[0].user
       )[0].lastViewed
     );
-    console.log(
-      "last viewes",
-      response.data.filter(
-        (userObject) =>
-          userObject.mail === me.data[0].user ||
-          userObject.user === me.data[0].user
-      )[0].lastViewed
-    );
+    // console.log(
+    //   "last viewes",
+    //   response.data.filter(
+    //     (userObject) =>
+    //       userObject.mail === me.data[0].user ||
+    //       userObject.user === me.data[0].user
+    //   )[0].lastViewed
+    // );
   };
 
   const addLastViewed = async (product) => {
-    console.log("add last view çalıştı");
+    // console.log("add last view çalıştı");
     const response = await getUsers();
     updatedUser = response.data.filter((userObject) => {
       return (
@@ -158,19 +158,26 @@ const AuthProvider = ({ children }) => {
     console.log(updatedUser[0].id);
     // let userId = updatedUser[updatedUser.length].id;
 
+    let productExists = false;
     if (updatedUser[0].hasOwnProperty("lastViewed")) {
-      // updatedUser[updatedUser.length - 1].lastViewed.forEach((lastView) => {
-      //   console.log(lastView);
-      // });
-      updateUser(updatedUser[0].id, {
-        ...updatedUser[0],
-        lastViewed: [...updatedUser[0].lastViewed, product],
+      updatedUser[0].lastViewed.forEach((lastView) => {
+        if (lastView.id === product.id) {
+          productExists = true;
+        }
       });
-    } else {
-      updateUser(updatedUser[0].id, {
-        ...updatedUser[0],
-        lastViewed: [product],
-      });
+    }
+    if (!productExists) {
+      if (updatedUser[0].hasOwnProperty("lastViewed")) {
+        updateUser(updatedUser[0].id, {
+          ...updatedUser[0],
+          lastViewed: [...updatedUser[0].lastViewed, product],
+        });
+      } else {
+        updateUser(updatedUser[0].id, {
+          ...updatedUser[0],
+          lastViewed: [product],
+        });
+      }
     }
     getUserFavorites();
   };
