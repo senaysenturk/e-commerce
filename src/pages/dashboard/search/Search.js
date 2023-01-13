@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import { useSearchParams } from "react-router-dom";
 import SmallCard from "src/components/app/product/small-card/SmallCard";
+import Breadcrumb from "src/components/shared/breadcrumb/Breadcrumb";
 import FilterNavigation from "src/components/shared/filter-navigation/FilterNavigation";
 import { useProduct } from "src/contexts/product/CreateProductContext";
 import "./style.scss";
@@ -48,11 +49,11 @@ const Search = () => {
         <FilterNavigation setFilterKeys={setFilterKeys} category={category} />
         <div className="products">
           <div className="row-header">
-            <h2>
-              {`${catParam} -> ${
-                subcatParam && subcatParam
-              } -> ${additionalCategoryParam} `}
-            </h2>
+            <Breadcrumb
+              catParam={catParam}
+              subcatParam={subcatParam}
+              additionalCategoryParam={additionalCategoryParam}
+            />
           </div>
           <div className="search-row">
             {searchProducts &&
