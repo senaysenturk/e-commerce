@@ -5,7 +5,6 @@ import DashboardLayout from "./layouts/dashboard-layout/DashboardLayout";
 import AuthLayout from "./layouts/auth-layout/AuthLayout";
 import Home from "./pages/dashboard/home/Home";
 import NewArrivals from "./pages/dashboard/new-arrivals/NewArrivals";
-import BestSellers from "./pages/dashboard/best-sellers/BestSellers";
 import Shopping from "./pages/dashboard/shopping/Shopping";
 import Cart from "./pages/dashboard/shopping/cart/Cart";
 import Login from "./pages/auth/login/Login";

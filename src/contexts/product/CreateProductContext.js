@@ -28,6 +28,8 @@ export const CreateProductProvider = ({ children }) => {
   const [searchProducts, setSearchProducts] = useState([]);
   const [uploadPercentage, setUploadPercentage] = useState(0);
   const [filterKeys, setFilterKeys] = useState();
+  const [filterObject, setFilterObject] = useState({});
+
   const getAllProducts = async () => {
     const response = await getProduct();
     setProducts(response);
@@ -110,7 +112,7 @@ export const CreateProductProvider = ({ children }) => {
     setSearchProducts("");
     const response = await getProductByCategory(categoryName, category);
     setSearchProducts(response.data);
-    console.log("getProductsByCategory", response.data);
+    // console.log("getProductsByCategory", response.data);
   };
   const getProductsBySubcategory = async (
     categoryName,
@@ -160,6 +162,8 @@ export const CreateProductProvider = ({ children }) => {
     setFilterKeys,
     additionalCategories,
     getAllAdditionalCategories,
+    filterObject,
+    setFilterObject,
   };
 
   return (
