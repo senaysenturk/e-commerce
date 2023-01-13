@@ -17,7 +17,7 @@ const Options = () => {
   return (
     <div className="options">
       <ul>
-        {loggedIn && currentUser && currentUser[0].role === "admin" && (
+        {loggedIn && currentUser.role === "admin" && (
           <li>
             <span className="icon">
               <MdOutlineAdminPanelSettings />

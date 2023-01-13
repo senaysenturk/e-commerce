@@ -461,6 +461,24 @@
       "password": "Bilge123!",
       "role": "user",
       "id": 17
+    },
+    {
+      "user": "shiwear",
+      "password": "Bilge123!",
+      "role": "admin",
+      "id": 18
+    },
+    {
+      "user": "shiwear",
+      "password": "Bilge123!",
+      "role": "admin",
+      "id": 19
+    },
+    {
+      "user": "senay",
+      "password": "Bilge123!",
+      "role": "user",
+      "id": 20
     }
   ],
   "me": [
@@ -468,13 +486,19 @@
       "user": "shiwear",
       "password": "Bilge123!",
       "role": "admin",
-      "id": 16
+      "id": 18
+    },
+    {
+      "user": "shiwear",
+      "password": "Bilge123!",
+      "role": "admin",
+      "id": 19
     },
     {
       "user": "senay",
       "password": "Bilge123!",
       "role": "user",
-      "id": 17
+      "id": 20
     }
   ],
   "users": [
@@ -1070,15 +1094,6 @@
       "message": "test message hello word",
       "createdAt": "2023-01-11",
       "id": 1
-    },
-    {
-      "user": "admin",
-      "mail": "admin@shiwear.com",
-      "phone": "+90 (500) 000 - 0000",
-      "subject": "Technical Problems",
-      "message": "testdsfgfdg",
-      "createdAt": "1/11/2023, 8:26:05 PM",
-      "id": 2
     }
   ],
   "cities": [
