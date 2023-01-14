@@ -70,13 +70,15 @@ const UserProfile = () => {
         <div className="gender user-profile__item">
           <label htmlFor="gender">Gender</label>
           <select id="gender" name="gender">
-            {genders.map((gender) =>
+            {genders.map((gender, i) =>
               gender == authContext.user[0].gender ? (
-                <option value={gender} selected>
+                <option value={gender} key={i} selected>
                   {gender}
                 </option>
               ) : (
-                <option value={gender}>{gender}</option>
+                <option value={gender} key={i}>
+                  {gender}
+                </option>
               )
             )}
           </select>
