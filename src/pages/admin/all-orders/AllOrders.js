@@ -3,85 +3,124 @@ import { getOrderList } from "../../../network/requests/order/order";
 import { AuthContext, useAuth } from "../../../contexts/auth/AuthContext";
 import Table from "../../../components/shared/table/Table";
 import { baseService } from "src/network/services/baseService";
+import { useNavigate } from "react-router-dom";
 
 const AllOrders = () => {
-  // const { getUserByOrderId, getAllUsers, users } = useAuth();
-  const authContext = useContext(AuthContext);
+  const { getUserByOrderId, getAllUsers, users } = useAuth();
   const [orders, setOrders] = useState([]);
-
+  const [isOpen, setIsOpen] = useState(false);
+  const [messageObject, setMessageObject] = useState([]);
+  const [user, setUser] = useState([]);
+  const authContext = useContext(AuthContext);
+  const navigate = useNavigate();
+  const getAllOrders = async () => {
+    const response = await getOrderList();
+    setOrders(response.data);
+    console.log(response.data);
+  };
+  useEffect(() => {
+    getAllOrders();
+    getAllUsers();
+  }, []);
   useEffect(() => {
     (async () => {
-      await authContext.getAllUsers();
-      const result = await Promise.all(
-        authContext &&
-          authContext.users.map((user) =>
-            baseService.getOrderItemsByUserId(user.id)
-          )
-      );
+      const result = await baseService.getAllOrderItems();
+
+      setOrders(result);
     })();
   }, []);
-
-  useEffect(() => {
-    if (authContext.users) {
-      const allOrders = authContext.users.flatMap((user) => user.orders);
-      setOrders(allOrders);
-    }
-  }, [authContext.users]);
-
-  authContext && console.log(authContext);
+  //console.log(orders);
 
   return (
     <>
-      <div className="all-orders">
-        <Table
-          searchable={true}
-          head={[
-            { name: "Order Number", sortable: true },
-            { name: "Order Date", sortable: true },
-            { name: "User Name", sortable: true },
-            { name: "Mail Address", sortable: true },
-            { name: "Phone" },
-            { name: "Order Summary", sortable: true },
-            { name: "Order Price", sortable: true },
-            { name: "Options", width: 200 },
-          ]}
-          body={
-            orders &&
-            orders.map((order, key) => {
-              return [
-                order.orderId,
-                //order.orderList[0].createdAt,
-                authContext.users.length &&
-                  authContext.users.map((user) => user.id === 1).id,
-                order.orderList.length,
-                order.totalOrderAmount,
-                [
-                  <button
-                    className="list-btn "
-                    onClick={() => {
-                      // setOrder(order);
-                      // setIsOpen(true);
-                    }}
-                  >
-                    Details
-                  </button>,
-                  <button
-                    className="list-btn btn-danger"
-                    // onClick={() => {
-                    //   handleDeleteOrder(order.orderId);
-                    // }}
-                  >
-                    Delete
-                  </button>,
-                ],
-              ];
-            })
-          }
-        />
-      </div>
-      {/* {isOpen && (
-        <DetailPopup handleClose={() => setIsOpen(false)} order={order} />
-      )} */}
+      {authContext.loggedIn ? (
+        authContext.user[0]?.role == "admin" ? (
+          <div className="all-users">
+            <div className="">
+              <Table
+                searchable={true}
+                head={[
+                  { name: "Order Number", sortable: true },
+                  { name: "Order Date", sortable: true },
+                  { name: "User Name", sortable: true },
+                  { name: "Mail Address", sortable: true },
+                  // { name: "Phone" },
+                  { name: "Order Summary", sortable: true },
+                  { name: "Order Price", sortable: true },
+                  { name: "Options", width: 200 },
+                ]}
+                body={
+                  orders.length &&
+                  orders.map((order, i) => {
+                    const user = authContext.users.find(
+                      (user) => user.id === order.userId
+                    );
+                    return [
+                      order.orderId,
+                      order.date,
+                      user.user,
+                      user.mail,
+                      // "",
+
+                      order.orderList.length,
+                      order.totalOrderAmount,
+                      [
+                        <button
+                          className="list-btn "
+                          /* onClick={() => {
+                      setMessageObject(message);
+                      togglePopup();
+                    }} */
+                        >
+                          Details
+                        </button>,
+                        <button
+                          className="list-btn btn-danger"
+                          /*   onClick={() => {
+                      console.log(message.id);
+                      handleDeleteMessage(message.id);
+                    }} */
+                        >
+                          Delete
+                        </button>,
+                      ],
+                      ,
+                    ];
+                  })
+                }
+              />
+            </div>
+            {/*  {isOpen && (
+          <DetailPopup
+            handleClose={togglePopup}
+            messageObject={messageObject}
+          />
+        )} */}
+          </div>
+        ) : (
+          <div className="cart-empty">
+            <div className="empty-message">
+              <p className="danger">
+                You are not authorized to view this page.
+              </p>
+            </div>
+            <button className="btn btn-gray" onClick={() => navigate("/")}>
+              Home
+            </button>
+          </div>
+        )
+      ) : (
+        <div className="cart-empty">
+          <div className="empty-message">
+            <p className="danger">
+              Please login to see your profile information.
+            </p>
+          </div>
+          <button className="btn btn-gray" onClick={() => navigate("/auth")}>
+            Login
+          </button>
+        </div>
+      )}
     </>
   );
 };

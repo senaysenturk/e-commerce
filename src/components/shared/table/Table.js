@@ -49,13 +49,13 @@ export const Table = ({ head, body, searchable }) => {
               </button>
             )}
           </div>
-          <div className="right-button">
+          {/* <div className="right-button">
             <div className="add-product-button">
               <Link to="/admin/add-product">
                 <button className="list-btn">Create</button>
               </Link>
             </div>
-          </div>
+          </div> */}
         </div>
       )}
       <table>
