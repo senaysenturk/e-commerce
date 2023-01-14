@@ -26,6 +26,7 @@ import ViewMore from "./pages/dashboard/view-more/ViewMore";
 import AboutUs from "./components/shared/about-us/AboutUs";
 import ContactUs from "./components/shared/contact/ContactUs";
 import AllMessages from "./pages/admin/all-messages/AllMessages";
+import OrdersDetail from "./components/app/shopping-cart/order-tracking/OrdersDetail";
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
             <Route path="new-arrivals" element={<NewArrivals />} />
             <Route path="order-tracking" element={<OrderTracking />} />
             <Route path="about-us" element={<AboutUs />} />
+            <Route path="orders-detail" element={<OrdersDetail />} />
             <Route path="contact" element={<ContactUs></ContactUs>} />
             <Route path="user-profile" element={<UserProfile />} />
             <Route path="shopping" element={<Shopping />}>

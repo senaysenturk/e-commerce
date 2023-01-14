@@ -2,6 +2,7 @@ import React from "react";
 import { dummyOrderData } from "./OrderTracking";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 import { FcCheckmark } from "react-icons/fc";
+import { useNavigate } from "react-router-dom";
 
 /**
  *
@@ -9,6 +10,10 @@ import { FcCheckmark } from "react-icons/fc";
  * @returns
  */
 const OrderItem = ({ orderData }) => {
+  const navigate = useNavigate();
+  const onClickOrdersDetail = () => {
+    navigate("/orders-detail")
+  }
   return (
     <>
       {orderData.map((data, index) => {
@@ -34,15 +39,15 @@ const OrderItem = ({ orderData }) => {
             <div className="orderId">{data.orderId}</div>
 
             <div className="successInfo">
-              {" "}
+           
               <FcCheckmark /> Order completed.
             </div>
 
             <div className="totalPrice">{data.totalOrderAmount}</div>
 
             <button className="detail">
-              {" "}
-              <BiChevronRight className="buton" />{" "}
+           
+              <BiChevronRight className="buton"  onClick={ onClickOrdersDetail}/>
             </button>
 
             <div className="detailItems">

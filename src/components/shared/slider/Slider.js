@@ -42,24 +42,17 @@ const Slider = () => {
       <div className="hero-container">
         <div className="slider">
           <a href="/#" className="before-btn btn">
-            <BiChevronLeft/>{" "}
+            <BiChevronLeft />{" "}
           </a>
           <a href="/#" className="after-btn btn">
             {" "}
             <BiChevronRight />{" "}
           </a>
           <div className="image-box">
-            {/* 
-           <div className="slide" >
-            <img src="./hero-photos/1.jpeg" alt="slider-photo"/>
-           </div>
-           <div className="slide" >
-            <img src="./hero-photos/2.jpeg" alt="slider-photo"/>
-           </div> */}
             {heroPhotos.map((photo, index) => {
               return (
                 <div className="slide" key={index}>
-                  <img src={photo.img} alt={photo.name}  />
+                  <img src={photo.img} alt={photo.name} />
                 </div>
               );
             })}
