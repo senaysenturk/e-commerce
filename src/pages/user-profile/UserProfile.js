@@ -5,7 +5,6 @@ import { AuthContext, useAuth } from "../../contexts/auth/AuthContext";
 
 const UserProfile = () => {
   const authContext = useContext(AuthContext);
-  console.log();
   const navigate = useNavigate();
   const genders = ["man", "woman", "other"];
   return authContext.loggedIn ? (

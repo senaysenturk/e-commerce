@@ -131,10 +131,16 @@ baseService.sendOrderItems = async (orderData) => {
  * @returns {Promise<OrderProduct[]>}
  */
 
+baseService.getAllOrderItems = async (userId) => {
+  const getOrdersUrl = `http://localhost:5500/order-list`;
+  const result = await axios.get(getOrdersUrl);
+  console.log("RESULT :", result);
+  return result.data;
+};
 baseService.getOrderItemsByUserId = async (userId) => {
   const getOrdersUrl = `http://localhost:5500/order-list?userId=${userId}`;
 
   const result = await axios.get(getOrdersUrl);
-  console.log("RESULT :", result);
+  // console.log("RESULT :", result);
   return result.data;
 };

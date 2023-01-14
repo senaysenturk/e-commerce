@@ -26,7 +26,7 @@ export const OrderSummary = ({ isCartPage }) => {
     const orderData = {
       userId: authContext.user[0].id,
       // user: currentUser,
-      date: Date.now(),
+      date: new Date().toLocaleString(),
       orderId: Date.now(),
       orderList: context.cart,
       totalOrderAmount: context.totalPrice(),

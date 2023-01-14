@@ -30,7 +30,7 @@ const AuthProvider = ({ children }) => {
       try {
         const me = await fetchMe();
         // console.log(me);
-
+        getAllUsers();
         // console.log(me.data);
         setLoggedIn(!!user.name);
         //setUser(me.data);
