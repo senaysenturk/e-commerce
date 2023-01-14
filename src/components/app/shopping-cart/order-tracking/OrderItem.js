@@ -11,9 +11,10 @@ import { useNavigate } from "react-router-dom";
  */
 const OrderItem = ({ orderData }) => {
   const navigate = useNavigate();
-  const onClickOrdersDetail = () => {
-    navigate("/orders-detail")
-  }
+  const onClickOrdersDetail = (data) => {
+    console.log(data);
+    navigate("/orders-detail", { state: { orderData: data } });
+  };
   return (
     <>
       {orderData.map((data, index) => {
@@ -39,15 +40,16 @@ const OrderItem = ({ orderData }) => {
             <div className="orderId">{data.orderId}</div>
 
             <div className="successInfo">
-           
               <FcCheckmark /> Order completed.
             </div>
 
             <div className="totalPrice">{data.totalOrderAmount}</div>
 
             <button className="detail">
-           
-              <BiChevronRight className="buton"  onClick={ onClickOrdersDetail}/>
+              <BiChevronRight
+                className="buton"
+                onClick={() => onClickOrdersDetail(data)}
+              />
             </button>
 
             <div className="detailItems">
