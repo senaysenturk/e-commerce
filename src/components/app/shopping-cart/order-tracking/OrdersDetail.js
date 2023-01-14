@@ -4,17 +4,21 @@ import ShopContext from "src/contexts/basket/ShopContext";
 import { getCartById } from "src/network/requests/cart/addToCart";
 import { baseService } from "src/network/services/baseService";
 import OrderItem from "./OrderItem";
-import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 import "./style.scss";
 
 
 const OrdersDetail = ({ orderData }) => {
   const context = useContext(ShopContext);
+  const location = useLocation();
 
+  const [order, setOrder] = useState(location.state.orderData);
   return (
     
     <div className="orders-detail">
+      {console.log("data:", order)}
+      {JSON.stringify(order)}
       <div className="order-container">
             {/* {context.map((photo, index) =>{
                 return( */}
