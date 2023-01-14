@@ -21,3 +21,7 @@ export const getOrders = async () => {
 export const getOrderList = async () => {
   return baseService.get("http://localhost:5500/", "order-list");
 };
+
+export const deleteOrder = async (orderId) => {
+  return baseService.delete("http://localhost:5500/", "order-list/", orderId);
+};

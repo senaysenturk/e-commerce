@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { getOrderList } from "../../../network/requests/order/order";
+import { getOrderList, deleteOrder } from "../../../network/requests/order/order";
 import { AuthContext, useAuth } from "../../../contexts/auth/AuthContext";
 import Table from "../../../components/shared/table/Table";
 import { baseService } from "src/network/services/baseService";
@@ -30,6 +30,10 @@ const AllOrders = () => {
     })();
   }, []);
   //console.log(orders);
+  const handleDeleteOrder = async (orderId) => {
+    await deleteOrder(orderId);
+    getAllOrders();
+  };
 
   return (
     <>
@@ -76,10 +80,10 @@ const AllOrders = () => {
                         </button>,
                         <button
                           className="list-btn btn-danger"
-                          /*   onClick={() => {
-                      console.log(message.id);
-                      handleDeleteMessage(message.id);
-                    }} */
+                          onClick={() => {
+                            console.log(order.orderId);
+                            handleDeleteOrder(order.orderId);
+                          }}
                         >
                           Delete
                         </button>,
