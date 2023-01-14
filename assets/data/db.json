@@ -377,14 +377,44 @@
       "password": "Bilge123!",
       "role": "admin",
       "id": 3
-    }
-  ],
-  "me": [
+    },
+    {
+      "user": "hicran",
+      "password": "Bilge123!",
+      "role": "user",
+      "id": 4
+    },
+    {
+      "user": "hicran",
+      "password": "Bilge123!",
+      "role": "user",
+      "id": 5
+    },
+    {
+      "user": "hicran",
+      "password": "Bilge123!",
+      "role": "user",
+      "id": 6
+    },
     {
       "user": "shiwear",
       "password": "Bilge123!",
       "role": "admin",
-      "id": 3
+      "id": 7
+    }
+  ],
+  "me": [
+    {
+      "user": "hicran",
+      "password": "Bilge123!",
+      "role": "user",
+      "id": 6
+    },
+    {
+      "user": "shiwear",
+      "password": "Bilge123!",
+      "role": "admin",
+      "id": 7
     }
   ],
   "users": [
@@ -710,7 +740,18 @@
       "birth": "1985-11-11",
       "gender": "female",
       "role": "user",
-      "addresses": [],
+      "addresses": [
+        {
+          "firstname": "hicran",
+          "lastname": "ertuğral",
+          "phone": "+90 (555) 555 - 5555",
+          "address": "kaleiçi cad. sur sok. no:17",
+          "postcode": "55555",
+          "city": "Adıyaman",
+          "state": "Çelikhan",
+          "addressName": "home"
+        }
+      ],
       "lastViewed": [
         {
           "createdAt": "1/1/2023, 6:25:08 PM",
@@ -732,6 +773,52 @@
           ],
           "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/6202/267/001/6202267001_1_1_2.jpg?t=1669732582176",
           "id": 3
+        },
+        {
+          "createdAt": "1/1/2023, 6:27:54 PM",
+          "updatedAt": "1/1/2023, 6:27:54 PM",
+          "name": "Regular fit Oxford cotton shirt",
+          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
+          "price": 29.99,
+          "color": [
+            "blue"
+          ],
+          "size": [
+            "M",
+            "L"
+          ],
+          "category": "Man",
+          "subcategory": "Shirt",
+          "additionalCategories": [
+            "best-sellers",
+            "trending"
+          ],
+          "imgPath": "https://res.cloudinary.com/dr4cvohdq/image/upload/v1672586896/hbxu98mpnk8y0silr4tu.jpg",
+          "id": 5
+        },
+        {
+          "createdAt": "1/1/2023, 6:25:08 PM",
+          "updatedAt": "1/1/2023, 6:25:08 PM",
+          "name": "Lace pleated dress",
+          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
+          "price": 59.99,
+          "size": [
+            "XS",
+            "S",
+            "XXS",
+            "L"
+          ],
+          "color": [
+            "black"
+          ],
+          "category": "Woman",
+          "subcategory": "Dress",
+          "additionalCategories": [
+            "best-sellers",
+            "sale"
+          ],
+          "imgPath": "http://res.cloudinary.com/dr4cvohdq/image/upload/v1672586727/utkeesstkjwkdi4qt6zu.webp",
+          "id": 4
         }
       ],
       "orders": [],

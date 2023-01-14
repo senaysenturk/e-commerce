@@ -11,7 +11,7 @@ import { useAuth } from "../../../../contexts/auth/AuthContext";
 export const OrderSummary = ({ isCartPage }) => {
   const navigate = useNavigate();
   const context = useContext(ShopContext);
-  const { currentUser, addOrder } = useAuth();
+  // const { currentUser, addOrder } = useAuth();
 
   const onClickConfirmBag = () => {
     navigate("/shopping/checkout");
@@ -32,7 +32,7 @@ export const OrderSummary = ({ isCartPage }) => {
     await baseService.sendOrderItems(orderData);
     // console.log(currentUser[0].user);
     // console.log(orderData);
-    await addOrder(currentUser[0].user, orderData);
+    // await addOrder(currentUser[0].user, orderData);
 
     context.clearCart();
     navigate("/order-tracking");

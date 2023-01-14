@@ -39,7 +39,7 @@ const OrderItem = ({orderData}) => {
 
             <div className="totalPrice">{data.totalOrderAmount}</div>
 
-            <button className="detail"> <BiChevronRight className="after-btn"/> </button>
+            <button className="detail"> <BiChevronRight className="buton"/> </button>
             
 
             <div className="detailItems">
