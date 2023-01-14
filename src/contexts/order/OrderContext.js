@@ -20,7 +20,10 @@ export const OrderProvider = ({ children }) => {
   };
 
   const AddAddress = () => {
-    setOrder({ ...order, address: [address] });
+    setOrder({
+      ...order,
+      address: [address],
+    });
   };
 
   const getAllCities = async () => {
@@ -41,9 +44,7 @@ export const OrderProvider = ({ children }) => {
   };
 
   return (
-    <OrderContext.Provider value={values}>
-      {children}
-    </OrderContext.Provider>
+    <OrderContext.Provider value={values}>{children}</OrderContext.Provider>
   );
 };
 

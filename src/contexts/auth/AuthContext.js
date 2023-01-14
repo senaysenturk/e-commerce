@@ -15,7 +15,7 @@ import {
 export const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState([{}]);
+  const [user, setUser] = useState({});
   const [users, setUsers] = useState(null);
   const [loggedIn, setLoggedIn] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -122,12 +122,12 @@ const AuthProvider = ({ children }) => {
   };
 
   const getUserLastViewes = async () => {
-    console.log("last view çalıştı");
+    // console.log("last view çalıştı");
     const me = await fetchMe();
     // setUser(me.data);
     const response = await getUsers();
 
-    response.data.filter((userObject) => console.log("Me:", me.data));
+    // response.data.filter((userObject) => console.log("Me:", me.data));
 
     setLastViewed(
       response.data.filter(
@@ -345,6 +345,7 @@ const AuthProvider = ({ children }) => {
   };
 
   const login = async (userData) => {
+    console.log(userData.data);
     setLoggedIn(true);
     setUser(userData.data);
     // setCurrentUser(userData.data);

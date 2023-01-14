@@ -13,11 +13,11 @@ const AllOrders = () => {
     (async () => {
       await authContext.getAllUsers();
       const result = await Promise.all(
-        authContext.users.map((user) =>
-          baseService.getOrderItemsByUserId(user.id)
-        )
+        authContext &&
+          authContext.users.map((user) =>
+            baseService.getOrderItemsByUserId(user.id)
+          )
       );
-      console.log(await baseService.getOrderItemsByUserId(20));
     })();
   }, []);
 
@@ -27,6 +27,8 @@ const AllOrders = () => {
       setOrders(allOrders);
     }
   }, [authContext.users]);
+
+  authContext && console.log(authContext);
 
   return (
     <>
@@ -48,8 +50,9 @@ const AllOrders = () => {
             orders.map((order, key) => {
               return [
                 order.orderId,
-                order.createdAt,
-
+                //order.orderList[0].createdAt,
+                authContext.users.length &&
+                  authContext.users.map((user) => user.id === 1).id,
                 order.orderList.length,
                 order.totalOrderAmount,
                 [

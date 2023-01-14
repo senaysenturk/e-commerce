@@ -73,7 +73,7 @@ export const Login = () => {
       }
       login(response);
       setCurrentUser(response.data[0]);
-      console.log(JSON.stringify(response?.data));
+      // console.log(JSON.stringify(response?.data));
       //console.log(JSON.stringify(response));
       const accessToken = response?.data?.accessToken;
       const roles = response?.data?.roles;
@@ -120,12 +120,12 @@ export const Login = () => {
     try {
       const response = await getSignUp();
       // const response = await axios.get("http://localhost:5500/signup");
-      console.log(response.data);
+      // console.log(response.data);
 
       authUser = response.data.filter(
         (userObject) => userObject.mail === user || userObject.user === user
       );
-      console.log(authUser);
+      // console.log(authUser);
 
       authUser.length === 0
         ? setErrUser("user not found")

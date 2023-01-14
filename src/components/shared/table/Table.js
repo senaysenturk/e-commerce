@@ -7,7 +7,7 @@ import "./style.scss";
 export const Table = ({ head, body, searchable }) => {
   const [search, setSearch] = useState("");
   const [sorting, setSorting] = useState(false);
-  console.log(body);
+  // console.log(body);
   const filteredData =
     body &&
     body

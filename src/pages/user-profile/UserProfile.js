@@ -1,26 +1,28 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./style.scss";
 import { Link, useNavigate } from "react-router-dom";
-import { useAuth } from "../../contexts/auth/AuthContext";
+import { AuthContext, useAuth } from "../../contexts/auth/AuthContext";
 
 const UserProfile = () => {
-  const { user } = useAuth();
-
-  return (
+  const authContext = useContext(AuthContext);
+  console.log();
+  const navigate = useNavigate();
+  const genders = ["man", "woman", "other"];
+  return authContext.loggedIn ? (
     <div className="user-info">
-      {JSON.stringify(user)}
       <div id="username" className="user-name">
-        <strong>senaysenturk</strong>
+        <strong>{authContext.user[0].user}</strong>
       </div>
 
       <div className="user-profile">
-        <div className="first-name user-profile__item">
+        {/*<div className="first-name user-profile__item">
           <label htmlFor="first-name">First Name</label>
           <input
             type="text"
             className="first-name"
             name="first-name"
             placeholder="Full Name"
+            defaultValue={user[0].firstname}
           />
         </div>
 
@@ -31,19 +33,19 @@ const UserProfile = () => {
             className="last-name"
             name="last-name"
             placeholder="Last Name"
+            defaultValue={user[0].lastname}
           />
-        </div>
-
+        </div> */}
         <div id="username" className="user-profile__item">
-          <label htmlFor="user-name">UserName</label>
+          <label htmlFor="user-name">Username</label>
           <input
             type="text"
             id="username"
             name="user-name"
             placeholder="User Name"
+            defaultValue={authContext.user[0].user}
           />
         </div>
-
         <div id="email" className="user-profile__item">
           <label htmlFor="email">E-Mail</label>
           <input
@@ -51,37 +53,56 @@ const UserProfile = () => {
             id="email"
             name="email"
             placeholder="E-mail"
+            defaultValue={authContext.user[0].mail}
           />
         </div>
-
-        <div className="phone user-profile__item">
+        {/* <div className="phone user-profile__item">
           <label htmlFor="phone">Phone Number</label>
           <input
             type="url"
             id="phone"
             name="phone"
             placeholder="Phone Number"
+            defaultValue={user[0].phone}
           />
-        </div>
+        </div> */}
 
         <div className="gender user-profile__item">
           <label htmlFor="gender">Gender</label>
           <select id="gender" name="gender">
-            <option>Man</option>
-            <option>Woman</option>
-            <option>Other</option>
+            {genders.map((gender) =>
+              gender == authContext.user[0].gender ? (
+                <option value={gender} selected>
+                  {gender}
+                </option>
+              ) : (
+                <option value={gender}>{gender}</option>
+              )
+            )}
           </select>
         </div>
-
         <div className="password user-profile__item">
           <label htmlFor="password">Password</label>
-          <input type="url" id="password" placeholder="Password" />
+          <input
+            type="url"
+            id="password"
+            placeholder="Password"
+            defaultValue={authContext.user[0].password}
+          />
         </div>
-
         <div className="user-profile__btn">
-          <button className="login-btn">Login</button>
+          <button className="login-btn">Save</button>
         </div>
       </div>
+    </div>
+  ) : (
+    <div className="cart-empty">
+      <div className="empty-message">
+        <p className="danger">Please login to see your profile information.</p>
+      </div>
+      <button className="btn btn-gray" onClick={() => navigate("/auth")}>
+        Login
+      </button>
     </div>
   );
 };

@@ -459,7 +459,7 @@ function SignUp({ history }) {
                           type="radio"
                           id="male"
                           name="gender"
-                          value="Male"
+                          value="man"
                           onChange={(e) => setGender(e.target.value)}
                         />{" "}
                         Male
@@ -470,7 +470,7 @@ function SignUp({ history }) {
                           type="radio"
                           id="female"
                           name="gender"
-                          value="female"
+                          value="woman"
                           onChange={(e) => setGender(e.target.value)}
                         />{" "}
                         Female
