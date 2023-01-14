@@ -21,6 +21,7 @@ const AddProduct = () => {
     uploadPercentage,
     additionalCategories,
     getAllAdditionalCategories,
+    isProductValid,
     // setColor,
     // setSize,
   } = useProduct();
@@ -49,28 +50,12 @@ const AddProduct = () => {
         [name]: value,
       }));
     }
+    console.log("Product: ", product);
   };
 
   const handleSetImage = async (e) => {
     var percentage = await uploadImage(e.target.files[0]);
   };
-
-  const handleSetSize = (e) => {
-    setSize((prevSize) => [...prevSize, e.target.value]);
-    console.log(size);
-    setProduct({ ...product, size: size });
-  };
-
-  const handleSetColor = (e) => {
-    setColor((prevColor) => [...prevColor, e.target.value]);
-    console.log(color);
-    setProduct({ ...product, color: color });
-  };
-
-  // const handleSetCategory = (e) => {
-  //   setCategory(e.target.value);
-  //   setProduct({ ...product, category: category });
-  // };
 
   useEffect(() => {
     getAllColors();
@@ -97,6 +82,12 @@ const AddProduct = () => {
           name="name"
           onChange={handleSetProduct}
         />
+        {!isProductValid.name && (
+          <div className="error-msg">
+            <i className="fa fa-warning"></i>
+            Please fill the product name
+          </div>
+        )}
         <label htmlFor="product-detail">Product Detail</label>
         <input
           type="text"
@@ -105,6 +96,12 @@ const AddProduct = () => {
           name="detail"
           onChange={handleSetProduct}
         />
+        {!isProductValid.detail && (
+          <div className="error-msg">
+            <i className="fa fa-warning"></i>
+            Please fill the product detail
+          </div>
+        )}
         <label htmlFor="price">Price</label>
         <input
           type="number"
@@ -115,10 +112,16 @@ const AddProduct = () => {
           name="price"
           onChange={handleSetProduct}
         />
+        {!isProductValid.price && (
+          <div className="error-msg">
+            <i className="fa fa-warning"></i>
+            Please fill the price{" "}
+          </div>
+        )}
         <div className="multi-choices">
           <p>Sizes:</p>
           {sizes.map((size, index) => (
-            <div className="choice">
+            <div className="choice" key={index}>
               <input
                 type="checkbox"
                 name="size"
@@ -130,25 +133,35 @@ const AddProduct = () => {
             </div>
           ))}
         </div>
+        {!isProductValid.size && (
+          <div className="error-msg">
+            <i className="fa fa-warning"></i>
+            Please select size(s)
+          </div>
+        )}
         <div className="colors">
           <p>Colors:</p>
-          <div className="color">
-            {colors.map((color, index) => (
-              <>
-                <input
-                  type="checkbox"
-                  name="color"
-                  id={color}
-                  value={color}
-                  onChange={handleSetProduct}
-                />
-                <label htmlFor={color}>
-                  <span className={color} name={color} id={color}></span>
-                </label>
-              </>
-            ))}
-          </div>
+          {colors.map((color, index) => (
+            <div className="color" key={index}>
+              <input
+                type="checkbox"
+                name="color"
+                id={color}
+                value={color}
+                onChange={handleSetProduct}
+              />
+              <label htmlFor={color}>
+                <span className={color} name={color} id={color}></span>
+              </label>
+            </div>
+          ))}
         </div>
+        {!isProductValid.color && (
+          <div className="error-msg">
+            <i className="fa fa-warning"></i>
+            Please select color(s)
+          </div>
+        )}
         <label htmlFor="category">Category</label>
         <select id="category" name="category" onChange={handleSetProduct}>
           <option>-- None --</option>
@@ -157,6 +170,12 @@ const AddProduct = () => {
             <option key={index}>{category.category}</option>
           ))}
         </select>
+        {!isProductValid.category && (
+          <div className="error-msg">
+            <i className="fa fa-warning"></i>
+            Please select the category
+          </div>
+        )}
         <label htmlFor="category">Subcategory</label>
         <select id="subcategory" name="subcategory" onChange={handleSetProduct}>
           <option>-- None --</option>
@@ -169,11 +188,16 @@ const AddProduct = () => {
                 return <option key={index}>{subcategory}</option>;
               })}
         </select>
-
+        {!isProductValid.subcategory && (
+          <div className="error-msg">
+            <i className="fa fa-warning"></i>
+            Please select the subcategory
+          </div>
+        )}
         <div className="multi-choices">
           <p>Additional categories:</p>
           {additionalCategories.map((addCategory, index) => (
-            <div className="choice">
+            <div className="choice" key={index}>
               <input
                 type="checkbox"
                 name="additional-category"
@@ -181,14 +205,21 @@ const AddProduct = () => {
                 value={addCategory}
                 onChange={handleSetProduct}
               />
-              <label for={addCategory}>{addCategory}</label>
+              <label htmlFor={addCategory}>{addCategory}</label>
             </div>
           ))}
         </div>
+
         <label htmlFor="image">Image</label>
         <input type="file" id="image" name="image" onChange={handleSetImage} />
-        <ProgressBar bgcolor={"#6a1b9a"} percentage={uploadPercentage} />
+        {!isProductValid.imgPath && (
+          <div className="error-msg">
+            <i className="fa fa-warning"></i>
+            Please waiting upload image
+          </div>
+        )}
       </div>
+
       <div className="add-button">
         <button className="btn btn-primary" onClick={() => addProduct()}>
           Add

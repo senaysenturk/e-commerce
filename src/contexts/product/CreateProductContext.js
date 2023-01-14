@@ -30,6 +30,18 @@ export const CreateProductProvider = ({ children }) => {
   const [filterKeys, setFilterKeys] = useState();
   const [filterObject, setFilterObject] = useState({});
 
+  const [isProductValid, setIsProductValid] = useState({
+    name: true,
+    detail: true,
+    price: true,
+    size: true,
+    color: true,
+    category: true,
+    subcategory: true,
+    additionalCategories: true,
+    imgPath: true,
+  });
+
   const getAllProducts = async () => {
     const response = await getProduct();
     setProducts(response);
@@ -38,20 +50,27 @@ export const CreateProductProvider = ({ children }) => {
 
   // console.log("Product", product);
   const addProduct = async () => {
-    const response = await postProduct(product);
-    setProduct({
-      name: "",
-      price: "",
-      color: "",
-      size: "",
-      category: "",
-      subcategory: "",
-      imgPath: "",
-      createdAt: new Date().toLocaleString(),
-      updatedAt: new Date().toLocaleString(),
-      additionalCategories: "",
-    });
-    console.log("Reponse: " + response.status);
+    // event.preventDefault();
+    console.log(product);
+    setIsProductValid({ ...product });
+    if (Object.values(product).every((value) => value)) {
+      const response = await postProduct(product);
+      console.log("Reponse: " + response.status);
+      getAllProducts();
+
+      setProduct({
+        name: "",
+        price: "",
+        color: "",
+        size: "",
+        category: "",
+        subcategory: "",
+        imgPath: "",
+        createdAt: new Date().toLocaleString(),
+        updatedAt: new Date().toLocaleString(),
+        additionalCategories: "",
+      });
+    }
   };
 
   const updateProduct = async (productId, newProduct) => {
@@ -164,6 +183,7 @@ export const CreateProductProvider = ({ children }) => {
     getAllAdditionalCategories,
     filterObject,
     setFilterObject,
+    isProductValid,
   };
 
   return (
