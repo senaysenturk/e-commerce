@@ -13,7 +13,8 @@ const OrderItem = ({ orderData }) => {
   const navigate = useNavigate();
   const onClickOrdersDetail = (data) => {
     console.log(data);
-    navigate("/orders-detail", { state: { orderData: data } });
+    navigate("/basket-summary", { state: { orderData: data } });
+    // navigate("/orders-detail", { state: { orderData: data } });
   };
   return (
     <>

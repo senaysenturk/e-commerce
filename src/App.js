@@ -27,6 +27,7 @@ import AboutUs from "./components/shared/about-us/AboutUs";
 import ContactUs from "./components/shared/contact/ContactUs";
 import AllMessages from "./pages/admin/all-messages/AllMessages";
 import OrdersDetail from "./components/app/shopping-cart/order-tracking/OrdersDetail";
+import BasketSummary from "./components/app/shopping-cart/basket-summary/BasketSummary";
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
             <Route path="order-tracking" element={<OrderTracking />} />
             <Route path="about-us" element={<AboutUs />} />
             <Route path="orders-detail" element={<OrdersDetail />} />
+            <Route path="basket-summary" element={<BasketSummary />} />
             <Route path="contact" element={<ContactUs></ContactUs>} />
             <Route path="user-profile" element={<UserProfile />} />
             <Route path="shopping" element={<Shopping />}>
