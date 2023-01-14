@@ -32,6 +32,13 @@ export const patchUser = (id, newUser) => {
   return baseService.patch("http://localhost:5500/", "users/", id, newUser);
 };
 
+export const checkUser = (username, pass) => {
+  return baseService.get(
+    "http://localhost:5500/",
+    `users?user=${username}&password=${pass}`
+  );
+};
+
 export const postAuth = (newUser) => {
   return baseService.postAuth("http://localhost:5500/", "auth", newUser);
 };
@@ -40,8 +47,8 @@ export const postMe = (newUser) => {
   return baseService.postAuth("http://localhost:5500/", "me", newUser);
 };
 
-export const fetchMe = () => {
-  return baseService.get("http://localhost:5500/", "me");
+export const fetchMe = (id) => {
+  return baseService.get("http://localhost:5500/", "me/", id);
 };
 
 export const fetchLogout = async (id) => {

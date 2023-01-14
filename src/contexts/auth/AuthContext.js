@@ -12,10 +12,10 @@ import {
   fetchLogout,
 } from "../../network/requests/auth/auth";
 
-const AuthContext = createContext();
+export const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState([{}]);
   const [users, setUsers] = useState(null);
   const [loggedIn, setLoggedIn] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -32,9 +32,8 @@ const AuthProvider = ({ children }) => {
         // console.log(me);
 
         // console.log(me.data);
-        me.data.length === 0 ? setLoggedIn(false) : setLoggedIn(true);
-
-        setUser(me.data);
+        setLoggedIn(!!user.name);
+        //setUser(me.data);
         setCurrentUser(me.data);
         setLoading(false);
       } catch (e) {
@@ -81,16 +80,16 @@ const AuthProvider = ({ children }) => {
 
   const getUserFavorites = async () => {
     const me = await fetchMe();
-    setUser(me.data);
+    // setUser(me.data);
     const response = await getUsers();
-    // response.data.filter((userObject) => console.log("Me: ", me.data));
+    response.data.filter((userObject) => console.log("Me: ", me.data));
 
     setFavorites(
       response.data.filter(
         (userObject) =>
           userObject.mail === me.data[0].user ||
           userObject.user === me.data[0].user
-      )[0].favorites
+      )[0]?.favorites || []
     );
     //console.log("favorites", favorites);
   };
@@ -125,59 +124,56 @@ const AuthProvider = ({ children }) => {
   const getUserLastViewes = async () => {
     console.log("last view çalıştı");
     const me = await fetchMe();
-    setUser(me.data);
+    // setUser(me.data);
     const response = await getUsers();
 
-    // response.data.filter((userObject) => console.log("Me:", me.data));
+    response.data.filter((userObject) => console.log("Me:", me.data));
 
     setLastViewed(
       response.data.filter(
         (userObject) =>
           userObject.mail === me.data[0].user ||
           userObject.user === me.data[0].user
-      )[0].lastViewed
+      )[0]?.lastViewed || []
     );
     // console.log(
     //   "last viewes",
     //   response.data.filter(
     //     (userObject) =>
-    //       userObject.mail === me.data[0].user ||
-    //       userObject.user === me.data[0].user
+    //       userObject.mail === me.data[0]?.user ||
+    //       userObject.user === me.data[0]?.user
     //   )[0].lastViewed
     // );
   };
 
   const addLastViewed = async (product) => {
-    // console.log("add last view çalıştı");
+    console.log("add last view çalıştı");
     const response = await getUsers();
     updatedUser = response.data.filter((userObject) => {
       return (
         userObject.mail === user[0].user || userObject.user === user[0].user
       );
     });
-    console.log(updatedUser[0].id);
+
+    if (!updatedUser.length) {
+      updatedUser = [{}];
+    }
+    // console.log(updatedUser[0].id);
     // let userId = updatedUser[updatedUser.length].id;
 
-    let productExists = false;
     if (updatedUser[0].hasOwnProperty("lastViewed")) {
-      updatedUser[0].lastViewed.forEach((lastView) => {
-        if (lastView.id === product.id) {
-          productExists = true;
-        }
+      // updatedUser[updatedUser.length - 1].lastViewed.forEach((lastView) => {
+      //   console.log(lastView);
+      // });
+      updateUser(updatedUser[0].id, {
+        ...updatedUser[0],
+        lastViewed: [...updatedUser[0].lastViewed, product],
       });
-    }
-    if (!productExists) {
-      if (updatedUser[0].hasOwnProperty("lastViewed")) {
-        updateUser(updatedUser[0].id, {
-          ...updatedUser[0],
-          lastViewed: [...updatedUser[0].lastViewed, product],
-        });
-      } else {
-        updateUser(updatedUser[0].id, {
-          ...updatedUser[0],
-          lastViewed: [product],
-        });
-      }
+    } else {
+      updateUser(updatedUser[0].id, {
+        ...updatedUser[0],
+        lastViewed: [product],
+      });
     }
     getUserFavorites();
   };
@@ -210,20 +206,6 @@ const AuthProvider = ({ children }) => {
       favorites: newArr,
     });
     getUserFavorites();
-  };
-
-  const getAddresses = async () => {
-    const me = await fetchMe();
-    setUser(me.data);
-    const response = await getUsers();
-    console.log(response.data.filter((userObject) => console.log(me.data)));
-    setAddress(
-      response.data.filter(
-        (userObject) =>
-          userObject.mail === me.data[0].user ||
-          userObject.user === me.data[0].user
-      )[0].addresses
-    );
   };
 
   let updatedUser;
@@ -268,7 +250,6 @@ const AuthProvider = ({ children }) => {
       // addresses: [{ address: newAddress }],
       addresses: addressesObj,
     });
-    getAddresses();
   };
 
   const deleteAddress = async (addressObj, addressName) => {
@@ -291,7 +272,6 @@ const AuthProvider = ({ children }) => {
       // addresses: [{ address: newAddress }],
       addresses: newAddressData,
     });
-    getAddresses();
   };
 
   const addressInfo = async (newAddress) => {
@@ -370,7 +350,7 @@ const AuthProvider = ({ children }) => {
     // setCurrentUser(userData.data);
     console.log(userData.data);
 
-    await postMe(userData.data);
+    // await postMe(userData.data);
 
     localStorage.setItem("access-token", userData.accessToken);
     localStorage.setItem("refresh-token", userData.refreshToken);
@@ -378,7 +358,7 @@ const AuthProvider = ({ children }) => {
 
   const logout = async (callback) => {
     setLoggedIn(false);
-    setUser(null);
+    setUser([{}]);
 
     const id = currentUser[0].id;
     setCurrentUser(null);
@@ -393,7 +373,7 @@ const AuthProvider = ({ children }) => {
 
   const getUserOrders = async () => {
     const me = await fetchMe();
-    setUser(me.data);
+    //setUser(me.data);
     const response = await getUsers();
     console.log(
       "ME:",
@@ -484,7 +464,7 @@ const AuthProvider = ({ children }) => {
     currentUser,
     setCurrentUser,
     addressInfo,
-    getAddresses,
+
     editAddress,
     deleteAddress,
     address,

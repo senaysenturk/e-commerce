@@ -76,7 +76,7 @@ export const EditPopup = ({ currentProduct, handleClose }) => {
       updatedAt: new Date().toLocaleString(),
     });
     var response = await updateProduct(currentProduct.id, editProduct);
-    // getAddresses();
+
     handleClose();
     // handleSetDisplay();
   };

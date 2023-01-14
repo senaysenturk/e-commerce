@@ -1,37 +1,40 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useState, useRef, useEffect } from "react";
 
 import { HiOutlinePlus } from "react-icons/hi";
-import { useAuth } from "../../../../contexts/auth/AuthContext";
+import { AuthContext, useAuth } from "../../../../contexts/auth/AuthContext";
 import { Navigate } from "react-router-dom";
 import AddressForm from "./AddressForm";
 import Popup from "./Popup";
 
 const Address = ({ handleSetDisplay, setDisplay, display }) => {
-  const { user, getAddresses, address, editAddress, deleteAddress } = useAuth();
-  const [navigate, setNavigate] = useState(false);
-
+  const { editAddress, deleteAddress } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
   const [currentAddress, setCurrentAddress] = useState([]);
   const [editedAddress, setEditedAddress] = useState([]);
+  const authContext = useContext(AuthContext);
 
   const togglePopup = () => {
     setIsOpen(!isOpen);
   };
 
   const handleEditAddress = async (addressName) => {
-    editAddress(address, editedAddress, currentAddress.addressName);
+    editAddress(
+      authContext.user[0].addresses,
+      editedAddress,
+      currentAddress.addressName
+    );
     setCurrentAddress("");
     setEditedAddress("");
   };
 
   const handleDeleteAddress = async (addressName) => {
-    deleteAddress(address, addressName);
+    deleteAddress(authContext.user[0].addresses, addressName);
   };
-
-  useEffect(() => {
-    getAddresses();
-  }, []);
+  console.log(authContext.user[0]);
+  authContext.user[0].addresses.map((addressObject, index) => {
+    console.log(addressObject);
+  });
 
   return (
     <>
@@ -40,8 +43,8 @@ const Address = ({ handleSetDisplay, setDisplay, display }) => {
         <a onClick={handleSetDisplay}> New Address</a>
       </div>
       <div className="checkout-address">
-        {address &&
-          address.map((addressObject, index) => {
+        {authContext.user[0].addresses &&
+          authContext.user[0].addresses.map((addressObject, index) => {
             return (
               <div className="checkout-address-box" key={index}>
                 <div className="address">
@@ -84,7 +87,9 @@ const Address = ({ handleSetDisplay, setDisplay, display }) => {
             );
           })}
       </div>
-      {isOpen && <Popup handleClose={togglePopup} currentAddress={currentAddress} />}
+      {isOpen && (
+        <Popup handleClose={togglePopup} currentAddress={currentAddress} />
+      )}
     </>
   );
 };

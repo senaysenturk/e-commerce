@@ -5,7 +5,7 @@ import { useAuth } from "../../../../contexts/auth/AuthContext";
 import MaskInput from "react-maskinput";
 
 const Popup = ({ currentAddress, handleClose }) => {
-  const { address, getAddresses, editAddress } = useAuth();
+  const { address, editAddress } = useAuth();
 
   const [addAddress, setAddAddress] = useState({});
 
@@ -41,14 +41,12 @@ const Popup = ({ currentAddress, handleClose }) => {
       addAddress,
       currentAddress.addressName
     );
-    getAddresses();
     handleClose();
     // handleSetDisplay();
   };
 
   useEffect(() => {
     getAllCities();
-    getAddresses();
   }, []);
 
   return (

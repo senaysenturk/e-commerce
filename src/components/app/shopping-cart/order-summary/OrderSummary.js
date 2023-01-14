@@ -6,13 +6,13 @@ import { useNavigate } from "react-router-dom";
 import ShopContext from "../../../../contexts/basket/ShopContext";
 import { baseService } from "src/network/services/baseService";
 import { CLEAR_CART } from "src/contexts/basket/reducers";
-import { useAuth } from "../../../../contexts/auth/AuthContext";
+import { AuthContext, useAuth } from "../../../../contexts/auth/AuthContext";
 
 export const OrderSummary = ({ isCartPage }) => {
   const navigate = useNavigate();
   const context = useContext(ShopContext);
-  // const { currentUser, addOrder } = useAuth();
-
+  //const { currentUser, addOrder } = useAuth();
+  const authContext = useContext(AuthContext);
   const onClickConfirmBag = () => {
     navigate("/shopping/checkout");
   };
@@ -21,8 +21,10 @@ export const OrderSummary = ({ isCartPage }) => {
     /**
      * @type {OrderProduct}
      */
+
+    console.log("AuthContextt", authContext);
     const orderData = {
-      userId: context.auth.id,
+      userId: authContext.user[0].id,
       // user: currentUser,
       date: Date.now(),
       orderId: Date.now(),
@@ -32,7 +34,7 @@ export const OrderSummary = ({ isCartPage }) => {
     await baseService.sendOrderItems(orderData);
     // console.log(currentUser[0].user);
     // console.log(orderData);
-    // await addOrder(currentUser[0].user, orderData);
+    //  await authContext.addOrder(authContext.user, orderData);
 
     context.clearCart();
     navigate("/order-tracking");

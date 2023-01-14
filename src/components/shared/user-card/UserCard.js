@@ -14,7 +14,7 @@ export const UserCard = ({ history }) => {
 
   const handleLogout = async () => {
     logout(() => {
-      history.push("/");
+      navigate("/");
     });
   };
 

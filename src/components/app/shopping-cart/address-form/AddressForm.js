@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useState, useRef, useEffect } from "react";
 import { getCities } from "../../../../network/requests/order/order";
 import MaskInput from "react-maskinput";
-import { useAuth } from "../../../../contexts/auth/AuthContext";
+import { AuthContext, useAuth } from "../../../../contexts/auth/AuthContext";
 import { Navigate } from "react-router-dom";
 import { HiOutlinePlus } from "react-icons/hi";
 import "./style.scss";
@@ -10,12 +10,14 @@ import Address from "./Address";
 import Form from "./Form";
 
 export const AddressForm = () => {
-  const { user, addressInfo, address, getAddresses } = useAuth();
+  const { addressInfo, address } = useAuth();
   const [navigate, setNavigate] = useState(false);
   const [city, setCity] = useState();
   const [cities, setCities] = useState([]);
   const [states, setStates] = useState([]);
   const [enable, setEnable] = useState(true);
+  const authContext = useContext(AuthContext);
+
   const getAllCities = async () => {
     const response = await getCities();
     setCities(response.data);
@@ -24,7 +26,6 @@ export const AddressForm = () => {
 
   useEffect(() => {
     getAllCities();
-    getAddresses();
   }, []);
 
   const getStates = async (city) => {
@@ -49,7 +50,6 @@ export const AddressForm = () => {
   const handleSave = async (e) => {
     var response = await addressInfo(addAddress);
     handleSetDisplay();
-    getAddresses();
   };
 
   const handleSetDisplay = async () => {
@@ -67,7 +67,7 @@ export const AddressForm = () => {
         <div className="addresses-head">
           <header>Delivery Address</header>
         </div>
-        {address.length ? (
+        {authContext.user[0].addresses.length ? (
           !hide ? (
             <Form
               handleAddress={handleAddress}

@@ -8,13 +8,18 @@ import "../../../utilities.scss";
 import { RiFacebookBoxFill, RiAppleFill } from "react-icons/ri";
 import { FcGoogle } from "react-icons/fc";
 import ShopContext from "../../../contexts/basket/ShopContext";
-import { useAuth } from "../../../contexts/auth/AuthContext";
-import { getSignUp, postAuth } from "../../../network/requests/auth/auth";
+import { AuthContext, useAuth } from "../../../contexts/auth/AuthContext";
+import {
+  checkUser,
+  getSignUp,
+  postAuth,
+} from "../../../network/requests/auth/auth";
 
 const LOGIN_URL = "/auth";
 
 export const Login = () => {
   const shopContext = useContext(ShopContext);
+  const authContext = useContext(AuthContext);
   const { login, setCurrentUser } = useAuth();
 
   const [navigate, setNavigate] = useState(false);
@@ -49,11 +54,11 @@ export const Login = () => {
 
   const addAuth = async (e) => {
     try {
-      const response = await postAuth({
+      const response = await checkUser(
         user,
-        password,
-        role: authUser[0].role,
-      });
+        password
+        // role: authUser[0].role,
+      );
       /*  const response = await axios.post(
         LOGIN_URL,
         JSON.stringify({ user, password }),
@@ -62,8 +67,12 @@ export const Login = () => {
           withCredentials: true,
         }
       ); */
+
+      if (!response.data.length) {
+        return;
+      }
       login(response);
-      setCurrentUser(response.data);
+      setCurrentUser(response.data[0]);
       console.log(JSON.stringify(response?.data));
       //console.log(JSON.stringify(response));
       const accessToken = response?.data?.accessToken;
@@ -83,6 +92,7 @@ export const Login = () => {
       setUser("");
       setPassword("");
       setSuccess(true);
+      console.log(authContext);
       //navigate(from, { replace: true });
     } catch (err) {
       if (!err?.response) {
