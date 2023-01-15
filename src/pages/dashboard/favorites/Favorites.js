@@ -13,7 +13,6 @@ const Favorites = () => {
   return (
     <>
       <div className="search-and-filter-list">
-        <FilterNavigation setFilterKeys={setFilterKeys} />
         <div className="products">
           <div className="row-header">
             <h2>Favorites</h2>

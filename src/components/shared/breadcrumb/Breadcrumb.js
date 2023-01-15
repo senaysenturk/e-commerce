@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import "./style.scss";
 const Breadcrumb = ({ catParam, subcatParam, additionalCategoryParam }) => {
-  console.log(subcatParam === null, additionalCategoryParam);
+  // console.log(subcatParam === null, additionalCategoryParam);
   return (
     <nav>
       <ul className="breadcrumb">
