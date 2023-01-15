@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import SmallCard from "../small-card/SmallCard";
 import BigCard from "../big-card/BigCard";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
@@ -14,6 +14,15 @@ const List = () => {
   const { getUserLastViewes, lastViewed } = useAuth();
   // const isMobileResolution = useMatchMedia("(max-width:992px)", false);
   const isDesktopResolution = useMatchMedia("(min-width:992px)", true);
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const handlePrev = () => {
+    setCurrentIndex((currentIndex - 1 + lastViewed.length) % lastViewed.length);
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((currentIndex + 1) % lastViewed.length);
+  };
 
   useEffect(() => {
     getUserLastViewes();
@@ -61,24 +70,31 @@ const List = () => {
           <div className="row-header">
             <h2>Last viewed</h2>
             <div className="arrow-icon">
-              <div className="icon">
+              <div className="icon" onClick={handlePrev}>
                 <BiChevronLeft />
               </div>
-              <div className="icon">
+              <div className="icon" onClick={handleNext}>
                 <BiChevronRight />
               </div>
             </div>
           </div>
 
-          <div className="row">
+          <div
+            className="row"
+            style={{ display: "flex", overflow: "hidden", width: "100%" }}
+          >
             {/* {context.products.map((product, index) => {
             if (product.category == "Man") {
               return <Carousel product={product} key={index} />;
             }
           })} */}
-            {lastViewed.slice(-6).map((product, index) => {
-              return <Carousel product={product} key={index} />;
-            })}
+
+            {<Carousel product={lastViewed[currentIndex]} />}
+            {lastViewed.products
+              .slice(startIndex, startIndex + 6)
+              .map((product, index) => (
+                <Carousel product={product} key={index} />
+              ))}
           </div>
         </div>
       )}

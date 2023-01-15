@@ -30,8 +30,9 @@ export const CreateProductProvider = ({ children }) => {
   const [filters, setFilters] = useState({
     category: "",
     subcategory: "",
-    color: "",
-    size: "",
+    color: [],
+    size: [],
+    additionalCategories: [],
   });
 
   const [isProductValid, setIsProductValid] = useState({

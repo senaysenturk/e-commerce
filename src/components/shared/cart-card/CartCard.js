@@ -15,7 +15,7 @@ export const CartCard = () => {
   return (
     <div className="cart-container">
       {context.cart.map((product) => {
-        postCart(product);
+        // postCart(product);
         return (
           <div className="product-card" key={product.id}>
             <div className="product-card-img">

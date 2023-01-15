@@ -1,166 +1,157 @@
-* {
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-    box-sizing: border-box;
-    list-style: none;
-    font-family: sans-serif;
-}
-
 .basket-summary {
-    color: #000;
-    background-color: #f9f9f9;
-    border: 1px solid #333;
-    width: 400px;
-    font-size: 16px;
-    padding: 24px 0;
+  color: #000;
+  background-color: #f9f9f9;
+  // border: 1px solid #333;
+  width: 100%;
+  font-size: 16px;
+  padding: 24px 0;
 
-    .basket-header {
-        margin-left: 25px;
-        padding: 0.5rem 0;
-        text-align: left;
-        font-size: 2rem;
-        line-height: 42px;
-    }
+  .basket-header {
+    margin-left: 25px;
+    padding: 0.5rem 0;
+    text-align: left;
+    font-size: 2rem;
+    line-height: 42px;
+  }
 
-    .basket-card {
+  .basket-card {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    padding-top: 0.75rem;
+
+    .card {
+      display: flex;
+      margin-left: 25px;
+      text-align: left;
+      height: 85px;
+
+      .card-img {
+        width: 65px;
+        height: 65px;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .card-content {
+        justify-content: space-between;
         display: flex;
-        flex-direction: column;
-        margin-bottom: 10px;
-        padding-top: 0.75rem;
+        width: 75.7%;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding-inline-start: 1rem;
 
-        .card {
-            display: flex;
-            margin-left: 25px;
-            text-align: left;
-            height: 85px;
+        .card-left {
+          display: flex;
+          justify-content: center;
+          align-self: flex-start;
 
-            .card-img {
-                width: 65px;
-                height: 65px;
-
-                img {
-                    width: 100%;
-                }
-            }
-
-            .card-content {
-                justify-content: space-between;
-                display: flex;
-                width: 75.7%;
-                flex-wrap: wrap;
-                justify-content: space-between;
-                padding-inline-start: 1rem;
-
-                .card-left {
-                    display: flex;
-                    justify-content: center;
-                    align-self: flex-start;
-
-                    .card-info {
-                        display: flex;
-                        flex-direction: column;
-                        font-size: .75rem;
-                        line-height: 1rem;
-                        --tw-text-opacity: 1;
-                        color: rgba(0, 0, 0, var(--tw-text-opacity));
-                    }
-                }
-
-                .card-right {
-                    display: flex;
-                    width: 50%;
-                    flex-direction: column;
-                    align-items: flex-end;
-                    justify-content: center;
-                    align-self: flex-end;
-
-                    .card-price {
-                        min-width: max-content;
-                        font-size: 1rem;
-                        line-height: 1.5rem;
-                        font-weight: 700;
-                        line-height: 1.25rem;
-                        --tw-text-opacity: 1;
-                        color: rgba(55, 90, 90, var(--tw-text-opacity));
-                    }
-                }
-            }
-        }
-
-        .product-divide {
-            margin: 15px 25px 0 25px;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-        }
-    }
-
-    .basket-middle {
-        display: flex;
-        flex-direction: column;
-        margin: 0 25px 0;
-        font-size: 1rem;
-        line-height: 1.25rem;
-
-        .basket-product {
-            padding: 0.75rem 0;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .basket-shipment {
-            padding: 0.75rem 0;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .free-shipping {
-            padding: 0.75rem 0;
-            align-items: center;
-            text-align: left;
-        }
-
-        .or-divide {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-        }
-    }
-
-    .basket-end {
-        display: flex;
-        flex-direction: column;
-        margin: 10px 25px 0;
-        font-size: 1rem;
-        line-height: 1.25rem;
-
-        .basket-total {
-            padding: 0.75rem 0;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .continue-button {
-            margin-bottom: 4.75px;
+          .card-info {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            font-size: 13px;
-
-            .warning-msg {
-                margin-top: 10px;
-                text-align: center;
-                font-size: .875rem;
-                line-height: 1.25rem;
-                --tw-text-opacity: 1;
-                color: rgba(211, 41, 41, var(--tw-text-opacity));
-            }
+            font-size: 0.75rem;
+            line-height: 1rem;
+            --tw-text-opacity: 1;
+            color: rgba(0, 0, 0, var(--tw-text-opacity));
+          }
         }
+
+        .card-right {
+          display: flex;
+          width: 50%;
+          flex-direction: column;
+          align-items: flex-end;
+          justify-content: center;
+          align-self: flex-end;
+
+          .card-price {
+            min-width: max-content;
+            font-size: 1rem;
+            line-height: 1.5rem;
+            font-weight: 700;
+            line-height: 1.25rem;
+            --tw-text-opacity: 1;
+            color: rgba(55, 90, 90, var(--tw-text-opacity));
+          }
+        }
+      }
     }
+
+    .product-divide {
+      margin: 15px 25px 0 25px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .basket-middle {
+    display: flex;
+    flex-direction: column;
+    margin: 0 25px 0;
+    font-size: 1rem;
+    line-height: 1.25rem;
+
+    .basket-product {
+      padding: 0.75rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .basket-shipment {
+      padding: 0.75rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .free-shipping {
+      padding: 0.75rem 0;
+      align-items: center;
+      text-align: left;
+    }
+
+    .or-divide {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .basket-end {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 25px 0;
+    font-size: 1rem;
+    line-height: 1.25rem;
+
+    .basket-total {
+      padding: 0.75rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .continue-button {
+      margin-bottom: 4.75px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 13px;
+
+      .warning-msg {
+        margin-top: 10px;
+        text-align: center;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        --tw-text-opacity: 1;
+        color: rgba(211, 41, 41, var(--tw-text-opacity));
+      }
+    }
+  }
 }

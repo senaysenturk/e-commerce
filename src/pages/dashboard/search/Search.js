@@ -24,31 +24,29 @@ const Search = () => {
   const [filterKeys, setFilterKeys] = useState("");
 
   searchProducts && console.log(searchProducts, filters);
+
   let filteredProducts =
     searchProducts &&
     searchProducts.filter((product) => {
       if (
-        !(
-          product.category === filters.category ||
-          product.subcategory === filters.subcategory
-        )
-      ) {
+        filters.subcategory !== "" &&
+        filters.subcategory !== product.subcategory
+      )
         return false;
-      }
+      if (!(product.category === filters.category)) return false;
       if (
         filters.color.length &&
         !filters.color.some((col) => product.color.includes(col))
-      ) {
+      )
         return false;
-      }
       if (
         filters.size.length &&
         !filters.size.some((siz) => product.size.includes(siz))
-      ) {
+      )
         return false;
-      }
       return true;
     });
+  console.log(filteredProducts);
 
   searchProducts && console.log(filteredProducts);
 
@@ -80,10 +78,12 @@ const Search = () => {
   return (
     <>
       <div className="search-and-filter-list">
-        <FilterNavigation
-          setFilterKeys={setFilterKeys}
-          categoryName={category}
-        />
+        {(catParam || subcatParam) && (
+          <FilterNavigation
+            setFilterKeys={setFilterKeys}
+            categoryName={category}
+          />
+        )}
         <div className="products">
           <div className="row-header">
             <Breadcrumb
