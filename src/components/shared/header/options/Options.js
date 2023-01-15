@@ -24,13 +24,36 @@ const Options = () => {
             <Admin />
           </li>
         )}
+        {authContext.loggedIn ? (
+          <>
+            <li>
+              <Link to="/favorites">
+                <span className="icon">
+                  <RiHeart3Line />
+                </span>
+              </Link>
+            </li>
+          </>
+        ) : (
+          <>
+            <li>
+              <Link to="/auth">
+                <span className="icon">
+                  <RiHeart3Line />
+                </span>
+              </Link>
+            </li>
+          </>
+        )}
+        {/* 
         <li>
           <Link to="/favorites">
             <span className="icon">
               <RiHeart3Line />
             </span>
           </Link>
-        </li>
+        </li> 
+        */}
         <li>
           <a>
             <span className="icon">
