@@ -7,8 +7,12 @@ import { useProduct } from "src/contexts/product/CreateProductContext";
 import "./style.scss";
 
 const Search = () => {
-  const { getProductsByCategory, getProductsBySubcategory, searchProducts } =
-    useProduct();
+  const {
+    getProductsByCategory,
+    getProductsBySubcategory,
+    searchProducts,
+    filters,
+  } = useProduct();
   const [products, setProducts] = useState("");
   const [category, setCategory] = useState("");
   const [subcategory, setSubCategory] = useState("");
@@ -18,6 +22,36 @@ const Search = () => {
   const additionalCategoryParam = searchParams.get("additionalCategories_like");
 
   const [filterKeys, setFilterKeys] = useState("");
+
+  searchProducts && console.log(searchProducts, filters);
+  let filteredProducts =
+    searchProducts &&
+    searchProducts.filter((product) => {
+      if (
+        !(
+          product.category === filters.category ||
+          product.subcategory === filters.subcategory
+        )
+      ) {
+        return false;
+      }
+      if (
+        filters.color.length &&
+        !filters.color.some((col) => product.color.includes(col))
+      ) {
+        return false;
+      }
+      if (
+        filters.size.length &&
+        !filters.size.some((siz) => product.size.includes(siz))
+      ) {
+        return false;
+      }
+      return true;
+    });
+
+  searchProducts && console.log(filteredProducts);
+
   const handleGetProducts = async () => {
     subcatParam
       ? await getProductsBySubcategory(
@@ -46,7 +80,10 @@ const Search = () => {
   return (
     <>
       <div className="search-and-filter-list">
-        <FilterNavigation setFilterKeys={setFilterKeys} category={category} />
+        <FilterNavigation
+          setFilterKeys={setFilterKeys}
+          categoryName={category}
+        />
         <div className="products">
           <div className="row-header">
             <Breadcrumb
@@ -56,12 +93,14 @@ const Search = () => {
             />
           </div>
           <div className="search-row">
-            {searchProducts &&
-              searchProducts.map((product, index) => (
-                // if()
-                <SmallCard product={product} key={index} />
-              ))}
-            {/* {JSON.stringify(searchProducts)} */}
+            {filteredProducts.length > 0
+              ? filteredProducts.map((product, index) => (
+                  <SmallCard product={product} key={index} />
+                ))
+              : searchProducts.length &&
+                searchProducts.map((product, index) => (
+                  <SmallCard product={product} key={index} />
+                ))}
           </div>
         </div>
       </div>

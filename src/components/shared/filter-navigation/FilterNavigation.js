@@ -4,7 +4,7 @@ import "./style.scss";
 import { useProduct } from "../../../contexts/product/CreateProductContext";
 import { useSearchParams } from "react-router-dom";
 
-const FilterNavigation = ({ setFilterKeys, category }) => {
+const FilterNavigation = ({ setFilterKeys, categoryName }) => {
   const {
     colors,
     getAllColors,
@@ -12,26 +12,67 @@ const FilterNavigation = ({ setFilterKeys, category }) => {
     getAllSizes,
     categories,
     getAllCategories,
+    filters,
+    setFilters,
   } = useProduct();
-  const [filterColor, setFilterColor] = useState([]);
-  const [silterSize, setFilterSize] = useState([]);
+
   const [filterCategory, setFilterCategory] = useState();
 
   const handleSearch = (e) => {
-    if (e.target.name === "filter-category") setFilterCategory(e.target.value);
-    setFilterKeys(e.target.value);
-    console.log(filterCategory);
+    setFilters({
+      ...filters,
+      category: filterCategory,
+    });
+    // if (e.target.name.replace("filter-", "") === "subcategory") {
+    setFilters({
+      ...filters,
+      [e.target.name.replace("filter-", "")]: e.target.value,
+    });
+    if (e.target.name.replace("filter-", "") === "color") {
+      if (e.target.checked) {
+        if (!filters.color.includes(e.target.value)) {
+          setFilters({
+            ...filters,
+            color: [...filters.color, e.target.value],
+          });
+        }
+      } else {
+        setFilters({
+          ...filters,
+          color: filters.color.filter((c) => c !== e.target.value),
+        });
+      }
+    } else if (e.target.name.replace("filter-", "") === "size") {
+      if (e.target.checked) {
+        if (!filters.size.includes(e.target.value)) {
+          setFilters({ ...filters, size: [...filters.size, e.target.value] });
+        }
+      } else {
+        setFilters({
+          ...filters,
+          size: filters.size.filter((s) => s !== e.target.value),
+        });
+      }
+    }
+    setFilterKeys(filters);
+
+    console.log(filters);
   };
 
   useEffect(() => {
+    setFilterCategory(categoryName);
     getAllColors();
     getAllSizes();
     getAllCategories("categories");
-  }, [filterCategory, category]);
+    setFilters({
+      ...filters,
+      category: categoryName,
+    });
+  }, [categoryName]);
 
   return (
     <div className="sidebar">
-      {category && (
+      {categoryName && (
         <>
           <label htmlFor="filter-category">Category</label>
           <select
@@ -39,9 +80,9 @@ const FilterNavigation = ({ setFilterKeys, category }) => {
             name="filter-category"
             onChange={(e) => {
               handleSearch(e);
-              setFilterCategory(category);
+              setFilterCategory(categoryName);
             }}
-            value={category}
+            value={categoryName}
             disabled
           >
             <option key={""}>-- None --</option>
@@ -59,12 +100,13 @@ const FilterNavigation = ({ setFilterKeys, category }) => {
         onChange={handleSearch}
       >
         <option>-- None --</option>
-        {filterCategory &&
+        {categoryName &&
+          categories &&
           categories
             .filter(
-              (productCategory) => productCategory.category == filterCategory
+              (productCategory) => productCategory.category == categoryName
             )[0]
-            .subcategory.map((subcategory, i) => {
+            ?.subcategory.map((subcategory, i) => {
               return <option key={i}>{subcategory}</option>;
             })}
       </select>
@@ -74,8 +116,8 @@ const FilterNavigation = ({ setFilterKeys, category }) => {
           <div className="choice" key={index}>
             <input
               type="checkbox"
-              name={`fiter-${size}`}
-              id={`fiter-${size}`}
+              name={`filter-size`}
+              id={`filter-${size}`}
               value={size}
               onChange={handleSearch}
             />

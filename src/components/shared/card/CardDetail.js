@@ -117,8 +117,8 @@ const CardDetail = () => {
             ))}
           </div>
           {!error.color && (
-            <div class="error-msg">
-              <i class="fa fa-warning"></i>
+            <div className="error-msg">
+              <i className="fa fa-warning"></i>
               Please select color
             </div>
           )}
@@ -139,8 +139,8 @@ const CardDetail = () => {
               ))}
             </select>
             {!error.size && (
-              <div class="error-msg">
-                <i class="fa fa-warning"></i>
+              <div className="error-msg">
+                <i className="fa fa-warning"></i>
                 Please select size
               </div>
             )}

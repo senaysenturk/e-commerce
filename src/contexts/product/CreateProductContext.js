@@ -27,8 +27,12 @@ export const CreateProductProvider = ({ children }) => {
   const [moreResult, setMoreResult] = useState([]);
   const [searchProducts, setSearchProducts] = useState([]);
   const [uploadPercentage, setUploadPercentage] = useState(0);
-  const [filterKeys, setFilterKeys] = useState();
-  const [filterObject, setFilterObject] = useState({});
+  const [filters, setFilters] = useState({
+    category: "",
+    subcategory: "",
+    color: "",
+    size: "",
+  });
 
   const [isProductValid, setIsProductValid] = useState({
     name: true,
@@ -177,12 +181,12 @@ export const CreateProductProvider = ({ children }) => {
     searchProducts,
     setSearchProducts,
     uploadPercentage,
-    filterKeys,
-    setFilterKeys,
+    filters,
+    setFilters,
     additionalCategories,
     getAllAdditionalCategories,
-    filterObject,
-    setFilterObject,
+    filters,
+    setFilters,
     isProductValid,
   };
 

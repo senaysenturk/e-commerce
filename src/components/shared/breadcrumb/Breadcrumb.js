@@ -5,9 +5,9 @@ const Breadcrumb = ({ catParam, subcatParam, additionalCategoryParam }) => {
   console.log(subcatParam === null, additionalCategoryParam);
   return (
     <nav>
-      <ul class="breadcrumb">
+      <ul className="breadcrumb">
         {catParam !== null && (
-          <li class="breadcrumb-item">
+          <li className="breadcrumb-item">
             {
               <NavLink to={`/products/search?category=${catParam}`}>
                 {catParam}
@@ -16,7 +16,7 @@ const Breadcrumb = ({ catParam, subcatParam, additionalCategoryParam }) => {
           </li>
         )}
         {subcatParam !== null && (
-          <li class="breadcrumb-item active">
+          <li className="breadcrumb-item active">
             {
               <NavLink
                 to={`/products/search?category=${catParam}&subcategory=${subcatParam}`}
