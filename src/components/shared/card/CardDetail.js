@@ -18,6 +18,7 @@ const CardDetail = () => {
     deleteFavorite,
   } = useAuth();
   const [error, setError] = useState({ color: true, size: true });
+  const [success, setSuccess] = useState(false);
   const context = useContext(ShopContext);
   let { productId } = useParams();
   productId = Number(productId);
@@ -126,7 +127,7 @@ const CardDetail = () => {
             <p>Size:</p>
             <select
               className="size"
-              //defaultValue={product.size[0]}
+              // defaultValue={product.size[0]}
               onChange={(e) => {
                 setSize(e.target.value);
               }}
@@ -178,12 +179,19 @@ const CardDetail = () => {
               setError((prev) => ({ ...prev, color: color, size: size }));
 
               if (color && size) {
+                setSuccess(true);
                 context.addProductToCart(copyProduct);
               }
             }}
           >
             Add to cart
           </button>
+          {success && (
+            <div className="success-msg">
+              <i className="fa fa-check"></i>
+              Product added to cart successfully
+            </div>
+          )}
         </div>
       </div>
     </div>
