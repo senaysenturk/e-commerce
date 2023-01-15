@@ -72,7 +72,7 @@ const AllOrders = () => {
                         <button
                           className="list-btn "
                           /* onClick={() => {
-                      setMessageObject(message);
+                      setOrderObject(order.id);
                       togglePopup();
                     }} */
                         >
@@ -81,8 +81,8 @@ const AllOrders = () => {
                         <button
                           className="list-btn btn-danger"
                           onClick={() => {
-                            console.log(order.orderId);
-                            handleDeleteOrder(order.orderId);
+                            console.log(order.id);
+                            handleDeleteOrder(order.id);
                           }}
                         >
                           Delete
