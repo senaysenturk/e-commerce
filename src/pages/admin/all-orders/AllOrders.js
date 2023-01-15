@@ -1,6 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
-import { getOrderList, deleteOrder } from "../../../network/requests/order/order";
+import {
+  getOrderList,
+  deleteOrder,
+} from "../../../network/requests/order/order";
 import { AuthContext, useAuth } from "../../../contexts/auth/AuthContext";
+import EditPopup from "../../../components/app/admin/order/edit-popup/EditPopup"
 import Table from "../../../components/shared/table/Table";
 import { baseService } from "src/network/services/baseService";
 import { useNavigate } from "react-router-dom";
@@ -11,12 +15,16 @@ const AllOrders = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messageObject, setMessageObject] = useState([]);
   const [user, setUser] = useState([]);
+  const [orderObject, setOrderObject] = useState();
   const authContext = useContext(AuthContext);
   const navigate = useNavigate();
   const getAllOrders = async () => {
     const response = await getOrderList();
     setOrders(response.data);
     console.log(response.data);
+  };
+  const togglePopup = () => {
+    setIsOpen(!isOpen);
   };
   useEffect(() => {
     getAllOrders();
@@ -29,7 +37,7 @@ const AllOrders = () => {
       setOrders(result);
     })();
   }, []);
-  //console.log(orders);
+  // console.log(orders);
   const handleDeleteOrder = async (orderId) => {
     await deleteOrder(orderId);
     getAllOrders();
@@ -71,12 +79,12 @@ const AllOrders = () => {
                       [
                         <button
                           className="list-btn "
-                          /* onClick={() => {
-                      setOrderObject(order.id);
-                      togglePopup();
-                    }} */
+                          onClick={() => {
+                            setOrderObject(order);
+                            togglePopup();
+                          }}
                         >
-                          Details
+                          Edit
                         </button>,
                         <button
                           className="list-btn btn-danger"
@@ -94,12 +102,9 @@ const AllOrders = () => {
                 }
               />
             </div>
-            {/*  {isOpen && (
-          <DetailPopup
-            handleClose={togglePopup}
-            messageObject={messageObject}
-          />
-        )} */}
+            {isOpen && (
+              <EditPopup handleClose={togglePopup} orderObject={orderObject} />
+            )}
           </div>
         ) : (
           <div className="cart-empty">

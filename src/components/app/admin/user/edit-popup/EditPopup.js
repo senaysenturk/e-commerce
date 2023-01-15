@@ -46,9 +46,9 @@ export const EditPopup = ({ userObject, handleClose }) => {
             x
           </span>
 
-          <div>
+          <div className="add-product">
             <h3>EDIT USER</h3>
-            <div>
+            <div className="product">
               <label htmlFor="user">User Name</label>
               <input
                 type="text"
@@ -114,33 +114,33 @@ export const EditPopup = ({ userObject, handleClose }) => {
               </label>
               <div className="btn-radio">
                 <div className="gender">
-                  <label className="label-gender" htmlFor="male">
+                  <label className="label-gender" htmlFor="man">
                     <input
                       className="btn-gender"
                       type="radio"
-                      id="male"
+                      id="man"
                       name="gender"
                       defaultChecked={
-                        userObject.gender === "male" ? true : false
+                        userObject.gender === "man" ? true : false
                       }
-                      value="male"
+                      value="man"
                       onChange={handleUser}
                     />{" "}
-                    Male
+                    Man
                   </label>
-                  <label className="label-gender" htmlFor="female">
+                  <label className="label-gender" htmlFor="woman">
                     <input
                       className="btn-gender"
                       type="radio"
-                      id="female"
+                      id="woman"
                       name="gender"
                       defaultChecked={
-                        userObject.gender === "female" ? true : false
+                        userObject.gender === "woman" ? true : false
                       }
-                      value="female"
+                      value="woman"
                       onChange={handleUser}
                     />{" "}
-                    Female
+                    Woman
                   </label>
                   <label className="label-gender" htmlFor="other">
                     <input
