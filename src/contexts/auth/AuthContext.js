@@ -17,7 +17,9 @@ export const AuthContext = createContext();
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState({});
   const [users, setUsers] = useState(null);
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(
+    localStorage.getItem("userData") !== null
+  );
   const [loading, setLoading] = useState(true);
   const [currentUser, setCurrentUser] = useState();
   const [address, setAddress] = useState([]);
@@ -32,8 +34,11 @@ const AuthProvider = ({ children }) => {
         // console.log(me);
         getAllUsers();
         // console.log(me.data);
-        setLoggedIn(!!user.name);
-        //setUser(me.data);
+        setLoggedIn(localStorage.getItem("userData") !== null);
+        const userData = JSON.parse(localStorage.getItem("userData"));
+        if (userData) {
+          setUser(userData);
+        }
         setCurrentUser(me.data);
         setLoading(false);
       } catch (e) {
@@ -354,27 +359,32 @@ const AuthProvider = ({ children }) => {
   const login = async (userData) => {
     console.log(userData.data);
     setLoggedIn(true);
-    setUser(userData.data);
+
+    const localUserData = JSON.parse(localStorage.getItem("userData"));
+    if (localUserData) {
+      setUser(localUserData);
+    } else {
+      setUser(userData.data);
+    }
+
     // setCurrentUser(userData.data);
     console.log(userData.data);
 
     // await postMe(userData.data);
-
+    localStorage.setItem("userData", JSON.stringify(userData.data));
     localStorage.setItem("access-token", userData.accessToken);
     localStorage.setItem("refresh-token", userData.refreshToken);
   };
 
   const logout = async (callback) => {
-    setLoggedIn(false);
-    setUser([{}]);
-
-    const id = currentUser[0].id;
-    setCurrentUser(null);
-
-    await fetchLogout(id);
-
+    localStorage.removeItem("userData");
     localStorage.removeItem("access-token");
     localStorage.removeItem("refresh-token");
+    setLoggedIn(false);
+    setUser({});
+    const id = currentUser[0].id;
+    setCurrentUser(null);
+    await fetchLogout(id);
 
     callback();
   };
