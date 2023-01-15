@@ -28,9 +28,9 @@ export const DatailPopup = ({ messageObject, handleClose }) => {
             x
           </span>
 
-          <div>
+          <div className="add-product">
             <h3>EDIT MESSAGE</h3>
-            <div>
+            <div className="product">
               <label htmlFor="user">User Name</label>
               <input
                 type="text"
