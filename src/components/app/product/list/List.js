@@ -91,7 +91,7 @@ const List = () => {
 
             {<Carousel product={lastViewed[currentIndex]} />}
             {lastViewed.products
-              // .slice(startIndex, startIndex + 6)
+              .slice(currentIndex, currentIndex + 6)
               .map((product, index) => (
                 <Carousel product={product} key={index} />
               ))}
