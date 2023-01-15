@@ -2461,6 +2461,74 @@
       ],
       "totalOrderAmount": "10.00",
       "id": 1
+    },
+    {
+      "userId": 1,
+      "date": "1/16/2023, 2:22:10 AM",
+      "orderId": 1673824930003,
+      "orderList": [
+        {
+          "createdAt": "1/1/2023, 6:25:08 PM",
+          "updatedAt": "1/1/2023, 6:25:08 PM",
+          "name": "T-shirt",
+          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
+          "price": 10,
+          "size": "XL",
+          "color": "white",
+          "category": "Woman",
+          "subcategory": "T-shirt",
+          "additionalCategories": [
+            "trending",
+            "sale"
+          ],
+          "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/6202/267/001/6202267001_1_1_2.jpg?t=1669732582176",
+          "id": 3,
+          "amount": 1
+        }
+      ],
+      "totalOrderAmount": "10.00",
+      "id": 2
+    },
+    {
+      "userId": 1,
+      "date": "1/16/2023, 2:39:27 AM",
+      "orderId": 1673825967291,
+      "orderList": [
+        {
+          "createdAt": "1/1/2023, 6:25:08 PM",
+          "updatedAt": "1/1/2023, 6:25:08 PM",
+          "name": "T-shirt",
+          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
+          "price": 10,
+          "size": "XL",
+          "color": "white",
+          "category": "Woman",
+          "subcategory": "T-shirt",
+          "additionalCategories": [
+            "trending",
+            "sale"
+          ],
+          "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/6202/267/001/6202267001_1_1_2.jpg?t=1669732582176",
+          "id": 3,
+          "amount": 1
+        },
+        {
+          "createdAt": "1/1/2023, 6:30:20 PM",
+          "updatedAt": "1/1/2023, 6:30:20 PM",
+          "name": "Sherpa pocket sweatshirt",
+          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
+          "price": 45.99,
+          "color": "green",
+          "size": "XS",
+          "category": "Man",
+          "subcategory": "Sweatshirt",
+          "imgPath": "https://res.cloudinary.com/dr4cvohdq/image/upload/v1672587037/zydsnco7z34qeg8uqqfh.webp",
+          "id": 7,
+          "amount": 1
+        }
+      ],
+      "totalOrderAmount": "55.99",
+      "id": 3
     }
   ]
 }
