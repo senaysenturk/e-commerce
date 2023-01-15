@@ -70,12 +70,29 @@ export const UserCard = ({ history }) => {
               </li>
             </>
           )}
-          {/*  <li>
+          {/*  
+          <li>
             <Link to="/user-profile">My Account</Link>
-          </li> */}
+          </li> 
+          */}
+          {loggedIn ? (
+            <>
+              <li>
+                <Link to="/order-tracking">Order Tracking</Link>
+              </li>
+            </>
+          ) : (
+            <>
+              <li>
+                <Link to="/auth">Order Tracking</Link>
+              </li>
+            </>
+          )}
+          {/* 
           <li>
             <Link to="/order-tracking">Order Tracking</Link>
           </li>
+          */}
           <li>
             <Link>Easy Returns</Link>
           </li>
