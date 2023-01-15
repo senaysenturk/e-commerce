@@ -846,7 +846,76 @@
           "addressName": "home"
         }
       ],
-      "lastViewed": [],
+      "lastViewed": [
+        {
+          "createdAt": "1/1/2023, 6:25:08 PM",
+          "updatedAt": "1/1/2023, 6:25:08 PM",
+          "name": "Blazer Jacket",
+          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
+          "price": 49.99,
+          "size": [
+            "S",
+            "XXL"
+          ],
+          "color": [
+            "red"
+          ],
+          "category": "Woman",
+          "subcategory": "Jacket",
+          "additionalCategories": [
+            "best-sellers",
+            "trending",
+            "sale"
+          ],
+          "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/5900/472/430/5900472430_1_1_2.jpg?t=1669736376209",
+          "id": 1
+        },
+        {
+          "createdAt": "1/1/2023, 6:25:08 PM",
+          "updatedAt": "1/1/2023, 6:25:08 PM",
+          "name": "T-shirt",
+          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
+          "price": 10,
+          "size": [
+            "XL"
+          ],
+          "color": [
+            "white"
+          ],
+          "category": "Woman",
+          "subcategory": "T-shirt",
+          "additionalCategories": [
+            "trending",
+            "sale"
+          ],
+          "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/6202/267/001/6202267001_1_1_2.jpg?t=1669732582176",
+          "id": 3
+        },
+        {
+          "createdAt": "1/1/2023, 6:25:08 PM",
+          "updatedAt": "1/1/2023, 6:25:08 PM",
+          "name": "Lace pleated dress",
+          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
+          "price": 59.99,
+          "size": [
+            "XS",
+            "S",
+            "XXS",
+            "L"
+          ],
+          "color": [
+            "black"
+          ],
+          "category": "Woman",
+          "subcategory": "Dress",
+          "additionalCategories": [
+            "best-sellers",
+            "sale"
+          ],
+          "imgPath": "http://res.cloudinary.com/dr4cvohdq/image/upload/v1672586727/utkeesstkjwkdi4qt6zu.webp",
+          "id": 4
+        }
+      ],
       "orders": [],
       "id": 4
     },
@@ -2365,5 +2434,33 @@
       ]
     }
   ],
-  "order-list": []
+  "order-list": [
+    {
+      "userId": 4,
+      "date": "1/16/2023, 2:14:30 AM",
+      "orderId": 1673824470187,
+      "orderList": [
+        {
+          "createdAt": "1/1/2023, 6:25:08 PM",
+          "updatedAt": "1/1/2023, 6:25:08 PM",
+          "name": "T-shirt",
+          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
+          "price": 10,
+          "size": "XL",
+          "color": "white",
+          "category": "Woman",
+          "subcategory": "T-shirt",
+          "additionalCategories": [
+            "trending",
+            "sale"
+          ],
+          "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/6202/267/001/6202267001_1_1_2.jpg?t=1669732582176",
+          "id": 3,
+          "amount": 1
+        }
+      ],
+      "totalOrderAmount": "10.00",
+      "id": 1
+    }
+  ]
 }
