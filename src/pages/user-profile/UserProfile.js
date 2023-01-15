@@ -55,16 +55,16 @@ const UserProfile = () => {
             defaultValue={authContext.user[0].mail}
           />
         </div>
-        {/* <div className="phone user-profile__item">
-          <label htmlFor="phone">Phone Number</label>
+        <div className="birth user-profile__item">
+          <label htmlFor="birth">Birth</label>
           <input
             type="url"
-            id="phone"
-            name="phone"
-            placeholder="Phone Number"
-            defaultValue={user[0].phone}
+            id="birth"
+            name="birth"
+            placeholder="Birth"
+            defaultValue={authContext.user[0].birth}
           />
-        </div> */}
+        </div>
 
         <div className="gender user-profile__item">
           <label htmlFor="gender">Gender</label>
