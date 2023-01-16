@@ -3,6 +3,7 @@ import { useContext, useState, useEffect } from "react";
 import "./style.scss";
 import { AuthContext } from "../../../../../contexts/auth/AuthContext";
 import { useProduct } from "../../../../../contexts/product/CreateProductContext";
+import { getUsers } from "../../../../../network/requests/auth/auth";
 
 export const EditPopup = ({ orderObject, handleClose }) => {
   const authContext = useContext(AuthContext);
@@ -24,17 +25,36 @@ export const EditPopup = ({ orderObject, handleClose }) => {
     // setColor,
     // setSize,
   } = useProduct();
+
   const [orderDate, setOrderDate] = useState(
     orderObject.date.split(",").slice(0, 1).toString()
   );
+
   const [user, setUser] = useState(
     authContext.users.find((user) => user.id === orderObject.userId)
   );
+
+  const [currentUser, setCurrentUser] = useState();
+
+  const getUserByName = async () => {
+    const response = await getUsers();
+    const updatedUser = response.data.filter((userObject) => {
+      return (
+        userObject.mail === user.user || userObject.user === user.user
+      );
+    });
+    setCurrentUser(updatedUser)
+  };
+
+  /* users.filter(
+    (userItem) => userItem.mail === user.user || userItem.user === user.user
+  ) */
 
   const [color, setColor] = useState([]);
   const [category, setCategory] = useState("");
 
   useEffect(() => {
+    getUserByName();
     getAllColors();
     getAllSizes();
     getAllCategories("categories");
@@ -52,8 +72,9 @@ export const EditPopup = ({ orderObject, handleClose }) => {
           <div className="add-product">
             <h3>EDIT ORDER</h3>
             <div className="product">
-              {JSON.stringify(orderObject)}
-              {JSON.stringify(orderDate)}
+             {/*  {JSON.stringify(orderObject)}
+              {JSON.stringify(orderDate)} */}
+              {/*  {JSON.stringify(currentUser)} */}
               <label htmlFor="user">User Name</label>
               <input
                 type="text"
@@ -204,6 +225,18 @@ export const EditPopup = ({ orderObject, handleClose }) => {
                           )}
                         </div>
                       </div>
+
+                      <label htmlFor="amount">Amount</label>
+                      <input
+                        type="number"
+                        placeholder="10.99$"
+                        step="0.01"
+                        min="0"
+                        id="amount"
+                        name="amount"
+                        defaultValue={order.amount}
+                        // onChange={handleUser}
+                      />
 
                       <label htmlFor="category">Category</label>
                       <select
