@@ -111,7 +111,7 @@ const UserProfile = () => {
             onChange={handleUser}
             defaultValue={authContext.user[0].birth}
           />
-        </div> */}
+        </div> 
 
         <div className="gender user-profile__item">
           <label htmlFor="gender">Gender</label>
