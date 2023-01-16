@@ -90,8 +90,7 @@ const UserProfile = () => {
             onChange={handleUser}
           />
         </div>
-        {/* 
-        <div className="phone user-profile__item">
+        {/* <div className="phone user-profile__item">
           <label htmlFor="phone">Phone Number</label>
           <input
             type="url"
@@ -112,7 +111,8 @@ const UserProfile = () => {
             onChange={handleUser}
             defaultValue={authContext.user[0].birth}
           />
-        </div>
+        </div> */}
+
         <div className="gender user-profile__item">
           <label htmlFor="gender">Gender</label>
           <select id="gender" name="gender" onChange={handleUser}>

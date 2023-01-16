@@ -5,6 +5,7 @@
   width: 100%;
   font-size: 16px;
   padding: 24px 0;
+  text-transform: capitalize;
 
   .basket-header {
     margin-left: 25px;
@@ -24,12 +25,12 @@
       display: flex;
       margin-left: 25px;
       text-align: left;
-      height: 85px;
+      height: 180px;
 
       .card-img {
-        width: 65px;
-        height: 65px;
+        width: 150px;
 
+        overflow: hidden;
         img {
           width: 100%;
         }
@@ -51,7 +52,8 @@
           .card-info {
             display: flex;
             flex-direction: column;
-            font-size: 0.75rem;
+            gap: 5px;
+            font-size: 0.9rem;
             line-height: 1rem;
             --tw-text-opacity: 1;
             color: rgba(0, 0, 0, var(--tw-text-opacity));
@@ -94,10 +96,11 @@
     margin: 0 25px 0;
     font-size: 1rem;
     line-height: 1.25rem;
-
+    align-items: flex-end;
     .basket-product {
       padding: 0.75rem 0;
       display: flex;
+      gap: 10px;
       align-items: center;
       justify-content: space-between;
     }
@@ -107,12 +110,14 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 10px;
     }
 
     .free-shipping {
       padding: 0.75rem 0;
       align-items: center;
       text-align: left;
+      gap: 10px;
     }
 
     .or-divide {
@@ -125,33 +130,34 @@
 
   .basket-end {
     display: flex;
+    align-items: flex-end;
     flex-direction: column;
     margin: 10px 25px 0;
     font-size: 1rem;
     line-height: 1.25rem;
-
     .basket-total {
+      gap: 10px;
       padding: 0.75rem 0;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
+  }
+  .continue-button {
+    margin-bottom: 4.75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 13px;
 
-    .continue-button {
-      margin-bottom: 4.75px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      font-size: 13px;
-
-      .warning-msg {
-        margin-top: 10px;
-        text-align: center;
-        font-size: 0.875rem;
-        line-height: 1.25rem;
-        --tw-text-opacity: 1;
-        color: rgba(211, 41, 41, var(--tw-text-opacity));
-      }
+    .warning-msg {
+      margin-top: 10px;
+      text-align: center;
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+      --tw-text-opacity: 1;
+      color: rgba(211, 41, 41, var(--tw-text-opacity));
     }
   }
 }

@@ -17,7 +17,7 @@ export const BasketSummary = () => {
     <>
       <div className="basket-summary">
         <div className="basket-header">
-          <header>Basket Summary</header>
+          <header>Order Detail: {order.orderId}</header>
         </div>
         {order.orderList.map((product) => (
           <div className="basket-card">
@@ -28,9 +28,11 @@ export const BasketSummary = () => {
               <div className="card-content">
                 <div className="card-left">
                   <div className="card-info">
-                    <p>{product.name}</p>
-                    <p>{product.amount} piece</p>
-                    <p>{product.color}</p>
+                    <p>Product Name: {product.name}</p>
+                    <p> Count: {product.amount} </p>
+                    <p> Color: {product.color}</p>
+                    <p> Size: {product.size}</p>
+                    <p> Price: {product.price} $</p>
                   </div>
                 </div>
                 <div className="card-right">
@@ -72,7 +74,7 @@ export const BasketSummary = () => {
           <div className="basket-total">
             <p>Total</p>
             <p className="total-price">
-              <strong>{(order.totalOrderAmount)} $</strong>
+              <strong>{order.totalOrderAmount} $</strong>
             </p>
           </div>
         </div>
@@ -80,11 +82,10 @@ export const BasketSummary = () => {
         <div className="continue-button">
           <button
             className="btn btn-gray"
-            onClick={(e) => navigate("/shopping/cart")}
+            onClick={(e) => navigate("/order-tracking")}
           >
-            Continue
+            Back Order Tracking
           </button>
-          <p className="warning-msg">Devam etmek icin Adres ekleyiniz</p>
         </div>
       </div>
     </>
