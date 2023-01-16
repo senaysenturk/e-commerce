@@ -293,15 +293,15 @@ function SignUp({ history }) {
                       Letters, numbers, underscores, hyphens allowed.
                     </p>
                     {/* 
-              <label htmlFor="email">
-                <strong>Confirm your email</strong>
-              </label>
-              <input
-                type="text"
-                id="email"
-                placeholder="Enter your email again."
-              />
-              */}
+                    <label htmlFor="email">
+                      <strong>Confirm your email</strong>
+                    </label>
+                    <input
+                      type="text"
+                      id="email"
+                      placeholder="Enter your email again."
+                    />
+                    */}
                     <label htmlFor="username">
                       <strong>What sholud we call you?</strong>
                       <FontAwesomeIcon
