@@ -24,7 +24,7 @@ export const CartCard = () => {
             <div className="product-card-content">
               <p>{product.name}</p>
               <p>Adet: {product.amount}</p>
-              <strong>{product.price.toFixed(2)} $ </strong>
+              <strong>{Number(product.price).toFixed(2)} $ </strong>
               <div className="product-card-campaign">
                 <p>
                   <span className="icon-ticket">

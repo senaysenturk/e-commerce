@@ -8,7 +8,7 @@ import { baseService } from "src/network/services/baseService";
 import { CLEAR_CART } from "src/contexts/basket/reducers";
 import { AuthContext, useAuth } from "../../../../contexts/auth/AuthContext";
 
-export const OrderSummary = ({ isCartPage }) => {
+export const OrderSummary = ({ isCartPage, orderAddress }) => {
   const navigate = useNavigate();
   const context = useContext(ShopContext);
   //const { currentUser, addOrder } = useAuth();
@@ -30,6 +30,7 @@ export const OrderSummary = ({ isCartPage }) => {
       orderId: Date.now(),
       orderList: context.cart,
       totalOrderAmount: context.totalPrice(),
+      address: orderAddress,
     };
     await baseService.sendOrderItems(orderData);
     // console.log(currentUser[0].user);

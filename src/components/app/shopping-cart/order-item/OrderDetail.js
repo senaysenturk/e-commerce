@@ -143,9 +143,9 @@ export const OrderDetail = ({ cart, setCart, handleChange, setMessage }) => {
                 <span className="shipping-icon">
                   <MdOutlineLocalShipping />
                 </span>
-                <p>
+                {/* <p>
                   <span>29 Aralık Perşembe</span>Tarihinde Kargoda
-                </p>
+                </p> */}
               </div>
 
               {/*  - 1 +     49.99 $ */}

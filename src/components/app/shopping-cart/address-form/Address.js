@@ -6,13 +6,21 @@ import { AuthContext, useAuth } from "../../../../contexts/auth/AuthContext";
 import { Navigate } from "react-router-dom";
 import AddressForm from "./AddressForm";
 import Popup from "./Popup";
+import list from "src/data";
+import ShopContext from "src/contexts/basket/ShopContext";
 
-const Address = ({ handleSetDisplay, setDisplay, display }) => {
+const Address = ({
+  handleSetDisplay,
+  setDisplay,
+  display,
+  setOrderAddress,
+}) => {
   const { editAddress, deleteAddress } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
   const [currentAddress, setCurrentAddress] = useState([]);
   const [editedAddress, setEditedAddress] = useState([]);
   const authContext = useContext(AuthContext);
+  const context = useContext(ShopContext);
 
   const togglePopup = () => {
     setIsOpen(!isOpen);
@@ -49,7 +57,12 @@ const Address = ({ handleSetDisplay, setDisplay, display }) => {
               <div className="checkout-address-box" key={index}>
                 <div className="address">
                   <div className="address-name">
-                    <input type="radio" name="address-name" id="address-name" />
+                    <input
+                      type="radio"
+                      name="address-name"
+                      id="address-name"
+                      onChange={() => setOrderAddress(addressObject)}
+                    />
                     <label htmlFor="address-name">
                       <h4>{addressObject.addressName}</h4>
                     </label>

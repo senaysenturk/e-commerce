@@ -9,7 +9,7 @@ import "./style.scss";
 import Address from "./Address";
 import Form from "./Form";
 
-export const AddressForm = () => {
+export const AddressForm = ({ setOrderAddress }) => {
   const { addressInfo, address } = useAuth();
   const [navigate, setNavigate] = useState(false);
   const [city, setCity] = useState();
@@ -77,7 +77,11 @@ export const AddressForm = () => {
               enable={enable}
             />
           ) : (
-            <Address handleSetDisplay={handleSetDisplay} hide={hide} />
+            <Address
+              handleSetDisplay={handleSetDisplay}
+              hide={hide}
+              setOrderAddress={setOrderAddress}
+            />
           )
         ) : (
           <Form

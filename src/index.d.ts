@@ -32,6 +32,7 @@ type CartProduct = {
   imgPath: string;
   id: number;
   amount: number;
+  address: string;
 };
 
 type OrderProduct = {
