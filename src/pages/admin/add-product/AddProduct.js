@@ -208,7 +208,7 @@ const AddProduct = () => {
                 <div className="choice" key={index}>
                   <input
                     type="checkbox"
-                    name="additional-category"
+                    name="additionalCategories"
                     id={addCategory}
                     value={addCategory}
                     onChange={handleSetProduct}
