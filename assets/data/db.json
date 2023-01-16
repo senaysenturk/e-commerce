@@ -370,6 +370,37 @@
       "id": 5
     }
   ],
+  "siparisler": [
+    {
+      "userId": 1,
+      "date": "16.01.2023 23:05:40",
+      "orderId": 1673899540107,
+      "orderList": [
+        {
+          "createdAt": "1/1/2023, 6:25:08 PM",
+          "updatedAt": "1/1/2023, 6:25:08 PM",
+          "name": "Blazer Jacket",
+          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
+          "price": 49.99,
+          "size": "S",
+          "color": "red",
+          "category": "Woman",
+          "subcategory": "Jacket",
+          "additionalCategories": [
+            "best-sellers",
+            "trending",
+            "sale"
+          ],
+          "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/5900/472/430/5900472430_1_1_2.jpg?t=1669736376209",
+          "id": 1,
+          "amount": 1
+        }
+      ],
+      "totalOrderAmount": "49.99",
+      "address": [],
+      "id": 1
+    }
+  ],
   "auth": [
     {
       "user": "shiwear",
@@ -406,6 +437,10 @@
           "address": "test",
           "postcode": "00000",
           "addressName": "test"
+        },
+        {},
+        {
+          "addressName": "asasa"
         }
       ],
       "orders": [],
@@ -832,14 +867,16 @@
       "role": "user",
       "addresses": [
         {
-          "firstname": "hicran",
-          "lastname": "ertuğral",
-          "phone": "+90 (555) 555 - 5555",
-          "address": "kaleiçi cad. sur sok. no:17",
-          "postcode": "55555",
-          "city": "Adıyaman",
-          "state": "Çelikhan",
-          "addressName": "home"
+          "firstname": "wqeqw",
+          "lastname": "qweqw",
+          "phone": "+9_ (___) ___ - ____",
+          "addressName": "<zx<x<xzc"
+        },
+        {
+          "firstname": "wqeqw",
+          "lastname": "qweqw",
+          "phone": "+9_ (___) ___ - ____",
+          "addressName": "xvxcvxcvxcv"
         }
       ],
       "lastViewed": [
@@ -910,6 +947,28 @@
           ],
           "imgPath": "http://res.cloudinary.com/dr4cvohdq/image/upload/v1672586727/utkeesstkjwkdi4qt6zu.webp",
           "id": 4
+        },
+        {
+          "createdAt": "1/1/2023, 6:27:54 PM",
+          "updatedAt": "1/1/2023, 6:27:54 PM",
+          "name": "Regular fit Oxford cotton shirt",
+          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
+          "price": 29.99,
+          "color": [
+            "blue"
+          ],
+          "size": [
+            "M",
+            "L"
+          ],
+          "category": "Man",
+          "subcategory": "Shirt",
+          "additionalCategories": [
+            "best-sellers",
+            "trending"
+          ],
+          "imgPath": "https://res.cloudinary.com/dr4cvohdq/image/upload/v1672586896/hbxu98mpnk8y0silr4tu.jpg",
+          "id": 5
         }
       ],
       "orders": [],
@@ -2390,7 +2449,6 @@
       ]
     }
   ],
-  "orders": [],
   "cart": [
     {
       "name": "T-shirt",
@@ -2428,101 +2486,6 @@
         "trending",
         "sale"
       ]
-    }
-  ],
-  "siparisler": [
-    {
-      "userId": 1,
-      "date": "1/16/2023, 3:09:19 PM",
-      "orderId": 1673870959654,
-      "orderList": [
-        {
-          "createdAt": "1/1/2023, 6:25:08 PM",
-          "updatedAt": "1/1/2023, 6:25:08 PM",
-          "name": "T-shirt",
-          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
-          "price": 10,
-          "size": "XL",
-          "color": "white",
-          "category": "Woman",
-          "subcategory": "T-shirt",
-          "additionalCategories": [
-            "trending",
-            "sale"
-          ],
-          "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/6202/267/001/6202267001_1_1_2.jpg?t=1669732582176",
-          "id": 3,
-          "amount": 2
-        }
-      ],
-      "totalOrderAmount": "20.00",
-      "id": 1
-    },
-    {
-      "userId": 1,
-      "date": "1/16/2023, 6:48:23 PM",
-      "orderId": 1673884103738,
-      "orderList": [
-        {
-          "createdAt": "1/1/2023, 6:25:08 PM",
-          "updatedAt": "1/1/2023, 6:25:08 PM",
-          "name": "Blazer Jacket",
-          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
-          "price": 49.99,
-          "size": "S",
-          "color": "red",
-          "category": "Woman",
-          "subcategory": "Jacket",
-          "additionalCategories": [
-            "best-sellers",
-            "trending",
-            "sale"
-          ],
-          "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/5900/472/430/5900472430_1_1_2.jpg?t=1669736376209",
-          "id": 1,
-          "amount": 1
-        }
-      ],
-      "totalOrderAmount": "49.99",
-      "address": {
-        "firstname": "test",
-        "lastname": "test",
-        "phone": "+90 (000) 000 - 0000",
-        "city": "İstanbul",
-        "state": "Adalar",
-        "address": "test",
-        "postcode": "00000",
-        "addressName": "test"
-      },
-      "id": 2
-    },
-    {
-      "userId": 1,
-      "date": "1/16/2023, 11:55:10 PM",
-      "orderId": 1673902510104,
-      "orderList": [
-        {
-          "createdAt": "1/1/2023, 6:25:08 PM",
-          "updatedAt": "1/1/2023, 6:25:08 PM",
-          "name": "T-shirt",
-          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
-          "price": 10,
-          "size": "XL",
-          "color": "white",
-          "category": "Woman",
-          "subcategory": "T-shirt",
-          "additionalCategories": [
-            "trending",
-            "sale"
-          ],
-          "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/6202/267/001/6202267001_1_1_2.jpg?t=1669732582176",
-          "id": 3,
-          "amount": 1
-        }
-      ],
-      "totalOrderAmount": "10.00",
-      "address": [],
-      "id": 3
     }
   ]
 }
