@@ -453,27 +453,27 @@ function SignUp({ history }) {
                   </form>
                   <div className="btn-radio">
                     <div className="gender">
-                      <label className="label-gender" htmlFor="male">
+                      <label className="label-gender" htmlFor="man">
                         <input
                           className="btn-gender"
                           type="radio"
-                          id="male"
+                          id="man"
                           name="gender"
-                          value="man"
+                          value="Man"
                           onChange={(e) => setGender(e.target.value)}
                         />{" "}
-                        Male
+                        Man
                       </label>
-                      <label className="label-gender" htmlFor="female">
+                      <label className="label-gender" htmlFor="woman">
                         <input
                           className="btn-gender"
                           type="radio"
-                          id="female"
+                          id="woman"
                           name="gender"
                           value="woman"
                           onChange={(e) => setGender(e.target.value)}
                         />{" "}
-                        Female
+                        Woman
                       </label>
                       <label className="label-gender" htmlFor="other">
                         <input
