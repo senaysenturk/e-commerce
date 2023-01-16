@@ -20,6 +20,14 @@ export const getUsers = () => {
   return baseService.get("http://localhost:5500/", "users");
 };
 
+/**
+ * @param {number} id
+ * @returns {Promise<AxiosResponse<any, any>>}
+ */
+export const getUser = (id) => {
+  return baseService.get("http://localhost:5500/", `users/${id}`);
+};
+
 export const postUser = (newUser) => {
   return baseService.post("http://localhost:5500/", "users", newUser);
 };

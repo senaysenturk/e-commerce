@@ -5,7 +5,7 @@ import { useAuth } from "../../../../contexts/auth/AuthContext";
 import MaskInput from "react-maskinput";
 
 const Popup = ({ currentAddress, handleClose }) => {
-  const { address, editAddress } = useAuth();
+  const { editAddress } = useAuth();
 
   const [addAddress, setAddAddress] = useState({});
 
@@ -36,11 +36,7 @@ const Popup = ({ currentAddress, handleClose }) => {
   };
 
   const handleSave = async () => {
-    var response = await editAddress(
-      address,
-      addAddress,
-      currentAddress.addressName
-    );
+    var response = await editAddress(addAddress, currentAddress.addressName);
     handleClose();
     // handleSetDisplay();
   };

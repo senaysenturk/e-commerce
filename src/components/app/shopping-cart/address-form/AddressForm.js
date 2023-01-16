@@ -9,7 +9,11 @@ import "./style.scss";
 import Address from "./Address";
 import Form from "./Form";
 
-export const AddressForm = ({ /* setOrderAddress */ }) => {
+export const AddressForm = (
+  {
+    /* setOrderAddress */
+  }
+) => {
   const { addressInfo, address } = useAuth();
   const [navigate, setNavigate] = useState(false);
   const [city, setCity] = useState();
@@ -67,7 +71,7 @@ export const AddressForm = ({ /* setOrderAddress */ }) => {
         <div className="addresses-head">
           <header>Delivery Address</header>
         </div>
-        {authContext.user[0].addresses.length ? (
+        {authContext.user[0].addresses?.length ? (
           !hide ? (
             <Form
               handleAddress={handleAddress}

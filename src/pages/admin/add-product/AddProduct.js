@@ -49,7 +49,7 @@ const AddProduct = () => {
       if (name === "category") setCategory(value);
       setProduct((prevState) => ({
         ...prevState,
-        [name]: value,
+        [name]: name === "price" ? parseFloat(value) : value,
       }));
     }
     console.log("Product: ", product);
@@ -84,6 +84,7 @@ const AddProduct = () => {
               placeholder="T-Shirt"
               id="name"
               name="name"
+              value={product.name}
               onChange={handleSetProduct}
             />
             {!isProductValid.name && (
@@ -98,6 +99,7 @@ const AddProduct = () => {
               placeholder="Lorem, ipsum dolor sit amet consectetur adipisicing elit. "
               id="detail"
               name="detail"
+              value={product.detail}
               onChange={handleSetProduct}
             />
             {!isProductValid.detail && (
@@ -114,6 +116,7 @@ const AddProduct = () => {
               min="0"
               id="price"
               name="price"
+              value={product.price}
               onChange={handleSetProduct}
             />
             {!isProductValid.price && (
@@ -184,6 +187,7 @@ const AddProduct = () => {
             <select
               id="subcategory"
               name="subcategory"
+              value={product.subcategory}
               onChange={handleSetProduct}
             >
               <option>-- None --</option>

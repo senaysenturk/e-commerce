@@ -10,12 +10,14 @@ import {
   postMe,
   fetchMe,
   fetchLogout,
+  getUser,
 } from "../../network/requests/auth/auth";
 
 export const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState({});
+  /** @type {[[User]]} */
+  const [user, setUser] = useState([{}]);
   const [users, setUsers] = useState(null);
   const [loggedIn, setLoggedIn] = useState(
     localStorage.getItem("userData") !== null
@@ -38,7 +40,9 @@ const AuthProvider = ({ children }) => {
         setLoggedIn(localStorage.getItem("userData") !== null);
         const userData = JSON.parse(localStorage.getItem("userData"));
         if (userData) {
-          setUser(userData);
+          const user = await getUser(userData[0].id);
+
+          setUser([user.data]);
         }
         setCurrentUser(me.data);
         setLoading(false);
@@ -223,132 +227,82 @@ const AuthProvider = ({ children }) => {
 
   let updatedUser;
 
-  const editAddress = async (addressesObj, addressObj, addressName) => {
-    console.log(addressesObj);
-    console.log(Object.keys(addressObj));
-    console.log(addressName);
-    const index = addressesObj.findIndex(
-      (addressObjectItem) => addressObjectItem.addressName === addressName
-    );
-    console.log("index", index);
+  const editAddress = async (newProps, addressName) => {
+    const { addresses } = user[0];
 
-    Object.keys(addressObj).every((key, i) =>
-      console.log(
-        key,
-        addressesObj[
-          addressesObj.findIndex(
-            (addressObjectItem) => addressObjectItem.addressName === addressName
-          )
-        ][key]
-      )
-    );
-
-    // Object.keys(addressObj).every((key) => console.log(key));
-    Object.keys(addressObj).every(
-      (key, i) =>
-        (addressesObj[
-          addressesObj.findIndex(
-            (addressObjectItem) => addressObjectItem.addressName === addressName
-          )
-        ][key] = addressObj[key])
-    );
-
-    const response = await getUsers();
-    updatedUser = response.data.filter(
-      (userObject) =>
-        userObject.mail === user[0].user || userObject.user === user[0].user
-    );
-    updateUser(updatedUser[0].id, {
-      ...updatedUser[0],
-      // addresses: [{ address: newAddress }],
-      addresses: addressesObj,
-    });
-  };
-
-  const deleteAddress = async (addressObj, addressName) => {
-    const index = addressObj.findIndex(
-      (addressObjectItem) => addressObjectItem.addressName === addressName
-    );
-
-    const newAddressData = [
-      ...addressObj.slice(0, index),
-      ...addressObj.slice(index + 1),
-    ];
-    console.log(newAddressData);
-    const response = await getUsers();
-    updatedUser = response.data.filter(
-      (userObject) =>
-        userObject.mail === user[0].user || userObject.user === user[0].user
-    );
-    updateUser(updatedUser[0].id, {
-      ...updatedUser[0],
-      // addresses: [{ address: newAddress }],
-      addresses: newAddressData,
-    });
-  };
-
-  const addressInfo = async (newAddress) => {
-    const response = await getUsers();
-
-    // console.log(response.data);
-    // console.log(user);
-
-    updatedUser = response.data.filter((userObject) => {
-      // console.log(userObject.mail);
-      // console.log(userObject.user);
-      // console.log(user[0].user);
-      return (
-        userObject.mail === user[0].user || userObject.user === user[0].user
-      );
-    });
-
-    // console.log(updatedUser);
-
-    let userId = updatedUser[0].id;
-    // console.log(userId);
-
-    if (updatedUser[0].hasOwnProperty("addresses")) {
-      // const userAddresses = [ ...updatedUser[0].addresses, {address: newAddress}];
-      // console.log(updatedUser[0].addresses);
-      updatedUser[0].addresses.forEach((addressObj) => {
-        console.log(addressObj.addressName);
-      });
-      var isValidMail = updatedUser[0].addresses.some(function (addressObj) {
-        return addressObj.addressName === newAddress.addressName;
-      });
-
-      if (isValidMail) {
-        console.log(newAddress.addressName);
-        console.log("nooo");
-        alert("address name already used");
-      } else {
-        console.log("yes");
-        updateUser(userId, {
-          ...updatedUser[0],
-          // addresses: [{ ...updatedUser[0].addresses, address: newAddress }],
-          // addresses: [ ...updatedUser[0].addresses, {address: newAddress}],
-          addresses: [...updatedUser[0].addresses, newAddress],
-        });
+    const updatedAddress = addresses.map((address) => {
+      if (address.addressName === addressName) {
+        return {
+          ...address,
+          ...newProps,
+        };
       }
 
-      /*  updateUser(userId, {
-        ...updatedUser[0],
-        // addresses: [{ ...updatedUser[0].addresses, address: newAddress }],
-        // addresses: [ ...updatedUser[0].addresses, {address: newAddress}],
-        addresses: [...updatedUser[0].addresses, newAddress],
-      }); */
-    } else {
-      // const addressValue = [address: newAddress];
-      // updateUser(userId, { ...updatedUser[0], addresses: [newAddress] });
-      updateUser(userId, {
-        ...updatedUser[0],
-        // addresses: [{ address: newAddress }],
-        addresses: [newAddress],
-      });
-    }
-    // setSize((prevSize) => [...prevSize, e.target.value]);
+      return address;
+    });
 
-    // updateUser(userId, { ...updatedUser[0], addresses: [newAddress] });
+    setUser((state) => {
+      const copyState = [...state];
+
+      copyState[0].addresses = updatedAddress;
+
+      return copyState;
+    });
+
+    await updateAddress(updatedAddress);
+  };
+
+  const deleteAddress = async (addressName) => {
+    const { addresses } = user[0];
+    const index = addresses.findIndex(
+      (address) => address.addressName === addressName
+    );
+    const newAddress = [...addresses];
+
+    newAddress.splice(index, 1);
+
+    setUser((state) => {
+      const copyState = [...state];
+
+      copyState[0].addresses = newAddress;
+
+      return copyState;
+    });
+
+    await updateAddress(newAddress);
+  };
+
+  /**
+   * @param {Address} newAddress
+   */
+  const addressInfo = async (newAddress) => {
+    const { addresses } = user[0];
+    const hasAddress = addresses.some(
+      (adress) => adress.addressName === newAddress.addressName
+    );
+
+    if (hasAddress) {
+      alert("address name already used");
+
+      return;
+    }
+
+    setUser((state) => {
+      const copyState = [...state];
+
+      copyState[0].addresses.push(newAddress);
+
+      return copyState;
+    });
+
+    await updateAddress(user[0].addresses);
+  };
+
+  /**
+   * @param {Address} addresses
+   */
+  const updateAddress = async (addresses) => {
+    await patchUser(user[0].id, { addresses });
   };
 
   const updateUser = async (updatedUserId, updatedUserObject) => {
@@ -361,7 +315,9 @@ const AuthProvider = ({ children }) => {
     console.log(userData.data);
     setLoggedIn(true);
 
-    const localUserData = JSON.parse(localStorage.getItem("userData"));
+    const localUserData = JSON.parse(
+      localStorage.getItem("userData") || "[{}]"
+    );
     if (localUserData) {
       setUser(localUserData);
     } else {
@@ -382,7 +338,7 @@ const AuthProvider = ({ children }) => {
     localStorage.removeItem("access-token");
     localStorage.removeItem("refresh-token");
     setLoggedIn(false);
-    setUser({});
+    setUser([{}]);
     const id = currentUser[0].id;
     setCurrentUser(null);
     await fetchLogout(id);

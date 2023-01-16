@@ -27,17 +27,13 @@ const Address = ({
   };
 
   const handleEditAddress = async (addressName) => {
-    editAddress(
-      authContext.user[0].addresses,
-      editedAddress,
-      currentAddress.addressName
-    );
+    editAddress(editedAddress, currentAddress.addressName);
     setCurrentAddress("");
     setEditedAddress("");
   };
 
   const handleDeleteAddress = async (addressName) => {
-    deleteAddress(authContext.user[0].addresses, addressName);
+    deleteAddress(addressName);
   };
   console.log(authContext.user[0]);
   authContext.user[0].addresses.map((addressObject, index) => {
@@ -61,7 +57,9 @@ const Address = ({
                       type="radio"
                       name="address-name"
                       id="address-name"
-                      onChange={() => authContext.setOrderAddress(addressObject)}
+                      onChange={() =>
+                        authContext.setOrderAddress(addressObject)
+                      }
                     />
                     <label htmlFor="address-name">
                       <h4>{addressObject.addressName}</h4>
@@ -77,8 +75,8 @@ const Address = ({
                 <div className="edit">
                   <span
                     onClick={() => {
-                      setCurrentAddress(addressObject);
                       togglePopup();
+                      setCurrentAddress(addressObject);
                     }}
                   >
                     Edit
@@ -100,6 +98,7 @@ const Address = ({
             );
           })}
       </div>
+      {/* <Popup handleClose={togglePopup} currentAddress={currentAddress} /> */}
       {isOpen && (
         <Popup handleClose={togglePopup} currentAddress={currentAddress} />
       )}

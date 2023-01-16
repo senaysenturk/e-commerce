@@ -32,7 +32,7 @@ const SmallCard = ({ product }) => {
           <div className="quickview_info" lang="tr">
             <p>{product.name}</p>
             <p className="quickview_info_price" id="bluz">
-              {product.price.toFixed(2)} $
+              {Number(product.price).toFixed(2)} $
             </p>
           </div>
 

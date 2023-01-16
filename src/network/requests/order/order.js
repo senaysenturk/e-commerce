@@ -1,3 +1,4 @@
+import axios from "src/api/axios";
 import { baseService } from "../../services/baseService";
 
 export const getCities = async () => {
@@ -19,9 +20,13 @@ export const getOrders = async () => {
 };
 
 export const getOrderList = async () => {
-  return baseService.get("http://localhost:5500/", "order-list");
+  return baseService.get("http://localhost:5500/", "siparisler");
 };
 
 export const deleteOrder = async (orderId) => {
-  return baseService.delete("http://localhost:5500/", "order-list/", orderId);
+  return baseService.delete(
+    "http://localhost:5500/",
+    "siparisler",
+    `/${orderId}`
+  );
 };
