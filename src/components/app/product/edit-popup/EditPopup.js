@@ -31,7 +31,7 @@ export const EditPopup = ({ currentProduct, handleClose }) => {
     const { name, value } = e.target;
     if (name === "category") setCategory(value);
 
-    if (name === "color" || name === "size" || name == "additional-category") {
+    if (name === "color" || name === "size" || name == "additionalCategories") {
       let options;
       if (e.target.checked) {
         options = [...(editProduct[name] || []), value];
@@ -59,6 +59,14 @@ export const EditPopup = ({ currentProduct, handleClose }) => {
       size: e.target.value,
     }));
   };
+
+  const handleAdditionalCategory = (e) => {
+    setEditProduct((prevState) => ({
+      ...prevState,
+      additionalCategories: e.target.value,
+    }));
+  };
+  
   const handleSetColor = (e) => {
     setEditProduct((prevState) => ({
       ...prevState,
@@ -90,6 +98,7 @@ export const EditPopup = ({ currentProduct, handleClose }) => {
       ...prevState,
       color: currentProduct.color,
       size: currentProduct.size,
+      additionalCategories: currentProduct.additionalCategories,
     }));
   }, []);
 
@@ -143,7 +152,7 @@ export const EditPopup = ({ currentProduct, handleClose }) => {
                         name="size"
                         id={size}
                         value={size}
-                        defaultChecked={color}
+                        defaultChecked={size}
                         onChange={handleSetSize}
                       />
                       <label htmlFor={size}>{size}</label>
@@ -266,35 +275,35 @@ export const EditPopup = ({ currentProduct, handleClose }) => {
               </select>
 
               <div className="multi-choices">
-                <p>Additional categories:</p>
-                {additionalCategories.map((addCategory, index) =>
-                  addCategory === currentProduct.additionalCategories ? (
+              <p>Additional categories:</p>
+                {additionalCategories.map((additionalCategory, index) =>
+                  currentProduct.additionalCategories.includes(additionalCategory) ? (
                     <div className="choice">
                       <input
                         type="checkbox"
-                        name="additional-category"
-                        id={addCategory}
-                        value={addCategory}
-                        defaultChecked={addCategory}
-                        onChange={handleSetSize}
+                        name="additionalCategories"
+                        id={additionalCategory}
+                        value={additionalCategory}
+                        defaultChecked={additionalCategory}
+                        onChange={handleAdditionalCategory}
                       />
-                      <label htmlFor={addCategory}>{addCategory}</label>
+                      <label htmlFor={additionalCategory}>{additionalCategory}</label>
                     </div>
                   ) : (
                     <div className="choice">
                       <input
                         type="checkbox"
-                        name="additional-category"
-                        id={addCategory}
-                        value={addCategory}
+                        name="additionalCategories"
+                        id={additionalCategory}
+                        value={additionalCategory}
                         onChange={handleProduct}
                       />
-                      <label htmlFor={addCategory}>{addCategory}</label>
+                      <label htmlFor={additionalCategory}>{additionalCategory}</label>
                     </div>
                   )
                 )}
               </div>
-
+              {/* 
               <label htmlFor="category">Additional Category</label>
               <select id="category" name="category" onChange={handleProduct}>
                 {additionalCategories.map((addCategory, index) =>
@@ -309,6 +318,7 @@ export const EditPopup = ({ currentProduct, handleClose }) => {
                   )
                 )}
               </select>
+              */}
               <label htmlFor="image">Image</label>
               <img src={currentProduct.imgPath} />
               <label>{currentProduct.imgPath}</label>
