@@ -282,6 +282,7 @@ const UserProfile = () => {
         */}
         <div id="username" className="user-profile__item">
           <label htmlFor="user-name">Username</label>
+          <div>
           <input
             type="text"
             id="username"
@@ -321,11 +322,13 @@ const UserProfile = () => {
             <br />
             Letters, numbers, underscores, hyphens allowed.
           </p>
+          </div>
         </div>
 
         <div id="mail" className="user-profile__item">
           <label htmlFor="email">E-Mail</label>
-          <input
+        <div>
+        <input
             type="user-email"
             id="mail"
             name="mail"
@@ -364,6 +367,7 @@ const UserProfile = () => {
             <br />
             Letters, numbers, underscores, hyphens allowed.
           </p>
+        </div>
         </div>
         {/* 
         <div className="phone user-profile__item">
