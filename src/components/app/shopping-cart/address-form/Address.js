@@ -13,7 +13,7 @@ const Address = ({
   handleSetDisplay,
   setDisplay,
   display,
-  setOrderAddress,
+  // setOrderAddress,
 }) => {
   const { editAddress, deleteAddress } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
@@ -61,7 +61,7 @@ const Address = ({
                       type="radio"
                       name="address-name"
                       id="address-name"
-                      onChange={() => setOrderAddress(addressObject)}
+                      onChange={() => authContext.setOrderAddress(addressObject)}
                     />
                     <label htmlFor="address-name">
                       <h4>{addressObject.addressName}</h4>

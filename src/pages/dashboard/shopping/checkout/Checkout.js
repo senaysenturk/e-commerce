@@ -8,8 +8,8 @@ import OrderSummary from "src/components/app/shopping-cart/order-summary/OrderSu
 import ShopContext from "../../../../contexts/basket/ShopContext";
 
 export const Checkout = () => {
-  const [orderAddress, setOrderAddress] = useState({});
-  console.log("orderAddress:", orderAddress);
+  // const [orderAddress, setOrderAddress] = useState({});
+  // console.log("orderAddress:", orderAddress);
 
   return (
     <>
@@ -17,9 +17,11 @@ export const Checkout = () => {
         <div className="checkout-container-middle">
           {/* <Address /> */}
           {/* <BasketSummary /> */}
-          <AddressForm setOrderAddress={setOrderAddress} />
+          {/* <AddressForm setOrderAddress={setOrderAddress} /> */}
+          <AddressForm />
         </div>
-        <OrderSummary isCartPage={false} orderAddress={orderAddress} />
+        {/* <OrderSummary isCartPage={false} orderAddress={orderAddress} /> */}
+        <OrderSummary isCartPage={false} />
       </div>
     </>
   );

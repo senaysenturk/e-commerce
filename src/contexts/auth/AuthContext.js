@@ -26,6 +26,7 @@ const AuthProvider = ({ children }) => {
   const [favorites, setFavorites] = useState([]);
   const [lastViewed, setLastViewed] = useState([]);
   const [orders, setOrders] = useState([]);
+  const [orderAddress, setOrrderAddress] = useState([]);
 
   useEffect(() => {
     (async () => {
@@ -482,10 +483,11 @@ const AuthProvider = ({ children }) => {
     currentUser,
     setCurrentUser,
     addressInfo,
-
     editAddress,
     deleteAddress,
     address,
+    orderAddress,
+    setOrrderAddress,
     favorites,
     setFavorites,
     getUserFavorites,
