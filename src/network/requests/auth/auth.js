@@ -40,10 +40,10 @@ export const patchUser = (id, newUser) => {
   return baseService.patch("http://localhost:5500/", "users/", id, newUser);
 };
 
-export const checkUser = (username, pass) => {
+export const checkUser = (mail, username, pass) => {
   return baseService.get(
     "http://localhost:5500/",
-    `users?user=${username}&password=${pass}`
+    `users?mail=${mail}&user=${username}&password=${pass}`
   );
 };
 

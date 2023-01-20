@@ -54,8 +54,10 @@ export const Login = () => {
 
   const addAuth = async (e) => {
     try {
+      console.log(authUser[0].mail)
       const response = await checkUser(
-        user,
+        authUser[0].mail,
+        authUser[0].user,
         password
         // role: authUser[0].role,
       );
