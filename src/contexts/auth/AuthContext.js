@@ -24,6 +24,7 @@ const AuthProvider = ({ children }) => {
   );
   const [loading, setLoading] = useState(true);
   const [currentUser, setCurrentUser] = useState();
+  const [showAdminOptions, setShowAdminOptions] = useState(false);
   const [address, setAddress] = useState([]);
   const [favorites, setFavorites] = useState([]);
   const [lastViewed, setLastViewed] = useState([]);
@@ -33,18 +34,16 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     (async () => {
       try {
-        const me = await fetchMe();
-        // console.log(me);
         getAllUsers();
-        // console.log(me.data);
         setLoggedIn(localStorage.getItem("userData") !== null);
         const userData = JSON.parse(localStorage.getItem("userData"));
         if (userData) {
           const user = await getUser(userData[0].id);
-
           setUser([user.data]);
+          if (user.data.role === "admin") {
+            setShowAdminOptions(true);
+          }
         }
-        setCurrentUser(me.data);
         setLoading(false);
       } catch (e) {
         setLoading(false);
@@ -455,6 +454,7 @@ const AuthProvider = ({ children }) => {
     lastViewed,
     getUserLastViewes,
     getUserByOrderId,
+    showAdminOptions,
   };
 
   return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>;

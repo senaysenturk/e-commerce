@@ -16,7 +16,7 @@ const Options = () => {
   return (
     <div className="options">
       <ul>
-        {authContext.loggedIn && authContext.user[0]?.role === "admin" && (
+        {authContext.loggedIn && authContext.showAdminOptions && (
           <li>
             <span className="icon">
               <MdOutlineAdminPanelSettings />
