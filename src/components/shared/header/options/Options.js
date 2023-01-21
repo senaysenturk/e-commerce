@@ -11,12 +11,12 @@ import "./style.scss";
 import { AuthContext } from "../../../../contexts/auth/AuthContext";
 
 const Options = () => {
-  const authContext = useContext(AuthContext);
+  const { loggedIn, showAdminOptions } = useContext(AuthContext);
 
   return (
     <div className="options">
       <ul>
-        {authContext.loggedIn && authContext.showAdminOptions && (
+        {loggedIn && showAdminOptions && (
           <li>
             <span className="icon">
               <MdOutlineAdminPanelSettings />
@@ -24,7 +24,7 @@ const Options = () => {
             <Admin />
           </li>
         )}
-        {authContext.loggedIn ? (
+        {loggedIn ? (
           <>
             <li>
               <Link to="/favorites">

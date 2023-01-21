@@ -323,6 +323,9 @@ const AuthProvider = ({ children }) => {
       setUser(userData.data);
     }
 
+    if (userData.data.role === "admin") {
+      setShowAdminOptions(true);
+    }
     // setCurrentUser(userData.data);
     console.log(userData.data);
 
