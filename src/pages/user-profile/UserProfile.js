@@ -49,6 +49,8 @@ const UserProfile = () => {
   const [birth, setBirth] = useState("");
   const [gender, setGender] = useState("");
 
+  const [userName, setUserName] = useState("");
+
   useEffect(() => {
     userRef.current.focus();
   }, []);
@@ -82,12 +84,16 @@ const UserProfile = () => {
     setErrMsg("");
   }, [user, password, matchPassword]);
 
-  const editUser = (userObject) => {
+
+  const editUser =async (userObject) => {
     try {
-      setUserObject((prevState) => ({
-        ...prevState,
+     /*  setUserObject({
+        ...userObject,
         updatedAt: new Date().toLocaleString(),
-      }));
+      }); */
+
+      userName && setUserObject({...userObject, user: userName});
+
       console.log(userObject);
 
       // const response = await authContext.updateUser(authContext.user[0].id, userObject);
@@ -99,6 +105,8 @@ const UserProfile = () => {
       setMatchPassword("");
       setBirth("");
       setGender("");
+
+      setUserName("");
     } catch (err) {
       if (!err?.response) {
         setErrMsg("No Server Response");
@@ -122,11 +130,11 @@ const UserProfile = () => {
       return;
     }
  */
-    console.log(mail);
-    console.log(user);
-    console.log(password);
-    console.log(birth);
-    console.log(gender);
+    // console.log(mail);
+    // console.log(user);
+    // console.log(password);
+    // console.log(birth);
+    // console.log(gender);
 
     try {
       const response = await getSignUp();
@@ -147,12 +155,10 @@ const UserProfile = () => {
             console.log("err");
             setErrUser("user name already used");
           } else {
-            setUserObject((prevState) => ({
-              ...prevState,
-              user: user,
-            }));
+            console.log(user);
+            setUserName(user);
 
-            console.log(userObject);
+            console.log(userName);
           }
         }
       }
@@ -431,7 +437,6 @@ const UserProfile = () => {
             type="password"
             id="password"
             placeholder="Password"
-            defaultValue={authContext.user[0].password}
             onChange={(e) => setPassword(e.target.value)}
             required
             aria-invalid={validPassword ? "false" : "true"}
