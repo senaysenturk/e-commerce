@@ -319,7 +319,7 @@
       "user": "shiwear",
       "password": "Bilge123!",
       "birth": "2022-12-19",
-      "gender": "woman",
+      "gender": "other",
       "role": "admin",
       "addresses": [],
       "id": 1,
@@ -423,6 +423,269 @@
       "totalOrderAmount": "239.96",
       "address": [],
       "id": 2
+    },
+    {
+      "userId": 1,
+      "date": "1/22/2023, 9:37:05 PM",
+      "orderId": 1674412625487,
+      "orderList": [
+        {
+          "createdAt": "1/1/2023, 6:25:08 PM",
+          "updatedAt": "1/1/2023, 6:25:08 PM",
+          "name": "T-shirt",
+          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
+          "price": 10,
+          "size": "XL",
+          "color": "white",
+          "category": "Woman",
+          "subcategory": "T-shirt",
+          "additionalCategories": [
+            "trending",
+            "sale"
+          ],
+          "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/6202/267/001/6202267001_1_1_2.jpg?t=1669732582176",
+          "id": 3,
+          "amount": 1
+        }
+      ],
+      "totalOrderAmount": "10.00",
+      "address": [],
+      "id": 3
+    },
+    {
+      "userId": 1,
+      "date": "1/22/2023, 9:42:49 PM",
+      "orderId": 1674412969557,
+      "orderList": [
+        {
+          "createdAt": "1/1/2023, 6:25:08 PM",
+          "updatedAt": "1/1/2023, 6:25:08 PM",
+          "name": "T-shirt",
+          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
+          "price": 10,
+          "size": "XL",
+          "color": "white",
+          "category": "Woman",
+          "subcategory": "T-shirt",
+          "additionalCategories": [
+            "trending",
+            "sale"
+          ],
+          "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/6202/267/001/6202267001_1_1_2.jpg?t=1669732582176",
+          "id": 3,
+          "amount": 2
+        }
+      ],
+      "totalOrderAmount": "20.00",
+      "address": [],
+      "id": 4
+    },
+    {
+      "userId": 1,
+      "date": "1/22/2023, 9:43:11 PM",
+      "orderId": 1674412991075,
+      "orderList": [
+        {
+          "createdAt": "1/1/2023, 6:25:08 PM",
+          "updatedAt": "1/1/2023, 6:25:08 PM",
+          "name": "T-shirt",
+          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
+          "price": 10,
+          "size": "XL",
+          "color": "white",
+          "category": "Woman",
+          "subcategory": "T-shirt",
+          "additionalCategories": [
+            "trending",
+            "sale"
+          ],
+          "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/6202/267/001/6202267001_1_1_2.jpg?t=1669732582176",
+          "id": 3,
+          "amount": 2
+        }
+      ],
+      "totalOrderAmount": "20.00",
+      "address": [],
+      "id": 5
+    },
+    {
+      "userId": 1,
+      "date": "1/22/2023, 9:43:42 PM",
+      "orderId": 1674413022036,
+      "orderList": [
+        {
+          "createdAt": "1/1/2023, 6:25:08 PM",
+          "updatedAt": "1/1/2023, 6:25:08 PM",
+          "name": "T-shirt",
+          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
+          "price": 10,
+          "size": "XL",
+          "color": "white",
+          "category": "Woman",
+          "subcategory": "T-shirt",
+          "additionalCategories": [
+            "trending",
+            "sale"
+          ],
+          "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/6202/267/001/6202267001_1_1_2.jpg?t=1669732582176",
+          "id": 3,
+          "amount": 2
+        }
+      ],
+      "totalOrderAmount": "20.00",
+      "address": [],
+      "id": 6
+    },
+    {
+      "userId": 1,
+      "date": "1/22/2023, 9:43:59 PM",
+      "orderId": 1674413039544,
+      "orderList": [
+        {
+          "createdAt": "1/1/2023, 6:25:08 PM",
+          "updatedAt": "1/1/2023, 6:25:08 PM",
+          "name": "T-shirt",
+          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
+          "price": 10,
+          "size": "XL",
+          "color": "white",
+          "category": "Woman",
+          "subcategory": "T-shirt",
+          "additionalCategories": [
+            "trending",
+            "sale"
+          ],
+          "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/6202/267/001/6202267001_1_1_2.jpg?t=1669732582176",
+          "id": 3,
+          "amount": 2
+        }
+      ],
+      "totalOrderAmount": "20.00",
+      "address": [],
+      "id": 7
+    },
+    {
+      "userId": 1,
+      "date": "1/22/2023, 9:46:41 PM",
+      "orderId": 1674413201217,
+      "orderList": [
+        {
+          "createdAt": "1/1/2023, 6:33:15 PM",
+          "updatedAt": "1/1/2023, 6:33:15 PM",
+          "name": "Quilted down anorak",
+          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
+          "price": 99.99,
+          "size": "XS",
+          "color": "black",
+          "category": "Child",
+          "subcategory": "Coats",
+          "additionalCategories": [
+            "best-sellers",
+            "trending",
+            "sale"
+          ],
+          "imgPath": "https://res.cloudinary.com/dr4cvohdq/image/upload/v1672587220/sck10tvxwevfcefmpngw.webp",
+          "id": 9,
+          "amount": 2
+        }
+      ],
+      "totalOrderAmount": "199.98",
+      "address": [],
+      "id": 8
+    },
+    {
+      "userId": 1,
+      "date": "1/22/2023, 9:48:06 PM",
+      "orderId": 1674413286912,
+      "orderList": [
+        {
+          "createdAt": "1/1/2023, 6:33:15 PM",
+          "updatedAt": "1/1/2023, 6:33:15 PM",
+          "name": "Quilted down anorak",
+          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
+          "price": 99.99,
+          "size": "XS",
+          "color": "black",
+          "category": "Child",
+          "subcategory": "Coats",
+          "additionalCategories": [
+            "best-sellers",
+            "trending",
+            "sale"
+          ],
+          "imgPath": "https://res.cloudinary.com/dr4cvohdq/image/upload/v1672587220/sck10tvxwevfcefmpngw.webp",
+          "id": 9,
+          "amount": 2
+        },
+        {
+          "createdAt": "1/1/2023, 6:27:54 PM",
+          "updatedAt": "1/1/2023, 6:27:54 PM",
+          "name": "Regular fit Oxford cotton shirt",
+          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
+          "price": 29.99,
+          "color": "blue",
+          "size": "M",
+          "category": "Man",
+          "subcategory": "Shirt",
+          "additionalCategories": [
+            "best-sellers",
+            "trending"
+          ],
+          "imgPath": "https://res.cloudinary.com/dr4cvohdq/image/upload/v1672586896/hbxu98mpnk8y0silr4tu.jpg",
+          "id": 5,
+          "amount": 1
+        }
+      ],
+      "totalOrderAmount": "229.97",
+      "address": [],
+      "id": 9
+    },
+    {
+      "userId": 1,
+      "date": "1/22/2023, 9:48:23 PM",
+      "orderId": 1674413303352,
+      "orderList": [
+        {
+          "createdAt": "1/1/2023, 6:33:15 PM",
+          "updatedAt": "1/1/2023, 6:33:15 PM",
+          "name": "Quilted down anorak",
+          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
+          "price": 99.99,
+          "size": "XS",
+          "color": "black",
+          "category": "Child",
+          "subcategory": "Coats",
+          "additionalCategories": [
+            "best-sellers",
+            "trending",
+            "sale"
+          ],
+          "imgPath": "https://res.cloudinary.com/dr4cvohdq/image/upload/v1672587220/sck10tvxwevfcefmpngw.webp",
+          "id": 9,
+          "amount": 2
+        },
+        {
+          "createdAt": "1/1/2023, 6:27:54 PM",
+          "updatedAt": "1/1/2023, 6:27:54 PM",
+          "name": "Regular fit Oxford cotton shirt",
+          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
+          "price": 29.99,
+          "color": "blue",
+          "size": "M",
+          "category": "Man",
+          "subcategory": "Shirt",
+          "additionalCategories": [
+            "best-sellers",
+            "trending"
+          ],
+          "imgPath": "https://res.cloudinary.com/dr4cvohdq/image/upload/v1672586896/hbxu98mpnk8y0silr4tu.jpg",
+          "id": 5,
+          "amount": 1
+        }
+      ],
+      "totalOrderAmount": "229.97",
+      "address": [],
+      "id": 10
     }
   ],
   "auth": [
@@ -596,6 +859,31 @@
           ],
           "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/6202/267/001/6202267001_1_1_2.jpg?t=1669732582176",
           "id": 3
+        },
+        {
+          "createdAt": "1/1/2023, 6:33:15 PM",
+          "updatedAt": "1/1/2023, 6:33:15 PM",
+          "name": "Quilted down anorak",
+          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
+          "price": 99.99,
+          "size": [
+            "XS",
+            "S",
+            "M",
+            "L"
+          ],
+          "color": [
+            "black"
+          ],
+          "category": "Child",
+          "subcategory": "Coats",
+          "additionalCategories": [
+            "best-sellers",
+            "trending",
+            "sale"
+          ],
+          "imgPath": "https://res.cloudinary.com/dr4cvohdq/image/upload/v1672587220/sck10tvxwevfcefmpngw.webp",
+          "id": 9
         }
       ],
       "favorites": [
@@ -639,28 +927,6 @@
           ],
           "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/6202/267/001/6202267001_1_1_2.jpg?t=1669732582176",
           "id": 3
-        },
-        {
-          "createdAt": "1/1/2023, 6:27:54 PM",
-          "updatedAt": "1/1/2023, 6:27:54 PM",
-          "name": "Regular fit Oxford cotton shirt",
-          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
-          "price": 29.99,
-          "color": [
-            "blue"
-          ],
-          "size": [
-            "M",
-            "L"
-          ],
-          "category": "Man",
-          "subcategory": "Shirt",
-          "additionalCategories": [
-            "best-sellers",
-            "trending"
-          ],
-          "imgPath": "https://res.cloudinary.com/dr4cvohdq/image/upload/v1672586896/hbxu98mpnk8y0silr4tu.jpg",
-          "id": 5
         }
       ],
       "updatedAt": "1/22/2023, 8:06:10 PM"

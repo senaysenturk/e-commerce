@@ -37,14 +37,13 @@ const AuthProvider = ({ children }) => {
         getAllUsers();
         setLoggedIn(localStorage.getItem("userData") !== null);
         const userData = JSON.parse(localStorage.getItem("userData"));
-        if (userData) {
-          const user = await getUser(userData[0].id);
+        console.log(userData.role === "admin");
+        if (userData.role === "admin") {
+          setShowAdminOptions(true);
+        }
+        if (userData.user) {
+          const user = await getUser(userData.id);
           setUser([user.data]);
-
-          if (user.data.role === "admin") {
-            setShowAdminOptions(true);
-          }
-          localStorage.setItem("userData", JSON.stringify(user.data));
         }
         setLoading(false);
       } catch (e) {

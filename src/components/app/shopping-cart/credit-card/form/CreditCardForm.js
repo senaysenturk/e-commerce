@@ -37,8 +37,8 @@ export const CreditCardForm = () => {
           <div className="image">
             {/* <img src="../../../../shared/about-us-photos/about-us.jpeg" alt="" /> */}
             {/* <img src="./credit-card-image/visa.png" alt="" /> */}
-            <img src="../../../../../../public/credit-cart-image/visa.png" />
-            <img src="../../../../../../public/credit-cart-image/visa.png" />
+            <img src="../credit-cart-image/visa.png" />
+            <img src="../credit-cart-image/visa.png" />
           </div>
           <div className="card-number-box">{cardNumber}</div>
           <div className="flexbox">
