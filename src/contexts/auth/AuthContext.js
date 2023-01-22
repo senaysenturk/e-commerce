@@ -40,9 +40,11 @@ const AuthProvider = ({ children }) => {
         if (userData) {
           const user = await getUser(userData[0].id);
           setUser([user.data]);
+
           if (user.data.role === "admin") {
             setShowAdminOptions(true);
           }
+          localStorage.setItem("userData", JSON.stringify(user.data));
         }
         setLoading(false);
       } catch (e) {
@@ -104,6 +106,15 @@ const AuthProvider = ({ children }) => {
           userObject.mail === user[0].user || userObject.user === user[0].user
       )[0]?.favorites || []
     );
+    localStorage.setItem(
+      "userData",
+      JSON.stringify(
+        response.data.filter(
+          (userObject) =>
+            userObject.mail === user[0].user || userObject.user === user[0].user
+        )[0]
+      )
+    );
     //console.log("favorites", favorites);
   };
 
@@ -135,27 +146,22 @@ const AuthProvider = ({ children }) => {
   };
 
   const getUserLastViewes = async () => {
-    // console.log("last view çalıştı");
-    const me = await fetchMe();
-    // setUser(me.data);
     const response = await getUsers();
-
-    // response.data.filter((userObject) => console.log("Me:", me.data));
-
     setLastViewed(
       response.data.filter(
         (userObject) =>
           userObject.mail === user[0].user || userObject.user === user[0].user
       )[0]?.lastViewed || []
     );
-    // console.log(
-    //   "last viewes",
-    //   response.data.filter(
-    //     (userObject) =>
-    //       userObject.mail === me.data[0]?.user ||
-    //       userObject.user === me.data[0]?.user
-    //   )[0].lastViewed
-    // );
+    localStorage.setItem(
+      "userData",
+      JSON.stringify(
+        response.data.filter(
+          (userObject) =>
+            userObject.mail === user[0].user || userObject.user === user[0].user
+        )[0]
+      )
+    );
   };
 
   const addLastViewed = async (product) => {
@@ -191,7 +197,7 @@ const AuthProvider = ({ children }) => {
         lastViewed: [product],
       });
     }
-    getUserFavorites();
+    getUserLastViewes();
   };
 
   const deleteFavorite = async (product) => {
@@ -305,9 +311,11 @@ const AuthProvider = ({ children }) => {
   };
 
   const updateUser = async (updatedUserId, updatedUserObject) => {
-    console.log(updatedUserId);
-    console.log(updatedUserObject);
-    await patchUser(updatedUserId, updatedUserObject);
+    // console.log(updatedUserId);
+    // console.log(updatedUserObject);
+    var response = await patchUser(updatedUserId, updatedUserObject);
+
+    localStorage.setItem("userData", JSON.stringify(response.data));
   };
 
   const login = async (userData) => {
