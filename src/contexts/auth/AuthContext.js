@@ -223,7 +223,6 @@ const AuthProvider = ({ children }) => {
 
     updateUser(updatedUser[0].id, {
       ...updatedUser[0],
-      // addresses: [{ address: newAddress }],
       favorites: newArr,
     });
     getUserFavorites();
@@ -241,7 +240,6 @@ const AuthProvider = ({ children }) => {
           ...newProps,
         };
       }
-
       return address;
     });
 
@@ -306,7 +304,9 @@ const AuthProvider = ({ children }) => {
    * @param {Address} addresses
    */
   const updateAddress = async (addresses) => {
-    await patchUser(user[0].id, { addresses });
+    const response = await patchUser(user[0].id, { addresses });
+
+    localStorage.setItem("userData", JSON.stringify(response.data));
   };
 
   const updateUser = async (updatedUserId, updatedUserObject) => {
@@ -348,6 +348,7 @@ const AuthProvider = ({ children }) => {
     localStorage.removeItem("refresh-token");
     setLoggedIn(false);
     setUser([{}]);
+    setShowAdminOptions(false);
     const id = currentUser[0].id;
     setCurrentUser(null);
     await fetchLogout(id);
