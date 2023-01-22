@@ -8,13 +8,37 @@ import { baseService } from "src/network/services/baseService";
 import { CLEAR_CART } from "src/contexts/basket/reducers";
 import { AuthContext, useAuth } from "../../../../contexts/auth/AuthContext";
 
-export const OrderSummary = ({ isCartPage, /* orderAddress */ }) => {
+export const OrderSummary = ({ isCartPage, isOrderPage /* orderAddress */ }) => {
   const navigate = useNavigate();
   const context = useContext(ShopContext);
   //const { currentUser, addOrder } = useAuth();
   const authContext = useContext(AuthContext);
   const onClickConfirmBag = () => {
     navigate("/shopping/checkout");
+  };
+
+  const onClickOrder = async () => {
+    /**
+     * @type {OrderProduct}
+     */
+
+    console.log("AuthContextt", authContext);
+    const orderData = {
+      userId: authContext.user[0].id,
+      // user: currentUser,
+      date: new Date().toLocaleString(),
+      orderId: Date.now(),
+      orderList: context.cart,
+      totalOrderAmount: context.totalPrice(),
+      address: authContext.orderAddress,
+    };
+    await baseService.sendOrderItems(orderData);
+    // console.log(currentUser[0].user);
+    // console.log(orderData);
+    //  await authContext.addOrder(authContext.user, orderData);
+
+    context.clearCart();
+    navigate("/order-tracking");
   };
 
   const onClickPay = async () => {
@@ -37,8 +61,8 @@ export const OrderSummary = ({ isCartPage, /* orderAddress */ }) => {
     // console.log(orderData);
     //  await authContext.addOrder(authContext.user, orderData);
 
-    context.clearCart();
-    navigate("/order-tracking");
+    // context.clearCart();
+    navigate("/orders/payment");
   };
 
   return (
@@ -94,6 +118,10 @@ export const OrderSummary = ({ isCartPage, /* orderAddress */ }) => {
               {isCartPage ? (
                 <button className="btn btn-gray" onClick={onClickConfirmBag}>
                   Confirm Bag
+                </button>
+              ) : isOrderPage ? (
+                <button className="btn btn-gray" onClick={onClickOrder}>
+                  Order
                 </button>
               ) : (
                 <button className="btn btn-gray" onClick={onClickPay}>
