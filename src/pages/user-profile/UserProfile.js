@@ -84,20 +84,28 @@ const UserProfile = () => {
     setErrMsg("");
   }, [user, password, matchPassword]);
 
-
-  const editUser =async (userObject) => {
+  const editUser = async (updatedUserObject, tempUserObject) => {
     try {
-     /*  setUserObject({
-        ...userObject,
-        updatedAt: new Date().toLocaleString(),
-      }); */
+      updatedUserObject.updatedAt = new Date().toLocaleString();
+      console.log(updatedUserObject);
+      // setUserObject((prevState) => ({
+      //   ...prevState,
+      //   updatedAt: new Date().toLocaleString(),
+      // }));
 
-      userName && setUserObject({...userObject, user: userName});
+      // // userName && setUserObject({...userObject, user: userName});
 
-      console.log(userObject);
+      // console.log(userObject);
 
-      // const response = await authContext.updateUser(authContext.user[0].id, userObject);
-      // const result = await authContext.updateSignUp(authContext.user[0], userObject);
+      const response = await authContext.updateUser(
+        authContext.user[0].id,
+        updatedUserObject
+      );
+      console.log(tempUserObject[0]);
+      const result = await authContext.updateSignUp(
+        tempUserObject[0],
+        updatedUserObject
+      );
 
       setMail("");
       setUser("");
@@ -120,16 +128,20 @@ const UserProfile = () => {
   };
 
   const handleSave = async (e) => {
+    const response = await getSignUp();
+    console.log(response.data)
+
+    console.log(authContext.user[0].user);
+
+    const tempUser = response.data.filter((registerObj) => {
+      return registerObj.user === authContext.user[0].user;
+    });
+
+    console.log(tempUser);
+
+    const updatedUser = {};
     console.log("save");
 
-    /*  const v1 = USER_REGEX.test(user);
-    const v2 = PWD_REGEX.test(password);
-    const v3 = MAIL_REGEX.test(mail);
-    if (!v1 || !v2 || !v3) {
-      setErrMsg("Invalid Entry");
-      return;
-    }
- */
     // console.log(mail);
     // console.log(user);
     // console.log(password);
@@ -156,9 +168,17 @@ const UserProfile = () => {
             setErrUser("user name already used");
           } else {
             console.log(user);
-            setUserName(user);
+            updatedUser.user = user;
+            console.log(updatedUser);
+            // setUserName(user);
 
-            console.log(userName);
+            // console.log(userName);
+            // setUserObject((prevState) => ({
+            //   ...prevState,
+            //   user: user,
+            // }));
+
+            // console.log(userObject);
           }
         }
       }
@@ -177,12 +197,14 @@ const UserProfile = () => {
           if (isValidMail) {
             setErrMail("mail already used");
           } else {
-            setUserObject((prevState) => ({
-              ...prevState,
-              mail: mail,
-            }));
+            updatedUser.mail = mail;
+            console.log(updatedUser);
+            // setUserObject((prevState) => ({
+            //   ...prevState,
+            //   mail: mail,
+            // }));
 
-            console.log(userObject);
+            // console.log(userObject);
           }
         }
       }
@@ -201,32 +223,38 @@ const UserProfile = () => {
           if (isValidPassword) {
             setErrPassword("password already used");
           } else {
-            setUserObject((prevState) => ({
-              ...prevState,
-              password: password,
-            }));
+            updatedUser.password = password;
+            console.log(updatedUser);
+            // setUserObject((prevState) => ({
+            //   ...prevState,
+            //   password: password,
+            // }));
 
-            console.log(userObject);
+            // console.log(userObject);
           }
         }
       }
 
       if (birth) {
-        setUserObject((prevState) => ({
-          ...prevState,
-          birth: birth,
-        }));
+        updatedUser.birth = birth;
+        console.log(updatedUser);
+        // setUserObject((prevState) => ({
+        //   ...prevState,
+        //   birth: birth,
+        // }));
 
-        console.log(userObject);
+        // console.log(userObject);
       }
 
       if (gender) {
-        setUserObject((prevState) => ({
-          ...prevState,
-          gender: gender,
-        }));
+        updatedUser.gender = gender;
+        console.log(updatedUser);
+        // setUserObject((prevState) => ({
+        //   ...prevState,
+        //   gender: gender,
+        // }));
 
-        console.log(userObject);
+        // console.log(userObject);
       }
 
       /*  setUserObject({
@@ -234,7 +262,7 @@ const UserProfile = () => {
         updatedAt: new Date().toLocaleString(),
       }); */
 
-      editUser(userObject);
+      editUser(updatedUser, tempUser);
     } catch (err) {
       if (!err?.response) {
         setErrMsg("No Server Response");
@@ -289,91 +317,91 @@ const UserProfile = () => {
         <div id="username" className="user-profile__item">
           <label htmlFor="user-name">Username</label>
           <div>
-          <input
-            type="text"
-            id="username"
-            name="user-name"
-            defaultValue={authContext.user[0].user}
-            placeholder="Enter a profile name."
-            ref={userRef}
-            autoComplete="off"
-            onChange={(e) => setUser(e.target.value)}
-            required
-            aria-invalid={validName ? "false" : "true"}
-            aria-describedby="uidnote"
-            onFocus={() => setUserFocus(true)}
-            onBlur={() => setUserFocus(false)}
-          />
-          <FontAwesomeIcon
-            icon={faCheck}
-            className={validName ? "valid" : "hide"}
-          />
-          <FontAwesomeIcon
-            icon={faTimes}
-            className={validName || !user ? "hide" : "invalid"}
-          />
-          <p id="uidnote" className={errUser ? "instructions" : "offscreen"}>
-            {errUser}
-          </p>
-          <p
-            id="uidnote"
-            className={
-              userFocus && user && !validName ? "instructions" : "offscreen"
-            }
-          >
-            <FontAwesomeIcon icon={faInfoCircle} />
-            4 to 24 characters.
-            <br />
-            Must begin with a letter.
-            <br />
-            Letters, numbers, underscores, hyphens allowed.
-          </p>
+            <input
+              type="text"
+              id="username"
+              name="user-name"
+              defaultValue={authContext.user[0].user}
+              placeholder="Enter a profile name."
+              ref={userRef}
+              autoComplete="off"
+              onChange={(e) => setUser(e.target.value)}
+              required
+              aria-invalid={validName ? "false" : "true"}
+              aria-describedby="uidnote"
+              onFocus={() => setUserFocus(true)}
+              onBlur={() => setUserFocus(false)}
+            />
+            <FontAwesomeIcon
+              icon={faCheck}
+              className={validName ? "valid" : "hide"}
+            />
+            <FontAwesomeIcon
+              icon={faTimes}
+              className={validName || !user ? "hide" : "invalid"}
+            />
+            <p id="uidnote" className={errUser ? "instructions" : "offscreen"}>
+              {errUser}
+            </p>
+            <p
+              id="uidnote"
+              className={
+                userFocus && user && !validName ? "instructions" : "offscreen"
+              }
+            >
+              <FontAwesomeIcon icon={faInfoCircle} />
+              4 to 24 characters.
+              <br />
+              Must begin with a letter.
+              <br />
+              Letters, numbers, underscores, hyphens allowed.
+            </p>
           </div>
         </div>
 
         <div id="mail" className="user-profile__item">
           <label htmlFor="email">E-Mail</label>
-        <div>
-        <input
-            type="user-email"
-            id="mail"
-            name="mail"
-            placeholder="Enter your email."
-            ref={userRef}
-            autoComplete="off"
-            required
-            defaultValue={authContext.user[0].mail}
-            onChange={(e) => setMail(e.target.value)}
-            aria-invalid={validMail ? "false" : "true"}
-            aria-describedby="uidnote"
-            onFocus={() => setMailFocus(true)}
-            onBlur={() => setMailFocus(false)}
-          />
-          <FontAwesomeIcon
-            icon={faCheck}
-            className={validMail ? "valid" : "hide"}
-          />
-          <FontAwesomeIcon
-            icon={faTimes}
-            className={validMail || !mail ? "hide" : "invalid"}
-          />
-          <p id="uidnote" className={errMail ? "instructions" : "offscreen"}>
-            {errMail}
-          </p>
-          <p
-            id="uidnote"
-            className={
-              mailFocus && mail && !validMail ? "instructions" : "offscreen"
-            }
-          >
-            <FontAwesomeIcon icon={faInfoCircle} />
-            4 to 24 characters.
-            <br />
-            Must begin with a letter.
-            <br />
-            Letters, numbers, underscores, hyphens allowed.
-          </p>
-        </div>
+          <div>
+            <input
+              type="user-email"
+              id="mail"
+              name="mail"
+              placeholder="Enter your email."
+              ref={userRef}
+              autoComplete="off"
+              required
+              defaultValue={authContext.user[0].mail}
+              onChange={(e) => setMail(e.target.value)}
+              aria-invalid={validMail ? "false" : "true"}
+              aria-describedby="uidnote"
+              onFocus={() => setMailFocus(true)}
+              onBlur={() => setMailFocus(false)}
+            />
+            <FontAwesomeIcon
+              icon={faCheck}
+              className={validMail ? "valid" : "hide"}
+            />
+            <FontAwesomeIcon
+              icon={faTimes}
+              className={validMail || !mail ? "hide" : "invalid"}
+            />
+            <p id="uidnote" className={errMail ? "instructions" : "offscreen"}>
+              {errMail}
+            </p>
+            <p
+              id="uidnote"
+              className={
+                mailFocus && mail && !validMail ? "instructions" : "offscreen"
+              }
+            >
+              <FontAwesomeIcon icon={faInfoCircle} />
+              4 to 24 characters.
+              <br />
+              Must begin with a letter.
+              <br />
+              Letters, numbers, underscores, hyphens allowed.
+            </p>
+          </div>
         </div>
         {/* 
         <div className="phone user-profile__item">
