@@ -6,6 +6,7 @@ import AddressForm from "../../../../components/app/shopping-cart/address-form/A
 import BasketSummary from "../../../../components/app/shopping-cart/basket-summary/BasketSummary";
 import OrderSummary from "src/components/app/shopping-cart/order-summary/OrderSummary";
 import ShopContext from "../../../../contexts/basket/ShopContext";
+import CreditCardForm from "../../../../components/app/shopping-cart/credit-card/form/CreditCardForm";
 
 export const Checkout = () => {
   // const [orderAddress, setOrderAddress] = useState({});
@@ -21,7 +22,8 @@ export const Checkout = () => {
           <AddressForm />
         </div>
         {/* <OrderSummary isCartPage={false} orderAddress={orderAddress} /> */}
-        <OrderSummary isCartPage={false} />
+        {/* <CreditCardForm /> */}
+        <OrderSummary isCartPage={false} isOrderPage={false} />
       </div>
     </>
   );
