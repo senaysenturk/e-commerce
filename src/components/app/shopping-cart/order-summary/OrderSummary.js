@@ -8,7 +8,10 @@ import { baseService } from "src/network/services/baseService";
 import { CLEAR_CART } from "src/contexts/basket/reducers";
 import { AuthContext, useAuth } from "../../../../contexts/auth/AuthContext";
 
-export const OrderSummary = ({ isCartPage, isOrderPage /* orderAddress */ }) => {
+export const OrderSummary = ({
+  isCartPage,
+  isOrderPage /* orderAddress */,
+}) => {
   const navigate = useNavigate();
   const context = useContext(ShopContext);
   //const { currentUser, addOrder } = useAuth();
@@ -42,26 +45,26 @@ export const OrderSummary = ({ isCartPage, isOrderPage /* orderAddress */ }) => 
   };
 
   const onClickPay = async () => {
-    /**
-     * @type {OrderProduct}
-     */
+    // /**
+    //  * @type {OrderProduct}
+    //  */
 
-    console.log("AuthContextt", authContext);
-    const orderData = {
-      userId: authContext.user[0].id,
-      // user: currentUser,
-      date: new Date().toLocaleString(),
-      orderId: Date.now(),
-      orderList: context.cart,
-      totalOrderAmount: context.totalPrice(),
-      address: authContext.orderAddress,
-    };
-    await baseService.sendOrderItems(orderData);
-    // console.log(currentUser[0].user);
-    // console.log(orderData);
-    //  await authContext.addOrder(authContext.user, orderData);
+    // console.log("AuthContextt", authContext);
+    // const orderData = {
+    //   userId: authContext.user[0].id,
+    //   // user: currentUser,
+    //   date: new Date().toLocaleString(),
+    //   orderId: Date.now(),
+    //   orderList: context.cart,
+    //   totalOrderAmount: context.totalPrice(),
+    //   address: authContext.orderAddress,
+    // };
+    // await baseService.sendOrderItems(orderData);
+    // // console.log(currentUser[0].user);
+    // // console.log(orderData);
+    // //  await authContext.addOrder(authContext.user, orderData);
 
-    // context.clearCart();
+    // // context.clearCart();
     navigate("/orders/payment");
   };
 
@@ -121,7 +124,7 @@ export const OrderSummary = ({ isCartPage, isOrderPage /* orderAddress */ }) => 
                 </button>
               ) : isOrderPage ? (
                 <button className="btn btn-gray" onClick={onClickOrder}>
-                  Order
+                  Continue
                 </button>
               ) : (
                 <button className="btn btn-gray" onClick={onClickPay}>
