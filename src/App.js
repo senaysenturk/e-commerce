@@ -28,6 +28,8 @@ import ContactUs from "./components/shared/contact/ContactUs";
 import AllMessages from "./pages/admin/all-messages/AllMessages";
 import OrdersDetail from "./components/app/shopping-cart/order-tracking/OrdersDetail";
 import BasketSummary from "./components/app/shopping-cart/basket-summary/BasketSummary";
+import Orders from "./pages/dashboard/order/Orders";
+import Payment from "./pages/dashboard/order/payment/Payment";
 
 function App() {
   return (
@@ -46,6 +48,9 @@ function App() {
             <Route path="shopping" element={<Shopping />}>
               <Route path="cart" element={<Cart />} />
               <Route path="checkout" element={<Checkout />} />
+            </Route>
+            <Route path="orders" element={<Orders />}>
+              <Route path="payment" element={<Payment/>} />
             </Route>
             <Route path="products" element={<Products />}>
               <Route path={`product/:productId`} element={<CardDetail />} />
