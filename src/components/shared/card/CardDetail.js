@@ -83,11 +83,26 @@ const CardDetail = () => {
             {/* {!favorite ? <IoIosHeartEmpty /> : <IoIosHeart />} */}
             {favorites &&
             favorites.filter((favor) => favor.id === product.id).length ? (
-              <IoIosHeart onClick={handleDeleteFavorite} />
+              <IoIosHeart
+                onClick={() => {
+                  handleDeleteFavorite();
+                  setFavorite(!favorite);
+                }}
+              />
             ) : !favorite ? (
-              <IoIosHeartEmpty onClick={handleAddFavorite} />
+              <IoIosHeartEmpty
+                onClick={() => {
+                  handleAddFavorite();
+                  setFavorite(!favorite);
+                }}
+              />
             ) : (
-              <IoIosHeart onClick={handleDeleteFavorite} />
+              <IoIosHeart
+                onClick={() => {
+                  handleDeleteFavorite();
+                  setFavorite(!favorite);
+                }}
+              />
             )}
 
             {/* {console.log(favorites.filter((favor) => favor.id === product.id))} */}

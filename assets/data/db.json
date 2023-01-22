@@ -318,12 +318,13 @@
       "mail": "admin@shiwear.com",
       "user": "shiwear",
       "password": "Bilge123!",
-      "birth": "2022-12-20",
+      "birth": "2022-12-19",
       "gender": "woman",
       "role": "admin",
       "addresses": [],
       "orders": [],
-      "id": 1
+      "id": 1,
+      "updatedAt": "1/22/2023, 7:28:45 PM"
     },
     {
       "mail": "ipekgulsen.celik@gmail.com",
@@ -399,6 +400,34 @@
       "totalOrderAmount": "49.99",
       "address": [],
       "id": 1
+    },
+    {
+      "userId": 1,
+      "date": "1/22/2023, 2:14:51 PM",
+      "orderId": 1674386091925,
+      "orderList": [
+        {
+          "createdAt": "1/1/2023, 6:25:08 PM",
+          "updatedAt": "1/1/2023, 6:25:08 PM",
+          "name": "Lace pleated dress",
+          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
+          "price": 59.99,
+          "size": "XS",
+          "color": "black",
+          "category": "Woman",
+          "subcategory": "Dress",
+          "additionalCategories": [
+            "best-sellers",
+            "sale"
+          ],
+          "imgPath": "http://res.cloudinary.com/dr4cvohdq/image/upload/v1672586727/utkeesstkjwkdi4qt6zu.webp",
+          "id": 4,
+          "amount": 4
+        }
+      ],
+      "totalOrderAmount": "239.96",
+      "address": [],
+      "id": 2
     }
   ],
   "auth": [
@@ -424,7 +453,7 @@
       "mail": "admin@shiwear.com",
       "user": "shiwear",
       "password": "Bilge123!",
-      "birth": "2022-12-20",
+      "birth": "2022-12-19",
       "gender": "woman",
       "role": "admin",
       "addresses": [
@@ -437,10 +466,6 @@
           "address": "test",
           "postcode": "00000",
           "addressName": "test"
-        },
-        {},
-        {
-          "addressName": "asasa"
         }
       ],
       "orders": [],
@@ -687,6 +712,30 @@
         {
           "createdAt": "1/1/2023, 6:25:08 PM",
           "updatedAt": "1/1/2023, 6:25:08 PM",
+          "name": "Lace pleated dress",
+          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
+          "price": 59.99,
+          "size": [
+            "XS",
+            "S",
+            "XXS",
+            "L"
+          ],
+          "color": [
+            "black"
+          ],
+          "category": "Woman",
+          "subcategory": "Dress",
+          "additionalCategories": [
+            "best-sellers",
+            "sale"
+          ],
+          "imgPath": "http://res.cloudinary.com/dr4cvohdq/image/upload/v1672586727/utkeesstkjwkdi4qt6zu.webp",
+          "id": 4
+        },
+        {
+          "createdAt": "1/1/2023, 6:25:08 PM",
+          "updatedAt": "1/1/2023, 6:25:08 PM",
           "name": "T-shirt",
           "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
           "price": 10,
@@ -727,7 +776,8 @@
           "imgPath": "https://res.cloudinary.com/dr4cvohdq/image/upload/v1672586896/hbxu98mpnk8y0silr4tu.jpg",
           "id": 5
         }
-      ]
+      ],
+      "updatedAt": "1/22/2023, 7:28:45 PM"
     },
     {
       "mail": "ipekgulsen.celik@gmail.com",

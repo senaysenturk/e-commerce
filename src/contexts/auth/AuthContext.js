@@ -312,6 +312,9 @@ const AuthProvider = ({ children }) => {
 
   const login = async (userData) => {
     console.log(userData.data);
+    localStorage.setItem("userData", JSON.stringify(userData.data));
+    localStorage.setItem("access-token", userData.accessToken);
+    localStorage.setItem("refresh-token", userData.refreshToken);
     setLoggedIn(true);
 
     const localUserData = JSON.parse(
@@ -320,19 +323,16 @@ const AuthProvider = ({ children }) => {
     if (localUserData) {
       setUser(localUserData);
     } else {
-      setUser(userData.data);
+      setUser(userData.data[0]);
     }
 
-    if (userData.data.role === "admin") {
+    if (userData.data[0].role === "admin") {
       setShowAdminOptions(true);
     }
     // setCurrentUser(userData.data);
     console.log(userData.data);
 
     // await postMe(userData.data);
-    localStorage.setItem("userData", JSON.stringify(userData.data));
-    localStorage.setItem("access-token", userData.accessToken);
-    localStorage.setItem("refresh-token", userData.refreshToken);
   };
 
   const logout = async (callback) => {
