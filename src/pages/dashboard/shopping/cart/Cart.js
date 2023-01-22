@@ -57,7 +57,7 @@ export const Cart = () => {
                 setMessage={setMessage}
               />
             </div>
-            <OrderSummary isCartPage={true} />
+            <OrderSummary isCartPage={true} isOrderPage={false} />
           </div>
         </div>
       ) : (
