@@ -322,6 +322,7 @@
       "gender": "other",
       "role": "admin",
       "addresses": [],
+      "cards": [],
       "id": 1,
       "updatedAt": "1/22/2023, 8:06:10 PM"
     },
@@ -333,6 +334,7 @@
       "gender": "woman",
       "role": "user",
       "addresses": [],
+      "cards": [],
       "id": 2
     },
     {
@@ -343,6 +345,7 @@
       "gender": "woman",
       "role": "user",
       "addresses": [],
+      "cards": [],
       "id": 3
     },
     {
@@ -353,6 +356,7 @@
       "gender": "woman",
       "role": "user",
       "addresses": [],
+      "cards": [],
       "id": 4
     },
     {
@@ -363,6 +367,7 @@
       "gender": "other",
       "role": "user",
       "addresses": [],
+      "cards": [],
       "id": 5
     }
   ],
@@ -971,6 +976,7 @@
           "addressName": "wer4ty"
         }
       ],
+      "cards": [],
       "id": 1,
       "lastViewed": [
         {
@@ -1210,7 +1216,33 @@
           "addressName": "tesssrtt"
         }
       ],
-      "lastViewed": [],
+      "cards": [],
+      "lastViewed": [
+        {
+          "createdAt": "1/1/2023, 6:25:08 PM",
+          "updatedAt": "1/1/2023, 6:25:08 PM",
+          "name": "Lace pleated dress",
+          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
+          "price": 59.99,
+          "size": [
+            "XS",
+            "S",
+            "XXS",
+            "L"
+          ],
+          "color": [
+            "black"
+          ],
+          "category": "Woman",
+          "subcategory": "Dress",
+          "additionalCategories": [
+            "best-sellers",
+            "sale"
+          ],
+          "imgPath": "http://res.cloudinary.com/dr4cvohdq/image/upload/v1672586727/utkeesstkjwkdi4qt6zu.webp",
+          "id": 4
+        }
+      ],
       "id": 2
     },
     {
@@ -1232,6 +1264,7 @@
           "addressName": "sfsf"
         }
       ],
+      "cards": [],
       "id": 3,
       "lastViewed": [
         {
@@ -1411,6 +1444,7 @@
           "addressName": "ev"
         }
       ],
+      "cards": [],
       "lastViewed": [
         {
           "createdAt": "1/1/2023, 6:25:08 PM",
@@ -1536,6 +1570,7 @@
       "gender": "other",
       "role": "user",
       "addresses": [],
+      "cards": [],
       "id": 5
     }
   ],
