@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import CreditCardForm from "../../../../components/app/shopping-cart/credit-card/form/CreditCardForm";
+import CreditCard from "../../../../components/app/shopping-cart/credit-card/CreditCard";
 import OrderSummary from "../../../../components/app/shopping-cart/order-summary/OrderSummary";
 
 const Payment = () => {
   return (
     <div className="checkout-container">
-      <CreditCardForm />
+      <CreditCard />
       <OrderSummary isCartPage={false} isOrderPage={true} />
     </div>
   );
