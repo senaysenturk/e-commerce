@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./style.scss";
 
-export const CreditCardForm = () => {
+export const CreditCardForm = ({ handleSave }) => {
   const [name, setName] = useState("");
   const [month, setMonth] = useState("");
   const [year, setYear] = useState("");
@@ -167,7 +167,7 @@ export const CreditCardForm = () => {
             />
           </div>
         </div>
-        <input type="submit" value="submit" className="submit-btn" />
+        <input type="submit" value="sava" className="submit-btn" onClick={handleSave} />
       </form>
 
       {(document.querySelector(".cvv-input").onmouseenter = () => {
