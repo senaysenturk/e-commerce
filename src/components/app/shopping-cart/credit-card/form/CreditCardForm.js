@@ -35,10 +35,8 @@ export const CreditCardForm = () => {
       <div className="card-container">
         <div className="front">
           <div className="image">
-            {/* <img src="../../../../shared/about-us-photos/about-us.jpeg" alt="" /> */}
-            {/* <img src="./credit-card-image/visa.png" alt="" /> */}
-            <img src="../credit-cart-image/visa.png" />
-            <img src="../credit-cart-image/visa.png" />
+            <img src="../credit-cart-images/chip.png" />
+            <img src="../credit-cart-images/visa.png" />
           </div>
           <div className="card-number-box">{cardNumber}</div>
           <div className="flexbox">
@@ -61,7 +59,7 @@ export const CreditCardForm = () => {
           <div className="input-box">
             <span>cvv</span>
             <div className="cvv-box">{cardCvv}</div>
-            <img src="../../../../../../public/credit-cart-image/visa.png" />
+            <img src="../credit-cart-images/visa.png" />
           </div>
         </div>
       </div>
@@ -172,15 +170,19 @@ export const CreditCardForm = () => {
         <input type="submit" value="submit" className="submit-btn" />
       </form>
 
-      {/* {(document.querySelector(".card-number-input").oninput = () => {
-        document.querySelector(".card-number-box").innerText =
-          document.querySelector(".card-number-input").value;
+      {(document.querySelector(".cvv-input").onmouseenter = () => {
+        document.querySelector(".front").style.transform =
+          "perspective(1000px) rotateY(-180deg)";
+        document.querySelector(".back").style.transform =
+          "perspective(1000px) rotateY(0deg)";
       })(
-        (document.querySelector(".card-holder-input").oninput = () => {
-          document.querySelector(".card-holder-name").innerText =
-            document.querySelector(".card-holder-input").value;
+        (document.querySelector(".cvv-input").onmouseleave = () => {
+          document.querySelector(".front").style.transform =
+            "perspective(1000px) rotateY(0deg)";
+          document.querySelector(".back").style.transform =
+            "perspective(1000px) rotateY(180deg)";
         })
-      )} */}
+      )}
     </div>
   );
 };
