@@ -309,6 +309,62 @@ const AuthProvider = ({ children }) => {
     localStorage.setItem("userData", JSON.stringify(response.data));
   };
 
+  /**
+   * @param {CreditCard} newCreditCard
+   */
+  const addCereditCard = async (newCreditCard) => {
+    const { cards } = user[0];
+    const hasCard = cards.some(
+      (card) => card.cardNumber === newCreditCard.cardNumber
+    );
+
+    if (hasCard) {
+      alert("credit card number already used");
+
+      return;
+    }
+
+    setUser((state) => {
+      const copyState = [...state];
+
+      copyState[0].cards.push(newCreditCard);
+
+      return copyState;
+    });
+
+    await updateCreditCard(user[0].cards);
+  };
+
+  /**
+   * @param {CreditCard} cards
+   */
+  const updateCreditCard = async (cards) => {
+    const response = await patchUser(user[0].id, { cards });
+
+    localStorage.setItem("userData", JSON.stringify(response.data));
+  };
+
+  const deleteCreditCard = async (cardNumber) => {
+    const { cards } = user[0];
+    const index = cards.findIndex(
+      (card) => card.cardNumber === cardNumber
+    );
+
+    const newCreditCard = [...cards];
+
+    newCreditCard.splice(index, 1);
+
+    setUser((state) => {
+      const copyState = [...state];
+
+      copyState[0].cards = newCreditCard;
+
+      return copyState;
+    });
+
+    await updateCreditCard(newCreditCard);
+  };
+
   const updateUser = async (updatedUserId, updatedUserObject) => {
     // console.log(updatedUserId);
     // console.log(updatedUserObject);
@@ -454,6 +510,9 @@ const AuthProvider = ({ children }) => {
     address,
     orderAddress,
     setOrrderAddress,
+    addCereditCard,
+    updateCreditCard,
+    deleteCreditCard,
     favorites,
     setFavorites,
     getUserFavorites,
