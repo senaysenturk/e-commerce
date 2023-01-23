@@ -57,6 +57,7 @@ function SignUp({ history }) {
   const [gender, setGender] = useState("");
   const [role, setRole] = useState("user");
   const [addresses, setAddresses] = useState([]);
+  const [cards, setCards] = useState([]);
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
@@ -98,6 +99,7 @@ function SignUp({ history }) {
         gender,
         role,
         addresses,
+        cards,
         orders,
       });
       /* const response = await axios.post(
