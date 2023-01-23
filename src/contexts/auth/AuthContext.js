@@ -29,7 +29,7 @@ const AuthProvider = ({ children }) => {
   const [favorites, setFavorites] = useState([]);
   const [lastViewed, setLastViewed] = useState([]);
   const [orders, setOrders] = useState([]);
-  const [orderAddress, setOrrderAddress] = useState([]);
+  const [orderAddress, setOrderAddress] = useState([]);
 
   useEffect(() => {
     (async () => {
@@ -346,9 +346,7 @@ const AuthProvider = ({ children }) => {
 
   const deleteCreditCard = async (cardNumber) => {
     const { cards } = user[0];
-    const index = cards.findIndex(
-      (card) => card.cardNumber === cardNumber
-    );
+    const index = cards.findIndex((card) => card.cardNumber === cardNumber);
 
     const newCreditCard = [...cards];
 
@@ -509,7 +507,7 @@ const AuthProvider = ({ children }) => {
     deleteAddress,
     address,
     orderAddress,
-    setOrrderAddress,
+    setOrderAddress,
     addCereditCard,
     updateCreditCard,
     deleteCreditCard,

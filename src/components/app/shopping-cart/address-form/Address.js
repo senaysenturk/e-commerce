@@ -13,7 +13,7 @@ const Address = ({
   handleSetDisplay,
   setDisplay,
   display,
-  // setOrderAddress,
+  setOrderAddress,
 }) => {
   const { editAddress, deleteAddress } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
