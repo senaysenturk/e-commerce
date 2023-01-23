@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
-export const CreditCardList = () => {
-  return (
-    <div>CreditCardList</div>
-  )
-}
+export const CreditCardList = ({ handleDisplay, hide }) => {
+  return <div>CreditCardList</div>;
+};
 
 export default CreditCardList;
