@@ -8,7 +8,8 @@ export const CreditCardForm = ({ handleCreditCard, handleSave }) => {
   const [cvv, setCvv] = useState("");
   const [number, setNumber] = useState("");
   const [focus, setFocus] = useState("");
-
+  const [frontStyle, setFrontStyle] = useState("");
+  const [backStyle, setBackStyle] = useState("");
   const [cardNumber, setCardNumber] = useState("################");
   const [cardHolder, setCardHolder] = useState("FULL NAME");
   const [cardCvv, setCardCvv] = useState("");
@@ -18,15 +19,15 @@ export const CreditCardForm = ({ handleCreditCard, handleSave }) => {
   const handleNumber = (e) => {
     setCardNumber(e.target.value);
   };
-  
+
   const handleHolder = (e) => {
     setCardHolder(e.target.value);
   };
-  
+
   const handleMonth = (e) => {
     setExpirationMonth(e.target.value);
   };
-  
+
   const handleYear = (e) => {
     setExpirationYear(e.target.value);
   };
@@ -35,10 +36,33 @@ export const CreditCardForm = ({ handleCreditCard, handleSave }) => {
     setCardCvv(e.target.value);
   };
 
+  const handleStyle = (type) => {
+    if (type === "mouseenter") {
+      setFrontStyle("perspective(1000px) rotateY(-180deg)");
+      setBackStyle("perspective(1000px) rotateY(0deg)");
+    } else {
+      setFrontStyle("perspective(1000px) rotateY(0deg)");
+      setBackStyle("perspective(1000px) rotateY(-180deg)");
+    }
+    console.log(frontStyle, backStyle);
+  };
+  // {(document.querySelector(".cvv-input").onmouseenter = () => {
+  //   document.querySelector(".front").style.transform =
+  //     "perspective(1000px) rotateY(-180deg)";
+  //   document.querySelector(".back").style.transform =
+  //     "perspective(1000px) rotateY(0deg)";
+  // })(
+  //   (document.querySelector(".cvv-input").onmouseleave = () => {
+  //     document.querySelector(".front").style.transform =
+  //       "perspective(1000px) rotateY(0deg)";
+  //     document.querySelector(".back").style.transform =
+  //       "perspective(1000px) rotateY(0deg)";
+  //   })
+  // )}
   return (
     <div className="container">
       <div className="card-container">
-        <div className="front">
+        <div className="front" style={{ transform: frontStyle }}>
           <div className="image">
             <img src="../credit-cart-images/chip.png" />
             <img src="../credit-cart-images/visa.png" />
@@ -59,7 +83,7 @@ export const CreditCardForm = ({ handleCreditCard, handleSave }) => {
           </div>
         </div>
 
-        <div className="back">
+        <div className="back" style={{ transform: backStyle }}>
           <div className="stripe"></div>
           <div className="input-box">
             <span>cvv</span>
@@ -174,25 +198,18 @@ export const CreditCardForm = ({ handleCreditCard, handleSave }) => {
                 handleCreditCard(e);
               }}
               onFocus={(e) => setFocus(e.target.name)}
+              onMouseEnter={(e) => handleStyle("mouseenter")}
+              onMouseLeave={(e) => handleStyle("mouseleave")}
             />
           </div>
         </div>
-        <input type="submit" value="sava" className="submit-btn" onClick={handleSave} />
+        <input
+          type="submit"
+          value="sava"
+          className="submit-btn"
+          onClick={handleSave}
+        />
       </form>
-
-      {(document.querySelector(".cvv-input").onmouseenter = () => {
-        document.querySelector(".front").style.transform =
-          "perspective(1000px) rotateY(-180deg)";
-        document.querySelector(".back").style.transform =
-          "perspective(1000px) rotateY(0deg)";
-      })(
-        (document.querySelector(".cvv-input").onmouseleave = () => {
-          document.querySelector(".front").style.transform =
-            "perspective(1000px) rotateY(0deg)";
-          document.querySelector(".back").style.transform =
-            "perspective(1000px) rotateY(180deg)";
-        })
-      )}
     </div>
   );
 };
