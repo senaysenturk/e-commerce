@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./style.scss";
 
-export const CreditCardForm = ({ handleSave }) => {
+export const CreditCardForm = ({ handleCreditCard, handleSave }) => {
   const [name, setName] = useState("");
   const [month, setMonth] = useState("");
   const [year, setYear] = useState("");
@@ -18,18 +18,23 @@ export const CreditCardForm = ({ handleSave }) => {
   const handleNumber = (e) => {
     setCardNumber(e.target.value);
   };
+  
   const handleHolder = (e) => {
     setCardHolder(e.target.value);
   };
+  
   const handleMonth = (e) => {
     setExpirationMonth(e.target.value);
   };
+  
   const handleYear = (e) => {
     setExpirationYear(e.target.value);
   };
+
   const handleCvv = (e) => {
     setCardCvv(e.target.value);
   };
+
   return (
     <div className="container">
       <div className="card-container">
@@ -72,10 +77,11 @@ export const CreditCardForm = ({ handleSave }) => {
             maxlength="16"
             className="card-number-input"
             value={number}
-            name="number"
+            name="cardNumber"
             onChange={(e) => {
               setNumber(e.target.value);
               handleNumber(e);
+              handleCreditCard(e);
             }}
             onFocus={(e) => setFocus(e.target.name)}
           />
@@ -86,10 +92,11 @@ export const CreditCardForm = ({ handleSave }) => {
             type="text"
             className="card-holder-input"
             value={name}
-            name="name"
+            name="cardHolder"
             onChange={(e) => {
               setName(e.target.value);
               handleHolder(e);
+              handleCreditCard(e);
             }}
             onFocus={(e) => setFocus(e.target.name)}
           />
@@ -98,12 +105,13 @@ export const CreditCardForm = ({ handleSave }) => {
           <div className="inputBox">
             <span>expiration mm</span>
             <select
-              name=""
+              name="expirationMonth"
               id=""
               className="month-input"
               onChange={(e) => {
                 setMonth(e.target.value);
                 handleMonth(e);
+                handleCreditCard(e);
               }}
               onFocus={(e) => setFocus(e.target.name)}
             >
@@ -127,12 +135,13 @@ export const CreditCardForm = ({ handleSave }) => {
           <div className="inputBox">
             <span>expiration yy</span>
             <select
-              name=""
+              name="expirationYear"
               id=""
               className="year-input"
               onChange={(e) => {
                 setYear(e.target.value);
                 handleYear(e);
+                handleCreditCard(e);
               }}
               onFocus={(e) => setFocus(e.target.name)}
             >
@@ -162,6 +171,7 @@ export const CreditCardForm = ({ handleSave }) => {
               onChange={(e) => {
                 setCvv(e.target.value);
                 handleCvv(e);
+                handleCreditCard(e);
               }}
               onFocus={(e) => setFocus(e.target.name)}
             />
