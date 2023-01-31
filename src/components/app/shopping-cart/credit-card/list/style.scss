@@ -1,0 +1,46 @@
+.add-new-card {
+  font-weight: 100;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  column-gap: 5px;
+  margin-bottom: 10px;
+  justify-content: flex-end;
+}
+
+.checkout-card {
+  width: 100%;
+  .checkout-card-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1.5rem;
+    border: 1px solid #d1d1d1;
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      width: 90%;
+      align-items: flex-start;
+      gap: 10px;
+      .card-name {
+        display: flex;
+        gap: 10px;
+      }
+      .card-content {
+        display: flex;
+        gap: 30px;
+      }
+    }
+    .divider {
+      margin: 0 5px;
+      font-weight: 600;
+      color: var(--gray-color);
+    }
+    .edit,
+    .delete {
+      cursor: pointer;
+    }
+  }
+}

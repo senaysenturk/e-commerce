@@ -3,6 +3,7 @@ import { useState, useRef, useEffect } from "react";
 import { AuthContext, useAuth } from "../../../../contexts/auth/AuthContext";
 import CreditCardForm from "./form/CreditCardForm";
 import CreditCardList from "./list/CreditCardList";
+import "./style.scss";
 
 export const CreditCard = () => {
   const { addCereditCard } = useAuth();

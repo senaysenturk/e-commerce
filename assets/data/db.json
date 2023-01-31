@@ -976,7 +976,16 @@
           "addressName": "wer4ty"
         }
       ],
-      "cards": [],
+      "cards": [
+        {
+          "cardNumber": "1111 1111 1111 1111",
+          "cardHolder": "zeynep yıldız",
+          "expirationMonth": "07",
+          "expirationYear": "2024",
+          "cvv": "123",
+          "cardName": "Bonus Card"
+        }
+      ],
       "id": 1,
       "lastViewed": [
         {

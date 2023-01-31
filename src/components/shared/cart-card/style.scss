@@ -10,6 +10,7 @@
   .product-card {
     margin: 30px 25px 0;
     display: flex;
+    overflow: hidden;
 
     .product-card-img {
       width: 80px;

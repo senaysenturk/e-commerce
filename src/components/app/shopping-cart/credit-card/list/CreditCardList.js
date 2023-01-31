@@ -5,6 +5,7 @@ import { HiOutlinePlus } from "react-icons/hi";
 import { AuthContext } from "../../../../../contexts/auth/AuthContext";
 import ShopContext from "src/contexts/basket/ShopContext";
 import Popup from "../popup/Popup";
+import "./style.scss";
 
 export const CreditCardList = ({ handleDisplay, hide }) => {
   const authContext = useContext(AuthContext);
@@ -43,8 +44,12 @@ export const CreditCardList = ({ handleDisplay, hide }) => {
                     </label>
                   </div>
                   <div className="card-content">
-                    <span>{cardObject.cardNumber}</span>
-                    <span>{cardObject.cardNumber.slice(0, 7).concat("** **** ", cardObject.cardNumber.slice(-4))}</span>
+                    {/* <span>{cardObject.cardNumber}</span> */}
+                    <span>
+                      {cardObject.cardNumber
+                        .slice(0, 7)
+                        .concat("** **** ", cardObject.cardNumber.slice(-4))}
+                    </span>
                     <span>
                       {cardObject.expirationMonth} / {cardObject.expirationYear}
                     </span>
