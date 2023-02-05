@@ -1,0 +1,52 @@
+$light-color: #f4f4f4;
+$dark-color: #333;
+$danger-color: brown;
+
+.app-header {
+  .main-header {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 25px;
+    border-bottom: 1px solid #ededed;
+
+    .logo {
+      display: flex;
+      align-items: center;
+      h1 {
+        cursor: pointer;
+        color: #37595a;
+        font-size: 50px;
+        font-family: "Sacramento", cursive;
+      }
+
+      i {
+        font-size: 50px;
+        color: #bcc9c5;
+        padding-right: 20px;
+      }
+    }
+  }
+
+  .category-header {
+    border-bottom: 1px solid #d1d1d1;
+    .category-links {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      list-style: none;
+      gap: 10px;
+      position: relative;
+      z-index: 1000;
+      font-size: 15px;
+      font-weight: 600;
+    }
+  }
+  //   .mobile-search {
+  //     position: relative;
+  //     margin: 15px 0;
+  //     z-index: 3000;
+  //   }
+}

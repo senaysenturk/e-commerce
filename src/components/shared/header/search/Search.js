@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import { useProduct } from "../../../../contexts/product/CreateProductContext";
-import "./style.scss";
+import styles from "./style.module.scss";
+
 import { AiOutlineSearch, AiOutlineUser } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
@@ -42,7 +43,7 @@ const Search = () => {
   };
 
   return (
-    <div className="search">
+    <div className={styles.search}>
       <form>
         <input
           type="text"
@@ -52,45 +53,43 @@ const Search = () => {
         />
       </form>
 
-      <div className="search-drop">
-        <ul className={`${dropdown ? "dropdown" : ""}`}>
-          {searchResults &&
-            searchResults.map(
-              (answer, index) =>
-                index <= 3 && (
-                  <li
-                    id={answer.result.id}
-                    key={index}
-                    onClick={() => {
-                      setDropdown(true);
-                      setSearchTerm("");
-                      setSearchResults("");
-                      setDropdown(false);
-                      setMoreResult("");
-                    }}
-                  >
-                    <Link to={`products/product/${answer.result.id}`}>
-                      {answer.result.name}
-                    </Link>
-                  </li>
-                )
-            )}
-
-          {searchResults.length > 3 && (
-            <li
-              onClick={() => {
-                setDropdown(true);
-                setSearchTerm("");
-                setSearchResults("");
-                setDropdown(false);
-                setMoreResult(searchResults);
-              }}
-            >
-              <Link to="view-more">View more results</Link>
-            </li>
+      <ul className={`${dropdown ? styles["dropdown"] : ""}`}>
+        {searchResults &&
+          searchResults.map(
+            (answer, index) =>
+              index <= 3 && (
+                <li
+                  id={answer.result.id}
+                  key={index}
+                  onClick={() => {
+                    setDropdown(true);
+                    setSearchTerm("");
+                    setSearchResults("");
+                    setDropdown(false);
+                    setMoreResult("");
+                  }}
+                >
+                  <Link to={`products/product/${answer.result.id}`}>
+                    {answer.result.name}
+                  </Link>
+                </li>
+              )
           )}
-        </ul>
-      </div>
+
+        {searchResults.length > 3 && (
+          <li
+            onClick={() => {
+              setDropdown(true);
+              setSearchTerm("");
+              setSearchResults("");
+              setDropdown(false);
+              setMoreResult(searchResults);
+            }}
+          >
+            <Link to="view-more">View more results</Link>
+          </li>
+        )}
+      </ul>
     </div>
   );
 };

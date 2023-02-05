@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate, NavLink, useSearchParams } from "react-router-dom";
-import "./style.scss";
+import styles from "./style.module.scss";
+import searchStyles from "./search/style.module.scss";
 import DropdownMenu from "../dropdown-menu/DropdownMenu";
 
 import Search from "./search/Search";
@@ -8,6 +9,7 @@ import { useMatchMedia } from "./useMatchMedia";
 import Hamburger from "./hamburger/Hamburger";
 import Options from "./options/Options";
 import { useProduct } from "../../../contexts/product/CreateProductContext";
+import MegaMenu from "../mega-menu/MegaMenu";
 
 export const Header = ({ title }) => {
   const navigate = useNavigate();
@@ -27,11 +29,11 @@ export const Header = ({ title }) => {
 
   return (
     <>
-      <header className="app-header">
+      <header className={`${styles["app-header"]}`}>
         {isDesktopResolution ? (
           <>
-            <div className="main-header">
-              <div className="logo" onClick={() => navigate("/")}>
+            <div className={`${styles["main-header"]}`}>
+              <div className={styles.logo} onClick={() => navigate("/")}>
                 <i className="fa-solid fa-signature"></i>
                 <h1>{title}</h1>
               </div>
@@ -39,20 +41,25 @@ export const Header = ({ title }) => {
               <Options />
             </div>
 
-            <div className="category-header">
-              <nav>
-                <ul className="category-links">
+            <div className={`${styles["category-header"]}`}>
+              <nav className={styles.dropdown}>
+                <ul className={`${styles["category-links"]} ${styles.dropbtn}`}>
                   {categories.map((category, index) => (
                     <li key={index}>
                       <NavLink
+                        className={styles.dropbtn}
                         to={`/products/search?category=${category.category}`}
                         key={"/products"}
                         end
 
                         // onClick={setCategory(`/products${category.category}`)}
-                      >
-                        {category.category}
-                      </NavLink>
+                      />
+                      <MegaMenu
+                        key={index}
+                        subcategories={category.subcategory}
+                        category={category.category}
+                        image={category.image}
+                      />
                       <DropdownMenu
                         key={index}
                         subcategories={category.subcategory}
@@ -101,21 +108,20 @@ export const Header = ({ title }) => {
           </>
         ) : (
           <>
-            <div className="main-header">
-              <div className="logo" onClick={() => navigate("/")}>
+            <div className={`${styles["main-header"]}`}>
+              <div className={styles.logo} onClick={() => navigate("/")}>
                 <i className="fa-solid fa-signature"></i>
                 <h1>{title}</h1>
               </div>
               <Hamburger categories={categories} />
             </div>
-
             <>
               <Options />
             </>
-            <div className="or-divide">
+            {/* <div className={`${styles["main-header"]}`}>
               <span className="hr"></span>
-            </div>
-            <div className="mobile-search">
+            </div> */}
+            <div className={`${searchStyles["mobile-search"]}`}>
               <Search />
             </div>
           </>

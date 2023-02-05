@@ -3,29 +3,6 @@
     {
       "createdAt": "1/1/2023, 6:25:08 PM",
       "updatedAt": "1/1/2023, 6:25:08 PM",
-      "name": "Blazer Jacket",
-      "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
-      "price": 49.99,
-      "size": [
-        "S",
-        "XXL"
-      ],
-      "color": [
-        "red"
-      ],
-      "category": "Woman",
-      "subcategory": "Jacket",
-      "additionalCategories": [
-        "best-sellers",
-        "trending",
-        "sale"
-      ],
-      "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/5900/472/430/5900472430_1_1_2.jpg?t=1669736376209",
-      "id": 1
-    },
-    {
-      "createdAt": "1/1/2023, 6:25:08 PM",
-      "updatedAt": "1/1/2023, 6:25:08 PM",
       "name": "T-shirt",
       "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
       "price": 10,
@@ -231,6 +208,27 @@
       "imgPath": "http://res.cloudinary.com/dr4cvohdq/image/upload/v1672595350/pmqzrdpmnlfylvp2h7co.jpg",
       "price": 112.99,
       "id": 11
+    },
+    {
+      "name": "red shirt",
+      "detail": "red shirt",
+      "price": 13,
+      "size": [
+        "XXS",
+        "XS"
+      ],
+      "color": [
+        "black",
+        "blue",
+        "gray"
+      ],
+      "additionalCategories": [
+        "trending"
+      ],
+      "category": "Man",
+      "subcategory": "Shirt",
+      "imgPath": "http://res.cloudinary.com/dr4cvohdq/image/upload/v1675186032/hesnp0s6mzmddomms45w.jpg",
+      "id": 12
     }
   ],
   "colors": [
@@ -369,38 +367,21 @@
       "addresses": [],
       "cards": [],
       "id": 5
+    },
+    {
+      "mail": "senaysenturk@test.com",
+      "user": "senaysenturkk",
+      "password": "Bilge123!",
+      "birth": "2023-01-31",
+      "gender": "woman",
+      "role": "user",
+      "addresses": [],
+      "cards": [],
+      "orders": [],
+      "id": 6
     }
   ],
   "siparisler": [
-    {
-      "userId": 1,
-      "date": "16.01.2023 23:05:40",
-      "orderId": 1673899540107,
-      "orderList": [
-        {
-          "createdAt": "1/1/2023, 6:25:08 PM",
-          "updatedAt": "1/1/2023, 6:25:08 PM",
-          "name": "Blazer Jacket",
-          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
-          "price": 49.99,
-          "size": "S",
-          "color": "red",
-          "category": "Woman",
-          "subcategory": "Jacket",
-          "additionalCategories": [
-            "best-sellers",
-            "trending",
-            "sale"
-          ],
-          "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/5900/472/430/5900472430_1_1_2.jpg?t=1669736376209",
-          "id": 1,
-          "amount": 1
-        }
-      ],
-      "totalOrderAmount": "49.99",
-      "address": [],
-      "id": 1
-    },
     {
       "userId": 1,
       "date": "1/22/2023, 2:14:51 PM",
@@ -931,6 +912,70 @@
       "totalOrderAmount": "27.99",
       "address": [],
       "id": 17
+    },
+    {
+      "userId": 4,
+      "date": "1/31/2023, 9:51:27 PM",
+      "orderId": 1675191087486,
+      "orderList": [
+        {
+          "createdAt": "1/1/2023, 6:25:08 PM",
+          "updatedAt": "1/1/2023, 6:25:08 PM",
+          "name": "Lace pleated dress",
+          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
+          "price": 59.99,
+          "size": "XS",
+          "color": "black",
+          "category": "Woman",
+          "subcategory": "Dress",
+          "additionalCategories": [
+            "best-sellers",
+            "sale"
+          ],
+          "imgPath": "http://res.cloudinary.com/dr4cvohdq/image/upload/v1672586727/utkeesstkjwkdi4qt6zu.webp",
+          "id": 4,
+          "amount": 3
+        }
+      ],
+      "totalOrderAmount": "179.97",
+      "address": {
+        "firstname": "hicran",
+        "lastname": "ertuğral",
+        "addressName": "ev"
+      },
+      "id": 18
+    },
+    {
+      "userId": 4,
+      "date": "1/31/2023, 9:52:43 PM",
+      "orderId": 1675191163347,
+      "orderList": [
+        {
+          "createdAt": "1/1/2023, 6:27:54 PM",
+          "updatedAt": "1/1/2023, 6:27:54 PM",
+          "name": "Regular fit Oxford cotton shirt",
+          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
+          "price": 29.99,
+          "color": "blue",
+          "size": "M",
+          "category": "Man",
+          "subcategory": "Shirt",
+          "additionalCategories": [
+            "best-sellers",
+            "trending"
+          ],
+          "imgPath": "https://res.cloudinary.com/dr4cvohdq/image/upload/v1672586896/hbxu98mpnk8y0silr4tu.jpg",
+          "id": 5,
+          "amount": 1
+        }
+      ],
+      "totalOrderAmount": "29.99",
+      "address": {
+        "firstname": "hicran",
+        "lastname": "ertuğral",
+        "addressName": "ev"
+      },
+      "id": 19
     }
   ],
   "auth": [
@@ -1144,6 +1189,47 @@
           ],
           "imgPath": "https://res.cloudinary.com/dr4cvohdq/image/upload/v1672587220/sck10tvxwevfcefmpngw.webp",
           "id": 9
+        },
+        {
+          "createdAt": "1/1/2023, 6:31:08 PM",
+          "updatedAt": "1/1/2023, 6:31:08 PM",
+          "name": "Lightweight cotton sweatshirt",
+          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
+          "price": 27.99,
+          "color": [
+            "green"
+          ],
+          "size": [
+            "XS",
+            "S",
+            "M",
+            "L"
+          ],
+          "category": "Man",
+          "subcategory": "Sweatshirt",
+          "imgPath": "http://res.cloudinary.com/dr4cvohdq/image/upload/v1672587096/wty5mvkd5dltmqetfo8a.webp",
+          "id": 8
+        },
+        {
+          "name": "red shirt",
+          "detail": "red shirt",
+          "price": 13,
+          "size": [
+            "XXS",
+            "XS"
+          ],
+          "color": [
+            "black",
+            "blue",
+            "gray"
+          ],
+          "additionalCategories": [
+            "trending"
+          ],
+          "category": "Man",
+          "subcategory": "Shirt",
+          "imgPath": "http://res.cloudinary.com/dr4cvohdq/image/upload/v1675186032/hesnp0s6mzmddomms45w.jpg",
+          "id": 12
         }
       ],
       "favorites": [
@@ -1187,6 +1273,29 @@
           ],
           "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/6202/267/001/6202267001_1_1_2.jpg?t=1669732582176",
           "id": 3
+        },
+        {
+          "createdAt": "1/1/2023, 6:25:08 PM",
+          "updatedAt": "1/1/2023, 6:25:08 PM",
+          "name": "Blazer  White Jacket",
+          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
+          "price": 49.99,
+          "size": [
+            "S",
+            "XXL"
+          ],
+          "color": [
+            "red"
+          ],
+          "category": "Woman",
+          "subcategory": "Jacket",
+          "additionalCategories": [
+            "best-sellers",
+            "trending",
+            "sale"
+          ],
+          "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/5900/472/430/5900472430_1_1_2.jpg?t=1669736376209",
+          "id": 1
         }
       ],
       "updatedAt": "1/22/2023, 8:06:10 PM"
@@ -1453,7 +1562,12 @@
           "addressName": "ev"
         }
       ],
-      "cards": [],
+      "cards": [
+        {
+          "cardNumber": "1234 5678 9098 7654",
+          "cardHolder": "gfqsg"
+        }
+      ],
       "lastViewed": [
         {
           "createdAt": "1/1/2023, 6:25:08 PM",
@@ -1551,23 +1665,48 @@
         {
           "createdAt": "1/1/2023, 6:25:08 PM",
           "updatedAt": "1/1/2023, 6:25:08 PM",
-          "name": "T-shirt",
+          "name": "Lace pleated dress",
           "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
-          "price": 10,
+          "price": 59.99,
           "size": [
-            "XL"
+            "XS",
+            "S",
+            "XXS",
+            "L"
           ],
           "color": [
-            "white"
+            "black"
           ],
           "category": "Woman",
-          "subcategory": "T-shirt",
+          "subcategory": "Dress",
           "additionalCategories": [
-            "trending",
+            "best-sellers",
             "sale"
           ],
-          "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/6202/267/001/6202267001_1_1_2.jpg?t=1669732582176",
-          "id": 3
+          "imgPath": "http://res.cloudinary.com/dr4cvohdq/image/upload/v1672586727/utkeesstkjwkdi4qt6zu.webp",
+          "id": 4
+        },
+        {
+          "createdAt": "1/1/2023, 6:27:54 PM",
+          "updatedAt": "1/1/2023, 6:27:54 PM",
+          "name": "Regular fit Oxford cotton shirt",
+          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
+          "price": 29.99,
+          "color": [
+            "blue"
+          ],
+          "size": [
+            "M",
+            "L"
+          ],
+          "category": "Man",
+          "subcategory": "Shirt",
+          "additionalCategories": [
+            "best-sellers",
+            "trending"
+          ],
+          "imgPath": "https://res.cloudinary.com/dr4cvohdq/image/upload/v1672586896/hbxu98mpnk8y0silr4tu.jpg",
+          "id": 5
         }
       ]
     },
@@ -1581,6 +1720,43 @@
       "addresses": [],
       "cards": [],
       "id": 5
+    },
+    {
+      "mail": "senaysenturk@test.com",
+      "user": "senaysenturkk",
+      "password": "Bilge123!",
+      "birth": "2023-01-31",
+      "gender": "woman",
+      "role": "user",
+      "addresses": [],
+      "cards": [],
+      "orders": [],
+      "id": 6,
+      "lastViewed": [
+        {
+          "createdAt": "1/1/2023, 6:25:08 PM",
+          "updatedAt": "1/1/2023, 6:25:08 PM",
+          "name": "Blazer Jacket",
+          "detail": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.            Perferendis, illum odit. Expedita eveniet quam eos, deserunt            praesentium tempore perspiciatis accusamus amet sed repellendus non,            distinctio molestiae. Quos quo ducimus ratione.",
+          "price": 49.99,
+          "size": [
+            "S",
+            "XXL"
+          ],
+          "color": [
+            "red"
+          ],
+          "category": "Woman",
+          "subcategory": "Jacket",
+          "additionalCategories": [
+            "best-sellers",
+            "trending",
+            "sale"
+          ],
+          "imgPath": "https://static.e-stradivarius.net/5/photos3/2022/I/0/1/p/5900/472/430/5900472430_1_1_2.jpg?t=1669736376209",
+          "id": 1
+        }
+      ]
     }
   ],
   "cities": [

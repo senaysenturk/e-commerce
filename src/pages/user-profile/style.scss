@@ -1,6 +1,6 @@
-.user-info {
-  // height: 74vh;
-}
+// .user-info {
+//   height: 74vh;
+//}
 
 .user-profile {
   display: flex;
@@ -20,7 +20,7 @@
     position: relative;
     bottom: -10px;
 
-    &>svg {
+    & > svg {
       margin-right: 0.25rem;
     }
   }
@@ -62,7 +62,7 @@
   //   &__item   .user-profile__item anlamına geliyor
   &__item {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center;
     width: 600px;
   }
@@ -73,8 +73,8 @@
     color: #37595a;
     font-size: 45px;
     width: 600px;
-    justify-content: end;
-    align-items: end;
+    justify-content: flex-end;
+    align-items: flex-end;
 
     .login-btn {
       font-family: Helvetica, Arial, sans-serif;
@@ -97,12 +97,12 @@
     }
   }
 
-  div {
-    // display: grid;
-    // grid-template-columns: 1fr 150px 150px 1fr;
-    // flex-direction: column;
-    // gap: 15px;
-  }
+  //div {
+  // display: grid;
+  // grid-template-columns: 1fr 150px 150px 1fr;
+  // flex-direction: column;
+  // gap: 15px;
+  //}
 
   label {
     text-align: end;
